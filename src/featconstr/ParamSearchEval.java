@@ -1,36 +1,32 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package featconstr;
 
 /**
  *
  * @author bostjan
  */
-public class ParamSearchEval {
-private double acc;
-private int feat[]=new int[6];  //0-logical, 1-threshold, 2-furia, 3-cartesian, 4-relational, 5-numerical
-private int tree[]=new int[3]; //0-tree size, 1-number of leaves, 3-sum of constructs
-private int complexityFuria[]=new int[2]; //0-number of rules, 1-sum of constructs
-private int numOfLogFeatInTree[]=new int[2]; //0-number of logical feat, 1-sum of constructs
-private int numOfCartesian[]=new int[2]; //0-number of cartesian features in tree, 1-sum of constructs (cartesian features) in tree
-private int numOfRelational[]=new int[2]; //0-number of relational features in tree, 1-sum of constructs (relational feat) in tree
-private int numOfNumerical[]=new int[2]; //0-number of numerical features in tree, 1-sum of constructs (numerical feat) in tree
-private int furiaThrInTree[]=new int[4]; //0-number of Furia feat, 1-sum of constructs in Furia feat, 2-number of Thr feat, 3-sum of construct in Thr
-private long time[]=new long[2]; //0-feature construction time, 1-learning time
+public class ParamSearchEval{
+    private double acc;
+    private int feat[]=new int[6];                  //0-logical, 1-threshold, 2-furia, 3-cartesian, 4-relational, 5-numerical
+    private int tree[]=new int[3];                  //0-tree size, 1-number of leaves, 3-sum of constructs
+    private int complexityFuria[]=new int[2];       //0-number of rules, 1-sum of constructs
+    private int numOfLogFeatInTree[]=new int[2];    //0-number of logical feat, 1-sum of constructs
+    private int numOfCartesian[]=new int[2];        //0-number of cartesian features in tree, 1-sum of constructs (cartesian features) in tree
+    private int numOfRelational[]=new int[2];       //0-number of relational features in tree, 1-sum of constructs (relational feat) in tree
+    private int numOfNumerical[]=new int[2];        //0-number of numerical features in tree, 1-sum of constructs (numerical feat) in tree
+    private int furiaThrInTree[]=new int[4];        //0-number of Furia feat, 1-sum of constructs in Furia feat, 2-number of Thr feat, 3-sum of construct in Thr
+    private long time[]=new long[2];                //0-feature construction time, 1-learning time
 
-    public ParamSearchEval() {   
+    public ParamSearchEval(){   
     
     }
-    public ParamSearchEval(double acc, int feat[], int tree[], int complexityFuria[], int furiaThrInTree[]) {   
+    public ParamSearchEval(double acc, int feat[], int tree[], int complexityFuria[], int furiaThrInTree[]){   
         this.acc=acc;
         this.feat=feat;
         this.tree=tree;
         this.complexityFuria=complexityFuria;
         this.furiaThrInTree=furiaThrInTree;
     }
+    //setter methods
     public void setAcc(double acc){
         this.acc=acc;
     }
@@ -61,7 +57,7 @@ private long time[]=new long[2]; //0-feature construction time, 1-learning time
     public void setNumFeatInTree(int numOfNumerical[]){
         this.numOfNumerical=numOfNumerical;
     }
-    
+    //getter methods
     public double getAcc(){
         return acc;
     }

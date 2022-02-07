@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package featconstr;
 
 /**
@@ -49,15 +44,7 @@ public class SortRec implements Comparable<SortRec>{
    
 @Override
     public int compareTo(SortRec rec) {
-        //double compareKey=((SortRec)o).getKey();
-        /* For Ascending order*/
-        //return this.key-compareKey;
-        
         return new Double(key).compareTo(rec.key);
-
-        /* For Descending order do like this */
-        //return compareKey-this.key;
-        //return compareage-this.studentage;
     }
 
 

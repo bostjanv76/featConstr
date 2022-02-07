@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package featconstr;
 
 import ml.dmlc.xgboost4j.java.DMatrix;
@@ -10,14 +5,13 @@ import ml.dmlc.xgboost4j.java.XGBoostError;
 import weka.core.Attribute;
 import weka.core.Instance;
 import weka.core.Instances;
-
 import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.List;
 
 public class DMatrixLoader {
 
-    public static DMatrix instancesToDMatrix(Instances instances) throws XGBoostError {
+    public static DMatrix instancesToDMatrix(Instances instances) throws XGBoostError{
         long[] rowHeaders = new long[instances.size()+1];
         rowHeaders[0]=0;
         List<Float> dataList = new ArrayList<>();
@@ -36,68 +30,9 @@ public class DMatrixLoader {
 
         dMatrix.setLabel(labels);
         return dMatrix;
-
-    }
-
-    public static DMatrix instancesToDenseDMatrix(Instances instances) throws XGBoostError {
-        int colNum = instances.numAttributes()-1;
-        int rowNum = instances.size();
-
-        float[] data = new float[colNum*rowNum];
-        float[] labels = new float[instances.size()];
-        Attribute classAttribute = instances.classAttribute();
-        int classAttrIndex = classAttribute.index();
-
-        for(int i=0, dataIndex = 0; i<instances.size(); i++) {
-            Instance instance = instances.get(i);
-
-            labels[i] = (float) instance.classValue();
-            Enumeration<Attribute> attributeEnumeration = instance.enumerateAttributes();
-            while (attributeEnumeration.hasMoreElements()) {
-                Attribute attribute = attributeEnumeration.nextElement();
-                int attrIndex = attribute.index();
-                if(attrIndex == classAttrIndex){
-                    continue;
-                }
-                data[dataIndex]= (float) instance.value(attribute);
-                dataIndex++;
-            }
-        }
-
-
-        DMatrix dMatrix = new DMatrix(data, rowNum, colNum);
-
-        dMatrix.setLabel(labels);
-        return dMatrix;
-
-    }
-
-    public static DMatrix instanceToDenseDMatrix(Instance instance) throws XGBoostError {
-        Attribute classAttribute = instance.classAttribute();
-        int classAttrIndex = classAttribute.index();
-
-        int colNum = instance.numAttributes()-1;
-        int rowNum = 1;
-
-        float[] data = new float[colNum*rowNum];
-
-        Enumeration<Attribute> attributeEnumeration = instance.enumerateAttributes();
-        int dataIndex = 0;
-        while (attributeEnumeration.hasMoreElements()) {
-            Attribute attribute = attributeEnumeration.nextElement();
-            int attrIndex = attribute.index();
-            if(attrIndex == classAttrIndex){
-                continue;
-            }
-            data[dataIndex]= (float) instance.value(attribute);
-            dataIndex++;
-        }
-
-        return new DMatrix(data, rowNum, colNum);
     }
 
     public static DMatrix instanceToDMatrix(Instance instance) throws XGBoostError {
-
         List<Float> dataList = new ArrayList<>();
         List<Integer> colList = new ArrayList<>();
 
@@ -124,29 +59,24 @@ public class DMatrixLoader {
         Attribute classAttribute = instance.classAttribute();
         int classAttrIndex = classAttribute.index();
         Enumeration<Attribute> attributeEnumeration = instance.enumerateAttributes();
-        while (attributeEnumeration.hasMoreElements()) {
+        while (attributeEnumeration.hasMoreElements()){
             Attribute attribute = attributeEnumeration.nextElement();
-//            System.out.print(attribute.name()+", ");
             int attrIndex = attribute.index();
 
-            if(attrIndex == classAttrIndex){
+            if(attrIndex == classAttrIndex)
                 continue;
-            }
+           
             double value = instance.value(attribute);
 
-            if (value == 0) {
+            if (value == 0)
                 continue;
-            }
 
             dataList.add((float) value);
 
-            if (attrIndex < classAttrIndex) {
+            if (attrIndex < classAttrIndex)
                 colList.add(attrIndex);
-            }else{
-                colList.add(attrIndex+1);
-            }
-
+            else
+                colList.add(attrIndex+1);            
         }
-//        System.out.println();
     }
 }

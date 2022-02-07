@@ -5,6 +5,10 @@
         <data xmlns="http://www.netbeans.org/ns/j2se-project/3">
             <name>FeatConstr</name>
             <source-roots>
+                <root id="src.visualization.dir"/>
+                <root id="src.datasets.dir"/>
+                <root id="src.logs.dir"/>
+                <root id="src.Rdata.dir"/>
                 <root id="src.dir"/>
             </source-roots>
             <test-roots>

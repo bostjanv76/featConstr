@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package featconstr;
 
 import weka.classifiers.Classifier;
@@ -14,7 +9,7 @@ import weka.classifiers.Classifier;
 public class ModelAndAcc {
 
 private Classifier model;
-private double acc; //accuracy
+    private double acc; //accuracy
     public ModelAndAcc(){   
     }
     public ModelAndAcc(Classifier model, double acc){   

@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package featconstr;
 
 import biz.k11i.xgboost.Predictor;  //xgboost-predictor-0.3.17
@@ -11,15 +6,11 @@ import ml.dmlc.xgboost4j.java.Booster;
 import ml.dmlc.xgboost4j.java.DMatrix;
 import ml.dmlc.xgboost4j.java.XGBoostError;
 import weka.classifiers.AbstractClassifier;
-//import weka.classifiers.trees.xgboost.DMatrixLoader;
-//import weka.classifiers.trees.xgboost.OptionWithType;
 import weka.core.*;
 import weka.core.Capabilities.Capability;
-
 import java.io.ByteArrayInputStream;
 import java.io.Serializable;
 import java.util.*;
-
 
 /**
  * <!-- globalinfo-start -->
@@ -229,17 +220,11 @@ import java.util.*;
 public class XGBoost extends AbstractClassifier implements OptionHandler, TechnicalInformationHandler, Serializable {
 
     private static final long serialVersionUID = 1141447363965993342L;
-
     private Booster booster;
-
     Map<String, Object> params = new HashMap<>();
-
     static List<OptionWithType> xgBoostParamsOptions = new ArrayList<>();
-
     static Set<String> probabilityObjective = new HashSet<>(Arrays.asList("binary:logistic", "multi:softprob"));
-
     private boolean forceProbabilityDistribution = false;
-
     static {
         // General Parameters
         addStringOption("booster", "[default=gbtree]\nwhich booster to use, can be gbtree, gblinear or dart. gbtree and dart use tree based model while gblinear uses linear function");
@@ -248,7 +233,7 @@ public class XGBoost extends AbstractClassifier implements OptionHandler, Techni
         addIntOption("num_pbuffer", "[set automatically by xgboost, no need to be set by user]\nsize of prediction buffer, normally set to number of training instances. The buffers are used to save the prediction results of last boosting step");
         addIntOption("num_feature", "[set automatically by xgboost, no need to be set by user]\nfeature dimension used in boosting, set to maximum dimension of the feature");
 
-        // Parameters for Tree Booster
+        //Parameters for Tree Booster
         addDoubleOption("eta", "[default=0.3, alias: learning_rate], range: [0,1]\nstep size shrinkage used in update to prevents overfitting. After each boosting step, we can directly get the weights of new features. and eta actually shrinks the feature weights to make the boosting process more conservative.");
         addDoubleOption("learning_rate", "[default=0.3, alias: eta]. ");
         addDoubleOption("gamma", "[default=0, alias: min_split_loss], range: [0,∞]\nminimum loss reduction required to make a further partition on a leaf node of the tree. The larger, the more conservative the algorithm will be.");
@@ -271,7 +256,7 @@ public class XGBoost extends AbstractClassifier implements OptionHandler, Techni
         addIntOption("refresh_leaf", "[default=1]\nThis is a parameter of the 'refresh' updater plugin. When this flag is true, tree leafs as well as tree nodes' stats are updated. When it is false, only node stats are updated.");
         addStringOption("process_type");
 
-        // Additional parameters for Dart Booster
+        //Additional parameters for Dart Booster
         addStringOption("sample_type", "[default=\"uniform\"]\ntype of sampling algorithm:\n-\"uniform\": dropped trees are selected uniformly.\n-\"weighted\": dropped trees are selected in proportion to weight.");
         addStringOption("normalize_type", "[default=\"tree\"]\ntype of normalization algorithm:\n-\"tree\": new trees have the same weight of each of dropped trees.\n-\"forest\": new trees have the same weight of sum of dropped trees (forest).");
         addDoubleOption("rate_drop", "[default=0.0], range: [0.0, 1.0]\ndropout rate (a fraction of previous trees to drop during the dropout)");
@@ -279,8 +264,8 @@ public class XGBoost extends AbstractClassifier implements OptionHandler, Techni
         addDoubleOption("skip_drop", "[default=0.0], range: [0.0, 1.0]\nProbability of skipping the dropout procedure during a boosting iteration.");
 
         //Additional parameters for Linear Booster
-//        addDoubleOption("lambda");
-//        addDoubleOption("alpha");
+        //addDoubleOption("lambda");
+        //addDoubleOption("alpha");
         addDoubleOption("lambda_bias", "[default=0, alias: reg_lambda_bias]\nL2 regularization term on bias (no L1 reg on bias because it is not important)");
         addDoubleOption("reg_lambda_bias");
 
@@ -316,10 +301,10 @@ public class XGBoost extends AbstractClassifier implements OptionHandler, Techni
     }
 
     public void buildClassifier(Instances instances) throws Exception {
-        // can classifier handle the data?
+        //can classifier handle the data?
         getCapabilities().testWithFail(instances);
 
-        // remove instances with missing class
+        //remove instances with missing class
         instances = new Instances(instances);
         instances.deleteWithMissingClass();
 
@@ -334,7 +319,7 @@ public class XGBoost extends AbstractClassifier implements OptionHandler, Techni
 
         booster = ml.dmlc.xgboost4j.java.XGBoost.train(dmat, params, numRound, watches, null, null);
         if (usePredictor) {
-            // Load model and create Predictor
+            //Load model and create Predictor
             this.predictor = new Predictor(new ByteArrayInputStream(booster.toByteArray())); //kryo-2.21.jar
 
         }
@@ -362,7 +347,6 @@ public class XGBoost extends AbstractClassifier implements OptionHandler, Techni
         float[][] predict = booster.predict(dmat);
         double[] predictDouble = new double[predict[0].length];
         for (int i = 0; i < predict[0].length; i++) {
-//            predictDouble[i] = Double.valueOf(String.valueOf(predict[i]));
             predictDouble[i] = predict[0][i];
         }
         return predictDouble;
@@ -384,12 +368,12 @@ public class XGBoost extends AbstractClassifier implements OptionHandler, Techni
         }
 
         FVec fVecSparse = FVec.Transformer.fromMap(dataMap);
-        /*solving double to tmp*/
+        //solving double to tmp
         float tmp[]=predictor.predict(fVecSparse);
         double doubleTmp[]=new double[tmp.length];
         for(int i=0;i<tmp.length;i++)
             doubleTmp[i]=(double)tmp[i];
-        //return predictor.predict(fVecSparse); //original source
+
             return doubleTmp;
     }
 
@@ -426,8 +410,6 @@ public class XGBoost extends AbstractClassifier implements OptionHandler, Techni
 
     /**
      * Parses a given list of options.
-     * <p/>
-     * <p>
      * <!-- options-start -->
      * * Valid options are: <p>
      * *
@@ -654,10 +636,8 @@ public class XGBoost extends AbstractClassifier implements OptionHandler, Techni
         options.add("-num_round");
         options.add(String.valueOf(this.numRound));
 
-
         options.add("-use_predictor");
         options.add(String.valueOf(this.usePredictor));
-
 
         params.forEach((name, val) -> {
             options.add("-" + name);
@@ -673,44 +653,18 @@ public class XGBoost extends AbstractClassifier implements OptionHandler, Techni
     public Capabilities getCapabilities() {
         Capabilities result = super.getCapabilities();   // returns the object from weka.classifiers.Classifier
 
-        // attributes
+        //attributes
         result.enable(Capability.NOMINAL_ATTRIBUTES);
         result.enable(Capability.NUMERIC_ATTRIBUTES);
         result.enable(Capability.DATE_ATTRIBUTES);
         result.enable(Capability.MISSING_VALUES);
 
-        // class
+        //class
         result.enable(Capability.NOMINAL_CLASS);
         result.enable(Capability.MISSING_CLASS_VALUES);
 
         return result;
     }
-
-    /**
-     * Returns a description of the classifier.
-     *
-     * @return a description of the classifier as a string.
-     */
-    /*@Override
-    public String toString() {
-        StringBuffer sb = new StringBuffer();
-        sb.append("XGBoost Classifier: ");
-        if (booster == null) {
-            sb.append("No model built yet.");
-        }else{
-
-            String[] modelDump = new String[0];
-            try {
-                modelDump = booster.getModelDump(null, true);
-            } catch (XGBoostError xgBoostError) {
-                xgBoostError.printStackTrace();
-                sb.append("Error dumping model: ").append(xgBoostError.getMessage());
-            }
-            sb.append(Arrays.asList(modelDump));
-        }
-
-        return sb.toString();
-    }*/
 
     void checkOption(OptionWithType o, String[] options) {
         if (OptionWithType.ArgType.STRING.equals(o.type())) {
@@ -788,20 +742,7 @@ public class XGBoost extends AbstractClassifier implements OptionHandler, Techni
         String synopsis = "-" + name + " <" + argType.name().toLowerCase() + ">";
         return new OptionWithType(description == null ? name : description, name, 1, synopsis, argType);
     }
-
-
-    /**
-     * Main method for testing this class.
-     *
-     * @param argv the options
-     */
-//    public static void main(String[] argv) {
-//        XGBoost classifier = new XGBoost();
-//        runClassifier(classifier, argv);
-//        System.out.println(classifier);
-//    }
-
-
+    
     @Override
     public TechnicalInformation getTechnicalInformation() {
         return new TechnicalInformation(TechnicalInformation.Type.MISC);
