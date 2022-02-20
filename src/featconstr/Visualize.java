@@ -49,7 +49,7 @@ public class Visualize{
         return (int)((VIS_SIZE / 2) + y);
     }	
     
-    public static void modelVisualToFileAttrImptLine(String file, String modelName, String datasetName, Instances data, ArrayList[] dotsA, ArrayList dotsB[], boolean classification, int resolution, int classValueToExplain, String format){
+    public static void modelVisualToFileAttrImptLine(String file, String modelName, String datasetName, Instances data, ArrayList<Double>[] dotsA, ArrayList<Double> dotsB[], boolean classification, int resolution, int classValueToExplain, String format){
         int VIS_SIZE2 = 400;
         int xBB = 595;        //width of bounding box (A4)
         int yBB = 842;        //height of bounding box (A4)
@@ -106,15 +106,15 @@ public class Visualize{
             double min_val = Double.MAX_VALUE;
 
             for(int i = 0; i < dotsA.length; i++){
-                ArrayList temp = dotsA[i];
-                ArrayList temp2 = dotsB[i]; //values that represent ​​informativeness of attributes
+                ArrayList<Double> temp = dotsA[i];
+                ArrayList<Double> temp2 = dotsB[i]; //values that represent ​​informativeness of attributes
                 for (int j = 0; j < temp.size() / 2; j++){
-                    double d = (Double)(temp.get(j*2+1));
+                    double d = (temp.get(j*2+1));
                     if(d > max_val) 
                         max_val = d;
                     if(d < min_val) 
                         min_val = d;
-                    d = (Double)(temp2.get(0));
+                    d = (temp2.get(0));
                     if(d > max_val) 
                         max_val = d;
                     if(d < min_val) 
@@ -130,15 +130,15 @@ public class Visualize{
                 g.setFont(myFont10);
                 g.setColor(Color.GRAY);
                 g.drawString(data.attribute(i).name(),coordX + 2,(i-1)*(coordYlength+20) + coordY+20 - 5);
-                ArrayList temp = dotsA[i];
-                ArrayList temp2 = dotsB[i];
+                ArrayList<Double> temp = dotsA[i];
+                ArrayList<Double> temp2 = dotsB[i];
                 if (data.attribute(i).isNominal()){
                     maxX = data.attribute(i).numValues() - 1;
                     minX = 0;
                 }
                 else
                     for (int j = 0; j < temp.size() / 2; j++){
-                        double d = (Double)(temp.get(j*2));
+                        double d = (temp.get(j*2));
                         if(d > maxX) 
                             maxX = d;
                         if(d < minX) 
@@ -190,8 +190,8 @@ public class Visualize{
             }
 
             for (int j = 0; j < temp.size() / 2; j++){
-                double x = (Double)(temp.get(j*2));
-                double y = (Double)(temp.get(j*2+1));    		
+                double x = (temp.get(j*2));
+                double y = (temp.get(j*2+1));    		
 
                 if (!data.attribute(i).isNominal()){
                     g.setColor(Color.BLACK);
@@ -208,9 +208,9 @@ public class Visualize{
             }
 
             //draw attribute importance
-            double x1=(Double)(temp.get(0));
-            double x2=(Double)(temp.get(temp.size()-2));
-            double y = (Double)(temp2.get(0));
+            double x1=(temp.get(0));
+            double x2=(temp.get(temp.size()-2));
+            double y =(temp2.get(0));
             g.setColor(Color.getHSBColor(121, 83, 54));
             g.setStroke(NORMAL);
             g.setFont(myFont8);
@@ -243,7 +243,7 @@ public class Visualize{
         }			
     }
     
-    public static void attrImportanceVisualizationSorted(String file, String modelName, String datasetName, Instances data, ArrayList dotsB[], boolean classification, int resolution,String format){
+    public static void attrImportanceVisualizationSorted(String file, String modelName, String datasetName, Instances data, ArrayList<Double> dotsB[], boolean classification, int resolution,String format){
         int xBB = 595;      //width of bounding box (A4)
         int yBB = 842;      //height of bounding box (A4)
         int wBox=530;       //width of the box for drawing ... VIS_SIZE is currently 500

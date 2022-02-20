@@ -3,7 +3,6 @@ package featconstr;
 import weka.core.Option;
 import java.io.Serializable;
 
-
 public class OptionWithType extends Option implements Serializable {
     private static final long serialVersionUID = -251269918815312469L;
     public enum ArgType{STRING, DOUBLE, INTEGER}

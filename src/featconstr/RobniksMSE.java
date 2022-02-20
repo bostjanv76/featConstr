@@ -97,7 +97,7 @@ public class RobniksMSE {
                   
                 variance = RightSquares / RightWeight - Math.pow((RightValues / RightWeight),2);
                 if (LeftWeight > epsilon && variance > 0.0)
-                     estimate += ((double)1.0 - pLeft) * variance;
+                     estimate += (1.0 - pLeft) * variance;
 
                 if (estimate < bestEstimate)
                      bestEstimate = estimate;                      
@@ -299,7 +299,7 @@ public class RobniksMSE {
 
 			  variance = RightSquares / RightWeight - Math.pow((RightValues / RightWeight),2);
 			  if (LeftWeight > epsilon && variance > 0.0)
-				 estimate += ((double)1.0 - pLeft) * variance;			  
+				 estimate += (1.0 - pLeft) * variance;			  
 
 			  if (estimate < bestEstimate)
 				 bestEstimate = estimate;			  
@@ -372,7 +372,7 @@ public class RobniksMSE {
 
             variance = RightSquares / RightWeight - Math.pow((RightValues / RightWeight),2);
             if (LeftWeight > epsilon && variance > 0.0)
-                 estimate += ((double)1.0 - pLeft) * variance;			  
+                 estimate += (1.0 - pLeft) * variance;			  
 
             if (estimate < bestEstimate)
                  bestEstimate = estimate;			  

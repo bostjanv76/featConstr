@@ -17,6 +17,7 @@ import weka.filters.Filter;
  *
  * @author bostjan
  */
+@SuppressWarnings("serial")
 public class KononenkosMDL extends Filter{
     Instances data;
     public KononenkosMDL(){

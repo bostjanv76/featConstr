@@ -80,8 +80,8 @@ import weka.filters.unsupervised.attribute.ReplaceMissingValues;
 @SuppressWarnings({"rawtypes", "unchecked", "serial"})
 public class FeatConstr {
     public static String datasetName;
-    public static int CLASS_IDX=-1;     // default = -1 (last attribute is class attribute) 
-    public static int folds=1;          //for generating models, folds=1 means no CV and using split in ratio listed below
+    //public static int CLASS_IDX=-1;     // default = -1 (last attribute is class attribute) 
+    public static int folds=10;          //for generating models, folds=1 means no CV and using split in ratio listed below
     public static int splitTrain=5;     //5 ... 80%:20%, 4 ... 75%25%, 3 ... 66%:33%; useful only when folds are set to 1, meaning no CV and using split
     public static int RESOLUTION=100;   // density for model visualization
     public static int N_SAMPLES=3000;   //if we use equalSampling ... number of samples, we choose random value from interval min-max N_SAMPLE times  
@@ -94,12 +94,11 @@ public class FeatConstr {
     //adaptiveSampling - Algorithm 2 in Štrumbelj, Erik, and Igor Kononenko. "Explaining prediction models and individual predictions with feature contributions." Knowledge and information systems 41.3 (2014): 647-665.
     //adaptiveSamplingSS - stopping criteria is sum of samples
     //adaptiveSamplingAE - stopping criteria is approxamization error for all attributes
-    //aproxErrSampling - we calculate samples for each attribute mi=(<1-alpha, e>) (article 2010) in Strumbelj, Erik, and Igor Kononenko. "An efficient explanation of individual classifications using game theory." The Journal of Machine Learning Research 11 (2010): 1-18.
+    //aproxErrSampling - we calculate samples for each attribute mi=(<1-alpha, e>) (article 2010) in Štrumbelj, Erik, and Igor Kononenko. "An efficient explanation of individual classifications using game theory." The Journal of Machine Learning Research 11 (2010): 1-18.
     public static IMEver method=IMEver.adaptiveSamplingSS; //selected IME method
     public static boolean explAllData=false; 
-    public static boolean explAllClasses=false;
-    public static boolean numerFeat=false;      //numerical features ... testing on domain credit score 
-    //public static boolean lessThanFeat=true;    
+    public static boolean explAllClasses=true;
+    public static boolean numerFeat=true;      //numerical features ... testing on domain credit score   
     public static boolean treeSHAP=true; 
     public static int numOfRounds=100;          //XGBoost parameter - number of decision trees 
     public static int maxDepth=3;               //XGBoost parameter - size of decision trees
@@ -107,8 +106,6 @@ public class FeatConstr {
     public static double gamma=1;               //XGBoost parameter - gamma
     public static int pctErr=95;                //90, 95 or 99;
     public static double error=0.01;
-    public static int numInstTest=10;           //in pct random number of instances taken from whole dataset to get variance out of population
-    public static int numSampleTest=100;        //number of samples of each test instance to get variance out of population
     public static boolean exhaustive=false;     //try exhaustive search ... all combinations between attributes
     public static boolean jakulin=false;        //try exhaustive search, calculate interaction information between all comb. of attributes; Jakulin, A. (2005). Machine learning based on attribute interactions [Doctoral dissertation, University of Ljubljana]. ePrints.FRI. https://bit.ly/3eiJ18x
     public static boolean justExplain=false;    //just explain datasets, construct features and evaluate them (ReliefF)
@@ -2095,7 +2092,7 @@ public class FeatConstr {
             }			
         }
 	
-        DataSink.write("AllDiscrete.arff",allDiscrete);
+        //DataSink.write("AllDiscrete.arff",allDiscrete);
         newBinAttr=null;
         allDiscrete=null;
         newTmpDisc=null;
@@ -3882,7 +3879,7 @@ public class FeatConstr {
                 j++;
         }
                 
-        bestParamPerFold.println(" Num. of max ACC "+bestRndParam.size());                
+        bestParamPerFold.println("Num. of max ACC "+bestRndParam.size());                
         if(bestRndParam.size()>1)
             bestParam=bestRndParam.get((int)(Math.random()*bestRndParam.size())).getEvalMeth(); //we take random parameter out of the parameters that have same ACC
         else
