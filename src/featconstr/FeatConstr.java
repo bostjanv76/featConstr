@@ -83,12 +83,11 @@ public class FeatConstr {
     //public static int CLASS_IDX=-1;     // default = -1 (last attribute is class attribute) 
     public static int folds=10;          //for generating models, folds=1 means no CV and using split in ratio listed below
     public static int splitTrain=5;     //5 ... 80%:20%, 4 ... 75%25%, 3 ... 66%:33%; useful only when folds are set to 1, meaning no CV and using split
-    public static int RESOLUTION=100;   // density for model visualization
-    public static int N_SAMPLES=3000;   //if we use equalSampling ... number of samples, we choose random value from interval min-max N_SAMPLE times  
+    public static int N_SAMPLES=100;   //if we use equalSampling ... number of samples, we choose random value from interval min-max N_SAMPLE times  
     public static int minS=10;          //min samples ... if we use sumOfSamples and diffSampling ... to obtain an approximate estimate of the variance
     //public static int maxS=1000;        //max samples ... if we use additive sampling
     public static int sumOfSmp=2000;    //sum of samples ... if we use adaptive sampling ... sumOfSmp >= n*minS ... n is number of attributes
-    public static boolean optimal=true; //using alg. 2 from article ... converge samples ... false=equal sampling if(explAllData==false) then we use "optimal" sampling
+    //public static boolean optimal=true; //using alg. 2 from article ... converge samples ... false=equal sampling if(explAllData==false) then we use "optimal" sampling
     public enum IMEver{equalSampling, adaptiveSamplingSS, adaptiveSamplingAE, aproxErrSampling};
     //equalSampling - each attribute has same num. of samples, Algorithm 1 in in Štrumbelj, Erik, and Igor Kononenko. "An efficient explanation of individual classifications using game theory." The Journal of Machine Learning Research 11 (2010): 1-18.
     //adaptiveSampling - Algorithm 2 in Štrumbelj, Erik, and Igor Kononenko. "Explaining prediction models and individual predictions with feature contributions." Knowledge and information systems 41.3 (2014): 647-665.
@@ -97,8 +96,8 @@ public class FeatConstr {
     //aproxErrSampling - we calculate samples for each attribute mi=(<1-alpha, e>) (article 2010) in Štrumbelj, Erik, and Igor Kononenko. "An efficient explanation of individual classifications using game theory." The Journal of Machine Learning Research 11 (2010): 1-18.
     public static IMEver method=IMEver.adaptiveSamplingSS; //selected IME method
     public static boolean explAllData=false; 
-    public static boolean explAllClasses=true;
-    public static boolean numerFeat=true;      //numerical features ... testing on domain credit score   
+    public static boolean explAllClasses=false;
+    public static boolean numerFeat=false;      //numerical features ... testing on domain credit score   
     public static boolean treeSHAP=true; 
     public static int numOfRounds=100;          //XGBoost parameter - number of decision trees 
     public static int maxDepth=3;               //XGBoost parameter - size of decision trees
@@ -108,11 +107,16 @@ public class FeatConstr {
     public static double error=0.01;
     public static boolean exhaustive=false;     //try exhaustive search ... all combinations between attributes
     public static boolean jakulin=false;        //try exhaustive search, calculate interaction information between all comb. of attributes; Jakulin, A. (2005). Machine learning based on attribute interactions [Doctoral dissertation, University of Ljubljana]. ePrints.FRI. https://bit.ly/3eiJ18x
-    public static boolean justExplain=false;    //just explain datasets, construct features and evaluate them (ReliefF)
+    public static boolean justExplain=true;    //just explain datasets, construct features and evaluate them
     public static boolean writeConstruct=false; //true when we need dataset for creating II. level features 
     public static boolean firstLevelFeat=false; //true if we generate 1st level features, false if we generate 2nd level features
-    public static boolean visualization=false;  //visualization of explanations using IME method
-    public static int visFrom=50, visTo=60;     //visualize instances from visFrom to visTo
+    public static boolean visualization=true;  //visualization of explanations using IME method
+    public static int visFrom=1, visTo=10;     //visualize instances from visFrom to visTo
+    public static int drawLimit=20;    //we draw (max.) 20 the most important attributes
+    public static int topHigh=10;       //visualize features with highest contributions ... it's possible that is plotted more than topHigh features if e.g. 6th and 7th have the same importance ...
+    public static int numOfImpt=6;      //visualize 
+    public static int RESOLUTION=100;   // density for model visualization
+    public static boolean pdfPng=true;          //besided eps, print also pdf and png
     public static boolean writeAccByFoldsInFile=false;  //we need this for statistical tests for dataset credit score
     public static boolean groupsByThrStat=false;        //print statistics about groups by thresholds    
     public static double attrImpThrs[]={0,0.25,0.5};    //{0,0.2,0.4,0.6,0.7};//{0,0.1,0.2,0.3,0.4,0.5}; ... used only in paramSearch method
@@ -248,6 +252,7 @@ public class FeatConstr {
         if(groupsByThrStat)
             groupsStat = new PrintWriter(new FileWriter("logs/groupsStat-"+lg+".csv",true));
         
+        File folder;
         Timer t1;
         Timer tTotal=new Timer();
         double [] classDistr;
@@ -256,15 +261,18 @@ public class FeatConstr {
         
         //classification datasets
 
-        //artificial datasets 
-        //File folder = new File("datasets/artificial");  //all artificial datasets
-        
-        //UCI datasets
-        //File folder = new File("datasets/uci");      //all UCI datasets
-       
-        //real dataset       
-        File folder = new File("datasets/real"); //credit score dataset
-                
+        /*****demo datasets*****/
+        folder = new File("datasets/demo");
+    
+        /*****artificial datasets*****/ 
+        //folder = new File("datasets/artificial");
+    
+        /*****UCI datasets*****/
+        //folder = new File("datasets/uci");
+    
+        /*****real dataset - credit score*****/       
+        //folder = new File("datasets/real");
+                        
         File[] listOfFiles = folder.listFiles();
            
         loopJustForExplanation:
@@ -320,7 +328,7 @@ public class FeatConstr {
 
                 if(justExplain){
                     numberOfUnImpFeatByFolds=new double[8][folds]; 
-                   attrImpListMDL.println("MDL - before CI");
+                    attrImpListMDL.println("MDL - before CI");
                         mdlCORElearn(data);
 
                     ReplaceMissingValues rwm=new ReplaceMissingValues();
@@ -467,7 +475,7 @@ public class FeatConstr {
                     }
                 }
 
-                int numOfImpt=6;  //for visualization; format A4, 6 attr. or less  
+                //int numOfImpt=6;  //for visualization; format A4, 6 attr. or less  
                 Classifier predictionModel;
 
                 System.out.println("---------------------------------------------------------------------------------");
@@ -493,7 +501,7 @@ public class FeatConstr {
                 /******************* VISUALIZATION *********************************/
                 if(visualization){        
                     System.out.println("Drawing ...");
-                    visualizeModelInstances(rf, data,file, true, RESOLUTION, numOfImpt, true, visFrom, visTo);  //visualize explanations from e.g., 50th to 60 instance
+                    visualizeModelInstances(rf, data,file, true, RESOLUTION, numOfImpt, visFrom, visTo);  //visualize explanations from e.g., 50th to 60 instance
                     System.out.println("Drawing is finished!");
                     System.exit(0);
                 }     
@@ -533,7 +541,7 @@ public class FeatConstr {
                         rwm.setInputFormat(data);
                         data=Filter.useFilter(data, rwm);
                         test=Filter.useFilter(test, rwm); //insert mean values from train dataset
-
+       
                         discIntervals.println("\t\t\t\t\t\t\t\t--------------"); 
                         discIntervals.printf("\t\t\t\t\t\t\t\t\tFold %2d\n",(f+1));
                         discIntervals.println("\t\t\t\t\t\t\t\t--------------"); 
@@ -541,6 +549,7 @@ public class FeatConstr {
              
                     ModelAndAcc ma; 
                     Classifier model;
+                    if(!jakulin){ 
                     if(!exhaustive){
                         for (int m=0;m<clsTab.length;m++){            
                             model=clsTab[m];
@@ -1018,7 +1027,8 @@ public class FeatConstr {
                         logFile.println("We didn't find any concepts in fold "+(f+1)+" above threshold max(NOISE,minNoise) groups, NOISE="+NOISE+"% -> "+(int)Math.ceil(numInst*NOISE/100.0)+ ", minNoise="+minN+" we remove groups of size "+Math.max((int)Math.ceil(numInst*NOISE/100.0),minN));   
                         continue; //we skip constructive induction if we don't find any concepts
                     }
-
+                }
+                
                     Instances trainFold= new Instances(data);   //for logical and All features
                     Instances testFold=new Instances(test);     //for logical and All features
 
@@ -1078,7 +1088,8 @@ public class FeatConstr {
                             System.out.println("Number of all combinations: "+allCombSecOrdv2.size());
                                 logFile.println("Number of all combinations: "+allCombSecOrdv2.size());
                         }
-                        
+
+                        t1=new Timer();
                         t1.start();
                         List combInfInter=interInfoJakulin(trainFoldCP,allCombSecOrdv2, 4);    //we take 4 best interaction combinations, for more info see A. Jakulin. Machine learning based on attribute interactions. PhD thesis, University of Ljubljana, Faculty of Computer and Information Science, 2005.
 
@@ -3870,7 +3881,7 @@ public class FeatConstr {
         }
         t1.stop();
         time[0]=t1.diff();
-        bestParamPerFold.print("Num. of all parameters "+bestRndParam.size());
+        bestParamPerFold.print("Num. of all parameters "+bestRndParam.size()+". ");
                 
         for(int j=0;j<bestRndParam.size();){
             if(bestRndParam.get(j).getAcc()<maxIntAcc)
@@ -3879,7 +3890,7 @@ public class FeatConstr {
                 j++;
         }
                 
-        bestParamPerFold.println("Num. of max ACC "+bestRndParam.size());                
+        bestParamPerFold.println("Num. of max ACC "+bestRndParam.size()+".");                
         if(bestRndParam.size()>1)
             bestParam=bestRndParam.get((int)(Math.random()*bestRndParam.size())).getEvalMeth(); //we take random parameter out of the parameters that have same ACC
         else
@@ -4849,7 +4860,7 @@ public class FeatConstr {
             }
     } 
     
-    public static void visualizeModelInstances(Classifier predictionModel, Instances data, File file, boolean isClassification, int RESOLUTION, int numOfImpt, boolean pdfPng, int fromInst, int toInst) throws Exception{    
+    public static void visualizeModelInstances(Classifier predictionModel, Instances data, File file, boolean isClassification, int RESOLUTION, int numOfImpt, int fromInst, int toInst) throws Exception{    
         predictionModel.buildClassifier(data);
         System.out.println("Attribute importance using explanation method IME: "+predictionModel.getClass().getSimpleName());
             logFile.println("Attribute importance using explanation method IME:: "+predictionModel.getClass().getSimpleName()); 
@@ -4908,7 +4919,7 @@ public class FeatConstr {
         else
             Visualize.modelVisualToFileAttrImptLine(outputDir +fName+format, modelName, datasetName, data, dotsA, dotsB,isClassification,RESOLUTION,classToExplain,"AA"); //AA just smth. different of A4
         
-        Visualize.attrImportanceVisualizationSorted(outputDir +fName+"attrImp"+format, modelName, datasetName, data, dotsB,isClassification,RESOLUTION,"AA");
+        Visualize.attrImportanceVisualizationSorted(outputDir +fName+"attrImp"+format, modelName, datasetName, data, drawLimit, dotsB,isClassification,RESOLUTION,"AA");
         
         /*Instance visualization*/
         //pdf, png -> model
@@ -4917,22 +4928,21 @@ public class FeatConstr {
             covertToPdfAndPng(fName+"attrImp",format, "visualization/eps/","visualization/pdf/","visualization/png/"); //plot attribute importance
         }  
 
-        for(int i = fromInst; i < toInst; i++){
+        for(int i = fromInst; i <= toInst; i++){
             outputDir = "visualization/eps/";
-            double[] instanceExplanation = IME.explainInstance(predictionModel, data, new Instances(data,i,1), N_SAMPLES, isClassification, classToExplain);	
+            double[] instanceExplanation = IME.explainInstance(predictionModel, data, new Instances(data,(i-1),1), N_SAMPLES, isClassification, classToExplain);	
             double pred = -1;   
 
             if (isClassification)
-                pred = predictionModel.distributionForInstance((new Instances(data,i,1)).instance(0))[classToExplain];
+                pred = predictionModel.distributionForInstance((new Instances(data,(i-1),1)).instance(0))[classToExplain];
             else
-                pred = predictionModel.classifyInstance((new Instances(data,i,1)).instance(0));					
-            int topHigh=6;  //visualize features with highest contributions ... it's possible that is plotted more than topHigh features if e.g. 6th and 7th have the same importance ...
+                pred = predictionModel.classifyInstance((new Instances(data,(i-1),1)).instance(0));					
             format=".eps";
             if(isClassification)
-                fName=modelName + "_" + datasetName + "_instance_" + (i+1)+ "-class_"+classValueName;
+                fName=modelName + "_" + datasetName + "_instance_" + (i)+ "-class_"+classValueName;
             else
-                fName=modelName + "_" + datasetName + "_instance_" + (i+1)+ "-regr";
-            Visualize.instanceVisualizationToFile(outputDir +fName+format, modelName, datasetName, new Instances(data,i,1), i,instanceExplanation, topHigh, pred, classToExplain, isClassification);
+                fName=modelName + "_" + datasetName + "_instance_" + (i)+ "-regr";
+            Visualize.instanceVisualizationToFile(outputDir +fName+format, modelName, datasetName, new Instances(data,(i-1),1), i, topHigh, instanceExplanation, pred, classToExplain, isClassification);
         
             //pdf, png -> instance(s)
             if(pdfPng)

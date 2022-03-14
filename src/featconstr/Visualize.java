@@ -3,6 +3,8 @@ package featconstr;
 import org.sourceforge.jlibeps.epsgraphics.*;
 import java.awt.*;
 import java.io.*;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.text.DecimalFormat;
 import weka.core.*;
 import java.util.ArrayList;
@@ -20,8 +22,11 @@ public class Visualize{
     final static BasicStroke NORMAL = new BasicStroke(1.0f);
     final static BasicStroke THIN = new BasicStroke(0.5f);
     final static BasicStroke BOLD = new BasicStroke(2.0f);
-    static int VIS_SIZE = 500;	
+    static int VIS_SIZE = 500;
+    static int numDec=3;        //number of decimal places in attribute importance image
 
+
+    
     public Visualize(){				
     }
 
@@ -243,7 +248,7 @@ public class Visualize{
         }			
     }
     
-    public static void attrImportanceVisualizationSorted(String file, String modelName, String datasetName, Instances data, ArrayList<Double> dotsB[], boolean classification, int resolution,String format){
+    public static void attrImportanceVisualizationSorted(String file, String modelName, String datasetName, Instances data, int drawLimit, ArrayList<Double> dotsB[], boolean classification, int resolution,String format){
         int xBB = 595;      //width of bounding box (A4)
         int yBB = 842;      //height of bounding box (A4)
         int wBox=530;       //width of the box for drawing ... VIS_SIZE is currently 500
@@ -257,7 +262,6 @@ public class Visualize{
         int maxX = +150;
         int minX = 0;
         int textLeft = -10; //-10 because we then add +20
-        int drawLimit=20;   //we draw only 20 the most important attributes
         String fontName = Font.SANS_SERIF;
         Font myFont = new Font(fontName, Font.BOLD, fontSize);
         double threshold=0.03;
@@ -272,15 +276,15 @@ public class Visualize{
             newMap.putAll(treemap);
             if(newMap.size()>drawLimit){    
                 System.out.println("Drawing limit for attribute name: "+newMap.get(newMap.keySet().toArray()[drawLimit-1]));    //attribute name
-                System.out.println("Drawing limit for value: "+newMap.keySet().toArray()[drawLimit-1]);                 //attribute value
+                System.out.printf("Drawing limit for value: %.4f\n",newMap.keySet().toArray()[drawLimit-1]); //attribute value
                 threshold=Double.parseDouble(String.valueOf(newMap.keySet().toArray()[drawLimit-1]));
-                newMap.keySet().removeAll(Arrays.asList(newMap.keySet().toArray()).subList(drawLimit, newMap.size()-1));
+                newMap.keySet().removeAll(Arrays.asList(newMap.keySet().toArray()).subList(drawLimit, newMap.size()-1)); //subList(fromIndex - inclusive, toIndex - exclusive)
             }
             else
-                threshold=Double.parseDouble(String.valueOf(newMap.keySet().toArray()[newMap.size()-2]));
+                threshold=Double.parseDouble(String.valueOf(newMap.keySet().toArray()[newMap.size()-1]));
             
-            System.out.println("List size - map: "+newMap.size()); 
-            System.out.println("Test printout - limit: "+Double.parseDouble(String.valueOf(newMap.keySet().toArray()[newMap.size()-2]))); 
+            //System.out.println("List size - map (control): "+newMap.size()); 
+            //System.out.printf("Test printout - limit (control): %.4f\n",threshold); 
 
             int relevantFeatures = 0;
             double maxContrib = 0;
@@ -322,18 +326,21 @@ public class Visualize{
             int counter = 0;
             for (Entry<Double, String> entry : newMap.entrySet()){
                 double value = entry.getKey();
+                //System.out.println(value);
                 String attrName = entry.getValue();
                 if (value >= threshold){
                     //text for feature
                     int textSize = fontSize2;
                     Font tempFont = new Font(Font.MONOSPACED, Font.BOLD, textSize-3);
                     g.setFont(tempFont);
-
-                    String attVal = value+"";
+   
+                    BigDecimal bd = new BigDecimal(value).setScale(numDec, RoundingMode.HALF_UP);
+                    //value = bd.doubleValue();
+                    String attVal = bd.doubleValue()+"";
                     double yText = perFeature*(counter) + minY;
                     g.setColor(Color.BLACK);
                     g.drawString(attrName + " ", textLeft+20,getY(yText+fontSize+3));
-                    g.drawString(" " + formatValue(attVal,13), getX(maxX + 5) + 30,getY(yText+fontSize+3));
+                    g.drawString(" " + formatValue(attVal,13,numDec), getX(maxX + 5) + 30,getY(yText+fontSize+3));
 
                     //bar for feature
                     double y = perFeature*(counter) + minY;
@@ -348,11 +355,9 @@ public class Visualize{
                     double x1 = Math.min((value/maxContrib) * (getX(maxX)-VIS_SIZE/4),0);
                     double x2 = Math.abs((value/maxContrib) * (getX(maxX)-VIS_SIZE/4));
 
-                    if (value >= 0.01){    //if threshold is applied then this is irrelevant
-                        g.fillRect(VIS_SIZE/4,getY(barTop),(int)Math.ceil(x2),(int)barH);
-                        g.setColor(Color.BLACK);
-                        g.drawRect(VIS_SIZE/4,getY(barTop),(int)Math.ceil(x2),(int)barH);
-                    }
+                    g.fillRect(VIS_SIZE/4,getY(barTop),(int)Math.ceil(x2),(int)barH);
+                    g.setColor(Color.BLACK);
+                    g.drawRect(VIS_SIZE/4,getY(barTop),(int)Math.ceil(x2),(int)barH);
                 }
 
                 if (Math.abs(value) >= threshold) 
@@ -396,7 +401,7 @@ public class Visualize{
         }			
     }
 
-    public static void instanceVisualizationToFile(String file, String modelName, String datasetName, Instances instance, int id, double[] contributions, int topHigh, double prediction, int classValueToExplain, boolean isClassification){				
+    public static void instanceVisualizationToFile(String file, String modelName, String datasetName, Instances instance, int id, int topHigh, double[] contributions, double prediction, int classValueToExplain, boolean isClassification){				
         int xBB = 595;      //width of bounding box (A4)
         int yBB = 842;      //height of bounding box (A4)
         int wBox=530;       //width of the box for drawing
@@ -455,7 +460,7 @@ public class Visualize{
             g.drawRect(380,3,148,22);
             g.drawString("Data: " + datasetName,10,20);
             g.drawString("Model: " + modelName,10,40);
-            g.drawString("Instance No.: " + (id+1),10,60);             
+            g.drawString("Instance No.: " + id,10,60);             
             g.drawString("Instance Explanation",385,20);
 
             if (isClassification){    
@@ -486,7 +491,7 @@ public class Visualize{
                     double yText = perFeature*(counter) + minY;
                     g.setColor(Color.BLACK);
                     g.drawString(instance.attribute(i).name() + " ", textLeft+20,getY(yText+fontSize+3));
-                    g.drawString(" " + formatValue(attVal,13), getX(maxX + 5) + 30,getY(yText+fontSize+3));
+                    g.drawString(" " + formatValue(attVal,13,numDec), getX(maxX + 5) + 30,getY(yText+fontSize+3));
 
                     //bar for feature
                     double y = perFeature*(counter) + minY;
@@ -554,7 +559,7 @@ public class Visualize{
         }
     }
 
-    public static String formatValue(String s, int size){
+    public static String formatValue(String s, int size, int decPlaces){
         boolean inDecimal = false;
         int[] remove = new int[s.length()];
         int counter = 0;
@@ -562,7 +567,7 @@ public class Visualize{
             if (inDecimal) 
                 counter++;
             if (Character.isDigit(s.charAt(i))){
-                if (counter > 2) remove[i] = 1;
+                if (counter > decPlaces) remove[i] = 1;
             }
             else{
                 inDecimal = false;
