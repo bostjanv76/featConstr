@@ -86,7 +86,7 @@ Just flag variable jakulin must be set to **true**. Calculate interaction inform
 ```
 ----- knowledge discovery (just explain whole dataset)
 
-To activate knowledge discovery flag variable justExplain must be **true**. EFC takes all instances in the dataset. New constructs of CI are evaluated by MDL scores. Results are printed and stored in logs folder.
+To activate knowledge discovery flag variable justExplain must be **true**. EFC takes all instances in the dataset. New constructs of CI are evaluated by MDL scores. Results are printed and stored in kd subfolder (logs/kd).
 -	_impGroups-"time-date"_ – file that stores groups of attributes that co-occur in explanations
 -	_attrImpListMDL-"time-date"_ – file that stores MDL scores of attributes before and after CI; attribute/feature evaluation step
 -	_discretizationIntervals-"time-date"_ – file that stores discretization intervals of numerical attributes for calculating logical features
@@ -102,6 +102,7 @@ If you want to visualise explanations of instances from visFrom to visTo flag va
 
 ```java
     visualization=true; //visualization of explanations using IME method
+    justExplain=false;
     visFrom=1, visTo=10;    //visualize instances from visFrom to visTo
     drawLimit=20;       //we draw (max.) 20 the most important attributes (attribute importance visualisation)
     topHigh=10;         //visualize features with highest contributions (instace explanation visualisation)
