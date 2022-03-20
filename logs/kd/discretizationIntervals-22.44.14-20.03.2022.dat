@@ -1,0 +1,10 @@
+dataset: Breast Cancer Coimbra.arff
+Age='(37-inf)'
+BMI
+Glucose='(91.5-inf)'
+Insulin
+HOMA='(2.169984-inf)'
+Leptin
+Adiponectin
+Resistin
+MCP1

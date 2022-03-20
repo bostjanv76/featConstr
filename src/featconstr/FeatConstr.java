@@ -53,6 +53,7 @@ import org.ghost4j.renderer.SimpleRenderer;
 import org.paukov.combinatorics3.Generator;
 import com.github.rcaller.rstuff.RCaller;   //RCaller-3.0.2.jar ... for calling MDL for discrete and contionous features
 import com.github.rcaller.rstuff.RCode;
+import java.net.URL;
 import weka.attributeSelection.GainRatioAttributeEval;
 import weka.attributeSelection.InfoGainAttributeEval;
 import weka.classifiers.functions.MultilayerPerceptron;
@@ -79,6 +80,10 @@ import weka.filters.unsupervised.attribute.ReplaceMissingValues;
  */
 @SuppressWarnings({"rawtypes", "unchecked", "serial"})
 public class FeatConstr {
+    public static boolean justExplain=false;    //just explain datasets, construct features and evaluate them
+    public static boolean visualisation=true;  //visualisation of explanations using IME method
+    public static boolean exhaustive=true;     //try exhaustive search ... all combinations between attributes
+    public static boolean jakulin=true;        //try exhaustive search, calculate interaction information between all comb. of attributes; Jakulin, A. (2005). Machine learning based on attribute interactions [Doctoral dissertation, University of Ljubljana]. ePrints.FRI. https://bit.ly/3eiJ18x
     public static String datasetName;
     //public static int CLASS_IDX=-1;     // default = -1 (last attribute is class attribute) 
     public static int folds=10;          //for generating models, folds=1 means no CV and using split in ratio listed below
@@ -105,17 +110,13 @@ public class FeatConstr {
     public static double gamma=1;               //XGBoost parameter - gamma
     public static int pctErr=95;                //90, 95 or 99;
     public static double error=0.01;
-    public static boolean exhaustive=false;     //try exhaustive search ... all combinations between attributes
-    public static boolean jakulin=false;        //try exhaustive search, calculate interaction information between all comb. of attributes; Jakulin, A. (2005). Machine learning based on attribute interactions [Doctoral dissertation, University of Ljubljana]. ePrints.FRI. https://bit.ly/3eiJ18x
-    public static boolean justExplain=true;    //just explain datasets, construct features and evaluate them
     public static boolean writeConstruct=false; //true when we need dataset for creating II. level features 
     public static boolean firstLevelFeat=false; //true if we generate 1st level features, false if we generate 2nd level features
-    public static boolean visualization=true;  //visualization of explanations using IME method
     public static int visFrom=1, visTo=10;     //visualize instances from visFrom to visTo
     public static int drawLimit=20;    //we draw (max.) 20 the most important attributes
-    public static int topHigh=10;       //visualize features with highest contributions ... it's possible that is plotted more than topHigh features if e.g. 6th and 7th have the same importance ...
-    public static int numOfImpt=6;      //visualize 
-    public static int RESOLUTION=100;   // density for model visualization
+    public static int topHigh=6;       //visualise features with highest contributions ... it's possible that is plotted more than topHigh features if e.g. 6th and 7th have the same importance ...
+    public static int numOfImpt=6;      //visualise 
+    public static int RESOLUTION=100;   // density for model visualisation
     public static boolean pdfPng=true;          //besided eps, print also pdf and png
     public static boolean writeAccByFoldsInFile=false;  //we need this for statistical tests for dataset credit score
     public static boolean groupsByThrStat=false;        //print statistics about groups by thresholds    
@@ -206,7 +207,7 @@ public class FeatConstr {
     public static double numOfTermsByFoldsNum[];
     public static double numOfRatioByFoldsNum[];  
       
-    public static double numOfTermsByFoldsF[];      //number of term of cpnstructs in FURIA features    
+    public static double numOfTermsByFoldsF[];      //number of terms of constructs in FURIA features    
     public static double numOfRatioByFoldsF[];
     public static double complexityOfFuriaPS[][];
     
@@ -227,7 +228,7 @@ public class FeatConstr {
     public static int avgTermsPerFold[];
     public static Set unInfFeatures = new HashSet(); //for controlling informative features
         
-    public static PrintWriter logFile, impGroups/*, attrImpListRelief*/, attrImpListMDL, bestParamPerFold, samplesStat, discIntervals, accByFolds,groupsStat;
+    public static PrintWriter logFile, impGroups, impGroupsKD, attrImpListMDL_KD, discIntervalsKD, attrImpListMDL, bestParamPerFold, samplesStat, discIntervals, accByFolds,groupsStat;
     public enum OperationLog{EQU,AND,XOR,IMPL, OR};         //logical operators  - for composing new features
     public enum OperationRel{LESSTHAN,DIFF};                //relational operators - for composing new features
     public enum OperationNum{ADD,SUBTRACT,DIVIDE,ABSDIFF};  //numeric operators  - for composing new features
@@ -237,17 +238,45 @@ public class FeatConstr {
     public static String nThHigh;
     public static int processors;
     public static void main(String[] args) throws IOException, Exception {
+        if(!((justExplain==false && visualisation==false && exhaustive==false && jakulin==false) ||      //EFC
+             (justExplain==false && visualisation==false && exhaustive==true && jakulin==false) ||       //Exhaustive search
+             (justExplain==false && visualisation==false && exhaustive==true && jakulin==true) ||        //Jakulin's method
+             (justExplain==true  && visualisation==false) ||                                             //Knowledge discovery
+             (justExplain==false && visualisation==true))                                                //Visualisation
+                ){
+            System.out.println("\u001B[31mYou must set the correct values of the parameters from the following list of settings and run the program again!\u001B[0m");
+                      
+            System.out.println("\t1) \u001B[34mEFC\033[0m \t\t\t\t\t(justExplain=false, visualisation=false, exhaustive=false, jakulin=false)");
+            System.out.println("\t2) \u001B[34mFC based on exhaustive search\033[0m \t(justExplain=false, visualisation=false, exhaustive=true, jakulin=false)");
+            System.out.println("\t3) \u001B[34mFC based on interaction information\033[0m \t(justExplain=false, visualisation=false, exhaustive=true, jakulin=true)");
+            System.out.println("\t4) \u001B[34mKnowledge discovery\033[0m \t\t\t(justExplain=true, visualisation=false)");
+            System.out.println("\t5) \u001B[34mVisualisation\033[0m \t\t\t(justExplain=false, visualisation=true)");
+            
+            URL myURL = new URL("https://github.com/bostjanv76/featConstr");
+            System.out.println("For more instructions, please see "+myURL); 
+            System.exit(0);        
+        }
+        
+        
         String lg = new SimpleDateFormat("HH.mm.ss-dd.MM.yyyy").format(new Date());
-        if(!justExplain){
+        if(!justExplain && !visualisation){
             logFile= new PrintWriter(new FileWriter("logs/report-"+lg+".log"));
             bestParamPerFold= new PrintWriter(new FileWriter("logs/params-"+lg+".dat"));
         }
         if(!treeSHAP)
             samplesStat= new PrintWriter(new FileWriter("logs/samplesStat-"+lg+".dat"));
 
-        impGroups= new PrintWriter(new FileWriter("logs/impGroups-"+lg+".log"));
-        attrImpListMDL= new PrintWriter(new FileWriter("logs/attrImpListMDL-"+lg+".dat"));
-        discIntervals= new PrintWriter(new FileWriter("logs/discretizationIntervals-"+lg+".dat"));
+        if(justExplain && !visualisation){
+            impGroupsKD = new PrintWriter(new FileWriter("logs/kd/impGroups-"+lg+".log"));
+            attrImpListMDL_KD = new PrintWriter(new FileWriter("logs/kd/attrImpListMDL-"+lg+".dat"));        
+            discIntervalsKD = new PrintWriter(new FileWriter("logs/kd/discretizationIntervals-"+lg+".dat"));
+        }
+        else if(!visualisation){            
+            impGroups = new PrintWriter(new FileWriter("logs/impGroups-"+lg+".log"));
+            attrImpListMDL = new PrintWriter(new FileWriter("logs/attrImpListMDL-"+lg+".dat"));
+            discIntervals = new PrintWriter(new FileWriter("logs/discretizationIntervals-"+lg+".dat"));
+        }
+        
         
         if(groupsByThrStat)
             groupsStat = new PrintWriter(new FileWriter("logs/groupsStat-"+lg+".csv",true));
@@ -282,16 +311,22 @@ public class FeatConstr {
                 tTotal.start();
                 fileName=file.getName();
                 System.out.println("dataset: "+fileName);
-                if(!justExplain){
+                if(justExplain && !visualisation){
+                    impGroupsKD.println("dataset: "+fileName);
+                    attrImpListMDL_KD.println("dataset: "+fileName); 
+                    discIntervalsKD.println("dataset: "+fileName);
+                }      
+                else if(!visualisation){ 
                     logFile.println("dataset: "+fileName);
                     bestParamPerFold.println("dataset: "+fileName);
                     if(!treeSHAP)
                         samplesStat.println("dataset: "+fileName);
-                }      
-                impGroups.println("dataset: "+fileName);
-                attrImpListMDL.println("dataset: "+fileName); 
-                discIntervals.println("dataset: "+fileName);
-
+                
+                    impGroups.println("dataset: "+fileName);
+                    attrImpListMDL.println("dataset: "+fileName); 
+                    discIntervals.println("dataset: "+fileName);                
+                }
+                
                 if(groupsByThrStat)
                     groupsStat.println("dataset: "+fileName);
 
@@ -328,12 +363,16 @@ public class FeatConstr {
 
                 if(justExplain){
                     numberOfUnImpFeatByFolds=new double[8][folds]; 
-                    attrImpListMDL.println("MDL - before CI");
-                        mdlCORElearn(data);
 
                     ReplaceMissingValues rwm=new ReplaceMissingValues();
                     rwm.setInputFormat(data);
                     data=Filter.useFilter(data, rwm);
+
+                    //attrImpListMDL.println("MDL - before CI");
+                    attrImpListMDL_KD.println("MDL - before CI");
+                        mdlCORElearn(data);
+
+
                     Instances dataWithNewFeat=justExplainAndConstructFeat(data, rf,true);
                     Instances origNewfeat=null;
                     if(firstLevelFeat){
@@ -342,7 +381,7 @@ public class FeatConstr {
                         int iName=1;
                         String tmpAttrName;
                         int oldNumAttr=data.numAttributes()-1;
-                        PrintWriter attNames= new PrintWriter(new FileWriter("logs/attNames2nd-level-feat.dat"));
+                        PrintWriter attNames= new PrintWriter(new FileWriter("logs/kd/attNames2nd-level-feat.dat"));
                         attNames.println("NEW \t OLD");
                         for(int i=oldNumAttr;i<dataWithNewFeat.numAttributes()-1;i++){
                             tmpAttrName="F"+iName;
@@ -354,19 +393,21 @@ public class FeatConstr {
                     }
 
                     if(writeConstruct){
-                        DataSink.write("logs/"+fileName.substring(0, fileName.indexOf('.'))+"-PlusFeat.arff", dataWithNewFeat);
+                        DataSink.write("logs/kd/"+fileName.substring(0, fileName.indexOf('.'))+"-PlusFeat.arff", dataWithNewFeat);
                         if(firstLevelFeat)
-                            DataSink.write("logs/"+fileName.substring(0, fileName.indexOf('.'))+"-OrigPlusFeat.arff", origNewfeat);
+                            DataSink.write("logs/kd/"+fileName.substring(0, fileName.indexOf('.'))+"-OrigPlusFeat.arff", origNewfeat);
                         System.out.println("New dataset have been saved.");
                     }
                     continue loopJustForExplanation;
                 }
 
+                if(!visualisation){
                     System.out.println("Number of folds for testing (CV): "+folds);
                         logFile.println("Number of folds for testing (CV): "+folds);
                     System.out.println("*********************************************************************************");
                         logFile.println("*********************************************************************************");
-
+                }
+                
                 if(data.classAttribute().isNumeric())
                     isClassification=false;
 
@@ -455,13 +496,14 @@ public class FeatConstr {
                 sumOfConstrNumAll=new double[folds];
                 sumOfConstrRelAll=new double[folds];
 
-                System.out.println("number of instances: "+data.numInstances());
-                    logFile.println("number of instances: "+data.numInstances());
-                System.out.println("number of attributes: "+(data.numAttributes()-1));
-                    logFile.println("number of attributes: "+(data.numAttributes()-1));
-                System.out.println("number of classes: "+(data.numClasses()));
-                    logFile.println("number of classes: "+(data.numClasses()));
-
+                if(!visualisation){
+                    System.out.println("number of instances: "+data.numInstances());
+                        logFile.println("number of instances: "+data.numInstances());
+                    System.out.println("number of attributes: "+(data.numAttributes()-1));
+                        logFile.println("number of attributes: "+(data.numAttributes()-1));
+                    System.out.println("number of classes: "+(data.numClasses()));
+                        logFile.println("number of classes: "+(data.numClasses()));
+                }
                 data.setClassIndex(data.numAttributes()-1);
 
                 //HEURISTICS OF CLASS SELECTION FOR EXPLANATION
@@ -475,12 +517,12 @@ public class FeatConstr {
                     }
                 }
 
-                //int numOfImpt=6;  //for visualization; format A4, 6 attr. or less  
+                //int numOfImpt=6;  //for visualisation; format A4, 6 attr. or less  
                 Classifier predictionModel;
-
-                System.out.println("---------------------------------------------------------------------------------");
-                    logFile.println("---------------------------------------------------------------------------------"); 
-
+                if(!visualisation){
+                    System.out.println("---------------------------------------------------------------------------------");
+                        logFile.println("---------------------------------------------------------------------------------"); 
+                }
 
                 if (data.classAttribute().isNumeric()){ 
                     predictionModel=rf;            
@@ -498,10 +540,10 @@ public class FeatConstr {
                 if(isClassification && folds>1)
                     randData.stratify(folds); //for imbalanced datasets before splitting the dataset into train and test set - same as WEKA GUI
 
-                /******************* VISUALIZATION *********************************/
-                if(visualization){        
+                /******************* VISUALISATION *********************************/
+                if(visualisation){        
                     System.out.println("Drawing ...");
-                    visualizeModelInstances(rf, data,file, true, RESOLUTION, numOfImpt, visFrom, visTo);  //visualize explanations from e.g., 50th to 60 instance
+                    visualizeModelInstances(rf, data, file, true, RESOLUTION, numOfImpt, visFrom, visTo);  //visualise explanations from e.g., 50th to 60 instance
                     System.out.println("Drawing is finished!");
                     System.exit(0);
                 }     
@@ -549,8 +591,7 @@ public class FeatConstr {
              
                     ModelAndAcc ma; 
                     Classifier model;
-                    if(!jakulin){ 
-                    if(!exhaustive){
+                    
                         for (int m=0;m<clsTab.length;m++){            
                             model=clsTab[m];
                             t1=new Timer();
@@ -576,8 +617,9 @@ public class FeatConstr {
                                 numOfTerms[f]=sumOfTermsInConstrInRule(fu.getRuleset(),data);
                                 numConstructsPerRule[f]=numOfRules[f]==0 ? 0 : (numOfTerms[f]/numOfRules[f]);
                             }
-                        }  
-
+                        } 
+                         
+                    if(!exhaustive){
                         double allExplanations[][]=null;
                         double allWeights[][]=null;
                         float allExplanationsSHAP[][];
@@ -1027,7 +1069,6 @@ public class FeatConstr {
                         logFile.println("We didn't find any concepts in fold "+(f+1)+" above threshold max(NOISE,minNoise) groups, NOISE="+NOISE+"% -> "+(int)Math.ceil(numInst*NOISE/100.0)+ ", minNoise="+minN+" we remove groups of size "+Math.max((int)Math.ceil(numInst*NOISE/100.0),minN));   
                         continue; //we skip constructive induction if we don't find any concepts
                     }
-                }
                 
                     Instances trainFold= new Instances(data);   //for logical and All features
                     Instances testFold=new Instances(test);     //for logical and All features
@@ -1054,7 +1095,7 @@ public class FeatConstr {
                         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd. MM. yyyy HH:mm:ss");  
                         LocalDateTime now = LocalDateTime.now();  
                         System.out.println("Starting FC (exhaustive search, All features method): "+dtf.format(now)+" fold: "+(f+1)); 
-                        logFile.println("Starting FC (exhaustive search, All features method): "+dtf.format(now)+" fold: "+(f+1));
+                            logFile.println("Starting FC (exhaustive search, All features method): "+dtf.format(now)+" fold: "+(f+1));
                     }
 
             /**************** INTERACTION INFORMATION BY JAKULIN ******************/                  
@@ -1652,18 +1693,20 @@ public class FeatConstr {
                 }
 
                 /****************************************************************/
-                if(!jakulin){  
-                    System.out.println("---------------------------------------------------------------------------------");
-                        logFile.println("---------------------------------------------------------------------------------");      
-
-                    System.out.println("Avg. explanation time: "+df.format(mean(exlpTime))+" [ms] (stdev "+ df.format(Math.sqrt(var(exlpTime,mean(exlpTime))))+")");  
-                        logFile.println("Avg. explanation time: "+df.format(mean(exlpTime))+" [ms] (stdev "+ df.format(Math.sqrt(var(exlpTime,mean(exlpTime))))+")");
-                    System.out.println("Avg. number of instances that we explain: "+df.format(mean(numOfExplainedInst))+" (stdev "+df.format(Math.sqrt(var(numOfExplainedInst,mean(numOfExplainedInst))))+")");
-                        logFile.println("Avg. number of instances that we explain: "+df.format(mean(numOfExplainedInst))+" (stdev "+df.format(Math.sqrt(var(numOfExplainedInst,mean(numOfExplainedInst))))+")");
+                if(!jakulin){
+                    if(!exhaustive){
+                        System.out.println("---------------------------------------------------------------------------------");
+                            logFile.println("---------------------------------------------------------------------------------");      
+                    
+                        System.out.println("Avg. explanation time: "+df.format(mean(exlpTime))+" [ms] (stdev "+ df.format(Math.sqrt(var(exlpTime,mean(exlpTime))))+")");  
+                            logFile.println("Avg. explanation time: "+df.format(mean(exlpTime))+" [ms] (stdev "+ df.format(Math.sqrt(var(exlpTime,mean(exlpTime))))+")");
+                        System.out.println("Avg. number of instances that we explain: "+df.format(mean(numOfExplainedInst))+" (stdev "+df.format(Math.sqrt(var(numOfExplainedInst,mean(numOfExplainedInst))))+")");
+                            logFile.println("Avg. number of instances that we explain: "+df.format(mean(numOfExplainedInst))+" (stdev "+df.format(Math.sqrt(var(numOfExplainedInst,mean(numOfExplainedInst))))+")");
+                    }
 
                     System.out.println("---------------------------------------------------------------------------------");
                         logFile.println("---------------------------------------------------------------------------------"); 
-
+                    if(!exhaustive){
                     if(treeSHAP){
                         System.out.println("Internal (during building) accuracy of explanation model: "+df.format(mean(accExplAlgInt))+" (stdev "+df.format(Math.sqrt(var(accExplAlgInt,mean(accExplAlgInt))))+") ACC on the test dataset: "+df.format(mean(accExplAlgTest))+" (stdev "+df.format(Math.sqrt(var(accExplAlgTest,mean(accExplAlgTest))))+")");
                             logFile.println("Internal (during building) accuracy of explanation model: "+df.format(mean(accExplAlgInt))+" (stdev "+df.format(Math.sqrt(var(accExplAlgInt,mean(accExplAlgInt))))+") ACC on the test dataset: "+df.format(mean(accExplAlgTest))+" (stdev "+df.format(Math.sqrt(var(accExplAlgTest,mean(accExplAlgTest))))+")"); 
@@ -1673,12 +1716,16 @@ public class FeatConstr {
                             logFile.println("ACC on the test dataset: "+df.format(mean(accExplAlgTest))+" stdev "+df.format(Math.sqrt(var(accExplAlgTest,mean(accExplAlgTest))))+(excludeUppers(predictionModel.getClass().getSimpleName()).equals("RF")?" ACC RF OOB: "+df.format(mean(oobRF))+" stdev "+df.format(Math.sqrt(var(oobRF,mean(oobRF)))):""));
 
                     }
+                    }
+                    
+                    if(!exhaustive){
                     System.out.println("---------------------------------------------------------------------------------");
                         logFile.println("---------------------------------------------------------------------------------");
-
-                    System.out.println("Avg. model building time: "+df.format(mean(modelBuildTime))+" [ms] (stdev "+ df.format(Math.sqrt(var(modelBuildTime,mean(modelBuildTime))))+")");
-                        logFile.println("Avg. model building time: "+df.format(mean(modelBuildTime))+" [ms] (stdev "+ df.format(Math.sqrt(var(modelBuildTime,mean(modelBuildTime))))+")");
-
+                          
+                        System.out.println("Avg. model building time: "+df.format(mean(modelBuildTime))+" [ms] (stdev "+ df.format(Math.sqrt(var(modelBuildTime,mean(modelBuildTime))))+")");
+                            logFile.println("Avg. model building time: "+df.format(mean(modelBuildTime))+" [ms] (stdev "+ df.format(Math.sqrt(var(modelBuildTime,mean(modelBuildTime))))+")");
+                    }
+                    
                     System.out.println("*********************************************************************************");
                         logFile.println("*********************************************************************************");      
                     System.out.println("Original dataset");
@@ -1990,19 +2037,25 @@ public class FeatConstr {
                 }
             }
         }
-        if(!justExplain){
+        
+        if(justExplain){
+            impGroupsKD.close();
+            attrImpListMDL_KD.close();     
+            discIntervalsKD.close();              
+        }
+        else{
             logFile.close();
             bestParamPerFold.close();
             if(!treeSHAP)
                 samplesStat.close();
+            
+            impGroups.close();
+            attrImpListMDL.close();     
+            discIntervals.close();  
         }
-
         if(groupsByThrStat)
             groupsStat.close();
 
-        impGroups.close();
-        attrImpListMDL.close();     
-        discIntervals.close();  
     }
 
     //for constructing TRAIN dataset of depth N
@@ -3345,6 +3398,9 @@ public class FeatConstr {
         Comparator<Map.Entry<String, Double>> comparator2 = Comparator.comparing(Map.Entry::getValue);
         Collections.sort(listMDL, comparator2.reversed()); //if we want reversed order ... descending order
         for(Map.Entry<String, Double> me : listMDL)
+            if(justExplain)
+                attrImpListMDL_KD.printf(" %4.4f %s\n",me.getValue(), me.getKey());
+            else
                 attrImpListMDL.printf(" %4.4f %s\n",me.getValue(), me.getKey());
 
         rCaller.stopRCallerOnline();
@@ -3444,7 +3500,7 @@ public class FeatConstr {
         return out;
     }
 
-    //we take whole original daaset    
+    //we take whole original dataset    
     public static Instances justExplainAndConstructFeat(Instances dataset, Classifier predictionModel,boolean isClassification) throws Exception{
         System.out.println("Explaining dataset, making constructs ...");
         Instances trainFold = new Instances(dataset);   //we use all instances for train
@@ -3505,7 +3561,7 @@ public class FeatConstr {
                     continue;   //even this is possible, class has no instances e.g., class autos
                 
                 System.out.println("Explaining class: "+trainFold.classAttribute().value(classToExplain)+" explaining whole dataset: "+(explAllData?"YES":"NO"));   //classToExplain instead of i if we explain just one class
-                    impGroups.println("Explaining class: "+trainFold.classAttribute().value(classToExplain)+" explaining whole dataset: "+(explAllData?"YES":"NO"));
+                    impGroupsKD.println("Explaining class: "+trainFold.classAttribute().value(classToExplain)+" explaining whole dataset: "+(explAllData?"YES":"NO"));
                 
                 DMatrix trainMat = wekaInstancesToDMatrix(trainFold);
                 DMatrix explainMat = wekaInstancesToDMatrix(explainData);
@@ -3536,8 +3592,8 @@ public class FeatConstr {
                 //last param in evalSet has no sense, just index always returns evaluation of the last iteration ... because we put in booster (booster = XGBoost.train) last iteration?
                 String accTrain=booster.evalSet(trainMatArr, evalNameTrain,0); 
                 System.out.println("Internal (during building) accuracy of explanation model: "+(1-Double.parseDouble(accTrain.split(":")[1]))*100); //internal evaluation of the model
-                    impGroups.println("Internal (during building) accuracy of explanation model: "+(1-Double.parseDouble(accTrain.split(":")[1]))*100);
-                    impGroups.println("*********************************************************************************"); 
+                    impGroupsKD.println("Internal (during building) accuracy of explanation model: "+(1-Double.parseDouble(accTrain.split(":")[1]))*100);
+                    impGroupsKD.println("*********************************************************************************"); 
 
                 if(explAllData)
                     tmpContrib=booster.predictContrib(trainMat, 0);   //Tree SHAP ... for each feature, and last for bias matrix of size (?nsample, nfeats + 1) ... feature contributions (SHAP?  xgboost predict)
@@ -3571,15 +3627,15 @@ public class FeatConstr {
 
                 if(!fileName.contains("justForAccurateTime")){  //because of benchmarking ... java optimization etc.
                     System.out.println("We remove max(NOISE,minNoise) groups, NOISE="+NOISE+"% -> "+(int)Math.ceil(noiseThr)+ ", minNoise="+minN+" we remove groups of size "+usedNoise+". Tree SHAP num of expl. inst. "+(explAllData ? trainFold.numInstances() : numInst));
-                        impGroups.println("We remove max(NOISE,minNoise) groups, NOISE="+NOISE+"% -> "+(int)Math.ceil(noiseThr)+ ", minNoise="+minN+" we remove groups of size "+usedNoise+". Tree SHAP num of expl. inst. "+(explAllData ? trainFold.numInstances() : numInst));
-                        impGroups.println("Lower threshold thrL: "+thrL+" upper threshold thrU: "+thrU+" with step: "+step);
+                        impGroupsKD.println("We remove max(NOISE,minNoise) groups, NOISE="+NOISE+"% -> "+(int)Math.ceil(noiseThr)+ ", minNoise="+minN+" we remove groups of size "+usedNoise+". Tree SHAP num of expl. inst. "+(explAllData ? trainFold.numInstances() : numInst));
+                        impGroupsKD.println("Lower threshold thrL: "+thrL+" upper threshold thrU: "+thrU+" with step: "+step);
             }    
                 
                 for(double q=thrL;q<=thrU;q=q+step){
                     if(!fileName.contains("justForAccurateTime")){  //because of benchmarking ... java optimization etc.
-                        impGroups.println("--------------"); 
-                        impGroups.printf("Threshold: %2.2f\n",round(q,1));
-                        impGroups.println("--------------"); 
+                        impGroupsKD.println("--------------"); 
+                        impGroupsKD.printf("Threshold: %2.2f\n",round(q,1));
+                        impGroupsKD.println("--------------"); 
                     }
 
                     allWeightsSHAP=setWeights(trainFold,allExplanationsSHAP,round(q,1));
@@ -3593,7 +3649,7 @@ public class FeatConstr {
             if(excludeUppers(predictionModel.getClass().getSimpleName()).equals("RF")){ //OOB ia also calculated
                 rf=(RandomForest)predictionModel;
                 System.out.print("Internal evaluation of the model (OOB): "+(1-rf.measureOutOfBagError())*100);
-                    impGroups.print("Internal evaluation of the model (OOB): "+(1-rf.measureOutOfBagError())*100);
+                    impGroupsKD.print("Internal evaluation of the model (OOB): "+(1-rf.measureOutOfBagError())*100);
             }
             /*IME*/            
             for(int i=0;i<numClasses;i++){//we explain all classes    
@@ -3611,17 +3667,17 @@ public class FeatConstr {
                 explainData = Filter.useFilter(explainData, filter);
                 
                 System.out.println("IME (explanation), "+method.name()+", "+(method.name().equals("adaptiveSampling") ? "min samples: "+minS+", sum of samples: "+sumOfSmp : method.name().equals("diffSampling")?" min samples: "+minS:" N_SAMPLES: "+N_SAMPLES)+" - alg. for searching concepts: "+predictionModel.getClass().getSimpleName());
-                     impGroups.println("IME (explanation), "+method.name()+", "+(method.name().equals("adaptiveSampling") ? "min samples: "+minS+", sum of samples: "+sumOfSmp : method.name().equals("diffSampling")?" min samples: "+minS:" N_SAMPLES: "+N_SAMPLES)+" - alg. for searching concepts: "+predictionModel.getClass().getSimpleName()); 
+                     impGroupsKD.println("IME (explanation), "+method.name()+", "+(method.name().equals("adaptiveSampling") ? "min samples: "+minS+", sum of samples: "+sumOfSmp : method.name().equals("diffSampling")?" min samples: "+minS:" N_SAMPLES: "+N_SAMPLES)+" - alg. for searching concepts: "+predictionModel.getClass().getSimpleName()); 
                 System.out.println("Explaining class: "+trainFold.classAttribute().value(classToExplain)+", explaining whole dataset: "+(explAllData?"YES":"NO"));    //classToExplain instead of i if we explain just one class
-                    impGroups.println("Explaining class: "+trainFold.classAttribute().value(classToExplain)+", explaining all dataset: "+(explAllData?"YES":"NO"));
+                    impGroupsKD.println("Explaining class: "+trainFold.classAttribute().value(classToExplain)+", explaining all dataset: "+(explAllData?"YES":"NO"));
                 System.out.println("---------------------------------------------------------------------------------");
-                    impGroups.println("---------------------------------------------------------------------------------");
+                    impGroupsKD.println("---------------------------------------------------------------------------------");
                 switch (method){
                     case aproxErrSampling:
                                     System.out.println("Sampling based on mi=(<1-alpha, e>), pctErr = "+pctErr+" error = "+error+".");
-                                        impGroups.println("Sampling based on mi=(<1-alpha, e>), pctErr = "+pctErr+" error = "+error+".");
+                                        impGroupsKD.println("Sampling based on mi=(<1-alpha, e>), pctErr = "+pctErr+" error = "+error+".");
                                     System.out.println("---------------------------------------------------------------------------------");
-                                        impGroups.println("---------------------------------------------------------------------------------");
+                                        impGroupsKD.println("---------------------------------------------------------------------------------");
                     break;
                 }                
                                
@@ -3632,7 +3688,7 @@ public class FeatConstr {
                 if(!explAllData){
                     if(numInst>maxToExplain){
                         System.out.println("We take only "+maxToExplain+" instances out of "+numInst+".");
-                            impGroups.println("We take only "+maxToExplain+" instances out of "+numInst+".");
+                            impGroupsKD.println("We take only "+maxToExplain+" instances out of "+numInst+".");
 
                         explainData.randomize(rnd);
                         explainData = new Instances(explainData, 0, maxToExplain);
@@ -3678,13 +3734,13 @@ public class FeatConstr {
                 int usedNoise=Math.max((int)Math.ceil(noiseThr),minN);  //makes sense only if NOISE=0 or num of explained instances is very low
 
                 System.out.println("We remove max(NOISE,minNoise) groups, NOISE="+NOISE+"% -> "+(int)Math.ceil(noiseThr)+ ", minNoise="+minN+" we remove groups of size "+usedNoise+". Number of instances from class ("+explainData.classAttribute().value(classToExplain)+") is "+numInst);
-                    impGroups.println("We remove max(NOISE,minNoise) groups, NOISE="+NOISE+"% -> "+(int)Math.ceil(noiseThr)+ ", minNoise="+minN+" we remove groups of size "+usedNoise+". Number of instances from class ("+explainData.classAttribute().value(classToExplain)+") is "+numInst);
-                    impGroups.println("Lower threshold thrL: "+thrL+" upper threshold thrU: "+thrU+" with step: "+step);
+                    impGroupsKD.println("We remove max(NOISE,minNoise) groups, NOISE="+NOISE+"% -> "+(int)Math.ceil(noiseThr)+ ", minNoise="+minN+" we remove groups of size "+usedNoise+". Number of instances from class ("+explainData.classAttribute().value(classToExplain)+") is "+numInst);
+                    impGroupsKD.println("Lower threshold thrL: "+thrL+" upper threshold thrU: "+thrU+" with step: "+step);
                 
                 for(double q=thrL;q<=thrU;q=q+step){
-                    impGroups.println("--------------"); 
-                    impGroups.printf("Threshold: %2.2f\n",round(q,1));
-                    impGroups.println("--------------"); 
+                    impGroupsKD.println("--------------"); 
+                    impGroupsKD.printf("Threshold: %2.2f\n",round(q,1));
+                    impGroupsKD.println("--------------"); 
 
                     allWeights=setWeights(trainFold,allExplanations,round(q,1));
                     impInter=(getMostFqSubsets(allWeights,trainFold,usedNoise));
@@ -3693,10 +3749,10 @@ public class FeatConstr {
             } //explain both (all) classes IME
         }
         listOfConcepts = new ArrayList<>(attrGroups);
-            impGroups.println("*********************************************************************************"); 
-            impGroups.println("All potential concepts, based on thresholds.");
-            impGroups.print("\t"); printFqAttrOneRow(listOfConcepts,trainFold);
-            impGroups.println("\n*********************************************************************************");
+            impGroupsKD.println("*********************************************************************************"); 
+            impGroupsKD.println("All potential concepts, based on thresholds.");
+            impGroupsKD.print("\t"); printFqAttrOneRow(listOfConcepts,trainFold);
+            impGroupsKD.println("\n*********************************************************************************");
         
         //logical features
         //depth 2
@@ -3754,7 +3810,7 @@ public class FeatConstr {
         }
         
         trainFold=addCartFeat(trainFold, dataset,allCombSecOrd,false,0,N2,true);
-        attrImpListMDL.println("MDL - after CI");
+        attrImpListMDL_KD.println("MDL - after CI");
         mdlCORElearn(trainFold);
         System.out.println("Constructs have been done!");
     
@@ -4522,7 +4578,10 @@ public class FeatConstr {
         nominalToBinary.setInputFormat(newData); 
         newData = Filter.useFilter(newData, nominalToBinary);
         for (int i=0;i<newData.numAttributes()-1;i++)
-            discIntervals.println(newData.attribute(i).name());
+            if(justExplain)
+                discIntervalsKD.println(newData.attribute(i).name());
+            else
+                discIntervals.println(newData.attribute(i).name());
         } 
         catch (Exception e) {
             e.printStackTrace();
@@ -4811,7 +4870,7 @@ public class FeatConstr {
                 }
 
                 //for numerical attribute, we calculate contributions of the value between the min and max value 
-                //distributions are evenly distributed, the number depends on the resolution we want for visualization
+                //distributions are evenly distributed, the number depends on the resolution we want for visualisation
                 if (tempAttr.isNumeric()){ 
                     for (int j = 0; j < RESOLUTION; j++){		
                         double tempValue = minMaxForNumericAttributes[i][0] + j * ((minMaxForNumericAttributes[i][1] - minMaxForNumericAttributes[i][0]) / (double)RESOLUTION);                
@@ -4834,7 +4893,7 @@ public class FeatConstr {
             Collections.sort(list, comparator.reversed()); //if we want reversed order ... descending order
             for(Map.Entry<String, Double> me : list){ 
                 System.out.printf(" %4.4f %s\n",me.getValue(), me.getKey()); 
-                    logFile.printf(" %4.4f %s\n",me.getValue(), me.getKey());
+//                    logFile.printf(" %4.4f %s\n",me.getValue(), me.getKey());
             }
 
             //get attribute importance
@@ -4863,14 +4922,14 @@ public class FeatConstr {
     public static void visualizeModelInstances(Classifier predictionModel, Instances data, File file, boolean isClassification, int RESOLUTION, int numOfImpt, int fromInst, int toInst) throws Exception{    
         predictionModel.buildClassifier(data);
         System.out.println("Attribute importance using explanation method IME: "+predictionModel.getClass().getSimpleName());
-            logFile.println("Attribute importance using explanation method IME:: "+predictionModel.getClass().getSimpleName()); 
+        //    logFile.println("Attribute importance using explanation method IME:: "+predictionModel.getClass().getSimpleName()); 
 
         datasetName =file.getName().substring(0, file.getName().lastIndexOf("."));
-	String outputDir = "visualization/eps/";
+	String outputDir = "visualisation/eps/";
         String modelName=predictionModel.getClass().getSimpleName();        
         String classValueName=(new Instances(data,0,1)).instance(0).classAttribute().value(classToExplain);  // get class name of the explained class
         
-        //visualize model        
+        //visualise model        
         String fName, format;  
         
         format=".eps";  
@@ -4883,7 +4942,7 @@ public class FeatConstr {
         setDotsAndLine(predictionModel, data,N_SAMPLES,isClassification,RESOLUTION, minMaxNumAttr(data),numOfImpt); //sets also parameter nThHigh ... indexes for attributes with high importance
 
         //draw only numOfImpt or less most informative attributes in the model
-        /*Model visualization*/
+        /*Model visualisation*/
         if(data.numAttributes()-1 > numOfImpt){
             Remove remove= new Remove();
             Instances dataCp=new Instances(data);
@@ -4921,15 +4980,15 @@ public class FeatConstr {
         
         Visualize.attrImportanceVisualizationSorted(outputDir +fName+"attrImp"+format, modelName, datasetName, data, drawLimit, dotsB,isClassification,RESOLUTION,"AA");
         
-        /*Instance visualization*/
+        /*Instance visualisation*/
         //pdf, png -> model
         if(pdfPng){
-            covertToPdfAndPng(fName,format, "visualization/eps/","visualization/pdf/","visualization/png/");
-            covertToPdfAndPng(fName+"attrImp",format, "visualization/eps/","visualization/pdf/","visualization/png/"); //plot attribute importance
+            covertToPdfAndPng(fName,format, "visualisation/eps/","visualisation/pdf/","visualisation/png/");
+            covertToPdfAndPng(fName+"attrImp",format, "visualisation/eps/","visualisation/pdf/","visualisation/png/"); //plot attribute importance
         }  
 
         for(int i = fromInst; i <= toInst; i++){
-            outputDir = "visualization/eps/";
+            outputDir = "visualisation/eps/";
             double[] instanceExplanation = IME.explainInstance(predictionModel, data, new Instances(data,(i-1),1), N_SAMPLES, isClassification, classToExplain);	
             double pred = -1;   
 
@@ -4946,12 +5005,12 @@ public class FeatConstr {
         
             //pdf, png -> instance(s)
             if(pdfPng)
-                covertToPdfAndPng(fName, format,"visualization/eps/","visualization/pdf/","visualization/png/");
+                covertToPdfAndPng(fName, format,"visualisation/eps/","visualisation/pdf/","visualisation/png/");
         } 
     }
     
     public static void covertToPdfAndPng(String fName, String inFormat,String inDirEps, String outDirPdf, String outDirPng) throws Exception { 
-    //inDirEps = "visualization/eps/"; outDirPdf="visualization/pdf/"; outDirPng="visualization/png/"; 
+    //inDirEps = "visualisation/eps/"; outDirPdf="visualisation/pdf/"; outDirPng="visualisation/png/"; 
         FileOutputStream fos;
         PSDocument document;
         File f;
@@ -4968,7 +5027,7 @@ public class FeatConstr {
         document.load(f);
 
         //create OutputStream
-        outDirPdf="visualization/pdf/";
+        outDirPdf="visualisation/pdf/";
         format=".pdf";
         fos = new FileOutputStream(new File(outDirPdf+fName+format));
         //create converter
@@ -4986,7 +5045,7 @@ public class FeatConstr {
         renderer.setResolution(300);// set resolution (in DPI)
 
         // render
-        outDirPng="visualization/png/"; //does not override existing image ... delete image with the same name before run
+        outDirPng="visualisation/png/"; //does not override existing image ... delete image with the same name before run
         format=".png";
         images = renderer.render(documentNew);
         for (int j = 0; j < images.size(); j++) {
@@ -5169,8 +5228,14 @@ public class FeatConstr {
         for(String el: ar1){
             tmp=el.split(",");
             for(int i=0;i<tmp.length;i++)
-                impGroups.print(data.attribute(Integer.parseInt(tmp[i])).name()+" ");            
-            impGroups.print("~#~ ");
+                if(justExplain)
+                    impGroupsKD.print(data.attribute(Integer.parseInt(tmp[i])).name()+" ");            
+                else
+                    impGroups.print(data.attribute(Integer.parseInt(tmp[i])).name()+" ");            
+            if(justExplain)
+                impGroupsKD.print("~#~ ");
+            else
+                impGroups.print("~#~ ");
 	}
     } 
     
@@ -5216,17 +5281,34 @@ public class FeatConstr {
             while (tmpIterator1.hasNext()){
                 str = tmpIterator1.next();
                 tmp1=str.split(",");
-                    impGroups.print("\t");          
+                if(justExplain)
+                    impGroupsKD.print("\t");
+                else
+                    impGroups.print("\t");
                 for(int i=0;i<tmp1.length;i++){
-                    if(Integer.parseInt(tmp1[i])<0 || tmp1[i].equals("-0"))
-                        impGroups.print("neg"+data.attribute(Integer.parseInt(tmp1[i])*(-1)).name());                    
-                    else if(i==tmp1.length-1)
-                        impGroups.print(data.attribute(Integer.parseInt(tmp1[i])).name());
-                    
-                    else
-                        impGroups.print(data.attribute(Integer.parseInt(tmp1[i])).name()+" | ");
+                    if(Integer.parseInt(tmp1[i])<0 || tmp1[i].equals("-0")){
+                        if(justExplain)
+                            impGroupsKD.print("neg"+data.attribute(Integer.parseInt(tmp1[i])*(-1)).name());
+                        else
+                            impGroups.print("neg"+data.attribute(Integer.parseInt(tmp1[i])*(-1)).name());
+                    }
+                    else if(i==tmp1.length-1){
+                        if(justExplain)
+                            impGroupsKD.print(data.attribute(Integer.parseInt(tmp1[i])).name());
+                        else
+                            impGroups.print(data.attribute(Integer.parseInt(tmp1[i])).name());
+                    }
+                    else{
+                        if(justExplain)
+                            impGroupsKD.print(data.attribute(Integer.parseInt(tmp1[i])).name()+" | ");
+                        else
+                            impGroups.print(data.attribute(Integer.parseInt(tmp1[i])).name()+" | ");
+                    }
                 }
-                impGroups.println(": " + frequencyMap.get(str));
+                if(justExplain)
+                    impGroupsKD.println(": " + frequencyMap.get(str));
+                else
+                    impGroups.println(": " + frequencyMap.get(str));
             }
     }    
 }

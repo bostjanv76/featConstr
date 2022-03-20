@@ -1,0 +1,52 @@
+dataset: Breast Cancer Coimbra.arff
+*********************************** Fold 1 - list of combinations in DESC order ***********************************
+Glucose - MCP1
+Glucose - Adiponectin
+Glucose - Leptin
+Glucose - Insulin
+*********************************** Fold 2 - list of combinations in DESC order ***********************************
+BMI - Glucose
+Age - Glucose
+Resistin - MCP1
+Adiponectin - MCP1
+*********************************** Fold 3 - list of combinations in DESC order ***********************************
+Glucose - Resistin
+Age - Resistin
+Age - Insulin
+Resistin - MCP1
+*********************************** Fold 4 - list of combinations in DESC order ***********************************
+BMI - Glucose
+Resistin - MCP1
+Adiponectin - MCP1
+Adiponectin - Resistin
+*********************************** Fold 5 - list of combinations in DESC order ***********************************
+Glucose - MCP1
+Glucose - Resistin
+Glucose - Adiponectin
+Glucose - Leptin
+*********************************** Fold 6 - list of combinations in DESC order ***********************************
+Glucose - MCP1
+Glucose - Resistin
+Glucose - Adiponectin
+Glucose - Leptin
+*********************************** Fold 7 - list of combinations in DESC order ***********************************
+Resistin - MCP1
+Adiponectin - MCP1
+Adiponectin - Resistin
+Leptin - MCP1
+*********************************** Fold 8 - list of combinations in DESC order ***********************************
+Resistin - MCP1
+Adiponectin - MCP1
+Adiponectin - Resistin
+Leptin - MCP1
+*********************************** Fold 9 - list of combinations in DESC order ***********************************
+Resistin - MCP1
+Adiponectin - MCP1
+Adiponectin - Resistin
+Leptin - MCP1
+*********************************** Fold 10 - list of combinations in DESC order ***********************************
+Resistin - MCP1
+Adiponectin - MCP1
+Adiponectin - Resistin
+Leptin - MCP1
+---------------------------------------------------------------------------------

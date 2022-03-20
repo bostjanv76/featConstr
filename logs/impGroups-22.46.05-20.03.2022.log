@@ -1,0 +1,865 @@
+dataset: Breast Cancer Coimbra.arff
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 1, minNoise=1 we remove groups of size 1. Tree SHAP num of expl. inst. 46 (fold 1).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  1
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	Glucose: 25
+	BMI: 11
+	Age: 8
+	Leptin: 2
+--------------
+Threshold: 0,20
+--------------
+	Glucose: 25
+	BMI: 11
+	Age: 8
+	Leptin: 2
+--------------
+Threshold: 0,30
+--------------
+	Glucose: 24
+	BMI: 11
+	Age: 6
+	Age | Glucose: 2
+--------------
+Threshold: 0,40
+--------------
+	Glucose: 17
+	BMI: 8
+	Age | Glucose: 8
+	Age: 5
+	BMI | Glucose: 3
+	Age | Leptin: 2
+	Glucose | Resistin: 2
+--------------
+Threshold: 0,50
+--------------
+	Glucose | Resistin: 14
+	Age | Glucose: 7
+	BMI: 6
+	Glucose: 5
+	BMI | Glucose: 5
+	Age: 3
+	Age | Leptin: 2
+--------------
+Threshold: 0,60
+--------------
+	Glucose | Resistin: 15
+	BMI | Glucose: 9
+	Age | Glucose | Resistin: 5
+	Age | Glucose: 4
+	Age | Resistin: 3
+	BMI: 2
+	Glucose: 2
+--------------
+Threshold: 0,70
+--------------
+	Age | Glucose | Resistin: 10
+	Glucose | Resistin: 10
+	BMI | Glucose: 7
+	BMI | Glucose | Resistin: 4
+	Age | Resistin: 4
+	Age | Glucose | Leptin: 2
+	Age | Glucose | Leptin | Resistin: 2
+--------------
+Threshold: 0,80
+--------------
+	BMI | Glucose | Resistin: 7
+	Age | BMI | Glucose | Resistin: 6
+	Glucose | HOMA | Resistin: 6
+	Age | Glucose | Resistin: 6
+	Age | Glucose | Leptin | Resistin: 3
+	BMI | Glucose: 3
+	Age | BMI | Glucose: 2
+	Age | BMI | Resistin: 2
+	Age | Leptin | Resistin: 2
+	Glucose | Resistin: 2
+*********************************************************************************
+All potential concepts based on thresholds
+	Age Glucose ~#~ BMI Glucose ~#~ Age Leptin ~#~ Glucose Resistin ~#~ Age Glucose Resistin ~#~ Age Resistin ~#~ BMI Glucose Resistin ~#~ Age Glucose Leptin ~#~ Age Glucose Leptin Resistin ~#~ Age BMI Glucose Resistin ~#~ Glucose HOMA Resistin ~#~ Age BMI Glucose ~#~ Age BMI Resistin ~#~ Age Leptin Resistin ~#~ 
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 1, minNoise=1 we remove groups of size 1. Tree SHAP num of expl. inst. 46 (fold 2).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  2
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	Age: 15
+	Glucose: 14
+	BMI: 13
+	Resistin: 3
+--------------
+Threshold: 0,20
+--------------
+	Age: 15
+	Glucose: 14
+	BMI: 13
+	Resistin: 2
+--------------
+Threshold: 0,30
+--------------
+	Age: 13
+	Glucose: 13
+	BMI: 10
+	Age | Glucose: 3
+	Resistin: 2
+--------------
+Threshold: 0,40
+--------------
+	Age | Glucose: 10
+	Glucose | Resistin: 10
+	BMI: 6
+	BMI | Glucose: 6
+	Age: 4
+	Glucose: 2
+--------------
+Threshold: 0,50
+--------------
+	Glucose | Resistin: 12
+	Age | Glucose: 8
+	BMI | Glucose: 7
+	BMI | HOMA: 3
+	Age: 2
+	Age | Leptin: 2
+	Age | Resistin: 2
+--------------
+Threshold: 0,60
+--------------
+	Age | Glucose | Resistin: 9
+	Glucose | Resistin: 6
+	BMI | Glucose | Resistin: 5
+	Age | BMI | Glucose: 3
+	BMI | Glucose: 3
+	Age | Resistin: 3
+	Age | Glucose | HOMA: 2
+	Glucose | HOMA | Resistin: 2
+	BMI | Glucose | HOMA: 2
+--------------
+Threshold: 0,70
+--------------
+	Age | Glucose | Resistin: 11
+	BMI | Glucose | Resistin: 5
+	Age | HOMA | Resistin: 4
+	Glucose | HOMA | Resistin: 3
+	Age | Glucose | HOMA | Resistin: 3
+	BMI | Glucose | HOMA | Resistin: 3
+	Age | BMI | Glucose | Resistin: 2
+	Age | BMI | Glucose: 2
+	Age | BMI | Glucose | HOMA: 2
+	BMI | Glucose | HOMA: 2
+--------------
+Threshold: 0,80
+--------------
+	Age | Glucose | HOMA | Resistin: 12
+	BMI | Glucose | HOMA | Resistin: 7
+	Age | BMI | Glucose | Resistin: 5
+	Age | HOMA | Leptin | Resistin: 4
+	Age | BMI | HOMA | Adiponectin: 2
+	Age | BMI | Glucose | HOMA | Adiponectin: 2
+	Age | Glucose | HOMA | Leptin | Resistin: 2
+	Age | Glucose | Adiponectin | Resistin: 2
+*********************************************************************************
+All potential concepts based on thresholds
+	Age Glucose ~#~ Glucose Resistin ~#~ BMI Glucose ~#~ BMI HOMA ~#~ Age Leptin ~#~ Age Resistin ~#~ Age Glucose Resistin ~#~ BMI Glucose Resistin ~#~ Age BMI Glucose ~#~ Age Glucose HOMA ~#~ Glucose HOMA Resistin ~#~ BMI Glucose HOMA ~#~ Age HOMA Resistin ~#~ Age Glucose HOMA Resistin ~#~ BMI Glucose HOMA Resistin ~#~ Age BMI Glucose Resistin ~#~ Age BMI Glucose HOMA ~#~ Age HOMA Leptin Resistin ~#~ Age BMI HOMA Adiponectin ~#~ Age BMI Glucose HOMA Adiponectin ~#~ Age Glucose HOMA Leptin Resistin ~#~ Age Glucose Adiponectin Resistin ~#~ 
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 1, minNoise=1 we remove groups of size 1. Tree SHAP num of expl. inst. 47 (fold 3).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  3
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	Glucose: 22
+	BMI: 10
+	Age: 8
+	Resistin: 7
+--------------
+Threshold: 0,20
+--------------
+	Glucose: 22
+	BMI: 10
+	Age: 8
+	Resistin: 7
+--------------
+Threshold: 0,30
+--------------
+	Glucose: 21
+	BMI: 10
+	Age: 8
+	Resistin: 5
+--------------
+Threshold: 0,40
+--------------
+	Glucose: 11
+	Glucose | Resistin: 11
+	BMI: 8
+	Age: 5
+	BMI | Glucose: 4
+	Age | Resistin: 4
+	Age | Glucose: 2
+	BMI | Resistin: 2
+--------------
+Threshold: 0,50
+--------------
+	Glucose | Resistin: 21
+	BMI | Glucose: 7
+	Age | Resistin: 7
+	BMI: 4
+	Age: 2
+	Age | Glucose: 2
+	BMI | Resistin: 2
+--------------
+Threshold: 0,60
+--------------
+	Glucose | Resistin: 19
+	BMI | Glucose: 8
+	Age | Glucose | Resistin: 6
+	Age | Resistin: 6
+	BMI | Glucose | Resistin: 2
+	BMI | Resistin: 2
+--------------
+Threshold: 0,70
+--------------
+	Age | Glucose | Resistin: 14
+	Glucose | Resistin: 10
+	BMI | Glucose | Resistin: 5
+	BMI | Glucose: 5
+	Age | HOMA | Resistin: 3
+	Age | BMI | Glucose: 2
+	Age | Resistin: 2
+--------------
+Threshold: 0,80
+--------------
+	Age | Glucose | Resistin: 11
+	BMI | Glucose | Resistin: 10
+	Age | BMI | Glucose | Resistin: 5
+	Age | HOMA | Resistin: 5
+	Age | Glucose | HOMA | Resistin: 4
+	Age | BMI | Glucose: 2
+	BMI | HOMA | Resistin: 2
+	Glucose | HOMA | Resistin: 2
+	BMI | Glucose | HOMA | Resistin: 2
+*********************************************************************************
+All potential concepts based on thresholds
+	Glucose Resistin ~#~ BMI Glucose ~#~ Age Resistin ~#~ Age Glucose ~#~ BMI Resistin ~#~ Age Glucose Resistin ~#~ BMI Glucose Resistin ~#~ Age HOMA Resistin ~#~ Age BMI Glucose ~#~ Age BMI Glucose Resistin ~#~ Age Glucose HOMA Resistin ~#~ BMI HOMA Resistin ~#~ Glucose HOMA Resistin ~#~ BMI Glucose HOMA Resistin ~#~ 
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 1, minNoise=1 we remove groups of size 1. Tree SHAP num of expl. inst. 47 (fold 4).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  4
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	Age: 14
+	BMI: 14
+	Glucose: 13
+	Resistin: 4
+	Leptin: 2
+--------------
+Threshold: 0,20
+--------------
+	Age: 14
+	BMI: 14
+	Glucose: 13
+	Resistin: 4
+	Leptin: 2
+--------------
+Threshold: 0,30
+--------------
+	BMI: 13
+	Age: 12
+	Glucose: 12
+	Resistin: 4
+	Leptin: 2
+	Age | Glucose: 2
+--------------
+Threshold: 0,40
+--------------
+	BMI: 9
+	Glucose | Resistin: 9
+	Age | Glucose: 6
+	Age | Resistin: 6
+	Age: 5
+	Glucose: 4
+	BMI | Glucose: 3
+--------------
+Threshold: 0,50
+--------------
+	Glucose | Resistin: 12
+	Age | Resistin: 10
+	BMI: 8
+	Age | Glucose: 5
+	BMI | Glucose: 5
+	Age | Leptin: 2
+	BMI | Resistin: 2
+--------------
+Threshold: 0,60
+--------------
+	Glucose | Resistin: 8
+	Age | Glucose | Resistin: 7
+	Age | Resistin: 7
+	BMI | Glucose: 5
+	Age | BMI: 4
+	Age | BMI | Glucose: 3
+	BMI | Glucose | Resistin: 3
+	BMI: 2
+--------------
+Threshold: 0,70
+--------------
+	Age | Glucose | Resistin: 12
+	Age | BMI | Glucose: 11
+	BMI | Glucose | Resistin: 6
+	Age | Resistin: 3
+	Age | BMI | Glucose | Resistin: 2
+	BMI | Resistin: 2
+	Glucose | Resistin: 2
+	Age | Leptin | Resistin: 2
+--------------
+Threshold: 0,80
+--------------
+	Age | BMI | Glucose | Resistin: 12
+	Age | BMI | Glucose: 5
+	Age | Glucose | Resistin: 4
+	Age | BMI | Leptin | Resistin: 3
+	Age | Glucose | HOMA | Resistin: 3
+	Age | BMI | Glucose | HOMA: 2
+	Age | BMI | Glucose | Insulin | Resistin: 2
+	Age | Glucose | Insulin | Resistin: 2
+	BMI | Glucose | HOMA | Resistin: 2
+	BMI | Glucose | Insulin | Resistin: 2
+	Age | BMI | Resistin: 2
+*********************************************************************************
+All potential concepts based on thresholds
+	Age Glucose ~#~ Glucose Resistin ~#~ Age Resistin ~#~ BMI Glucose ~#~ Age Leptin ~#~ BMI Resistin ~#~ Age Glucose Resistin ~#~ Age BMI ~#~ Age BMI Glucose ~#~ BMI Glucose Resistin ~#~ Age BMI Glucose Resistin ~#~ Age Leptin Resistin ~#~ Age BMI Leptin Resistin ~#~ Age Glucose HOMA Resistin ~#~ Age BMI Glucose HOMA ~#~ Age BMI Glucose Insulin Resistin ~#~ Age Glucose Insulin Resistin ~#~ BMI Glucose HOMA Resistin ~#~ BMI Glucose Insulin Resistin ~#~ Age BMI Resistin ~#~ 
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 1, minNoise=1 we remove groups of size 1. Tree SHAP num of expl. inst. 47 (fold 5).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  5
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	Glucose: 26
+	BMI: 10
+	Age: 8
+	Resistin: 3
+--------------
+Threshold: 0,20
+--------------
+	Glucose: 26
+	BMI: 10
+	Age: 8
+	Resistin: 3
+--------------
+Threshold: 0,30
+--------------
+	Glucose: 19
+	BMI: 7
+	Glucose | Resistin: 5
+	Age: 4
+	Age | Glucose: 4
+	Age | Resistin: 2
+--------------
+Threshold: 0,40
+--------------
+	Glucose | Resistin: 12
+	Age | Glucose: 11
+	BMI | Glucose: 5
+	Age | Resistin: 4
+	BMI: 3
+	Glucose: 3
+	Age: 2
+	BMI | HOMA: 2
+--------------
+Threshold: 0,50
+--------------
+	Glucose | Resistin: 12
+	Age | Glucose: 9
+	BMI | Glucose: 4
+	Age | Glucose | Resistin: 4
+	Age | Resistin: 3
+	BMI | Glucose | Resistin: 2
+	BMI | HOMA: 2
+--------------
+Threshold: 0,60
+--------------
+	Age | Glucose | Resistin: 17
+	Age | BMI | Glucose: 6
+	BMI | Glucose | Resistin: 4
+	Age | HOMA | Resistin: 4
+	Glucose | HOMA | Resistin: 3
+	Age | BMI | HOMA: 2
+	BMI | Glucose | HOMA: 2
+--------------
+Threshold: 0,70
+--------------
+	Age | Glucose | Resistin: 9
+	Age | Glucose | HOMA | Resistin: 8
+	Age | BMI | Glucose | Resistin: 5
+	BMI | Glucose | HOMA | Resistin: 3
+	Age | BMI | Glucose | HOMA: 2
+	Glucose | HOMA | Resistin: 2
+	BMI | Glucose | HOMA: 2
+	Age | HOMA | Leptin | Resistin: 2
+--------------
+Threshold: 0,80
+--------------
+	Age | Glucose | HOMA | Resistin: 11
+	Age | BMI | Glucose | HOMA | Resistin: 7
+	Age | Glucose | HOMA | Adiponectin | Resistin: 4
+	Age | BMI | Glucose | Resistin: 3
+	Age | BMI | Glucose | HOMA | Adiponectin: 2
+	Age | Glucose | HOMA | Leptin | Resistin: 2
+	BMI | Glucose | HOMA | Adiponectin | Resistin: 2
+	Age | Glucose | Insulin | HOMA | Resistin: 2
+	BMI | Glucose | HOMA | Adiponectin: 2
+	Age | BMI | HOMA | Adiponectin | Resistin: 2
+*********************************************************************************
+All potential concepts based on thresholds
+	Glucose Resistin ~#~ Age Glucose ~#~ Age Resistin ~#~ BMI Glucose ~#~ BMI HOMA ~#~ Age Glucose Resistin ~#~ BMI Glucose Resistin ~#~ Age BMI Glucose ~#~ Age HOMA Resistin ~#~ Glucose HOMA Resistin ~#~ Age BMI HOMA ~#~ BMI Glucose HOMA ~#~ Age Glucose HOMA Resistin ~#~ Age BMI Glucose Resistin ~#~ BMI Glucose HOMA Resistin ~#~ Age BMI Glucose HOMA ~#~ Age HOMA Leptin Resistin ~#~ Age BMI Glucose HOMA Resistin ~#~ Age Glucose HOMA Adiponectin Resistin ~#~ Age BMI Glucose HOMA Adiponectin ~#~ Age Glucose HOMA Leptin Resistin ~#~ BMI Glucose HOMA Adiponectin Resistin ~#~ Age Glucose Insulin HOMA Resistin ~#~ BMI Glucose HOMA Adiponectin ~#~ Age BMI HOMA Adiponectin Resistin ~#~ 
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 1, minNoise=1 we remove groups of size 1. Tree SHAP num of expl. inst. 47 (fold 6).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  6
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	Age: 16
+	Glucose: 16
+	BMI: 14
+--------------
+Threshold: 0,20
+--------------
+	Age: 16
+	Glucose: 16
+	BMI: 14
+--------------
+Threshold: 0,30
+--------------
+	Age: 15
+	BMI: 14
+	Glucose: 12
+	Glucose | Resistin: 3
+--------------
+Threshold: 0,40
+--------------
+	BMI: 9
+	Age | Glucose: 9
+	Glucose: 7
+	Age: 6
+	Glucose | Resistin: 6
+	BMI | Glucose: 4
+	Age | Resistin: 3
+--------------
+Threshold: 0,50
+--------------
+	Age | Glucose: 9
+	Glucose | Resistin: 9
+	BMI | Glucose: 7
+	BMI: 5
+	Age | Resistin: 4
+	Age: 3
+	Age | Glucose | Resistin: 3
+	Age | BMI: 2
+--------------
+Threshold: 0,60
+--------------
+	Age | Glucose | Resistin: 10
+	Age | Glucose: 6
+	Glucose | Resistin: 6
+	BMI | Glucose: 5
+	Age | Resistin: 5
+	Age | BMI: 4
+	Age | BMI | Glucose: 2
+	BMI: 2
+	Age | BMI | Resistin: 2
+--------------
+Threshold: 0,70
+--------------
+	Age | Glucose | Resistin: 13
+	Age | BMI | Glucose: 6
+	Age | BMI | Glucose | Resistin: 4
+	BMI | Glucose | Resistin: 4
+	Age | BMI | Leptin | Resistin: 2
+	Age | BMI: 2
+	Age | HOMA | Resistin: 2
+	Age | Resistin: 2
+	Age | Leptin | Resistin: 2
+	Glucose | Resistin: 2
+--------------
+Threshold: 0,80
+--------------
+	Age | BMI | Glucose | Resistin: 11
+	Age | Glucose | HOMA | Resistin: 7
+	Age | BMI | Glucose: 3
+	Age | BMI | Glucose | HOMA: 3
+	Age | BMI | Glucose | HOMA | Resistin: 2
+	Age | BMI | Leptin | Resistin: 2
+	BMI | Glucose | HOMA | Resistin: 2
+	Age | BMI | Resistin: 2
+	Age | HOMA | Resistin: 2
+*********************************************************************************
+All potential concepts based on thresholds
+	Glucose Resistin ~#~ Age Glucose ~#~ BMI Glucose ~#~ Age Resistin ~#~ Age Glucose Resistin ~#~ Age BMI ~#~ Age BMI Glucose ~#~ Age BMI Resistin ~#~ Age BMI Glucose Resistin ~#~ BMI Glucose Resistin ~#~ Age BMI Leptin Resistin ~#~ Age HOMA Resistin ~#~ Age Leptin Resistin ~#~ Age Glucose HOMA Resistin ~#~ Age BMI Glucose HOMA ~#~ Age BMI Glucose HOMA Resistin ~#~ BMI Glucose HOMA Resistin ~#~ 
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 1, minNoise=1 we remove groups of size 1. Tree SHAP num of expl. inst. 47 (fold 7).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  7
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	Glucose: 14
+	BMI: 13
+	Age: 10
+	Resistin: 10
+--------------
+Threshold: 0,20
+--------------
+	Glucose: 14
+	BMI: 13
+	Age: 10
+	Resistin: 10
+--------------
+Threshold: 0,30
+--------------
+	Glucose: 12
+	BMI: 10
+	Age: 8
+	Age | Resistin: 6
+	Resistin: 4
+	Glucose | Resistin: 3
+	BMI | Glucose: 2
+--------------
+Threshold: 0,40
+--------------
+	Glucose | Resistin: 15
+	Age | Resistin: 9
+	BMI: 7
+	BMI | Glucose: 5
+	Age: 3
+	Age | Glucose: 3
+	Glucose: 2
+	BMI | Resistin: 2
+--------------
+Threshold: 0,50
+--------------
+	Glucose | Resistin: 14
+	BMI | Glucose: 7
+	Age | Resistin: 7
+	BMI: 3
+	Age | Glucose: 3
+	Age | Glucose | Resistin: 3
+	Age | BMI: 2
+	BMI | Resistin: 2
+	Age | Leptin | Resistin: 2
+--------------
+Threshold: 0,60
+--------------
+	Age | Glucose | Resistin: 11
+	BMI | Glucose | Resistin: 8
+	Age | BMI | Glucose: 4
+	BMI | Glucose: 3
+	Glucose | Resistin: 3
+	Glucose | HOMA | Resistin: 2
+	Age | Glucose: 2
+	BMI | Glucose | HOMA: 2
+	Age | HOMA | Resistin: 2
+	Age | Resistin: 2
+	Age | Leptin | Resistin: 2
+--------------
+Threshold: 0,70
+--------------
+	Age | Glucose | Resistin: 6
+	Age | BMI | Glucose | Resistin: 5
+	Age | Glucose | HOMA | Resistin: 5
+	BMI | Glucose | Resistin: 4
+	Age | BMI | Glucose: 3
+	BMI | Glucose | HOMA | Resistin: 3
+	Age | HOMA | Resistin: 3
+	Age | Glucose | HOMA: 2
+	Age | HOMA | Leptin | Resistin: 2
+--------------
+Threshold: 0,80
+--------------
+	Age | BMI | Glucose | HOMA | Resistin: 7
+	Age | Glucose | HOMA | Resistin: 7
+	Age | BMI | Glucose | Resistin: 5
+	Age | BMI | Glucose | HOMA: 5
+	BMI | Glucose | HOMA | Adiponectin | Resistin: 4
+	Age | Glucose | HOMA | Leptin | Resistin: 3
+	BMI | HOMA | Adiponectin | Resistin: 3
+	BMI | Glucose | HOMA | Resistin: 3
+	Age | Glucose | HOMA | Adiponectin | Resistin: 2
+	Age | HOMA | Adiponectin | Resistin: 2
+*********************************************************************************
+All potential concepts based on thresholds
+	Age Resistin ~#~ Glucose Resistin ~#~ BMI Glucose ~#~ Age Glucose ~#~ BMI Resistin ~#~ Age Glucose Resistin ~#~ Age BMI ~#~ Age Leptin Resistin ~#~ BMI Glucose Resistin ~#~ Age BMI Glucose ~#~ Glucose HOMA Resistin ~#~ BMI Glucose HOMA ~#~ Age HOMA Resistin ~#~ Age BMI Glucose Resistin ~#~ Age Glucose HOMA Resistin ~#~ BMI Glucose HOMA Resistin ~#~ Age Glucose HOMA ~#~ Age HOMA Leptin Resistin ~#~ Age BMI Glucose HOMA Resistin ~#~ Age BMI Glucose HOMA ~#~ BMI Glucose HOMA Adiponectin Resistin ~#~ Age Glucose HOMA Leptin Resistin ~#~ BMI HOMA Adiponectin Resistin ~#~ Age Glucose HOMA Adiponectin Resistin ~#~ Age HOMA Adiponectin Resistin ~#~ 
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 1, minNoise=1 we remove groups of size 1. Tree SHAP num of expl. inst. 47 (fold 8).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  8
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	Glucose: 18
+	BMI: 15
+	Age: 12
+	Resistin: 2
+--------------
+Threshold: 0,20
+--------------
+	Glucose: 18
+	BMI: 15
+	Age: 12
+	Resistin: 2
+--------------
+Threshold: 0,30
+--------------
+	Glucose: 14
+	BMI: 13
+	Age: 12
+	BMI | Resistin: 3
+	Glucose | Resistin: 3
+	BMI | Glucose: 2
+--------------
+Threshold: 0,40
+--------------
+	Glucose | Resistin: 14
+	BMI: 10
+	BMI | Glucose: 7
+	Age: 6
+	Age | Resistin: 4
+	BMI | Resistin: 3
+--------------
+Threshold: 0,50
+--------------
+	Glucose | Resistin: 14
+	BMI | Glucose: 12
+	Age | Resistin: 6
+	BMI: 5
+	Age | Glucose: 3
+	Age | HOMA: 3
+	BMI | HOMA | Resistin: 2
+--------------
+Threshold: 0,60
+--------------
+	BMI | Glucose | Resistin: 12
+	BMI | Glucose: 8
+	Age | Glucose | Resistin: 4
+	Age | Glucose: 3
+	BMI | Glucose | HOMA: 3
+	Age | Resistin: 3
+	Glucose | Resistin: 3
+	BMI | HOMA | Resistin: 2
+	BMI: 2
+	Age | HOMA: 2
+	BMI | HOMA: 2
+--------------
+Threshold: 0,70
+--------------
+	BMI | Glucose | Resistin: 10
+	Age | BMI | Glucose: 6
+	BMI | Glucose | HOMA: 6
+	BMI | Glucose | HOMA | Resistin: 5
+	Age | Glucose | Resistin: 5
+	Age | HOMA | Resistin: 4
+	Age | BMI | Glucose | Resistin: 2
+	Glucose | HOMA | Resistin: 2
+	BMI | HOMA: 2
+--------------
+Threshold: 0,80
+--------------
+	BMI | Glucose | HOMA | Resistin: 13
+	Age | BMI | Glucose | Resistin: 9
+	Age | Glucose | HOMA | Resistin: 8
+	Age | BMI | Glucose | HOMA: 4
+	Age | BMI | HOMA | Resistin: 3
+	Age | BMI | Glucose | HOMA | Resistin: 2
+	BMI | Glucose | HOMA: 2
+	Age | HOMA | Leptin | Resistin: 2
+*********************************************************************************
+All potential concepts based on thresholds
+	BMI Resistin ~#~ Glucose Resistin ~#~ BMI Glucose ~#~ Age Resistin ~#~ Age Glucose ~#~ Age HOMA ~#~ BMI HOMA Resistin ~#~ BMI Glucose Resistin ~#~ Age Glucose Resistin ~#~ BMI Glucose HOMA ~#~ BMI HOMA ~#~ Age BMI Glucose ~#~ BMI Glucose HOMA Resistin ~#~ Age HOMA Resistin ~#~ Age BMI Glucose Resistin ~#~ Glucose HOMA Resistin ~#~ Age Glucose HOMA Resistin ~#~ Age BMI Glucose HOMA ~#~ Age BMI HOMA Resistin ~#~ Age BMI Glucose HOMA Resistin ~#~ Age HOMA Leptin Resistin ~#~ 
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 1, minNoise=1 we remove groups of size 1. Tree SHAP num of expl. inst. 47 (fold 9).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  9
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	Glucose: 28
+	BMI: 9
+	Age: 5
+	Resistin: 4
+--------------
+Threshold: 0,20
+--------------
+	Glucose: 28
+	BMI: 9
+	Age: 5
+	Resistin: 4
+--------------
+Threshold: 0,30
+--------------
+	Glucose: 23
+	BMI: 8
+	Resistin: 3
+	Age | Resistin: 3
+	Glucose | Resistin: 3
+	Age: 2
+--------------
+Threshold: 0,40
+--------------
+	Glucose | Resistin: 16
+	Glucose: 7
+	BMI | Glucose: 7
+	BMI: 5
+	Age | Resistin: 5
+	Age | Glucose: 2
+	BMI | HOMA: 2
+--------------
+Threshold: 0,50
+--------------
+	Glucose | Resistin: 19
+	BMI | Glucose: 10
+	Age | Resistin: 4
+	Glucose: 2
+	Age | Glucose: 2
+--------------
+Threshold: 0,60
+--------------
+	Age | Glucose | Resistin: 8
+	BMI | Glucose: 7
+	Glucose | HOMA | Resistin: 6
+	Glucose | Resistin: 6
+	BMI | Glucose | Resistin: 3
+	Age | BMI | Glucose: 2
+	BMI | HOMA | Resistin: 2
+	Age | Glucose: 2
+	Age | Resistin: 2
+--------------
+Threshold: 0,70
+--------------
+	Age | Glucose | HOMA | Resistin: 10
+	BMI | Glucose | Resistin: 5
+	Glucose | HOMA | Resistin: 5
+	Age | Glucose | Resistin: 4
+	Age | BMI | Glucose: 3
+	Age | Glucose | HOMA: 3
+	Age | Glucose | Resistin | MCP1: 3
+	Glucose | Resistin | MCP1: 2
+	BMI | Glucose | HOMA | Resistin: 2
+	BMI | Glucose: 2
+	Age | BMI | Resistin: 2
+--------------
+Threshold: 0,80
+--------------
+	Age | BMI | Glucose | Resistin: 9
+	Age | BMI | Glucose | HOMA | Resistin: 5
+	Age | Glucose | HOMA | Resistin: 5
+	Age | BMI | Glucose | HOMA: 4
+	BMI | Glucose | HOMA | Resistin: 3
+	Age | BMI | Glucose | Insulin | Resistin: 2
+	Age | Glucose | HOMA | Adiponectin | Resistin: 2
+	Age | Glucose | Resistin | MCP1: 2
+	BMI | Glucose | HOMA | Adiponectin | Resistin: 2
+	Age | BMI | Resistin: 2
+*********************************************************************************
+All potential concepts based on thresholds
+	Age Resistin ~#~ Glucose Resistin ~#~ BMI Glucose ~#~ Age Glucose ~#~ BMI HOMA ~#~ Age Glucose Resistin ~#~ Glucose HOMA Resistin ~#~ BMI Glucose Resistin ~#~ Age BMI Glucose ~#~ BMI HOMA Resistin ~#~ Age Glucose HOMA Resistin ~#~ Age Glucose HOMA ~#~ Age Glucose Resistin MCP1 ~#~ Glucose Resistin MCP1 ~#~ BMI Glucose HOMA Resistin ~#~ Age BMI Resistin ~#~ Age BMI Glucose Resistin ~#~ Age BMI Glucose HOMA Resistin ~#~ Age BMI Glucose HOMA ~#~ Age BMI Glucose Insulin Resistin ~#~ Age Glucose HOMA Adiponectin Resistin ~#~ BMI Glucose HOMA Adiponectin Resistin ~#~ 
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 1, minNoise=1 we remove groups of size 1. Tree SHAP num of expl. inst. 47 (fold 10).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold 10
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	Glucose: 26
+	BMI: 11
+	Age: 8
+	Leptin: 2
+--------------
+Threshold: 0,20
+--------------
+	Glucose: 26
+	BMI: 11
+	Age: 8
+	Leptin: 2
+--------------
+Threshold: 0,30
+--------------
+	Glucose: 22
+	BMI: 11
+	Age: 6
+	Age | Glucose: 4
+	Age | Leptin: 2
+--------------
+Threshold: 0,40
+--------------
+	Glucose: 10
+	BMI: 7
+	Age | Glucose: 7
+	BMI | Glucose: 7
+	Glucose | Resistin: 7
+	Age | Leptin: 3
+	Age | Resistin: 3
+	Age: 2
+--------------
+Threshold: 0,50
+--------------
+	Glucose | Resistin: 16
+	BMI | Glucose: 11
+	Age | Glucose: 6
+	Age | Resistin: 4
+	BMI: 3
+	Age | Leptin: 2
+--------------
+Threshold: 0,60
+--------------
+	Glucose | Resistin: 13
+	Age | Glucose | Resistin: 10
+	BMI | Glucose: 9
+	Age | BMI | Glucose: 3
+	Age | Leptin | Resistin: 3
+	BMI | Resistin: 2
+--------------
+Threshold: 0,70
+--------------
+	BMI | Glucose | Resistin: 16
+	Age | Glucose | Resistin: 10
+	Age | BMI | Glucose: 6
+	Age | BMI | Leptin | Resistin: 3
+	Age | Glucose | HOMA | Resistin: 2
+--------------
+Threshold: 0,80
+--------------
+	Age | BMI | Glucose | Resistin: 23
+	BMI | Glucose | Resistin: 4
+	Age | BMI | Glucose: 2
+	Age | BMI | Leptin | Resistin: 2
+	Age | Glucose | HOMA | Adiponectin | Resistin: 2
+	BMI | Glucose | Adiponectin | Resistin: 2
+	Age | Glucose | Resistin: 2
+*********************************************************************************
+All potential concepts based on thresholds
+	Age Glucose ~#~ Age Leptin ~#~ BMI Glucose ~#~ Glucose Resistin ~#~ Age Resistin ~#~ Age Glucose Resistin ~#~ Age BMI Glucose ~#~ Age Leptin Resistin ~#~ BMI Resistin ~#~ BMI Glucose Resistin ~#~ Age BMI Leptin Resistin ~#~ Age Glucose HOMA Resistin ~#~ Age BMI Glucose Resistin ~#~ Age Glucose HOMA Adiponectin Resistin ~#~ BMI Glucose Adiponectin Resistin ~#~ 
+*********************************************************************************
