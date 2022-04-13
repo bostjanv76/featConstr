@@ -1,0 +1,41 @@
+dataset: Breast Cancer Coimbra.arff
+Number of folds for testing (CV): 10
+*********************************************************************************
+number of instances: 116
+number of attributes: 9
+number of classes: 2
+---------------------------------------------------------------------------------
+Starting FC (exhaustive search, All features method): 13. 04. 2022 13:48:14 fold: 1
+Starting FC (exhaustive search, All features method): 13. 04. 2022 13:48:14 fold: 2
+Starting FC (exhaustive search, All features method): 13. 04. 2022 13:48:15 fold: 3
+Starting FC (exhaustive search, All features method): 13. 04. 2022 13:48:15 fold: 4
+Starting FC (exhaustive search, All features method): 13. 04. 2022 13:48:15 fold: 5
+Starting FC (exhaustive search, All features method): 13. 04. 2022 13:48:15 fold: 6
+Starting FC (exhaustive search, All features method): 13. 04. 2022 13:48:15 fold: 7
+Starting FC (exhaustive search, All features method): 13. 04. 2022 13:48:15 fold: 8
+Starting FC (exhaustive search, All features method): 13. 04. 2022 13:48:15 fold: 9
+Starting FC (exhaustive search, All features method): 13. 04. 2022 13:48:15 fold: 10
+---------------------------------------------------------------------------------
+Number of all combinations: 36
+*********************************************************************************
+Jakulin's interaction information
+*********************************************************************************
+Number of "Cartesian" feat: 4,00 (stdev 0,00)
+Avg. tree size (nodes+leaves): 18,00 (stdev 5,81) avg. number of leaves: 9,70 (stdev 3,00) avg. sum of constructs: 9,00 (stdev 2,90) avg. sum of constructs / num of nodes: 1,10 (stdev 0,10)
+Avg. num of "Cartesian" feat in tree: 0,70 (stdev 0,64) avg. sum of (only Cartesian) constructs (in tree): 1,40 (stdev 1,28)
+Avg. ruleset size: 6,20 (stdev 1,47) avg. number of terms of construct in Furia feat.: 13,40 (stdev 3,98) avg. number of terms in constructs per ruleset: 2,14 (stdev 0,25)
+-----ACC-----
+Avg. class. ACC J48 	67,20 (stdev 14,68)
+Avg. class. ACC NB 	65,45 (stdev 16,35)
+Avg. class. ACC FU 	75,83 (stdev 17,91)
+Avg. class. ACC RF 	68,18 (stdev 10,59)
+-----Learning and testing time-----
+Avg. learning time from FC (all feat), for J48 	2,10 [ms] (stdev 0,94)
+Avg. learning time from FC (all feat), for NB 	0,20 [ms] (stdev 0,40)
+Avg. learning time from FC (all feat), for FU 	16,20 [ms] (stdev 6,63)
+Avg. learning time from FC (all feat), for RF 	24,00 [ms] (stdev 14,58)
+-----Feature construction time-----
+Avg. FC time (all feat): 12,80 [ms] stdev 7,77
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Total processing time (Breast Cancer Coimbra.arff): 1553
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

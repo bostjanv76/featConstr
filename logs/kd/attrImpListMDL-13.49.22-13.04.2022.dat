@@ -1,0 +1,152 @@
+dataset: Breast Cancer Coimbra.arff
+MDL - after CI
+ 0,2188 num-of-N((BMI >= 32.038959) and (Resistin >= 11.78388))
+ 0,2142 num-of-N((Glucose <= 91) and (Resistin <= 12.9361))
+ 0,2048 num-of-N((Glucose <= 91) and (Resistin <= 13.68392))
+ 0,2042 num-of-N((Glucose <= 91) and (Resistin <= 12.766))
+ 0,2042 num-of-N((Glucose <= 90) and (Resistin <= 12.9361))
+ 0,2033 num-of-N((BMI >= 31.446541) and (Resistin >= 11.78388))
+ 0,1888 (Glucose <= 91) and (Resistin <= 12.9361)
+ 0,1817 num-of-N((BMI >= 32.5) and (Resistin >= 10.26309))
+ 0,1808 Glucose ADD Resistin
+ 0,1808 (Glucose <= 91) and (Resistin <= 13.68392)
+ 0,1757 (Glucose <= 91) and (Resistin <= 12.766)
+ 0,1757 (Glucose <= 90) and (Resistin <= 12.9361)
+ 0,1631 Glucose SUBTRACT BMI
+ 0,1631 BMI SUBTRACT Glucose
+ 0,1600 Glucose ADD HOMA
+ 0,1597 num-of-N((Glucose <= 96) and (Age >= 75))
+ 0,1518 Age_x_Glucose
+ 0,1465 num-of-N((Age >= 64) and (Glucose <= 102) and (Resistin <= 11.78796))
+ 0,1414 Glucose_x_HOMA
+ 0,1409 num-of-N((Age >= 73) and (Resistin <= 10.57635) and (Glucose <= 118))
+ 0,1365 num-of-N((Age >= 66) and (Glucose <= 97))
+ 0,1335 Age_x_HOMA
+ 0,1330 (Glucose <= 91) and (Age <= 44)
+ 0,1250 (Age >= 64) and (Glucose <= 102) and (Resistin <= 11.78796)
+ 0,1232 Glucose_x_Resistin
+ 0,1232 Glucose==B2of2 xor Resistin
+ 0,1232 Glucose==B2of2 or Resistin
+ 0,1232 Glucose==B2of2 impl Resistin
+ 0,1232 Glucose==B2of2 equ Resistin
+ 0,1232 Glucose
+ 0,1232 BMI_x_Glucose
+ 0,1232 BMI xor Glucose==B2of2
+ 0,1232 BMI or Glucose==B2of2 or Resistin
+ 0,1232 BMI or Glucose==B2of2
+ 0,1232 BMI equ Glucose==B2of2
+ 0,1232 (Glucose <= 91)
+ 0,1231 num-of-N((Glucose <= 91) and (Age <= 44))
+ 0,1231 HOMA SUBTRACT Glucose
+ 0,1231 Glucose SUBTRACT HOMA
+ 0,1222 Glucose==B2of2 or HOMA==B2of2 or Resistin
+ 0,1222 Glucose==B2of2 or HOMA==B2of2
+ 0,1222 BMI or Glucose==B2of2 or HOMA==B2of2
+ 0,1214 BMI DIVIDE Age
+ 0,1214 Age DIVIDE BMI
+ 0,1130 Resistin SUBTRACT BMI
+ 0,1130 BMI SUBTRACT Resistin
+ 0,1124 Age==B2of2 and Glucose==B2of2
+ 0,1100 BMI SUBTRACT Age
+ 0,1100 Age SUBTRACT BMI
+ 0,1100 (Glucose <= 96) and (Age >= 75)
+ 0,1100 (Age >= 73) and (Resistin <= 10.57635) and (Glucose <= 118)
+ 0,1092 (Age >= 66) and (Glucose <= 97)
+ 0,1068 Resistin DIVIDE BMI
+ 0,1068 Glucose==B2of2 and HOMA==B2of2
+ 0,1068 BMI DIVIDE Resistin
+ 0,1044 Glucose DIVIDE BMI
+ 0,1044 BMI DIVIDE Glucose
+ 0,1029 (Resistin <= 10.57635) and (HOMA <= 1.056602) and (BMI >= 20.690495)
+ 0,1014 HOMA ADD Resistin
+ 0,0993 HOMA DIVIDE BMI
+ 0,0993 BMI DIVIDE HOMA
+ 0,0990 Glucose DIVIDE Age
+ 0,0990 Age==B2of2 or Glucose==B2of2 or Resistin
+ 0,0990 Age==B2of2 or Glucose==B2of2
+ 0,0990 Age==B2of2 or BMI or Glucose==B2of2
+ 0,0990 Age DIVIDE Glucose
+ 0,0990 Age ADD HOMA
+ 0,0983 Age==B2of2 and Glucose==B2of2 and HOMA==B2of2
+ 0,0942 num-of-N((Resistin <= 10.57635) and (HOMA <= 1.056602) and (BMI >= 20.690495))
+ 0,0881 Age==B2of2 or HOMA==B2of2 or Resistin
+ 0,0881 Age==B2of2 or HOMA==B2of2
+ 0,0881 Age==B2of2 or Glucose==B2of2 or HOMA==B2of2
+ 0,0881 (BMI >= 32.038959) and (Resistin >= 11.78388)
+ 0,0848 Age==B2of2 and HOMA==B2of2
+ 0,0844 (Resistin <= 10.57635) and (Glucose <= 97) and (BMI <= 27.2) and (BMI >= 20.690495)
+ 0,0794 HOMA_x_Resistin
+ 0,0794 HOMA==B2of2 xor Resistin
+ 0,0794 HOMA==B2of2 or Resistin
+ 0,0794 HOMA==B2of2 impl Resistin
+ 0,0794 HOMA==B2of2 equ Resistin
+ 0,0794 HOMA
+ 0,0794 BMI_x_HOMA
+ 0,0794 BMI xor HOMA==B2of2
+ 0,0794 BMI or HOMA==B2of2 or Resistin
+ 0,0794 BMI or HOMA==B2of2
+ 0,0794 BMI equ HOMA==B2of2
+ 0,0784 Age ADD Glucose
+ 0,0776 Glucose SUBTRACT Age
+ 0,0776 Age SUBTRACT Glucose
+ 0,0776 (BMI >= 32.5) and (Resistin >= 10.26309)
+ 0,0775 num-of-N((Resistin <= 10.57635) and (Glucose <= 97) and (BMI <= 27.2) and (BMI >= 20.690495))
+ 0,0758 BMI ADD Glucose
+ 0,0723 Age_x_Resistin
+ 0,0723 Age_x_BMI
+ 0,0723 Age==B2of2 xor Resistin
+ 0,0723 Age==B2of2 xor BMI
+ 0,0723 Age==B2of2 or Resistin
+ 0,0723 Age==B2of2 or BMI or Resistin
+ 0,0723 Age==B2of2 or BMI
+ 0,0723 Age==B2of2 impl Resistin
+ 0,0723 Age==B2of2 impl BMI
+ 0,0723 Age==B2of2 equ Resistin
+ 0,0723 Age==B2of2 equ BMI
+ 0,0723 Age
+ 0,0723 (BMI >= 31.446541) and (Resistin >= 11.78388)
+ 0,0723 (Age <= 36)
+ 0,0689 Resistin SUBTRACT Age
+ 0,0689 Age SUBTRACT Resistin
+ 0,0668 Resistin
+ 0,0646 HOMA DIVIDE Age
+ 0,0646 Age DIVIDE HOMA
+ 0,0617 Resistin SUBTRACT Glucose
+ 0,0617 Glucose SUBTRACT Resistin
+ 0,0554 Insulin
+ 0,0554 HOMA DIVIDE Glucose
+ 0,0554 Glucose DIVIDE HOMA
+ 0,0527 Resistin SUBTRACT HOMA
+ 0,0527 HOMA SUBTRACT Resistin
+ 0,0487 BMI ADD Resistin
+ 0,0483 HOMA SUBTRACT BMI
+ 0,0483 BMI SUBTRACT HOMA
+ 0,0444 Resistin DIVIDE Age
+ 0,0444 Age DIVIDE Resistin
+ 0,0428 HOMA SUBTRACT Age
+ 0,0428 Age SUBTRACT HOMA
+ 0,0405 BMI LESSTHAN Resistin
+ 0,0384 Age ADD Resistin
+ 0,0308 Resistin DIVIDE Glucose
+ 0,0308 Glucose DIVIDE Resistin
+ 0,0302 Age ADD BMI
+ 0,0286 Resistin DIVIDE HOMA
+ 0,0286 HOMA DIVIDE Resistin
+ 0,0274 BMI
+ 0,0211 Age LESSTHAN BMI
+ 0,0194 Leptin
+ 0,0168 Age==B2of2 impl Glucose==B2of2
+ 0,0161 BMI ADD HOMA
+ 0,0134 Age LESSTHAN Glucose
+ 0,0114 Age==B2of2 xor Glucose==B2of2
+ 0,0114 Age==B2of2 equ Glucose==B2of2
+ 0,0105 MCP1
+ 0,0105 HOMA LESSTHAN Resistin
+ 0,0059 Adiponectin
+ -0,0045 Age==B2of2 xor HOMA==B2of2
+ -0,0045 Age==B2of2 equ HOMA==B2of2
+ -0,0054 Age==B2of2 impl HOMA==B2of2
+ -0,0059 Age LESSTHAN Resistin
+ -0,0123 Glucose==B2of2 impl HOMA==B2of2
+ -0,0149 Glucose==B2of2 xor HOMA==B2of2
+ -0,0149 Glucose==B2of2 equ HOMA==B2of2

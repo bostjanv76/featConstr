@@ -9,147 +9,147 @@
 @attribute Adiponectin numeric
 @attribute Resistin numeric
 @attribute MCP1 numeric
-@attribute 'Age==B2of2 and Glucose==B2of2' {0,1}
-@attribute 'Glucose==B2of2 and HOMA==B2of2' {0,1}
-@attribute 'Age==B2of2 and HOMA==B2of2' {0,1}
-@attribute 'BMI or Glucose==B2of2' {0,1}
-@attribute 'Age==B2of2 or BMI' {0,1}
-@attribute 'Age==B2of2 or Glucose==B2of2' {0,1}
-@attribute 'Glucose==B2of2 or HOMA==B2of2' {0,1}
-@attribute 'BMI or HOMA==B2of2' {0,1}
-@attribute 'HOMA==B2of2 or Resistin' {0,1}
-@attribute 'Age==B2of2 or HOMA==B2of2' {0,1}
-@attribute 'Glucose==B2of2 or Resistin' {0,1}
-@attribute 'Age==B2of2 or Resistin' {0,1}
-@attribute 'BMI equ Glucose==B2of2' {0,1}
-@attribute 'Age==B2of2 equ BMI' {0,1}
-@attribute 'Age==B2of2 equ Glucose==B2of2' {0,1}
-@attribute 'Glucose==B2of2 equ HOMA==B2of2' {0,1}
-@attribute 'BMI equ HOMA==B2of2' {0,1}
-@attribute 'HOMA==B2of2 equ Resistin' {0,1}
-@attribute 'Age==B2of2 equ HOMA==B2of2' {0,1}
-@attribute 'Glucose==B2of2 equ Resistin' {0,1}
-@attribute 'Age==B2of2 equ Resistin' {0,1}
-@attribute 'BMI xor Glucose==B2of2' {0,1}
-@attribute 'Age==B2of2 xor BMI' {0,1}
-@attribute 'Age==B2of2 xor Glucose==B2of2' {0,1}
-@attribute 'Glucose==B2of2 xor HOMA==B2of2' {0,1}
-@attribute 'BMI xor HOMA==B2of2' {0,1}
-@attribute 'HOMA==B2of2 xor Resistin' {0,1}
-@attribute 'Age==B2of2 xor HOMA==B2of2' {0,1}
-@attribute 'Glucose==B2of2 xor Resistin' {0,1}
-@attribute 'Age==B2of2 xor Resistin' {0,1}
-@attribute 'Age==B2of2 impl BMI' {0,1}
-@attribute 'Age==B2of2 impl Glucose==B2of2' {0,1}
-@attribute 'Glucose==B2of2 impl HOMA==B2of2' {0,1}
-@attribute 'HOMA==B2of2 impl Resistin' {0,1}
-@attribute 'Age==B2of2 impl HOMA==B2of2' {0,1}
-@attribute 'Glucose==B2of2 impl Resistin' {0,1}
-@attribute 'Age==B2of2 impl Resistin' {0,1}
-@attribute 'Age==B2of2 and Glucose==B2of2 and HOMA==B2of2' {0,1}
-@attribute 'Age==B2of2 or Glucose==B2of2 or HOMA==B2of2' {0,1}
-@attribute 'Age==B2of2 or BMI or Glucose==B2of2' {0,1}
-@attribute 'BMI or HOMA==B2of2 or Resistin' {0,1}
-@attribute 'BMI or Glucose==B2of2 or HOMA==B2of2' {0,1}
-@attribute 'Age==B2of2 or HOMA==B2of2 or Resistin' {0,1}
-@attribute 'BMI or Glucose==B2of2 or Resistin' {0,1}
-@attribute 'Age==B2of2 or BMI or Resistin' {0,1}
-@attribute 'Age==B2of2 or Glucose==B2of2 or Resistin' {0,1}
-@attribute 'Glucose==B2of2 or HOMA==B2of2 or Resistin' {0,1}
-@attribute '(Glucose <= 90) and (Resistin <= 12.9361)' {0,1}
-@attribute '(Glucose <= 96) and (Age >= 75)' {0,1}
-@attribute '(Age <= 36)' {0,1}
-@attribute '(Glucose <= 91) and (Age <= 44)' {0,1}
-@attribute '(BMI >= 32.038959) and (Resistin >= 11.78388)' {0,1}
-@attribute '(Glucose <= 91) and (Resistin <= 13.68392)' {0,1}
-@attribute '(BMI >= 31.446541) and (Resistin >= 11.78388)' {0,1}
-@attribute '(Resistin <= 10.57635) and (Glucose <= 97) and (BMI <= 27.2) and (BMI >= 20.690495)' {0,1}
-@attribute '(Glucose <= 91) and (Resistin <= 12.766)' {0,1}
-@attribute '(Age >= 73) and (Resistin <= 10.57635) and (Glucose <= 118)' {0,1}
-@attribute '(Age >= 66) and (Glucose <= 97)' {0,1}
-@attribute '(Glucose <= 91) and (Resistin <= 12.9361)' {0,1}
-@attribute '(BMI >= 32.5) and (Resistin >= 10.26309)' {0,1}
-@attribute '(Age >= 64) and (Glucose <= 102) and (Resistin <= 11.78796)' {0,1}
-@attribute '(Glucose <= 91)' {0,1}
-@attribute '(Resistin <= 10.57635) and (HOMA <= 1.056602) and (BMI >= 20.690495)' {0,1}
-@attribute 'num-of-N((Glucose <= 90) and (Resistin <= 12.9361))' {0,1,2}
-@attribute 'num-of-N((Glucose <= 96) and (Age >= 75))' {0,1,2}
-@attribute 'num-of-N((Glucose <= 91) and (Age <= 44))' {0,1,2}
-@attribute 'num-of-N((BMI >= 32.038959) and (Resistin >= 11.78388))' {0,1,2}
-@attribute 'num-of-N((Glucose <= 91) and (Resistin <= 13.68392))' {0,1,2}
-@attribute 'num-of-N((BMI >= 31.446541) and (Resistin >= 11.78388))' {0,1,2}
-@attribute 'num-of-N((Resistin <= 10.57635) and (Glucose <= 97) and (BMI <= 27.2) and (BMI >= 20.690495))' {0,1,2,3,4}
-@attribute 'num-of-N((Glucose <= 91) and (Resistin <= 12.766))' {0,1,2}
-@attribute 'num-of-N((Age >= 73) and (Resistin <= 10.57635) and (Glucose <= 118))' {0,1,2,3}
-@attribute 'num-of-N((Age >= 66) and (Glucose <= 97))' {0,1,2}
-@attribute 'num-of-N((Glucose <= 91) and (Resistin <= 12.9361))' {0,1,2}
-@attribute 'num-of-N((BMI >= 32.5) and (Resistin >= 10.26309))' {0,1,2}
-@attribute 'num-of-N((Age >= 64) and (Glucose <= 102) and (Resistin <= 11.78796))' {0,1,2,3}
-@attribute 'num-of-N((Resistin <= 10.57635) and (HOMA <= 1.056602) and (BMI >= 20.690495))' {0,1,2,3}
-@attribute 'BMI DIVIDE Glucose' numeric
-@attribute 'Glucose DIVIDE BMI' numeric
-@attribute 'Age DIVIDE BMI' numeric
-@attribute 'BMI DIVIDE Age' numeric
-@attribute 'Age DIVIDE Glucose' numeric
-@attribute 'Glucose DIVIDE Age' numeric
-@attribute 'Glucose DIVIDE HOMA' numeric
-@attribute 'HOMA DIVIDE Glucose' numeric
-@attribute 'BMI DIVIDE HOMA' numeric
-@attribute 'HOMA DIVIDE BMI' numeric
-@attribute 'HOMA DIVIDE Resistin' numeric
-@attribute 'Resistin DIVIDE HOMA' numeric
-@attribute 'Age DIVIDE HOMA' numeric
-@attribute 'HOMA DIVIDE Age' numeric
-@attribute 'Glucose DIVIDE Resistin' numeric
-@attribute 'Resistin DIVIDE Glucose' numeric
-@attribute 'BMI DIVIDE Resistin' numeric
-@attribute 'Resistin DIVIDE BMI' numeric
-@attribute 'Age DIVIDE Resistin' numeric
-@attribute 'Resistin DIVIDE Age' numeric
-@attribute 'BMI SUBTRACT Glucose' numeric
-@attribute 'Glucose SUBTRACT BMI' numeric
-@attribute 'Age SUBTRACT BMI' numeric
-@attribute 'BMI SUBTRACT Age' numeric
-@attribute 'Age SUBTRACT Glucose' numeric
-@attribute 'Glucose SUBTRACT Age' numeric
-@attribute 'Glucose SUBTRACT HOMA' numeric
-@attribute 'HOMA SUBTRACT Glucose' numeric
-@attribute 'BMI SUBTRACT HOMA' numeric
-@attribute 'HOMA SUBTRACT BMI' numeric
-@attribute 'HOMA SUBTRACT Resistin' numeric
-@attribute 'Resistin SUBTRACT HOMA' numeric
-@attribute 'Age SUBTRACT HOMA' numeric
-@attribute 'HOMA SUBTRACT Age' numeric
-@attribute 'Glucose SUBTRACT Resistin' numeric
-@attribute 'Resistin SUBTRACT Glucose' numeric
-@attribute 'BMI SUBTRACT Resistin' numeric
-@attribute 'Resistin SUBTRACT BMI' numeric
-@attribute 'Age SUBTRACT Resistin' numeric
-@attribute 'Resistin SUBTRACT Age' numeric
-@attribute 'BMI ADD Glucose' numeric
-@attribute 'Age ADD BMI' numeric
-@attribute 'Age ADD Glucose' numeric
-@attribute 'Glucose ADD HOMA' numeric
-@attribute 'BMI ADD HOMA' numeric
-@attribute 'HOMA ADD Resistin' numeric
-@attribute 'Age ADD HOMA' numeric
-@attribute 'Glucose ADD Resistin' numeric
-@attribute 'BMI ADD Resistin' numeric
-@attribute 'Age ADD Resistin' numeric
-@attribute 'Age LESSTHAN BMI' {0,1}
-@attribute 'Age LESSTHAN Glucose' {0,1}
-@attribute 'HOMA LESSTHAN Resistin' {0,1}
-@attribute 'BMI LESSTHAN Resistin' {0,1}
-@attribute 'Age LESSTHAN Resistin' {0,1}
-@attribute BMI_x_Glucose {'\'All\'_x_\'(-inf-91.5]\'','\'All\'_x_\'(91.5-inf)\''}
-@attribute Age_x_BMI {'\'(-inf-37]\'_x_\'All\'','\'(37-inf)\'_x_\'All\''}
-@attribute Age_x_Glucose {'\'(-inf-37]\'_x_\'(-inf-91.5]\'','\'(-inf-37]\'_x_\'(91.5-inf)\'','\'(37-inf)\'_x_\'(-inf-91.5]\'','\'(37-inf)\'_x_\'(91.5-inf)\''}
-@attribute Glucose_x_HOMA {'\'(-inf-91.5]\'_x_\'(-inf-2.169984]\'','\'(-inf-91.5]\'_x_\'(2.169984-inf)\'','\'(91.5-inf)\'_x_\'(-inf-2.169984]\'','\'(91.5-inf)\'_x_\'(2.169984-inf)\''}
-@attribute BMI_x_HOMA {'\'All\'_x_\'(-inf-2.169984]\'','\'All\'_x_\'(2.169984-inf)\''}
-@attribute HOMA_x_Resistin {'\'(-inf-2.169984]\'_x_\'All\'','\'(2.169984-inf)\'_x_\'All\''}
-@attribute Age_x_HOMA {'\'(-inf-37]\'_x_\'(-inf-2.169984]\'','\'(-inf-37]\'_x_\'(2.169984-inf)\'','\'(37-inf)\'_x_\'(-inf-2.169984]\'','\'(37-inf)\'_x_\'(2.169984-inf)\''}
-@attribute Glucose_x_Resistin {'\'(-inf-91.5]\'_x_\'All\'','\'(91.5-inf)\'_x_\'All\''}
-@attribute Age_x_Resistin {'\'(-inf-37]\'_x_\'All\'','\'(37-inf)\'_x_\'All\''}
+@attribute F1L1 {0,1}
+@attribute F2L1 {0,1}
+@attribute F3L1 {0,1}
+@attribute F4L1 {0,1}
+@attribute F5L1 {0,1}
+@attribute F6L1 {0,1}
+@attribute F7L1 {0,1}
+@attribute F8L1 {0,1}
+@attribute F9L1 {0,1}
+@attribute F10L1 {0,1}
+@attribute F11L1 {0,1}
+@attribute F12L1 {0,1}
+@attribute F13L1 {0,1}
+@attribute F14L1 {0,1}
+@attribute F15L1 {0,1}
+@attribute F16L1 {0,1}
+@attribute F17L1 {0,1}
+@attribute F18L1 {0,1}
+@attribute F19L1 {0,1}
+@attribute F20L1 {0,1}
+@attribute F21L1 {0,1}
+@attribute F22L1 {0,1}
+@attribute F23L1 {0,1}
+@attribute F24L1 {0,1}
+@attribute F25L1 {0,1}
+@attribute F26L1 {0,1}
+@attribute F27L1 {0,1}
+@attribute F28L1 {0,1}
+@attribute F29L1 {0,1}
+@attribute F30L1 {0,1}
+@attribute F31L1 {0,1}
+@attribute F32L1 {0,1}
+@attribute F33L1 {0,1}
+@attribute F34L1 {0,1}
+@attribute F35L1 {0,1}
+@attribute F36L1 {0,1}
+@attribute F37L1 {0,1}
+@attribute F38L1 {0,1}
+@attribute F39L1 {0,1}
+@attribute F40L1 {0,1}
+@attribute F41L1 {0,1}
+@attribute F42L1 {0,1}
+@attribute F43L1 {0,1}
+@attribute F44L1 {0,1}
+@attribute F45L1 {0,1}
+@attribute F46L1 {0,1}
+@attribute F47L1 {0,1}
+@attribute F48L1 {0,1}
+@attribute F49L1 {0,1}
+@attribute F50L1 {0,1}
+@attribute F51L1 {0,1}
+@attribute F52L1 {0,1}
+@attribute F53L1 {0,1}
+@attribute F54L1 {0,1}
+@attribute F55L1 {0,1}
+@attribute F56L1 {0,1}
+@attribute F57L1 {0,1}
+@attribute F58L1 {0,1}
+@attribute F59L1 {0,1}
+@attribute F60L1 {0,1}
+@attribute F61L1 {0,1}
+@attribute F62L1 {0,1}
+@attribute F63L1 {0,1}
+@attribute F64L1 {0,1,2}
+@attribute F65L1 {0,1,2}
+@attribute F66L1 {0,1,2}
+@attribute F67L1 {0,1,2}
+@attribute F68L1 {0,1,2}
+@attribute F69L1 {0,1,2}
+@attribute F70L1 {0,1,2,3,4}
+@attribute F71L1 {0,1,2}
+@attribute F72L1 {0,1,2,3}
+@attribute F73L1 {0,1,2}
+@attribute F74L1 {0,1,2}
+@attribute F75L1 {0,1,2}
+@attribute F76L1 {0,1,2,3}
+@attribute F77L1 {0,1,2,3}
+@attribute F78L1 numeric
+@attribute F79L1 numeric
+@attribute F80L1 numeric
+@attribute F81L1 numeric
+@attribute F82L1 numeric
+@attribute F83L1 numeric
+@attribute F84L1 numeric
+@attribute F85L1 numeric
+@attribute F86L1 numeric
+@attribute F87L1 numeric
+@attribute F88L1 numeric
+@attribute F89L1 numeric
+@attribute F90L1 numeric
+@attribute F91L1 numeric
+@attribute F92L1 numeric
+@attribute F93L1 numeric
+@attribute F94L1 numeric
+@attribute F95L1 numeric
+@attribute F96L1 numeric
+@attribute F97L1 numeric
+@attribute F98L1 numeric
+@attribute F99L1 numeric
+@attribute F100L1 numeric
+@attribute F101L1 numeric
+@attribute F102L1 numeric
+@attribute F103L1 numeric
+@attribute F104L1 numeric
+@attribute F105L1 numeric
+@attribute F106L1 numeric
+@attribute F107L1 numeric
+@attribute F108L1 numeric
+@attribute F109L1 numeric
+@attribute F110L1 numeric
+@attribute F111L1 numeric
+@attribute F112L1 numeric
+@attribute F113L1 numeric
+@attribute F114L1 numeric
+@attribute F115L1 numeric
+@attribute F116L1 numeric
+@attribute F117L1 numeric
+@attribute F118L1 numeric
+@attribute F119L1 numeric
+@attribute F120L1 numeric
+@attribute F121L1 numeric
+@attribute F122L1 numeric
+@attribute F123L1 numeric
+@attribute F124L1 numeric
+@attribute F125L1 numeric
+@attribute F126L1 numeric
+@attribute F127L1 numeric
+@attribute F128L1 {0,1}
+@attribute F129L1 {0,1}
+@attribute F130L1 {0,1}
+@attribute F131L1 {0,1}
+@attribute F132L1 {0,1}
+@attribute F133L1 {'\'All\'_x_\'(-inf-91.5]\'','\'All\'_x_\'(91.5-inf)\''}
+@attribute F134L1 {'\'(-inf-37]\'_x_\'All\'','\'(37-inf)\'_x_\'All\''}
+@attribute F135L1 {'\'(-inf-37]\'_x_\'(-inf-91.5]\'','\'(-inf-37]\'_x_\'(91.5-inf)\'','\'(37-inf)\'_x_\'(-inf-91.5]\'','\'(37-inf)\'_x_\'(91.5-inf)\''}
+@attribute F136L1 {'\'(-inf-91.5]\'_x_\'(-inf-2.169984]\'','\'(-inf-91.5]\'_x_\'(2.169984-inf)\'','\'(91.5-inf)\'_x_\'(-inf-2.169984]\'','\'(91.5-inf)\'_x_\'(2.169984-inf)\''}
+@attribute F137L1 {'\'All\'_x_\'(-inf-2.169984]\'','\'All\'_x_\'(2.169984-inf)\''}
+@attribute F138L1 {'\'(-inf-2.169984]\'_x_\'All\'','\'(2.169984-inf)\'_x_\'All\''}
+@attribute F139L1 {'\'(-inf-37]\'_x_\'(-inf-2.169984]\'','\'(-inf-37]\'_x_\'(2.169984-inf)\'','\'(37-inf)\'_x_\'(-inf-2.169984]\'','\'(37-inf)\'_x_\'(2.169984-inf)\''}
+@attribute F140L1 {'\'(-inf-91.5]\'_x_\'All\'','\'(91.5-inf)\'_x_\'All\''}
+@attribute F141L1 {'\'(-inf-37]\'_x_\'All\'','\'(37-inf)\'_x_\'All\''}
 @attribute Classification {1,2}
 
 @data

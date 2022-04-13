@@ -1,0 +1,64 @@
+dataset: Breast Cancer Coimbra.arff
+Explaining class: 1 explaining whole dataset: NO
+Internal (during building) accuracy of explanation model: 96.5517
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 1, minNoise=3 we remove groups of size 3. Tree SHAP num of expl. inst. 52
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+--------------
+Threshold: 0,10
+--------------
+	Glucose: 25
+	BMI: 13
+	Age: 10
+--------------
+Threshold: 0,20
+--------------
+	Glucose: 25
+	BMI: 13
+	Age: 10
+--------------
+Threshold: 0,30
+--------------
+	Glucose: 23
+	BMI: 12
+	Age: 5
+	Age | Glucose: 5
+--------------
+Threshold: 0,40
+--------------
+	Glucose | Resistin: 14
+	BMI: 9
+	Age | Glucose: 8
+	BMI | Glucose: 6
+	Age: 5
+	Glucose: 4
+--------------
+Threshold: 0,50
+--------------
+	Glucose | Resistin: 16
+	Age | Glucose: 9
+	BMI | Glucose: 9
+	BMI: 5
+--------------
+Threshold: 0,60
+--------------
+	Age | Glucose | Resistin: 11
+	Glucose | Resistin: 10
+	BMI | Glucose: 9
+	BMI | Glucose | Resistin: 4
+--------------
+Threshold: 0,70
+--------------
+	Age | Glucose | Resistin: 14
+	BMI | Glucose | Resistin: 10
+	Age | BMI | Glucose: 7
+--------------
+Threshold: 0,80
+--------------
+	Age | BMI | Glucose | Resistin: 16
+	BMI | Glucose | HOMA | Resistin: 6
+	Age | Glucose | HOMA | Resistin: 4
+*********************************************************************************
+All potential concepts, based on thresholds.
+	Age Glucose ~#~ Glucose Resistin ~#~ BMI Glucose ~#~ Age Glucose Resistin ~#~ BMI Glucose Resistin ~#~ Age BMI Glucose ~#~ Age BMI Glucose Resistin ~#~ BMI Glucose HOMA Resistin ~#~ Age Glucose HOMA Resistin ~#~ 
+*********************************************************************************

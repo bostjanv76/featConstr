@@ -1,0 +1,142 @@
+NEW 	 OLD
+F1L1	Age==B2of2 and Glucose==B2of2
+F2L1	Glucose==B2of2 and HOMA==B2of2
+F3L1	Age==B2of2 and HOMA==B2of2
+F4L1	BMI or Glucose==B2of2
+F5L1	Age==B2of2 or BMI
+F6L1	Age==B2of2 or Glucose==B2of2
+F7L1	Glucose==B2of2 or HOMA==B2of2
+F8L1	BMI or HOMA==B2of2
+F9L1	HOMA==B2of2 or Resistin
+F10L1	Age==B2of2 or HOMA==B2of2
+F11L1	Glucose==B2of2 or Resistin
+F12L1	Age==B2of2 or Resistin
+F13L1	BMI equ Glucose==B2of2
+F14L1	Age==B2of2 equ BMI
+F15L1	Age==B2of2 equ Glucose==B2of2
+F16L1	Glucose==B2of2 equ HOMA==B2of2
+F17L1	BMI equ HOMA==B2of2
+F18L1	HOMA==B2of2 equ Resistin
+F19L1	Age==B2of2 equ HOMA==B2of2
+F20L1	Glucose==B2of2 equ Resistin
+F21L1	Age==B2of2 equ Resistin
+F22L1	BMI xor Glucose==B2of2
+F23L1	Age==B2of2 xor BMI
+F24L1	Age==B2of2 xor Glucose==B2of2
+F25L1	Glucose==B2of2 xor HOMA==B2of2
+F26L1	BMI xor HOMA==B2of2
+F27L1	HOMA==B2of2 xor Resistin
+F28L1	Age==B2of2 xor HOMA==B2of2
+F29L1	Glucose==B2of2 xor Resistin
+F30L1	Age==B2of2 xor Resistin
+F31L1	Age==B2of2 impl BMI
+F32L1	Age==B2of2 impl Glucose==B2of2
+F33L1	Glucose==B2of2 impl HOMA==B2of2
+F34L1	HOMA==B2of2 impl Resistin
+F35L1	Age==B2of2 impl HOMA==B2of2
+F36L1	Glucose==B2of2 impl Resistin
+F37L1	Age==B2of2 impl Resistin
+F38L1	Age==B2of2 and Glucose==B2of2 and HOMA==B2of2
+F39L1	Age==B2of2 or Glucose==B2of2 or HOMA==B2of2
+F40L1	Age==B2of2 or BMI or Glucose==B2of2
+F41L1	BMI or HOMA==B2of2 or Resistin
+F42L1	BMI or Glucose==B2of2 or HOMA==B2of2
+F43L1	Age==B2of2 or HOMA==B2of2 or Resistin
+F44L1	BMI or Glucose==B2of2 or Resistin
+F45L1	Age==B2of2 or BMI or Resistin
+F46L1	Age==B2of2 or Glucose==B2of2 or Resistin
+F47L1	Glucose==B2of2 or HOMA==B2of2 or Resistin
+F48L1	(Glucose <= 90) and (Resistin <= 12.9361)
+F49L1	(Glucose <= 96) and (Age >= 75)
+F50L1	(Age <= 36)
+F51L1	(Glucose <= 91) and (Age <= 44)
+F52L1	(BMI >= 32.038959) and (Resistin >= 11.78388)
+F53L1	(Glucose <= 91) and (Resistin <= 13.68392)
+F54L1	(BMI >= 31.446541) and (Resistin >= 11.78388)
+F55L1	(Resistin <= 10.57635) and (Glucose <= 97) and (BMI <= 27.2) and (BMI >= 20.690495)
+F56L1	(Glucose <= 91) and (Resistin <= 12.766)
+F57L1	(Age >= 73) and (Resistin <= 10.57635) and (Glucose <= 118)
+F58L1	(Age >= 66) and (Glucose <= 97)
+F59L1	(Glucose <= 91) and (Resistin <= 12.9361)
+F60L1	(BMI >= 32.5) and (Resistin >= 10.26309)
+F61L1	(Age >= 64) and (Glucose <= 102) and (Resistin <= 11.78796)
+F62L1	(Glucose <= 91)
+F63L1	(Resistin <= 10.57635) and (HOMA <= 1.056602) and (BMI >= 20.690495)
+F64L1	num-of-N((Glucose <= 90) and (Resistin <= 12.9361))
+F65L1	num-of-N((Glucose <= 96) and (Age >= 75))
+F66L1	num-of-N((Glucose <= 91) and (Age <= 44))
+F67L1	num-of-N((BMI >= 32.038959) and (Resistin >= 11.78388))
+F68L1	num-of-N((Glucose <= 91) and (Resistin <= 13.68392))
+F69L1	num-of-N((BMI >= 31.446541) and (Resistin >= 11.78388))
+F70L1	num-of-N((Resistin <= 10.57635) and (Glucose <= 97) and (BMI <= 27.2) and (BMI >= 20.690495))
+F71L1	num-of-N((Glucose <= 91) and (Resistin <= 12.766))
+F72L1	num-of-N((Age >= 73) and (Resistin <= 10.57635) and (Glucose <= 118))
+F73L1	num-of-N((Age >= 66) and (Glucose <= 97))
+F74L1	num-of-N((Glucose <= 91) and (Resistin <= 12.9361))
+F75L1	num-of-N((BMI >= 32.5) and (Resistin >= 10.26309))
+F76L1	num-of-N((Age >= 64) and (Glucose <= 102) and (Resistin <= 11.78796))
+F77L1	num-of-N((Resistin <= 10.57635) and (HOMA <= 1.056602) and (BMI >= 20.690495))
+F78L1	BMI DIVIDE Glucose
+F79L1	Glucose DIVIDE BMI
+F80L1	Age DIVIDE BMI
+F81L1	BMI DIVIDE Age
+F82L1	Age DIVIDE Glucose
+F83L1	Glucose DIVIDE Age
+F84L1	Glucose DIVIDE HOMA
+F85L1	HOMA DIVIDE Glucose
+F86L1	BMI DIVIDE HOMA
+F87L1	HOMA DIVIDE BMI
+F88L1	HOMA DIVIDE Resistin
+F89L1	Resistin DIVIDE HOMA
+F90L1	Age DIVIDE HOMA
+F91L1	HOMA DIVIDE Age
+F92L1	Glucose DIVIDE Resistin
+F93L1	Resistin DIVIDE Glucose
+F94L1	BMI DIVIDE Resistin
+F95L1	Resistin DIVIDE BMI
+F96L1	Age DIVIDE Resistin
+F97L1	Resistin DIVIDE Age
+F98L1	BMI SUBTRACT Glucose
+F99L1	Glucose SUBTRACT BMI
+F100L1	Age SUBTRACT BMI
+F101L1	BMI SUBTRACT Age
+F102L1	Age SUBTRACT Glucose
+F103L1	Glucose SUBTRACT Age
+F104L1	Glucose SUBTRACT HOMA
+F105L1	HOMA SUBTRACT Glucose
+F106L1	BMI SUBTRACT HOMA
+F107L1	HOMA SUBTRACT BMI
+F108L1	HOMA SUBTRACT Resistin
+F109L1	Resistin SUBTRACT HOMA
+F110L1	Age SUBTRACT HOMA
+F111L1	HOMA SUBTRACT Age
+F112L1	Glucose SUBTRACT Resistin
+F113L1	Resistin SUBTRACT Glucose
+F114L1	BMI SUBTRACT Resistin
+F115L1	Resistin SUBTRACT BMI
+F116L1	Age SUBTRACT Resistin
+F117L1	Resistin SUBTRACT Age
+F118L1	BMI ADD Glucose
+F119L1	Age ADD BMI
+F120L1	Age ADD Glucose
+F121L1	Glucose ADD HOMA
+F122L1	BMI ADD HOMA
+F123L1	HOMA ADD Resistin
+F124L1	Age ADD HOMA
+F125L1	Glucose ADD Resistin
+F126L1	BMI ADD Resistin
+F127L1	Age ADD Resistin
+F128L1	Age LESSTHAN BMI
+F129L1	Age LESSTHAN Glucose
+F130L1	HOMA LESSTHAN Resistin
+F131L1	BMI LESSTHAN Resistin
+F132L1	Age LESSTHAN Resistin
+F133L1	BMI_x_Glucose
+F134L1	Age_x_BMI
+F135L1	Age_x_Glucose
+F136L1	Glucose_x_HOMA
+F137L1	BMI_x_HOMA
+F138L1	HOMA_x_Resistin
+F139L1	Age_x_HOMA
+F140L1	Glucose_x_Resistin
+F141L1	Age_x_Resistin

@@ -80,19 +80,17 @@ import weka.filters.unsupervised.attribute.ReplaceMissingValues;
  */
 @SuppressWarnings({"rawtypes", "unchecked", "serial"})
 public class FeatConstr {
-    public static boolean justExplain=false;    //just explain datasets, construct features and evaluate them
+    /**************************** main EFC parameters *********************************/
+    public static boolean justExplain=true;     //just explain datasets, construct features and evaluate them
     public static boolean visualisation=true;  //visualisation of explanations using IME method
     public static boolean exhaustive=true;     //try exhaustive search ... all combinations between attributes
     public static boolean jakulin=true;        //try exhaustive search, calculate interaction information between all comb. of attributes; Jakulin, A. (2005). Machine learning based on attribute interactions [Doctoral dissertation, University of Ljubljana]. ePrints.FRI. https://bit.ly/3eiJ18x
-    public static String datasetName;
-    //public static int CLASS_IDX=-1;     // default = -1 (last attribute is class attribute) 
-    public static int folds=10;          //for generating models, folds=1 means no CV and using split in ratio listed below
-    public static int splitTrain=5;     //5 ... 80%:20%, 4 ... 75%25%, 3 ... 66%:33%; useful only when folds are set to 1, meaning no CV and using split
-    public static int N_SAMPLES=100;   //if we use equalSampling ... number of samples, we choose random value from interval min-max N_SAMPLE times  
-    public static int minS=10;          //min samples ... if we use sumOfSamples and diffSampling ... to obtain an approximate estimate of the variance
-    //public static int maxS=1000;        //max samples ... if we use additive sampling
-    public static int sumOfSmp=2000;    //sum of samples ... if we use adaptive sampling ... sumOfSmp >= n*minS ... n is number of attributes
-    //public static boolean optimal=true; //using alg. 2 from article ... converge samples ... false=equal sampling if(explAllData==false) then we use "optimal" sampling
+    /*****************************************************************************/
+    public static boolean groupsByThrStat=true;        //print statistics about groups (identified by EFC) by thresholds
+    public static boolean writeAccByFoldsInFile=true;  //for analysing results of statistical tests
+    public static boolean saveConstructs=true; //save generated features with attributes into new dataset ("dataset name"-origPlusRen1stLFeat-"time-date".arff)
+    public static boolean renameGenFeat=true;  //rename generated features (e.g., F1, F2 ...), available only if saveConstructs=true, for potential generation of 2nd level features; input dataset for generating 2nd level feat must contain "origPlusRen1stLFeat" string
+    /**************************** IME parameters *********************************/
     public enum IMEver{equalSampling, adaptiveSamplingSS, adaptiveSamplingAE, aproxErrSampling};
     //equalSampling - each attribute has same num. of samples, Algorithm 1 in in Štrumbelj, Erik, and Igor Kononenko. "An efficient explanation of individual classifications using game theory." The Journal of Machine Learning Research 11 (2010): 1-18.
     //adaptiveSampling - Algorithm 2 in Štrumbelj, Erik, and Igor Kononenko. "Explaining prediction models and individual predictions with feature contributions." Knowledge and information systems 41.3 (2014): 647-665.
@@ -100,26 +98,28 @@ public class FeatConstr {
     //adaptiveSamplingAE - stopping criteria is approxamization error for all attributes
     //aproxErrSampling - we calculate samples for each attribute mi=(<1-alpha, e>) (article 2010) in Štrumbelj, Erik, and Igor Kononenko. "An efficient explanation of individual classifications using game theory." The Journal of Machine Learning Research 11 (2010): 1-18.
     public static IMEver method=IMEver.adaptiveSamplingSS; //selected IME method
-    public static boolean explAllData=false; 
-    public static boolean explAllClasses=false;
-    public static boolean numerFeat=false;      //numerical features ... testing on domain credit score   
-    public static boolean treeSHAP=true; 
+    public static int N_SAMPLES=100;    //if we use equalSampling ... number of samples, we choose random value from interval min-max N_SAMPLE times  
+    public static int minS=10;          //min samples ... if we use sumOfSamples and diffSampling ... to obtain an approximate estimate of the variance
+    public static int sumOfSmp=2000;    //sum of samples ... if we use adaptive sampling ... sumOfSmp >= n*minS ... n is number of attributes
+    public static int pctErr=95;        //90, 95 or 99;
+    public static double error=0.01;
+    /**************************** XGBoost parameters *********************************/
     public static int numOfRounds=100;          //XGBoost parameter - number of decision trees 
     public static int maxDepth=3;               //XGBoost parameter - size of decision trees
     public static double eta=0.3;               //XGBoost parameter - shrinkage
     public static double gamma=1;               //XGBoost parameter - gamma
-    public static int pctErr=95;                //90, 95 or 99;
-    public static double error=0.01;
-    public static boolean writeConstruct=false; //true when we need dataset for creating II. level features 
-    public static boolean firstLevelFeat=false; //true if we generate 1st level features, false if we generate 2nd level features
+    /**************************** visualisation parameters *********************************/
     public static int visFrom=1, visTo=10;     //visualize instances from visFrom to visTo
     public static int drawLimit=20;    //we draw (max.) 20 the most important attributes
-    public static int topHigh=6;       //visualise features with highest contributions ... it's possible that is plotted more than topHigh features if e.g. 6th and 7th have the same importance ...
-    public static int numOfImpt=6;      //visualise 
+    public static int topHigh=10;       //visualise features with highest contributions (instance explanation)
+    public static int numOfImpt=6;      //visualise features with highest contributions ... 
     public static int RESOLUTION=100;   // density for model visualisation
     public static boolean pdfPng=true;          //besided eps, print also pdf and png
-    public static boolean writeAccByFoldsInFile=false;  //we need this for statistical tests for dataset credit score
-    public static boolean groupsByThrStat=false;        //print statistics about groups by thresholds    
+    /**************************** additional EFC parameters *********************************/
+    public static boolean treeSHAP=true;
+    public static boolean explAllData=false; 
+    public static boolean explAllClasses=false;
+    public static boolean numerFeat=true;  //generate numerical features   
     public static double attrImpThrs[]={0,0.25,0.5};    //{0,0.2,0.4,0.6,0.7};//{0,0.1,0.2,0.3,0.4,0.5}; ... used only in paramSearch method
     public static double thrL=0.1;          //weight threshold - lower 
     public static double thrU=0.8;          //weight threshold - upper
@@ -129,14 +129,21 @@ public class FeatConstr {
     public static int minMinNoise=1;        //(default 1) if numInst<minExplInst then minNoise=minMinNoise
     public static int minExplInst=50;       //if numInst<minExplInst then minNoise=minMinNoise
     public static int maxToExplain=500;     //(default 500) max instances to explain if we have more than 500 instances to explain from the class 
-    public static double cf=0.5;            //confidence factor (FURIA)
-    public static double pci=0.9;           //percentage of covered instances (FURIA)
-    public static boolean covering=false;   //covering=true -> if all instances are covered by features generated by FURIA we stop construction with FURIA
+    public static int instThr=10;           //e.g. 10% ... we explain minority class, if minority class has at least percent of instThr instances
+    /**************************** evaluation parameters *********************************/
+    public static int folds=10;         //for generating models, folds=1 means no CV and using split in ratio listed below
+    public static int splitTrain=5;     //5 ... 80%:20%, 4 ... 75%25%, 3 ... 66%:33%; useful only when folds are set to 1, meaning no CV and using split
+    /**************************** FURIA parameters *********************************/
+    public static double cf=0.5;                    //confidence factor (FURIA)
+    public static double pci=0.9;                   //percentage of covered instances (FURIA)
+    public static boolean covering=false;           //covering=true -> if all instances are covered by features generated by FURIA we stop construction with FURIA
     public static boolean featFromExplClass=true;   //for generate FURIA features ... for ablation study featFromExplClass=false this means that we take features from all classes
-    public static int instThr=10;                   //e.g. 10% ... we explain minority class, if minority class has at least percent of instThr instances
-    public static int classToExplain=1;             //default second class but this value is changed due to heuristic - explain minority class if class has at least instThr pct instances
+    /*****************************************************************************/
+    public static int classToExplain=1;             //default is second class but this value is changed due to heuristic - explain minority class if class has at least instThr pct instances
     public static int timeLimit=10800000;           //10800000ms = 3h
     public static int numInst;                      //number of instances in explained class; is set when classToExplain is defined
+    public static String datasetName;
+    public static String tmpDir;
     public static List<String> listOfConcepts;
     public static String fileName;
     public static long modelBuildTime[];
@@ -238,12 +245,8 @@ public class FeatConstr {
     public static String nThHigh;
     public static int processors;
     public static void main(String[] args) throws IOException, Exception {
-        if(!((justExplain==false && visualisation==false && exhaustive==false && jakulin==false) ||      //EFC
-             (justExplain==false && visualisation==false && exhaustive==true && jakulin==false) ||       //Exhaustive search
-             (justExplain==false && visualisation==false && exhaustive==true && jakulin==true) ||        //Jakulin's method
-             (justExplain==true  && visualisation==false) ||                                             //Knowledge discovery
-             (justExplain==false && visualisation==true))                                                //Visualisation
-                ){
+        /**************************** check the correct setting of EFC *********************************/
+        if((justExplain==false && visualisation==false && exhaustive==false && jakulin==true)){
             System.out.println("\u001B[31mYou must set the correct values of the parameters from the following list of settings and run the program again!\u001B[0m");
                       
             System.out.println("\t1) \u001B[34mEFC\033[0m \t\t\t\t\t(justExplain=false, visualisation=false, exhaustive=false, jakulin=false)");
@@ -257,35 +260,50 @@ public class FeatConstr {
             System.exit(0);        
         }
         
+        tmpDir = System.getProperty("java.io.tmpdir");
+        deleteXGBdll();         //if xgboost4j dll exists in temp folder, delete it
+        
+        String folderName="logs/";
+       
+        if((justExplain==false && visualisation==false && exhaustive==false && jakulin==false))
+            folderName="logs/efc/";
+        if((justExplain==false && visualisation==false && exhaustive==true && jakulin==false))
+            folderName="logs/exhaustive/";
+        if((justExplain==false && visualisation==false && exhaustive==true && jakulin==true))
+            folderName="logs/jakulin/";
         
         String lg = new SimpleDateFormat("HH.mm.ss-dd.MM.yyyy").format(new Date());
         if(!justExplain && !visualisation){
-            logFile= new PrintWriter(new FileWriter("logs/report-"+lg+".log"));
-            bestParamPerFold= new PrintWriter(new FileWriter("logs/params-"+lg+".dat"));
+            logFile= new PrintWriter(new FileWriter(folderName+"report-"+lg+".log"));
+            if(!exhaustive && !jakulin){
+                bestParamPerFold= new PrintWriter(new FileWriter(folderName+"params-"+lg+".dat"));
+                if(groupsByThrStat)
+                    groupsStat = new PrintWriter(new FileWriter(folderName+"groupsStat-"+lg+".csv",true));    //number of identified groups by EFC for each threshold and each fold
+            }
         }
         if(!treeSHAP)
-            samplesStat= new PrintWriter(new FileWriter("logs/samplesStat-"+lg+".dat"));
+            samplesStat= new PrintWriter(new FileWriter(folderName+"samplesStat-"+lg+".dat"));
 
-        if(justExplain && !visualisation){
-            impGroupsKD = new PrintWriter(new FileWriter("logs/kd/impGroups-"+lg+".log"));
-            attrImpListMDL_KD = new PrintWriter(new FileWriter("logs/kd/attrImpListMDL-"+lg+".dat"));        
-            discIntervalsKD = new PrintWriter(new FileWriter("logs/kd/discretizationIntervals-"+lg+".dat"));
+        if((justExplain && visualisation) || justExplain){
+            impGroupsKD = new PrintWriter(new FileWriter(folderName+"kd/impGroups-"+lg+".log"));
+            attrImpListMDL_KD = new PrintWriter(new FileWriter(folderName+"kd/attrImpListMDL-"+lg+".dat"));        
+            discIntervalsKD = new PrintWriter(new FileWriter(folderName+"kd/discretizationIntervals-"+lg+".dat"));
         }
-        else if(!visualisation){            
-            impGroups = new PrintWriter(new FileWriter("logs/impGroups-"+lg+".log"));
-            attrImpListMDL = new PrintWriter(new FileWriter("logs/attrImpListMDL-"+lg+".dat"));
-            discIntervals = new PrintWriter(new FileWriter("logs/discretizationIntervals-"+lg+".dat"));
+        else if(!visualisation && !justExplain){            
+            impGroups = new PrintWriter(new FileWriter(folderName+"impGroups-"+lg+".log"));
+            if(!jakulin)
+                attrImpListMDL = new PrintWriter(new FileWriter(folderName+"attrImpListMDL-"+lg+".dat"));
+            discIntervals = new PrintWriter(new FileWriter(folderName+"discretizationIntervals-"+lg+".dat"));
         }
-        
-        
-        if(groupsByThrStat)
-            groupsStat = new PrintWriter(new FileWriter("logs/groupsStat-"+lg+".csv",true));
-        
+             
         File folder;
         Timer t1;
         Timer tTotal=new Timer();
         double [] classDistr;
-             
+        
+        RCaller rCaller = RCaller.create(); //open RCaller only once and close it at the end of the program
+        RCode code = RCode.create();
+        
         boolean isClassification=true;
         
         //classification datasets
@@ -301,35 +319,50 @@ public class FeatConstr {
     
         /*****real dataset - credit score*****/       
         //folder = new File("datasets/real");
-                        
+                     
         File[] listOfFiles = folder.listFiles();
+
+        boolean noFiles=true;
+        for(File file : listOfFiles){   
+            if(file.isFile()){
+                noFiles=false;
+                break;
+            }
+        }
+        
+        if(noFiles) //check if analysed folder is empty
+            System.out.println("\u001B[31mPut dataset(s) in the selected folder and run the program again! The currently selected folder is "+folder.getName()+".\u001B[0m");
            
-        loopJustForExplanation:
+        loopExplanationVisualisation:
         for(File file : listOfFiles){
             loopExhaustiveTooLong:      
             if(file.isFile()){
                 tTotal.start();
                 fileName=file.getName();
                 System.out.println("dataset: "+fileName);
-                if(justExplain && !visualisation){
+                if((justExplain && visualisation) || justExplain){
                     impGroupsKD.println("dataset: "+fileName);
                     attrImpListMDL_KD.println("dataset: "+fileName); 
                     discIntervalsKD.println("dataset: "+fileName);
                 }      
-                else if(!visualisation){ 
+                else if(!visualisation && !justExplain){ 
                     logFile.println("dataset: "+fileName);
-                    bestParamPerFold.println("dataset: "+fileName);
+                    if(!exhaustive && !jakulin){
+                        bestParamPerFold.println("dataset: "+fileName);
+                        if(groupsByThrStat)
+                            groupsStat.println("dataset: "+fileName);
+                    }
                     if(!treeSHAP)
                         samplesStat.println("dataset: "+fileName);
                 
                     impGroups.println("dataset: "+fileName);
-                    attrImpListMDL.println("dataset: "+fileName); 
+                    if(exhaustive && !jakulin)
+                        impGroups.println("Exhaustive search");
+                    if((!exhaustive && !jakulin) || (exhaustive && !jakulin))   
+                        attrImpListMDL.println("dataset: "+fileName);
                     discIntervals.println("dataset: "+fileName);                
                 }
                 
-                if(groupsByThrStat)
-                    groupsStat.println("dataset: "+fileName);
-
                 Classifier clsTab[]=null;
                 String lab[];
 
@@ -349,7 +382,7 @@ public class FeatConstr {
                 Instances data = new Instances(new BufferedReader(new FileReader(file)));        
                 data.setClassIndex(data.numAttributes()-1); 
 
-    System.gc();
+                System.gc();
 
                 //just for any case
                 String oldName, newName;
@@ -368,37 +401,54 @@ public class FeatConstr {
                     rwm.setInputFormat(data);
                     data=Filter.useFilter(data, rwm);
 
-                    //attrImpListMDL.println("MDL - before CI");
-                    attrImpListMDL_KD.println("MDL - before CI");
-                        mdlCORElearn(data);
+//                    attrImpListMDL_KD.println("MDL - before CI");
+//                        mdlCORElearn(data, rCaller, code);
+                        
+                    Instances dataWithNewFeat=justExplainAndConstructFeat(data, rf,true, rCaller, code); //knowledge discovery
 
-
-                    Instances dataWithNewFeat=justExplainAndConstructFeat(data, rf,true);
-                    Instances origNewfeat=null;
-                    if(firstLevelFeat){
+                    if(saveConstructs){
+                        Instances origNewfeat=null;
                         origNewfeat=new Instances(dataWithNewFeat);
+                        String fName1, fName2, fName3, origName=fileName.substring(0, fileName.indexOf('.'));
+                        folderName="logs/kd/";
+                        String searchString1="origPlusRen", searchString2="LFeat";
+                        int featLevel;
 
-                        int iName=1;
-                        String tmpAttrName;
-                        int oldNumAttr=data.numAttributes()-1;
-                        PrintWriter attNames= new PrintWriter(new FileWriter("logs/kd/attNames2nd-level-feat.dat"));
-                        attNames.println("NEW \t OLD");
-                        for(int i=oldNumAttr;i<dataWithNewFeat.numAttributes()-1;i++){
-                            tmpAttrName="F"+iName;
-                            attNames.println(tmpAttrName+"\t"+dataWithNewFeat.attribute(i).name());    
-                            dataWithNewFeat.renameAttribute(i, tmpAttrName);
-                            iName++;
+                        if(fileName.contains(searchString1) && fileName.contains(searchString2)){
+                            int startIdx=fileName.indexOf(searchString1);
+                            int endIdx=fileName.indexOf(searchString2)+searchString2.length();
+                            String tmpString=fileName.substring(startIdx, endIdx);
+                            featLevel=Integer.parseInt(tmpString.substring(searchString1.length(),searchString1.length()+1))+1; //increase feature level
+                            fName1="origPlus"+featLevel+searchString2;
+                            fName2="names-"+featLevel+"-level-feat";
+                            fName3=searchString1+featLevel+searchString2;
+                            origName=fileName.substring(0, fileName.indexOf("-"+searchString1));
                         }
-                        attNames.close();
-                    }
+                        else{
+                            featLevel=1;
+                            fName1 ="origPlus1LFeat";
+                            fName2 ="names-1-level-feat";
+                            fName3 ="origPlusRen1LFeat";
+                        }
 
-                    if(writeConstruct){
-                        DataSink.write("logs/kd/"+fileName.substring(0, fileName.indexOf('.'))+"-PlusFeat.arff", dataWithNewFeat);
-                        if(firstLevelFeat)
-                            DataSink.write("logs/kd/"+fileName.substring(0, fileName.indexOf('.'))+"-OrigPlusFeat.arff", origNewfeat);
-                        System.out.println("New dataset have been saved.");
+                        DataSink.write(folderName+origName+"-"+fName1+"-"+lg+".arff", origNewfeat);
+                        if(renameGenFeat){
+                            int iName=1;
+                            String tmpAttrName;
+                            int oldNumAttr=data.numAttributes()-1;
+                            PrintWriter attNames= new PrintWriter(new FileWriter(folderName+fName2+"-"+lg+".dat"));
+                            attNames.println("NEW \t OLD");
+                            for(int i=oldNumAttr;i<dataWithNewFeat.numAttributes()-1;i++){
+                                tmpAttrName="F"+iName+"L"+featLevel;
+                                attNames.println(tmpAttrName+"\t"+dataWithNewFeat.attribute(i).name());    
+                                dataWithNewFeat.renameAttribute(i, tmpAttrName);
+                                iName++;
+                            }
+                            attNames.close();
+                            DataSink.write(folderName+origName+"-"+fName3+"-"+lg+".arff", dataWithNewFeat); //save the dataset with renamed features (F1L1, F2L1 ...) for the potential generating 2nd level features
+                        }
                     }
-                    continue loopJustForExplanation;
+                    continue loopExplanationVisualisation;                                     
                 }
 
                 if(!visualisation){
@@ -411,10 +461,8 @@ public class FeatConstr {
                 if(data.classAttribute().isNumeric())
                     isClassification=false;
 
-                if(isClassification){
-                    clsTab=new Classifier[]{j48,nb,furia, rf};
-                    lab=new String[]{"ACC", "STD-ACC"};           
-                }
+                if(isClassification)
+                    clsTab=new Classifier[]{j48, nb, furia, rf};          
 
                 accuracyByFolds=new double[clsTab.length][folds];
                 accuracyByFoldsPS=new double[clsTab.length][folds];
@@ -517,18 +565,10 @@ public class FeatConstr {
                     }
                 }
 
-                //int numOfImpt=6;  //for visualisation; format A4, 6 attr. or less  
-                Classifier predictionModel;
+                Classifier predictionModel=rf;
                 if(!visualisation){
                     System.out.println("---------------------------------------------------------------------------------");
                         logFile.println("---------------------------------------------------------------------------------"); 
-                }
-
-                if (data.classAttribute().isNumeric()){ 
-                    predictionModel=rf;            
-                }
-                else{
-                    predictionModel=rf;
                 }
 
                 //SPLIT TO TRAIN AND TEST - N fold CV or split in ratio, depends on what number of folds has been chosen
@@ -543,18 +583,20 @@ public class FeatConstr {
                 /******************* VISUALISATION *********************************/
                 if(visualisation){        
                     System.out.println("Drawing ...");
-                    visualizeModelInstances(rf, data, file, true, RESOLUTION, numOfImpt, visFrom, visTo);  //visualise explanations from e.g., 50th to 60 instance
+                    visualizeModelInstances(rf, data, true, RESOLUTION, numOfImpt, visFrom, visTo);  //visualise explanations from e.g., 50th to 60 instance
                     System.out.println("Drawing is finished!");
-                    System.exit(0);
+                    continue loopExplanationVisualisation;  
                 }     
 
                 /*************************************  FOLDS  *********************************************************************/        
                 for (int f = 0; f < folds; f++){
                     unInfFeatures.clear();      //clear set for each fold
                     int minN=minNoise;
+                    if(!jakulin){
                         attrImpListMDL.println("\t\t\t\t\t\t\t\t--------------"); 
                         attrImpListMDL.printf("\t\t\t\t\t\t\t\t\tFold %2d\n",(f+1));
                         attrImpListMDL.println("\t\t\t\t\t\t\t\t--------------");
+                    }
 
                     if(folds==1){
                         StratifiedRemoveFolds fold;
@@ -666,7 +708,7 @@ public class FeatConstr {
                            //building model
                            t1=new Timer();
                            t1.start();                
-                                Booster booster = XGBoost.train(trainMat, params, numOfRounds, watches, null, null);          
+                                Booster booster = XGBoost.train(trainMat, params, numOfRounds, watches, null, null);
                            t1.stop();
                            modelBuildTime[f]=t1.diff();
                            String evalNameTest[]={"test"};
@@ -676,7 +718,9 @@ public class FeatConstr {
 
                            String accTrain=booster.evalSet(trainMatArr, evalNameTrain,0); 
                            String accTest=booster.evalSet(testMatArr, evalNameTest,0);
-
+                           testMatArr=null; 
+                           trainMatArr=null;
+                           
                            accExplAlgInt[f]=(1-Double.parseDouble(accTrain.split(":")[1]))*100; //internal evaluation of the model
                            accExplAlgTest[f]=(1-Double.parseDouble(accTest.split(":")[1]))*100; //evaluation on the test dataset
 
@@ -726,7 +770,11 @@ public class FeatConstr {
                                     tmpContrib=booster.predictContrib(trainMat, 0);   //Tree SHAP ... for each feature, and last for bias matrix of size (​nsample, nfeats + 1) ... feature contributions (SHAP​  xgboost predict)
                                 else
                                     tmpContrib=booster.predictContrib(explainMat, 0); //tree limit - Limit number of trees in the prediction; defaults to 0 (use all trees).
-
+                                
+                                explainMat.dispose();
+                                testMat.dispose();
+                                trainMat.dispose();
+                                booster.dispose();
                                 t1.stop();
 
                                 //Note that shap_values for the two classes are additive inverses for a binary classification problem!!!
@@ -735,7 +783,7 @@ public class FeatConstr {
                                     allExplanationsSHAP=removeCol(tmpContrib, tmpContrib[0].length-1);  //we remove last column, because we do not need column with bias
                                 }
                                 else{
-                                int [] idxQArr=new int[data.numAttributes()-1];
+                                int idxQArr[]=new int[data.numAttributes()-1];
 
                                     if(classToExplain==0)
                                         for(int i=0;i<idxQArr.length;i++)
@@ -748,7 +796,7 @@ public class FeatConstr {
                                             j++;
                                         }
                                     }                
-                                    allExplanationsSHAP= someColumns(tmpContrib, idxQArr);  //we take just columns of attributes from the class that we explain
+                                    allExplanationsSHAP=someColumns(tmpContrib, idxQArr);  //we take just columns of attributes from the class that we explain
                                 }
 
                                 if(numInst<minExplInst)
@@ -765,7 +813,7 @@ public class FeatConstr {
                                 impGroups.printf("\t\t\t\t\t\t\t\t\tFold %2d\n",(f+1));
                                 impGroups.println("\t\t\t\t\t\t\t\t--------------"); 
 
-                                if(groupsByThrStat && f==0){
+                                if(groupsByThrStat && !visualisation && !justExplain && !exhaustive && !jakulin && f==0){
                                     DecimalFormat df = new DecimalFormat("0.0");
                                     for(double q=thrL;q<=thrU;q=q+step)
                                         groupsStat.write(df.format(q)+";");
@@ -779,14 +827,12 @@ public class FeatConstr {
                                     allWeightsSHAP=setWeights(data,allExplanationsSHAP,round(q,1));
                                     impInter=(getMostFqSubsets(allWeightsSHAP,data,usedNoise));
                                     attrGroups.addAll(impInter);
-                                    if(groupsByThrStat)
+                                    if(groupsByThrStat && !visualisation && !justExplain && !exhaustive && !jakulin)
                                         groupsStat.write(impInter.size()+";");
                                 }
-                                if(groupsByThrStat)
+                                if(groupsByThrStat && !visualisation && !justExplain && !exhaustive && !jakulin)
                                     groupsStat.println();
                             }//loop explain (all) class(es)
-                            if(groupsByThrStat)
-                                continue;
                         }
                         else{
                             System.out.println("Building model ...");
@@ -843,7 +889,7 @@ public class FeatConstr {
                                 RemoveWithValues filter = new RemoveWithValues();
                                 filter.setAttributeIndex("last") ;                  //class
                                 filter.setNominalIndices((classToExplain+1)+"");    //what we remove ... +1 because indexes go from 0, we need indexes from 1 for method setNominalIndices
-                                filter.setInvertSelection(true);                    //if we invert selection than we keep selected data ... 
+                                filter.setInvertSelection(true);                    //if we invert selection then we keep selected data ... 
                                 filter.setInputFormat(explainData);
                                 explainData = Filter.useFilter(explainData, filter);
 
@@ -1232,10 +1278,14 @@ public class FeatConstr {
                             }
                         }
 
-                        attrImpListMDL.println("Feature evaluation: MDL (Logical features) - After CI");                
-                        mdlCORElearn(trainFold);
+//                        if(!jakulin){
+//                            attrImpListMDL.println("Feature evaluation: MDL (Logical features) - After CI");                
+//                            mdlCORElearn(trainFold, rCaller, code);
+//                        }
+                        
                         tmp= numOfFeat(trainFold, data.numAttributes()-1);
                         numOfFeatByFoldsLF[f]=tmp[0];    //we count just logical features
+                        
                         for(int c=0;c<clsTab.length;c++){
                             model=clsTab[c];
                             t1.start(); 
@@ -1263,7 +1313,7 @@ public class FeatConstr {
                         }
                         /****************************************************************/   
                         /**************** NUMERICAL FEATURES ******************/
-                        //numerical operators: /, -, +  ... for Credit score dataset
+                        //numerical operators: /, -, +  ... e.g. for Credit score dataset
                         if(numerFeat){
                             t1.start();
                             trainFoldNum=addNumFeat(trainFoldNum, OperationNum.DIVIDE, allCombSecOrd);
@@ -1276,6 +1326,11 @@ public class FeatConstr {
                             testFoldNum=addNumFeat(testFoldNum, OperationNum.ADD, allCombSecOrd);  
                             t1.stop();
                             numericalFCTime[f]=t1.diff();
+                            
+//                            if(!jakulin){
+//                                attrImpListMDL.println("Feature evaluation: MDL (Numerical features) - After CI");                
+//                                mdlCORElearn(trainFoldNum, rCaller, code);
+//                            }
 
                             tmp= numOfFeat(trainFoldNum, data.numAttributes()-1);
                             numFeatByFoldsNum[f]=tmp[5]; //numerical
@@ -1316,7 +1371,12 @@ public class FeatConstr {
                         testFoldRE=addRelFeat(testFoldRE,allCombSecOrd,OperationRel.DIFF,false,f);  //false .. we just skip uninformative features
 
                         t1.stop();
-                        relationalFCTime[f]=t1.diff();               
+                        relationalFCTime[f]=t1.diff();
+                        
+//                        if(!jakulin){
+//                            attrImpListMDL.println("Feature evaluation: MDL (Relational features) - After CI");                
+//                            mdlCORElearn(trainFoldRE, rCaller, code);
+//                        }
 
                         tmp= numOfFeat(trainFoldRE, data.numAttributes()-1);
                         numFeatByFoldsRE[f]=tmp[4]; //relational
@@ -1386,6 +1446,11 @@ public class FeatConstr {
 
                         t1.stop();
                         cartesianFCTime[f]=t1.diff();
+                        
+//                        if(!jakulin){
+//                            attrImpListMDL.println("Feature evaluation: MDL (Cartesian features) - After CI");                
+//                            mdlCORElearn(trainFoldCP, rCaller, code);
+//                        }
 
                         tmp= numOfFeat(trainFoldCP, data.numAttributes()-1);
                         numFeatByFoldsCP[f]=tmp[3]; //Cartesian
@@ -1430,8 +1495,10 @@ public class FeatConstr {
                         t1.stop();
                         furiaThrTime[f]=t1.diff();
 
-                        attrImpListMDL.println("Feature evaluation: MDL (only Furia and thr feat) - After CI");
-                        mdlCORElearn(trainFoldFU);
+//                        if(!jakulin){
+//                            attrImpListMDL.println("Feature evaluation: MDL (FURIA and threshold features) - After CI");
+//                            mdlCORElearn(trainFoldFU, rCaller, code);
+//                        }
 
                         tmp= numOfFeat(trainFoldFU, data.numAttributes()-1);
                         numFeatByFoldsFuriaThr[0][f]=tmp[1]; //threshold
@@ -1551,9 +1618,11 @@ public class FeatConstr {
                                 logFile.println("FC time (exhaustive search): "+allFCTime[f]+" All features method, fold: "+(f+1));
                         }
 
-                        attrImpListMDL.println("Feature evaluation: MDL (All features dataset) - After CI");                
-                        mdlCORElearn(trainFold);
-
+                        if(!jakulin){
+                            attrImpListMDL.println("Feature evaluation: MDL (All features dataset) - After CI");                
+                            mdlCORElearn(trainFold, rCaller, code);
+                        }
+                        
                         tmp = numOfFeat(trainFold, data.numAttributes()-1);
                         numberOfFeatByFolds[0][f]=tmp[0];    //logical
                         numberOfFeatByFolds[1][f]=tmp[1];    //threshold
@@ -1624,7 +1693,7 @@ public class FeatConstr {
                                 }
                             for(int i=0;i<clsTab.length;i++){
                                 ParamSearchEval pse;
-                                pse=paramSearch(trainFold, testFold, clsTab[i],data.numAttributes()-1,split);
+                                pse=paramSearch(trainFold, testFold, clsTab[i],data.numAttributes()-1,split, rCaller, code);
                                 accuracyByFoldsPS[i][f]=pse.getAcc();
 
                                 //we need info for different classifiers
@@ -1670,22 +1739,23 @@ public class FeatConstr {
                                 }
                             }    
                         }
-                    }   //Jakulin's method or (our) EFC
+                    }   //Jakulin's method or EFC
                 }   //end FOR loop for folds
 
                 DecimalFormat df = new DecimalFormat("0.00");
 
                 /**************** Write ACC by folds into files ******************/
-                if(writeAccByFoldsInFile){
-                    for (int i=0;i<clsTab.length;i++){
-                        accByFolds= new PrintWriter(new FileWriter("logs/"+clsTab[i].getClass().getSimpleName()+"-byFolds.csv"));
+                if(writeAccByFoldsInFile && (!visualisation && !justExplain && !exhaustive && !jakulin)){
+                    for(int i=0;i<clsTab.length;i++){
+                        accByFolds=new PrintWriter(new FileWriter(folderName+clsTab[i].getClass().getSimpleName()+"-byFolds-"+lg+".csv"));
                         if(numerFeat)
                             accByFolds.println("FoldNo;Base;Log;Num;Rel;Cart;DrThr;All;FS");
                         else
                             accByFolds.println("FoldNo;Base;Log;Rel;Cart;DrThr;All;FS");
                         for(int f=0;f<folds;f++){
                             if(numerFeat)
-                                accByFolds.println("Fold"+(f+1)+";"+df.format(accOrigModelByFolds[i][f])+";"+df.format(accByFoldsLF[i][f])+";"+ df.format(accByFoldsNum[i][f])+";"+df.format(accByFoldsRE[i][f])+";"+df.format(accByFoldsCP[i][f])+";"+df.format(accuracyByFoldsFuriaThr[i][f])+";"+df.format(accuracyByFolds[i][f])+";"+df.format(accuracyByFoldsPS[i][f]));                               else   
+                                accByFolds.println("Fold"+(f+1)+";"+df.format(accOrigModelByFolds[i][f])+";"+df.format(accByFoldsLF[i][f])+";"+ df.format(accByFoldsNum[i][f])+";"+df.format(accByFoldsRE[i][f])+";"+df.format(accByFoldsCP[i][f])+";"+df.format(accuracyByFoldsFuriaThr[i][f])+";"+df.format(accuracyByFolds[i][f])+";"+df.format(accuracyByFoldsPS[i][f]));                    
+                            else   
                                 accByFolds.println("Fold"+(f+1)+";"+df.format(accOrigModelByFolds[i][f])+";"+df.format(accByFoldsLF[i][f])+";"+df.format(accByFoldsRE[i][f])+";"+df.format(accByFoldsCP[i][f])+";"+df.format(accuracyByFoldsFuriaThr[i][f])+";"+df.format(accuracyByFolds[i][f])+";"+df.format(accuracyByFoldsPS[i][f]));
                         }
                         accByFolds.close();    
@@ -1707,20 +1777,19 @@ public class FeatConstr {
                     System.out.println("---------------------------------------------------------------------------------");
                         logFile.println("---------------------------------------------------------------------------------"); 
                     if(!exhaustive){
-                    if(treeSHAP){
-                        System.out.println("Internal (during building) accuracy of explanation model: "+df.format(mean(accExplAlgInt))+" (stdev "+df.format(Math.sqrt(var(accExplAlgInt,mean(accExplAlgInt))))+") ACC on the test dataset: "+df.format(mean(accExplAlgTest))+" (stdev "+df.format(Math.sqrt(var(accExplAlgTest,mean(accExplAlgTest))))+")");
-                            logFile.println("Internal (during building) accuracy of explanation model: "+df.format(mean(accExplAlgInt))+" (stdev "+df.format(Math.sqrt(var(accExplAlgInt,mean(accExplAlgInt))))+") ACC on the test dataset: "+df.format(mean(accExplAlgTest))+" (stdev "+df.format(Math.sqrt(var(accExplAlgTest,mean(accExplAlgTest))))+")"); 
-                    }
-                    else{
-                        System.out.println("ACC on the test dataset: "+df.format(mean(accExplAlgTest))+" stdev "+df.format(Math.sqrt(var(accExplAlgTest,mean(accExplAlgTest))))+(excludeUppers(predictionModel.getClass().getSimpleName()).equals("RF")?" ACC RF OOB: "+df.format(mean(oobRF))+" stdev "+df.format(Math.sqrt(var(oobRF,mean(oobRF)))):""));
-                            logFile.println("ACC on the test dataset: "+df.format(mean(accExplAlgTest))+" stdev "+df.format(Math.sqrt(var(accExplAlgTest,mean(accExplAlgTest))))+(excludeUppers(predictionModel.getClass().getSimpleName()).equals("RF")?" ACC RF OOB: "+df.format(mean(oobRF))+" stdev "+df.format(Math.sqrt(var(oobRF,mean(oobRF)))):""));
-
-                    }
+                        if(treeSHAP){
+                            System.out.println("Internal (during building) accuracy of explanation model: "+df.format(mean(accExplAlgInt))+" (stdev "+df.format(Math.sqrt(var(accExplAlgInt,mean(accExplAlgInt))))+") ACC on the test dataset: "+df.format(mean(accExplAlgTest))+" (stdev "+df.format(Math.sqrt(var(accExplAlgTest,mean(accExplAlgTest))))+")");
+                                logFile.println("Internal (during building) accuracy of explanation model: "+df.format(mean(accExplAlgInt))+" (stdev "+df.format(Math.sqrt(var(accExplAlgInt,mean(accExplAlgInt))))+") ACC on the test dataset: "+df.format(mean(accExplAlgTest))+" (stdev "+df.format(Math.sqrt(var(accExplAlgTest,mean(accExplAlgTest))))+")"); 
+                        }
+                        else{
+                            System.out.println("ACC on the test dataset: "+df.format(mean(accExplAlgTest))+" stdev "+df.format(Math.sqrt(var(accExplAlgTest,mean(accExplAlgTest))))+(excludeUppers(predictionModel.getClass().getSimpleName()).equals("RF")?" ACC RF OOB: "+df.format(mean(oobRF))+" stdev "+df.format(Math.sqrt(var(oobRF,mean(oobRF)))):""));
+                                logFile.println("ACC on the test dataset: "+df.format(mean(accExplAlgTest))+" stdev "+df.format(Math.sqrt(var(accExplAlgTest,mean(accExplAlgTest))))+(excludeUppers(predictionModel.getClass().getSimpleName()).equals("RF")?" ACC RF OOB: "+df.format(mean(oobRF))+" stdev "+df.format(Math.sqrt(var(oobRF,mean(oobRF)))):""));
+                        }
                     }
                     
                     if(!exhaustive){
-                    System.out.println("---------------------------------------------------------------------------------");
-                        logFile.println("---------------------------------------------------------------------------------");
+                        System.out.println("---------------------------------------------------------------------------------");
+                            logFile.println("---------------------------------------------------------------------------------");
                           
                         System.out.println("Avg. model building time: "+df.format(mean(modelBuildTime))+" [ms] (stdev "+ df.format(Math.sqrt(var(modelBuildTime,mean(modelBuildTime))))+")");
                             logFile.println("Avg. model building time: "+df.format(mean(modelBuildTime))+" [ms] (stdev "+ df.format(Math.sqrt(var(modelBuildTime,mean(modelBuildTime))))+")");
@@ -1857,6 +1926,7 @@ public class FeatConstr {
 
                 System.out.println("*********************************************************************************");
                       logFile.println("*********************************************************************************"); 
+                
                 if(!jakulin){  
                     System.out.println("Cartesian product");
                         logFile.println("Cartesian product");    
@@ -1896,7 +1966,6 @@ public class FeatConstr {
                 System.out.println("Avg. FC time (all feat): "+df.format(mean(cartesianFCTime))+" [ms] stdev "+ df.format(Math.sqrt(var(cartesianFCTime,mean(cartesianFCTime)))));
                     logFile.println("Avg. FC time (all feat): "+df.format(mean(cartesianFCTime))+" [ms] stdev "+ df.format(Math.sqrt(var(cartesianFCTime,mean(cartesianFCTime)))));   
 
-
                 if(!jakulin){      
                     System.out.println("*********************************************************************************");
                         logFile.println("*********************************************************************************");        
@@ -1912,7 +1981,6 @@ public class FeatConstr {
                         logFile.println("Avg. num of FURIA feat. in tree: "+df.format(mean(numOfFuriaThrInTreeByFoldsF[0]))+" (stdev "+ df.format(Math.sqrt(var(numOfFuriaThrInTreeByFoldsF[0],mean(numOfFuriaThrInTreeByFoldsF[0]))))+")"+" avg. sum of terms in constructs (Furia feat) in tree: "+ df.format(mean(numOfFuriaThrInTreeByFoldsF[1]))+" (stdev "+ df.format(Math.sqrt(var(numOfFuriaThrInTreeByFoldsF[1],mean(numOfFuriaThrInTreeByFoldsF[1]))))+")"+" avg. num of THR feat. in tree: "+ df.format(mean(numOfFuriaThrInTreeByFoldsF[2]))+" (stdev "+ df.format(Math.sqrt(var(numOfFuriaThrInTreeByFoldsF[2],mean(numOfFuriaThrInTreeByFoldsF[2]))))+")"+" avg. sum of terms in constructs (THR feat) in tree: "+df.format(mean(numOfFuriaThrInTreeByFoldsF[3]))+" (stdev "+ df.format(Math.sqrt(var(numOfFuriaThrInTreeByFoldsF[3],mean(numOfFuriaThrInTreeByFoldsF[3]))))+")");
                     System.out.println("Avg. ruleset size: "+df.format(mean(complexityOfFuria[0]))+" (stdev "+ df.format(Math.sqrt(var(complexityOfFuria[0],mean(complexityOfFuria[0]))))+")"+" avg. number of terms of construct in Furia feat.: "+ df.format(mean(complexityOfFuria[1]))+" (stdev "+ df.format(Math.sqrt(var(complexityOfFuria[1],mean(complexityOfFuria[1]))))+") avg. number of terms in constructs per ruleset: "+df.format(mean(complexityOfFuria[2])) +" (stdev "+df.format(Math.sqrt(var(complexityOfFuria[2],mean(complexityOfFuria[2]))))+")");
                         logFile.println("Avg. ruleset size: "+df.format(mean(complexityOfFuria[0]))+" (stdev "+ df.format(Math.sqrt(var(complexityOfFuria[0],mean(complexityOfFuria[0]))))+")"+" avg. number of terms of construct in Furia feat.: "+ df.format(mean(complexityOfFuria[1]))+" (stdev "+ df.format(Math.sqrt(var(complexityOfFuria[1],mean(complexityOfFuria[1]))))+") avg. number of terms in constructs per ruleset: "+df.format(mean(complexityOfFuria[2])) +" (stdev "+df.format(Math.sqrt(var(complexityOfFuria[2],mean(complexityOfFuria[2]))))+")");    
-
 
                     System.out.println("-----ACC-----");
                         logFile.println("-----ACC-----"); 
@@ -2038,24 +2106,28 @@ public class FeatConstr {
             }
         }
         
-        if(justExplain){
+        if(justExplain || (justExplain && visualisation)){
             impGroupsKD.close();
             attrImpListMDL_KD.close();     
             discIntervalsKD.close();              
         }
-        else{
+        else if (!visualisation || (!justExplain && !visualisation)){
             logFile.close();
-            bestParamPerFold.close();
+            if(!visualisation && !exhaustive && !jakulin)
+                bestParamPerFold.close();
             if(!treeSHAP)
                 samplesStat.close();
             
             impGroups.close();
-            attrImpListMDL.close();     
+            if(!jakulin)
+                attrImpListMDL.close();     
             discIntervals.close();  
         }
-        if(groupsByThrStat)
+        if(groupsByThrStat && !visualisation && !justExplain &&!exhaustive && !jakulin)
             groupsStat.close();
-
+        
+//        rCaller.deleteTempFiles();
+        rCaller.stopRCallerOnline();        
     }
 
     //for constructing TRAIN dataset of depth N
@@ -2156,7 +2228,6 @@ public class FeatConstr {
             }			
         }
 	
-        //DataSink.write("AllDiscrete.arff",allDiscrete);
         newBinAttr=null;
         allDiscrete=null;
         newTmpDisc=null;
@@ -2283,7 +2354,7 @@ public class FeatConstr {
             attName="";
             if(newData.attribute(idxAttr1).isNumeric() && newData.attribute(idxAttr2).isNumeric()){
                 combName=newData.attribute(idxAttr1).name()+newData.attribute(idxAttr2).name();
-                if(setB.contains(combName)) //if combination exists, we don't generate
+                if(setB.contains(combName)) //if combination exists, we don't generate feature
                     continue;
                 else
                     setB.add(combName); 
@@ -2486,7 +2557,7 @@ public class FeatConstr {
             double tmpCF;
             ruleName=new String[arrRule.size()];
 
-            for (int i = 0; i < ruleName.length; i++){
+            for(int i = 0; i < ruleName.length; i++){
                 tmpCF=Math.round(100.0 * ((FURIA.RipperRule) arrRule.get(i)).getConfidence())/ 100.0;
                 ruleName[i] = ((FURIA.RipperRule)arrRule.get(i)).toString(instNew.classAttribute())+" (CF = "+ tmpCF + ")\n";
 
@@ -2649,12 +2720,12 @@ public class FeatConstr {
                 }
             }
         }
-         list = new ArrayList<String>(allFeatures);
+         list = new ArrayList<>(allFeatures);
         }
         catch(Exception e){
             System.out.println("Instability in FURIA algorithm");
                 logFile.println("Instability in FURIA algorithm");
-            e.printStackTrace();
+            e.printStackTrace(System.err);
         }
         
         return list;
@@ -2765,7 +2836,6 @@ public class FeatConstr {
         Add filter;
         double attrValue;
         Instances newData=new Instances(data);
-        boolean ruleTrue;
         int tmp=0;
         
         for(int i=0;i<allFeat.size();i++){
@@ -2780,7 +2850,6 @@ public class FeatConstr {
             newData = Filter.useFilter(newData, filter);
         
             for(int j = 0; j < newData.numInstances(); j++){
-                ruleTrue=true;
                 tmp=1;
                 for(int k=0;k<attrTmpRule.length;k++){  //parsing e.g., (A3 = 1) and (A2 = 1) and (A1 = 0) we parse attribute name and value
                     if(tmp==0) //if the conditions within the OR are false then return false 
@@ -2841,78 +2910,42 @@ public class FeatConstr {
     for (int i=0;i<data.numAttributes()-1;i++)
         setA.add(data.attribute(i).name());
 
-        for(int j=0;j<newTmpComb.size();j++){   //we get combinations in style [1,2]
-            idxAttr1=Integer.parseInt(newTmpComb.get(j).toString().replace("[","").replace("]", "").trim().split(",")[0].trim());
-            idxAttr2=Integer.parseInt(newTmpComb.get(j).toString().replace("[","").replace("]", "").trim().split(",")[1].trim());
-            
-            if(!(op==OperationNum.ADD) && !(op==OperationNum.ABSDIFF)){
-                for(int k=0;k<2; k++){  //we try all combinations A1/A2 and A2/A1
-                    if(k==1){
-                        tmpIdx=idxAttr1;
-                        idxAttr1=idxAttr2;
-                        idxAttr2=tmpIdx;
-                    }
-                    if(newData.attribute(idxAttr1).isNumeric() && newData.attribute(idxAttr2).isNumeric()){
-                        combName=newData.attribute(idxAttr1).name()+newData.attribute(idxAttr2).name();
-                        //System.out.println("Kombinacija"+combName);
-                        if(setB.contains(combName)) //if a combination already exists, we do not generate it
-                            continue;
-                        else
-                            setB.add(combName); 
+    for(int j=0;j<newTmpComb.size();j++){   //we get combinations in style [1,2]
+        idxAttr1=Integer.parseInt(newTmpComb.get(j).toString().replace("[","").replace("]", "").trim().split(",")[0].trim());
+        idxAttr2=Integer.parseInt(newTmpComb.get(j).toString().replace("[","").replace("]", "").trim().split(",")[1].trim());
 
-                        attName=newData.attribute(idxAttr1).name()+" "+op.name()+" "+newData.attribute(idxAttr2).name();
-                        if(setA.contains(attName)) //if the attribute already exists, do not add it
-                            continue;
-                        else
-                            setA.add(attName); 
-
-                        filter= new Add();
-                        filter.setAttributeIndex("" + (newData.numAttributes())); //parameter of the method must be String
-                        filter.setAttributeName(attName);  //indexes are from 0 ... n-1, attribute names are from 1 to n
-
-                        filter.setInputFormat(newData);
-                        newData = Filter.useFilter(newData, filter);
-
-                        for(int m = 0; m < newData.numInstances(); m++){
-                            if(newData.instance(m).value(idxAttr2)==0.0 && op==OperationNum.DIVIDE){ //division by zero NaN in weka NaN is marked the same as missing value -> ?
-                                if(newData.instance(m).value(idxAttr1)<0 || newData.instance(m).value(idxAttr2)<0)
-                                    newData.instance(m).setValue(newData.numAttributes() - 2, -Float.MAX_VALUE); 
-                                else
-                                    newData.instance(m).setValue(newData.numAttributes() - 2, Float.MAX_VALUE);
-                            }
-                            else{
-                                tmp=computeNumOperation(newData.instance(m).value(idxAttr1), op, newData.instance(m).value(idxAttr2));
-                                newData.instance(m).setValue(newData.numAttributes() - 2, tmp);    //enriched dataset
-                            }
-                        }
-                    }
+        if(!(op==OperationNum.ADD) && !(op==OperationNum.ABSDIFF)){
+            for(int k=0;k<2; k++){  //we try all combinations A1/A2 and A2/A1
+                if(k==1){
+                    tmpIdx=idxAttr1;
+                    idxAttr1=idxAttr2;
+                    idxAttr2=tmpIdx;
                 }
-            }
-            else{
                 if(newData.attribute(idxAttr1).isNumeric() && newData.attribute(idxAttr2).isNumeric()){
                     combName=newData.attribute(idxAttr1).name()+newData.attribute(idxAttr2).name();
-                    if(setB.contains(combName)) //if combination exists, then we don't generate it
+                    if(setB.contains(combName)) //if a combination already exists, we do not generate it
                         continue;
                     else
                         setB.add(combName); 
 
                     attName=newData.attribute(idxAttr1).name()+" "+op.name()+" "+newData.attribute(idxAttr2).name();
-                    if(setA.contains(attName)) //if feature exists then we don't add it
+                    if(setA.contains(attName)) //if the attribute already exists, do not add it
                         continue;
                     else
                         setA.add(attName); 
 
                     filter= new Add();
-                    filter.setAttributeIndex("" + (newData.numAttributes())); //the method parameter must be String
+                    filter.setAttributeIndex("" + (newData.numAttributes())); //parameter of the method must be String
                     filter.setAttributeName(attName);  //indexes are from 0 ... n-1, attribute names are from 1 to n
+
                     filter.setInputFormat(newData);
                     newData = Filter.useFilter(newData, filter);
 
                     for(int m = 0; m < newData.numInstances(); m++){
                         if(newData.instance(m).value(idxAttr2)==0.0 && op==OperationNum.DIVIDE){ //division by zero NaN in weka NaN is marked the same as missing value -> ?
-                            if(newData.instance(m).value(idxAttr1)<0 || newData.instance(m).value(idxAttr2)<0) //enriched dataset, (-)Float.MAX_VALUE signals division by zero
-                                newData.instance(m).setValue(newData.numAttributes() - 2, -Float.MAX_VALUE);    
-                            else        
+                            if(newData.instance(m).value(idxAttr1)<0 || newData.instance(m).value(idxAttr2)<0)
+                                newData.instance(m).setValue(newData.numAttributes() - 2, -Float.MAX_VALUE); 
+                            else
                                 newData.instance(m).setValue(newData.numAttributes() - 2, Float.MAX_VALUE);
                         }
                         else{
@@ -2920,9 +2953,44 @@ public class FeatConstr {
                             newData.instance(m).setValue(newData.numAttributes() - 2, tmp);    //enriched dataset
                         }
                     }
-                }           
-            } 
+                }
+            }
         }
+        else{
+            if(newData.attribute(idxAttr1).isNumeric() && newData.attribute(idxAttr2).isNumeric()){
+                combName=newData.attribute(idxAttr1).name()+newData.attribute(idxAttr2).name();
+                if(setB.contains(combName)) //if combination exists, then we don't generate it
+                    continue;
+                else
+                    setB.add(combName); 
+
+                attName=newData.attribute(idxAttr1).name()+" "+op.name()+" "+newData.attribute(idxAttr2).name();
+                if(setA.contains(attName)) //if feature exists then we don't add it
+                    continue;
+                else
+                    setA.add(attName); 
+
+                filter= new Add();
+                filter.setAttributeIndex("" + (newData.numAttributes())); //the method parameter must be String
+                filter.setAttributeName(attName);  //indexes are from 0 ... n-1, attribute names are from 1 to n
+                filter.setInputFormat(newData);
+                newData = Filter.useFilter(newData, filter);
+
+                for(int m = 0; m < newData.numInstances(); m++){
+                    if(newData.instance(m).value(idxAttr2)==0.0 && op==OperationNum.DIVIDE){ //division by zero NaN in weka NaN is marked the same as missing value -> ?
+                        if(newData.instance(m).value(idxAttr1)<0 || newData.instance(m).value(idxAttr2)<0) //enriched dataset, (-)Float.MAX_VALUE signals division by zero
+                            newData.instance(m).setValue(newData.numAttributes() - 2, -Float.MAX_VALUE);    
+                        else        
+                            newData.instance(m).setValue(newData.numAttributes() - 2, Float.MAX_VALUE);
+                    }
+                    else{
+                        tmp=computeNumOperation(newData.instance(m).value(idxAttr1), op, newData.instance(m).value(idxAttr2));
+                        newData.instance(m).setValue(newData.numAttributes() - 2, tmp);    //enriched dataset
+                    }
+                }
+            }           
+        } 
+    }
     
         return newData;
     }
@@ -3371,16 +3439,14 @@ public class FeatConstr {
             System.out.printf(" %4.4f %s\n",me.getValue(), me.getKey()); 
     }
 
-    public static void mdlCORElearn(Instances data){  //evaluation of the whole dataset
+    public static void mdlCORElearn(Instances data, RCaller rCaller, RCode code){  //evaluation of the whole dataset
         try{
         File output = new File("Rdata/dataForR.arff");  // <--- This is the result file 
         OutputStream out = new FileOutputStream(output);        
         DataSink.write(out, data);
         out.close();
 
-        RCaller rCaller = RCaller.create();
-        RCode code = RCode.create();
-        code.clear();   //do we need this
+        code.clear();
         code.addRCode("library(CORElearn)");
         code.addRCode("library(RWeka)");
         code.addRCode("dataset <- read.arff(\"Rdata/dataForR.arff\")");
@@ -3403,8 +3469,8 @@ public class FeatConstr {
             else
                 attrImpListMDL.printf(" %4.4f %s\n",me.getValue(), me.getKey());
 
-        rCaller.stopRCallerOnline();
-        output.delete();//delete temp file
+        deleteTempRFiles(); //better than rCaller.deleteTempFiles(); deleteTempFiles() sometimes does not delete all tmp files
+        output.delete();
         }
         catch (Exception ex){
             System.out.println("Error in the method mdlCORElearn");
@@ -3501,7 +3567,7 @@ public class FeatConstr {
     }
 
     //we take whole original dataset    
-    public static Instances justExplainAndConstructFeat(Instances dataset, Classifier predictionModel,boolean isClassification) throws Exception{
+    public static Instances justExplainAndConstructFeat(Instances dataset, Classifier predictionModel, boolean isClassification, RCaller rCaller, RCode code) throws Exception{
         System.out.println("Explaining dataset, making constructs ...");
         Instances trainFold = new Instances(dataset);   //we use all instances for train
         trainFold.setClassIndex(trainFold.numAttributes()-1);
@@ -3586,7 +3652,7 @@ public class FeatConstr {
                 
                 Map<String, DMatrix> watches = new HashMap<>();
                     watches.put("train", trainMat);
-                Booster booster = XGBoost.train(trainMat, params, numOfRounds, watches, null, null); 
+                Booster booster = XGBoost.train(trainMat, params, numOfRounds, watches, null, null);
                 String evalNameTrain[]={"train"};
                 DMatrix [] trainMatArr={trainMat};
                 //last param in evalSet has no sense, just index always returns evaluation of the last iteration ... because we put in booster (booster = XGBoost.train) last iteration?
@@ -3600,6 +3666,10 @@ public class FeatConstr {
                 else
                     tmpContrib=booster.predictContrib(explainMat, 0);
                 
+                trainMatArr=null;
+                booster.dispose();
+                trainMat.dispose();
+                explainMat.dispose();
                 if(numOfClasses==2){
                     allExplanationsSHAP=removeCol(tmpContrib, tmpContrib[0].length-1);  //we remove last column, because we do not need column with bias
                 }
@@ -3811,8 +3881,18 @@ public class FeatConstr {
         
         trainFold=addCartFeat(trainFold, dataset,allCombSecOrd,false,0,N2,true);
         attrImpListMDL_KD.println("MDL - after CI");
-        mdlCORElearn(trainFold);
+        mdlCORElearn(trainFold, rCaller, code);
+
         System.out.println("Constructs have been done!");
+        
+        if(visualisation){        
+            System.out.println("Drawing ...");
+            rf=new RandomForest();
+            rf.setNumExecutionSlots(processors);
+            rf.setCalcOutOfBag(true);
+            visualizeModelInstances(rf, trainFold, true, RESOLUTION, numOfImpt, visFrom, visTo);  //visualise explanations from e.g., 50th to 60 instance
+            System.out.println("Drawing is finished!");
+        }  
     
         return trainFold;
     }      
@@ -3832,7 +3912,7 @@ public class FeatConstr {
         return ma;
     }    
     
-    public static ParamSearchEval paramSearch(Instances train, Instances test, Classifier predictionModel, int numOfAttr,int split) throws Exception{
+    public static ParamSearchEval paramSearch(Instances train, Instances test, Classifier predictionModel, int numOfAttr, int split, RCaller rCaller, RCode code) throws Exception{
         Instances validation, subTrain, tmpValidation, tmpSubTrain;
         ParamSearchEval pse=new ParamSearchEval();
         StratifiedRemoveFolds fold;
@@ -3842,7 +3922,7 @@ public class FeatConstr {
         ArrayList <Parameters> bestRndParam;
         String listOfUnInFeat;
         Remove remove;
-        String bestParam;
+        String bestParam, attName;
         int feat[]=new int[6];  //for counting logical, thr, FURIA, Cartesian, relational and numerical features
         int tree[]=new int[3];  //for counting tree size, number of leaves and number of constructs
         int numLogInTree[]=new int[2];  //number of logical features and constructs in tree
@@ -3854,9 +3934,6 @@ public class FeatConstr {
         int tmp[];
         long time[]=new long[2];    //0-feature construction time, 1-learning time
         Timer t1=new Timer();    
-        
-        RCaller rCaller1 = RCaller.create();
-        RCode code1 = RCode.create();
     
         bestRndParam =new ArrayList<>();
         maxIntAcc=0;
@@ -3884,33 +3961,11 @@ public class FeatConstr {
             tmpSubTrain=new Instances(subTrain);
             tmpValidation=new Instances(validation);
             for(int j=numOfAttr;j<tmpSubTrain.numAttributes()-1;j++){
-            /**added because of testing numerical features*/
                 if(!tmpSubTrain.attribute(j).isNumeric())
-                    attrImp=calculateAttrImportance(tmpSubTrain, tmpSubTrain.attribute(j).name(), "MDL");   //old version MDL only for discrete data
-                else{
-                    /**********************************R code************************************************************************************/
-                    Instances newData=new Instances(tmpSubTrain);
-                    Remove remove1= new Remove();
-                    remove1.setAttributeIndices((newData.attribute(tmpSubTrain.attribute(j).name()).index()+1)+",last");
-                    remove1.setInvertSelection(true);
-                    remove1.setInputFormat(newData);
-                    newData = Filter.useFilter(newData, remove1); 
-
-                    File output = new File("Rdata/dataForROneAttr.arff");   // <--- This is the result file 
-                    OutputStream out = new FileOutputStream(output);        
-                    DataSink.write(out, newData);
-                    out.close();
-                    code1.clear();
-                    code1.addRCode("library(CORElearn)");
-                    code1.addRCode("library(RWeka)");
-                    code1.addRCode("dataset <- read.arff(\"Rdata/dataForROneAttr.arff\")");
-                    code1.addRCode("estMDL <- attrEval(which(names(dataset) == names(dataset)[length(names(dataset))]), dataset, estimator=\"MDL\",outputNumericSplits=TRUE)");   //last attribute is class attribute
-                    rCaller1.setRCode(code1);
-                    rCaller1.runAndReturnResultOnline("estMDL");
-                    String tmpRcall[]=rCaller1.getParser().getAsStringArray("attrEval");    //name in R "attrEval", get data from R, evaluated attributes
-                    attrImp=Double.parseDouble(tmpRcall[0]);
-                    output.delete();    //delete temp file
-                }/**********************************************************************************************************************/
+                    attrImp=calculateAttrImportance(tmpSubTrain, tmpSubTrain.attribute(j).name(), "MDL");   //faster implementation of MDL only for discrete data
+                else
+                    attrImp=calcFeatImpMDL(tmpSubTrain, j, rCaller, code);
+                
                 if(attrImp<=attrImpThrs[g])
                     listOfUnInFeat+=(j+1)+",";                           
             }    
@@ -3935,6 +3990,8 @@ public class FeatConstr {
             if(intClassAcc>maxIntAcc)
                 maxIntAcc=intClassAcc;                        
         }
+        
+        deleteTempRFiles();  
         t1.stop();
         time[0]=t1.diff();
         bestParamPerFold.print("Num. of all parameters "+bestRndParam.size()+". ");
@@ -3957,36 +4014,14 @@ public class FeatConstr {
         for(int j=numOfAttr;j<train.numAttributes()-1;j++){
             if(!train.attribute(j).isNumeric()) //we skip evaluation of numerical features
                 attrImp=calculateAttrImportance(train, train.attribute(j).name(), bestParam.split("@")[0]); //old version attribute(j) ... indexes start from 0!!!
-            else{
-                /**********************************R code************************************************************************************/
-                Instances newD=new Instances(train);
-                Remove remove1= new Remove();
-                remove1.setAttributeIndices((newD.attribute(train.attribute(j).name()).index()+1)+",last");
-                remove1.setInvertSelection(true);
-                remove1.setInputFormat(newD);
-                newD = Filter.useFilter(newD, remove1); 
-                
-                File output = new File("Rdata/dataForROneAttr.arff");  // <--- This is the result file 
-                OutputStream out = new FileOutputStream(output);        
-                DataSink.write(out, newD);
-                out.close();
-
-                code1.clear();
-                code1.addRCode("library(CORElearn)");
-                code1.addRCode("library(RWeka)");
-                code1.addRCode("dataset <- read.arff(\"Rdata/dataForROneAttr.arff\")");
-                code1.addRCode("estMDL <- attrEval(which(names(dataset) == names(dataset)[length(names(dataset))]), dataset, estimator=\"MDL\",outputNumericSplits=TRUE)");   //last attribute is class attribute
-                rCaller1.setRCode(code1);
-                rCaller1.runAndReturnResultOnline("estMDL");
-                String tmpRcall[]=rCaller1.getParser().getAsStringArray("attrEval");   //name in R "attrEval", get data from R, evaluated attributes
-                attrImp=Double.parseDouble(tmpRcall[0]);
-                output.delete();//delete temp file
-            }/**********************************************************************************************************************/  
+            else
+                attrImp=calcFeatImpMDL(train, j, rCaller, code);
             
             if(attrImp<=Double.parseDouble(bestParam.split("@")[1]))
-                            listOfUnInFeat+=(j+1)+",";                        
-        }    
-                
+                listOfUnInFeat+=(j+1)+",";                        
+        }
+        
+        deleteTempRFiles();                
         remove= new Remove();
         remove.setAttributeIndices(listOfUnInFeat);
         remove.setInputFormat(train);
@@ -4038,8 +4073,8 @@ public class FeatConstr {
         }
                 
         attrImpListMDL.println("MDL (param. search)");
-        attrImpListMDL.println("The best parameter when using "+predictionModel.getClass().getSimpleName()+": "+bestParam);
-        mdlCORElearn(train);        
+        attrImpListMDL.println("The best parameter when using "+predictionModel.getClass().getSimpleName()+": "+bestParam); //use only features above the bestParam MDL score and all attributes
+        //mdlCORElearn(train, rCaller, code);
                                  
         pse.setAcc((eval.correct())/(eval.incorrect()+eval.correct())*100.00);
         pse.setFeat(feat);
@@ -4052,29 +4087,28 @@ public class FeatConstr {
         pse.setCartFeatInTree(nC);
         pse.setFuriaThrComplx(furiaThrC);
         pse.setTime(time);
-            
-        rCaller1.stopRCallerOnline();
         
         return pse;
     }  
     
     public static double[][] minMaxNumAttr(Instances data) throws Exception{    //classIndex - 0,1 ... e.g.: {no-recurrence-events,recurrence-events}, we have two indexes no-recurrence-events ... 0, recurrence-events ... 1
-        // explain attributes' values
-        // find min and max for numeric attributes
+        //explain attributes' values
+        //find min and max for numeric attributes
         double[][] minMaxForNumericAttributes = new double[data.numAttributes()][2];
-        for (int i = 0; i < data.numAttributes(); i++){
+        for(int i = 0; i < data.numAttributes(); i++){
             minMaxForNumericAttributes[i][0] = Double.MAX_VALUE;
             minMaxForNumericAttributes[i][1] = -Double.MAX_VALUE;
         }
 
-        // get range for numeric attributes
-        for (int i = 0; i < data.numInstances(); i++){
-            Instance tempInst = data.instance(i);
-            for (int j = 0; j < data.numAttributes(); j++){
+        //get range for numeric attributes
+        Instance tempInst;
+        for(int i = 0; i < data.numInstances(); i++){
+            tempInst = data.instance(i);
+            for(int j = 0; j < data.numAttributes(); j++){
                 Attribute tempAttr = data.attribute(j);
-                if (tempAttr.isNumeric()){
-                    if (tempInst.value(j) < minMaxForNumericAttributes[j][0]) minMaxForNumericAttributes[j][0] = tempInst.value(j);
-                    if (tempInst.value(j) > minMaxForNumericAttributes[j][1]) minMaxForNumericAttributes[j][1] = tempInst.value(j);
+                if(tempAttr.isNumeric()){
+                    if(tempInst.value(j) < minMaxForNumericAttributes[j][0]) minMaxForNumericAttributes[j][0] = tempInst.value(j);
+                    if(tempInst.value(j) > minMaxForNumericAttributes[j][1]) minMaxForNumericAttributes[j][1] = tempInst.value(j);
                 }
             }
         }
@@ -4085,7 +4119,6 @@ public class FeatConstr {
     public static float[][] setWeights(Instances data, float allExplanations[][], double THR){ //returns weights based on explanations ... SHAP returns float values
         float allWeights[][]=new float[allExplanations.length][allExplanations[0].length];
         float absExplanations[][]=clone2DArray(allExplanations);
-        double pct=100.0;   //must be double!!!
         //make all explanations positive
         for(int i=0;i<absExplanations.length;i++){
             for(int j=0;j<absExplanations[i].length;j++){
@@ -4133,7 +4166,6 @@ public class FeatConstr {
     public static double[][] setWeights(Instances data, double allExplanations[][], double THR){ //returns weights based on explanations ... IME returns double values
         double allWeights[][]=new double[allExplanations.length][allExplanations[0].length];
         double absExplanations[][]=clone2DArray(allExplanations);
-        double pct=100.0;   //must be double!!!
         //make all explanations positive
         for(int i=0;i<absExplanations.length;i++){
             for(int j=0;j<absExplanations[i].length;j++){
@@ -4179,7 +4211,7 @@ public class FeatConstr {
     }
     
     public static double computeNumOperation(double leftOperand, OperationNum op, double rightOperand) {
-        switch(op) {
+        switch(op){
             case ADD:
                 return leftOperand + rightOperand;
             case SUBTRACT:
@@ -4197,7 +4229,7 @@ public class FeatConstr {
     }    
         
     public static int computeOperationTwoOperand(int leftOperand, OperationLog op, int rightOperand) {
-        switch(op) {
+        switch(op){
             case AND:
                 return ((leftOperand==1) && (rightOperand==1)) ? 1 :0;
             case OR:
@@ -4215,7 +4247,7 @@ public class FeatConstr {
     
     //compute relation operation
     public static int computeRelOpTwoOperand(double leftOperand, OperationRel op, double rightOperand) {
-        switch(op) {
+        switch(op){
             case LESSTHAN:
                 return (leftOperand < rightOperand) ? 1 : 0;
             case DIFF:
@@ -4227,7 +4259,7 @@ public class FeatConstr {
     
     //for Cartesian product
     public static String mergeValues(String leftOperand, String rightOperand) {
-        return leftOperand+"-"+rightOperand;  
+        return leftOperand+"_x_"+rightOperand;  
     }
     
     //Cartesian product - merge all values for combination of attr1 and attr2
@@ -4244,7 +4276,7 @@ public class FeatConstr {
                 tmpAttr1=(String)attr1Val.nextElement();
                 while (attr2Val.hasMoreElements()){
                     tmpAttr2=(String)attr2Val.nextElement();
-                    allValues+=tmpAttr1+"-"+tmpAttr2+",";
+                    allValues+=tmpAttr1+"_x_"+tmpAttr2+",";
                 }
                 attr2Val= data.attribute(idx2).enumerateValues();
             }
@@ -4330,7 +4362,7 @@ public class FeatConstr {
         }
 
         if (ArrayUtils.contains( attrSets, "" )){
-            List<String> list = new ArrayList<String>(Arrays.asList(attrSets));
+            List<String> list = new ArrayList<>(Arrays.asList(attrSets));
             list.removeAll(Collections.singleton(""));
             attrSets=list.toArray(new String[list.size()]); 
         }
@@ -4376,7 +4408,7 @@ public class FeatConstr {
             attrSets=list.toArray(new String[list.size()]); 
         }
         
-        Map<String, Integer> sortedMap = sortByValue(computeWordFrequencyMap(attrSets));   //omputeWordFrequencyMap(words) returns frequencyMap
+        Map<String, Integer> sortedMap = sortByValue(computeWordFrequencyMap(attrSets));   //computeWordFrequencyMap(words) returns frequencyMap
         sortedMap.entrySet().removeIf(entry -> entry.getValue() <= pctVal);   //delete all subsets that are represented in less than n% explained instances  
         printMap2(sortedMap, data); //groups of attributes and their frequencies
              
@@ -4395,7 +4427,7 @@ public class FeatConstr {
     public static Map<String, Integer> computeWordFrequencyMap(String[] words) {
         Map<String, Integer> result = new HashMap<>(words.length);
 
-        for (String word : words)
+        for(String word : words)
             result.put(word, result.getOrDefault(word, 0) + 1);
 
         return result;
@@ -4419,10 +4451,10 @@ public class FeatConstr {
 
     public static double[][] clone2DArray(double[][] a) {
         double[][] b = new double[a.length][];
-        for (int i = 0; i < a.length; i++) {
+        for(int i = 0; i < a.length; i++) {
             b[i] = new double[a[i].length];
-            for (int j = 0; j < a[i].length; j++)
-                  b[i][j] = a[i][j];
+            for(int j = 0; j < a[i].length; j++)
+                b[i][j] = a[i][j];
         }
         
         return b;
@@ -4430,9 +4462,9 @@ public class FeatConstr {
     
     public static float[][] clone2DArray(float[][] a) {
         float[][] b = new float[a.length][];
-        for (int i = 0; i < a.length; i++){
+        for(int i = 0; i < a.length; i++){
             b[i] = new float[a[i].length];
-            for (int j = 0; j < a[i].length; j++)
+            for(int j = 0; j < a[i].length; j++)
                 b[i][j] = a[i][j];
         }
         
@@ -4472,35 +4504,43 @@ public class FeatConstr {
         return idxTab[0][1];    //importance of one feature
     }
 
-    public static double calcFeatImpMDL(Instances data, String attName) throws Exception{ //evaluation of one feature
+    public static double calcFeatImpMDL(Instances data, int j, RCaller rCaller, RCode code) throws Exception{ //evaluation of one feature
         Instances newData=new Instances(data);
-        Remove remove= new Remove();
-        remove.setAttributeIndices((newData.attribute(attName).index()+1)+",last");
+        Remove remove= new Remove();                
+        remove.setAttributeIndices((newData.attribute(data.attribute(j).name()).index()+1)+",last");
         remove.setInvertSelection(true);
         remove.setInputFormat(newData);
         newData = Filter.useFilter(newData, remove); //just one attribute and class
 
-    
-        File output = new File("Rdata/dataForROneAttr.arff");  // <--- This is the result file 
-        OutputStream out = new FileOutputStream(output);        
-        DataSink.write(out, newData);
-        out.close();
-        RCaller rCaller = RCaller.create();
-    
-        RCode code = RCode.create();
-        code.addRCode("library(CORElearn)");
-        code.addRCode("library(RWeka)");
-        code.addRCode("dataset <- read.arff(\"Rdata/dataForROneAttr.arff\")");
-        code.addRCode("estMDL <- attrEval(which(names(dataset) == names(dataset)[length(names(dataset))]), dataset, estimator=\"MDL\",outputNumericSplits=TRUE)");   //last attribute is class attribute
-        rCaller.setRCode(code);
-        rCaller.runAndReturnResultOnline("estMDL");//When you are done with this process, you must explicitly stop it!
-        rCaller.stopStreamConsumers();
-        String tmpRcall[]=rCaller.getParser().getAsStringArray("attrEval");   //name in R "attrEval", get data from R, evaluated attributes
-        double featEval=Double.parseDouble(tmpRcall[0]);
+        File output;  
+        OutputStream out;
 
-        output.delete();//delete temp file
-        rCaller.stopRCallerOnline();
+        double featEval=-999;
+        try{            
+            output = new File("Rdata/dataForROneAttr.arff");// <--- This is the result file
+            out = new FileOutputStream(output);        
+            DataSink.write(out, newData);
+            out.close();
+                        
+            code.clear();
+            /**********************************R code************************************************************************************/
+            code.addRCode("library(CORElearn)");
+            code.addRCode("library(RWeka)");
+            code.addRCode("dataset <- read.arff(\"Rdata/dataForROneAttr.arff\")");
+            code.addRCode("estMDL <- attrEval(which(names(dataset) == names(dataset)[length(names(dataset))]), dataset, estimator=\"MDL\",outputNumericSplits=TRUE)");   //last attribute is class attribute
+            rCaller.setRCode(code);
+            rCaller.runAndReturnResultOnline("estMDL"); //When you are done with this process, you must explicitly stop it!
+            String tmpRcall[]=rCaller.getParser().getAsStringArray("attrEval"); //name in R "attrEval", get data from R, evaluated attributes
+            featEval=Double.parseDouble(tmpRcall[0]);
 
+            //deleteTempRFiles(); is performed after FS on validation set and after taking features for training set
+            output.delete();    //delete temp file
+        }
+        catch(Exception ex){
+            System.out.println("Error in the method mdlCORElearn");
+                Logger.getLogger(FeatConstr.class.getName()).log(Level.SEVERE, null, ex);
+        }
+                
         return featEval;    //importance of one feature
     }
 
@@ -4559,32 +4599,46 @@ public class FeatConstr {
         discFilter = new weka.filters.supervised.attribute.Discretize();
         Remove remove= new Remove();
         String indices="";
+        boolean allDiscrete=true;
 
-        try { 
-        //get indices of numeric attributes, we will discretize only numeric attributes
-        for (int i=0;i<trainData.numAttributes()-1;i++)
-            if(trainData.attribute(i).isNumeric())
-                indices+=(i+1)+","; 
+        try{ 
+            for(int i=0;i<trainData.numAttributes()-1;i++)
+                if(trainData.attribute(i).isNumeric()){
+                    allDiscrete=false;
+                    break;
+                }
+            
+            if(!allDiscrete){
+            //get indices of numeric attributes, we will discretize only numeric attributes
+            for(int i=0;i<trainData.numAttributes()-1;i++)
+                if(trainData.attribute(i).isNumeric())
+                    indices+=(i+1)+","; 
 
-        remove.setAttributeIndices(indices+",last");
-        remove.setInvertSelection(true);
-        remove.setInputFormat(trainData);
-        trainData = Filter.useFilter(trainData, remove); 
+            remove.setAttributeIndices(indices+",last");
+            remove.setInvertSelection(true);
+            remove.setInputFormat(trainData);
+            trainData = Filter.useFilter(trainData, remove); 
 
-        trainData.setClassIndex(trainData.numAttributes()-1); //we need class index for Fayyad & Irani's MDL
-        discFilter.setInputFormat(trainData);
-        newData=Filter.useFilter(trainData, discFilter);
+            trainData.setClassIndex(trainData.numAttributes()-1); //we need class index for Fayyad & Irani's MDL
+            discFilter.setInputFormat(trainData);
+            newData=Filter.useFilter(trainData, discFilter);
 
-        nominalToBinary.setInputFormat(newData); 
-        newData = Filter.useFilter(newData, nominalToBinary);
-        for (int i=0;i<newData.numAttributes()-1;i++)
-            if(justExplain)
-                discIntervalsKD.println(newData.attribute(i).name());
+            nominalToBinary.setInputFormat(newData); 
+            newData = Filter.useFilter(newData, nominalToBinary);
+            for(int i=0;i<newData.numAttributes()-1;i++)
+                if(justExplain)
+                    discIntervalsKD.println(newData.attribute(i).name());
+                else
+                    discIntervals.println(newData.attribute(i).name());
+            }
             else
-                discIntervals.println(newData.attribute(i).name());
+                if(justExplain)
+                    discIntervalsKD.println("No numeric attributes.");
+                else
+                    discIntervals.println("No numeric attributes.");
         } 
-        catch (Exception e) {
-            e.printStackTrace();
+        catch(Exception e) {
+            System.out.println("ERROR in method namesOfDiscAttr"+e.toString());
         }
     }
 
@@ -4594,7 +4648,7 @@ public class FeatConstr {
         int idx3=data.numAttributes()-1;    //class attribute
         double a,b,c,ab,ac,bc,abc;
         double intInf;
-        Map<String, Double> mapIG=new TreeMap<String, Double>(Collections.reverseOrder());
+        Map<String, Double> mapIG=new TreeMap<>(Collections.reverseOrder());
 
         double arr1Doub[];
         double arr2Doub[];
@@ -4919,18 +4973,21 @@ public class FeatConstr {
             }
     } 
     
-    public static void visualizeModelInstances(Classifier predictionModel, Instances data, File file, boolean isClassification, int RESOLUTION, int numOfImpt, int fromInst, int toInst) throws Exception{    
+    public static void visualizeModelInstances(Classifier predictionModel, Instances data, boolean isClassification, int RESOLUTION, int numOfImpt, int fromInst, int toInst) throws Exception{
         predictionModel.buildClassifier(data);
-        System.out.println("Attribute importance using explanation method IME: "+predictionModel.getClass().getSimpleName());
-        //    logFile.println("Attribute importance using explanation method IME:: "+predictionModel.getClass().getSimpleName()); 
-
-        datasetName =file.getName().substring(0, file.getName().lastIndexOf("."));
-	String outputDir = "visualisation/eps/";
+        System.out.println("Attribute importance using explanation method IME, prediction alg. is "+predictionModel.getClass().getSimpleName());
+        boolean visExplFC;  //visualisation before or after FC
         String modelName=predictionModel.getClass().getSimpleName();        
         String classValueName=(new Instances(data,0,1)).instance(0).classAttribute().value(classToExplain);  // get class name of the explained class
         
         //visualise model        
-        String fName, format;  
+        String outputDir, fName, format;  
+        
+        datasetName=fileName; 
+        if(datasetName.contains(".arff") && datasetName.contains("LFeat-"))
+            datasetName=datasetName.substring(0, datasetName.indexOf("LFeat-")+"LFeat-".length()-1);
+        if(datasetName.contains(".arff") && !datasetName.contains("LFeat-"))                   
+            datasetName=datasetName.substring(0, datasetName.indexOf(".arff"));
         
         format=".eps";  
         if(isClassification)
@@ -4940,7 +4997,10 @@ public class FeatConstr {
      
         /***************************************calculate attribute importance of thr changed dataset - added features***************************************/       
         setDotsAndLine(predictionModel, data,N_SAMPLES,isClassification,RESOLUTION, minMaxNumAttr(data),numOfImpt); //sets also parameter nThHigh ... indexes for attributes with high importance
-
+        
+        visExplFC = justExplain && visualisation;
+        
+        outputDir = visExplFC ? "visualisation/afterFC/eps/" : "visualisation/beforeFC/eps/";
         //draw only numOfImpt or less most informative attributes in the model
         /*Model visualisation*/
         if(data.numAttributes()-1 > numOfImpt){
@@ -4971,24 +5031,30 @@ public class FeatConstr {
                     x++;
                 }
             }
-            Visualize.modelVisualToFileAttrImptLine(outputDir +fName+format, modelName, datasetName, dataCp, dotsACp, dotsBCp,isClassification,RESOLUTION,classToExplain,"A4");         
+            Visualize.modelVisualToFileAttrImptLine(outputDir +fName+format, modelName, datasetName, dataCp, dotsACp, dotsBCp,isClassification,RESOLUTION,classToExplain,"A4", visExplFC);         
         }
         else if(data.numAttributes()-1 <= 6)   //for format A4, for pdf and png format
-            Visualize.modelVisualToFileAttrImptLine(outputDir +fName+format, modelName, datasetName, data, dotsA, dotsB,isClassification,RESOLUTION,classToExplain,"A4");     
+            Visualize.modelVisualToFileAttrImptLine(outputDir +fName+format, modelName, datasetName, data, dotsA, dotsB,isClassification,RESOLUTION,classToExplain,"A4", visExplFC);     
         else
-            Visualize.modelVisualToFileAttrImptLine(outputDir +fName+format, modelName, datasetName, data, dotsA, dotsB,isClassification,RESOLUTION,classToExplain,"AA"); //AA just smth. different of A4
+            Visualize.modelVisualToFileAttrImptLine(outputDir +fName+format, modelName, datasetName, data, dotsA, dotsB,isClassification,RESOLUTION,classToExplain,"AA", visExplFC); //AA just smth. different of A4
         
-        Visualize.attrImportanceVisualizationSorted(outputDir +fName+"attrImp"+format, modelName, datasetName, data, drawLimit, dotsB,isClassification,RESOLUTION,"AA");
-        
+
+        Visualize.attrImportanceVisualizationSorted(outputDir +fName+"-attrImp"+format, modelName, datasetName, data, drawLimit, dotsB,isClassification,RESOLUTION,"AA",visExplFC);
         /*Instance visualisation*/
         //pdf, png -> model
         if(pdfPng){
-            covertToPdfAndPng(fName,format, "visualisation/eps/","visualisation/pdf/","visualisation/png/");
-            covertToPdfAndPng(fName+"attrImp",format, "visualisation/eps/","visualisation/pdf/","visualisation/png/"); //plot attribute importance
+            if(visExplFC){
+                covertToPdfAndPng(fName,format, "visualisation/afterFC/eps/","visualisation/afterFC/pdf/","visualisation/afterFC/png/");
+                covertToPdfAndPng(fName+"-attrImp",format, "visualisation/afterFC/eps/","visualisation/afterFC/pdf/","visualisation/afterFC/png/"); //plot attribute importance
+            }
+            else{
+                covertToPdfAndPng(fName,format, "visualisation/beforeFC/eps/","visualisation/beforeFC/pdf/","visualisation/beforeFC/png/");
+                covertToPdfAndPng(fName+"-attrImp",format, "visualisation/beforeFC/eps/","visualisation/beforeFC/pdf/","visualisation/beforeFC/png/"); //plot attribute importance
+            }
         }  
 
         for(int i = fromInst; i <= toInst; i++){
-            outputDir = "visualisation/eps/";
+            outputDir = visExplFC ? "visualisation/afterFC/eps/" : "visualisation/beforeFC/eps/";
             double[] instanceExplanation = IME.explainInstance(predictionModel, data, new Instances(data,(i-1),1), N_SAMPLES, isClassification, classToExplain);	
             double pred = -1;   
 
@@ -5001,16 +5067,18 @@ public class FeatConstr {
                 fName=modelName + "_" + datasetName + "_instance_" + (i)+ "-class_"+classValueName;
             else
                 fName=modelName + "_" + datasetName + "_instance_" + (i)+ "-regr";
-            Visualize.instanceVisualizationToFile(outputDir +fName+format, modelName, datasetName, new Instances(data,(i-1),1), i, topHigh, instanceExplanation, pred, classToExplain, isClassification);
+            Visualize.instanceVisualizationToFile(outputDir +fName+format, modelName, datasetName, new Instances(data,(i-1),1), i, topHigh, instanceExplanation, pred, classToExplain, isClassification, visExplFC);
         
             //pdf, png -> instance(s)
             if(pdfPng)
-                covertToPdfAndPng(fName, format,"visualisation/eps/","visualisation/pdf/","visualisation/png/");
+                if(visExplFC)
+                    covertToPdfAndPng(fName, format,"visualisation/afterFC/eps/","visualisation/afterFC/pdf/","visualisation/afterFC/png/");
+                else
+                    covertToPdfAndPng(fName, format,"visualisation/beforeFC/eps/","visualisation/beforeFC/pdf/","visualisation/beforeFC/png/");
         } 
     }
     
     public static void covertToPdfAndPng(String fName, String inFormat,String inDirEps, String outDirPdf, String outDirPng) throws Exception { 
-    //inDirEps = "visualisation/eps/"; outDirPdf="visualisation/pdf/"; outDirPng="visualisation/png/"; 
         FileOutputStream fos;
         PSDocument document;
         File f;
@@ -5019,15 +5087,15 @@ public class FeatConstr {
         SimpleRenderer renderer;
         List<Image> images;
         String format;
-    
+        
         //load PostScript document
         document = new PSDocument();
 
-        f=new File(inDirEps +fName+inFormat);
+        f=new File(inDirEps+fName+inFormat);
         document.load(f);
 
         //create OutputStream
-        outDirPdf="visualisation/pdf/";
+        outDirPdf=(justExplain && visualisation) ? "visualisation/afterFC/pdf/" : "visualisation/beforeFC/pdf/";
         format=".pdf";
         fos = new FileOutputStream(new File(outDirPdf+fName+format));
         //create converter
@@ -5044,8 +5112,8 @@ public class FeatConstr {
         renderer = new SimpleRenderer();            
         renderer.setResolution(300);// set resolution (in DPI)
 
-        // render
-        outDirPng="visualisation/png/"; //does not override existing image ... delete image with the same name before run
+        //render
+        outDirPng=(justExplain && visualisation) ? "visualisation/afterFC/png/" : "visualisation/beforeFC/png/"; //does not override existing image ... delete image with the same name before run
         format=".png";
         images = renderer.render(documentNew);
         for (int j = 0; j < images.size(); j++) {
@@ -5140,8 +5208,6 @@ public class FeatConstr {
         
         return sum / d.length;
     }
-    
-
     
     public static double varArrList(ArrayList<Double[]> arrList, double m){     //variance
 	double sum = 0;
@@ -5262,7 +5328,7 @@ public class FeatConstr {
         for(int i=0;i<list.size();i++){    
             tmpArr=list.get(i).toString().replace("[","").replace("]", "").trim().split(",");
             System.out.println(data.attribute(Integer.parseInt(tmpArr[0].trim())).name()+" - "+data.attribute(Integer.parseInt(tmpArr[1].trim())).name());
-            impGroups.println(data.attribute(Integer.parseInt(tmpArr[0].trim())).name()+" - "+data.attribute(Integer.parseInt(tmpArr[1].trim())).name());
+                impGroups.println(data.attribute(Integer.parseInt(tmpArr[0].trim())).name()+" - "+data.attribute(Integer.parseInt(tmpArr[1].trim())).name());
         }
     }   
             
@@ -5278,7 +5344,7 @@ public class FeatConstr {
     public static void printMap2(Map<String, Integer> frequencyMap, Instances data){
         Iterator<String> tmpIterator1 = frequencyMap.keySet().iterator();
         String [] tmp1; String str;
-            while (tmpIterator1.hasNext()){
+            while(tmpIterator1.hasNext()){
                 str = tmpIterator1.next();
                 tmp1=str.split(",");
                 if(justExplain)
@@ -5286,13 +5352,7 @@ public class FeatConstr {
                 else
                     impGroups.print("\t");
                 for(int i=0;i<tmp1.length;i++){
-                    if(Integer.parseInt(tmp1[i])<0 || tmp1[i].equals("-0")){
-                        if(justExplain)
-                            impGroupsKD.print("neg"+data.attribute(Integer.parseInt(tmp1[i])*(-1)).name());
-                        else
-                            impGroups.print("neg"+data.attribute(Integer.parseInt(tmp1[i])*(-1)).name());
-                    }
-                    else if(i==tmp1.length-1){
+                    if(i==tmp1.length-1){
                         if(justExplain)
                             impGroupsKD.print(data.attribute(Integer.parseInt(tmp1[i])).name());
                         else
@@ -5310,5 +5370,23 @@ public class FeatConstr {
                 else
                     impGroups.println(": " + frequencyMap.get(str));
             }
-    }    
+    }
+    
+    public static void deleteXGBdll(){
+        File tempF=new File(tmpDir);
+            for(File fileTmp : tempF.listFiles()){
+                if(fileTmp.getName().contains("xgboost4j")){
+                    fileTmp.delete();                
+                }
+            }
+    }
+    
+    public static void deleteTempRFiles(){
+        File tempF=new File(tmpDir);
+            for(File fileTmp : tempF.listFiles()){
+                if(fileTmp.getName().contains("RControl") || fileTmp.getName().contains("ROutput") || fileTmp.getName().contains("getTmpDir")){
+                    fileTmp.delete();                
+                }
+            }
+    }
 }

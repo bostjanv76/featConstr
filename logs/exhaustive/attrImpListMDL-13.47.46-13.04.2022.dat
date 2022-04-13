@@ -1,0 +1,3487 @@
+dataset: Breast Cancer Coimbra.arff
+								--------------
+									Fold  1
+								--------------
+Feature evaluation: MDL (All features dataset) - After CI
+ 0,2604 num-of-N((Glucose <= 91) and (Resistin <= 13.68392))
+ 0,2433 (Glucose <= 91) and (Resistin <= 13.68392)
+ 0,2405 Glucose==B2of2 or Resistin==B2of2 or MCP1
+ 0,2405 Glucose==B2of2 or Resistin==B2of2
+ 0,2405 Glucose==B2of2 or Leptin or Resistin==B2of2
+ 0,2405 Glucose==B2of2 or Insulin or Resistin==B2of2
+ 0,2405 Glucose==B2of2 or Adiponectin or Resistin==B2of2
+ 0,2405 BMI or Glucose==B2of2 or Resistin==B2of2
+ 0,2405 Age or Glucose==B2of2 or Resistin==B2of2
+ 0,2235 Glucose ADD Resistin
+ 0,2228 Glucose==B2of2 or HOMA==B2of2 or Resistin==B2of2
+ 0,2195 Glucose_x_Resistin
+ 0,2070 num-of-N((BMI >= 32.270788) and (Resistin >= 10.26309))
+ 0,1761 Insulin DIVIDE HOMA
+ 0,1761 Glucose ADD HOMA
+ 0,1753 Glucose SUBTRACT BMI
+ 0,1753 BMI SUBTRACT Glucose
+ 0,1653 Glucose ADD Insulin
+ 0,1555 HOMA DIVIDE Insulin
+ 0,1555 Glucose_x_MCP1
+ 0,1555 Glucose_x_Leptin
+ 0,1555 Glucose_x_Insulin
+ 0,1555 Glucose_x_Adiponectin
+ 0,1555 Glucose==B2of2 xor MCP1
+ 0,1555 Glucose==B2of2 xor Leptin
+ 0,1555 Glucose==B2of2 xor Insulin
+ 0,1555 Glucose==B2of2 xor Adiponectin
+ 0,1555 Glucose==B2of2 or MCP1
+ 0,1555 Glucose==B2of2 or Leptin or MCP1
+ 0,1555 Glucose==B2of2 or Leptin or Adiponectin
+ 0,1555 Glucose==B2of2 or Leptin
+ 0,1555 Glucose==B2of2 or Insulin or MCP1
+ 0,1555 Glucose==B2of2 or Insulin or Leptin
+ 0,1555 Glucose==B2of2 or Insulin or Adiponectin
+ 0,1555 Glucose==B2of2 or Insulin
+ 0,1555 Glucose==B2of2 or Adiponectin or MCP1
+ 0,1555 Glucose==B2of2 or Adiponectin
+ 0,1555 Glucose==B2of2 impl MCP1
+ 0,1555 Glucose==B2of2 impl Leptin
+ 0,1555 Glucose==B2of2 impl Insulin
+ 0,1555 Glucose==B2of2 impl Adiponectin
+ 0,1555 Glucose==B2of2 equ MCP1
+ 0,1555 Glucose==B2of2 equ Leptin
+ 0,1555 Glucose==B2of2 equ Insulin
+ 0,1555 Glucose==B2of2 equ Adiponectin
+ 0,1555 Glucose
+ 0,1555 BMI_x_Glucose
+ 0,1555 BMI xor Glucose==B2of2
+ 0,1555 BMI or Glucose==B2of2 or MCP1
+ 0,1555 BMI or Glucose==B2of2 or Leptin
+ 0,1555 BMI or Glucose==B2of2 or Insulin
+ 0,1555 BMI or Glucose==B2of2 or Adiponectin
+ 0,1555 BMI or Glucose==B2of2
+ 0,1555 BMI equ Glucose==B2of2
+ 0,1555 Age_x_Glucose
+ 0,1555 Age xor Glucose==B2of2
+ 0,1555 Age or Glucose==B2of2 or MCP1
+ 0,1555 Age or Glucose==B2of2 or Leptin
+ 0,1555 Age or Glucose==B2of2 or Insulin
+ 0,1555 Age or Glucose==B2of2 or Adiponectin
+ 0,1555 Age or Glucose==B2of2
+ 0,1555 Age or BMI or Glucose==B2of2
+ 0,1555 Age equ Glucose==B2of2
+ 0,1552 Glucose==B2of2 or Insulin or HOMA==B2of2
+ 0,1552 Glucose==B2of2 or HOMA==B2of2 or MCP1
+ 0,1552 Glucose==B2of2 or HOMA==B2of2 or Leptin
+ 0,1552 Glucose==B2of2 or HOMA==B2of2 or Adiponectin
+ 0,1552 Glucose==B2of2 or HOMA==B2of2
+ 0,1552 BMI or Glucose==B2of2 or HOMA==B2of2
+ 0,1552 Age or Glucose==B2of2 or HOMA==B2of2
+ 0,1548 Glucose_x_HOMA
+ 0,1481 Insulin or HOMA==B2of2 or Resistin==B2of2
+ 0,1481 HOMA==B2of2 or Resistin==B2of2 or MCP1
+ 0,1481 HOMA==B2of2 or Resistin==B2of2
+ 0,1481 HOMA==B2of2 or Leptin or Resistin==B2of2
+ 0,1481 HOMA==B2of2 or Adiponectin or Resistin==B2of2
+ 0,1481 BMI or HOMA==B2of2 or Resistin==B2of2
+ 0,1481 Age or HOMA==B2of2 or Resistin==B2of2
+ 0,1451 HOMA_x_Resistin
+ 0,1416 HOMA ADD Resistin
+ 0,1390 Insulin ADD Resistin
+ 0,1276 HOMA SUBTRACT Glucose
+ 0,1276 Glucose SUBTRACT HOMA
+ 0,1253 Resistin DIVIDE BMI
+ 0,1253 BMI DIVIDE Resistin
+ 0,1228 Resistin SUBTRACT BMI
+ 0,1228 BMI SUBTRACT Resistin
+ 0,1146 Glucose DIVIDE Age
+ 0,1146 BMI DIVIDE Age
+ 0,1146 Age DIVIDE Glucose
+ 0,1146 Age DIVIDE BMI
+ 0,1144 BMI ADD Glucose
+ 0,1128 Glucose ADD Adiponectin
+ 0,1110 Glucose SUBTRACT Adiponectin
+ 0,1110 Adiponectin SUBTRACT Glucose
+ 0,1106 HOMA DIVIDE BMI
+ 0,1106 BMI DIVIDE HOMA
+ 0,1064 Glucose ADD Leptin
+ 0,1059 Glucose==B2of2 and HOMA==B2of2
+ 0,1058 Resistin_x_MCP1
+ 0,1058 Resistin==B2of2 xor MCP1
+ 0,1058 Resistin==B2of2 or MCP1
+ 0,1058 Resistin==B2of2 impl MCP1
+ 0,1058 Resistin==B2of2 equ MCP1
+ 0,1058 Resistin
+ 0,1058 Leptin_x_Resistin
+ 0,1058 Leptin xor Resistin==B2of2
+ 0,1058 Leptin or Resistin==B2of2 or MCP1
+ 0,1058 Leptin or Resistin==B2of2
+ 0,1058 Leptin or Adiponectin or Resistin==B2of2
+ 0,1058 Leptin equ Resistin==B2of2
+ 0,1058 Insulin_x_Resistin
+ 0,1058 Insulin xor Resistin==B2of2
+ 0,1058 Insulin or Resistin==B2of2 or MCP1
+ 0,1058 Insulin or Resistin==B2of2
+ 0,1058 Insulin or Leptin or Resistin==B2of2
+ 0,1058 Insulin or Adiponectin or Resistin==B2of2
+ 0,1058 Insulin equ Resistin==B2of2
+ 0,1058 BMI_x_Resistin
+ 0,1058 BMI xor Resistin==B2of2
+ 0,1058 BMI or Resistin==B2of2 or MCP1
+ 0,1058 BMI or Resistin==B2of2
+ 0,1058 BMI or Leptin or Resistin==B2of2
+ 0,1058 BMI or Insulin or Resistin==B2of2
+ 0,1058 BMI or Adiponectin or Resistin==B2of2
+ 0,1058 BMI equ Resistin==B2of2
+ 0,1058 Age_x_Resistin
+ 0,1058 Age xor Resistin==B2of2
+ 0,1058 Age or Resistin==B2of2 or MCP1
+ 0,1058 Age or Resistin==B2of2
+ 0,1058 Age or Leptin or Resistin==B2of2
+ 0,1058 Age or Insulin or Resistin==B2of2
+ 0,1058 Age or BMI or Resistin==B2of2
+ 0,1058 Age or Adiponectin or Resistin==B2of2
+ 0,1058 Age equ Resistin==B2of2
+ 0,1058 Adiponectin_x_Resistin
+ 0,1058 Adiponectin xor Resistin==B2of2
+ 0,1058 Adiponectin or Resistin==B2of2 or MCP1
+ 0,1058 Adiponectin or Resistin==B2of2
+ 0,1058 Adiponectin equ Resistin==B2of2
+ 0,1020 BMI SUBTRACT Age
+ 0,1020 Age SUBTRACT BMI
+ 0,1020 (Age >= 73) and (BMI <= 26.6)
+ 0,1015 Insulin SUBTRACT BMI
+ 0,1015 BMI SUBTRACT Insulin
+ 0,1004 Glucose DIVIDE BMI
+ 0,1004 BMI DIVIDE Glucose
+ 0,0966 Insulin SUBTRACT Glucose
+ 0,0966 Glucose SUBTRACT Insulin
+ 0,0963 Leptin SUBTRACT Age
+ 0,0963 Age SUBTRACT Leptin
+ 0,0938 Leptin SUBTRACT Glucose
+ 0,0938 Glucose SUBTRACT Leptin
+ 0,0904 Insulin DIVIDE BMI
+ 0,0904 BMI DIVIDE Insulin
+ 0,0897 Glucose SUBTRACT Age
+ 0,0897 Age SUBTRACT Glucose
+ 0,0897 Age ADD HOMA
+ 0,0872 Resistin SUBTRACT HOMA
+ 0,0872 HOMA SUBTRACT Resistin
+ 0,0872 num-of-N((Age >= 73) and (BMI <= 26.6))
+ 0,0859 Resistin SUBTRACT Age
+ 0,0859 Age SUBTRACT Resistin
+ 0,0852 HOMA==B2of2 and Resistin==B2of2
+ 0,0852 HOMA DIVIDE Age
+ 0,0852 Age DIVIDE HOMA
+ 0,0848 Insulin_x_HOMA
+ 0,0848 Insulin xor HOMA==B2of2
+ 0,0848 Insulin or HOMA==B2of2 or MCP1
+ 0,0848 Insulin or HOMA==B2of2 or Leptin
+ 0,0848 Insulin or HOMA==B2of2 or Adiponectin
+ 0,0848 Insulin or HOMA==B2of2
+ 0,0848 Insulin equ HOMA==B2of2
+ 0,0848 Insulin ADD HOMA
+ 0,0848 HOMA_x_MCP1
+ 0,0848 HOMA_x_Leptin
+ 0,0848 HOMA_x_Adiponectin
+ 0,0848 HOMA==B2of2 xor MCP1
+ 0,0848 HOMA==B2of2 xor Leptin
+ 0,0848 HOMA==B2of2 xor Adiponectin
+ 0,0848 HOMA==B2of2 or MCP1
+ 0,0848 HOMA==B2of2 or Leptin or MCP1
+ 0,0848 HOMA==B2of2 or Leptin or Adiponectin
+ 0,0848 HOMA==B2of2 or Leptin
+ 0,0848 HOMA==B2of2 or Adiponectin or MCP1
+ 0,0848 HOMA==B2of2 or Adiponectin
+ 0,0848 HOMA==B2of2 impl MCP1
+ 0,0848 HOMA==B2of2 impl Leptin
+ 0,0848 HOMA==B2of2 impl Adiponectin
+ 0,0848 HOMA==B2of2 equ MCP1
+ 0,0848 HOMA==B2of2 equ Leptin
+ 0,0848 HOMA==B2of2 equ Adiponectin
+ 0,0848 HOMA
+ 0,0848 BMI_x_HOMA
+ 0,0848 BMI xor HOMA==B2of2
+ 0,0848 BMI or Insulin or HOMA==B2of2
+ 0,0848 BMI or HOMA==B2of2 or MCP1
+ 0,0848 BMI or HOMA==B2of2 or Leptin
+ 0,0848 BMI or HOMA==B2of2 or Adiponectin
+ 0,0848 BMI or HOMA==B2of2
+ 0,0848 BMI equ HOMA==B2of2
+ 0,0848 Age_x_HOMA
+ 0,0848 Age xor HOMA==B2of2
+ 0,0848 Age or Insulin or HOMA==B2of2
+ 0,0848 Age or HOMA==B2of2 or MCP1
+ 0,0848 Age or HOMA==B2of2 or Leptin
+ 0,0848 Age or HOMA==B2of2 or Adiponectin
+ 0,0848 Age or HOMA==B2of2
+ 0,0848 Age or BMI or HOMA==B2of2
+ 0,0848 Age equ HOMA==B2of2
+ 0,0789 Resistin SUBTRACT Glucose
+ 0,0789 Glucose==B2of2 and Resistin==B2of2
+ 0,0789 Glucose SUBTRACT Resistin
+ 0,0784 Insulin
+ 0,0784 HOMA DIVIDE Glucose
+ 0,0784 Glucose DIVIDE HOMA
+ 0,0778 Age ADD Insulin
+ 0,0778 Age ADD Glucose
+ 0,0778 (BMI >= 32.270788) and (Resistin >= 10.26309)
+ 0,0740 Insulin SUBTRACT Age
+ 0,0740 Age SUBTRACT Insulin
+ 0,0729 Resistin DIVIDE MCP1
+ 0,0729 MCP1 DIVIDE Resistin
+ 0,0722 Resistin DIVIDE Age
+ 0,0722 Age DIVIDE Resistin
+ 0,0711 Resistin SUBTRACT Leptin
+ 0,0711 Leptin SUBTRACT Resistin
+ 0,0680 Insulin SUBTRACT HOMA
+ 0,0680 HOMA SUBTRACT Insulin
+ 0,0665 Leptin DIVIDE HOMA
+ 0,0665 HOMA DIVIDE Leptin
+ 0,0656 BMI ADD Resistin
+ 0,0626 HOMA DIVIDE Adiponectin
+ 0,0626 BMI LESSTHAN Resistin
+ 0,0626 Adiponectin DIVIDE HOMA
+ 0,0621 Age
+ 0,0620 Resistin SUBTRACT Adiponectin
+ 0,0620 Adiponectin SUBTRACT Resistin
+ 0,0615 HOMA SUBTRACT Age
+ 0,0615 Age SUBTRACT HOMA
+ 0,0598 Resistin DIVIDE Glucose
+ 0,0598 Glucose==B2of2 and HOMA==B2of2 and Resistin==B2of2
+ 0,0598 Glucose DIVIDE Resistin
+ 0,0597 Insulin SUBTRACT Adiponectin
+ 0,0597 Adiponectin SUBTRACT Insulin
+ 0,0551 Adiponectin ADD Resistin
+ 0,0551 Leptin DIVIDE Age
+ 0,0551 Age DIVIDE Leptin
+ 0,0544 Insulin DIVIDE Glucose
+ 0,0544 Glucose DIVIDE Insulin
+ 0,0543 Resistin SUBTRACT Insulin
+ 0,0543 Insulin SUBTRACT Resistin
+ 0,0543 Insulin DIVIDE Adiponectin
+ 0,0543 Adiponectin DIVIDE Insulin
+ 0,0525 Glucose==B2of2 xor Resistin==B2of2
+ 0,0525 Glucose==B2of2 equ Resistin==B2of2
+ 0,0514 Insulin DIVIDE Age
+ 0,0514 Age DIVIDE Insulin
+ 0,0470 MCP1 DIVIDE HOMA
+ 0,0470 HOMA DIVIDE MCP1
+ 0,0463 Resistin DIVIDE Insulin
+ 0,0463 Resistin DIVIDE HOMA
+ 0,0463 Insulin DIVIDE Resistin
+ 0,0463 HOMA DIVIDE Resistin
+ 0,0444 Age ADD Resistin
+ 0,0417 Resistin DIVIDE Adiponectin
+ 0,0417 Adiponectin DIVIDE Resistin
+ 0,0415 Leptin DIVIDE BMI
+ 0,0415 BMI DIVIDE Leptin
+ 0,0415 Age SUBTRACT Adiponectin
+ 0,0415 Adiponectin SUBTRACT Age
+ 0,0397 Insulin ADD Adiponectin
+ 0,0386 Resistin DIVIDE Leptin
+ 0,0386 Leptin DIVIDE Resistin
+ 0,0386 HOMA SUBTRACT Adiponectin
+ 0,0386 Adiponectin SUBTRACT HOMA
+ 0,0357 Leptin ADD Resistin
+ 0,0348 HOMA SUBTRACT BMI
+ 0,0348 BMI SUBTRACT HOMA
+ 0,0342 Leptin SUBTRACT BMI
+ 0,0342 BMI SUBTRACT Leptin
+ 0,0342 Age ADD Adiponectin
+ 0,0338 BMI SUBTRACT Adiponectin
+ 0,0338 Adiponectin SUBTRACT BMI
+ 0,0328 MCP1 DIVIDE Insulin
+ 0,0328 Insulin DIVIDE MCP1
+ 0,0325 Age ADD BMI
+ 0,0312 BMI ADD Insulin
+ 0,0303 Leptin DIVIDE Insulin
+ 0,0303 Insulin DIVIDE Leptin
+ 0,0287 BMI
+ 0,0247 Leptin DIVIDE Adiponectin
+ 0,0247 Adiponectin DIVIDE Leptin
+ 0,0247 Insulin ADD Leptin
+ 0,0245 Leptin DIVIDE Glucose
+ 0,0245 Glucose DIVIDE Leptin
+ 0,0245 Age DIVIDE Adiponectin
+ 0,0245 Adiponectin DIVIDE Age
+ 0,0243 Glucose==B2of2 impl Resistin==B2of2
+ 0,0241 Leptin SUBTRACT Insulin
+ 0,0241 Insulin SUBTRACT Leptin
+ 0,0241 HOMA LESSTHAN Adiponectin
+ 0,0230 Leptin
+ 0,0230 HOMA ADD Leptin
+ 0,0230 Glucose DIVIDE Adiponectin
+ 0,0230 Adiponectin DIVIDE Glucose
+ 0,0170 Insulin LESSTHAN Leptin
+ 0,0156 HOMA ADD Adiponectin
+ 0,0156 Age LESSTHAN Glucose
+ 0,0156 Age LESSTHAN BMI
+ 0,0156 Age ADD Leptin
+ 0,0150 Insulin LESSTHAN Adiponectin
+ 0,0144 HOMA==B2of2 xor Resistin==B2of2
+ 0,0144 HOMA==B2of2 equ Resistin==B2of2
+ 0,0113 HOMA LESSTHAN Resistin
+ 0,0113 BMI LESSTHAN Insulin
+ 0,0113 BMI ADD HOMA
+ 0,0109 MCP1 DIVIDE BMI
+ 0,0109 BMI DIVIDE MCP1
+ 0,0105 MCP1 SUBTRACT Age
+ 0,0105 Age SUBTRACT MCP1
+ 0,0096 Glucose ADD MCP1
+ 0,0079 Glucose==B2of2 impl HOMA==B2of2
+ 0,0078 MCP1 DIVIDE Adiponectin
+ 0,0078 BMI DIVIDE Adiponectin
+ 0,0078 BMI ADD Leptin
+ 0,0077 Leptin LESSTHAN Resistin
+ 0,0074 Adiponectin DIVIDE MCP1
+ 0,0074 Adiponectin
+ 0,0064 MCP1 SUBTRACT Leptin
+ 0,0064 Leptin SUBTRACT MCP1
+ 0,0058 Resistin SUBTRACT MCP1
+ 0,0058 Resistin ADD MCP1
+ 0,0058 MCP1 SUBTRACT Resistin
+ 0,0058 MCP1 SUBTRACT Insulin
+ 0,0058 MCP1 SUBTRACT HOMA
+ 0,0058 MCP1 SUBTRACT Glucose
+ 0,0058 MCP1 SUBTRACT BMI
+ 0,0058 MCP1 SUBTRACT Adiponectin
+ 0,0058 MCP1
+ 0,0058 Leptin ADD MCP1
+ 0,0058 Leptin ADD Adiponectin
+ 0,0058 Insulin SUBTRACT MCP1
+ 0,0058 Insulin ADD MCP1
+ 0,0058 HOMA SUBTRACT MCP1
+ 0,0058 HOMA ADD MCP1
+ 0,0058 Glucose SUBTRACT MCP1
+ 0,0058 BMI SUBTRACT MCP1
+ 0,0058 BMI ADD MCP1
+ 0,0058 BMI ADD Adiponectin
+ 0,0058 Age ADD MCP1
+ 0,0058 Adiponectin SUBTRACT MCP1
+ 0,0058 Adiponectin ADD MCP1
+ 0,0050 MCP1 DIVIDE Age
+ 0,0050 Age DIVIDE MCP1
+ 0,0039 MCP1 DIVIDE Glucose
+ 0,0039 Glucose DIVIDE MCP1
+ 0,0033 Glucose==B2of2 xor HOMA==B2of2
+ 0,0033 Glucose==B2of2 equ HOMA==B2of2
+ 0,0028 Adiponectin LESSTHAN Resistin
+ 0,0027 Adiponectin DIVIDE BMI
+ 0,0018 Age LESSTHAN Adiponectin
+ 0,0018 Adiponectin DIFF Resistin
+ 0,0013 MCP1 DIVIDE Leptin
+ 0,0013 HOMA SUBTRACT Leptin
+ 0,0013 Age LESSTHAN Resistin
+ 0,0013 Age LESSTHAN Insulin
+ 0,0013 Adiponectin SUBTRACT Leptin
+ 0,0008 Leptin SUBTRACT Adiponectin
+ -0,0012 Leptin SUBTRACT HOMA
+ -0,0014 Leptin LESSTHAN MCP1
+ -0,0022 Leptin DIVIDE MCP1
+ -0,0022 BMI LESSTHAN Adiponectin
+ -0,0067 Glucose LESSTHAN MCP1
+ -0,0073 HOMA==B2of2 impl Resistin==B2of2
+ -0,0090 Leptin LESSTHAN Adiponectin
+ -0,0121 BMI LESSTHAN Leptin
+ -0,0121 Age LESSTHAN Leptin
+ -0,0139 Insulin LESSTHAN Resistin
+								--------------
+									Fold  2
+								--------------
+Feature evaluation: MDL (All features dataset) - After CI
+ 0,2255 num-of-N((BMI >= 32.038959) and (Resistin >= 11.78388))
+ 0,1888 num-of-N((Glucose <= 91) and (Resistin <= 12.9361))
+ 0,1871 Glucose ADD Resistin
+ 0,1720 num-of-N((Glucose <= 96) and (Age >= 75))
+ 0,1657 (Glucose <= 91) and (Resistin <= 12.9361)
+ 0,1562 Glucose ADD HOMA
+ 0,1552 Glucose ADD Insulin
+ 0,1518 Glucose SUBTRACT BMI
+ 0,1518 BMI SUBTRACT Glucose
+ 0,1436 Insulin DIVIDE HOMA
+ 0,1305 Insulin SUBTRACT BMI
+ 0,1305 BMI SUBTRACT Insulin
+ 0,1275 (Glucose <= 96) and (Age >= 75)
+ 0,1198 HOMA DIVIDE Insulin
+ 0,1198 Glucose_x_Resistin
+ 0,1198 Glucose_x_MCP1
+ 0,1198 Glucose_x_Leptin
+ 0,1198 Glucose_x_Insulin
+ 0,1198 Glucose_x_HOMA
+ 0,1198 Glucose_x_Adiponectin
+ 0,1198 Glucose==B2of2 xor Resistin
+ 0,1198 Glucose==B2of2 xor MCP1
+ 0,1198 Glucose==B2of2 xor Leptin
+ 0,1198 Glucose==B2of2 xor Insulin
+ 0,1198 Glucose==B2of2 xor HOMA
+ 0,1198 Glucose==B2of2 xor Adiponectin
+ 0,1198 Glucose==B2of2 or Resistin or MCP1
+ 0,1198 Glucose==B2of2 or Resistin
+ 0,1198 Glucose==B2of2 or MCP1
+ 0,1198 Glucose==B2of2 or Leptin or Resistin
+ 0,1198 Glucose==B2of2 or Leptin or MCP1
+ 0,1198 Glucose==B2of2 or Leptin or Adiponectin
+ 0,1198 Glucose==B2of2 or Leptin
+ 0,1198 Glucose==B2of2 or Insulin or Resistin
+ 0,1198 Glucose==B2of2 or Insulin or MCP1
+ 0,1198 Glucose==B2of2 or Insulin or Leptin
+ 0,1198 Glucose==B2of2 or Insulin or HOMA
+ 0,1198 Glucose==B2of2 or Insulin or Adiponectin
+ 0,1198 Glucose==B2of2 or Insulin
+ 0,1198 Glucose==B2of2 or HOMA or Resistin
+ 0,1198 Glucose==B2of2 or HOMA or MCP1
+ 0,1198 Glucose==B2of2 or HOMA or Leptin
+ 0,1198 Glucose==B2of2 or HOMA or Adiponectin
+ 0,1198 Glucose==B2of2 or HOMA
+ 0,1198 Glucose==B2of2 or Adiponectin or Resistin
+ 0,1198 Glucose==B2of2 or Adiponectin or MCP1
+ 0,1198 Glucose==B2of2 or Adiponectin
+ 0,1198 Glucose==B2of2 impl Resistin
+ 0,1198 Glucose==B2of2 impl MCP1
+ 0,1198 Glucose==B2of2 impl Leptin
+ 0,1198 Glucose==B2of2 impl Insulin
+ 0,1198 Glucose==B2of2 impl HOMA
+ 0,1198 Glucose==B2of2 impl Adiponectin
+ 0,1198 Glucose==B2of2 equ Resistin
+ 0,1198 Glucose==B2of2 equ MCP1
+ 0,1198 Glucose==B2of2 equ Leptin
+ 0,1198 Glucose==B2of2 equ Insulin
+ 0,1198 Glucose==B2of2 equ HOMA
+ 0,1198 Glucose==B2of2 equ Adiponectin
+ 0,1198 Glucose
+ 0,1198 BMI_x_Glucose
+ 0,1198 BMI xor Glucose==B2of2
+ 0,1198 BMI or Glucose==B2of2 or Resistin
+ 0,1198 BMI or Glucose==B2of2 or MCP1
+ 0,1198 BMI or Glucose==B2of2 or Leptin
+ 0,1198 BMI or Glucose==B2of2 or Insulin
+ 0,1198 BMI or Glucose==B2of2 or HOMA
+ 0,1198 BMI or Glucose==B2of2 or Adiponectin
+ 0,1198 BMI or Glucose==B2of2
+ 0,1198 BMI equ Glucose==B2of2
+ 0,1198 Age_x_Glucose
+ 0,1198 Age xor Glucose==B2of2
+ 0,1198 Age or Glucose==B2of2 or Resistin
+ 0,1198 Age or Glucose==B2of2 or MCP1
+ 0,1198 Age or Glucose==B2of2 or Leptin
+ 0,1198 Age or Glucose==B2of2 or Insulin
+ 0,1198 Age or Glucose==B2of2 or HOMA
+ 0,1198 Age or Glucose==B2of2 or Adiponectin
+ 0,1198 Age or Glucose==B2of2
+ 0,1198 Age or BMI or Glucose==B2of2
+ 0,1198 Age equ Glucose==B2of2
+ 0,1154 Glucose ADD Adiponectin
+ 0,1153 HOMA SUBTRACT Glucose
+ 0,1153 Glucose SUBTRACT HOMA
+ 0,1146 Glucose DIVIDE Age
+ 0,1146 Age DIVIDE Glucose
+ 0,1096 Resistin SUBTRACT BMI
+ 0,1096 BMI SUBTRACT Resistin
+ 0,1073 Insulin ADD Resistin
+ 0,1056 HOMA DIVIDE BMI
+ 0,1056 BMI DIVIDE HOMA
+ 0,1020 BMI DIVIDE Age
+ 0,1020 Age DIVIDE BMI
+ 0,1011 Resistin DIVIDE BMI
+ 0,1011 Glucose DIVIDE BMI
+ 0,1011 BMI DIVIDE Resistin
+ 0,1011 BMI DIVIDE Glucose
+ 0,0968 Leptin SUBTRACT Age
+ 0,0968 Age SUBTRACT Leptin
+ 0,0921 HOMA ADD Resistin
+ 0,0904 Insulin DIVIDE BMI
+ 0,0904 BMI DIVIDE Insulin
+ 0,0897 Glucose SUBTRACT Age
+ 0,0897 BMI SUBTRACT Age
+ 0,0897 Age SUBTRACT Glucose
+ 0,0897 Age SUBTRACT BMI
+ 0,0897 Age ADD HOMA
+ 0,0897 (BMI >= 32.038959) and (Resistin >= 11.78388)
+ 0,0876 Insulin SUBTRACT Glucose
+ 0,0876 Glucose SUBTRACT Insulin
+ 0,0860 Leptin SUBTRACT Glucose
+ 0,0860 Glucose SUBTRACT Leptin
+ 0,0860 BMI ADD Glucose
+ 0,0859 Glucose ADD Leptin
+ 0,0832 Resistin SUBTRACT Age
+ 0,0832 Age SUBTRACT Resistin
+ 0,0815 Resistin DIVIDE MCP1
+ 0,0815 MCP1 DIVIDE Resistin
+ 0,0798 Glucose SUBTRACT Adiponectin
+ 0,0798 Adiponectin SUBTRACT Glucose
+ 0,0784 HOMA
+ 0,0778 Leptin DIVIDE Age
+ 0,0778 Age DIVIDE Leptin
+ 0,0740 Insulin SUBTRACT Age
+ 0,0740 Age SUBTRACT Insulin
+ 0,0711 HOMA SUBTRACT BMI
+ 0,0711 BMI SUBTRACT HOMA
+ 0,0668 Age ADD Glucose
+ 0,0663 Leptin DIVIDE BMI
+ 0,0663 BMI DIVIDE Leptin
+ 0,0663 Age ADD Insulin
+ 0,0656 Insulin ADD HOMA
+ 0,0626 Resistin SUBTRACT Leptin
+ 0,0626 Leptin SUBTRACT Resistin
+ 0,0626 HOMA DIVIDE Age
+ 0,0626 Age DIVIDE HOMA
+ 0,0621 Age
+ 0,0620 Insulin
+ 0,0620 HOMA DIVIDE Glucose
+ 0,0620 Glucose DIVIDE HOMA
+ 0,0620 Leptin DIVIDE HOMA
+ 0,0620 HOMA DIVIDE Leptin
+ 0,0598 Insulin ADD Adiponectin
+ 0,0560 Resistin
+ 0,0551 Leptin SUBTRACT BMI
+ 0,0551 BMI SUBTRACT Leptin
+ 0,0544 Insulin SUBTRACT HOMA
+ 0,0544 HOMA SUBTRACT Insulin
+ 0,0543 Resistin SUBTRACT Glucose
+ 0,0543 Glucose SUBTRACT Resistin
+ 0,0517 HOMA SUBTRACT Age
+ 0,0517 Age SUBTRACT HOMA
+ 0,0515 Insulin ADD Leptin
+ 0,0490 Age ADD BMI
+ 0,0485 Resistin SUBTRACT HOMA
+ 0,0485 HOMA SUBTRACT Resistin
+ 0,0472 BMI ADD Resistin
+ 0,0472 Adiponectin ADD Resistin
+ 0,0453 Insulin DIVIDE Age
+ 0,0453 Age DIVIDE Insulin
+ 0,0452 Resistin SUBTRACT Adiponectin
+ 0,0452 Adiponectin SUBTRACT Resistin
+ 0,0444 Leptin
+ 0,0444 HOMA ADD Leptin
+ 0,0443 MCP1 DIVIDE HOMA
+ 0,0443 HOMA DIVIDE MCP1
+ 0,0443 HOMA DIVIDE Adiponectin
+ 0,0443 Adiponectin DIVIDE HOMA
+ 0,0420 Resistin DIVIDE Age
+ 0,0420 Age DIVIDE Resistin
+ 0,0402 Insulin DIVIDE Glucose
+ 0,0402 Glucose DIVIDE Insulin
+ 0,0386 Resistin DIVIDE Leptin
+ 0,0386 Leptin DIVIDE Resistin
+ 0,0374 Insulin SUBTRACT Adiponectin
+ 0,0374 Adiponectin SUBTRACT Insulin
+ 0,0369 Insulin DIVIDE Adiponectin
+ 0,0369 BMI LESSTHAN Resistin
+ 0,0369 Adiponectin DIVIDE Insulin
+ 0,0352 Age SUBTRACT Adiponectin
+ 0,0352 Adiponectin SUBTRACT Age
+ 0,0342 Age ADD Resistin
+ 0,0342 Age ADD Adiponectin
+ 0,0342 (Leptin <= 6.8317)
+ 0,0336 HOMA ADD Adiponectin
+ 0,0312 Resistin DIVIDE HOMA
+ 0,0312 HOMA DIVIDE Resistin
+ 0,0312 BMI ADD Insulin
+ 0,0311 Leptin DIVIDE Insulin
+ 0,0311 Insulin DIVIDE Leptin
+ 0,0263 Resistin DIVIDE Adiponectin
+ 0,0263 Adiponectin DIVIDE Resistin
+ 0,0262 Resistin DIVIDE Glucose
+ 0,0262 MCP1 DIVIDE Insulin
+ 0,0262 Insulin DIVIDE MCP1
+ 0,0262 Glucose DIVIDE Resistin
+ 0,0256 MCP1 DIVIDE Age
+ 0,0256 Age DIVIDE MCP1
+ 0,0252 MCP1 SUBTRACT Age
+ 0,0252 Age SUBTRACT MCP1
+ 0,0245 MCP1 DIVIDE Leptin
+ 0,0245 Leptin DIVIDE MCP1
+ 0,0245 Leptin DIVIDE Glucose
+ 0,0245 Glucose DIVIDE Leptin
+ 0,0233 Resistin SUBTRACT Insulin
+ 0,0233 Insulin SUBTRACT Resistin
+ 0,0233 HOMA SUBTRACT Adiponectin
+ 0,0233 Adiponectin SUBTRACT HOMA
+ 0,0206 BMI SUBTRACT Adiponectin
+ 0,0206 BMI
+ 0,0206 Adiponectin SUBTRACT BMI
+ 0,0193 MCP1 DIVIDE BMI
+ 0,0193 BMI DIVIDE MCP1
+ 0,0156 Leptin ADD Resistin
+ 0,0156 Age LESSTHAN Glucose
+ 0,0156 Age LESSTHAN BMI
+ 0,0156 Age DIVIDE Adiponectin
+ 0,0156 Adiponectin DIVIDE Age
+ 0,0147 Glucose DIVIDE Adiponectin
+ 0,0147 Adiponectin DIVIDE Glucose
+ 0,0113 Resistin DIVIDE Insulin
+ 0,0113 Leptin SUBTRACT Insulin
+ 0,0113 Insulin SUBTRACT Leptin
+ 0,0113 Insulin DIVIDE Resistin
+ 0,0113 HOMA LESSTHAN Resistin
+ 0,0113 BMI LESSTHAN Insulin
+ 0,0113 BMI ADD HOMA
+ 0,0112 Insulin LESSTHAN Adiponectin
+ 0,0112 HOMA LESSTHAN Adiponectin
+ 0,0096 MCP1 DIVIDE Glucose
+ 0,0096 Leptin ADD Adiponectin
+ 0,0096 Glucose DIVIDE MCP1
+ 0,0078 BMI ADD Leptin
+ 0,0078 Age ADD Leptin
+ 0,0074 MCP1 DIVIDE Adiponectin
+ 0,0074 Adiponectin DIVIDE MCP1
+ 0,0064 Leptin SUBTRACT HOMA
+ 0,0064 HOMA SUBTRACT Leptin
+ 0,0062 Leptin DIVIDE Adiponectin
+ 0,0062 Adiponectin DIVIDE Leptin
+ 0,0058 Resistin SUBTRACT MCP1
+ 0,0058 Resistin ADD MCP1
+ 0,0058 MCP1 SUBTRACT Resistin
+ 0,0058 MCP1 SUBTRACT Leptin
+ 0,0058 MCP1 SUBTRACT Insulin
+ 0,0058 MCP1 SUBTRACT HOMA
+ 0,0058 MCP1 SUBTRACT Glucose
+ 0,0058 MCP1 SUBTRACT BMI
+ 0,0058 MCP1 SUBTRACT Adiponectin
+ 0,0058 MCP1
+ 0,0058 Leptin SUBTRACT MCP1
+ 0,0058 Leptin ADD MCP1
+ 0,0058 Insulin SUBTRACT MCP1
+ 0,0058 Insulin ADD MCP1
+ 0,0058 HOMA SUBTRACT MCP1
+ 0,0058 HOMA ADD MCP1
+ 0,0058 Glucose SUBTRACT MCP1
+ 0,0058 Glucose ADD MCP1
+ 0,0058 BMI SUBTRACT MCP1
+ 0,0058 BMI ADD MCP1
+ 0,0058 Age ADD MCP1
+ 0,0058 Adiponectin SUBTRACT MCP1
+ 0,0058 Adiponectin ADD MCP1
+ 0,0039 Insulin LESSTHAN Leptin
+ 0,0033 Leptin LESSTHAN Resistin
+ 0,0018 Age LESSTHAN MCP1
+ 0,0018 Adiponectin DIFF Resistin
+ 0,0013 BMI ADD Adiponectin
+ 0,0013 Adiponectin DIVIDE BMI
+ 0,0011 Adiponectin
+ -0,0014 Leptin LESSTHAN MCP1
+ -0,0014 Age LESSTHAN Insulin
+ -0,0032 BMI DIVIDE Adiponectin
+ -0,0053 Leptin SUBTRACT Adiponectin
+ -0,0053 Adiponectin SUBTRACT Leptin
+ -0,0055 Glucose LESSTHAN MCP1
+ -0,0062 BMI LESSTHAN Adiponectin
+ -0,0067 Age LESSTHAN Resistin
+ -0,0068 Age LESSTHAN Leptin
+ -0,0072 Adiponectin LESSTHAN Resistin
+ -0,0144 Leptin LESSTHAN Adiponectin
+ -0,0163 Insulin LESSTHAN Resistin
+ -0,0178 BMI LESSTHAN Leptin
+								--------------
+									Fold  3
+								--------------
+Feature evaluation: MDL (All features dataset) - After CI
+ 0,2911 num-of-N((Glucose <= 91) and (Resistin <= 12.9361))
+ 0,2735 num-of-N((BMI >= 32.270788) and (Resistin >= 10.26309))
+ 0,2669 (Glucose <= 91) and (Resistin <= 12.9361)
+ 0,2555 Glucose_x_Resistin
+ 0,2431 Glucose ADD Resistin
+ 0,2352 Glucose==B2of2 or Resistin==B2of2 or MCP1
+ 0,2352 Glucose==B2of2 or Resistin==B2of2
+ 0,2352 Glucose==B2of2 or Leptin or Resistin==B2of2
+ 0,2352 Glucose==B2of2 or Adiponectin or Resistin==B2of2
+ 0,2352 BMI or Glucose==B2of2 or Resistin==B2of2
+ 0,2200 Glucose==B2of2 or Insulin==B2of2 or Resistin==B2of2
+ 0,2200 Glucose==B2of2 or HOMA==B2of2 or Resistin==B2of2
+ 0,1741 Insulin DIVIDE HOMA
+ 0,1729 Glucose SUBTRACT BMI
+ 0,1729 BMI SUBTRACT Glucose
+ 0,1728 Glucose_x_HOMA
+ 0,1683 Age_x_Glucose
+ 0,1679 Age_x_HOMA
+ 0,1673 Age_x_Resistin
+ 0,1648 Glucose_x_Insulin
+ 0,1611 Glucose==B2of2 or Insulin==B2of2 or MCP1
+ 0,1611 Glucose==B2of2 or Insulin==B2of2 or Leptin
+ 0,1611 Glucose==B2of2 or Insulin==B2of2 or HOMA==B2of2
+ 0,1611 Glucose==B2of2 or Insulin==B2of2 or Adiponectin
+ 0,1611 Glucose==B2of2 or Insulin==B2of2
+ 0,1611 Glucose==B2of2 or HOMA==B2of2 or MCP1
+ 0,1611 Glucose==B2of2 or HOMA==B2of2 or Leptin
+ 0,1611 Glucose==B2of2 or HOMA==B2of2 or Adiponectin
+ 0,1611 Glucose==B2of2 or HOMA==B2of2
+ 0,1611 BMI or Glucose==B2of2 or Insulin==B2of2
+ 0,1611 BMI or Glucose==B2of2 or HOMA==B2of2
+ 0,1602 Age==B2of2 and Resistin==B2of2
+ 0,1588 Glucose ADD HOMA
+ 0,1559 Glucose ADD Insulin
+ 0,1556 HOMA_x_Resistin
+ 0,1474 Age_x_Insulin
+ 0,1441 HOMA DIVIDE Insulin
+ 0,1441 Glucose_x_MCP1
+ 0,1441 Glucose_x_Leptin
+ 0,1441 Glucose_x_Adiponectin
+ 0,1441 Glucose==B2of2 xor MCP1
+ 0,1441 Glucose==B2of2 xor Leptin
+ 0,1441 Glucose==B2of2 xor Adiponectin
+ 0,1441 Glucose==B2of2 or MCP1
+ 0,1441 Glucose==B2of2 or Leptin or MCP1
+ 0,1441 Glucose==B2of2 or Leptin or Adiponectin
+ 0,1441 Glucose==B2of2 or Leptin
+ 0,1441 Glucose==B2of2 or Adiponectin or MCP1
+ 0,1441 Glucose==B2of2 or Adiponectin
+ 0,1441 Glucose==B2of2 impl MCP1
+ 0,1441 Glucose==B2of2 impl Leptin
+ 0,1441 Glucose==B2of2 impl Adiponectin
+ 0,1441 Glucose==B2of2 equ MCP1
+ 0,1441 Glucose==B2of2 equ Leptin
+ 0,1441 Glucose==B2of2 equ Adiponectin
+ 0,1441 Glucose
+ 0,1441 BMI_x_Glucose
+ 0,1441 BMI xor Glucose==B2of2
+ 0,1441 BMI or Glucose==B2of2 or MCP1
+ 0,1441 BMI or Glucose==B2of2 or Leptin
+ 0,1441 BMI or Glucose==B2of2 or Adiponectin
+ 0,1441 BMI or Glucose==B2of2
+ 0,1441 BMI equ Glucose==B2of2
+ 0,1359 HOMA SUBTRACT Glucose
+ 0,1359 Glucose SUBTRACT HOMA
+ 0,1358 BMI DIVIDE Age
+ 0,1358 Age DIVIDE BMI
+ 0,1329 Insulin_x_Resistin
+ 0,1317 Insulin==B2of2 or HOMA==B2of2 or Resistin==B2of2
+ 0,1317 HOMA==B2of2 or Resistin==B2of2 or MCP1
+ 0,1317 HOMA==B2of2 or Resistin==B2of2
+ 0,1317 HOMA==B2of2 or Leptin or Resistin==B2of2
+ 0,1317 HOMA==B2of2 or Adiponectin or Resistin==B2of2
+ 0,1317 BMI or HOMA==B2of2 or Resistin==B2of2
+ 0,1307 Insulin==B2of2 or Resistin==B2of2 or MCP1
+ 0,1307 Insulin==B2of2 or Resistin==B2of2
+ 0,1307 Insulin==B2of2 or Leptin or Resistin==B2of2
+ 0,1307 Insulin==B2of2 or Adiponectin or Resistin==B2of2
+ 0,1307 BMI or Insulin==B2of2 or Resistin==B2of2
+ 0,1305 Age==B2of2 and Glucose==B2of2
+ 0,1285 Age==B2of2 and HOMA==B2of2 and Resistin==B2of2
+ 0,1230 BMI SUBTRACT Age
+ 0,1230 Age SUBTRACT BMI
+ 0,1215 Leptin SUBTRACT Glucose
+ 0,1215 Glucose SUBTRACT Leptin
+ 0,1205 Resistin SUBTRACT BMI
+ 0,1205 BMI SUBTRACT Resistin
+ 0,1191 HOMA DIVIDE BMI
+ 0,1191 Glucose==B2of2 and Resistin==B2of2
+ 0,1191 BMI DIVIDE HOMA
+ 0,1191 Age==B2of2 and HOMA==B2of2
+ 0,1187 Insulin SUBTRACT Glucose
+ 0,1187 Glucose SUBTRACT Insulin
+ 0,1181 Resistin DIVIDE BMI
+ 0,1181 Glucose==B2of2 and HOMA==B2of2
+ 0,1181 BMI DIVIDE Resistin
+ 0,1135 HOMA ADD Resistin
+ 0,1119 HOMA==B2of2 and Resistin==B2of2
+ 0,1113 Insulin==B2of2 or HOMA==B2of2 or MCP1
+ 0,1113 Insulin==B2of2 or HOMA==B2of2 or Leptin
+ 0,1113 Insulin==B2of2 or HOMA==B2of2 or Adiponectin
+ 0,1113 Insulin==B2of2 or HOMA==B2of2
+ 0,1113 HOMA_x_MCP1
+ 0,1113 HOMA_x_Leptin
+ 0,1113 HOMA_x_Adiponectin
+ 0,1113 HOMA==B2of2 xor MCP1
+ 0,1113 HOMA==B2of2 xor Leptin
+ 0,1113 HOMA==B2of2 xor Adiponectin
+ 0,1113 HOMA==B2of2 or MCP1
+ 0,1113 HOMA==B2of2 or Leptin or MCP1
+ 0,1113 HOMA==B2of2 or Leptin or Adiponectin
+ 0,1113 HOMA==B2of2 or Leptin
+ 0,1113 HOMA==B2of2 or Adiponectin or MCP1
+ 0,1113 HOMA==B2of2 or Adiponectin
+ 0,1113 HOMA==B2of2 impl MCP1
+ 0,1113 HOMA==B2of2 impl Leptin
+ 0,1113 HOMA==B2of2 impl Adiponectin
+ 0,1113 HOMA==B2of2 equ MCP1
+ 0,1113 HOMA==B2of2 equ Leptin
+ 0,1113 HOMA==B2of2 equ Adiponectin
+ 0,1113 HOMA
+ 0,1113 BMI_x_HOMA
+ 0,1113 BMI xor HOMA==B2of2
+ 0,1113 BMI or Insulin==B2of2 or HOMA==B2of2
+ 0,1113 BMI or HOMA==B2of2 or MCP1
+ 0,1113 BMI or HOMA==B2of2 or Leptin
+ 0,1113 BMI or HOMA==B2of2 or Adiponectin
+ 0,1113 BMI or HOMA==B2of2
+ 0,1113 BMI equ HOMA==B2of2
+ 0,1105 Leptin SUBTRACT Age
+ 0,1105 Age==B2of2 or Glucose==B2of2 or MCP1
+ 0,1105 Age==B2of2 or Glucose==B2of2 or Leptin
+ 0,1105 Age==B2of2 or Glucose==B2of2 or Adiponectin
+ 0,1105 Age==B2of2 or Glucose==B2of2
+ 0,1105 Age==B2of2 or BMI or Glucose==B2of2
+ 0,1105 Age SUBTRACT Leptin
+ 0,1105 Age ADD HOMA
+ 0,1090 Insulin SUBTRACT BMI
+ 0,1090 BMI SUBTRACT Insulin
+ 0,1090 Age==B2of2 and Glucose==B2of2 and Resistin==B2of2
+ 0,1086 Glucose==B2of2 and HOMA==B2of2 and Resistin==B2of2
+ 0,1082 Age==B2of2 and Glucose==B2of2 and HOMA==B2of2
+ 0,1070 Insulin ADD Resistin
+ 0,1021 Glucose SUBTRACT Adiponectin
+ 0,1021 Adiponectin SUBTRACT Glucose
+ 0,0998 Age ADD Glucose
+ 0,0983 Age==B2of2 or Insulin==B2of2 or MCP1
+ 0,0983 Age==B2of2 or Insulin==B2of2 or Leptin
+ 0,0983 Age==B2of2 or Insulin==B2of2 or HOMA==B2of2
+ 0,0983 Age==B2of2 or Insulin==B2of2 or Adiponectin
+ 0,0983 Age==B2of2 or Insulin==B2of2
+ 0,0983 Age==B2of2 or HOMA==B2of2 or MCP1
+ 0,0983 Age==B2of2 or HOMA==B2of2 or Leptin
+ 0,0983 Age==B2of2 or HOMA==B2of2 or Adiponectin
+ 0,0983 Age==B2of2 or HOMA==B2of2
+ 0,0983 Age==B2of2 or Glucose==B2of2 or Insulin==B2of2
+ 0,0983 Age==B2of2 or Glucose==B2of2 or HOMA==B2of2
+ 0,0983 Age==B2of2 or BMI or Insulin==B2of2
+ 0,0983 Age==B2of2 or BMI or HOMA==B2of2
+ 0,0983 (BMI >= 32.270788) and (Resistin >= 10.26309)
+ 0,0982 Insulin_x_HOMA
+ 0,0964 Glucose DIVIDE BMI
+ 0,0964 BMI DIVIDE Glucose
+ 0,0935 Glucose ADD Adiponectin
+ 0,0906 Glucose ADD Leptin
+ 0,0901 Glucose==B2of2 and Insulin==B2of2 and HOMA==B2of2
+ 0,0901 Glucose==B2of2 and Insulin==B2of2
+ 0,0897 Age==B2of2 and Insulin==B2of2 and Resistin==B2of2
+ 0,0895 Insulin DIVIDE BMI
+ 0,0895 BMI DIVIDE Insulin
+ 0,0894 Age==B2of2 and Insulin==B2of2 and HOMA==B2of2
+ 0,0894 Age==B2of2 and Insulin==B2of2
+ 0,0864 Glucose DIVIDE Age
+ 0,0864 Age DIVIDE Glucose
+ 0,0864 Age ADD Insulin
+ 0,0864 (Age >= 73) and (BMI <= 26.6)
+ 0,0858 Insulin ADD HOMA
+ 0,0855 Resistin_x_MCP1
+ 0,0855 Resistin==B2of2 xor MCP1
+ 0,0855 Resistin==B2of2 or MCP1
+ 0,0855 Resistin==B2of2 impl MCP1
+ 0,0855 Resistin==B2of2 equ MCP1
+ 0,0855 Resistin
+ 0,0855 Leptin_x_Resistin
+ 0,0855 Leptin xor Resistin==B2of2
+ 0,0855 Leptin or Resistin==B2of2 or MCP1
+ 0,0855 Leptin or Resistin==B2of2
+ 0,0855 Leptin or Adiponectin or Resistin==B2of2
+ 0,0855 Leptin equ Resistin==B2of2
+ 0,0855 BMI_x_Resistin
+ 0,0855 BMI xor Resistin==B2of2
+ 0,0855 BMI or Resistin==B2of2 or MCP1
+ 0,0855 BMI or Resistin==B2of2
+ 0,0855 BMI or Leptin or Resistin==B2of2
+ 0,0855 BMI or Adiponectin or Resistin==B2of2
+ 0,0855 BMI equ Resistin==B2of2
+ 0,0855 Adiponectin_x_Resistin
+ 0,0855 Adiponectin xor Resistin==B2of2
+ 0,0855 Adiponectin or Resistin==B2of2 or MCP1
+ 0,0855 Adiponectin or Resistin==B2of2
+ 0,0855 Adiponectin equ Resistin==B2of2
+ 0,0834 Resistin SUBTRACT Leptin
+ 0,0834 Leptin SUBTRACT Resistin
+ 0,0812 Insulin_x_MCP1
+ 0,0812 Insulin_x_Leptin
+ 0,0812 Insulin_x_Adiponectin
+ 0,0812 Insulin==B2of2 xor MCP1
+ 0,0812 Insulin==B2of2 xor Leptin
+ 0,0812 Insulin==B2of2 xor Adiponectin
+ 0,0812 Insulin==B2of2 or MCP1
+ 0,0812 Insulin==B2of2 or Leptin or MCP1
+ 0,0812 Insulin==B2of2 or Leptin or Adiponectin
+ 0,0812 Insulin==B2of2 or Leptin
+ 0,0812 Insulin==B2of2 or Adiponectin or MCP1
+ 0,0812 Insulin==B2of2 or Adiponectin
+ 0,0812 Insulin==B2of2 impl MCP1
+ 0,0812 Insulin==B2of2 impl Leptin
+ 0,0812 Insulin==B2of2 impl Adiponectin
+ 0,0812 Insulin==B2of2 equ MCP1
+ 0,0812 Insulin==B2of2 equ Leptin
+ 0,0812 Insulin==B2of2 equ Adiponectin
+ 0,0812 Insulin==B2of2 and HOMA==B2of2
+ 0,0812 Insulin
+ 0,0812 HOMA DIVIDE Glucose
+ 0,0812 Glucose DIVIDE HOMA
+ 0,0812 BMI_x_Insulin
+ 0,0812 BMI xor Insulin==B2of2
+ 0,0812 BMI or Insulin==B2of2 or MCP1
+ 0,0812 BMI or Insulin==B2of2 or Leptin
+ 0,0812 BMI or Insulin==B2of2 or Adiponectin
+ 0,0812 BMI or Insulin==B2of2
+ 0,0812 BMI equ Insulin==B2of2
+ 0,0812 Age==B2of2 and Glucose==B2of2 and Insulin==B2of2
+ 0,0808 Resistin SUBTRACT Age
+ 0,0808 Age SUBTRACT Resistin
+ 0,0806 Age_x_MCP1
+ 0,0806 Age_x_Leptin
+ 0,0806 Age_x_BMI
+ 0,0806 Age_x_Adiponectin
+ 0,0806 Age==B2of2 xor MCP1
+ 0,0806 Age==B2of2 xor Leptin
+ 0,0806 Age==B2of2 xor BMI
+ 0,0806 Age==B2of2 xor Adiponectin
+ 0,0806 Age==B2of2 or MCP1
+ 0,0806 Age==B2of2 or Leptin or MCP1
+ 0,0806 Age==B2of2 or Leptin or Adiponectin
+ 0,0806 Age==B2of2 or Leptin
+ 0,0806 Age==B2of2 or BMI or MCP1
+ 0,0806 Age==B2of2 or BMI or Leptin
+ 0,0806 Age==B2of2 or BMI or Adiponectin
+ 0,0806 Age==B2of2 or BMI
+ 0,0806 Age==B2of2 or Adiponectin or MCP1
+ 0,0806 Age==B2of2 or Adiponectin
+ 0,0806 Age==B2of2 impl MCP1
+ 0,0806 Age==B2of2 impl Leptin
+ 0,0806 Age==B2of2 impl BMI
+ 0,0806 Age==B2of2 impl Adiponectin
+ 0,0806 Age==B2of2 equ MCP1
+ 0,0806 Age==B2of2 equ Leptin
+ 0,0806 Age==B2of2 equ BMI
+ 0,0806 Age==B2of2 equ Adiponectin
+ 0,0806 Age
+ 0,0774 num-of-N((Age >= 73) and (BMI <= 26.6))
+ 0,0769 BMI ADD Glucose
+ 0,0758 Age==B2of2 xor Resistin==B2of2
+ 0,0758 Age==B2of2 equ Resistin==B2of2
+ 0,0751 Insulin==B2of2 and Resistin==B2of2
+ 0,0751 Insulin==B2of2 and HOMA==B2of2 and Resistin==B2of2
+ 0,0749 Glucose SUBTRACT Age
+ 0,0749 Age SUBTRACT Glucose
+ 0,0719 Resistin SUBTRACT Glucose
+ 0,0719 Glucose==B2of2 and Insulin==B2of2 and Resistin==B2of2
+ 0,0719 Glucose SUBTRACT Resistin
+ 0,0717 Resistin DIVIDE MCP1
+ 0,0717 MCP1 DIVIDE Resistin
+ 0,0685 Insulin SUBTRACT HOMA
+ 0,0685 HOMA SUBTRACT Insulin
+ 0,0671 Age ADD Resistin
+ 0,0666 HOMA SUBTRACT BMI
+ 0,0666 BMI SUBTRACT HOMA
+ 0,0644 Insulin DIVIDE Glucose
+ 0,0644 Glucose DIVIDE Insulin
+ 0,0633 Resistin SUBTRACT Adiponectin
+ 0,0633 Adiponectin SUBTRACT Resistin
+ 0,0623 BMI ADD Resistin
+ 0,0596 HOMA SUBTRACT Age
+ 0,0596 Age SUBTRACT HOMA
+ 0,0579 Resistin DIVIDE Age
+ 0,0579 Leptin DIVIDE HOMA
+ 0,0579 HOMA DIVIDE Leptin
+ 0,0579 Age DIVIDE Resistin
+ 0,0570 HOMA DIVIDE Age
+ 0,0570 Age DIVIDE HOMA
+ 0,0529 Leptin DIVIDE Age
+ 0,0529 Insulin SUBTRACT Age
+ 0,0529 Age SUBTRACT Insulin
+ 0,0529 Age DIVIDE Leptin
+ 0,0520 Resistin SUBTRACT HOMA
+ 0,0520 HOMA SUBTRACT Resistin
+ 0,0520 HOMA DIVIDE Adiponectin
+ 0,0520 Adiponectin DIVIDE HOMA
+ 0,0504 Insulin DIVIDE Age
+ 0,0504 Age DIVIDE Insulin
+ 0,0487 Resistin DIVIDE Leptin
+ 0,0487 Leptin DIVIDE Resistin
+ 0,0482 Insulin SUBTRACT Adiponectin
+ 0,0482 Adiponectin SUBTRACT Insulin
+ 0,0472 BMI LESSTHAN Resistin
+ 0,0442 Adiponectin ADD Resistin
+ 0,0425 Glucose DIVIDE Adiponectin
+ 0,0425 Age==B2of2 or Resistin==B2of2 or MCP1
+ 0,0425 Age==B2of2 or Resistin==B2of2
+ 0,0425 Age==B2of2 or Leptin or Resistin==B2of2
+ 0,0425 Age==B2of2 or Insulin==B2of2 or Resistin==B2of2
+ 0,0425 Age==B2of2 or HOMA==B2of2 or Resistin==B2of2
+ 0,0425 Age==B2of2 or Glucose==B2of2 or Resistin==B2of2
+ 0,0425 Age==B2of2 or BMI or Resistin==B2of2
+ 0,0425 Age==B2of2 or Adiponectin or Resistin==B2of2
+ 0,0425 Age ADD Adiponectin
+ 0,0425 Adiponectin DIVIDE Glucose
+ 0,0404 Resistin DIVIDE Glucose
+ 0,0404 Glucose DIVIDE Resistin
+ 0,0391 Age SUBTRACT Adiponectin
+ 0,0391 Adiponectin SUBTRACT Age
+ 0,0370 Resistin DIVIDE Adiponectin
+ 0,0370 Adiponectin DIVIDE Resistin
+ 0,0345 BMI SUBTRACT Adiponectin
+ 0,0345 Adiponectin SUBTRACT BMI
+ 0,0342 MCP1 DIVIDE HOMA
+ 0,0342 HOMA DIVIDE MCP1
+ 0,0326 Leptin SUBTRACT BMI
+ 0,0326 HOMA SUBTRACT Adiponectin
+ 0,0326 BMI SUBTRACT Leptin
+ 0,0326 Adiponectin SUBTRACT HOMA
+ 0,0326 Adiponectin
+ 0,0324 Leptin DIVIDE Insulin
+ 0,0324 Insulin DIVIDE Leptin
+ 0,0323 Resistin SUBTRACT Insulin
+ 0,0323 Insulin SUBTRACT Resistin
+ 0,0323 Insulin DIVIDE Adiponectin
+ 0,0323 Adiponectin DIVIDE Insulin
+ 0,0304 BMI
+ 0,0299 Leptin DIVIDE BMI
+ 0,0299 BMI DIVIDE Leptin
+ 0,0288 Insulin ADD Adiponectin
+ 0,0285 Leptin ADD Resistin
+ 0,0278 MCP1 DIVIDE Insulin
+ 0,0278 Insulin DIVIDE MCP1
+ 0,0277 Age==B2of2 impl Resistin==B2of2
+ 0,0265 Age ADD BMI
+ 0,0256 BMI ADD Insulin
+ 0,0253 Resistin DIVIDE Insulin
+ 0,0253 Resistin DIVIDE HOMA
+ 0,0253 Insulin DIVIDE Resistin
+ 0,0253 HOMA DIVIDE Resistin
+ 0,0233 Age LESSTHAN BMI
+ 0,0233 Age DIVIDE Adiponectin
+ 0,0233 Adiponectin DIVIDE Age
+ 0,0196 Age==B2of2 impl Glucose==B2of2
+ 0,0196 Leptin LESSTHAN Resistin
+ 0,0192 Leptin DIVIDE Adiponectin
+ 0,0192 Adiponectin DIVIDE Leptin
+ 0,0188 HOMA LESSTHAN Adiponectin
+ 0,0187 BMI ADD HOMA
+ 0,0182 Insulin LESSTHAN Adiponectin
+ 0,0147 Leptin DIVIDE Glucose
+ 0,0147 HOMA ADD Adiponectin
+ 0,0147 Glucose DIVIDE Leptin
+ 0,0147 BMI DIVIDE Adiponectin
+ 0,0147 BMI ADD Adiponectin
+ 0,0147 Age LESSTHAN Glucose
+ 0,0147 Age ADD Leptin
+ 0,0147 Adiponectin DIVIDE BMI
+ 0,0141 MCP1 DIVIDE Age
+ 0,0141 Age DIVIDE MCP1
+ 0,0134 MCP1 DIVIDE Adiponectin
+ 0,0134 Leptin
+ 0,0134 HOMA ADD Leptin
+ 0,0134 Adiponectin DIVIDE MCP1
+ 0,0128 Age==B2of2 xor Glucose==B2of2
+ 0,0128 Age==B2of2 equ Glucose==B2of2
+ 0,0128 MCP1 DIVIDE BMI
+ 0,0128 BMI DIVIDE MCP1
+ 0,0123 Resistin SUBTRACT MCP1
+ 0,0123 Resistin ADD MCP1
+ 0,0123 MCP1 SUBTRACT Resistin
+ 0,0123 MCP1 SUBTRACT Leptin
+ 0,0123 MCP1 SUBTRACT Insulin
+ 0,0123 MCP1 SUBTRACT HOMA
+ 0,0123 MCP1 SUBTRACT Glucose
+ 0,0123 MCP1 SUBTRACT BMI
+ 0,0123 MCP1 SUBTRACT Age
+ 0,0123 MCP1 SUBTRACT Adiponectin
+ 0,0123 MCP1
+ 0,0123 Leptin SUBTRACT MCP1
+ 0,0123 Leptin ADD MCP1
+ 0,0123 Insulin SUBTRACT MCP1
+ 0,0123 Insulin ADD MCP1
+ 0,0123 HOMA SUBTRACT MCP1
+ 0,0123 HOMA ADD MCP1
+ 0,0123 Glucose SUBTRACT MCP1
+ 0,0123 Glucose ADD MCP1
+ 0,0123 BMI SUBTRACT MCP1
+ 0,0123 BMI ADD MCP1
+ 0,0123 Age SUBTRACT MCP1
+ 0,0123 Age ADD MCP1
+ 0,0123 Adiponectin SUBTRACT MCP1
+ 0,0123 Adiponectin ADD MCP1
+ 0,0113 Insulin ADD Leptin
+ 0,0113 BMI ADD Leptin
+ 0,0082 Leptin SUBTRACT HOMA
+ 0,0082 Leptin ADD Adiponectin
+ 0,0082 HOMA SUBTRACT Leptin
+ 0,0077 Adiponectin LESSTHAN Resistin
+ 0,0065 Leptin SUBTRACT Insulin
+ 0,0065 Insulin SUBTRACT Leptin
+ 0,0065 BMI LESSTHAN Insulin
+ 0,0064 BMI LESSTHAN Adiponectin
+ 0,0022 Insulin==B2of2 xor HOMA==B2of2
+ 0,0022 Insulin==B2of2 equ HOMA==B2of2
+ 0,0018 MCP1 DIVIDE Leptin
+ 0,0018 HOMA LESSTHAN Resistin
+ 0,0018 Glucose DIVIDE MCP1
+ 0,0015 Age LESSTHAN MCP1
+ 0,0015 Age LESSTHAN Adiponectin
+ 0,0015 Adiponectin DIFF Resistin
+ 0,0015 Leptin SUBTRACT Adiponectin
+ 0,0015 Adiponectin SUBTRACT Leptin
+ 0,0007 Insulin LESSTHAN Leptin
+ 0,0006 Insulin==B2of2 xor Resistin==B2of2
+ 0,0006 Insulin==B2of2 equ Resistin==B2of2
+ 0,0006 Age==B2of2 xor HOMA==B2of2
+ 0,0006 Age==B2of2 equ HOMA==B2of2
+ -0,0005 Age==B2of2 impl HOMA==B2of2
+ -0,0006 MCP1 DIVIDE Glucose
+ -0,0011 Leptin LESSTHAN MCP1
+ -0,0011 Age LESSTHAN Insulin
+ -0,0022 Glucose==B2of2 xor Insulin==B2of2
+ -0,0022 Glucose==B2of2 equ Insulin==B2of2
+ -0,0030 Leptin DIVIDE MCP1
+ -0,0033 Glucose==B2of2 impl Insulin==B2of2
+ -0,0039 Age LESSTHAN Leptin
+ -0,0065 Age LESSTHAN Resistin
+ -0,0068 Insulin==B2of2 impl Resistin==B2of2
+ -0,0094 HOMA==B2of2 impl Resistin==B2of2
+ -0,0094 Glucose LESSTHAN MCP1
+ -0,0117 Age==B2of2 xor Insulin==B2of2
+ -0,0117 Age==B2of2 equ Insulin==B2of2
+ -0,0125 Age==B2of2 impl Insulin==B2of2
+ -0,0127 Insulin LESSTHAN Resistin
+ -0,0132 Leptin LESSTHAN Adiponectin
+ -0,0132 HOMA==B2of2 xor Resistin==B2of2
+ -0,0132 HOMA==B2of2 equ Resistin==B2of2
+ -0,0132 Glucose==B2of2 xor HOMA==B2of2
+ -0,0132 Glucose==B2of2 equ HOMA==B2of2
+ -0,0137 Glucose==B2of2 impl HOMA==B2of2
+ -0,0147 Glucose==B2of2 impl Resistin==B2of2
+ -0,0183 BMI LESSTHAN Leptin
+ -0,0184 Glucose==B2of2 xor Resistin==B2of2
+ -0,0184 Glucose==B2of2 equ Resistin==B2of2
+								--------------
+									Fold  4
+								--------------
+Feature evaluation: MDL (All features dataset) - After CI
+ 0,2402 Age==B2of3 or Glucose==B2of2 or Resistin
+ 0,2402 Age==B2of3 or Glucose==B2of2 or MCP1
+ 0,2402 Age==B2of3 or Glucose==B2of2 or Leptin
+ 0,2402 Age==B2of3 or Glucose==B2of2 or Insulin
+ 0,2402 Age==B2of3 or Glucose==B2of2 or HOMA
+ 0,2402 Age==B2of3 or Glucose==B2of2 or Adiponectin
+ 0,2402 Age==B2of3 or Glucose==B2of2
+ 0,2402 Age==B2of3 or BMI or Glucose==B2of2
+ 0,2161 Age_x_Glucose
+ 0,2061 num-of-N((BMI >= 31.446541) and (Resistin >= 11.78388))
+ 0,1988 num-of-N((Age >= 66) and (Glucose <= 102) and (Resistin <= 12.9361))
+ 0,1826 (Age >= 66) and (Glucose <= 102) and (Resistin <= 12.9361)
+ 0,1761 num-of-N((Resistin <= 12.766) and (Glucose <= 91))
+ 0,1597 Age_x_Resistin
+ 0,1597 Age_x_MCP1
+ 0,1597 Age_x_Leptin
+ 0,1597 Age_x_Insulin
+ 0,1597 Age_x_HOMA
+ 0,1597 Age_x_BMI
+ 0,1597 Age_x_Adiponectin
+ 0,1499 Glucose ADD Resistin
+ 0,1442 (Resistin <= 12.766) and (Glucose <= 91)
+ 0,1368 Age==B2of3 xor Resistin
+ 0,1368 Age==B2of3 xor MCP1
+ 0,1368 Age==B2of3 xor Leptin
+ 0,1368 Age==B2of3 xor Insulin
+ 0,1368 Age==B2of3 xor HOMA
+ 0,1368 Age==B2of3 xor BMI
+ 0,1368 Age==B2of3 xor Adiponectin
+ 0,1368 Age==B2of3 or Resistin or MCP1
+ 0,1368 Age==B2of3 or Resistin
+ 0,1368 Age==B2of3 or MCP1
+ 0,1368 Age==B2of3 or Leptin or Resistin
+ 0,1368 Age==B2of3 or Leptin or MCP1
+ 0,1368 Age==B2of3 or Leptin or Adiponectin
+ 0,1368 Age==B2of3 or Leptin
+ 0,1368 Age==B2of3 or Insulin or Resistin
+ 0,1368 Age==B2of3 or Insulin or MCP1
+ 0,1368 Age==B2of3 or Insulin or Leptin
+ 0,1368 Age==B2of3 or Insulin or HOMA
+ 0,1368 Age==B2of3 or Insulin or Adiponectin
+ 0,1368 Age==B2of3 or Insulin
+ 0,1368 Age==B2of3 or HOMA or Resistin
+ 0,1368 Age==B2of3 or HOMA or MCP1
+ 0,1368 Age==B2of3 or HOMA or Leptin
+ 0,1368 Age==B2of3 or HOMA or Adiponectin
+ 0,1368 Age==B2of3 or HOMA
+ 0,1368 Age==B2of3 or BMI or Resistin
+ 0,1368 Age==B2of3 or BMI or MCP1
+ 0,1368 Age==B2of3 or BMI or Leptin
+ 0,1368 Age==B2of3 or BMI or Insulin
+ 0,1368 Age==B2of3 or BMI or HOMA
+ 0,1368 Age==B2of3 or BMI or Adiponectin
+ 0,1368 Age==B2of3 or BMI
+ 0,1368 Age==B2of3 or Adiponectin or Resistin
+ 0,1368 Age==B2of3 or Adiponectin or MCP1
+ 0,1368 Age==B2of3 or Adiponectin
+ 0,1368 Age==B2of3 impl Resistin
+ 0,1368 Age==B2of3 impl MCP1
+ 0,1368 Age==B2of3 impl Leptin
+ 0,1368 Age==B2of3 impl Insulin
+ 0,1368 Age==B2of3 impl HOMA
+ 0,1368 Age==B2of3 impl BMI
+ 0,1368 Age==B2of3 impl Adiponectin
+ 0,1368 Age==B2of3 equ Resistin
+ 0,1368 Age==B2of3 equ MCP1
+ 0,1368 Age==B2of3 equ Leptin
+ 0,1368 Age==B2of3 equ Insulin
+ 0,1368 Age==B2of3 equ HOMA
+ 0,1368 Age==B2of3 equ BMI
+ 0,1368 Age==B2of3 equ Adiponectin
+ 0,1283 Glucose SUBTRACT BMI
+ 0,1283 BMI SUBTRACT Glucose
+ 0,1181 Resistin DIVIDE BMI
+ 0,1181 BMI DIVIDE Resistin
+ 0,1177 Glucose ADD HOMA
+ 0,1161 Leptin SUBTRACT Age
+ 0,1161 Age SUBTRACT Leptin
+ 0,1135 HOMA ADD Resistin
+ 0,1116 Age==B3of3 impl Glucose==B2of2
+ 0,1105 Glucose DIVIDE Age
+ 0,1105 BMI DIVIDE Age
+ 0,1105 Age DIVIDE Glucose
+ 0,1105 Age DIVIDE BMI
+ 0,1089 Resistin SUBTRACT BMI
+ 0,1089 BMI SUBTRACT Resistin
+ 0,1070 Insulin DIVIDE HOMA
+ 0,1060 Glucose ADD Insulin
+ 0,0983 BMI SUBTRACT Age
+ 0,0983 Age SUBTRACT BMI
+ 0,0959 Insulin ADD Resistin
+ 0,0949 Resistin SUBTRACT Age
+ 0,0949 Age SUBTRACT Resistin
+ 0,0935 HOMA SUBTRACT Glucose
+ 0,0935 Glucose SUBTRACT HOMA
+ 0,0926 Glucose SUBTRACT Adiponectin
+ 0,0926 Adiponectin SUBTRACT Glucose
+ 0,0906 Glucose DIVIDE BMI
+ 0,0906 BMI DIVIDE Glucose
+ 0,0864 Glucose SUBTRACT Age
+ 0,0864 Age SUBTRACT Glucose
+ 0,0864 Age ADD HOMA
+ 0,0861 Leptin SUBTRACT Glucose
+ 0,0861 Glucose SUBTRACT Leptin
+ 0,0847 HOMA DIVIDE Insulin
+ 0,0847 Glucose_x_Resistin
+ 0,0847 Glucose_x_MCP1
+ 0,0847 Glucose_x_Leptin
+ 0,0847 Glucose_x_Insulin
+ 0,0847 Glucose_x_HOMA
+ 0,0847 Glucose_x_Adiponectin
+ 0,0847 Glucose==B2of2 xor Resistin
+ 0,0847 Glucose==B2of2 xor MCP1
+ 0,0847 Glucose==B2of2 xor Leptin
+ 0,0847 Glucose==B2of2 xor Insulin
+ 0,0847 Glucose==B2of2 xor HOMA
+ 0,0847 Glucose==B2of2 xor Adiponectin
+ 0,0847 Glucose==B2of2 or Resistin or MCP1
+ 0,0847 Glucose==B2of2 or Resistin
+ 0,0847 Glucose==B2of2 or MCP1
+ 0,0847 Glucose==B2of2 or Leptin or Resistin
+ 0,0847 Glucose==B2of2 or Leptin or MCP1
+ 0,0847 Glucose==B2of2 or Leptin or Adiponectin
+ 0,0847 Glucose==B2of2 or Leptin
+ 0,0847 Glucose==B2of2 or Insulin or Resistin
+ 0,0847 Glucose==B2of2 or Insulin or MCP1
+ 0,0847 Glucose==B2of2 or Insulin or Leptin
+ 0,0847 Glucose==B2of2 or Insulin or HOMA
+ 0,0847 Glucose==B2of2 or Insulin or Adiponectin
+ 0,0847 Glucose==B2of2 or Insulin
+ 0,0847 Glucose==B2of2 or HOMA or Resistin
+ 0,0847 Glucose==B2of2 or HOMA or MCP1
+ 0,0847 Glucose==B2of2 or HOMA or Leptin
+ 0,0847 Glucose==B2of2 or HOMA or Adiponectin
+ 0,0847 Glucose==B2of2 or HOMA
+ 0,0847 Glucose==B2of2 or Adiponectin or Resistin
+ 0,0847 Glucose==B2of2 or Adiponectin or MCP1
+ 0,0847 Glucose==B2of2 or Adiponectin
+ 0,0847 Glucose==B2of2 impl Resistin
+ 0,0847 Glucose==B2of2 impl MCP1
+ 0,0847 Glucose==B2of2 impl Leptin
+ 0,0847 Glucose==B2of2 impl Insulin
+ 0,0847 Glucose==B2of2 impl HOMA
+ 0,0847 Glucose==B2of2 impl Adiponectin
+ 0,0847 Glucose==B2of2 equ Resistin
+ 0,0847 Glucose==B2of2 equ MCP1
+ 0,0847 Glucose==B2of2 equ Leptin
+ 0,0847 Glucose==B2of2 equ Insulin
+ 0,0847 Glucose==B2of2 equ HOMA
+ 0,0847 Glucose==B2of2 equ Adiponectin
+ 0,0847 Glucose
+ 0,0847 BMI_x_Glucose
+ 0,0847 BMI xor Glucose==B2of2
+ 0,0847 BMI or Glucose==B2of2 or Resistin
+ 0,0847 BMI or Glucose==B2of2 or MCP1
+ 0,0847 BMI or Glucose==B2of2 or Leptin
+ 0,0847 BMI or Glucose==B2of2 or Insulin
+ 0,0847 BMI or Glucose==B2of2 or HOMA
+ 0,0847 BMI or Glucose==B2of2 or Adiponectin
+ 0,0847 BMI or Glucose==B2of2
+ 0,0847 BMI equ Glucose==B2of2
+ 0,0806 Insulin SUBTRACT Glucose
+ 0,0806 Glucose SUBTRACT Insulin
+ 0,0805 Resistin
+ 0,0749 Age==B1of3 xor Resistin
+ 0,0749 Age==B1of3 xor MCP1
+ 0,0749 Age==B1of3 xor Leptin
+ 0,0749 Age==B1of3 xor Insulin
+ 0,0749 Age==B1of3 xor HOMA
+ 0,0749 Age==B1of3 xor BMI
+ 0,0749 Age==B1of3 xor Adiponectin
+ 0,0749 Age==B1of3 or Resistin or MCP1
+ 0,0749 Age==B1of3 or Resistin
+ 0,0749 Age==B1of3 or MCP1
+ 0,0749 Age==B1of3 or Leptin or Resistin
+ 0,0749 Age==B1of3 or Leptin or MCP1
+ 0,0749 Age==B1of3 or Leptin or Adiponectin
+ 0,0749 Age==B1of3 or Leptin
+ 0,0749 Age==B1of3 or Insulin or Resistin
+ 0,0749 Age==B1of3 or Insulin or MCP1
+ 0,0749 Age==B1of3 or Insulin or Leptin
+ 0,0749 Age==B1of3 or Insulin or HOMA
+ 0,0749 Age==B1of3 or Insulin or Adiponectin
+ 0,0749 Age==B1of3 or Insulin
+ 0,0749 Age==B1of3 or HOMA or Resistin
+ 0,0749 Age==B1of3 or HOMA or MCP1
+ 0,0749 Age==B1of3 or HOMA or Leptin
+ 0,0749 Age==B1of3 or HOMA or Adiponectin
+ 0,0749 Age==B1of3 or HOMA
+ 0,0749 Age==B1of3 or BMI or Resistin
+ 0,0749 Age==B1of3 or BMI or MCP1
+ 0,0749 Age==B1of3 or BMI or Leptin
+ 0,0749 Age==B1of3 or BMI or Insulin
+ 0,0749 Age==B1of3 or BMI or HOMA
+ 0,0749 Age==B1of3 or BMI or Adiponectin
+ 0,0749 Age==B1of3 or BMI
+ 0,0749 Age==B1of3 or Adiponectin or Resistin
+ 0,0749 Age==B1of3 or Adiponectin or MCP1
+ 0,0749 Age==B1of3 or Adiponectin
+ 0,0749 Age==B1of3 impl Resistin
+ 0,0749 Age==B1of3 impl MCP1
+ 0,0749 Age==B1of3 impl Leptin
+ 0,0749 Age==B1of3 impl Insulin
+ 0,0749 Age==B1of3 impl HOMA
+ 0,0749 Age==B1of3 impl Glucose==B2of2
+ 0,0749 Age==B1of3 impl BMI
+ 0,0749 Age==B1of3 impl Adiponectin
+ 0,0749 Age==B1of3 equ Resistin
+ 0,0749 Age==B1of3 equ MCP1
+ 0,0749 Age==B1of3 equ Leptin
+ 0,0749 Age==B1of3 equ Insulin
+ 0,0749 Age==B1of3 equ HOMA
+ 0,0749 Age==B1of3 equ BMI
+ 0,0749 Age==B1of3 equ Adiponectin
+ 0,0749 Age SUBTRACT Adiponectin
+ 0,0749 Age
+ 0,0749 Adiponectin SUBTRACT Age
+ 0,0743 Insulin SUBTRACT BMI
+ 0,0743 BMI SUBTRACT Insulin
+ 0,0743 Resistin SUBTRACT Leptin
+ 0,0743 Leptin SUBTRACT Resistin
+ 0,0728 BMI ADD Resistin
+ 0,0726 Age==B2of3 and Glucose==B2of2
+ 0,0707 Glucose ADD Adiponectin
+ 0,0700 Insulin SUBTRACT Age
+ 0,0700 Age SUBTRACT Insulin
+ 0,0696 (BMI >= 31.446541) and (Resistin >= 11.78388)
+ 0,0693 Resistin DIVIDE Age
+ 0,0693 Age DIVIDE Resistin
+ 0,0672 Resistin SUBTRACT Adiponectin
+ 0,0672 Adiponectin SUBTRACT Resistin
+ 0,0660 HOMA DIVIDE BMI
+ 0,0660 BMI DIVIDE HOMA
+ 0,0655 HOMA DIVIDE Age
+ 0,0655 BMI ADD Glucose
+ 0,0655 Age DIVIDE HOMA
+ 0,0637 Age ADD Insulin
+ 0,0633 Resistin SUBTRACT HOMA
+ 0,0633 Resistin DIVIDE MCP1
+ 0,0633 MCP1 DIVIDE Resistin
+ 0,0633 HOMA SUBTRACT Resistin
+ 0,0626 HOMA SUBTRACT Age
+ 0,0626 Age SUBTRACT HOMA
+ 0,0626 Age ADD Glucose
+ 0,0570 Resistin SUBTRACT Glucose
+ 0,0570 Glucose SUBTRACT Resistin
+ 0,0556 HOMA
+ 0,0551 HOMA DIVIDE Adiponectin
+ 0,0551 Adiponectin DIVIDE HOMA
+ 0,0529 Leptin DIVIDE Age
+ 0,0529 Age DIVIDE Leptin
+ 0,0516 Age ADD BMI
+ 0,0512 Adiponectin ADD Resistin
+ 0,0498 Leptin DIVIDE HOMA
+ 0,0498 HOMA DIVIDE Leptin
+ 0,0497 Age ADD Resistin
+ 0,0488 HOMA SUBTRACT BMI
+ 0,0488 BMI SUBTRACT HOMA
+ 0,0476 Glucose ADD Leptin
+ 0,0472 Insulin DIVIDE Adiponectin
+ 0,0472 Adiponectin DIVIDE Insulin
+ 0,0465 Resistin DIVIDE Adiponectin
+ 0,0465 Adiponectin DIVIDE Resistin
+ 0,0432 Insulin ADD HOMA
+ 0,0430 Insulin DIVIDE BMI
+ 0,0430 BMI DIVIDE Insulin
+ 0,0417 Insulin SUBTRACT Adiponectin
+ 0,0417 Adiponectin SUBTRACT Insulin
+ 0,0407 Resistin DIVIDE Leptin
+ 0,0407 Leptin DIVIDE Resistin
+ 0,0407 Insulin SUBTRACT HOMA
+ 0,0407 Insulin
+ 0,0407 HOMA SUBTRACT Insulin
+ 0,0407 HOMA DIVIDE Glucose
+ 0,0407 Glucose DIVIDE HOMA
+ 0,0407 BMI ADD Insulin
+ 0,0396 BMI LESSTHAN Resistin
+ 0,0384 Age ADD Leptin
+ 0,0357 Resistin DIVIDE Glucose
+ 0,0357 Glucose DIVIDE Resistin
+ 0,0351 Age ADD Adiponectin
+ 0,0350 Age==B3of3 xor Resistin
+ 0,0350 Age==B3of3 xor MCP1
+ 0,0350 Age==B3of3 xor Leptin
+ 0,0350 Age==B3of3 xor Insulin
+ 0,0350 Age==B3of3 xor HOMA
+ 0,0350 Age==B3of3 xor BMI
+ 0,0350 Age==B3of3 xor Adiponectin
+ 0,0350 Age==B3of3 or Resistin or MCP1
+ 0,0350 Age==B3of3 or Resistin
+ 0,0350 Age==B3of3 or MCP1
+ 0,0350 Age==B3of3 or Leptin or Resistin
+ 0,0350 Age==B3of3 or Leptin or MCP1
+ 0,0350 Age==B3of3 or Leptin or Adiponectin
+ 0,0350 Age==B3of3 or Leptin
+ 0,0350 Age==B3of3 or Insulin or Resistin
+ 0,0350 Age==B3of3 or Insulin or MCP1
+ 0,0350 Age==B3of3 or Insulin or Leptin
+ 0,0350 Age==B3of3 or Insulin or HOMA
+ 0,0350 Age==B3of3 or Insulin or Adiponectin
+ 0,0350 Age==B3of3 or Insulin
+ 0,0350 Age==B3of3 or HOMA or Resistin
+ 0,0350 Age==B3of3 or HOMA or MCP1
+ 0,0350 Age==B3of3 or HOMA or Leptin
+ 0,0350 Age==B3of3 or HOMA or Adiponectin
+ 0,0350 Age==B3of3 or HOMA
+ 0,0350 Age==B3of3 or BMI or Resistin
+ 0,0350 Age==B3of3 or BMI or MCP1
+ 0,0350 Age==B3of3 or BMI or Leptin
+ 0,0350 Age==B3of3 or BMI or Insulin
+ 0,0350 Age==B3of3 or BMI or HOMA
+ 0,0350 Age==B3of3 or BMI or Adiponectin
+ 0,0350 Age==B3of3 or BMI
+ 0,0350 Age==B3of3 or Adiponectin or Resistin
+ 0,0350 Age==B3of3 or Adiponectin or MCP1
+ 0,0350 Age==B3of3 or Adiponectin
+ 0,0350 Age==B3of3 impl Resistin
+ 0,0350 Age==B3of3 impl MCP1
+ 0,0350 Age==B3of3 impl Leptin
+ 0,0350 Age==B3of3 impl Insulin
+ 0,0350 Age==B3of3 impl HOMA
+ 0,0350 Age==B3of3 impl BMI
+ 0,0350 Age==B3of3 impl Adiponectin
+ 0,0350 Age==B3of3 equ Resistin
+ 0,0350 Age==B3of3 equ MCP1
+ 0,0350 Age==B3of3 equ Leptin
+ 0,0350 Age==B3of3 equ Insulin
+ 0,0350 Age==B3of3 equ HOMA
+ 0,0350 Age==B3of3 equ BMI
+ 0,0350 Age==B3of3 equ Adiponectin
+ 0,0338 Resistin SUBTRACT Insulin
+ 0,0338 Insulin SUBTRACT Resistin
+ 0,0326 MCP1 DIVIDE Adiponectin
+ 0,0326 Adiponectin DIVIDE MCP1
+ 0,0324 Leptin DIVIDE Insulin
+ 0,0324 Insulin DIVIDE Leptin
+ 0,0323 Insulin DIVIDE Age
+ 0,0323 HOMA SUBTRACT Adiponectin
+ 0,0323 Age DIVIDE Insulin
+ 0,0323 Adiponectin SUBTRACT HOMA
+ 0,0299 Leptin DIVIDE BMI
+ 0,0299 BMI DIVIDE Leptin
+ 0,0288 MCP1 DIVIDE HOMA
+ 0,0288 HOMA DIVIDE MCP1
+ 0,0284 Age==B2of3 xor Glucose==B2of2
+ 0,0284 Age==B2of3 equ Glucose==B2of2
+ 0,0276 Insulin DIVIDE Glucose
+ 0,0276 Glucose DIVIDE Insulin
+ 0,0261 BMI SUBTRACT Adiponectin
+ 0,0261 Adiponectin SUBTRACT BMI
+ 0,0256 Insulin ADD Adiponectin
+ 0,0255 Leptin LESSTHAN Resistin
+ 0,0253 Resistin DIVIDE Insulin
+ 0,0253 Resistin DIVIDE HOMA
+ 0,0253 Insulin DIVIDE Resistin
+ 0,0253 HOMA DIVIDE Resistin
+ 0,0233 Leptin DIVIDE Glucose
+ 0,0233 Leptin ADD Resistin
+ 0,0233 Glucose DIVIDE Leptin
+ 0,0233 Age LESSTHAN BMI
+ 0,0233 Age DIVIDE Adiponectin
+ 0,0233 Adiponectin DIVIDE Age
+ 0,0232 MCP1 DIVIDE BMI
+ 0,0232 BMI DIVIDE MCP1
+ 0,0225 MCP1 SUBTRACT Age
+ 0,0225 BMI
+ 0,0225 Age SUBTRACT MCP1
+ 0,0213 Leptin DIVIDE Adiponectin
+ 0,0213 Leptin
+ 0,0213 HOMA ADD Leptin
+ 0,0213 Glucose DIVIDE Adiponectin
+ 0,0213 Adiponectin DIVIDE Leptin
+ 0,0213 Adiponectin DIVIDE Glucose
+ 0,0209 MCP1 DIVIDE Age
+ 0,0209 Age DIVIDE MCP1
+ 0,0188 HOMA LESSTHAN Adiponectin
+ 0,0187 BMI LESSTHAN Insulin
+ 0,0187 BMI ADD HOMA
+ 0,0184 MCP1 SUBTRACT Leptin
+ 0,0184 Leptin SUBTRACT MCP1
+ 0,0184 Leptin SUBTRACT Adiponectin
+ 0,0184 Adiponectin SUBTRACT Leptin
+ 0,0165 Insulin LESSTHAN Adiponectin
+ 0,0152 Glucose ADD MCP1
+ 0,0147 Leptin SUBTRACT BMI
+ 0,0147 HOMA ADD Adiponectin
+ 0,0147 BMI SUBTRACT Leptin
+ 0,0147 Age LESSTHAN Glucose
+ 0,0134 BMI DIVIDE Adiponectin
+ 0,0134 Adiponectin DIVIDE BMI
+ 0,0123 Resistin SUBTRACT MCP1
+ 0,0123 Resistin ADD MCP1
+ 0,0123 MCP1 SUBTRACT Resistin
+ 0,0123 MCP1 SUBTRACT Insulin
+ 0,0123 MCP1 SUBTRACT HOMA
+ 0,0123 MCP1 SUBTRACT Glucose
+ 0,0123 MCP1 SUBTRACT BMI
+ 0,0123 MCP1 SUBTRACT Adiponectin
+ 0,0123 MCP1
+ 0,0123 Leptin ADD MCP1
+ 0,0123 Insulin SUBTRACT MCP1
+ 0,0123 Insulin ADD MCP1
+ 0,0123 HOMA SUBTRACT MCP1
+ 0,0123 HOMA ADD MCP1
+ 0,0123 Glucose SUBTRACT MCP1
+ 0,0123 BMI SUBTRACT MCP1
+ 0,0123 BMI ADD MCP1
+ 0,0123 Age ADD MCP1
+ 0,0123 Adiponectin SUBTRACT MCP1
+ 0,0123 Adiponectin ADD MCP1
+ 0,0113 Insulin ADD Leptin
+ 0,0113 BMI ADD Leptin
+ 0,0087 Leptin SUBTRACT Insulin
+ 0,0087 Insulin SUBTRACT Leptin
+ 0,0083 Age==B2of3 impl Glucose==B2of2
+ 0,0082 MCP1 DIVIDE Leptin
+ 0,0082 Leptin DIVIDE MCP1
+ 0,0073 Adiponectin LESSTHAN Resistin
+ 0,0065 HOMA LESSTHAN Resistin
+ 0,0065 BMI ADD Adiponectin
+ 0,0064 Leptin SUBTRACT HOMA
+ 0,0064 HOMA SUBTRACT Leptin
+ 0,0049 MCP1 DIVIDE Insulin
+ 0,0049 Insulin DIVIDE MCP1
+ 0,0026 Age==B1of3 xor Glucose==B2of2
+ 0,0026 Age==B1of3 or Glucose==B2of2 or Resistin
+ 0,0026 Age==B1of3 or Glucose==B2of2 or MCP1
+ 0,0026 Age==B1of3 or Glucose==B2of2 or Leptin
+ 0,0026 Age==B1of3 or Glucose==B2of2 or Insulin
+ 0,0026 Age==B1of3 or Glucose==B2of2 or HOMA
+ 0,0026 Age==B1of3 or Glucose==B2of2 or Adiponectin
+ 0,0026 Age==B1of3 or Glucose==B2of2
+ 0,0026 Age==B1of3 or BMI or Glucose==B2of2
+ 0,0026 Age==B1of3 equ Glucose==B2of2
+ 0,0026 Age LESSTHAN Leptin
+ 0,0018 Glucose DIVIDE MCP1
+ 0,0018 Age LESSTHAN Insulin
+ 0,0015 Age LESSTHAN MCP1
+ 0,0015 Age LESSTHAN Adiponectin
+ 0,0015 Adiponectin DIFF Resistin
+ 0,0005 BMI LESSTHAN Adiponectin
+ 0,0005 Adiponectin
+ -0,0003 Leptin LESSTHAN Adiponectin
+ -0,0028 MCP1 DIVIDE Glucose
+ -0,0033 Insulin LESSTHAN Leptin
+ -0,0051 Leptin ADD Adiponectin
+ -0,0065 Age LESSTHAN Resistin
+ -0,0082 Age==B3of3 and Glucose==B2of2
+ -0,0082 Glucose LESSTHAN MCP1
+ -0,0164 Age==B3of3 xor Glucose==B2of2
+ -0,0164 Age==B3of3 equ Glucose==B2of2
+ -0,0176 Insulin LESSTHAN Resistin
+ -0,0191 BMI LESSTHAN Leptin
+ -0,0192 Age==B3of3 or Glucose==B2of2 or Resistin
+ -0,0192 Age==B3of3 or Glucose==B2of2 or MCP1
+ -0,0192 Age==B3of3 or Glucose==B2of2 or Leptin
+ -0,0192 Age==B3of3 or Glucose==B2of2 or Insulin
+ -0,0192 Age==B3of3 or Glucose==B2of2 or HOMA
+ -0,0192 Age==B3of3 or Glucose==B2of2 or Adiponectin
+ -0,0192 Age==B3of3 or Glucose==B2of2
+ -0,0192 Age==B3of3 or BMI or Glucose==B2of2
+								--------------
+									Fold  5
+								--------------
+Feature evaluation: MDL (All features dataset) - After CI
+ 0,1866 Glucose ADD Insulin
+ 0,1816 Glucose ADD Resistin
+ 0,1751 Glucose ADD HOMA
+ 0,1729 Glucose SUBTRACT BMI
+ 0,1729 BMI SUBTRACT Glucose
+ 0,1688 num-of-N((Glucose <= 96) and (Age >= 61) and (Insulin >= 3.226))
+ 0,1685 (Glucose <= 96) and (Age >= 61) and (Insulin >= 3.226)
+ 0,1575 Glucose DIVIDE BMI
+ 0,1575 BMI DIVIDE Glucose
+ 0,1472 Insulin DIVIDE HOMA
+ 0,1368 Glucose==B2of2 or Insulin or HOMA==B2of2
+ 0,1368 Glucose==B2of2 or HOMA==B2of2 or Resistin
+ 0,1368 Glucose==B2of2 or HOMA==B2of2 or MCP1
+ 0,1368 Glucose==B2of2 or HOMA==B2of2 or Leptin
+ 0,1368 Glucose==B2of2 or HOMA==B2of2 or Adiponectin
+ 0,1368 Glucose==B2of2 or HOMA==B2of2
+ 0,1368 BMI or Glucose==B2of2 or HOMA==B2of2
+ 0,1368 Age or Glucose==B2of2 or HOMA==B2of2
+ 0,1328 Glucose_x_HOMA
+ 0,1312 num-of-N((Glucose <= 92) and (Resistin <= 11.774) and (MCP1 >= 417.114))
+ 0,1290 HOMA DIVIDE BMI
+ 0,1290 BMI DIVIDE HOMA
+ 0,1249 HOMA DIVIDE Insulin
+ 0,1249 Glucose_x_Resistin
+ 0,1249 Glucose_x_MCP1
+ 0,1249 Glucose_x_Leptin
+ 0,1249 Glucose_x_Insulin
+ 0,1249 Glucose_x_Adiponectin
+ 0,1249 Glucose==B2of2 xor Resistin
+ 0,1249 Glucose==B2of2 xor MCP1
+ 0,1249 Glucose==B2of2 xor Leptin
+ 0,1249 Glucose==B2of2 xor Insulin
+ 0,1249 Glucose==B2of2 xor Adiponectin
+ 0,1249 Glucose==B2of2 or Resistin or MCP1
+ 0,1249 Glucose==B2of2 or Resistin
+ 0,1249 Glucose==B2of2 or MCP1
+ 0,1249 Glucose==B2of2 or Leptin or Resistin
+ 0,1249 Glucose==B2of2 or Leptin or MCP1
+ 0,1249 Glucose==B2of2 or Leptin or Adiponectin
+ 0,1249 Glucose==B2of2 or Leptin
+ 0,1249 Glucose==B2of2 or Insulin or Resistin
+ 0,1249 Glucose==B2of2 or Insulin or MCP1
+ 0,1249 Glucose==B2of2 or Insulin or Leptin
+ 0,1249 Glucose==B2of2 or Insulin or Adiponectin
+ 0,1249 Glucose==B2of2 or Insulin
+ 0,1249 Glucose==B2of2 or Adiponectin or Resistin
+ 0,1249 Glucose==B2of2 or Adiponectin or MCP1
+ 0,1249 Glucose==B2of2 or Adiponectin
+ 0,1249 Glucose==B2of2 impl Resistin
+ 0,1249 Glucose==B2of2 impl MCP1
+ 0,1249 Glucose==B2of2 impl Leptin
+ 0,1249 Glucose==B2of2 impl Insulin
+ 0,1249 Glucose==B2of2 impl Adiponectin
+ 0,1249 Glucose==B2of2 equ Resistin
+ 0,1249 Glucose==B2of2 equ MCP1
+ 0,1249 Glucose==B2of2 equ Leptin
+ 0,1249 Glucose==B2of2 equ Insulin
+ 0,1249 Glucose==B2of2 equ Adiponectin
+ 0,1249 Glucose
+ 0,1249 BMI_x_Glucose
+ 0,1249 BMI xor Glucose==B2of2
+ 0,1249 BMI or Glucose==B2of2 or Resistin
+ 0,1249 BMI or Glucose==B2of2 or MCP1
+ 0,1249 BMI or Glucose==B2of2 or Leptin
+ 0,1249 BMI or Glucose==B2of2 or Insulin
+ 0,1249 BMI or Glucose==B2of2 or Adiponectin
+ 0,1249 BMI or Glucose==B2of2
+ 0,1249 BMI equ Glucose==B2of2
+ 0,1249 Age_x_Glucose
+ 0,1249 Age xor Glucose==B2of2
+ 0,1249 Age or Glucose==B2of2 or Resistin
+ 0,1249 Age or Glucose==B2of2 or MCP1
+ 0,1249 Age or Glucose==B2of2 or Leptin
+ 0,1249 Age or Glucose==B2of2 or Insulin
+ 0,1249 Age or Glucose==B2of2 or Adiponectin
+ 0,1249 Age or Glucose==B2of2
+ 0,1249 Age or BMI or Glucose==B2of2
+ 0,1249 Age equ Glucose==B2of2
+ 0,1205 HOMA SUBTRACT Glucose
+ 0,1205 Glucose SUBTRACT HOMA
+ 0,1203 Insulin ADD Resistin
+ 0,1192 Resistin SUBTRACT BMI
+ 0,1192 BMI SUBTRACT Resistin
+ 0,1181 Resistin DIVIDE BMI
+ 0,1181 Insulin SUBTRACT BMI
+ 0,1181 BMI SUBTRACT Insulin
+ 0,1181 BMI DIVIDE Resistin
+ 0,1161 (Glucose <= 92) and (Resistin <= 11.774) and (MCP1 >= 417.114)
+ 0,1105 BMI DIVIDE Age
+ 0,1105 Age DIVIDE BMI
+ 0,1089 Glucose ADD Adiponectin
+ 0,1028 Leptin SUBTRACT Glucose
+ 0,1028 Glucose SUBTRACT Leptin
+ 0,1000 HOMA ADD Resistin
+ 0,0994 Glucose==B2of2 and HOMA==B2of2
+ 0,0983 Glucose DIVIDE Age
+ 0,0983 BMI SUBTRACT Age
+ 0,0983 Age SUBTRACT BMI
+ 0,0983 Age DIVIDE Glucose
+ 0,0983 Age ADD HOMA
+ 0,0965 num-of-N((BMI >= 35.092702) and (Glucose <= 106))
+ 0,0929 Insulin SUBTRACT Glucose
+ 0,0929 Glucose SUBTRACT Insulin
+ 0,0926 Glucose SUBTRACT Adiponectin
+ 0,0926 Adiponectin SUBTRACT Glucose
+ 0,0926 BMI ADD Glucose
+ 0,0921 Insulin_x_HOMA
+ 0,0921 Insulin xor HOMA==B2of2
+ 0,0921 Insulin or HOMA==B2of2 or Resistin
+ 0,0921 Insulin or HOMA==B2of2 or MCP1
+ 0,0921 Insulin or HOMA==B2of2 or Leptin
+ 0,0921 Insulin or HOMA==B2of2 or Adiponectin
+ 0,0921 Insulin or HOMA==B2of2
+ 0,0921 Insulin equ HOMA==B2of2
+ 0,0921 HOMA_x_Resistin
+ 0,0921 HOMA_x_MCP1
+ 0,0921 HOMA_x_Leptin
+ 0,0921 HOMA_x_Adiponectin
+ 0,0921 HOMA==B2of2 xor Resistin
+ 0,0921 HOMA==B2of2 xor MCP1
+ 0,0921 HOMA==B2of2 xor Leptin
+ 0,0921 HOMA==B2of2 xor Adiponectin
+ 0,0921 HOMA==B2of2 or Resistin or MCP1
+ 0,0921 HOMA==B2of2 or Resistin
+ 0,0921 HOMA==B2of2 or MCP1
+ 0,0921 HOMA==B2of2 or Leptin or Resistin
+ 0,0921 HOMA==B2of2 or Leptin or MCP1
+ 0,0921 HOMA==B2of2 or Leptin or Adiponectin
+ 0,0921 HOMA==B2of2 or Leptin
+ 0,0921 HOMA==B2of2 or Adiponectin or Resistin
+ 0,0921 HOMA==B2of2 or Adiponectin or MCP1
+ 0,0921 HOMA==B2of2 or Adiponectin
+ 0,0921 HOMA==B2of2 impl Resistin
+ 0,0921 HOMA==B2of2 impl MCP1
+ 0,0921 HOMA==B2of2 impl Leptin
+ 0,0921 HOMA==B2of2 impl Adiponectin
+ 0,0921 HOMA==B2of2 equ Resistin
+ 0,0921 HOMA==B2of2 equ MCP1
+ 0,0921 HOMA==B2of2 equ Leptin
+ 0,0921 HOMA==B2of2 equ Adiponectin
+ 0,0921 HOMA
+ 0,0921 BMI_x_HOMA
+ 0,0921 BMI xor HOMA==B2of2
+ 0,0921 BMI or Insulin or HOMA==B2of2
+ 0,0921 BMI or HOMA==B2of2 or Resistin
+ 0,0921 BMI or HOMA==B2of2 or MCP1
+ 0,0921 BMI or HOMA==B2of2 or Leptin
+ 0,0921 BMI or HOMA==B2of2 or Adiponectin
+ 0,0921 BMI or HOMA==B2of2
+ 0,0921 BMI equ HOMA==B2of2
+ 0,0921 Age_x_HOMA
+ 0,0921 Age xor HOMA==B2of2
+ 0,0921 Age or Insulin or HOMA==B2of2
+ 0,0921 Age or HOMA==B2of2 or Resistin
+ 0,0921 Age or HOMA==B2of2 or MCP1
+ 0,0921 Age or HOMA==B2of2 or Leptin
+ 0,0921 Age or HOMA==B2of2 or Adiponectin
+ 0,0921 Age or HOMA==B2of2
+ 0,0921 Age or BMI or HOMA==B2of2
+ 0,0921 Age equ HOMA==B2of2
+ 0,0897 Insulin DIVIDE BMI
+ 0,0897 BMI DIVIDE Insulin
+ 0,0876 Glucose SUBTRACT Age
+ 0,0876 Age SUBTRACT Glucose
+ 0,0864 Leptin SUBTRACT Age
+ 0,0864 Age SUBTRACT Leptin
+ 0,0864 (Glucose <= 87) and (Age <= 44)
+ 0,0847 Resistin DIVIDE MCP1
+ 0,0847 MCP1 DIVIDE Resistin
+ 0,0834 Resistin SUBTRACT Leptin
+ 0,0834 Leptin SUBTRACT Resistin
+ 0,0834 HOMA DIVIDE Age
+ 0,0834 Age DIVIDE HOMA
+ 0,0805 Leptin DIVIDE HOMA
+ 0,0805 HOMA DIVIDE Leptin
+ 0,0768 Glucose ADD Leptin
+ 0,0749 Age ADD Insulin
+ 0,0749 (BMI >= 35.092702) and (Glucose <= 106)
+ 0,0719 Insulin ADD HOMA
+ 0,0717 num-of-N((Glucose <= 87) and (Age <= 44))
+ 0,0696 Age
+ 0,0681 Resistin
+ 0,0671 Age ADD Glucose
+ 0,0645 Resistin SUBTRACT Age
+ 0,0645 Age SUBTRACT Resistin
+ 0,0644 Insulin
+ 0,0644 HOMA DIVIDE Glucose
+ 0,0644 Glucose DIVIDE HOMA
+ 0,0637 Insulin SUBTRACT Age
+ 0,0637 Age SUBTRACT Insulin
+ 0,0633 Resistin SUBTRACT Glucose
+ 0,0633 Glucose SUBTRACT Resistin
+ 0,0570 Insulin DIVIDE Age
+ 0,0570 Age DIVIDE Insulin
+ 0,0542 Resistin DIVIDE Age
+ 0,0542 Age DIVIDE Resistin
+ 0,0535 Adiponectin ADD Resistin
+ 0,0529 Leptin DIVIDE Age
+ 0,0529 Age DIVIDE Leptin
+ 0,0527 Insulin SUBTRACT HOMA
+ 0,0527 HOMA SUBTRACT Insulin
+ 0,0523 MCP1 DIVIDE HOMA
+ 0,0523 HOMA DIVIDE MCP1
+ 0,0520 Resistin SUBTRACT HOMA
+ 0,0520 HOMA SUBTRACT Resistin
+ 0,0489 Insulin DIVIDE Glucose
+ 0,0489 Glucose DIVIDE Insulin
+ 0,0488 HOMA SUBTRACT BMI
+ 0,0488 BMI SUBTRACT HOMA
+ 0,0487 Resistin DIVIDE Leptin
+ 0,0487 Leptin DIVIDE Resistin
+ 0,0478 Resistin SUBTRACT Adiponectin
+ 0,0478 Adiponectin SUBTRACT Resistin
+ 0,0472 BMI LESSTHAN Resistin
+ 0,0453 Insulin ADD Adiponectin
+ 0,0453 BMI ADD Resistin
+ 0,0425 Age ADD Adiponectin
+ 0,0417 Insulin SUBTRACT Adiponectin
+ 0,0417 Adiponectin SUBTRACT Insulin
+ 0,0407 BMI ADD Insulin
+ 0,0396 Insulin DIVIDE Adiponectin
+ 0,0396 HOMA DIVIDE Adiponectin
+ 0,0396 Adiponectin DIVIDE Insulin
+ 0,0396 Adiponectin DIVIDE HOMA
+ 0,0391 Leptin DIVIDE BMI
+ 0,0391 BMI DIVIDE Leptin
+ 0,0363 Leptin DIVIDE Insulin
+ 0,0363 Insulin DIVIDE Leptin
+ 0,0357 Resistin DIVIDE Glucose
+ 0,0357 Glucose DIVIDE Resistin
+ 0,0345 HOMA SUBTRACT Age
+ 0,0345 BMI SUBTRACT Adiponectin
+ 0,0345 Age SUBTRACT HOMA
+ 0,0345 Adiponectin SUBTRACT BMI
+ 0,0342 HOMA ADD Adiponectin
+ 0,0338 Age ADD Leptin
+ 0,0326 Leptin SUBTRACT BMI
+ 0,0326 BMI SUBTRACT Leptin
+ 0,0326 Age ADD Resistin
+ 0,0323 Resistin SUBTRACT Insulin
+ 0,0323 Resistin DIVIDE HOMA
+ 0,0323 Insulin SUBTRACT Resistin
+ 0,0323 HOMA DIVIDE Resistin
+ 0,0317 MCP1 DIVIDE Insulin
+ 0,0317 Insulin DIVIDE MCP1
+ 0,0277 Age SUBTRACT Adiponectin
+ 0,0277 Adiponectin SUBTRACT Age
+ 0,0273 Age ADD BMI
+ 0,0253 Resistin DIVIDE Insulin
+ 0,0253 Insulin DIVIDE Resistin
+ 0,0253 HOMA SUBTRACT Adiponectin
+ 0,0253 Adiponectin SUBTRACT HOMA
+ 0,0240 Resistin DIVIDE Adiponectin
+ 0,0240 Adiponectin DIVIDE Resistin
+ 0,0233 Leptin DIVIDE Glucose
+ 0,0233 Glucose DIVIDE Leptin
+ 0,0233 Age LESSTHAN BMI
+ 0,0232 BMI
+ 0,0218 Leptin LESSTHAN Resistin
+ 0,0213 Leptin
+ 0,0213 HOMA ADD Leptin
+ 0,0188 HOMA LESSTHAN Adiponectin
+ 0,0187 Leptin SUBTRACT Insulin
+ 0,0187 Insulin SUBTRACT Leptin
+ 0,0187 BMI LESSTHAN Insulin
+ 0,0184 Insulin ADD Leptin
+ 0,0177 MCP1 DIVIDE Age
+ 0,0177 Age DIVIDE MCP1
+ 0,0147 Leptin ADD Resistin
+ 0,0147 Age LESSTHAN Glucose
+ 0,0147 Age DIVIDE Adiponectin
+ 0,0147 Adiponectin DIVIDE Age
+ 0,0141 MCP1 DIVIDE BMI
+ 0,0141 BMI DIVIDE MCP1
+ 0,0123 BMI ADD HOMA
+ 0,0105 Insulin LESSTHAN Leptin
+ 0,0078 Insulin LESSTHAN Adiponectin
+ 0,0074 Glucose DIVIDE Adiponectin
+ 0,0074 Adiponectin DIVIDE Glucose
+ 0,0072 Resistin ADD MCP1
+ 0,0072 MCP1 SUBTRACT Resistin
+ 0,0072 MCP1 SUBTRACT Insulin
+ 0,0072 MCP1 SUBTRACT HOMA
+ 0,0072 MCP1 SUBTRACT BMI
+ 0,0072 MCP1 SUBTRACT Adiponectin
+ 0,0072 MCP1 DIVIDE Adiponectin
+ 0,0072 MCP1
+ 0,0072 Leptin DIVIDE Adiponectin
+ 0,0072 Leptin ADD MCP1
+ 0,0072 Insulin ADD MCP1
+ 0,0072 HOMA ADD MCP1
+ 0,0072 Glucose ADD MCP1
+ 0,0072 BMI DIVIDE Adiponectin
+ 0,0072 BMI ADD MCP1
+ 0,0072 BMI ADD Leptin
+ 0,0072 Age ADD MCP1
+ 0,0072 Adiponectin ADD MCP1
+ 0,0066 Adiponectin DIVIDE BMI
+ 0,0065 Resistin SUBTRACT MCP1
+ 0,0065 MCP1 SUBTRACT Leptin
+ 0,0065 MCP1 SUBTRACT Glucose
+ 0,0065 MCP1 SUBTRACT Age
+ 0,0065 Leptin SUBTRACT MCP1
+ 0,0065 Insulin SUBTRACT MCP1
+ 0,0065 HOMA SUBTRACT MCP1
+ 0,0065 HOMA LESSTHAN Resistin
+ 0,0065 Glucose SUBTRACT MCP1
+ 0,0065 BMI SUBTRACT MCP1
+ 0,0065 BMI ADD Adiponectin
+ 0,0065 Age SUBTRACT MCP1
+ 0,0065 Adiponectin SUBTRACT MCP1
+ 0,0065 Adiponectin DIVIDE MCP1
+ 0,0064 MCP1 DIVIDE Glucose
+ 0,0064 Glucose DIVIDE MCP1
+ 0,0024 Adiponectin DIVIDE Leptin
+ 0,0018 MCP1 DIVIDE Leptin
+ 0,0018 HOMA SUBTRACT Leptin
+ 0,0018 Age LESSTHAN Insulin
+ 0,0015 Age LESSTHAN MCP1
+ 0,0015 Age LESSTHAN Adiponectin
+ 0,0015 Adiponectin DIFF Resistin
+ 0,0005 Adiponectin
+ -0,0006 Leptin DIVIDE MCP1
+ -0,0006 Leptin ADD Adiponectin
+ -0,0011 Leptin LESSTHAN MCP1
+ -0,0012 Leptin SUBTRACT HOMA
+ -0,0025 Leptin SUBTRACT Adiponectin
+ -0,0025 Age LESSTHAN Leptin
+ -0,0025 Adiponectin SUBTRACT Leptin
+ -0,0042 Glucose==B2of2 xor HOMA==B2of2
+ -0,0042 Glucose==B2of2 equ HOMA==B2of2
+ -0,0050 Glucose==B2of2 impl HOMA==B2of2
+ -0,0065 Age LESSTHAN Resistin
+ -0,0066 BMI LESSTHAN Adiponectin
+ -0,0068 Adiponectin LESSTHAN Resistin
+ -0,0088 Insulin LESSTHAN Resistin
+ -0,0094 Glucose LESSTHAN MCP1
+ -0,0132 Leptin LESSTHAN Adiponectin
+ -0,0185 BMI LESSTHAN Leptin
+								--------------
+									Fold  6
+								--------------
+Feature evaluation: MDL (All features dataset) - After CI
+ 0,2123 num-of-N((BMI >= 31.446541) and (Resistin >= 10.26309))
+ 0,1969 Glucose ADD Resistin
+ 0,1861 num-of-N((Glucose <= 90) and (Resistin <= 12.9361))
+ 0,1577 (Glucose <= 90) and (Resistin <= 12.9361)
+ 0,1499 Glucose SUBTRACT BMI
+ 0,1499 BMI SUBTRACT Glucose
+ 0,1441 Glucose ADD HOMA
+ 0,1334 HOMA SUBTRACT Glucose
+ 0,1334 Glucose SUBTRACT HOMA
+ 0,1312 Insulin DIVIDE HOMA
+ 0,1280 Glucose ADD Insulin
+ 0,1107 Glucose DIVIDE BMI
+ 0,1107 Glucose DIVIDE Age
+ 0,1107 BMI DIVIDE Glucose
+ 0,1107 Age DIVIDE Glucose
+ 0,1105 BMI DIVIDE Age
+ 0,1105 Age DIVIDE BMI
+ 0,1105 Age ADD Glucose
+ 0,1089 Resistin DIVIDE BMI
+ 0,1089 BMI DIVIDE Resistin
+ 0,1070 Insulin ADD Resistin
+ 0,1062 HOMA DIVIDE Insulin
+ 0,1049 Glucose_x_Resistin
+ 0,1049 Glucose_x_MCP1
+ 0,1049 Glucose_x_Leptin
+ 0,1049 Glucose_x_Insulin
+ 0,1049 Glucose_x_HOMA
+ 0,1049 Glucose_x_Adiponectin
+ 0,1049 Glucose==B2of2 xor Resistin
+ 0,1049 Glucose==B2of2 xor MCP1
+ 0,1049 Glucose==B2of2 xor Leptin
+ 0,1049 Glucose==B2of2 xor Insulin
+ 0,1049 Glucose==B2of2 xor HOMA
+ 0,1049 Glucose==B2of2 xor Adiponectin
+ 0,1049 Glucose==B2of2 or Resistin or MCP1
+ 0,1049 Glucose==B2of2 or Resistin
+ 0,1049 Glucose==B2of2 or MCP1
+ 0,1049 Glucose==B2of2 or Leptin or Resistin
+ 0,1049 Glucose==B2of2 or Leptin or MCP1
+ 0,1049 Glucose==B2of2 or Leptin or Adiponectin
+ 0,1049 Glucose==B2of2 or Leptin
+ 0,1049 Glucose==B2of2 or Insulin or Resistin
+ 0,1049 Glucose==B2of2 or Insulin or MCP1
+ 0,1049 Glucose==B2of2 or Insulin or Leptin
+ 0,1049 Glucose==B2of2 or Insulin or HOMA
+ 0,1049 Glucose==B2of2 or Insulin or Adiponectin
+ 0,1049 Glucose==B2of2 or Insulin
+ 0,1049 Glucose==B2of2 or HOMA or Resistin
+ 0,1049 Glucose==B2of2 or HOMA or MCP1
+ 0,1049 Glucose==B2of2 or HOMA or Leptin
+ 0,1049 Glucose==B2of2 or HOMA or Adiponectin
+ 0,1049 Glucose==B2of2 or HOMA
+ 0,1049 Glucose==B2of2 or Adiponectin or Resistin
+ 0,1049 Glucose==B2of2 or Adiponectin or MCP1
+ 0,1049 Glucose==B2of2 or Adiponectin
+ 0,1049 Glucose==B2of2 impl Resistin
+ 0,1049 Glucose==B2of2 impl MCP1
+ 0,1049 Glucose==B2of2 impl Leptin
+ 0,1049 Glucose==B2of2 impl Insulin
+ 0,1049 Glucose==B2of2 impl HOMA
+ 0,1049 Glucose==B2of2 impl Adiponectin
+ 0,1049 Glucose==B2of2 equ Resistin
+ 0,1049 Glucose==B2of2 equ MCP1
+ 0,1049 Glucose==B2of2 equ Leptin
+ 0,1049 Glucose==B2of2 equ Insulin
+ 0,1049 Glucose==B2of2 equ HOMA
+ 0,1049 Glucose==B2of2 equ Adiponectin
+ 0,1049 Glucose
+ 0,1049 BMI_x_Glucose
+ 0,1049 BMI xor Glucose==B2of2
+ 0,1049 BMI or Glucose==B2of2 or Resistin
+ 0,1049 BMI or Glucose==B2of2 or MCP1
+ 0,1049 BMI or Glucose==B2of2 or Leptin
+ 0,1049 BMI or Glucose==B2of2 or Insulin
+ 0,1049 BMI or Glucose==B2of2 or HOMA
+ 0,1049 BMI or Glucose==B2of2 or Adiponectin
+ 0,1049 BMI or Glucose==B2of2
+ 0,1049 BMI equ Glucose==B2of2
+ 0,1049 Age_x_Glucose
+ 0,1049 Age xor Glucose==B2of2
+ 0,1049 Age or Glucose==B2of2 or Resistin
+ 0,1049 Age or Glucose==B2of2 or MCP1
+ 0,1049 Age or Glucose==B2of2 or Leptin
+ 0,1049 Age or Glucose==B2of2 or Insulin
+ 0,1049 Age or Glucose==B2of2 or HOMA
+ 0,1049 Age or Glucose==B2of2 or Adiponectin
+ 0,1049 Age or Glucose==B2of2
+ 0,1049 Age or BMI or Glucose==B2of2
+ 0,1049 Age equ Glucose==B2of2
+ 0,1047 Resistin SUBTRACT BMI
+ 0,1047 BMI SUBTRACT Resistin
+ 0,1028 Leptin SUBTRACT Glucose
+ 0,1028 HOMA ADD Resistin
+ 0,1028 Glucose SUBTRACT Leptin
+ 0,1015 Insulin SUBTRACT BMI
+ 0,1015 HOMA DIVIDE BMI
+ 0,1015 BMI SUBTRACT Insulin
+ 0,1015 BMI DIVIDE HOMA
+ 0,0988 Glucose ADD Leptin
+ 0,0983 BMI SUBTRACT Age
+ 0,0983 Age SUBTRACT BMI
+ 0,0947 Glucose ADD Adiponectin
+ 0,0929 Insulin SUBTRACT Glucose
+ 0,0929 Glucose SUBTRACT Insulin
+ 0,0876 Glucose SUBTRACT Age
+ 0,0876 Age SUBTRACT Glucose
+ 0,0864 Age ADD HOMA
+ 0,0837 Resistin SUBTRACT Age
+ 0,0837 Age SUBTRACT Resistin
+ 0,0834 Glucose SUBTRACT Adiponectin
+ 0,0834 Adiponectin SUBTRACT Glucose
+ 0,0808 Leptin SUBTRACT Age
+ 0,0808 Age SUBTRACT Leptin
+ 0,0806 Insulin SUBTRACT Age
+ 0,0806 Age SUBTRACT Insulin
+ 0,0806 (BMI >= 31.446541) and (Resistin >= 10.26309)
+ 0,0743 Resistin SUBTRACT Leptin
+ 0,0743 Leptin SUBTRACT Resistin
+ 0,0718 HOMA
+ 0,0702 num-of-N((Age >= 73) and (BMI <= 27.1))
+ 0,0696 (Age >= 73) and (BMI <= 27.1)
+ 0,0666 Insulin DIVIDE BMI
+ 0,0666 BMI DIVIDE Insulin
+ 0,0655 HOMA DIVIDE Age
+ 0,0655 Age DIVIDE HOMA
+ 0,0644 Leptin DIVIDE HOMA
+ 0,0644 HOMA DIVIDE Leptin
+ 0,0637 Age ADD Insulin
+ 0,0633 Insulin ADD Adiponectin
+ 0,0633 Resistin
+ 0,0629 BMI ADD Glucose
+ 0,0594 HOMA SUBTRACT BMI
+ 0,0594 BMI SUBTRACT HOMA
+ 0,0590 Age
+ 0,0580 Insulin ADD HOMA
+ 0,0551 Resistin SUBTRACT Glucose
+ 0,0551 Glucose SUBTRACT Resistin
+ 0,0529 Leptin DIVIDE Age
+ 0,0529 Age DIVIDE Leptin
+ 0,0527 HOMA SUBTRACT Age
+ 0,0527 Age SUBTRACT HOMA
+ 0,0527 Insulin
+ 0,0527 HOMA DIVIDE Glucose
+ 0,0527 Glucose DIVIDE HOMA
+ 0,0497 BMI SUBTRACT Adiponectin
+ 0,0497 Adiponectin SUBTRACT BMI
+ 0,0478 Resistin SUBTRACT HOMA
+ 0,0478 Resistin DIVIDE MCP1
+ 0,0478 MCP1 DIVIDE Resistin
+ 0,0478 HOMA SUBTRACT Resistin
+ 0,0472 HOMA DIVIDE Adiponectin
+ 0,0472 Adiponectin DIVIDE HOMA
+ 0,0465 Adiponectin ADD Resistin
+ 0,0444 Age ADD BMI
+ 0,0441 Resistin SUBTRACT Adiponectin
+ 0,0441 Adiponectin SUBTRACT Resistin
+ 0,0433 BMI
+ 0,0417 Insulin SUBTRACT Adiponectin
+ 0,0417 Adiponectin SUBTRACT Insulin
+ 0,0407 Resistin DIVIDE Leptin
+ 0,0407 Leptin DIVIDE Resistin
+ 0,0396 Insulin DIVIDE Adiponectin
+ 0,0396 Adiponectin DIVIDE Insulin
+ 0,0391 Leptin DIVIDE BMI
+ 0,0391 BMI DIVIDE Leptin
+ 0,0384 Insulin SUBTRACT HOMA
+ 0,0384 Insulin DIVIDE Glucose
+ 0,0384 Insulin DIVIDE Age
+ 0,0384 HOMA SUBTRACT Insulin
+ 0,0384 Glucose DIVIDE Insulin
+ 0,0384 Age DIVIDE Insulin
+ 0,0376 BMI ADD Resistin
+ 0,0351 Leptin DIVIDE Insulin
+ 0,0351 Insulin DIVIDE Leptin
+ 0,0342 HOMA ADD Adiponectin
+ 0,0341 Age SUBTRACT Adiponectin
+ 0,0341 Adiponectin SUBTRACT Age
+ 0,0330 Resistin DIVIDE HOMA
+ 0,0330 HOMA DIVIDE Resistin
+ 0,0330 BMI ADD Insulin
+ 0,0326 Leptin SUBTRACT BMI
+ 0,0326 BMI SUBTRACT Leptin
+ 0,0326 Age ADD Resistin
+ 0,0324 Resistin DIVIDE Age
+ 0,0324 Age DIVIDE Resistin
+ 0,0323 BMI LESSTHAN Resistin
+ 0,0313 Insulin ADD Leptin
+ 0,0288 MCP1 DIVIDE HOMA
+ 0,0288 HOMA DIVIDE MCP1
+ 0,0282 Age ADD Adiponectin
+ 0,0261 Resistin DIVIDE Adiponectin
+ 0,0261 Adiponectin DIVIDE Resistin
+ 0,0256 Resistin SUBTRACT Insulin
+ 0,0256 Insulin SUBTRACT Resistin
+ 0,0253 Resistin DIVIDE Glucose
+ 0,0253 HOMA SUBTRACT Adiponectin
+ 0,0253 Glucose DIVIDE Resistin
+ 0,0253 Adiponectin SUBTRACT HOMA
+ 0,0233 Leptin DIVIDE Glucose
+ 0,0233 Glucose DIVIDE Leptin
+ 0,0229 HOMA ADD Leptin
+ 0,0229 BMI ADD Leptin
+ 0,0223 Resistin DIVIDE Insulin
+ 0,0223 Insulin DIVIDE Resistin
+ 0,0213 Leptin
+ 0,0196 MCP1 DIVIDE BMI
+ 0,0196 BMI DIVIDE MCP1
+ 0,0187 MCP1 DIVIDE Insulin
+ 0,0187 Insulin DIVIDE MCP1
+ 0,0187 Leptin SUBTRACT Insulin
+ 0,0187 Insulin SUBTRACT Leptin
+ 0,0184 MCP1 SUBTRACT Leptin
+ 0,0184 Leptin SUBTRACT MCP1
+ 0,0182 Age ADD Leptin
+ 0,0162 Leptin LESSTHAN Resistin
+ 0,0152 Leptin SUBTRACT Adiponectin
+ 0,0152 Adiponectin SUBTRACT Leptin
+ 0,0152 MCP1 SUBTRACT Age
+ 0,0152 Age SUBTRACT MCP1
+ 0,0150 MCP1 DIVIDE Age
+ 0,0150 Age DIVIDE MCP1
+ 0,0147 Leptin ADD Resistin
+ 0,0147 Age LESSTHAN Glucose
+ 0,0147 Age LESSTHAN BMI
+ 0,0147 Age DIVIDE Adiponectin
+ 0,0147 Adiponectin DIVIDE Age
+ 0,0128 Leptin DIVIDE Adiponectin
+ 0,0128 Adiponectin DIVIDE Leptin
+ 0,0127 HOMA LESSTHAN Adiponectin
+ 0,0124 Glucose DIVIDE Adiponectin
+ 0,0124 Adiponectin DIVIDE Glucose
+ 0,0123 Resistin SUBTRACT MCP1
+ 0,0123 Resistin ADD MCP1
+ 0,0123 MCP1 SUBTRACT Resistin
+ 0,0123 MCP1 SUBTRACT Insulin
+ 0,0123 MCP1 SUBTRACT HOMA
+ 0,0123 MCP1 SUBTRACT Glucose
+ 0,0123 MCP1 SUBTRACT BMI
+ 0,0123 MCP1 SUBTRACT Adiponectin
+ 0,0123 MCP1
+ 0,0123 Leptin ADD MCP1
+ 0,0123 Insulin SUBTRACT MCP1
+ 0,0123 Insulin ADD MCP1
+ 0,0123 HOMA SUBTRACT MCP1
+ 0,0123 HOMA LESSTHAN Resistin
+ 0,0123 HOMA ADD MCP1
+ 0,0123 Glucose SUBTRACT MCP1
+ 0,0123 Glucose ADD MCP1
+ 0,0123 BMI SUBTRACT MCP1
+ 0,0123 BMI LESSTHAN Insulin
+ 0,0123 BMI ADD MCP1
+ 0,0123 BMI ADD HOMA
+ 0,0123 Age ADD MCP1
+ 0,0123 Adiponectin SUBTRACT MCP1
+ 0,0123 Adiponectin ADD MCP1
+ 0,0105 Insulin LESSTHAN Leptin
+ 0,0097 Insulin LESSTHAN Adiponectin
+ 0,0082 MCP1 DIVIDE Leptin
+ 0,0082 Leptin DIVIDE MCP1
+ 0,0066 Leptin SUBTRACT HOMA
+ 0,0066 HOMA SUBTRACT Leptin
+ 0,0065 MCP1 DIVIDE Adiponectin
+ 0,0065 BMI ADD Adiponectin
+ 0,0065 Adiponectin DIVIDE MCP1
+ 0,0049 Age LESSTHAN Leptin
+ 0,0018 Glucose DIVIDE MCP1
+ 0,0018 Age LESSTHAN Insulin
+ 0,0018 Adiponectin DIVIDE BMI
+ 0,0015 Age LESSTHAN MCP1
+ 0,0015 Age LESSTHAN Adiponectin
+ 0,0015 Adiponectin DIFF Resistin
+ 0,0005 Adiponectin
+ -0,0003 BMI DIVIDE Adiponectin
+ -0,0006 Leptin ADD Adiponectin
+ -0,0011 Leptin LESSTHAN MCP1
+ -0,0030 MCP1 DIVIDE Glucose
+ -0,0065 Age LESSTHAN Resistin
+ -0,0066 BMI LESSTHAN Adiponectin
+ -0,0094 Glucose LESSTHAN MCP1
+ -0,0099 Adiponectin LESSTHAN Resistin
+ -0,0129 Leptin LESSTHAN Adiponectin
+ -0,0162 Insulin LESSTHAN Resistin
+ -0,0187 BMI LESSTHAN Leptin
+								--------------
+									Fold  7
+								--------------
+Feature evaluation: MDL (All features dataset) - After CI
+ 0,1795 Glucose ADD Resistin
+ 0,1547 Glucose SUBTRACT BMI
+ 0,1547 BMI SUBTRACT Glucose
+ 0,1501 num-of-N((Glucose <= 94) and (Resistin <= 10.37518))
+ 0,1485 Glucose ADD HOMA
+ 0,1413 (Glucose <= 94) and (Resistin <= 10.37518)
+ 0,1375 Insulin DIVIDE HOMA
+ 0,1314 Glucose ADD Insulin
+ 0,1236 BMI DIVIDE Age
+ 0,1236 Age DIVIDE BMI
+ 0,1117 Insulin ADD Resistin
+ 0,1111 BMI SUBTRACT Age
+ 0,1111 Age SUBTRACT BMI
+ 0,1099 HOMA DIVIDE Insulin
+ 0,1099 Glucose_x_Resistin
+ 0,1099 Glucose_x_MCP1
+ 0,1099 Glucose_x_Leptin
+ 0,1099 Glucose_x_Insulin
+ 0,1099 Glucose_x_HOMA
+ 0,1099 Glucose_x_Adiponectin
+ 0,1099 Glucose==B2of2 xor Resistin
+ 0,1099 Glucose==B2of2 xor MCP1
+ 0,1099 Glucose==B2of2 xor Leptin
+ 0,1099 Glucose==B2of2 xor Insulin
+ 0,1099 Glucose==B2of2 xor HOMA
+ 0,1099 Glucose==B2of2 xor Adiponectin
+ 0,1099 Glucose==B2of2 or Resistin or MCP1
+ 0,1099 Glucose==B2of2 or Resistin
+ 0,1099 Glucose==B2of2 or MCP1
+ 0,1099 Glucose==B2of2 or Leptin or Resistin
+ 0,1099 Glucose==B2of2 or Leptin or MCP1
+ 0,1099 Glucose==B2of2 or Leptin or Adiponectin
+ 0,1099 Glucose==B2of2 or Leptin
+ 0,1099 Glucose==B2of2 or Insulin or Resistin
+ 0,1099 Glucose==B2of2 or Insulin or MCP1
+ 0,1099 Glucose==B2of2 or Insulin or Leptin
+ 0,1099 Glucose==B2of2 or Insulin or HOMA
+ 0,1099 Glucose==B2of2 or Insulin or Adiponectin
+ 0,1099 Glucose==B2of2 or Insulin
+ 0,1099 Glucose==B2of2 or HOMA or Resistin
+ 0,1099 Glucose==B2of2 or HOMA or MCP1
+ 0,1099 Glucose==B2of2 or HOMA or Leptin
+ 0,1099 Glucose==B2of2 or HOMA or Adiponectin
+ 0,1099 Glucose==B2of2 or HOMA
+ 0,1099 Glucose==B2of2 or Adiponectin or Resistin
+ 0,1099 Glucose==B2of2 or Adiponectin or MCP1
+ 0,1099 Glucose==B2of2 or Adiponectin
+ 0,1099 Glucose==B2of2 impl Resistin
+ 0,1099 Glucose==B2of2 impl MCP1
+ 0,1099 Glucose==B2of2 impl Leptin
+ 0,1099 Glucose==B2of2 impl Insulin
+ 0,1099 Glucose==B2of2 impl HOMA
+ 0,1099 Glucose==B2of2 impl Adiponectin
+ 0,1099 Glucose==B2of2 equ Resistin
+ 0,1099 Glucose==B2of2 equ MCP1
+ 0,1099 Glucose==B2of2 equ Leptin
+ 0,1099 Glucose==B2of2 equ Insulin
+ 0,1099 Glucose==B2of2 equ HOMA
+ 0,1099 Glucose==B2of2 equ Adiponectin
+ 0,1099 Glucose
+ 0,1099 BMI_x_Glucose
+ 0,1099 BMI xor Glucose==B2of2
+ 0,1099 BMI or Glucose==B2of2 or Resistin
+ 0,1099 BMI or Glucose==B2of2 or MCP1
+ 0,1099 BMI or Glucose==B2of2 or Leptin
+ 0,1099 BMI or Glucose==B2of2 or Insulin
+ 0,1099 BMI or Glucose==B2of2 or HOMA
+ 0,1099 BMI or Glucose==B2of2 or Adiponectin
+ 0,1099 BMI or Glucose==B2of2
+ 0,1099 BMI equ Glucose==B2of2
+ 0,1099 Age_x_Glucose
+ 0,1099 Age xor Glucose==B2of2
+ 0,1099 Age or Glucose==B2of2 or Resistin
+ 0,1099 Age or Glucose==B2of2 or MCP1
+ 0,1099 Age or Glucose==B2of2 or Leptin
+ 0,1099 Age or Glucose==B2of2 or Insulin
+ 0,1099 Age or Glucose==B2of2 or HOMA
+ 0,1099 Age or Glucose==B2of2 or Adiponectin
+ 0,1099 Age or Glucose==B2of2
+ 0,1099 Age or BMI or Glucose==B2of2
+ 0,1099 Age equ Glucose==B2of2
+ 0,1095 HOMA ADD Resistin
+ 0,1076 HOMA SUBTRACT Glucose
+ 0,1076 Glucose SUBTRACT HOMA
+ 0,0993 Leptin SUBTRACT Glucose
+ 0,0993 Glucose SUBTRACT Leptin
+ 0,0988 Glucose DIVIDE Age
+ 0,0988 Age DIVIDE Glucose
+ 0,0988 Age ADD HOMA
+ 0,0935 Resistin SUBTRACT BMI
+ 0,0935 BMI SUBTRACT Resistin
+ 0,0935 Resistin DIVIDE BMI
+ 0,0935 BMI DIVIDE Resistin
+ 0,0906 Insulin SUBTRACT Glucose
+ 0,0906 Glucose SUBTRACT Insulin
+ 0,0900 Glucose SUBTRACT Adiponectin
+ 0,0900 Adiponectin SUBTRACT Glucose
+ 0,0894 Glucose DIVIDE BMI
+ 0,0894 BMI DIVIDE Glucose
+ 0,0885 HOMA DIVIDE BMI
+ 0,0885 BMI DIVIDE HOMA
+ 0,0874 Insulin SUBTRACT BMI
+ 0,0874 BMI SUBTRACT Insulin
+ 0,0869 Leptin SUBTRACT Age
+ 0,0869 Age SUBTRACT Leptin
+ 0,0866 Glucose SUBTRACT Age
+ 0,0866 Age SUBTRACT Glucose
+ 0,0849 Resistin SUBTRACT Age
+ 0,0849 Age SUBTRACT Resistin
+ 0,0789 Age ADD Glucose
+ 0,0757 Resistin DIVIDE MCP1
+ 0,0757 MCP1 DIVIDE Resistin
+ 0,0757 HOMA
+ 0,0754 Age ADD Insulin
+ 0,0721 Resistin SUBTRACT Leptin
+ 0,0721 Leptin SUBTRACT Resistin
+ 0,0717 Resistin
+ 0,0710 Insulin DIVIDE BMI
+ 0,0710 BMI DIVIDE Insulin
+ 0,0709 (BMI >= 31.446541) and (Adiponectin <= 10.35526)
+ 0,0704 Age
+ 0,0685 Glucose ADD Adiponectin
+ 0,0676 Leptin DIVIDE HOMA
+ 0,0676 HOMA DIVIDE Leptin
+ 0,0662 Glucose ADD Leptin
+ 0,0635 HOMA DIVIDE Age
+ 0,0635 BMI ADD Glucose
+ 0,0635 Age DIVIDE HOMA
+ 0,0610 Resistin SUBTRACT Glucose
+ 0,0610 Glucose SUBTRACT Resistin
+ 0,0605 Insulin SUBTRACT Age
+ 0,0605 Age SUBTRACT Insulin
+ 0,0590 num-of-N((BMI >= 31.446541) and (Adiponectin <= 10.35526))
+ 0,0589 Insulin ADD HOMA
+ 0,0574 Adiponectin ADD Resistin
+ 0,0554 Insulin
+ 0,0554 HOMA DIVIDE Glucose
+ 0,0554 Glucose DIVIDE HOMA
+ 0,0551 Resistin SUBTRACT HOMA
+ 0,0551 HOMA SUBTRACT Resistin
+ 0,0547 Insulin SUBTRACT Adiponectin
+ 0,0547 Insulin DIVIDE Age
+ 0,0547 Age DIVIDE Insulin
+ 0,0547 Adiponectin SUBTRACT Insulin
+ 0,0533 Leptin DIVIDE Age
+ 0,0533 HOMA SUBTRACT BMI
+ 0,0533 BMI SUBTRACT HOMA
+ 0,0533 Age DIVIDE Leptin
+ 0,0531 HOMA DIVIDE Adiponectin
+ 0,0531 Adiponectin DIVIDE HOMA
+ 0,0520 Resistin SUBTRACT Adiponectin
+ 0,0520 Adiponectin SUBTRACT Resistin
+ 0,0508 BMI ADD Resistin
+ 0,0478 Insulin SUBTRACT HOMA
+ 0,0478 HOMA SUBTRACT Insulin
+ 0,0453 Insulin DIVIDE Adiponectin
+ 0,0453 Adiponectin DIVIDE Insulin
+ 0,0429 Age ADD Resistin
+ 0,0423 Insulin DIVIDE Glucose
+ 0,0423 Glucose DIVIDE Insulin
+ 0,0410 MCP1 DIVIDE HOMA
+ 0,0410 Insulin ADD Adiponectin
+ 0,0410 HOMA DIVIDE MCP1
+ 0,0399 Resistin DIVIDE Age
+ 0,0399 Age DIVIDE Resistin
+ 0,0398 HOMA SUBTRACT Age
+ 0,0398 Age SUBTRACT HOMA
+ 0,0397 Leptin DIVIDE BMI
+ 0,0397 BMI SUBTRACT Adiponectin
+ 0,0397 BMI DIVIDE Leptin
+ 0,0397 Adiponectin SUBTRACT BMI
+ 0,0393 Resistin DIVIDE Leptin
+ 0,0393 Leptin DIVIDE Resistin
+ 0,0393 BMI ADD Insulin
+ 0,0389 Leptin DIVIDE Insulin
+ 0,0389 Insulin DIVIDE Leptin
+ 0,0378 Resistin DIVIDE Glucose
+ 0,0378 Glucose DIVIDE Resistin
+ 0,0359 Age SUBTRACT Adiponectin
+ 0,0359 Adiponectin SUBTRACT Age
+ 0,0341 Resistin SUBTRACT Insulin
+ 0,0341 Insulin SUBTRACT Resistin
+ 0,0330 Leptin SUBTRACT BMI
+ 0,0330 BMI SUBTRACT Leptin
+ 0,0330 BMI
+ 0,0330 Age ADD Adiponectin
+ 0,0318 Resistin DIVIDE HOMA
+ 0,0318 HOMA DIVIDE Resistin
+ 0,0309 HOMA SUBTRACT Adiponectin
+ 0,0309 BMI LESSTHAN Resistin
+ 0,0309 Adiponectin SUBTRACT HOMA
+ 0,0279 Resistin DIVIDE Adiponectin
+ 0,0279 Adiponectin DIVIDE Resistin
+ 0,0253 HOMA ADD Adiponectin
+ 0,0241 Resistin DIVIDE Insulin
+ 0,0241 Insulin DIVIDE Resistin
+ 0,0236 Leptin DIVIDE Glucose
+ 0,0236 Glucose DIVIDE Leptin
+ 0,0236 Age DIVIDE Adiponectin
+ 0,0236 Age ADD BMI
+ 0,0236 Adiponectin DIVIDE Age
+ 0,0231 MCP1 DIVIDE Insulin
+ 0,0231 Insulin DIVIDE MCP1
+ 0,0218 Leptin
+ 0,0218 HOMA ADD Leptin
+ 0,0218 Glucose DIVIDE Adiponectin
+ 0,0218 Adiponectin DIVIDE Glucose
+ 0,0218 (Leptin <= 6.964)
+ 0,0210 Insulin ADD Leptin
+ 0,0197 Leptin LESSTHAN Resistin
+ 0,0179 Leptin SUBTRACT Insulin
+ 0,0179 Insulin SUBTRACT Leptin
+ 0,0179 BMI LESSTHAN Insulin
+ 0,0179 BMI ADD HOMA
+ 0,0178 HOMA LESSTHAN Adiponectin
+ 0,0174 Insulin LESSTHAN Adiponectin
+ 0,0150 Leptin ADD Resistin
+ 0,0150 Age LESSTHAN BMI
+ 0,0150 Age ADD Leptin
+ 0,0138 MCP1 DIVIDE Adiponectin
+ 0,0138 Adiponectin DIVIDE MCP1
+ 0,0117 Resistin SUBTRACT MCP1
+ 0,0117 Resistin ADD MCP1
+ 0,0117 MCP1 SUBTRACT Resistin
+ 0,0117 MCP1 SUBTRACT Leptin
+ 0,0117 MCP1 SUBTRACT Insulin
+ 0,0117 MCP1 SUBTRACT HOMA
+ 0,0117 MCP1 SUBTRACT Glucose
+ 0,0117 MCP1 SUBTRACT BMI
+ 0,0117 MCP1 SUBTRACT Age
+ 0,0117 MCP1 SUBTRACT Adiponectin
+ 0,0117 MCP1
+ 0,0117 Leptin SUBTRACT MCP1
+ 0,0117 Leptin ADD MCP1
+ 0,0117 Insulin SUBTRACT MCP1
+ 0,0117 Insulin ADD MCP1
+ 0,0117 HOMA SUBTRACT MCP1
+ 0,0117 HOMA LESSTHAN Resistin
+ 0,0117 HOMA ADD MCP1
+ 0,0117 Glucose SUBTRACT MCP1
+ 0,0117 Glucose ADD MCP1
+ 0,0117 BMI SUBTRACT MCP1
+ 0,0117 BMI ADD MCP1
+ 0,0117 Age SUBTRACT MCP1
+ 0,0117 Age ADD MCP1
+ 0,0117 Adiponectin SUBTRACT MCP1
+ 0,0117 Adiponectin ADD MCP1
+ 0,0108 MCP1 DIVIDE BMI
+ 0,0108 BMI DIVIDE MCP1
+ 0,0096 Insulin LESSTHAN Leptin
+ 0,0074 Leptin DIVIDE Adiponectin
+ 0,0074 BMI DIVIDE Adiponectin
+ 0,0074 BMI ADD Leptin
+ 0,0074 Age LESSTHAN Glucose
+ 0,0067 Adiponectin
+ 0,0067 BMI ADD Adiponectin
+ 0,0056 MCP1 DIVIDE Glucose
+ 0,0056 Glucose DIVIDE MCP1
+ 0,0038 Adiponectin DIVIDE Leptin
+ 0,0031 MCP1 DIVIDE Age
+ 0,0031 Age DIVIDE MCP1
+ 0,0017 Age LESSTHAN MCP1
+ 0,0017 Age LESSTHAN Adiponectin
+ 0,0016 MCP1 DIVIDE Leptin
+ 0,0016 HOMA SUBTRACT Leptin
+ 0,0016 Age LESSTHAN Insulin
+ 0,0016 Adiponectin DIVIDE BMI
+ 0,0003 Adiponectin LESSTHAN Resistin
+ -0,0001 Leptin ADD Adiponectin
+ -0,0012 Leptin LESSTHAN MCP1
+ -0,0019 Leptin SUBTRACT HOMA
+ -0,0019 Age LESSTHAN Leptin
+ -0,0026 Leptin DIVIDE MCP1
+ -0,0026 BMI LESSTHAN Adiponectin
+ -0,0036 Leptin SUBTRACT Adiponectin
+ -0,0036 Adiponectin SUBTRACT Leptin
+ -0,0066 Age LESSTHAN Resistin
+ -0,0083 Insulin LESSTHAN Resistin
+ -0,0093 Glucose LESSTHAN MCP1
+ -0,0128 Leptin LESSTHAN Adiponectin
+ -0,0185 BMI LESSTHAN Leptin
+								--------------
+									Fold  8
+								--------------
+Feature evaluation: MDL (All features dataset) - After CI
+ 0,1781 Glucose SUBTRACT BMI
+ 0,1781 BMI SUBTRACT Glucose
+ 0,1653 Glucose ADD Resistin
+ 0,1485 Glucose ADD HOMA
+ 0,1287 Leptin SUBTRACT Glucose
+ 0,1287 Glucose SUBTRACT Leptin
+ 0,1259 Resistin SUBTRACT BMI
+ 0,1259 BMI SUBTRACT Resistin
+ 0,1236 BMI DIVIDE Age
+ 0,1236 Age DIVIDE BMI
+ 0,1233 Insulin DIVIDE HOMA
+ 0,1141 Glucose DIVIDE BMI
+ 0,1141 BMI DIVIDE Glucose
+ 0,1134 Glucose ADD Insulin
+ 0,1111 BMI SUBTRACT Age
+ 0,1111 Age SUBTRACT BMI
+ 0,1099 HOMA DIVIDE Insulin
+ 0,1099 Glucose_x_Resistin
+ 0,1099 Glucose_x_MCP1
+ 0,1099 Glucose_x_Leptin
+ 0,1099 Glucose_x_Insulin
+ 0,1099 Glucose_x_HOMA
+ 0,1099 Glucose_x_Adiponectin
+ 0,1099 Glucose==B2of2 xor Resistin
+ 0,1099 Glucose==B2of2 xor MCP1
+ 0,1099 Glucose==B2of2 xor Leptin
+ 0,1099 Glucose==B2of2 xor Insulin
+ 0,1099 Glucose==B2of2 xor HOMA
+ 0,1099 Glucose==B2of2 xor Adiponectin
+ 0,1099 Glucose==B2of2 or Resistin or MCP1
+ 0,1099 Glucose==B2of2 or Resistin
+ 0,1099 Glucose==B2of2 or MCP1
+ 0,1099 Glucose==B2of2 or Leptin or Resistin
+ 0,1099 Glucose==B2of2 or Leptin or MCP1
+ 0,1099 Glucose==B2of2 or Leptin or Adiponectin
+ 0,1099 Glucose==B2of2 or Leptin
+ 0,1099 Glucose==B2of2 or Insulin or Resistin
+ 0,1099 Glucose==B2of2 or Insulin or MCP1
+ 0,1099 Glucose==B2of2 or Insulin or Leptin
+ 0,1099 Glucose==B2of2 or Insulin or HOMA
+ 0,1099 Glucose==B2of2 or Insulin or Adiponectin
+ 0,1099 Glucose==B2of2 or Insulin
+ 0,1099 Glucose==B2of2 or HOMA or Resistin
+ 0,1099 Glucose==B2of2 or HOMA or MCP1
+ 0,1099 Glucose==B2of2 or HOMA or Leptin
+ 0,1099 Glucose==B2of2 or HOMA or Adiponectin
+ 0,1099 Glucose==B2of2 or HOMA
+ 0,1099 Glucose==B2of2 or Adiponectin or Resistin
+ 0,1099 Glucose==B2of2 or Adiponectin or MCP1
+ 0,1099 Glucose==B2of2 or Adiponectin
+ 0,1099 Glucose==B2of2 impl Resistin
+ 0,1099 Glucose==B2of2 impl MCP1
+ 0,1099 Glucose==B2of2 impl Leptin
+ 0,1099 Glucose==B2of2 impl Insulin
+ 0,1099 Glucose==B2of2 impl HOMA
+ 0,1099 Glucose==B2of2 impl Adiponectin
+ 0,1099 Glucose==B2of2 equ Resistin
+ 0,1099 Glucose==B2of2 equ MCP1
+ 0,1099 Glucose==B2of2 equ Leptin
+ 0,1099 Glucose==B2of2 equ Insulin
+ 0,1099 Glucose==B2of2 equ HOMA
+ 0,1099 Glucose==B2of2 equ Adiponectin
+ 0,1099 Glucose
+ 0,1099 BMI_x_Glucose
+ 0,1099 BMI xor Glucose==B2of2
+ 0,1099 BMI or Glucose==B2of2 or Resistin
+ 0,1099 BMI or Glucose==B2of2 or MCP1
+ 0,1099 BMI or Glucose==B2of2 or Leptin
+ 0,1099 BMI or Glucose==B2of2 or Insulin
+ 0,1099 BMI or Glucose==B2of2 or HOMA
+ 0,1099 BMI or Glucose==B2of2 or Adiponectin
+ 0,1099 BMI or Glucose==B2of2
+ 0,1099 BMI equ Glucose==B2of2
+ 0,1099 Age_x_Glucose
+ 0,1099 Age xor Glucose==B2of2
+ 0,1099 Age or Glucose==B2of2 or Resistin
+ 0,1099 Age or Glucose==B2of2 or MCP1
+ 0,1099 Age or Glucose==B2of2 or Leptin
+ 0,1099 Age or Glucose==B2of2 or Insulin
+ 0,1099 Age or Glucose==B2of2 or HOMA
+ 0,1099 Age or Glucose==B2of2 or Adiponectin
+ 0,1099 Age or Glucose==B2of2
+ 0,1099 Age or BMI or Glucose==B2of2
+ 0,1099 Age equ Glucose==B2of2
+ 0,1099 (Glucose <= 91)
+ 0,1076 HOMA SUBTRACT Glucose
+ 0,1076 Glucose SUBTRACT HOMA
+ 0,1008 Insulin SUBTRACT Glucose
+ 0,1008 Glucose SUBTRACT Insulin
+ 0,0988 Age ADD HOMA
+ 0,0965 Insulin SUBTRACT BMI
+ 0,0965 HOMA DIVIDE BMI
+ 0,0965 BMI SUBTRACT Insulin
+ 0,0965 BMI DIVIDE HOMA
+ 0,0935 Resistin DIVIDE BMI
+ 0,0935 BMI DIVIDE Resistin
+ 0,0899 Glucose SUBTRACT Adiponectin
+ 0,0899 Adiponectin SUBTRACT Glucose
+ 0,0869 Age ADD Insulin
+ 0,0808 Leptin DIVIDE HOMA
+ 0,0808 HOMA DIVIDE Leptin
+ 0,0789 Age ADD Glucose
+ 0,0769 Insulin ADD Resistin
+ 0,0757 HOMA
+ 0,0754 Glucose DIVIDE Age
+ 0,0754 Age DIVIDE Glucose
+ 0,0742 HOMA ADD Resistin
+ 0,0727 Glucose ADD Adiponectin
+ 0,0721 BMI ADD Glucose
+ 0,0710 Resistin DIVIDE MCP1
+ 0,0710 MCP1 DIVIDE Resistin
+ 0,0704 Age
+ 0,0682 HOMA SUBTRACT BMI
+ 0,0682 BMI SUBTRACT HOMA
+ 0,0669 Insulin DIVIDE BMI
+ 0,0669 BMI DIVIDE Insulin
+ 0,0641 Glucose SUBTRACT Age
+ 0,0641 Age SUBTRACT Glucose
+ 0,0635 Resistin SUBTRACT Glucose
+ 0,0635 HOMA DIVIDE Age
+ 0,0635 Glucose SUBTRACT Resistin
+ 0,0635 Age DIVIDE HOMA
+ 0,0601 Leptin DIVIDE Insulin
+ 0,0601 Insulin DIVIDE Leptin
+ 0,0584 Resistin SUBTRACT Age
+ 0,0584 Age SUBTRACT Resistin
+ 0,0574 Resistin
+ 0,0552 Resistin SUBTRACT Leptin
+ 0,0552 Leptin SUBTRACT Resistin
+ 0,0551 Insulin ADD HOMA
+ 0,0533 Leptin SUBTRACT Age
+ 0,0533 Insulin SUBTRACT Age
+ 0,0533 Age SUBTRACT Leptin
+ 0,0533 Age SUBTRACT Insulin
+ 0,0531 HOMA DIVIDE Adiponectin
+ 0,0531 Adiponectin DIVIDE HOMA
+ 0,0494 Insulin
+ 0,0494 HOMA DIVIDE Glucose
+ 0,0494 Glucose DIVIDE HOMA
+ 0,0453 Insulin DIVIDE Adiponectin
+ 0,0453 Adiponectin DIVIDE Insulin
+ 0,0452 Age ADD Resistin
+ 0,0450 Resistin DIVIDE Leptin
+ 0,0450 Leptin DIVIDE Resistin
+ 0,0443 HOMA SUBTRACT Age
+ 0,0443 Age SUBTRACT HOMA
+ 0,0443 Age SUBTRACT Adiponectin
+ 0,0443 Adiponectin SUBTRACT Age
+ 0,0429 Age ADD Adiponectin
+ 0,0410 MCP1 DIVIDE HOMA
+ 0,0410 Insulin ADD Adiponectin
+ 0,0410 HOMA DIVIDE MCP1
+ 0,0408 Insulin SUBTRACT HOMA
+ 0,0408 HOMA SUBTRACT Insulin
+ 0,0392 Leptin LESSTHAN Resistin
+ 0,0388 Glucose ADD Leptin
+ 0,0356 Insulin DIVIDE Glucose
+ 0,0356 Insulin DIVIDE Age
+ 0,0356 Glucose DIVIDE Insulin
+ 0,0356 Age DIVIDE Insulin
+ 0,0354 Resistin DIVIDE Age
+ 0,0354 Age DIVIDE Resistin
+ 0,0354 BMI SUBTRACT Adiponectin
+ 0,0354 Adiponectin SUBTRACT BMI
+ 0,0342 Resistin SUBTRACT HOMA
+ 0,0342 HOMA SUBTRACT Resistin
+ 0,0340 Adiponectin ADD Resistin
+ 0,0330 Leptin SUBTRACT BMI
+ 0,0330 Leptin DIVIDE Age
+ 0,0330 BMI SUBTRACT Leptin
+ 0,0330 Age DIVIDE Leptin
+ 0,0326 Insulin SUBTRACT Adiponectin
+ 0,0326 Adiponectin SUBTRACT Insulin
+ 0,0318 Resistin DIVIDE HOMA
+ 0,0318 HOMA DIVIDE Resistin
+ 0,0318 BMI ADD Insulin
+ 0,0313 BMI
+ 0,0309 HOMA SUBTRACT Adiponectin
+ 0,0309 BMI LESSTHAN Resistin
+ 0,0309 Adiponectin SUBTRACT HOMA
+ 0,0308 Resistin SUBTRACT Adiponectin
+ 0,0308 Adiponectin SUBTRACT Resistin
+ 0,0289 Age ADD BMI
+ 0,0251 BMI ADD Resistin
+ 0,0248 Resistin SUBTRACT Insulin
+ 0,0248 Insulin SUBTRACT Resistin
+ 0,0236 Age LESSTHAN BMI
+ 0,0236 Age DIVIDE Adiponectin
+ 0,0236 Adiponectin DIVIDE Age
+ 0,0230 Resistin DIVIDE Adiponectin
+ 0,0230 Leptin SUBTRACT Insulin
+ 0,0230 Insulin SUBTRACT Leptin
+ 0,0230 Adiponectin DIVIDE Resistin
+ 0,0218 Leptin DIVIDE BMI
+ 0,0218 Glucose DIVIDE Adiponectin
+ 0,0218 BMI DIVIDE Leptin
+ 0,0218 Adiponectin DIVIDE Glucose
+ 0,0216 Resistin DIVIDE Glucose
+ 0,0216 Glucose DIVIDE Resistin
+ 0,0198 MCP1 DIVIDE Insulin
+ 0,0198 Insulin DIVIDE MCP1
+ 0,0197 BMI ADD Adiponectin
+ 0,0179 BMI LESSTHAN Insulin
+ 0,0179 BMI ADD HOMA
+ 0,0178 HOMA LESSTHAN Adiponectin
+ 0,0174 Leptin DIVIDE Glucose
+ 0,0174 Glucose DIVIDE Leptin
+ 0,0161 MCP1 DIVIDE BMI
+ 0,0161 BMI DIVIDE MCP1
+ 0,0150 HOMA ADD Adiponectin
+ 0,0150 Age LESSTHAN Glucose
+ 0,0150 Age ADD Leptin
+ 0,0138 MCP1 DIVIDE Adiponectin
+ 0,0138 Adiponectin DIVIDE MCP1
+ 0,0117 Resistin SUBTRACT MCP1
+ 0,0117 Resistin DIVIDE Insulin
+ 0,0117 Resistin ADD MCP1
+ 0,0117 MCP1 SUBTRACT Resistin
+ 0,0117 MCP1 SUBTRACT Leptin
+ 0,0117 MCP1 SUBTRACT Insulin
+ 0,0117 MCP1 SUBTRACT HOMA
+ 0,0117 MCP1 SUBTRACT Glucose
+ 0,0117 MCP1 SUBTRACT BMI
+ 0,0117 MCP1 SUBTRACT Age
+ 0,0117 MCP1 SUBTRACT Adiponectin
+ 0,0117 MCP1
+ 0,0117 Leptin SUBTRACT MCP1
+ 0,0117 Leptin ADD MCP1
+ 0,0117 Insulin SUBTRACT MCP1
+ 0,0117 Insulin DIVIDE Resistin
+ 0,0117 Insulin ADD MCP1
+ 0,0117 HOMA SUBTRACT MCP1
+ 0,0117 HOMA LESSTHAN Resistin
+ 0,0117 HOMA ADD MCP1
+ 0,0117 Glucose SUBTRACT MCP1
+ 0,0117 Glucose ADD MCP1
+ 0,0117 BMI SUBTRACT MCP1
+ 0,0117 BMI ADD MCP1
+ 0,0117 Age SUBTRACT MCP1
+ 0,0117 Age ADD MCP1
+ 0,0117 Adiponectin SUBTRACT MCP1
+ 0,0117 Adiponectin ADD MCP1
+ 0,0096 Insulin LESSTHAN Leptin
+ 0,0089 Leptin SUBTRACT HOMA
+ 0,0089 HOMA SUBTRACT Leptin
+ 0,0074 Leptin DIVIDE Adiponectin
+ 0,0074 Leptin ADD Resistin
+ 0,0074 BMI DIVIDE Adiponectin
+ 0,0067 Leptin
+ 0,0067 HOMA ADD Leptin
+ 0,0067 Adiponectin
+ 0,0061 Insulin ADD Leptin
+ 0,0059 MCP1 DIVIDE Age
+ 0,0059 Age DIVIDE MCP1
+ 0,0049 Adiponectin DIVIDE Leptin
+ 0,0033 BMI ADD Leptin
+ 0,0027 Insulin LESSTHAN Adiponectin
+ 0,0017 Age LESSTHAN MCP1
+ 0,0017 Age LESSTHAN Adiponectin
+ 0,0017 Adiponectin DIFF Resistin
+ 0,0016 MCP1 DIVIDE Leptin
+ 0,0016 Leptin ADD Adiponectin
+ 0,0016 Glucose DIVIDE MCP1
+ 0,0016 Age LESSTHAN Insulin
+ 0,0016 Adiponectin DIVIDE BMI
+ 0,0003 MCP1 DIVIDE Glucose
+ -0,0001 Leptin DIVIDE MCP1
+ -0,0012 Leptin LESSTHAN MCP1
+ -0,0019 Leptin SUBTRACT Adiponectin
+ -0,0019 Adiponectin SUBTRACT Leptin
+ -0,0026 BMI LESSTHAN Adiponectin
+ -0,0033 Age LESSTHAN Leptin
+ -0,0043 Adiponectin LESSTHAN Resistin
+ -0,0053 Age LESSTHAN Resistin
+ -0,0093 Glucose LESSTHAN MCP1
+ -0,0149 Leptin LESSTHAN Adiponectin
+ -0,0165 Insulin LESSTHAN Resistin
+ -0,0188 BMI LESSTHAN Leptin
+								--------------
+									Fold  9
+								--------------
+Feature evaluation: MDL (All features dataset) - After CI
+ 0,2253 num-of-N((Glucose <= 91) and (Resistin <= 12.9361))
+ 0,2120 Glucose ADD Resistin
+ 0,2024 (Glucose <= 91) and (Resistin <= 12.9361)
+ 0,1954 Glucose ADD Insulin
+ 0,1947 Glucose ADD HOMA
+ 0,1905 Age_x_Glucose
+ 0,1874 num-of-N((BMI >= 32.038959) and (Resistin >= 11.78796))
+ 0,1825 Insulin DIVIDE HOMA
+ 0,1666 Glucose SUBTRACT BMI
+ 0,1666 BMI SUBTRACT Glucose
+ 0,1593 Insulin SUBTRACT Glucose
+ 0,1593 Glucose SUBTRACT Insulin
+ 0,1588 HOMA DIVIDE Insulin
+ 0,1588 Glucose_x_Resistin
+ 0,1588 Glucose_x_MCP1
+ 0,1588 Glucose_x_Leptin
+ 0,1588 Glucose_x_Insulin
+ 0,1588 Glucose_x_HOMA
+ 0,1588 Glucose_x_Adiponectin
+ 0,1588 Glucose==B2of2 xor Resistin
+ 0,1588 Glucose==B2of2 xor MCP1
+ 0,1588 Glucose==B2of2 xor Leptin
+ 0,1588 Glucose==B2of2 xor Insulin
+ 0,1588 Glucose==B2of2 xor HOMA
+ 0,1588 Glucose==B2of2 xor Adiponectin
+ 0,1588 Glucose==B2of2 or Resistin or MCP1
+ 0,1588 Glucose==B2of2 or Resistin
+ 0,1588 Glucose==B2of2 or MCP1
+ 0,1588 Glucose==B2of2 or Leptin or Resistin
+ 0,1588 Glucose==B2of2 or Leptin or MCP1
+ 0,1588 Glucose==B2of2 or Leptin or Adiponectin
+ 0,1588 Glucose==B2of2 or Leptin
+ 0,1588 Glucose==B2of2 or Insulin or Resistin
+ 0,1588 Glucose==B2of2 or Insulin or MCP1
+ 0,1588 Glucose==B2of2 or Insulin or Leptin
+ 0,1588 Glucose==B2of2 or Insulin or HOMA
+ 0,1588 Glucose==B2of2 or Insulin or Adiponectin
+ 0,1588 Glucose==B2of2 or Insulin
+ 0,1588 Glucose==B2of2 or HOMA or Resistin
+ 0,1588 Glucose==B2of2 or HOMA or MCP1
+ 0,1588 Glucose==B2of2 or HOMA or Leptin
+ 0,1588 Glucose==B2of2 or HOMA or Adiponectin
+ 0,1588 Glucose==B2of2 or HOMA
+ 0,1588 Glucose==B2of2 or Adiponectin or Resistin
+ 0,1588 Glucose==B2of2 or Adiponectin or MCP1
+ 0,1588 Glucose==B2of2 or Adiponectin
+ 0,1588 Glucose==B2of2 impl Resistin
+ 0,1588 Glucose==B2of2 impl MCP1
+ 0,1588 Glucose==B2of2 impl Leptin
+ 0,1588 Glucose==B2of2 impl Insulin
+ 0,1588 Glucose==B2of2 impl HOMA
+ 0,1588 Glucose==B2of2 impl Adiponectin
+ 0,1588 Glucose==B2of2 equ Resistin
+ 0,1588 Glucose==B2of2 equ MCP1
+ 0,1588 Glucose==B2of2 equ Leptin
+ 0,1588 Glucose==B2of2 equ Insulin
+ 0,1588 Glucose==B2of2 equ HOMA
+ 0,1588 Glucose==B2of2 equ Adiponectin
+ 0,1588 Glucose
+ 0,1588 BMI_x_Glucose
+ 0,1588 BMI xor Glucose==B2of2
+ 0,1588 BMI or Glucose==B2of2 or Resistin
+ 0,1588 BMI or Glucose==B2of2 or MCP1
+ 0,1588 BMI or Glucose==B2of2 or Leptin
+ 0,1588 BMI or Glucose==B2of2 or Insulin
+ 0,1588 BMI or Glucose==B2of2 or HOMA
+ 0,1588 BMI or Glucose==B2of2 or Adiponectin
+ 0,1588 BMI or Glucose==B2of2
+ 0,1588 BMI equ Glucose==B2of2
+ 0,1588 Age==B2of2 and Glucose==B2of2
+ 0,1477 HOMA SUBTRACT Glucose
+ 0,1477 Glucose SUBTRACT HOMA
+ 0,1365 Glucose ADD Adiponectin
+ 0,1274 Leptin SUBTRACT Glucose
+ 0,1274 Glucose SUBTRACT Leptin
+ 0,1236 BMI SUBTRACT Age
+ 0,1236 BMI DIVIDE Age
+ 0,1236 Age SUBTRACT BMI
+ 0,1236 Age DIVIDE BMI
+ 0,1137 Glucose SUBTRACT Adiponectin
+ 0,1137 Adiponectin SUBTRACT Glucose
+ 0,1131 HOMA DIVIDE BMI
+ 0,1131 BMI DIVIDE HOMA
+ 0,1111 Age ADD HOMA
+ 0,1059 BMI ADD Glucose
+ 0,1007 Glucose DIVIDE BMI
+ 0,1007 BMI DIVIDE Glucose
+ 0,0992 Resistin SUBTRACT Glucose
+ 0,0992 Glucose SUBTRACT Resistin
+ 0,0929 Age_x_Resistin
+ 0,0929 Age_x_MCP1
+ 0,0929 Age_x_Leptin
+ 0,0929 Age_x_Insulin
+ 0,0929 Age_x_HOMA
+ 0,0929 Age_x_BMI
+ 0,0929 Age_x_Adiponectin
+ 0,0929 Age==B2of2 xor Resistin
+ 0,0929 Age==B2of2 xor MCP1
+ 0,0929 Age==B2of2 xor Leptin
+ 0,0929 Age==B2of2 xor Insulin
+ 0,0929 Age==B2of2 xor HOMA
+ 0,0929 Age==B2of2 xor BMI
+ 0,0929 Age==B2of2 xor Adiponectin
+ 0,0929 Age==B2of2 or Resistin or MCP1
+ 0,0929 Age==B2of2 or Resistin
+ 0,0929 Age==B2of2 or MCP1
+ 0,0929 Age==B2of2 or Leptin or Resistin
+ 0,0929 Age==B2of2 or Leptin or MCP1
+ 0,0929 Age==B2of2 or Leptin or Adiponectin
+ 0,0929 Age==B2of2 or Leptin
+ 0,0929 Age==B2of2 or Insulin or Resistin
+ 0,0929 Age==B2of2 or Insulin or MCP1
+ 0,0929 Age==B2of2 or Insulin or Leptin
+ 0,0929 Age==B2of2 or Insulin or HOMA
+ 0,0929 Age==B2of2 or Insulin or Adiponectin
+ 0,0929 Age==B2of2 or Insulin
+ 0,0929 Age==B2of2 or HOMA or Resistin
+ 0,0929 Age==B2of2 or HOMA or MCP1
+ 0,0929 Age==B2of2 or HOMA or Leptin
+ 0,0929 Age==B2of2 or HOMA or Adiponectin
+ 0,0929 Age==B2of2 or HOMA
+ 0,0929 Age==B2of2 or Glucose==B2of2 or Resistin
+ 0,0929 Age==B2of2 or Glucose==B2of2 or MCP1
+ 0,0929 Age==B2of2 or Glucose==B2of2 or Leptin
+ 0,0929 Age==B2of2 or Glucose==B2of2 or Insulin
+ 0,0929 Age==B2of2 or Glucose==B2of2 or HOMA
+ 0,0929 Age==B2of2 or Glucose==B2of2 or Adiponectin
+ 0,0929 Age==B2of2 or Glucose==B2of2
+ 0,0929 Age==B2of2 or BMI or Resistin
+ 0,0929 Age==B2of2 or BMI or MCP1
+ 0,0929 Age==B2of2 or BMI or Leptin
+ 0,0929 Age==B2of2 or BMI or Insulin
+ 0,0929 Age==B2of2 or BMI or HOMA
+ 0,0929 Age==B2of2 or BMI or Glucose==B2of2
+ 0,0929 Age==B2of2 or BMI or Adiponectin
+ 0,0929 Age==B2of2 or BMI
+ 0,0929 Age==B2of2 or Adiponectin or Resistin
+ 0,0929 Age==B2of2 or Adiponectin or MCP1
+ 0,0929 Age==B2of2 or Adiponectin
+ 0,0929 Age==B2of2 impl Resistin
+ 0,0929 Age==B2of2 impl MCP1
+ 0,0929 Age==B2of2 impl Leptin
+ 0,0929 Age==B2of2 impl Insulin
+ 0,0929 Age==B2of2 impl HOMA
+ 0,0929 Age==B2of2 impl BMI
+ 0,0929 Age==B2of2 impl Adiponectin
+ 0,0929 Age==B2of2 equ Resistin
+ 0,0929 Age==B2of2 equ MCP1
+ 0,0929 Age==B2of2 equ Leptin
+ 0,0929 Age==B2of2 equ Insulin
+ 0,0929 Age==B2of2 equ HOMA
+ 0,0929 Age==B2of2 equ BMI
+ 0,0929 Age==B2of2 equ Adiponectin
+ 0,0929 Age
+ 0,0898 Age ADD Glucose
+ 0,0894 Glucose ADD Leptin
+ 0,0885 Insulin ADD Resistin
+ 0,0869 Glucose DIVIDE Age
+ 0,0869 Age DIVIDE Glucose
+ 0,0869 Age ADD Insulin
+ 0,0863 HOMA ADD Resistin
+ 0,0854 Resistin DIVIDE BMI
+ 0,0854 BMI DIVIDE Resistin
+ 0,0844 Resistin SUBTRACT BMI
+ 0,0844 BMI SUBTRACT Resistin
+ 0,0812 HOMA
+ 0,0787 Insulin SUBTRACT BMI
+ 0,0787 BMI SUBTRACT Insulin
+ 0,0778 Glucose SUBTRACT Age
+ 0,0778 Age SUBTRACT Glucose
+ 0,0754 (BMI >= 32.038959) and (Resistin >= 11.78796)
+ 0,0721 HOMA DIVIDE Age
+ 0,0721 Age DIVIDE HOMA
+ 0,0710 Insulin DIVIDE BMI
+ 0,0710 BMI DIVIDE Insulin
+ 0,0694 Leptin DIVIDE HOMA
+ 0,0694 HOMA DIVIDE Leptin
+ 0,0690 Insulin ADD HOMA
+ 0,0641 Age ADD Adiponectin
+ 0,0610 Insulin
+ 0,0610 HOMA DIVIDE Glucose
+ 0,0610 Glucose DIVIDE HOMA
+ 0,0605 Leptin SUBTRACT Age
+ 0,0605 Age SUBTRACT Leptin
+ 0,0552 Resistin SUBTRACT Leptin
+ 0,0552 Leptin SUBTRACT Resistin
+ 0,0551 Resistin DIVIDE MCP1
+ 0,0551 MCP1 DIVIDE Resistin
+ 0,0534 Insulin SUBTRACT HOMA
+ 0,0534 HOMA SUBTRACT Insulin
+ 0,0527 Resistin
+ 0,0523 Leptin DIVIDE Insulin
+ 0,0523 Insulin DIVIDE Leptin
+ 0,0489 Resistin SUBTRACT Age
+ 0,0489 HOMA SUBTRACT Age
+ 0,0489 Age SUBTRACT Resistin
+ 0,0489 Age SUBTRACT HOMA
+ 0,0483 Insulin ADD Adiponectin
+ 0,0474 Insulin DIVIDE Age
+ 0,0474 Age DIVIDE Insulin
+ 0,0456 Insulin SUBTRACT Adiponectin
+ 0,0456 Adiponectin SUBTRACT Insulin
+ 0,0429 Insulin SUBTRACT Age
+ 0,0429 Age SUBTRACT Insulin
+ 0,0429 Age ADD Resistin
+ 0,0415 BMI ADD Resistin
+ 0,0408 HOMA DIVIDE Adiponectin
+ 0,0408 Adiponectin DIVIDE HOMA
+ 0,0404 Insulin DIVIDE Glucose
+ 0,0404 Glucose DIVIDE Insulin
+ 0,0398 Age SUBTRACT Adiponectin
+ 0,0398 Adiponectin SUBTRACT Age
+ 0,0397 HOMA SUBTRACT BMI
+ 0,0397 BMI SUBTRACT HOMA
+ 0,0393 BMI ADD Insulin
+ 0,0380 Resistin DIVIDE Age
+ 0,0380 Age DIVIDE Resistin
+ 0,0373 Resistin SUBTRACT HOMA
+ 0,0373 HOMA SUBTRACT Resistin
+ 0,0362 MCP1 DIVIDE HOMA
+ 0,0362 HOMA DIVIDE MCP1
+ 0,0341 Resistin SUBTRACT Adiponectin
+ 0,0341 Adiponectin SUBTRACT Resistin
+ 0,0340 Adiponectin ADD Resistin
+ 0,0321 BMI SUBTRACT Adiponectin
+ 0,0321 Adiponectin SUBTRACT BMI
+ 0,0318 Resistin DIVIDE Leptin
+ 0,0318 Resistin DIVIDE HOMA
+ 0,0318 Leptin DIVIDE Resistin
+ 0,0318 HOMA DIVIDE Resistin
+ 0,0318 BMI ADD HOMA
+ 0,0309 Insulin DIVIDE Adiponectin
+ 0,0309 BMI LESSTHAN Resistin
+ 0,0309 Adiponectin DIVIDE Insulin
+ 0,0279 HOMA ADD Adiponectin
+ 0,0275 Leptin LESSTHAN Resistin
+ 0,0273 Resistin SUBTRACT Insulin
+ 0,0273 Insulin SUBTRACT Resistin
+ 0,0254 Resistin DIVIDE Adiponectin
+ 0,0254 Adiponectin DIVIDE Resistin
+ 0,0241 HOMA SUBTRACT Adiponectin
+ 0,0241 Adiponectin SUBTRACT HOMA
+ 0,0236 Leptin DIVIDE Age
+ 0,0236 Age LESSTHAN BMI
+ 0,0236 Age DIVIDE Leptin
+ 0,0236 Age DIVIDE Adiponectin
+ 0,0236 Age ADD Leptin
+ 0,0236 Age ADD BMI
+ 0,0236 Adiponectin DIVIDE Age
+ 0,0218 Glucose DIVIDE Adiponectin
+ 0,0218 Adiponectin DIVIDE Glucose
+ 0,0210 Resistin DIVIDE Glucose
+ 0,0210 Glucose DIVIDE Resistin
+ 0,0191 MCP1 SUBTRACT Leptin
+ 0,0191 Leptin SUBTRACT MCP1
+ 0,0179 Leptin SUBTRACT Insulin
+ 0,0179 Insulin SUBTRACT Leptin
+ 0,0179 BMI LESSTHAN Insulin
+ 0,0178 Resistin DIVIDE Insulin
+ 0,0178 Insulin LESSTHAN Leptin
+ 0,0178 Insulin DIVIDE Resistin
+ 0,0160 BMI
+ 0,0158 Leptin SUBTRACT BMI
+ 0,0158 BMI SUBTRACT Leptin
+ 0,0150 Leptin DIVIDE Glucose
+ 0,0150 Leptin ADD MCP1
+ 0,0150 Glucose DIVIDE Leptin
+ 0,0138 MCP1 DIVIDE Adiponectin
+ 0,0138 Leptin DIVIDE BMI
+ 0,0138 BMI DIVIDE Leptin
+ 0,0138 Adiponectin DIVIDE MCP1
+ 0,0134 Age==B2of2 xor Glucose==B2of2
+ 0,0134 Age==B2of2 impl Glucose==B2of2
+ 0,0134 Age==B2of2 equ Glucose==B2of2
+ 0,0121 MCP1 DIVIDE Insulin
+ 0,0121 Insulin DIVIDE MCP1
+ 0,0119 HOMA LESSTHAN Adiponectin
+ 0,0117 Resistin SUBTRACT MCP1
+ 0,0117 Resistin ADD MCP1
+ 0,0117 MCP1 SUBTRACT Resistin
+ 0,0117 MCP1 SUBTRACT Insulin
+ 0,0117 MCP1 SUBTRACT HOMA
+ 0,0117 MCP1 SUBTRACT Glucose
+ 0,0117 MCP1 SUBTRACT BMI
+ 0,0117 MCP1 SUBTRACT Age
+ 0,0117 MCP1 SUBTRACT Adiponectin
+ 0,0117 MCP1
+ 0,0117 Insulin SUBTRACT MCP1
+ 0,0117 Insulin ADD MCP1
+ 0,0117 Insulin ADD Leptin
+ 0,0117 HOMA SUBTRACT MCP1
+ 0,0117 HOMA LESSTHAN Resistin
+ 0,0117 HOMA ADD MCP1
+ 0,0117 Glucose SUBTRACT MCP1
+ 0,0117 Glucose ADD MCP1
+ 0,0117 BMI SUBTRACT MCP1
+ 0,0117 BMI ADD MCP1
+ 0,0117 Age SUBTRACT MCP1
+ 0,0117 Age ADD MCP1
+ 0,0117 Adiponectin SUBTRACT MCP1
+ 0,0117 Adiponectin ADD MCP1
+ 0,0108 MCP1 DIVIDE BMI
+ 0,0108 BMI DIVIDE MCP1
+ 0,0103 Insulin LESSTHAN Adiponectin
+ 0,0098 MCP1 DIVIDE Age
+ 0,0098 Age DIVIDE MCP1
+ 0,0094 Leptin ADD Resistin
+ 0,0093 BMI DIVIDE Adiponectin
+ 0,0093 Adiponectin DIVIDE BMI
+ 0,0087 MCP1 DIVIDE Glucose
+ 0,0087 Glucose DIVIDE MCP1
+ 0,0074 BMI ADD Leptin
+ 0,0074 Age LESSTHAN Glucose
+ 0,0074 Adiponectin DIVIDE Leptin
+ 0,0074 Adiponectin
+ 0,0067 Leptin
+ 0,0067 HOMA ADD Leptin
+ 0,0025 Leptin ADD Adiponectin
+ 0,0017 MCP1 DIVIDE Leptin
+ 0,0017 Leptin DIVIDE MCP1
+ 0,0017 Age LESSTHAN MCP1
+ 0,0017 Age LESSTHAN Adiponectin
+ 0,0017 Adiponectin DIFF Resistin
+ 0,0016 Leptin SUBTRACT HOMA
+ 0,0016 HOMA SUBTRACT Leptin
+ 0,0016 BMI ADD Adiponectin
+ 0,0016 Age LESSTHAN Insulin
+ -0,0001 Leptin SUBTRACT Adiponectin
+ -0,0001 Leptin DIVIDE Adiponectin
+ -0,0001 Adiponectin SUBTRACT Leptin
+ -0,0012 Leptin LESSTHAN MCP1
+ -0,0026 BMI LESSTHAN Adiponectin
+ -0,0043 Adiponectin LESSTHAN Resistin
+ -0,0066 Age LESSTHAN Resistin
+ -0,0073 Age LESSTHAN Leptin
+ -0,0081 Glucose LESSTHAN MCP1
+ -0,0122 Insulin LESSTHAN Resistin
+ -0,0166 Leptin LESSTHAN Adiponectin
+ -0,0181 BMI LESSTHAN Leptin
+								--------------
+									Fold 10
+								--------------
+Feature evaluation: MDL (All features dataset) - After CI
+ 0,1876 num-of-N((Glucose <= 91) and (Resistin <= 10.19299))
+ 0,1859 Age_x_Glucose
+ 0,1836 (Glucose <= 91) and (Resistin <= 10.19299)
+ 0,1781 Glucose SUBTRACT BMI
+ 0,1781 BMI SUBTRACT Glucose
+ 0,1781 Insulin DIVIDE HOMA
+ 0,1769 Glucose ADD HOMA
+ 0,1653 Glucose ADD Resistin
+ 0,1623 HOMA DIVIDE Insulin
+ 0,1623 Glucose_x_Resistin
+ 0,1623 Glucose_x_MCP1
+ 0,1623 Glucose_x_Leptin
+ 0,1623 Glucose_x_Insulin
+ 0,1623 Glucose_x_HOMA
+ 0,1623 Glucose_x_Adiponectin
+ 0,1623 Glucose==B2of2 xor Resistin
+ 0,1623 Glucose==B2of2 xor MCP1
+ 0,1623 Glucose==B2of2 xor Leptin
+ 0,1623 Glucose==B2of2 xor Insulin
+ 0,1623 Glucose==B2of2 xor HOMA
+ 0,1623 Glucose==B2of2 xor Adiponectin
+ 0,1623 Glucose==B2of2 or Resistin or MCP1
+ 0,1623 Glucose==B2of2 or Resistin
+ 0,1623 Glucose==B2of2 or MCP1
+ 0,1623 Glucose==B2of2 or Leptin or Resistin
+ 0,1623 Glucose==B2of2 or Leptin or MCP1
+ 0,1623 Glucose==B2of2 or Leptin or Adiponectin
+ 0,1623 Glucose==B2of2 or Leptin
+ 0,1623 Glucose==B2of2 or Insulin or Resistin
+ 0,1623 Glucose==B2of2 or Insulin or MCP1
+ 0,1623 Glucose==B2of2 or Insulin or Leptin
+ 0,1623 Glucose==B2of2 or Insulin or HOMA
+ 0,1623 Glucose==B2of2 or Insulin or Adiponectin
+ 0,1623 Glucose==B2of2 or Insulin
+ 0,1623 Glucose==B2of2 or HOMA or Resistin
+ 0,1623 Glucose==B2of2 or HOMA or MCP1
+ 0,1623 Glucose==B2of2 or HOMA or Leptin
+ 0,1623 Glucose==B2of2 or HOMA or Adiponectin
+ 0,1623 Glucose==B2of2 or HOMA
+ 0,1623 Glucose==B2of2 or Adiponectin or Resistin
+ 0,1623 Glucose==B2of2 or Adiponectin or MCP1
+ 0,1623 Glucose==B2of2 or Adiponectin
+ 0,1623 Glucose==B2of2 impl Resistin
+ 0,1623 Glucose==B2of2 impl MCP1
+ 0,1623 Glucose==B2of2 impl Leptin
+ 0,1623 Glucose==B2of2 impl Insulin
+ 0,1623 Glucose==B2of2 impl HOMA
+ 0,1623 Glucose==B2of2 impl Adiponectin
+ 0,1623 Glucose==B2of2 equ Resistin
+ 0,1623 Glucose==B2of2 equ MCP1
+ 0,1623 Glucose==B2of2 equ Leptin
+ 0,1623 Glucose==B2of2 equ Insulin
+ 0,1623 Glucose==B2of2 equ HOMA
+ 0,1623 Glucose==B2of2 equ Adiponectin
+ 0,1623 Glucose
+ 0,1623 BMI_x_Glucose
+ 0,1623 BMI xor Glucose==B2of2
+ 0,1623 BMI or Glucose==B2of2 or Resistin
+ 0,1623 BMI or Glucose==B2of2 or MCP1
+ 0,1623 BMI or Glucose==B2of2 or Leptin
+ 0,1623 BMI or Glucose==B2of2 or Insulin
+ 0,1623 BMI or Glucose==B2of2 or HOMA
+ 0,1623 BMI or Glucose==B2of2 or Adiponectin
+ 0,1623 BMI or Glucose==B2of2
+ 0,1623 BMI equ Glucose==B2of2
+ 0,1573 num-of-N((Glucose <= 90) and (BMI >= 30.276817))
+ 0,1485 Age==B2of2 and Glucose==B2of2
+ 0,1471 Glucose ADD Insulin
+ 0,1365 BMI DIVIDE Age
+ 0,1365 Age DIVIDE BMI
+ 0,1365 (Glucose <= 90) and (BMI >= 30.276817)
+ 0,1365 Resistin SUBTRACT BMI
+ 0,1365 BMI SUBTRACT Resistin
+ 0,1355 HOMA SUBTRACT Glucose
+ 0,1355 Glucose SUBTRACT HOMA
+ 0,1241 Leptin SUBTRACT Glucose
+ 0,1241 Glucose SUBTRACT Leptin
+ 0,1236 BMI SUBTRACT Age
+ 0,1236 Age SUBTRACT BMI
+ 0,1168 num-of-N((Age >= 68) and (Glucose <= 97))
+ 0,1141 Resistin DIVIDE BMI
+ 0,1141 BMI DIVIDE Resistin
+ 0,1126 Glucose DIVIDE BMI
+ 0,1126 BMI DIVIDE Glucose
+ 0,1111 Age==B2of2 or Glucose==B2of2 or Resistin
+ 0,1111 Age==B2of2 or Glucose==B2of2 or MCP1
+ 0,1111 Age==B2of2 or Glucose==B2of2 or Leptin
+ 0,1111 Age==B2of2 or Glucose==B2of2 or Insulin
+ 0,1111 Age==B2of2 or Glucose==B2of2 or HOMA
+ 0,1111 Age==B2of2 or Glucose==B2of2 or Adiponectin
+ 0,1111 Age==B2of2 or Glucose==B2of2
+ 0,1111 Age==B2of2 or BMI or Glucose==B2of2
+ 0,1111 Age ADD HOMA
+ 0,1103 Glucose ADD Adiponectin
+ 0,1095 Insulin SUBTRACT Glucose
+ 0,1095 Glucose SUBTRACT Insulin
+ 0,0993 Glucose SUBTRACT Adiponectin
+ 0,0993 Adiponectin SUBTRACT Glucose
+ 0,0930 (Age >= 68) and (Glucose <= 97)
+ 0,0900 BMI ADD Glucose
+ 0,0874 Insulin SUBTRACT BMI
+ 0,0874 BMI SUBTRACT Insulin
+ 0,0869 Glucose DIVIDE Age
+ 0,0869 Age DIVIDE Glucose
+ 0,0869 Age ADD Insulin
+ 0,0854 num-of-N((BMI >= 35.092702) and (Glucose <= 106))
+ 0,0818 Age ADD Glucose
+ 0,0814 Age_x_Resistin
+ 0,0814 Age_x_MCP1
+ 0,0814 Age_x_Leptin
+ 0,0814 Age_x_Insulin
+ 0,0814 Age_x_HOMA
+ 0,0814 Age_x_BMI
+ 0,0814 Age_x_Adiponectin
+ 0,0814 Age==B2of2 xor Resistin
+ 0,0814 Age==B2of2 xor MCP1
+ 0,0814 Age==B2of2 xor Leptin
+ 0,0814 Age==B2of2 xor Insulin
+ 0,0814 Age==B2of2 xor HOMA
+ 0,0814 Age==B2of2 xor BMI
+ 0,0814 Age==B2of2 xor Adiponectin
+ 0,0814 Age==B2of2 or Resistin or MCP1
+ 0,0814 Age==B2of2 or Resistin
+ 0,0814 Age==B2of2 or MCP1
+ 0,0814 Age==B2of2 or Leptin or Resistin
+ 0,0814 Age==B2of2 or Leptin or MCP1
+ 0,0814 Age==B2of2 or Leptin or Adiponectin
+ 0,0814 Age==B2of2 or Leptin
+ 0,0814 Age==B2of2 or Insulin or Resistin
+ 0,0814 Age==B2of2 or Insulin or MCP1
+ 0,0814 Age==B2of2 or Insulin or Leptin
+ 0,0814 Age==B2of2 or Insulin or HOMA
+ 0,0814 Age==B2of2 or Insulin or Adiponectin
+ 0,0814 Age==B2of2 or Insulin
+ 0,0814 Age==B2of2 or HOMA or Resistin
+ 0,0814 Age==B2of2 or HOMA or MCP1
+ 0,0814 Age==B2of2 or HOMA or Leptin
+ 0,0814 Age==B2of2 or HOMA or Adiponectin
+ 0,0814 Age==B2of2 or HOMA
+ 0,0814 Age==B2of2 or BMI or Resistin
+ 0,0814 Age==B2of2 or BMI or MCP1
+ 0,0814 Age==B2of2 or BMI or Leptin
+ 0,0814 Age==B2of2 or BMI or Insulin
+ 0,0814 Age==B2of2 or BMI or HOMA
+ 0,0814 Age==B2of2 or BMI or Adiponectin
+ 0,0814 Age==B2of2 or BMI
+ 0,0814 Age==B2of2 or Adiponectin or Resistin
+ 0,0814 Age==B2of2 or Adiponectin or MCP1
+ 0,0814 Age==B2of2 or Adiponectin
+ 0,0814 Age==B2of2 impl Resistin
+ 0,0814 Age==B2of2 impl MCP1
+ 0,0814 Age==B2of2 impl Leptin
+ 0,0814 Age==B2of2 impl Insulin
+ 0,0814 Age==B2of2 impl HOMA
+ 0,0814 Age==B2of2 impl BMI
+ 0,0814 Age==B2of2 impl Adiponectin
+ 0,0814 Age==B2of2 equ Resistin
+ 0,0814 Age==B2of2 equ MCP1
+ 0,0814 Age==B2of2 equ Leptin
+ 0,0814 Age==B2of2 equ Insulin
+ 0,0814 Age==B2of2 equ HOMA
+ 0,0814 Age==B2of2 equ BMI
+ 0,0814 Age==B2of2 equ Adiponectin
+ 0,0814 Age
+ 0,0787 HOMA DIVIDE BMI
+ 0,0787 BMI DIVIDE HOMA
+ 0,0787 Insulin ADD Resistin
+ 0,0771 HOMA ADD Resistin
+ 0,0754 (BMI >= 35.092702) and (Glucose <= 106)
+ 0,0721 Resistin SUBTRACT Leptin
+ 0,0721 Leptin SUBTRACT Resistin
+ 0,0710 Resistin DIVIDE MCP1
+ 0,0710 MCP1 DIVIDE Resistin
+ 0,0709 Leptin SUBTRACT Age
+ 0,0709 Age SUBTRACT Leptin
+ 0,0704 Insulin SUBTRACT Age
+ 0,0704 Age SUBTRACT Insulin
+ 0,0662 Glucose SUBTRACT Age
+ 0,0662 Age SUBTRACT Glucose
+ 0,0635 Resistin DIVIDE Leptin
+ 0,0635 Leptin DIVIDE Resistin
+ 0,0595 HOMA
+ 0,0584 Resistin SUBTRACT Age
+ 0,0584 Age SUBTRACT Resistin
+ 0,0574 Leptin DIVIDE HOMA
+ 0,0574 HOMA DIVIDE Leptin
+ 0,0565 Glucose ADD Leptin
+ 0,0513 Resistin
+ 0,0513 Insulin DIVIDE BMI
+ 0,0513 BMI DIVIDE Insulin
+ 0,0474 HOMA SUBTRACT BMI
+ 0,0474 BMI SUBTRACT HOMA
+ 0,0471 HOMA DIVIDE Age
+ 0,0471 Age DIVIDE HOMA
+ 0,0453 Resistin SUBTRACT Glucose
+ 0,0453 Glucose SUBTRACT Resistin
+ 0,0443 HOMA SUBTRACT Age
+ 0,0443 Age SUBTRACT HOMA
+ 0,0441 Resistin SUBTRACT HOMA
+ 0,0441 HOMA SUBTRACT Resistin
+ 0,0429 Age ADD Resistin
+ 0,0429 Age ADD Adiponectin
+ 0,0423 BMI ADD Adiponectin
+ 0,0415 BMI ADD Resistin
+ 0,0408 Resistin DIVIDE Adiponectin
+ 0,0408 Adiponectin DIVIDE Resistin
+ 0,0408 Resistin SUBTRACT Adiponectin
+ 0,0408 Insulin ADD HOMA
+ 0,0408 Adiponectin SUBTRACT Resistin
+ 0,0398 Age SUBTRACT Adiponectin
+ 0,0398 Adiponectin SUBTRACT Age
+ 0,0379 BMI LESSTHAN Resistin
+ 0,0378 Resistin DIVIDE Glucose
+ 0,0378 Glucose DIVIDE Resistin
+ 0,0356 Insulin
+ 0,0356 HOMA DIVIDE Glucose
+ 0,0356 Glucose DIVIDE HOMA
+ 0,0341 Resistin SUBTRACT Insulin
+ 0,0341 Insulin SUBTRACT Resistin
+ 0,0341 Insulin SUBTRACT HOMA
+ 0,0341 HOMA SUBTRACT Insulin
+ 0,0340 MCP1 DIVIDE HOMA
+ 0,0340 Insulin ADD Adiponectin
+ 0,0340 HOMA DIVIDE MCP1
+ 0,0332 HOMA DIVIDE Adiponectin
+ 0,0332 Adiponectin DIVIDE HOMA
+ 0,0330 Leptin DIVIDE Insulin
+ 0,0330 Insulin DIVIDE Leptin
+ 0,0330 Leptin SUBTRACT BMI
+ 0,0330 Leptin DIVIDE Age
+ 0,0330 BMI SUBTRACT Leptin
+ 0,0330 Age DIVIDE Leptin
+ 0,0320 Glucose DIVIDE Adiponectin
+ 0,0320 Adiponectin DIVIDE Glucose
+ 0,0305 Leptin DIVIDE BMI
+ 0,0305 BMI DIVIDE Leptin
+ 0,0293 Leptin LESSTHAN Resistin
+ 0,0293 Insulin DIVIDE Glucose
+ 0,0293 Glucose DIVIDE Insulin
+ 0,0291 Insulin DIVIDE Adiponectin
+ 0,0291 Adiponectin DIVIDE Insulin
+ 0,0290 Resistin DIVIDE Age
+ 0,0290 Age DIVIDE Resistin
+ 0,0282 Age==B2of2 impl Glucose==B2of2
+ 0,0270 BMI SUBTRACT Adiponectin
+ 0,0270 Adiponectin SUBTRACT BMI
+ 0,0263 Adiponectin ADD Resistin
+ 0,0257 HOMA SUBTRACT Adiponectin
+ 0,0257 Adiponectin SUBTRACT HOMA
+ 0,0247 Resistin DIVIDE HOMA
+ 0,0247 Insulin DIVIDE Age
+ 0,0247 HOMA DIVIDE Resistin
+ 0,0247 BMI ADD Insulin
+ 0,0247 Age DIVIDE Insulin
+ 0,0236 Leptin DIVIDE Glucose
+ 0,0236 Glucose DIVIDE Leptin
+ 0,0236 Age LESSTHAN BMI
+ 0,0236 Age DIVIDE Adiponectin
+ 0,0236 Age ADD BMI
+ 0,0236 Adiponectin DIVIDE Age
+ 0,0234 BMI
+ 0,0220 Insulin SUBTRACT Adiponectin
+ 0,0220 Adiponectin SUBTRACT Insulin
+ 0,0209 Age==B2of2 xor Glucose==B2of2
+ 0,0209 Age==B2of2 equ Glucose==B2of2
+ 0,0179 Leptin SUBTRACT Insulin
+ 0,0179 Insulin SUBTRACT Leptin
+ 0,0179 BMI LESSTHAN Insulin
+ 0,0178 Resistin DIVIDE Insulin
+ 0,0178 Insulin DIVIDE Resistin
+ 0,0150 Leptin ADD Resistin
+ 0,0150 Age ADD Leptin
+ 0,0142 MCP1 DIVIDE Insulin
+ 0,0142 Insulin DIVIDE MCP1
+ 0,0138 MCP1 DIVIDE Adiponectin
+ 0,0138 Leptin
+ 0,0138 HOMA ADD Leptin
+ 0,0138 Adiponectin DIVIDE MCP1
+ 0,0138 HOMA ADD Adiponectin
+ 0,0137 MCP1 SUBTRACT Age
+ 0,0137 Age SUBTRACT MCP1
+ 0,0117 HOMA LESSTHAN Resistin
+ 0,0117 BMI ADD HOMA
+ 0,0106 MCP1 DIVIDE Glucose
+ 0,0106 Glucose DIVIDE MCP1
+ 0,0103 Insulin LESSTHAN Adiponectin
+ 0,0098 MCP1 DIVIDE BMI
+ 0,0098 BMI DIVIDE MCP1
+ 0,0096 Adiponectin
+ 0,0093 MCP1 SUBTRACT Leptin
+ 0,0093 Leptin SUBTRACT MCP1
+ 0,0086 MCP1 DIVIDE Age
+ 0,0086 Age DIVIDE MCP1
+ 0,0074 Resistin ADD MCP1
+ 0,0074 MCP1 SUBTRACT Resistin
+ 0,0074 MCP1 SUBTRACT Insulin
+ 0,0074 MCP1 SUBTRACT HOMA
+ 0,0074 MCP1 SUBTRACT BMI
+ 0,0074 MCP1 SUBTRACT Adiponectin
+ 0,0074 MCP1
+ 0,0074 Leptin DIVIDE Adiponectin
+ 0,0074 Leptin ADD MCP1
+ 0,0074 Insulin ADD MCP1
+ 0,0074 HOMA ADD MCP1
+ 0,0074 Glucose ADD MCP1
+ 0,0074 BMI DIVIDE Adiponectin
+ 0,0074 BMI ADD MCP1
+ 0,0074 BMI ADD Leptin
+ 0,0074 Age LESSTHAN Glucose
+ 0,0074 Age ADD MCP1
+ 0,0074 Adiponectin ADD MCP1
+ 0,0067 Insulin ADD Leptin
+ 0,0061 Resistin SUBTRACT MCP1
+ 0,0061 MCP1 SUBTRACT Glucose
+ 0,0061 Insulin SUBTRACT MCP1
+ 0,0061 HOMA SUBTRACT MCP1
+ 0,0061 Glucose SUBTRACT MCP1
+ 0,0061 BMI SUBTRACT MCP1
+ 0,0061 Adiponectin SUBTRACT MCP1
+ 0,0046 Insulin LESSTHAN Leptin
+ 0,0038 Adiponectin DIVIDE Leptin
+ 0,0017 HOMA LESSTHAN Adiponectin
+ 0,0017 Adiponectin DIVIDE BMI
+ 0,0017 Age LESSTHAN MCP1
+ 0,0017 Age LESSTHAN Adiponectin
+ 0,0017 Adiponectin DIFF Resistin
+ 0,0016 MCP1 DIVIDE Leptin
+ 0,0016 HOMA SUBTRACT Leptin
+ 0,0016 Age LESSTHAN Insulin
+ -0,0001 Leptin DIVIDE MCP1
+ -0,0012 Leptin LESSTHAN MCP1
+ -0,0019 Leptin SUBTRACT Adiponectin
+ -0,0019 Adiponectin SUBTRACT Leptin
+ -0,0025 Leptin SUBTRACT HOMA
+ -0,0026 BMI LESSTHAN Adiponectin
+ -0,0033 Age LESSTHAN Leptin
+ -0,0037 Adiponectin LESSTHAN Resistin
+ -0,0052 Leptin ADD Adiponectin
+ -0,0053 Age LESSTHAN Resistin
+ -0,0093 Glucose LESSTHAN MCP1
+ -0,0128 Leptin LESSTHAN Adiponectin
+ -0,0176 Insulin LESSTHAN Resistin
+ -0,0188 BMI LESSTHAN Leptin

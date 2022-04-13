@@ -11,9 +11,7 @@
                 <root id="src.Rdata.dir"/>
                 <root id="src.visualisation.dir"/>
             </source-roots>
-            <test-roots>
-                <root id="test.src.dir"/>
-            </test-roots>
+            <test-roots/>
         </data>
     </configuration>
 </project>
