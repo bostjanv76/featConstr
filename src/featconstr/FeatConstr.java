@@ -32,7 +32,6 @@ import java.util.stream.Collectors;
 import weka.attributeSelection.AttributeSelection;
 import weka.attributeSelection.Ranker;
 import weka.attributeSelection.ReliefFAttributeEval;
-import java.io.IOException;
 import java.awt.Image;
 import java.awt.image.RenderedImage;
 import java.io.OutputStream;
@@ -72,24 +71,31 @@ import java.util.HashMap;
 import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import weka.classifiers.functions.SMO;
+import weka.classifiers.functions.supportVector.PolyKernel;
+import weka.classifiers.functions.supportVector.RBFKernel;
 import weka.filters.unsupervised.attribute.ReplaceMissingValues;
 
 /**
  *
- * @author bostjan
+ * @author Boštjan Vouk
  */
 @SuppressWarnings({"rawtypes", "unchecked", "serial"})
 public class FeatConstr {
     /**************************** main EFC parameters *********************************/
     public static boolean justExplain=true;     //just explain datasets, construct features and evaluate them
-    public static boolean visualisation=true;  //visualisation of explanations using IME method
-    public static boolean exhaustive=true;     //try exhaustive search ... all combinations between attributes
-    public static boolean jakulin=true;        //try exhaustive search, calculate interaction information between all comb. of attributes; Jakulin, A. (2005). Machine learning based on attribute interactions [Doctoral dissertation, University of Ljubljana]. ePrints.FRI. https://bit.ly/3eiJ18x
+    public static boolean visualisation=false;  //visualisation of explanations using IME method
+    public static boolean exhaustive=false;     //try exhaustive search ... all combinations between attributes
+    public static boolean jakulin=false;        //try exhaustive search, calculate interaction information between all comb. of attributes; Jakulin, A. (2005). Machine learning based on attribute interactions [Doctoral dissertation, University of Ljubljana]. ePrints.FRI. https://bit.ly/3eiJ18x
     /*****************************************************************************/
     public static boolean groupsByThrStat=true;        //print statistics about groups (identified by EFC) by thresholds
     public static boolean writeAccByFoldsInFile=true;  //for analysing results of statistical tests
     public static boolean saveConstructs=true; //save generated features with attributes into new dataset ("dataset name"-origPlusRen1stLFeat-"time-date".arff)
     public static boolean renameGenFeat=true;  //rename generated features (e.g., F1, F2 ...), available only if saveConstructs=true, for potential generation of 2nd level features; input dataset for generating 2nd level feat must contain "origPlusRen1stLFeat" string
+    /**************************** explanation parameters *********************************/
+    public static boolean treeSHAP=true;        //if false then set predictionModel for explanations with IME method (default is RF; set different model in the 431 line) (default true)
+    public static boolean explAllData=false; 
+    public static boolean explAllClasses=false;
     /**************************** IME parameters *********************************/
     public enum IMEver{equalSampling, adaptiveSamplingSS, adaptiveSamplingAE, aproxErrSampling};
     //equalSampling - each attribute has same num. of samples, Algorithm 1 in in Štrumbelj, Erik, and Igor Kononenko. "An efficient explanation of individual classifications using game theory." The Journal of Machine Learning Research 11 (2010): 1-18.
@@ -97,8 +103,8 @@ public class FeatConstr {
     //adaptiveSamplingSS - stopping criteria is sum of samples
     //adaptiveSamplingAE - stopping criteria is approxamization error for all attributes
     //aproxErrSampling - we calculate samples for each attribute mi=(<1-alpha, e>) (article 2010) in Štrumbelj, Erik, and Igor Kononenko. "An efficient explanation of individual classifications using game theory." The Journal of Machine Learning Research 11 (2010): 1-18.
-    public static IMEver method=IMEver.adaptiveSamplingSS; //selected IME method
-    public static int N_SAMPLES=100;    //if we use equalSampling ... number of samples, we choose random value from interval min-max N_SAMPLE times  
+    public static IMEver method=IMEver.equalSampling; //selected IME method
+    public static int N_SAMPLES=1000;   //if we use equalSampling ... number of samples, we choose random value from interval min-max N_SAMPLE times  
     public static int minS=10;          //min samples ... if we use sumOfSamples and diffSampling ... to obtain an approximate estimate of the variance
     public static int sumOfSmp=2000;    //sum of samples ... if we use adaptive sampling ... sumOfSmp >= n*minS ... n is number of attributes
     public static int pctErr=95;        //90, 95 or 99;
@@ -109,20 +115,17 @@ public class FeatConstr {
     public static double eta=0.3;               //XGBoost parameter - shrinkage
     public static double gamma=1;               //XGBoost parameter - gamma
     /**************************** visualisation parameters *********************************/
-    public static int visFrom=1, visTo=10;     //visualize instances from visFrom to visTo
-    public static int drawLimit=20;    //we draw (max.) 20 the most important attributes
-    public static int topHigh=10;       //visualise features with highest contributions (instance explanation)
-    public static int numOfImpt=6;      //visualise features with highest contributions ... 
-    public static int RESOLUTION=100;   // density for model visualisation
+    public static int visFrom=1, visTo=10;      //visualize instances from visFrom to visTo
+    public static int drawLimit=20;             //we draw (max.) 20 the most important attributes
+    public static int topHigh=10;               //visualise features with highest contributions (instance explanation)
+    public static int numOfImpt=6;              //visualise features with highest contributions ... 
+    public static int RESOLUTION=100;           //density for model visualisation
     public static boolean pdfPng=true;          //besided eps, print also pdf and png
+    public static Classifier visualModel;       //model for visualisation (set it in the 432 line)
     /**************************** additional EFC parameters *********************************/
-    public static boolean treeSHAP=true;
-    public static boolean explAllData=false; 
-    public static boolean explAllClasses=false;
-    public static boolean numerFeat=true;  //generate numerical features   
-    public static double attrImpThrs[]={0,0.25,0.5};    //{0,0.2,0.4,0.6,0.7};//{0,0.1,0.2,0.3,0.4,0.5}; ... used only in paramSearch method
-    public static double thrL=0.1;          //weight threshold - lower 
-    public static double thrU=0.8;          //weight threshold - upper
+    public static double attrImpThrs[]={0,0.25,0.5};    //used only in paramSearch method
+    public static double thrL=0.6;          //weight threshold - lower (default 0.1)
+    public static double thrU=0.8;          //weight threshold - upper (default 0.8)
     public static double step=0.1;          //step for traversing all thresholds from thrL to thrU
     public static double NOISE=1;           //(default 1) "lower" groups that have less than noiseThr% groups are removed ... noiseThr=0 (we take all groups); noiseThr=(numInst*NOISE)/100.0;
     public static int minNoise=3;           //(default 3) minimum number of groups at noiseThr
@@ -133,15 +136,32 @@ public class FeatConstr {
     /**************************** evaluation parameters *********************************/
     public static int folds=10;         //for generating models, folds=1 means no CV and using split in ratio listed below
     public static int splitTrain=5;     //5 ... 80%:20%, 4 ... 75%25%, 3 ... 66%:33%; useful only when folds are set to 1, meaning no CV and using split
+    public static int splitTrainFS=4;   //5 ... 80%:20%, 4 ... 75%25%, 3 ... 66%:33%; used when feature selection is used on the validation dataset
     /**************************** FURIA parameters *********************************/
-    public static double cf=0.5;                    //confidence factor (FURIA)
+    public static double cf=0.9;                    //confidence factor (FURIA) (default: 0.5)
     public static double pci=0.9;                   //percentage of covered instances (FURIA)
-    public static boolean covering=false;           //covering=true -> if all instances are covered by features generated by FURIA we stop construction with FURIA
+    public static boolean covering=true;            //covering=true -> if all instances are covered by features generated by FURIA we stop construction with FURIA
     public static boolean featFromExplClass=true;   //for generate FURIA features ... for ablation study featFromExplClass=false this means that we take features from all classes
+    /**************************** types of features and construction depth *************/
+    //include/exclude specific types of features; at least one type must be selected
+    public static boolean logFeat=true;            //generate logical operators features
+    public static boolean decRuleFeat=true;         //generate decision rules features
+    public static boolean thrFeat=true;             //generate threshold features
+    public static boolean relatFeat=false;           //generate relational features
+    public static boolean cartFeat=false;            //generate Cartesian product features
+    public static boolean numerFeat=false;           //generate numerical features   
+    //include/exclude specific features       
+    public static String [] operationLogUse={"EQU","XOR","IMPL"};           //logical operators  - for composing new features; full set is: "AND","OR","EQU","XOR","IMPL"
+    public static String [] operationRelUse={"LESSTHAN","DIFF"};            //relational operators - for composing new features; full set is: "LESSTHAN","DIFF"
+    public static String [] operationNumUse={"ADD","SUBTRACT","DIVIDE"};    //numeric operators  - for composing new features; full set is:"ADD","SUBTRACT","DIVIDE","ABSDIFF"
+    public static int featDepth=2;      //3 means 2 and 3, 4 means 2, 3, and 4 ... if featDepth is less than 3 then the construction depth is 2; higher depth is used only for conjunction and disjunction
     /*****************************************************************************/
     public static int classToExplain=1;             //default is second class but this value is changed due to heuristic - explain minority class if class has at least instThr pct instances
     public static int timeLimit=10800000;           //10800000ms = 3h
     public static int numInst;                      //number of instances in explained class; is set when classToExplain is defined
+    public enum OperationLog{AND,OR,EQU,XOR,IMPL};  
+    public enum OperationRel{LESSTHAN,DIFF};
+    public enum OperationNum{ADD,SUBTRACT,DIVIDE,ABSDIFF};
     public static String datasetName;
     public static String tmpDir;
     public static List<String> listOfConcepts;
@@ -154,9 +174,6 @@ public class FeatConstr {
     public static double accuracyByFolds[][];
     public static double accuracyByFoldsPS[][];
     public static double accuracyByFoldsFuriaThr[][];
-    public static double accuracyByFoldsEvalAtt1 [][];
-    public static double accuracyByFoldsEvalAtt2 [][];
-    public static double accuracyByFoldsEvalAtt3 [][];
     public static double accByFoldsLF[][];              //for measuring accuracy for method Logical features
     public static double accByFoldsCP[][];              //for Cartesian product
     public static double accByFoldsRE[][];              //for relational features
@@ -167,7 +184,6 @@ public class FeatConstr {
     public static double numFeatByFoldsCP[];            //number of features from Cartesian product
     public static double numFeatByFoldsRE[];            //number of relational features
     public static double numFeatByFoldsNum[];           //number of numerical features
-    public static double numFeatByFoldsEvalFeat1[][], numFeatByFoldsEvalFeat2[][], numFeatByFoldsEvalFeat3[][];
     public static double numberOfTreeByFoldsPS[][];     //0-tree size, 1-num of leaves, 2-sum of terms  
     public static double numOfTreeByFoldsLF[][];        //0-tree size, 1-num of leaves, 2-sum of terms (for Logical features method)
     public static double numOfTreeByFoldsCP[][];        //0-tree size, 1-num of leaves, 2-sum of terms (for Cartesian product)
@@ -176,11 +192,10 @@ public class FeatConstr {
     public static double numCartFeatInTreeFS[][];       //0-number of Cartesian features in tree, 1 sum of constructs
     public static double numTreeByFoldsFuriaThr[][];
     public static double numberOfTreeByFolds[][];       //0-tree size, 1-num of leaves, 2-sum of terms 
-    public static double numTreeByFoldsEvalFeat1[][],numTreeByFoldsEvalFeat2[][], numTreeByFoldsEvalFeat3[][];
     public static double numberOfUnImpFeatByFolds[][];  //0 - or, 1 - equ, 2 - xor, 3 - impl, 4 - and, 5 - lessthan, 6 - relational, 7 - Cartesian
     public static double numFeatByFoldsFuriaThr[][];
-    public static long exlpTime[], allFCTime[], allFCTimeLF[], numericalFCTime[], cartesianFCTime[], relationalFCTime[], furiaThrTime[],attrEval1Time[], attrEval2Time[], attrEval3Time[];
-    public static long learnAllFCTime[][], learnAllFCTimeLF[][], learnAllFCTimeNum[][], learnAllFCTimeCP[][], learnAllFCTimeRE[][], learnFuriaThrTime[][], learnAttrEval1Time[][], learnAttrEval2Time[][], learnAttrEval3Time[][];
+    public static long exlpTime[], allFCTime[], allFCTimeLF[], numericalFCTime[], cartesianFCTime[], relationalFCTime[], furiaThrTime[];
+    public static long learnAllFCTime[][], learnAllFCTimeLF[][], learnAllFCTimeNum[][], learnAllFCTimeCP[][], learnAllFCTimeRE[][], learnFuriaThrTime[][];
     public static double numOfExplainedInst[];
     public static double numOfRulesByFolds[];
     public static double numOfCartesian[];          //number of Cartesian features in tree - when we generate just Cartesian
@@ -202,49 +217,39 @@ public class FeatConstr {
     public static double numNumFeatInTreeFS[][];    //number of numerical features in trees (feature selection) and constructs
     public static double numRelFeatInTreeFS[][];    //number of relational features in trees (feature selection) and constructs
     public static double numOfRulesByFoldsLF[];     //for method Logical features
-    public static double numOfTermsByFoldsLF[];     //for method Logical features
-    public static double numOfRatioByFoldsLF[];     //for method Logical features
+    public static double numOfTermsByFoldsLF[];
+    public static double numOfRatioByFoldsLF[];
     public static double numOfRulesByFoldsCP[];     //for Cartesian product
-    public static double numOfTermsByFoldsCP[];     //for Cartesian product
-    public static double numOfRatioByFoldsCP[];     //for Cartesian product
+    public static double numOfTermsByFoldsCP[];     
+    public static double numOfRatioByFoldsCP[];     
     public static double numOfRulesByFoldsRE[];     //for relational feat
-    public static double numOfRulesByFoldsNum[];    //for numerical feat
     public static double numOfTermsByFoldsRE[];
-    public static double numOfRatioByFoldsRE[];   
+    public static double numOfRatioByFoldsRE[];
+    public static double numOfRulesByFoldsNum[];    //for numerical feat
     public static double numOfTermsByFoldsNum[];
-    public static double numOfRatioByFoldsNum[];  
-      
+    public static double numOfRatioByFoldsNum[];        
     public static double numOfTermsByFoldsF[];      //number of terms of constructs in FURIA features    
     public static double numOfRatioByFoldsF[];
-    public static double complexityOfFuriaPS[][];
-    
-    public static double numOfFuriaThrInTreeByFolds[][];    //0-num of FURIA feat, 1-sum of terms of FURIA feat, 2-num of thr feat, 3-sum of terms in thr feat
-    public static double numOfFuriaThrInTreeByFoldsF[][];   //0-num of FURIA feat, 1-sum of terms of FURIA feat, 2-num of thr feat, 3-sum of terms in thr feat
-    public static double numOfFuriaThrInTreeByFoldsM[][];   //0-num of FURIA feat, 1-sum of terms of FURIA feat, 2-num of thr feat, 3-sum of terms in thr feat
-    public static double numOfFuriaThrInTreeByFoldsP[][];   //0-num of FURIA feat, 1-sum of terms of FURIA feat, 2-num of thr feat, 3-sum of terms in thr feat
+    public static double numOfFuriaThrInTreeByFolds[][];    //0-num of FURIA feat, 1-sum of terms of FURIA feat, 2-num of thr feat, 3-sum of terms in thr feat ... in All setting
+    public static double numOfFuriaThrInTreeByFoldsF[][];   //0-num of FURIA feat, 1-sum of terms of FURIA feat, 2-num of thr feat, 3-sum of terms in thr feat ... if DR or thr feat. are generated
+    public static double numOfFuriaThrInTreeByFoldsP[][];   //0-num of FURIA feat, 1-sum of terms of FURIA feat, 2-num of thr feat, 3-sum of terms in thr feat ... in PS/FS setting
     public static long learnAllTime[][];
     public static double treeSize[], numOfLeaves[], sumOfTerms[], ratioTermsNodes[], numOfRules[], numOfTerms[], numConstructsPerRule[];
-
     public static long paramSearchTime[][], paramSLearnT[][];
-    public static double complexityOfFuria[][];
-    public static double complexityOfFuriaEF1[][], complexityOfFuriaEF2[][], complexityOfFuriaEF3[][];
-        
+    public static double complexityOfFuria[][], complexityOfFuriaPS[][];           
     public static double maxGroupOfConstructs[];
     public static double numOfGroupsOfFeatConstr[];
     public static double avgTermsPerGroup[];
     public static int avgTermsPerFold[];
     public static Set unInfFeatures = new HashSet(); //for controlling informative features
-        
-    public static PrintWriter logFile, impGroups, impGroupsKD, attrImpListMDL_KD, discIntervalsKD, attrImpListMDL, bestParamPerFold, samplesStat, discIntervals, accByFolds,groupsStat;
-    public enum OperationLog{EQU,AND,XOR,IMPL, OR};         //logical operators  - for composing new features
-    public enum OperationRel{LESSTHAN,DIFF};                //relational operators - for composing new features
-    public enum OperationNum{ADD,SUBTRACT,DIVIDE,ABSDIFF};  //numeric operators  - for composing new features
-
+    public static int processors;
     public static ArrayList<Double>[] dotsA;
     public static ArrayList<Double>[] dotsB;
     public static String nThHigh;
-    public static int processors;
-    public static void main(String[] args) throws IOException, Exception {
+    public static PrintWriter logFile, impGroups, impGroupsKD, discIntervalsKD, attrImpListMDL, attrImpListMDL_KD, attrImpListReliefF, attrImpListReliefF_KD, bestParamPerFold, discIntervals, accByFolds,groupsStat;
+    
+    public static void main(String[] args) throws Exception {
+        URL myURL = new URL("https://github.com/bostjanv76/featConstr");
         /**************************** check the correct setting of EFC *********************************/
         if((justExplain==false && visualisation==false && exhaustive==false && jakulin==true)){
             System.out.println("\u001B[31mYou must set the correct values of the parameters from the following list of settings and run the program again!\u001B[0m");
@@ -255,9 +260,22 @@ public class FeatConstr {
             System.out.println("\t4) \u001B[34mKnowledge discovery\033[0m \t\t\t(justExplain=true, visualisation=false)");
             System.out.println("\t5) \u001B[34mVisualisation\033[0m \t\t\t(justExplain=false, visualisation=true)");
             
-            URL myURL = new URL("https://github.com/bostjanv76/featConstr");
             System.out.println("For more instructions, please see "+myURL); 
             System.exit(0);        
+        }
+        
+        if(logFeat==false && decRuleFeat==false && thrFeat==false && relatFeat==false && cartFeat==false && numerFeat==false && !jakulin && !exhaustive){
+            System.out.println("\u001B[31mAt least one type of features must be selected/true!\u001B[0m");
+            
+            System.out.println("\u001B[34mTip: Set at least one of the following flags to true.\033[0m");
+                System.out.println("\t1) \u001B[34mlogFeat\033[0m");
+                System.out.println("\t2) \u001B[34mdecRuleFeat\033[0m");
+                System.out.println("\t3) \u001B[34mthrFeat\033[0m");
+                System.out.println("\t4) \u001B[34mrelatFeat\033[0m");
+                System.out.println("\t5) \u001B[34mcartFeat\033[0m");
+                System.out.println("\t6) \u001B[34mnumerFeat\033[0m");
+            System.out.println("For more instructions, please see "+myURL); 
+            System.exit(0); 
         }
         
         tmpDir = System.getProperty("java.io.tmpdir");
@@ -281,18 +299,19 @@ public class FeatConstr {
                     groupsStat = new PrintWriter(new FileWriter(folderName+"groupsStat-"+lg+".csv",true));    //number of identified groups by EFC for each threshold and each fold
             }
         }
-        if(!treeSHAP)
-            samplesStat= new PrintWriter(new FileWriter(folderName+"samplesStat-"+lg+".dat"));
 
         if((justExplain && visualisation) || justExplain){
             impGroupsKD = new PrintWriter(new FileWriter(folderName+"kd/impGroups-"+lg+".log"));
-            attrImpListMDL_KD = new PrintWriter(new FileWriter(folderName+"kd/attrImpListMDL-"+lg+".dat"));        
+            attrImpListMDL_KD = new PrintWriter(new FileWriter(folderName+"kd/attrImpListMDL-"+lg+".dat"));     
+            attrImpListReliefF_KD = new PrintWriter(new FileWriter(folderName+"kd/attrImpListReliefF-"+lg+".dat"));
             discIntervalsKD = new PrintWriter(new FileWriter(folderName+"kd/discretizationIntervals-"+lg+".dat"));
         }
         else if(!visualisation && !justExplain){            
             impGroups = new PrintWriter(new FileWriter(folderName+"impGroups-"+lg+".log"));
-            if(!jakulin)
+            if(!jakulin){
                 attrImpListMDL = new PrintWriter(new FileWriter(folderName+"attrImpListMDL-"+lg+".dat"));
+                attrImpListReliefF = new PrintWriter(new FileWriter(folderName+"attrImpListReliefF-"+lg+".dat"));
+            }
             discIntervals = new PrintWriter(new FileWriter(folderName+"discretizationIntervals-"+lg+".dat"));
         }
              
@@ -309,8 +328,11 @@ public class FeatConstr {
         //classification datasets
 
         /*****demo datasets*****/
-        folder = new File("datasets/demo");
+        //folder = new File("datasets/demo");
     
+        /*****toy datasets*****/       
+        folder = new File("datasets/toy");
+        
         /*****artificial datasets*****/ 
         //folder = new File("datasets/artificial");
     
@@ -343,6 +365,7 @@ public class FeatConstr {
                 if((justExplain && visualisation) || justExplain){
                     impGroupsKD.println("dataset: "+fileName);
                     attrImpListMDL_KD.println("dataset: "+fileName); 
+                    attrImpListReliefF_KD.println("dataset: "+fileName); 
                     discIntervalsKD.println("dataset: "+fileName);
                 }      
                 else if(!visualisation && !justExplain){ 
@@ -352,31 +375,41 @@ public class FeatConstr {
                         if(groupsByThrStat)
                             groupsStat.println("dataset: "+fileName);
                     }
-                    if(!treeSHAP)
-                        samplesStat.println("dataset: "+fileName);
                 
                     impGroups.println("dataset: "+fileName);
                     if(exhaustive && !jakulin)
                         impGroups.println("Exhaustive search");
-                    if((!exhaustive && !jakulin) || (exhaustive && !jakulin))   
+                    if((!exhaustive && !jakulin) || (exhaustive && !jakulin)){   
                         attrImpListMDL.println("dataset: "+fileName);
+                        attrImpListReliefF.println("dataset: "+fileName);
+                    }
                     discIntervals.println("dataset: "+fileName);                
                 }
                 
                 Classifier clsTab[]=null;
-                String lab[];
 
                 processors = Runtime.getRuntime().availableProcessors();
 
                 //classification
                 NaiveBayes nb=new NaiveBayes();
                 J48 j48=new J48();
-                FURIA furia=new FURIA(); //in WEKA API ruleset is given for whole dataset, we will have rulesets for every fold
-                MultilayerPerceptron mp=new MultilayerPerceptron(); //hiddenLayers=(attribs + classes) / 2 ... one hidden layer with (attribs + classes) / 2 units (neurons)
-                mp.setOptions(weka.core.Utils.splitOptions("-H 10"));
+                FURIA furia=new FURIA(); //in WEKA API ruleset is given for the whole dataset, we will have rulesets for every fold
+                MultilayerPerceptron mp=new MultilayerPerceptron(); 
+                //wildcard values: 'a' = (attribs + classes) / 2, 'i' = attribs, 'o' = classes , 't' = attribs + classes (default: 'a')
+                //hiddenLayers=(attribs + classes) / 2 ... one hidden layer with (attribs + classes) / 2 units (neurons)
+                //mp.setHiddenLayers("10,5");   //e.g., two hidden layers, one with 10, the other with 5 units (neurons)
 
+                SMO svmLin=new SMO();               //SVM with Linear kernel (default kernel)
+                SMO svmPoly=new SMO();              //SVM with Polynomial kernel
+                    PolyKernel p=new PolyKernel();
+                    p.setExponent(2);               //set the degree of the polynomial
+                    svmPoly.setKernel(p);
+                SMO svmRBF=new SMO();               //SVM with RBF kernel 
+                    RBFKernel rbfKernel = new RBFKernel();    
+                    svmRBF.setKernel(rbfKernel);    //set RBF kernel
+                        
                 RandomForest rf=new RandomForest();
-                    rf.setNumExecutionSlots(processors);
+                    rf.setNumExecutionSlots(processors);    //The number of execution slots (threads) to use for constructing the ensemble.
                     rf.setCalcOutOfBag(true);
 
                 Instances data = new Instances(new BufferedReader(new FileReader(file)));        
@@ -393,7 +426,10 @@ public class FeatConstr {
                     data.renameAttribute(i, newName);
                     }
                 }
-
+                
+                Classifier predictionModel=rf;      //model for explanations when we use the IME method; list of included classifiers: nb, j48, furia, mp, svmLin, svmPoly, svmRBF, rf
+                visualModel=rf;                    //model for visualisations when we use the IME method; list of included classifiers: nb, j48, furia, mp, svmLin, svmPoly, svmRBF, rf    
+                
                 if(justExplain){
                     numberOfUnImpFeatByFolds=new double[8][folds]; 
 
@@ -403,8 +439,10 @@ public class FeatConstr {
 
 //                    attrImpListMDL_KD.println("MDL - before CI");
 //                        mdlCORElearn(data, rCaller, code);
+//                    attrImpListReliefF_KD.println("ReliefF - before CI");
+//                        lowLevelReliefF(data);
                         
-                    Instances dataWithNewFeat=justExplainAndConstructFeat(data, rf,true, rCaller, code); //knowledge discovery
+                    Instances dataWithNewFeat=justExplainAndConstructFeat(data, predictionModel, true, rCaller, code); //knowledge discovery
 
                     if(saveConstructs){
                         Instances origNewfeat=null;
@@ -467,9 +505,6 @@ public class FeatConstr {
                 accuracyByFolds=new double[clsTab.length][folds];
                 accuracyByFoldsPS=new double[clsTab.length][folds];
                 accuracyByFoldsFuriaThr=new double[clsTab.length][folds];
-                accuracyByFoldsEvalAtt1=new double[clsTab.length][folds];
-                accuracyByFoldsEvalAtt2=new double[clsTab.length][folds];
-                accuracyByFoldsEvalAtt3=new double[clsTab.length][folds];
                 accByFoldsLF=new double[clsTab.length][folds];
                 accByFoldsCP=new double[clsTab.length][folds];
                 accByFoldsRE=new double[clsTab.length][folds];
@@ -481,16 +516,14 @@ public class FeatConstr {
                 numFeatByFoldsRE=new double[folds];
                 numFeatByFoldsNum=new double[folds];
                 numFeatByFoldsFuriaThr=new double[2][folds];
-                numFeatByFoldsEvalFeat1=new double[3][folds];numFeatByFoldsEvalFeat2=new double[3][folds];numFeatByFoldsEvalFeat3=new double[3][folds];
-                numTreeByFoldsEvalFeat1=new double[3][folds];numTreeByFoldsEvalFeat2=new double[4][folds];numTreeByFoldsEvalFeat3=new double[3][folds];
                 exlpTime=new long[folds]; allFCTime=new long[folds]; allFCTimeLF=new long[folds]; cartesianFCTime=new long[folds];relationalFCTime=new long[folds];
-                numericalFCTime=new long[folds]; furiaThrTime=new long[folds]; attrEval1Time=new long[folds]; attrEval2Time=new long[folds]; attrEval3Time=new long[folds];
+                numericalFCTime=new long[folds]; furiaThrTime=new long[folds];
                 paramSearchTime=new long[clsTab.length][folds]; paramSLearnT=new long[clsTab.length][folds];
                 learnAllFCTime=new long[clsTab.length][folds]; learnAllFCTimeLF=new long[clsTab.length][folds];
                 learnAllFCTimeCP=new long[clsTab.length][folds];
                 learnAllFCTimeRE=new long[clsTab.length][folds];
                 learnAllFCTimeNum=new long[clsTab.length][folds];
-                learnFuriaThrTime=new long[clsTab.length][folds]; learnAttrEval1Time=new long[clsTab.length][folds]; learnAttrEval2Time=new long[clsTab.length][folds]; learnAttrEval3Time=new long[clsTab.length][folds];
+                learnFuriaThrTime=new long[clsTab.length][folds];
                 featByFoldsPS=new double[6][folds][clsTab.length];
                 numberOfTreeByFolds=new double[4][folds];
                 numOfTreeByFoldsLF=new double[4][folds];  
@@ -514,13 +547,11 @@ public class FeatConstr {
                 complexityOfFuriaPS=new double[3][folds];
                 numOfFuriaThrInTreeByFolds=new double[4][folds];
                 numOfFuriaThrInTreeByFoldsF=new double[4][folds];
-                numOfFuriaThrInTreeByFoldsM=new double[4][folds];
                 numOfFuriaThrInTreeByFoldsP=new double[4][folds];
                 learnAllTime=new long[clsTab.length][folds];
                 accOrigModelByFolds=new double[clsTab.length][folds];
                 accExplAlgInt=new double[folds]; accExplAlgTest=new double[folds];
                 complexityOfFuria=new double[3][folds];
-                complexityOfFuriaEF1=new double[3][folds]; complexityOfFuriaEF2=new double[3][folds];complexityOfFuriaEF3=new double[3][folds];
                 treeSize=new double[folds]; numOfLeaves=new double[folds]; sumOfTerms=new double[folds]; ratioTermsNodes=new double[folds]; numOfRules=new double[folds]; 
                 numOfTerms=new double[folds]; numConstructsPerRule=new double[folds]; numOfRatioByFoldsF=new double[folds];
                 modelBuildTime=new long[folds];
@@ -565,7 +596,6 @@ public class FeatConstr {
                     }
                 }
 
-                Classifier predictionModel=rf;
                 if(!visualisation){
                     System.out.println("---------------------------------------------------------------------------------");
                         logFile.println("---------------------------------------------------------------------------------"); 
@@ -583,7 +613,7 @@ public class FeatConstr {
                 /******************* VISUALISATION *********************************/
                 if(visualisation){        
                     System.out.println("Drawing ...");
-                    visualizeModelInstances(rf, data, true, RESOLUTION, numOfImpt, visFrom, visTo);  //visualise explanations from e.g., 50th to 60 instance
+                    visualizeModelInstances(visualModel, data, true, RESOLUTION, numOfImpt, visFrom, visTo);  //visualise explanations from e.g., 50th to 60th instance
                     System.out.println("Drawing is finished!");
                     continue loopExplanationVisualisation;  
                 }     
@@ -596,6 +626,10 @@ public class FeatConstr {
                         attrImpListMDL.println("\t\t\t\t\t\t\t\t--------------"); 
                         attrImpListMDL.printf("\t\t\t\t\t\t\t\t\tFold %2d\n",(f+1));
                         attrImpListMDL.println("\t\t\t\t\t\t\t\t--------------");
+                        
+                        attrImpListReliefF.println("\t\t\t\t\t\t\t\t--------------"); 
+                        attrImpListReliefF.printf("\t\t\t\t\t\t\t\t\tFold %2d\n",(f+1));
+                        attrImpListReliefF.println("\t\t\t\t\t\t\t\t--------------");
                     }
 
                     if(folds==1){
@@ -853,19 +887,14 @@ public class FeatConstr {
                             eval.evaluateModel(predictionModel, test);
 
                             accExplAlgTest[f]=(eval.correct())/(eval.incorrect()+eval.correct())*100.00;    //same as 1-eval.errorRate())*100.0
-                            if(!treeSHAP){
-                                samplesStat.println("\t\t\t\t\t\t\t\t--------------"); 
-                                samplesStat.printf("\t\t\t\t\t\t\t\t\tFold %2d\n",(f+1));
-                                samplesStat.println("\t\t\t\t\t\t\t\t--------------"); 
-                            }
 
                             /*IME*/            
                             for(int i=0;i<numClasses;i++){  //numClasses=1; (we explain minority class), numClasses=classDistr.length; (we explain all classes) 
                                 if(explAllClasses)
                                     classToExplain=i;
                                 if(f==0){   //print this info only once  
-                                    System.out.println("IME (explanation), "+method.name()+", "+(method.name().equals("adaptiveSampling") ? "min samples: "+minS+", sum of samples: "+sumOfSmp : method.name().equals("diffSampling")?" min samples: "+minS:" N_SAMPLES: "+N_SAMPLES)+" - alg. for searching concepts: "+predictionModel.getClass().getSimpleName());
-                                        logFile.println("IME (explanation), "+method.name()+", "+(method.name().equals("adaptiveSampling") ? "min samples: "+minS+", sum of samples: "+sumOfSmp : method.name().equals("diffSampling")?" min samples: "+minS:" N_SAMPLES: "+N_SAMPLES)+" - alg. for searching concepts: "+predictionModel.getClass().getSimpleName());  
+                                    System.out.println("IME (explanation), "+method.name()+", "+(method.name().equals("adaptiveSampling") ? "min samples: "+minS+", sum of samples: "+sumOfSmp : method.name().equals("diffSampling")?"min samples: "+minS:"N_SAMPLES: "+N_SAMPLES)+" - alg. for searching concepts: "+predictionModel.getClass().getSimpleName());
+                                        logFile.println("IME (explanation), "+method.name()+", "+(method.name().equals("adaptiveSampling") ? "min samples: "+minS+", sum of samples: "+sumOfSmp : method.name().equals("diffSampling")?"min samples: "+minS:"N_SAMPLES: "+N_SAMPLES)+" - alg. for searching concepts: "+predictionModel.getClass().getSimpleName());  
                                     System.out.println("Explaining class: "+data.classAttribute().value(classToExplain)+", explaining whole dataset: "+(explAllData?"YES":"NO"));
                                         logFile.println("Explaining class: "+data.classAttribute().value(classToExplain)+", explaining all dataset: "+(explAllData?"YES":"NO"));
                                     System.out.println("---------------------------------------------------------------------------------");
@@ -1237,100 +1266,87 @@ public class FeatConstr {
                         }
                     }  
                     else{
+                        int N2=2;                        
+                        List allCombSecOrd=allCombOfOrderN(listOfConcepts,N2);  //create groups for second ordered features
                         /****************************************************************/ 
-                        /**************** LOGICAL FEATURES ******************/    
+                        /********************* LOGICAL FEATURES *************************/    
                         t1=new Timer();
                         t1.start();    
-                        int N2=2;
-                        List allCombSecOrd=allCombOfOrderN(listOfConcepts,N2);  //create groups for second ordered features  
-                        trainFold= addLogFeatDepth(trainFold, allCombSecOrd,OperationLog.AND, false, f, N2);   
-                        testFold= addLogFeatDepth(data, testFold, allCombSecOrd,OperationLog.AND, false, f, N2);
-                        
-                        trainFold= addLogFeatDepth(trainFold, allCombSecOrd,OperationLog.OR, false, f, N2);        
-                        testFold= addLogFeatDepth(data, testFold, allCombSecOrd,OperationLog.OR, false, f, N2);
-
-                        unInfFeatures.clear();
-                        int N3=3;
-                        List allCombThirdOrd=allCombOfOrderN(listOfConcepts,N3);    //create groups for third ordered features  
-                        trainFold= addLogFeatDepth(trainFold, allCombThirdOrd,OperationLog.AND, false, f, N3);        
-                        testFold= addLogFeatDepth(data, testFold, allCombThirdOrd,OperationLog.AND, false, f, N3);
-
-                        trainFold= addLogFeatDepth(trainFold, allCombThirdOrd,OperationLog.OR, false, f, N3);        
-                        testFold= addLogFeatDepth(data, testFold, allCombThirdOrd,OperationLog.OR, false, f, N3);
-
-                        trainFold= addLogFeatDepth(trainFold, allCombSecOrd,OperationLog.EQU, false, f, N2); 
-                        trainFold= addLogFeatDepth(trainFold, allCombSecOrd,OperationLog.XOR, false, f, N2); 
-                        trainFold= addLogFeatDepth(trainFold, allCombSecOrd,OperationLog.IMPL, false, f, N2); 
-
-                        testFold= addLogFeatDepth(data, testFold, allCombSecOrd,OperationLog.EQU, false, f, N2);
-                        testFold= addLogFeatDepth(data, testFold, allCombSecOrd,OperationLog.XOR, false, f, N2);
-                        testFold= addLogFeatDepth(data, testFold, allCombSecOrd,OperationLog.IMPL, false, f, N2);
-
-                        unInfFeatures.clear();
-                        t1.stop();
-                        allFCTimeLF[f]=t1.diff(); //time for constructing logical features
-                        if(exhaustive){
-                            System.out.println("FC ended (exhaustive search, All features method) fold: "+(f+1)+" time for FC: "+allFCTimeLF[f]); 
-                            if(allFCTimeLF[f]>timeLimit){ //10800000ms = 3h
-                                System.out.println("Time exceeds the limit ("+timeLimit +" [ms]) of FC for one fold!"); 
-                                    logFile.println("Time exceeds the limit ("+timeLimit +" [ms]) of FC for one fold!");
-                                break loopExhaustiveTooLong;
+                        if(logFeat){
+                            //depth 2
+                            for(String op : operationLogUse){    
+                                trainFold= addLogFeatDepth(trainFold, allCombSecOrd,OperationLog.valueOf(op), false, f, N2);
+                                testFold= addLogFeatDepth(data, testFold, allCombSecOrd,OperationLog.valueOf(op), false, f, N2);
                             }
-                        }
-
-//                        if(!jakulin){
-//                            attrImpListMDL.println("Feature evaluation: MDL (Logical features) - After CI");                
-//                            mdlCORElearn(trainFold, rCaller, code);
-//                        }
-                        
-                        tmp= numOfFeat(trainFold, data.numAttributes()-1);
-                        numOfFeatByFoldsLF[f]=tmp[0];    //we count just logical features
-                        
-                        for(int c=0;c<clsTab.length;c++){
-                            model=clsTab[c];
-                            t1.start(); 
-                            ma=evaluateModel(trainFold,testFold,model);
+                            
+                            unInfFeatures.clear();
+                            
+                            //construction depth higher than 2
+                            if(featDepth>2){
+                                for(int i=3;i<=featDepth; i++){
+                                    List allCombNthOrd=allCombOfOrderN(listOfConcepts,i);
+                                    for(String op : operationLogUse)
+                                        if(OperationLog.valueOf(op)==OperationLog.AND || OperationLog.valueOf(op)==OperationLog.OR){
+                                            trainFold= addLogFeatDepth(trainFold, allCombNthOrd,OperationLog.valueOf(op), false, f, i);        
+                                            testFold= addLogFeatDepth(data, testFold, allCombNthOrd,OperationLog.valueOf(op), false, f, i);
+                                        }
+                                }
+                            }
+                            
+                            unInfFeatures.clear();
                             t1.stop();
-                            accByFoldsLF[c][f]=ma.getAcc();
-                            learnAllFCTimeLF[c][f]=t1.diff();
-                            model=ma.getClassifier();
-                            if(excludeUppers(model.getClass().getSimpleName()).equals("J48")){
-                                j48=(J48)(model);
-                                numOfTreeByFoldsLF[0][f]=(int)j48.measureTreeSize(); //treeSize
-                                numOfTreeByFoldsLF[1][f]=(int)j48.measureNumLeaves(); //numOfLeaves
-                                numOfTreeByFoldsLF[2][f]=sumOfTermsInConstrInTree(trainFold, data.numAttributes()-1, j48); //sumOfTerms
-                                numOfTreeByFoldsLF[3][f]=(numOfTreeByFoldsLF[0][f]-numOfTreeByFoldsLF[1][f])==0 ? 0 : numOfTreeByFoldsLF[2][f]/(numOfTreeByFoldsLF[0][f]-numOfTreeByFoldsLF[1][f]); //sum of terms of constructs DIV num of nodes
-
-                                numOfLogicalInTree[0][f]=numOfLogFeatInTree(trainFold, data.numAttributes()-1, j48);                            
-                                numOfLogicalInTree[1][f]=sumOfLFTermsInConstrInTree(trainFold, data.numAttributes()-1, j48);
+                            allFCTimeLF[f]=t1.diff(); //time for constructing logical features
+                            if(exhaustive){
+                                System.out.println("FC ended (exhaustive search, All features method) fold: "+(f+1)+" time for FC: "+allFCTimeLF[f]); 
+                                if(allFCTimeLF[f]>timeLimit){ //10800000ms = 3h
+                                    System.out.println("Time exceeds the limit ("+timeLimit +" [ms]) of FC for one fold!"); 
+                                        logFile.println("Time exceeds the limit ("+timeLimit +" [ms]) of FC for one fold!");
+                                    break loopExhaustiveTooLong;
+                                }
                             }
-                            if(excludeUppers(model.getClass().getSimpleName()).equals("FURIA")){
-                                FURIA fu=(FURIA)(model);
-                                numOfRulesByFoldsLF[f]=fu.getRuleset().size();
-                                numOfTermsByFoldsLF[f]=sumOfTermsInConstrInRule(fu.getRuleset(),trainFold);
-                                numOfRatioByFoldsLF[f]=numOfRulesByFoldsLF[f]==0 ? 0 : (numOfTermsByFoldsLF[f]/numOfRulesByFoldsLF[f]);
+
+                            tmp= numOfFeat(trainFold, data.numAttributes()-1);
+                            numOfFeatByFoldsLF[f]=tmp[0];    //we count just logical features
+
+                            for(int c=0;c<clsTab.length;c++){
+                                model=clsTab[c];
+                                t1.start(); 
+                                ma=evaluateModel(trainFold,testFold,model);
+                                t1.stop();
+                                accByFoldsLF[c][f]=ma.getAcc();
+                                learnAllFCTimeLF[c][f]=t1.diff();
+                                model=ma.getClassifier();
+                                if(excludeUppers(model.getClass().getSimpleName()).equals("J48")){
+                                    j48=(J48)(model);
+                                    numOfTreeByFoldsLF[0][f]=(int)j48.measureTreeSize(); //treeSize
+                                    numOfTreeByFoldsLF[1][f]=(int)j48.measureNumLeaves(); //numOfLeaves
+                                    numOfTreeByFoldsLF[2][f]=sumOfTermsInConstrInTree(trainFold, data.numAttributes()-1, j48); //sumOfTerms
+                                    numOfTreeByFoldsLF[3][f]=(numOfTreeByFoldsLF[0][f]-numOfTreeByFoldsLF[1][f])==0 ? 0 : numOfTreeByFoldsLF[2][f]/(numOfTreeByFoldsLF[0][f]-numOfTreeByFoldsLF[1][f]); //sum of terms of constructs DIV num of nodes
+
+                                    numOfLogicalInTree[0][f]=numOfLogFeatInTree(trainFold, data.numAttributes()-1, j48);                            
+                                    numOfLogicalInTree[1][f]=sumOfLFTermsInConstrInTree(trainFold, data.numAttributes()-1, j48);
+                                }
+                                if(excludeUppers(model.getClass().getSimpleName()).equals("FURIA")){
+                                    FURIA fu=(FURIA)(model);
+                                    numOfRulesByFoldsLF[f]=fu.getRuleset().size();
+                                    numOfTermsByFoldsLF[f]=sumOfTermsInConstrInRule(fu.getRuleset(),trainFold);
+                                    numOfRatioByFoldsLF[f]=numOfRulesByFoldsLF[f]==0 ? 0 : (numOfTermsByFoldsLF[f]/numOfRulesByFoldsLF[f]);
+                                }
                             }
                         }
                         /****************************************************************/   
-                        /**************** NUMERICAL FEATURES ******************/
+                        /******************** NUMERICAL FEATURES ************************/
                         //numerical operators: /, -, +  ... e.g. for Credit score dataset
                         if(numerFeat){
                             t1.start();
-                            trainFoldNum=addNumFeat(trainFoldNum, OperationNum.DIVIDE, allCombSecOrd);
-                            testFoldNum=addNumFeat(testFoldNum, OperationNum.DIVIDE, allCombSecOrd);
+                            
+                            for(String op : operationNumUse){
+                                trainFoldNum=addNumFeat(trainFoldNum, OperationNum.valueOf(op), allCombSecOrd);
+                                testFoldNum=addNumFeat(testFoldNum, OperationNum.valueOf(op), allCombSecOrd);
+                            }
 
-                            trainFoldNum=addNumFeat(trainFoldNum, OperationNum.SUBTRACT, allCombSecOrd);
-                            testFoldNum=addNumFeat(testFoldNum, OperationNum.SUBTRACT, allCombSecOrd);  
-
-                            trainFoldNum=addNumFeat(trainFoldNum, OperationNum.ADD, allCombSecOrd);
-                            testFoldNum=addNumFeat(testFoldNum, OperationNum.ADD, allCombSecOrd);  
                             t1.stop();
                             numericalFCTime[f]=t1.diff();
-                            
-//                            if(!jakulin){
-//                                attrImpListMDL.println("Feature evaluation: MDL (Numerical features) - After CI");                
-//                                mdlCORElearn(trainFoldNum, rCaller, code);
-//                            }
 
                             tmp= numOfFeat(trainFoldNum, data.numAttributes()-1);
                             numFeatByFoldsNum[f]=tmp[5]; //numerical
@@ -1362,182 +1378,174 @@ public class FeatConstr {
                             }                    
                         } 
                         /****************************************************************/
-                        /**************** RELATIONAL FEATURES ******************/    
-                        t1.start();
-                        trainFoldRE=addRelFeat(trainFoldRE,allCombSecOrd,OperationRel.LESSTHAN,true,f); //true ... we count and remove uninformative features
-                        testFoldRE=addRelFeat(testFoldRE,allCombSecOrd,OperationRel.LESSTHAN,false,f);  //false .. we just skip uninformative features
-
-                        trainFoldRE=addRelFeat(trainFoldRE,allCombSecOrd,OperationRel.DIFF,true,f); //true ... we count and remove uninformative features
-                        testFoldRE=addRelFeat(testFoldRE,allCombSecOrd,OperationRel.DIFF,false,f);  //false .. we just skip uninformative features
-
-                        t1.stop();
-                        relationalFCTime[f]=t1.diff();
-                        
-//                        if(!jakulin){
-//                            attrImpListMDL.println("Feature evaluation: MDL (Relational features) - After CI");                
-//                            mdlCORElearn(trainFoldRE, rCaller, code);
-//                        }
-
-                        tmp= numOfFeat(trainFoldRE, data.numAttributes()-1);
-                        numFeatByFoldsRE[f]=tmp[4]; //relational
-
-                        for(int c=0;c<clsTab.length;c++){
-                            model=clsTab[c];
+                        /********************* RELATIONAL FEATURES **********************/
+                        if(relatFeat){
                             t1.start();
-                            ma=evaluateModel(trainFoldRE,testFoldRE,model);
+                            for(String op : operationRelUse){
+                                trainFoldRE=addRelFeat(trainFoldRE,allCombSecOrd,OperationRel.valueOf(op),true,f); //true ... we count and remove uninformative features
+                                testFoldRE=addRelFeat(testFoldRE,allCombSecOrd,OperationRel.valueOf(op),false,f);  //false .. we just skip uninformative features
+                            }
+
                             t1.stop();
-                            accByFoldsRE[c][f]=ma.getAcc();
-                            learnAllFCTimeRE[c][f]=t1.diff();
-                            model=ma.getClassifier();
-                            if(excludeUppers(model.getClass().getSimpleName()).equals("J48")){
-                                j48=(J48)(model);
-                                numOfTreeByFoldsRE[0][f]=(int)j48.measureTreeSize(); //treeSize
-                                numOfTreeByFoldsRE[1][f]=(int)j48.measureNumLeaves(); //numOfLeave
-                                numOfTreeByFoldsRE[2][f]=sumOfTermsInConstrInTree(trainFoldRE, data.numAttributes()-1, j48); //sumOfTerms
-                                numOfTreeByFoldsRE[3][f]=(numOfTreeByFoldsRE[0][f]-numOfTreeByFoldsRE[1][f])==0 ? 0 : numOfTreeByFoldsRE[2][f]/(numOfTreeByFoldsRE[0][f]-numOfTreeByFoldsRE[1][f]); //sum of terms of constr DIV num of nodes
-                                nC=numOfRelFeatInTree(trainFoldRE, data.numAttributes()-1, j48);
-                                numOfRelational[f]=nC[0]; //number of relational features in tree
-                                sumOfConstrRel[f]=nC[1]; //sum of constructs (relational features) in tree
-                            }
-                            if(excludeUppers(model.getClass().getSimpleName()).equals("FURIA")){
-                                FURIA fu=(FURIA)(model);
-                                numOfRulesByFoldsRE[f]=fu.getRuleset().size();
-                                numOfTermsByFoldsRE[f]=sumOfTermsInConstrInRule(fu.getRuleset(),trainFoldRE);
-                                numOfRatioByFoldsRE[f]=numOfRulesByFoldsRE[f]==0 ? 0 : (numOfTermsByFoldsRE[f]/numOfRulesByFoldsRE[f]);
-                            }
-                        }                
-                        /****************************************************************/
-                        /**************** CARTESIAN PRODUCT ******************/ 
-                        boolean  allDiscrete=true;
-                        for(int i=0;i<trainFoldCP.numAttributes();i++)
-                            if(trainFoldCP.attribute(i).isNumeric()){    //check if attribute is numeric
-                                allDiscrete=false; 
-                                System.out.println("We found continuous attribute!");
-                                break;
-                            }
+                            relationalFCTime[f]=t1.diff();
 
-                        t1.start();
-                        if(!allDiscrete){
-                        //discretization    
-                            weka.filters.supervised.attribute.Discretize filter;    //because of same class name in different packages
-                            // setup filter
-                            filter = new weka.filters.supervised.attribute.Discretize();
-                            //Discretization is by Fayyad & Irani's MDL method (the default).
-                            //filter.
-                            trainFoldCP.setClassIndex(trainFoldCP.numAttributes()-1); //we need class index for Fayyad & Irani's MDL
-                            testFoldCP.setClassIndex(testFoldCP.numAttributes()-1);
-                            //filter.setUseBinNumbers(true); //eg BXofY ... B1of1
-                            filter.setInputFormat(trainFoldCP);
-                            //apply filter
-                            trainFoldCP = Filter.useFilter(trainFoldCP, filter);
-                            testFoldCP = Filter.useFilter(testFoldCP, filter); //we have to apply discretization on test dataset based on info from train dataset
-                        }
-                        //N2=2;
-                        allCombSecOrd=allCombOfOrderN(listOfConcepts,N2); //create groups for second ordered features  
-                        unInfFeatures.clear();//just for any case ... it should be empty
-                        if(!allDiscrete){
-                            trainFoldCP=addCartFeat(data, trainFoldCP,allCombSecOrd,false,f,2,true);
-                            testFoldCP=addCartFeat(test, testFoldCP,allCombSecOrd,false,f,2,false); //we don't apply uninformative features
-                            }
-                        else{
-                            trainFoldCP=addCartFeat(trainFoldCP,allCombSecOrd,false,f,2,true);
-                            testFoldCP=addCartFeat(testFoldCP,allCombSecOrd,false,f,2,false); //we don't apply uninformative features
-                        }
+                            tmp= numOfFeat(trainFoldRE, data.numAttributes()-1);
+                            numFeatByFoldsRE[f]=tmp[4]; //relational
 
-                        t1.stop();
-                        cartesianFCTime[f]=t1.diff();
-                        
-//                        if(!jakulin){
-//                            attrImpListMDL.println("Feature evaluation: MDL (Cartesian features) - After CI");                
-//                            mdlCORElearn(trainFoldCP, rCaller, code);
-//                        }
-
-                        tmp= numOfFeat(trainFoldCP, data.numAttributes()-1);
-                        numFeatByFoldsCP[f]=tmp[3]; //Cartesian
-
-                        for(int c=0;c<clsTab.length;c++){
-                            model=clsTab[c];
-                            t1.start();
-                            ma=evaluateModel(trainFoldCP,testFoldCP,model);
-                            t1.stop();
-                            accByFoldsCP[c][f]=ma.getAcc();
-                            learnAllFCTimeCP[c][f]=t1.diff();
-                            model=ma.getClassifier();
-                            if(excludeUppers(model.getClass().getSimpleName()).equals("J48")){
-                                j48=(J48)(model);
-                                numOfTreeByFoldsCP[0][f]=(int)j48.measureTreeSize(); //treeSize
-                                numOfTreeByFoldsCP[1][f]=(int)j48.measureNumLeaves(); //numOfLeave
-                                numOfTreeByFoldsCP[2][f]=sumOfTermsInConstrInTree(trainFoldCP, data.numAttributes()-1, j48); //sumOfTerms
-                                numOfTreeByFoldsCP[3][f]=(numOfTreeByFoldsCP[0][f]-numOfTreeByFoldsCP[1][f])==0 ? 0 : numOfTreeByFoldsCP[2][f]/(numOfTreeByFoldsCP[0][f]-numOfTreeByFoldsCP[1][f]); //sum of terms of constr DIV num of nodes
-                                nC=numOfCartFeatInTree(trainFoldCP, data.numAttributes()-1, j48);
-                                numOfCartesian[f]=nC[0]; //number of Cartesian features in tree
-                                sumOfConstrCart[f]=nC[1]; //sum of constructs (Cartesian features) in tree
-                            }
-                            if(excludeUppers(model.getClass().getSimpleName()).equals("FURIA")){
-                                FURIA fu=(FURIA)(model);
-                                numOfRulesByFoldsCP[f]=fu.getRuleset().size();
-                                numOfTermsByFoldsCP[f]=sumOfTermsInConstrInRule(fu.getRuleset(),trainFoldCP);
-                                numOfRatioByFoldsCP[f]=numOfRulesByFoldsCP[f]==0 ? 0 : (numOfTermsByFoldsCP[f]/numOfRulesByFoldsCP[f]);
+                            for(int c=0;c<clsTab.length;c++){
+                                model=clsTab[c];
+                                t1.start();
+                                ma=evaluateModel(trainFoldRE,testFoldRE,model);
+                                t1.stop();
+                                accByFoldsRE[c][f]=ma.getAcc();
+                                learnAllFCTimeRE[c][f]=t1.diff();
+                                model=ma.getClassifier();
+                                if(excludeUppers(model.getClass().getSimpleName()).equals("J48")){
+                                    j48=(J48)(model);
+                                    numOfTreeByFoldsRE[0][f]=(int)j48.measureTreeSize(); //treeSize
+                                    numOfTreeByFoldsRE[1][f]=(int)j48.measureNumLeaves(); //numOfLeave
+                                    numOfTreeByFoldsRE[2][f]=sumOfTermsInConstrInTree(trainFoldRE, data.numAttributes()-1, j48); //sumOfTerms
+                                    numOfTreeByFoldsRE[3][f]=(numOfTreeByFoldsRE[0][f]-numOfTreeByFoldsRE[1][f])==0 ? 0 : numOfTreeByFoldsRE[2][f]/(numOfTreeByFoldsRE[0][f]-numOfTreeByFoldsRE[1][f]); //sum of terms of constr DIV num of nodes
+                                    nC=numOfRelFeatInTree(trainFoldRE, data.numAttributes()-1, j48);
+                                    numOfRelational[f]=nC[0]; //number of relational features in tree
+                                    sumOfConstrRel[f]=nC[1]; //sum of constructs (relational features) in tree
                                 }
-                        }        
-                        /****************************************************************/                   
-                        /**************** FURIA AND THRESHOLD FEATURES ******************/                                    
-                        t1.start();
-                        List<String> listOfFeat;
-                        listOfFeat=genFeatFromFuria(trainFoldFU, (ArrayList<String>) listOfConcepts, classToExplain, cf, pci,covering, featFromExplClass);
+                                if(excludeUppers(model.getClass().getSimpleName()).equals("FURIA")){
+                                    FURIA fu=(FURIA)(model);
+                                    numOfRulesByFoldsRE[f]=fu.getRuleset().size();
+                                    numOfTermsByFoldsRE[f]=sumOfTermsInConstrInRule(fu.getRuleset(),trainFoldRE);
+                                    numOfRatioByFoldsRE[f]=numOfRulesByFoldsRE[f]==0 ? 0 : (numOfTermsByFoldsRE[f]/numOfRulesByFoldsRE[f]);
+                                }
+                            }
+                        }
+                        /****************************************************************/
+                        /*********************** CARTESIAN PRODUCT **********************/
+                        if(cartFeat){
+                            boolean  allDiscrete=true;
+                            for(int i=0;i<trainFoldCP.numAttributes();i++)
+                                if(trainFoldCP.attribute(i).isNumeric()){    //check if attribute is numeric
+                                    allDiscrete=false; 
+                                    System.out.println("We found continuous attribute!");
+                                    break;
+                                }
 
-                        trainFoldFU=addFeatures(trainFoldFU, (ArrayList<String>) listOfFeat); //add features from Furia
-                        testFoldFU=addFeatures(testFoldFU, (ArrayList<String>) listOfFeat); //add features from Furia
-
-                        //num-of-N features ... we are counting true conditions from rules
-                        trainFoldFU=addFeatNumOfN(trainFoldFU, (ArrayList<String>) listOfFeat); //add num-Of-N features for evaluation
-                        testFoldFU=addFeatNumOfN(testFoldFU, (ArrayList<String>) listOfFeat); //add num-Of-N features for evaluation
-                        t1.stop();
-                        furiaThrTime[f]=t1.diff();
-
-//                        if(!jakulin){
-//                            attrImpListMDL.println("Feature evaluation: MDL (FURIA and threshold features) - After CI");
-//                            mdlCORElearn(trainFoldFU, rCaller, code);
-//                        }
-
-                        tmp= numOfFeat(trainFoldFU, data.numAttributes()-1);
-                        numFeatByFoldsFuriaThr[0][f]=tmp[1]; //threshold
-                        numFeatByFoldsFuriaThr[1][f]=tmp[2]; //FURIA
-
-                        for(int c=0;c<clsTab.length;c++){
-                            model=clsTab[c];
                             t1.start();
-                            ma=evaluateModel(trainFoldFU,testFoldFU,model);
+                            if(!allDiscrete){
+                            //discretization    
+                                weka.filters.supervised.attribute.Discretize filter;    //because of same class name in different packages
+                                // setup filter
+                                filter = new weka.filters.supervised.attribute.Discretize();
+                                //Discretization is by Fayyad & Irani's MDL method (the default).
+                                //filter.
+                                trainFoldCP.setClassIndex(trainFoldCP.numAttributes()-1); //we need class index for Fayyad & Irani's MDL
+                                testFoldCP.setClassIndex(testFoldCP.numAttributes()-1);
+                                //filter.setUseBinNumbers(true); //eg BXofY ... B1of1
+                                filter.setInputFormat(trainFoldCP);
+                                //apply filter
+                                trainFoldCP = Filter.useFilter(trainFoldCP, filter);
+                                testFoldCP = Filter.useFilter(testFoldCP, filter); //we have to apply discretization on test dataset based on info from train dataset
+                            }
+                            unInfFeatures.clear();//just for any case ... it should be empty
+                            if(!allDiscrete){
+                                trainFoldCP=addCartFeat(data, trainFoldCP,allCombSecOrd,false,f,2,true);
+                                testFoldCP=addCartFeat(test, testFoldCP,allCombSecOrd,false,f,2,false); //we don't apply uninformative features
+                                }
+                            else{
+                                trainFoldCP=addCartFeat(trainFoldCP,allCombSecOrd,false,f,2,true);
+                                testFoldCP=addCartFeat(testFoldCP,allCombSecOrd,false,f,2,false); //we don't apply uninformative features
+                            }
+
                             t1.stop();
-                            accuracyByFoldsFuriaThr[c][f]=ma.getAcc();
-                            learnFuriaThrTime[c][f]=t1.diff(); 
+                            cartesianFCTime[f]=t1.diff();
 
-                            model=ma.getClassifier();
-                            if(excludeUppers(model.getClass().getSimpleName()).equals("J48")){
-                                j48=(J48)(model);
-                                numTreeByFoldsFuriaThr[0][f]=(int)j48.measureTreeSize(); //treeSize
-                                numTreeByFoldsFuriaThr[1][f]=(int)j48.measureNumLeaves(); //numOfLeaves
-                                numTreeByFoldsFuriaThr[2][f]=sumOfTermsInConstrInTree(trainFoldFU, data.numAttributes()-1, j48); //sumOfTerms
-                                numTreeByFoldsFuriaThr[3][f]=(numTreeByFoldsFuriaThr[0][f]-numTreeByFoldsFuriaThr[1][f])==0 ? 0 : numTreeByFoldsFuriaThr[2][f]/(numTreeByFoldsFuriaThr[0][f]-numTreeByFoldsFuriaThr[1][f]);
+                            tmp= numOfFeat(trainFoldCP, data.numAttributes()-1);
+                            numFeatByFoldsCP[f]=tmp[3]; //Cartesian
 
-                                int furiaThrC[]=numOfDrThrFeatInTree(trainFoldFU, data.numAttributes()-1, j48);
-
-                                numOfFuriaThrInTreeByFoldsF[0][f]=furiaThrC[0];
-                                numOfFuriaThrInTreeByFoldsF[1][f]=furiaThrC[1];
-                                numOfFuriaThrInTreeByFoldsF[2][f]=furiaThrC[2];
-                                numOfFuriaThrInTreeByFoldsF[3][f]=furiaThrC[3];
+                            for(int c=0;c<clsTab.length;c++){
+                                model=clsTab[c];
+                                t1.start();
+                                ma=evaluateModel(trainFoldCP,testFoldCP,model);
+                                t1.stop();
+                                accByFoldsCP[c][f]=ma.getAcc();
+                                learnAllFCTimeCP[c][f]=t1.diff();
+                                model=ma.getClassifier();
+                                if(excludeUppers(model.getClass().getSimpleName()).equals("J48")){
+                                    j48=(J48)(model);
+                                    numOfTreeByFoldsCP[0][f]=(int)j48.measureTreeSize(); //treeSize
+                                    numOfTreeByFoldsCP[1][f]=(int)j48.measureNumLeaves(); //numOfLeave
+                                    numOfTreeByFoldsCP[2][f]=sumOfTermsInConstrInTree(trainFoldCP, data.numAttributes()-1, j48); //sumOfTerms
+                                    numOfTreeByFoldsCP[3][f]=(numOfTreeByFoldsCP[0][f]-numOfTreeByFoldsCP[1][f])==0 ? 0 : numOfTreeByFoldsCP[2][f]/(numOfTreeByFoldsCP[0][f]-numOfTreeByFoldsCP[1][f]); //sum of terms of constr DIV num of nodes
+                                    nC=numOfCartFeatInTree(trainFoldCP, data.numAttributes()-1, j48);
+                                    numOfCartesian[f]=nC[0]; //number of Cartesian features in tree
+                                    sumOfConstrCart[f]=nC[1]; //sum of constructs (Cartesian features) in tree
+                                }
+                                if(excludeUppers(model.getClass().getSimpleName()).equals("FURIA")){
+                                    FURIA fu=(FURIA)(model);
+                                    numOfRulesByFoldsCP[f]=fu.getRuleset().size();
+                                    numOfTermsByFoldsCP[f]=sumOfTermsInConstrInRule(fu.getRuleset(),trainFoldCP);
+                                    numOfRatioByFoldsCP[f]=numOfRulesByFoldsCP[f]==0 ? 0 : (numOfTermsByFoldsCP[f]/numOfRulesByFoldsCP[f]);
+                                    }
                             }
-                            if(excludeUppers(model.getClass().getSimpleName()).equals("FURIA")){
-                                FURIA fu=(FURIA)(model);
-                                complexityOfFuria[0][f]=fu.getRuleset().size();
-                                complexityOfFuria[1][f]=sumOfTermsInConstrInRule(fu.getRuleset(),trainFoldFU);
-                                complexityOfFuria[2][f]=complexityOfFuria[0][f]==0 ? 0 : (complexityOfFuria[1][f]/complexityOfFuria[0][f]);
+                        }
+                        /****************************************************************/                   
+                        /**************** FURIA AND THRESHOLD FEATURES ******************/
+                        if(decRuleFeat || thrFeat){
+                            t1.start();
+                            List<String> listOfFeat;
+                            listOfFeat=genFeatFromFuria(trainFoldFU, (ArrayList<String>) listOfConcepts, classToExplain, cf, pci,covering, featFromExplClass);
+
+                            if(decRuleFeat){
+                                trainFoldFU=addFeatures(trainFoldFU, (ArrayList<String>) listOfFeat); //add features from Furia
+                                testFoldFU=addFeatures(testFoldFU, (ArrayList<String>) listOfFeat); //add features from Furia
                             }
-                        }              
+                            
+                            //num-of-N features ... we are counting true conditions from rules
+                            if(thrFeat){                            
+                                trainFoldFU=addFeatNumOfN(trainFoldFU, (ArrayList<String>) listOfFeat); //add num-Of-N features for evaluation
+                                testFoldFU=addFeatNumOfN(testFoldFU, (ArrayList<String>) listOfFeat); //add num-Of-N features for evaluation
+                            }
+                            t1.stop();
+                            furiaThrTime[f]=t1.diff();
+
+                            tmp= numOfFeat(trainFoldFU, data.numAttributes()-1);
+                            numFeatByFoldsFuriaThr[0][f]=tmp[1]; //threshold
+                            numFeatByFoldsFuriaThr[1][f]=tmp[2]; //FURIA
+
+                            for(int c=0;c<clsTab.length;c++){
+                                model=clsTab[c];
+                                t1.start();
+                                ma=evaluateModel(trainFoldFU,testFoldFU,model);
+                                t1.stop();
+                                accuracyByFoldsFuriaThr[c][f]=ma.getAcc();
+                                learnFuriaThrTime[c][f]=t1.diff(); 
+
+                                model=ma.getClassifier();
+                                if(excludeUppers(model.getClass().getSimpleName()).equals("J48")){
+                                    j48=(J48)(model);
+                                    numTreeByFoldsFuriaThr[0][f]=(int)j48.measureTreeSize(); //treeSize
+                                    numTreeByFoldsFuriaThr[1][f]=(int)j48.measureNumLeaves(); //numOfLeaves
+                                    numTreeByFoldsFuriaThr[2][f]=sumOfTermsInConstrInTree(trainFoldFU, data.numAttributes()-1, j48); //sumOfTerms
+                                    numTreeByFoldsFuriaThr[3][f]=(numTreeByFoldsFuriaThr[0][f]-numTreeByFoldsFuriaThr[1][f])==0 ? 0 : numTreeByFoldsFuriaThr[2][f]/(numTreeByFoldsFuriaThr[0][f]-numTreeByFoldsFuriaThr[1][f]);
+
+                                    int furiaThrC[]=numOfDrThrFeatInTree(trainFoldFU, data.numAttributes()-1, j48);
+
+                                    numOfFuriaThrInTreeByFoldsF[0][f]=furiaThrC[0];
+                                    numOfFuriaThrInTreeByFoldsF[1][f]=furiaThrC[1];
+                                    numOfFuriaThrInTreeByFoldsF[2][f]=furiaThrC[2];
+                                    numOfFuriaThrInTreeByFoldsF[3][f]=furiaThrC[3];
+                                }
+                                if(excludeUppers(model.getClass().getSimpleName()).equals("FURIA")){
+                                    FURIA fu=(FURIA)(model);
+                                    complexityOfFuria[0][f]=fu.getRuleset().size();
+                                    complexityOfFuria[1][f]=sumOfTermsInConstrInRule(fu.getRuleset(),trainFoldFU);
+                                    complexityOfFuria[2][f]=complexityOfFuria[0][f]==0 ? 0 : (complexityOfFuria[1][f]/complexityOfFuria[0][f]);
+                                }
+                            }
+                        }
                         /****************************************************************/ 
-                        /**************** ALL FEATURES ******************/
-                        /*Merge Logical, Furia and Thr features*/
-                        /*get everything except class from Logical features train fold*/
+                        /************************ ALL FEATURES **************************/
+                        /*Merge all types of features that are included in contruction*/
+                        /*get all constructed Logical features, without class; if logical features are not included then we take original attributes without class attribute*/
                         Remove remove= new Remove();
                         remove.setAttributeIndices("last");
                         remove.setInputFormat(trainFold);
@@ -1547,7 +1555,7 @@ public class FeatConstr {
                         remove.setInputFormat(testFold);
                         testFold = Filter.useFilter(testFold, remove); 
 
-                        /*get all features from numerical features, without class -  train fold*/
+                        /*get all constructed numerical features, without class*/
                         if(numerFeat){
                             if(!(numOfOrigAttr==trainFoldNum.numAttributes()-1)){ //if we don't get any feature from numerical then we skip merge with numerical feat
                                 remove.setAttributeIndices((numOfOrigAttr+1)+"-"+(trainFoldNum.numAttributes()-1));
@@ -1559,56 +1567,80 @@ public class FeatConstr {
                                 remove.setInvertSelection(true);
                                 remove.setInputFormat(testFoldNum);
                                 testFoldNum = Filter.useFilter(testFoldNum, remove); 
-                                /*merge logical features and Cartesian product features*/
+                                /*merge before constructed features and numerical features*/
                                 trainFold=Instances.mergeInstances(trainFold,trainFoldNum);              
                                 testFold=Instances.mergeInstances(testFold,testFoldNum);
                             }                                
                         }    
 
-                        /*get all features from relational features, without class -  train fold*/
-                        if(!(numOfOrigAttr==trainFoldRE.numAttributes()-1)){ //if we don't get any feature from Relational then we skip merge with relational feat
-                            remove.setAttributeIndices((numOfOrigAttr+1)+"-"+(trainFoldRE.numAttributes()-1));
-                            remove.setInvertSelection(true);
-                            remove.setInputFormat(trainFoldRE);
-                            trainFoldRE = Filter.useFilter(trainFoldRE, remove); 
+                        /*get all constructed relational features, without class*/
+                        if(relatFeat){
+                            if(!(numOfOrigAttr==trainFoldRE.numAttributes()-1)){ //if we don't get any feature from Relational then we skip merge with relational feat
+                                remove.setAttributeIndices((numOfOrigAttr+1)+"-"+(trainFoldRE.numAttributes()-1));
+                                remove.setInvertSelection(true);
+                                remove.setInputFormat(trainFoldRE);
+                                trainFoldRE = Filter.useFilter(trainFoldRE, remove); 
 
-                            remove.setAttributeIndices((numOfOrigAttr+1)+"-"+(testFoldRE.numAttributes()-1));
-                            remove.setInvertSelection(true);
-                            remove.setInputFormat(testFoldRE);
-                            testFoldRE = Filter.useFilter(testFoldRE, remove); 
-                            /*merge logical features and Cartesian product features*/
-                            trainFold=Instances.mergeInstances(trainFold,trainFoldRE);              
-                            testFold=Instances.mergeInstances(testFold,testFoldRE);
+                                remove.setAttributeIndices((numOfOrigAttr+1)+"-"+(testFoldRE.numAttributes()-1));
+                                remove.setInvertSelection(true);
+                                remove.setInputFormat(testFoldRE);
+                                testFoldRE = Filter.useFilter(testFoldRE, remove); 
+                                /*merge before constructed features and relational features*/
+                                trainFold=Instances.mergeInstances(trainFold,trainFoldRE);              
+                                testFold=Instances.mergeInstances(testFold,testFoldRE);
+                            }
                         }
 
-                        /*get all features from Cartesian product features, without class -  train fold*/
-                        if(!(numOfOrigAttr==trainFoldCP.numAttributes()-1)){ //if we don't get any feature from CP then we skip merge with Cartesian
-                            remove.setAttributeIndices((numOfOrigAttr+1)+"-"+(trainFoldCP.numAttributes()-1));
-                            remove.setInvertSelection(true);
-                            remove.setInputFormat(trainFoldCP);
-                            trainFoldCP = Filter.useFilter(trainFoldCP, remove); 
+                        /*get all constructed Cartesian product features, without class*/
+                        if(cartFeat){
+                            if(!(numOfOrigAttr==trainFoldCP.numAttributes()-1)){ //if we don't get any feature from CP then we skip merge with Cartesian
+                                remove.setAttributeIndices((numOfOrigAttr+1)+"-"+(trainFoldCP.numAttributes()-1));
+                                remove.setInvertSelection(true);
+                                remove.setInputFormat(trainFoldCP);
+                                trainFoldCP = Filter.useFilter(trainFoldCP, remove); 
 
-                            remove.setAttributeIndices((numOfOrigAttr+1)+"-"+(testFoldCP.numAttributes()-1));
-                            remove.setInvertSelection(true);
-                            remove.setInputFormat(testFoldCP);
-                            testFoldCP = Filter.useFilter(testFoldCP, remove); 
-                            /*merge logical features and Cartesian product features*/
-                            trainFold=Instances.mergeInstances(trainFold,trainFoldCP);              
-                            testFold=Instances.mergeInstances(testFold,testFoldCP);
+                                remove.setAttributeIndices((numOfOrigAttr+1)+"-"+(testFoldCP.numAttributes()-1));
+                                remove.setInvertSelection(true);
+                                remove.setInputFormat(testFoldCP);
+                                testFoldCP = Filter.useFilter(testFoldCP, remove); 
+                                /*merge before constructed features and Cartesian product features*/
+                                trainFold=Instances.mergeInstances(trainFold,trainFoldCP);              
+                                testFold=Instances.mergeInstances(testFold,testFoldCP);
+                            }
                         }
 
-                        /*get just features+class from Furia and thr fold*/
-                        remove.setAttributeIndices((numOfOrigAttr+1)+"-last");
+                        /*get all constructed decision rules and threshold features, without class*/
+                        if(decRuleFeat || thrFeat){
+                            if(!(numOfOrigAttr==trainFoldFU.numAttributes()-1)){ //if we don't get any feature from FU then we skip merge with Cartesian
+                                remove.setAttributeIndices((numOfOrigAttr+1)+"-"+(trainFoldFU.numAttributes()-1));
+                                remove.setInvertSelection(true);
+                                remove.setInputFormat(trainFoldFU);
+                                trainFoldFU = Filter.useFilter(trainFoldFU, remove); 
+                                
+                                remove.setAttributeIndices((numOfOrigAttr+1)+"-"+(testFoldFU.numAttributes()-1));
+                                remove.setInvertSelection(true);
+                                remove.setInputFormat(testFoldFU);
+                                testFoldFU = Filter.useFilter(testFoldFU, remove); 
+                                /*merge before constructed features and decision rule and/or threshold features*/
+                                trainFold=Instances.mergeInstances(trainFold,trainFoldFU);              
+                                testFold=Instances.mergeInstances(testFold,testFoldFU);
+                            }                                                                               
+                        }
+                        
+                        //add class to constructed features
+                        remove.setAttributeIndices("last"); //we need class attribute
                         remove.setInvertSelection(true);
-                        remove.setInputFormat(trainFoldFU);
-                        trainFoldFU = Filter.useFilter(trainFoldFU, remove); 
-                        remove.setAttributeIndices((numOfOrigAttr+1)+"-last");
+                        remove.setInputFormat(data);
+                        Instances trainClassAttr = Filter.useFilter(data, remove); 
+                        remove.setAttributeIndices("last"); //we need class attribute
                         remove.setInvertSelection(true);
-                        remove.setInputFormat(testFoldFU);
-                        testFoldFU = Filter.useFilter(testFoldFU, remove); 
-                        trainFold=Instances.mergeInstances(trainFold,trainFoldFU);            
-                        testFold=Instances.mergeInstances(testFold,testFoldFU);
+                        remove.setInputFormat(test);
+                        Instances testClassAttr = Filter.useFilter(test, remove); 
 
+                        trainFold=Instances.mergeInstances(trainFold,trainClassAttr);            
+                        testFold=Instances.mergeInstances(testFold,testClassAttr);
+                        
+                        //set class index
                         trainFold.setClassIndex(trainFold.numAttributes()-1);
                         testFold.setClassIndex(testFold.numAttributes()-1);
 
@@ -1620,7 +1652,10 @@ public class FeatConstr {
 
                         if(!jakulin){
                             attrImpListMDL.println("Feature evaluation: MDL (All features dataset) - After CI");                
-                            mdlCORElearn(trainFold, rCaller, code);
+                                mdlCORElearn(trainFold, rCaller, code);
+                            
+                            attrImpListReliefF.println("Feature evaluation: ReliefF (All features dataset) - After CI");
+                                reliefFcalcDistanceOnAttributes(data, trainFold);
                         }
                         
                         tmp = numOfFeat(trainFold, data.numAttributes()-1);
@@ -1682,10 +1717,9 @@ public class FeatConstr {
                                 logFile.print("Feature selection on validation dataset");
                                 bestParamPerFold.println("Feature selection on validation dataset");
                             }
-                            int split=4;    //5 ... 80%:20%, 4 ... 75%25%, 3 ... 66%:33%
 
                             if(f==0)
-                                switch(split){
+                                switch(splitTrainFS){ //5 ... 80%:20%, 4 ... 75%25%, 3 ... 66%:33%
                                     case 5: logFile.println("Percentage of split (subTrain:validation) 80%:20%"); break;
                                     case 4: logFile.println("Percentage of split (subTrain:validation) 75%:25%"); break;
                                     case 3: logFile.println("Percentage of split (subTrain:validation) 66%:33%"); break;
@@ -1693,7 +1727,7 @@ public class FeatConstr {
                                 }
                             for(int i=0;i<clsTab.length;i++){
                                 ParamSearchEval pse;
-                                pse=paramSearch(trainFold, testFold, clsTab[i],data.numAttributes()-1,split, rCaller, code);
+                                pse=paramSearch(trainFold, testFold, clsTab[i],data.numAttributes()-1,splitTrainFS, rCaller, code);
                                 accuracyByFoldsPS[i][f]=pse.getAcc();
 
                                 //we need info for different classifiers
@@ -1795,6 +1829,12 @@ public class FeatConstr {
                             logFile.println("Avg. model building time: "+df.format(mean(modelBuildTime))+" [ms] (stdev "+ df.format(Math.sqrt(var(modelBuildTime,mean(modelBuildTime))))+")");
                     }
                     
+                    if(!jakulin){
+                        System.out.println("*********************************************************************************");
+                            logFile.println("*********************************************************************************");  
+                        System.out.println("Feature types included in construction: " + (logFeat ? "logical operators based, " : "") + (decRuleFeat ? "decision rule, " : "") + (thrFeat ? "threshold, " : "") + (relatFeat ? "relational, " : "") + (cartFeat ? "Cartesian product, " : "")+(numerFeat ? "numerical" : ""));
+                            logFile.println("Feature types included in construction: " + (logFeat ? "logical operators based, " : "") + (decRuleFeat ? "decision rule, " : "") + (thrFeat ? "threshold, " : "") + (relatFeat ? "relational, " : "") + (cartFeat ? "Cartesian product, " : "")+(numerFeat ? "numerical" : ""));
+                    }
                     System.out.println("*********************************************************************************");
                         logFile.println("*********************************************************************************");      
                     System.out.println("Original dataset");
@@ -2108,25 +2148,25 @@ public class FeatConstr {
         
         if(justExplain || (justExplain && visualisation)){
             impGroupsKD.close();
-            attrImpListMDL_KD.close();     
+            attrImpListMDL_KD.close();
+            attrImpListReliefF_KD.close();
             discIntervalsKD.close();              
         }
         else if (!visualisation || (!justExplain && !visualisation)){
             logFile.close();
             if(!visualisation && !exhaustive && !jakulin)
                 bestParamPerFold.close();
-            if(!treeSHAP)
-                samplesStat.close();
             
             impGroups.close();
-            if(!jakulin)
-                attrImpListMDL.close();     
+            if(!jakulin){
+                attrImpListMDL.close();
+                attrImpListReliefF.close();
+            }
             discIntervals.close();  
         }
         if(groupsByThrStat && !visualisation && !justExplain &&!exhaustive && !jakulin)
             groupsStat.close();
         
-//        rCaller.deleteTempFiles();
         rCaller.stopRCallerOnline();        
     }
 
@@ -3478,6 +3518,26 @@ public class FeatConstr {
         }
     }
     
+    public static void reliefFcalcDistanceOnAttributes(Instances dataOrig, Instances dataAfterCI){
+        try{
+            ReliefFcalcDistOnOrigAttr evals=new ReliefFcalcDistOnOrigAttr(dataOrig, dataAfterCI); //we set original and enriched dataset with constructor, we don't need buildEvaluator method; usage ReliefFcalcDistOnOrigAttr(dataOrig, dataAfterCI)
+            AttributeSelection attSel = new AttributeSelection();
+            Ranker search = new Ranker();     
+            attSel.setRanking(true);
+            attSel.setEvaluator(evals);
+            attSel.setSearch(search);
+            attSel.SelectAttributes(dataAfterCI);
+            if(justExplain)
+                attrImpListReliefF_KD.println(attSel.toResultsString().substring(attSel.toResultsString().indexOf("Ranked attributes"),attSel.toResultsString().indexOf("Selected attributes"))); //display the results from the ranking
+            else
+                attrImpListReliefF.println(attSel.toResultsString().substring(attSel.toResultsString().indexOf("Ranked attributes"),attSel.toResultsString().indexOf("Selected attributes"))); //display the results from the ranking
+        }
+        catch (Exception ex){
+            System.out.println("Error in the method reliefFcalcDistanceOnAttributes");
+                Logger.getLogger(FeatConstr.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
     public static void lowLevelReliefF(Instances data) throws Exception {
         AttributeSelection attSel = new AttributeSelection();
         Ranker search = new Ranker();
@@ -3487,10 +3547,10 @@ public class FeatConstr {
         attSel.setSearch(search);
         attSel.SelectAttributes(data);
         String out=attSel.toResultsString().substring(attSel.toResultsString().indexOf("Ranked attributes"),attSel.toResultsString().indexOf("Selected attributes"));
-        out=out.replaceAll("[\r\n]+", "\n");
-        String[] lines = out.split("\\r?\\n");  //for win view, just to have nice report ;)
-        for (String line : lines)
-            System.out.printf("%s \r\n",line);
+        if(justExplain)
+            attrImpListReliefF_KD.println(out); //display the results from the ranking
+        else
+            attrImpListReliefF.println(out); //display the results from the ranking
     }
 
     public static void lowLevelInfoGain(Instances data) throws Exception {
@@ -3572,9 +3632,6 @@ public class FeatConstr {
         Instances trainFold = new Instances(dataset);   //we use all instances for train
         trainFold.setClassIndex(trainFold.numAttributes()-1);
         Random rnd = new Random(1);
-        RandomForest rf=new RandomForest(); //rf.setSeed(1);
-            rf.setNumExecutionSlots(processors);
-            rf.setCalcOutOfBag(true);
         int minN=minNoise;
         
         if(trainFold.classAttribute().isNumeric())
@@ -3717,9 +3774,15 @@ public class FeatConstr {
         else{
             predictionModel.buildClassifier(trainFold);  
             if(excludeUppers(predictionModel.getClass().getSimpleName()).equals("RF")){ //OOB ia also calculated
-                rf=(RandomForest)predictionModel;
-                System.out.print("Internal evaluation of the model (OOB): "+(1-rf.measureOutOfBagError())*100);
-                    impGroupsKD.print("Internal evaluation of the model (OOB): "+(1-rf.measureOutOfBagError())*100);
+                RandomForest rf=(RandomForest)predictionModel;
+                System.out.print("Internal evaluation of the model (OOB): "+(1-rf.measureOutOfBagError())*100+" ");
+                    impGroupsKD.print("Internal evaluation of the model (OOB): "+(1-rf.measureOutOfBagError())*100+" ");
+            }
+            
+            if(excludeUppers(predictionModel.getClass().getSimpleName()).equals("SMO")){
+                SMO svm=(SMO)predictionModel;
+                System.out.print("Kernel in SMO: "+svm.getKernel()+" ");
+                    impGroupsKD.print("Kernel in SMO: "+svm.getKernel()+" ");
             }
             /*IME*/            
             for(int i=0;i<numClasses;i++){//we explain all classes    
@@ -3736,8 +3799,8 @@ public class FeatConstr {
                 filter.setInputFormat(explainData);
                 explainData = Filter.useFilter(explainData, filter);
                 
-                System.out.println("IME (explanation), "+method.name()+", "+(method.name().equals("adaptiveSampling") ? "min samples: "+minS+", sum of samples: "+sumOfSmp : method.name().equals("diffSampling")?" min samples: "+minS:" N_SAMPLES: "+N_SAMPLES)+" - alg. for searching concepts: "+predictionModel.getClass().getSimpleName());
-                     impGroupsKD.println("IME (explanation), "+method.name()+", "+(method.name().equals("adaptiveSampling") ? "min samples: "+minS+", sum of samples: "+sumOfSmp : method.name().equals("diffSampling")?" min samples: "+minS:" N_SAMPLES: "+N_SAMPLES)+" - alg. for searching concepts: "+predictionModel.getClass().getSimpleName()); 
+                System.out.println("IME (explanation), "+method.name()+", "+(method.name().equals("adaptiveSampling") ? "min samples: "+minS+", sum of samples: "+sumOfSmp : method.name().equals("diffSampling")?"min samples: "+minS:"N_SAMPLES: "+N_SAMPLES)+" - alg. for searching concepts: "+predictionModel.getClass().getSimpleName());
+                     impGroupsKD.println("IME (explanation), "+method.name()+", "+(method.name().equals("adaptiveSampling") ? "min samples: "+minS+", sum of samples: "+sumOfSmp : method.name().equals("diffSampling")?"min samples: "+minS:"N_SAMPLES: "+N_SAMPLES)+" - alg. for searching concepts: "+predictionModel.getClass().getSimpleName()); 
                 System.out.println("Explaining class: "+trainFold.classAttribute().value(classToExplain)+", explaining whole dataset: "+(explAllData?"YES":"NO"));    //classToExplain instead of i if we explain just one class
                     impGroupsKD.println("Explaining class: "+trainFold.classAttribute().value(classToExplain)+", explaining all dataset: "+(explAllData?"YES":"NO"));
                 System.out.println("---------------------------------------------------------------------------------");
@@ -3824,73 +3887,91 @@ public class FeatConstr {
             impGroupsKD.print("\t"); printFqAttrOneRow(listOfConcepts,trainFold);
             impGroupsKD.println("\n*********************************************************************************");
         
-        //logical features
-        //depth 2
         int N2=2;
-        List allCombSecOrd=allCombOfOrderN(listOfConcepts,N2); //create groups for second ordered features
-            trainFold= addLogFeatDepth(trainFold, allCombSecOrd,OperationLog.AND, false, 0, N2); //0 - we don't count unInf features
-            trainFold= addLogFeatDepth(trainFold, allCombSecOrd,OperationLog.OR, false, 0, N2); //0 - we don't count unInf features
-            trainFold= addLogFeatDepth(trainFold, allCombSecOrd,OperationLog.EQU, false, 0, N2); //0 - we don't count unInf features
-            trainFold= addLogFeatDepth(trainFold, allCombSecOrd,OperationLog.XOR, false, 0, N2); //0 - we don't count unInf features
-            trainFold= addLogFeatDepth(trainFold, allCombSecOrd,OperationLog.IMPL, false, 0, N2); //0 - we don't count unInf features
-        //depth 3
-        int N3=3;
-        List allCombThirdOrd=allCombOfOrderN(listOfConcepts,N3);
-            trainFold= addLogFeatDepth(trainFold, allCombThirdOrd,OperationLog.AND, false, 0, N3); //0 - we don't count unInf features
-            trainFold= addLogFeatDepth(trainFold, allCombThirdOrd,OperationLog.OR, false, 0, N3); //0 - we don't count unInf features
+        List allCombSecOrd=allCombOfOrderN(listOfConcepts,N2); //create groups for second ordered features        
+        //logical features
+        if(logFeat){
+            //depth 2
+            for(String op : operationLogUse)    
+                trainFold= addLogFeatDepth(trainFold, allCombSecOrd,OperationLog.valueOf(op), false, 0, N2); //0 - we don't count unInf features
+  
+            //construction depth higher than 2
+            if(featDepth>2){
+                for(int i=3;i<=featDepth; i++){
+                    List allCombNthOrd=allCombOfOrderN(listOfConcepts,i);
+                    for(String op : operationLogUse)
+                        if(OperationLog.valueOf(op)==OperationLog.AND || OperationLog.valueOf(op)==OperationLog.OR)
+                            trainFold= addLogFeatDepth(trainFold, allCombNthOrd,OperationLog.valueOf(op), false, 0, i); //0 - we don't count unInf features
+                }
+            }
+        }
         
         //decision rule and threshold features
-        List<String> listOfFeat;
-        listOfFeat=genFeatFromFuria(dataset, (ArrayList<String>) listOfConcepts, classToExplain, cf, pci,covering, featFromExplClass);   //generate features from Furia, parameter of FURIA cfF=0.7, cfI=0.9 stopping criteria 
-            trainFold=addFeatures(trainFold, (ArrayList<String>) listOfFeat); //add features from Furia
+        if(decRuleFeat || thrFeat){
+            List<String> listOfFeat;
+            listOfFeat=genFeatFromFuria(dataset, (ArrayList<String>) listOfConcepts, classToExplain, cf, pci,covering, featFromExplClass);   //generate features from Furia, parameter of FURIA cfF=0.7, cfI=0.9 stopping criteria 
+            if(decRuleFeat)
+                trainFold=addFeatures(trainFold, (ArrayList<String>) listOfFeat); //add features from Furia
                 
-        //num-of-N features ... we are counting true conditions from rules
-            trainFold=addFeatNumOfN(trainFold, (ArrayList<String>) listOfFeat); //add num-Of-N features for evaluation
+            //num-of-N features ... we are counting true conditions from rules
+            if(thrFeat)
+                trainFold=addFeatNumOfN(trainFold, (ArrayList<String>) listOfFeat); //add num-Of-N features for evaluation
+        }
         
-        //numerical features division 
+        //numerical features
         if(numerFeat){
-            trainFold=addNumFeat(trainFold, OperationNum.DIVIDE, allCombSecOrd);              
-            trainFold=addNumFeat(trainFold, OperationNum.SUBTRACT, allCombSecOrd);
-            trainFold=addNumFeat(trainFold, OperationNum.ADD, allCombSecOrd);
+            for(String op : operationNumUse)
+                trainFold=addNumFeat(trainFold, OperationNum.valueOf(op), allCombSecOrd);
         }	
         
         //relational features
-            trainFold=addRelFeat(trainFold,allCombSecOrd,OperationRel.LESSTHAN,true,0); //true ... we remove uninformative features, last parameter is here irrelevant, we just put one value
-            trainFold=addRelFeat(trainFold,allCombSecOrd,OperationRel.DIFF,true,0); //true ... we remove uninformative features                
-        
-        //Cartesian features
-        boolean  allDiscrete=true;
-        for(int i=0;i<dataset.numAttributes();i++)
-            if(dataset.attribute(i).isNumeric()){    //check if problem is numeric
-                allDiscrete=false; 
-                System.out.println("We found continuous attribute!");
-                break;
-            }
-        
-        if(!allDiscrete){
-            //discretization    
-            weka.filters.supervised.attribute.Discretize filterDis;    //because of same class name in different packages
-            // setup filter
-            filterDis = new weka.filters.supervised.attribute.Discretize();
-            //filter.
-            dataset.setClassIndex(dataset.numAttributes()-1); //we need class index for Fayyad & Irani's MDL
-            filterDis.setInputFormat(dataset);
-            // apply filter
-            dataset = Filter.useFilter(dataset, filterDis);
+        if(relatFeat){
+            for(String op : operationRelUse)
+                trainFold=addRelFeat(trainFold,allCombSecOrd,OperationRel.valueOf(op),true,0); //true ... we remove uninformative features, last parameter is here irrelevant, we just put one value
         }
         
-        trainFold=addCartFeat(trainFold, dataset,allCombSecOrd,false,0,N2,true);
-        attrImpListMDL_KD.println("MDL - after CI");
-        mdlCORElearn(trainFold, rCaller, code);
+        //Cartesian features
+        Instances origData=null;
+        if(cartFeat){
+            boolean  allDiscrete=true;
+            for(int i=0;i<dataset.numAttributes();i++)
+                if(dataset.attribute(i).isNumeric()){    //check if problem is numeric
+                    allDiscrete=false; 
+                    System.out.println("We found continuous attribute!");
+                    break;
+                }
 
+            origData = new Instances(dataset);   //For the ReliefF evaluation we need original data. The dataset "dataset" is changed below.
+
+            if(!allDiscrete){
+                //discretization    
+                weka.filters.supervised.attribute.Discretize filterDis;    //because of same class name in different packages
+                // setup filter
+                filterDis = new weka.filters.supervised.attribute.Discretize();
+                //filter.
+                dataset.setClassIndex(dataset.numAttributes()-1); //we need class index for Fayyad & Irani's MDL
+                filterDis.setInputFormat(dataset);
+                // apply filter
+                dataset = Filter.useFilter(dataset, filterDis);
+            }
+
+            trainFold=addCartFeat(trainFold, dataset,allCombSecOrd,false,0,N2,true);
+        }
+        
+        //evaluation
+        attrImpListMDL_KD.println("MDL - after CI");
+            mdlCORElearn(trainFold, rCaller, code);
+        attrImpListReliefF_KD.println("ReliefF - after CI");
+        if(cartFeat)
+            reliefFcalcDistanceOnAttributes(origData, trainFold);
+        else
+            reliefFcalcDistanceOnAttributes(dataset, trainFold);
+        
         System.out.println("Constructs have been done!");
         
         if(visualisation){        
             System.out.println("Drawing ...");
-            rf=new RandomForest();
-            rf.setNumExecutionSlots(processors);
-            rf.setCalcOutOfBag(true);
-            visualizeModelInstances(rf, trainFold, true, RESOLUTION, numOfImpt, visFrom, visTo);  //visualise explanations from e.g., 50th to 60 instance
+            visualizeModelInstances(visualModel, trainFold, true, RESOLUTION, numOfImpt, visFrom, visTo);  //visualise explanations from e.g., 50th to 60 instance
             System.out.println("Drawing is finished!");
         }  
     
@@ -5055,7 +5136,7 @@ public class FeatConstr {
 
         for(int i = fromInst; i <= toInst; i++){
             outputDir = visExplFC ? "visualisation/afterFC/eps/" : "visualisation/beforeFC/eps/";
-            double[] instanceExplanation = IME.explainInstance(predictionModel, data, new Instances(data,(i-1),1), N_SAMPLES, isClassification, classToExplain);	
+            double[] instanceExplanation = IME.explainInstanceNew(predictionModel, data, new Instances(data,(i-1),1), N_SAMPLES, isClassification, classToExplain);	
             double pred = -1;   
 
             if (isClassification)

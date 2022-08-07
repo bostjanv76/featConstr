@@ -6,40 +6,40 @@
 @attribute A4 {0,1}
 @attribute A5 {0,1}
 @attribute A6 {0,1}
-@attribute 'A2 equ A3' {0,1}
-@attribute 'A4 equ A5' {0,1}
-@attribute 'A3 equ A4' {0,1}
-@attribute 'A1 equ A2' {0,1}
-@attribute 'A3 equ A5' {0,1}
-@attribute 'A1 equ A3' {0,1}
-@attribute 'A2 equ A4' {0,1}
-@attribute 'A1 equ A4' {0,1}
-@attribute 'A2 equ A5' {0,1}
-@attribute 'A1 equ A5' {0,1}
-@attribute 'A2 xor A3' {0,1}
-@attribute 'A4 xor A5' {0,1}
-@attribute 'A3 xor A4' {0,1}
-@attribute 'A1 xor A2' {0,1}
-@attribute 'A3 xor A5' {0,1}
-@attribute 'A1 xor A3' {0,1}
-@attribute 'A2 xor A4' {0,1}
-@attribute 'A1 xor A4' {0,1}
-@attribute 'A2 xor A5' {0,1}
-@attribute 'A1 xor A5' {0,1}
-@attribute 'A2 impl A3' {0,1}
-@attribute 'A4 impl A5' {0,1}
-@attribute 'A3 impl A4' {0,1}
-@attribute 'A1 impl A2' {0,1}
-@attribute 'A3 impl A5' {0,1}
-@attribute 'A1 impl A3' {0,1}
-@attribute 'A2 impl A4' {0,1}
-@attribute 'A1 impl A4' {0,1}
-@attribute 'A2 impl A5' {0,1}
-@attribute 'A1 impl A5' {0,1}
-@attribute '(A5 = 1) and (A4 = 1) and (A1 = 1)' {0,1}
-@attribute '(A3 = 1) and (A2 = 1) and (A1 = 0)' {0,1}
-@attribute 'num-of-N((A5 = 1) and (A4 = 1) and (A1 = 1))' {0,1,2,3}
-@attribute 'num-of-N((A3 = 1) and (A2 = 1) and (A1 = 0))' {0,1,2,3}
+@attribute F1L1 {0,1}
+@attribute F2L1 {0,1}
+@attribute F3L1 {0,1}
+@attribute F4L1 {0,1}
+@attribute F5L1 {0,1}
+@attribute F6L1 {0,1}
+@attribute F7L1 {0,1}
+@attribute F8L1 {0,1}
+@attribute F9L1 {0,1}
+@attribute F10L1 {0,1}
+@attribute F11L1 {0,1}
+@attribute F12L1 {0,1}
+@attribute F13L1 {0,1}
+@attribute F14L1 {0,1}
+@attribute F15L1 {0,1}
+@attribute F16L1 {0,1}
+@attribute F17L1 {0,1}
+@attribute F18L1 {0,1}
+@attribute F19L1 {0,1}
+@attribute F20L1 {0,1}
+@attribute F21L1 {0,1}
+@attribute F22L1 {0,1}
+@attribute F23L1 {0,1}
+@attribute F24L1 {0,1}
+@attribute F25L1 {0,1}
+@attribute F26L1 {0,1}
+@attribute F27L1 {0,1}
+@attribute F28L1 {0,1}
+@attribute F29L1 {0,1}
+@attribute F30L1 {0,1}
+@attribute F31L1 {0,1}
+@attribute F32L1 {0,1}
+@attribute F33L1 {0,1,2,3}
+@attribute F34L1 {0,1,2,3}
 @attribute class {0,1}
 
 @data

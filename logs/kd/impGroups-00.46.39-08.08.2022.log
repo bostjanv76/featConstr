@@ -1,0 +1,69 @@
+dataset: cLogicalConcBEasy.arff
+Explaining class: 1 explaining whole dataset: NO
+Internal (during building) accuracy of explanation model: 100.0
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 5, minNoise=3 we remove groups of size 5. Tree SHAP num of expl. inst. 489
+Lower threshold thrL: 0.6 upper threshold thrU: 0.8 with step: 0.1
+--------------
+Threshold: 0,60
+--------------
+	A2 | A3: 128
+	A1 | A4 | A5: 128
+	A1 | A2 | A3: 124
+	A4 | A5: 109
+--------------
+Threshold: 0,70
+--------------
+	A1 | A2 | A3: 187
+	A1 | A4 | A5: 180
+	A2 | A3: 65
+	A4 | A5: 57
+--------------
+Threshold: 0,80
+--------------
+	A1 | A2 | A3: 187
+	A1 | A4 | A5: 128
+	A2 | A3 | A5: 65
+	A2 | A4 | A5: 57
+	A1 | A2 | A4 | A5: 52
+*********************************************************************************
+All potential concepts, based on thresholds.
+	A2 A3 ~#~ A1 A4 A5 ~#~ A1 A2 A3 ~#~ A4 A5 ~#~ A2 A3 A5 ~#~ A2 A4 A5 ~#~ A1 A2 A4 A5 ~#~ 
+*********************************************************************************
+dataset: cLogicalConcBEasyNoisy.arff
+Explaining class: 1 explaining whole dataset: NO
+Internal (during building) accuracy of explanation model: 95.0
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 6, minNoise=3 we remove groups of size 6. Tree SHAP num of expl. inst. 557
+Lower threshold thrL: 0.6 upper threshold thrU: 0.8 with step: 0.1
+--------------
+Threshold: 0,60
+--------------
+	A2 | A3: 254
+	A4 | A5: 169
+	A1 | A4 | A5: 87
+	A3 | A4 | A5: 15
+	A3 | A4: 8
+--------------
+Threshold: 0,70
+--------------
+	A1 | A2 | A3: 191
+	A1 | A4 | A5: 182
+	A2 | A3: 61
+	A4 | A5: 54
+	A3 | A4 | A5: 23
+	A1 | A3 | A5: 13
+	A2 | A4 | A5: 10
+--------------
+Threshold: 0,80
+--------------
+	A1 | A2 | A3: 191
+	A1 | A4 | A5: 182
+	A3 | A4 | A5: 77
+	A2 | A3 | A5: 62
+	A2 | A3 | A4 | A5: 26
+	A1 | A3 | A4 | A5: 9
+*********************************************************************************
+All potential concepts, based on thresholds.
+	A2 A3 ~#~ A4 A5 ~#~ A1 A4 A5 ~#~ A3 A4 A5 ~#~ A3 A4 ~#~ A1 A2 A3 ~#~ A1 A3 A5 ~#~ A2 A4 A5 ~#~ A2 A3 A5 ~#~ A2 A3 A4 A5 ~#~ A1 A3 A4 A5 ~#~ 
+*********************************************************************************
