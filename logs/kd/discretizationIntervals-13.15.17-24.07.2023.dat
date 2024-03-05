@@ -1,0 +1,33 @@
+dataset: cBinClassDisAttr-uniqueInst.arff
+No numeric attributes.
+dataset: cBinClassNumBinAttr.arff
+A3='(-inf-0.301682]'
+A3='(0.301682-0.700278]'
+A3='(0.700278-inf)'
+A4='(0.100406-inf)'
+A5
+dataset: cBinClassNumDisAttr.arff
+A3
+A4='(0.149726-inf)'
+A5
+dataset: cConcepts-uniqueInst.arff
+No numeric attributes.
+dataset: cDisjunct.arff
+A1='(0.505-inf)'
+A2='(0.705-inf)'
+A3='(0.395-inf)'
+A4
+A5
+dataset: cLogicalConcB-uniqueInst.arff
+No numeric attributes.
+dataset: cLogicalConcBNoisy-uniqueInst.arff
+No numeric attributes.
+dataset: cModGroups.arff
+I1
+I2
+R1
+R2
+dataset: cMultiVClassDisAttr-uniqueInst.arff
+No numeric attributes.
+dataset: condInd-uniqueInst.arff
+No numeric attributes.

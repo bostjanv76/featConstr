@@ -1,0 +1,540 @@
+dataset: cBinClassDisAttr-uniqueInst.arff
+								--------------
+									Fold  1
+								--------------
+No numeric attributes.
+								--------------
+									Fold  2
+								--------------
+No numeric attributes.
+								--------------
+									Fold  3
+								--------------
+No numeric attributes.
+								--------------
+									Fold  4
+								--------------
+No numeric attributes.
+								--------------
+									Fold  5
+								--------------
+No numeric attributes.
+								--------------
+									Fold  6
+								--------------
+No numeric attributes.
+								--------------
+									Fold  7
+								--------------
+No numeric attributes.
+								--------------
+									Fold  8
+								--------------
+No numeric attributes.
+								--------------
+									Fold  9
+								--------------
+No numeric attributes.
+								--------------
+									Fold 10
+								--------------
+No numeric attributes.
+dataset: cBinClassNumBinAttr.arff
+								--------------
+									Fold  1
+								--------------
+A3='(-inf-0.301682]'
+A3='(0.301682-0.704646]'
+A3='(0.704646-inf)'
+A4='(0.101257-inf)'
+A5
+								--------------
+									Fold  2
+								--------------
+A3='(-inf-0.301682]'
+A3='(0.301682-0.700278]'
+A3='(0.700278-inf)'
+A4='(0.100406-inf)'
+A5
+								--------------
+									Fold  3
+								--------------
+A3='(-inf-0.301682]'
+A3='(0.301682-0.692989]'
+A3='(0.692989-inf)'
+A4='(0.100406-inf)'
+A5
+								--------------
+									Fold  4
+								--------------
+A3='(-inf-0.301682]'
+A3='(0.301682-0.692989]'
+A3='(0.692989-inf)'
+A4='(0.100406-inf)'
+A5
+								--------------
+									Fold  5
+								--------------
+A3='(-inf-0.301682]'
+A3='(0.301682-0.692989]'
+A3='(0.692989-inf)'
+A4='(0.100406-inf)'
+A5
+								--------------
+									Fold  6
+								--------------
+A3='(-inf-0.301682]'
+A3='(0.301682-0.692989]'
+A3='(0.692989-inf)'
+A4='(0.100406-inf)'
+A5
+								--------------
+									Fold  7
+								--------------
+A3='(-inf-0.301682]'
+A3='(0.301682-0.692989]'
+A3='(0.692989-inf)'
+A4='(0.100406-inf)'
+A5
+								--------------
+									Fold  8
+								--------------
+A3='(-inf-0.301314]'
+A3='(0.301314-0.700278]'
+A3='(0.700278-inf)'
+A4='(0.100406-inf)'
+A5
+								--------------
+									Fold  9
+								--------------
+A3='(-inf-0.30945]'
+A3='(0.30945-0.703639]'
+A3='(0.703639-inf)'
+A4='(0.100298-inf)'
+A5
+								--------------
+									Fold 10
+								--------------
+A3='(-inf-0.301682]'
+A3='(0.301682-0.700278]'
+A3='(0.700278-inf)'
+A4='(0.100406-inf)'
+A5
+dataset: cBinClassNumDisAttr.arff
+								--------------
+									Fold  1
+								--------------
+A3
+A4='(0.149726-inf)'
+A5
+								--------------
+									Fold  2
+								--------------
+A3
+A4='(0.149726-inf)'
+A5
+								--------------
+									Fold  3
+								--------------
+A3
+A4='(0.375131-inf)'
+A5
+								--------------
+									Fold  4
+								--------------
+A3
+A4='(0.375131-inf)'
+A5
+								--------------
+									Fold  5
+								--------------
+A3
+A4='(0.375131-inf)'
+A5
+								--------------
+									Fold  6
+								--------------
+A3
+A4='(0.149726-inf)'
+A5
+								--------------
+									Fold  7
+								--------------
+A3
+A4='(0.149726-inf)'
+A5
+								--------------
+									Fold  8
+								--------------
+A3
+A4='(0.155995-inf)'
+A5
+								--------------
+									Fold  9
+								--------------
+A3
+A4='(0.15051-inf)'
+A5
+								--------------
+									Fold 10
+								--------------
+A3
+A4='(0.375131-inf)'
+A5
+dataset: cConcepts-uniqueInst.arff
+								--------------
+									Fold  1
+								--------------
+No numeric attributes.
+								--------------
+									Fold  2
+								--------------
+No numeric attributes.
+								--------------
+									Fold  3
+								--------------
+No numeric attributes.
+								--------------
+									Fold  4
+								--------------
+No numeric attributes.
+								--------------
+									Fold  5
+								--------------
+No numeric attributes.
+								--------------
+									Fold  6
+								--------------
+No numeric attributes.
+								--------------
+									Fold  7
+								--------------
+No numeric attributes.
+								--------------
+									Fold  8
+								--------------
+No numeric attributes.
+								--------------
+									Fold  9
+								--------------
+No numeric attributes.
+								--------------
+									Fold 10
+								--------------
+No numeric attributes.
+dataset: cDisjunct.arff
+								--------------
+									Fold  1
+								--------------
+A1='(0.505-inf)'
+A2='(0.705-inf)'
+A3='(0.395-inf)'
+A4
+A5
+								--------------
+									Fold  2
+								--------------
+A1='(0.505-inf)'
+A2='(0.705-inf)'
+A3='(0.395-inf)'
+A4
+A5
+								--------------
+									Fold  3
+								--------------
+A1='(0.505-inf)'
+A2='(0.705-inf)'
+A3='(0.395-inf)'
+A4
+A5
+								--------------
+									Fold  4
+								--------------
+A1='(0.505-inf)'
+A2='(0.705-inf)'
+A3='(0.395-inf)'
+A4
+A5
+								--------------
+									Fold  5
+								--------------
+A1='(0.505-inf)'
+A2='(0.705-inf)'
+A3='(0.395-inf)'
+A4
+A5
+								--------------
+									Fold  6
+								--------------
+A1='(0.505-inf)'
+A2='(0.705-inf)'
+A3='(0.395-inf)'
+A4
+A5
+								--------------
+									Fold  7
+								--------------
+A1='(0.505-inf)'
+A2='(0.705-inf)'
+A3='(0.395-inf)'
+A4
+A5
+								--------------
+									Fold  8
+								--------------
+A1='(0.505-inf)'
+A2='(0.705-inf)'
+A3='(0.395-inf)'
+A4
+A5
+								--------------
+									Fold  9
+								--------------
+A1='(0.505-inf)'
+A2='(0.705-inf)'
+A3='(0.395-inf)'
+A4
+A5
+								--------------
+									Fold 10
+								--------------
+A1='(0.505-inf)'
+A2='(0.705-inf)'
+A3='(0.395-inf)'
+A4
+A5
+dataset: cLogicalConcB-uniqueInst.arff
+								--------------
+									Fold  1
+								--------------
+No numeric attributes.
+								--------------
+									Fold  2
+								--------------
+No numeric attributes.
+								--------------
+									Fold  3
+								--------------
+No numeric attributes.
+								--------------
+									Fold  4
+								--------------
+No numeric attributes.
+								--------------
+									Fold  5
+								--------------
+No numeric attributes.
+								--------------
+									Fold  6
+								--------------
+No numeric attributes.
+								--------------
+									Fold  7
+								--------------
+No numeric attributes.
+								--------------
+									Fold  8
+								--------------
+No numeric attributes.
+								--------------
+									Fold  9
+								--------------
+No numeric attributes.
+								--------------
+									Fold 10
+								--------------
+No numeric attributes.
+dataset: cLogicalConcBNoisy-uniqueInst.arff
+								--------------
+									Fold  1
+								--------------
+No numeric attributes.
+								--------------
+									Fold  2
+								--------------
+No numeric attributes.
+								--------------
+									Fold  3
+								--------------
+No numeric attributes.
+								--------------
+									Fold  4
+								--------------
+No numeric attributes.
+								--------------
+									Fold  5
+								--------------
+No numeric attributes.
+								--------------
+									Fold  6
+								--------------
+No numeric attributes.
+								--------------
+									Fold  7
+								--------------
+No numeric attributes.
+								--------------
+									Fold  8
+								--------------
+No numeric attributes.
+								--------------
+									Fold  9
+								--------------
+No numeric attributes.
+								--------------
+									Fold 10
+								--------------
+No numeric attributes.
+dataset: cModGroups.arff
+								--------------
+									Fold  1
+								--------------
+I1
+I2
+R1
+R2
+								--------------
+									Fold  2
+								--------------
+I1
+I2
+R1
+R2
+								--------------
+									Fold  3
+								--------------
+I1
+I2
+R1
+R2
+								--------------
+									Fold  4
+								--------------
+I1
+I2
+R1
+R2
+								--------------
+									Fold  5
+								--------------
+I1
+I2
+R1
+R2
+								--------------
+									Fold  6
+								--------------
+I1
+I2
+R1
+R2
+								--------------
+									Fold  7
+								--------------
+I1
+I2
+R1
+R2
+								--------------
+									Fold  8
+								--------------
+I1
+I2
+R1
+R2
+								--------------
+									Fold  9
+								--------------
+I1
+I2
+R1
+R2
+								--------------
+									Fold 10
+								--------------
+I1
+I2
+R1
+R2
+dataset: cMultiVClassDisAttr-uniqueInst.arff
+								--------------
+									Fold  1
+								--------------
+No numeric attributes.
+								--------------
+									Fold  2
+								--------------
+No numeric attributes.
+								--------------
+									Fold  3
+								--------------
+No numeric attributes.
+								--------------
+									Fold  4
+								--------------
+No numeric attributes.
+								--------------
+									Fold  5
+								--------------
+No numeric attributes.
+								--------------
+									Fold  6
+								--------------
+No numeric attributes.
+								--------------
+									Fold  7
+								--------------
+No numeric attributes.
+								--------------
+									Fold  8
+								--------------
+No numeric attributes.
+								--------------
+									Fold  9
+								--------------
+No numeric attributes.
+								--------------
+									Fold 10
+								--------------
+No numeric attributes.
+dataset: condInd-uniqueInst.arff
+								--------------
+									Fold  1
+								--------------
+No numeric attributes.
+								--------------
+									Fold  2
+								--------------
+No numeric attributes.
+								--------------
+									Fold  3
+								--------------
+No numeric attributes.
+								--------------
+									Fold  4
+								--------------
+No numeric attributes.
+								--------------
+									Fold  5
+								--------------
+No numeric attributes.
+								--------------
+									Fold  6
+								--------------
+No numeric attributes.
+								--------------
+									Fold  7
+								--------------
+No numeric attributes.
+								--------------
+									Fold  8
+								--------------
+No numeric attributes.
+								--------------
+									Fold  9
+								--------------
+No numeric attributes.
+								--------------
+									Fold 10
+								--------------
+No numeric attributes.

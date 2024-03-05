@@ -1,0 +1,1902 @@
+dataset: credit_score.arff
+We remove max(NOISE,minNoise) groups, NOISE=0.0% -> 0, minNoise=0 we remove groups of size 0. Tree SHAP num of expl. inst. 200 (fold 1). Explaining class: E).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  1
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	net_income: 144
+	interest: 26
+	debt: 20
+	EBIT: 5
+	equity: 4
+	FFO: 1
+--------------
+Threshold: 0,20
+--------------
+	net_income: 135
+	debt: 18
+	interest | net_income: 16
+	interest: 12
+	equity | debt: 4
+	net_income | equity: 2
+	EBIT: 2
+	EBIT | debt: 2
+	interest | equity: 2
+	net_income | st_assets: 1
+	net_income | debt: 1
+	EBIT | net_income: 1
+	interest | EBIT: 1
+	debt | FFO: 1
+	interest | debt: 1
+	debt | st_liabilities: 1
+--------------
+Threshold: 0,30
+--------------
+	interest | net_income: 56
+	net_income: 42
+	EBIT | net_income: 27
+	net_income | debt: 21
+	net_income | equity: 17
+	interest | debt: 7
+	equity | debt: 5
+	net_income | FFO: 5
+	debt: 3
+	debt | st_liabilities: 3
+	net_income | st_liabilities: 2
+	EBITDA | net_income: 2
+	EBIT | debt: 2
+	interest | FFO: 1
+	net_income | cash: 1
+	interest | equity | debt: 1
+	interest | EBIT: 1
+	debt | FFO: 1
+	interest | net_income | st_liabilities: 1
+	net_income | st_assets | total_oper_liabilities: 1
+	interest | equity: 1
+--------------
+Threshold: 0,40
+--------------
+	interest | net_income: 35
+	EBIT | net_income: 29
+	interest | net_income | debt: 21
+	net_income | equity: 17
+	net_income | debt: 14
+	interest | EBIT | net_income: 11
+	EBIT | net_income | debt: 8
+	net_income | equity | debt: 6
+	net_income | debt | FFO: 6
+	interest | net_income | equity: 5
+	interest | equity | debt: 4
+	EBIT | net_income | equity: 4
+	interest | net_income | st_assets: 4
+	interest | net_income | st_liabilities: 3
+	interest | debt: 3
+	debt | st_liabilities: 3
+	net_income | st_liabilities: 2
+	EBITDA | net_income | equity: 2
+	EBITDA | net_income | debt: 2
+	net_income: 2
+	net_income | equity | FFO: 2
+	net_income | total_oper_liabilities: 1
+	EBITDA | net_income: 1
+	EBITDA | net_income | cash: 1
+	EBITDA | net_income | total_oper_liabilities: 1
+	net_income | cash | st_liabilities: 1
+	EBIT | net_income | FFO: 1
+	EBIT | debt | st_liabilities: 1
+	interest | EBITDA | net_income | st_liabilities: 1
+	net_income | equity | st_liabilities: 1
+	equity | debt | FFO: 1
+	interest | debt | st_liabilities: 1
+	net_income | debt | st_liabilities: 1
+	net_income | equity | st_assets | total_oper_liabilities: 1
+	interest | debt | FFO: 1
+	interest | net_income | inventories: 1
+	debt | st_assets | st_liabilities: 1
+	interest | net_income | cash: 1
+--------------
+Threshold: 0,50
+--------------
+	interest | net_income | debt: 20
+	interest | net_income | equity | debt: 11
+	EBIT | net_income | equity: 10
+	EBIT | net_income | debt: 9
+	net_income | equity | debt: 9
+	EBIT | EBITDA | net_income: 9
+	interest | EBIT | net_income: 9
+	interest | EBIT | net_income | debt: 9
+	interest | net_income: 8
+	interest | net_income | equity: 7
+	interest | EBIT | net_income | equity: 7
+	net_income | equity: 5
+	interest | net_income | debt | inventories: 5
+	EBITDA | net_income | equity: 4
+	EBIT | net_income: 4
+	net_income | equity | st_liabilities: 4
+	net_income | debt | st_liabilities: 4
+	net_income | debt | st_assets | FFO: 3
+	interest | net_income | total_oper_liabilities: 3
+	EBIT | EBITDA | net_income | debt: 3
+	EBITDA | net_income | debt: 2
+	EBIT | net_income | debt | FFO: 2
+	net_income | equity | FFO: 2
+	interest | net_income | debt | st_assets: 2
+	interest | debt | st_liabilities: 2
+	net_income | equity | debt | st_liabilities: 2
+	interest | net_income | cash | st_liabilities: 2
+	interest | net_income | FFO: 2
+	interest | net_income | st_liabilities: 2
+	interest | EBIT | net_income | FFO: 2
+	net_income | debt | FFO: 2
+	interest | net_income | equity | st_liabilities: 2
+	depreciation | interest | EBITDA | equity | debt: 1
+	interest | equity | debt | FFO: 1
+	net_income | debt: 1
+	interest | net_income | equity | FFO: 1
+	interest | net_income | equity | debt | st_assets: 1
+	interest | EBITDA | debt: 1
+	equity | debt | st_liabilities: 1
+	EBITDA | net_income | equity | debt: 1
+	EBITDA | net_income | equity | cash: 1
+	EBITDA | net_income | equity | total_oper_liabilities: 1
+	interest | EBITDA | net_income | debt: 1
+	EBIT | debt | st_liabilities: 1
+	interest | net_income | debt | st_liabilities: 1
+	EBIT | net_income | equity | FFO: 1
+	EBIT | net_income | cash: 1
+	EBIT | net_income | total_oper_liabilities: 1
+	net_income | debt | st_assets | st_liabilities: 1
+	depreciation | interest | net_income: 1
+	depreciation | net_income | st_liabilities | inventories: 1
+	interest | net_income | debt | st_assets | total_oper_liabilities: 1
+	interest | net_income | st_assets | total_oper_liabilities: 1
+	net_income | equity | st_assets | total_oper_liabilities: 1
+	interest | debt | FFO: 1
+	interest | EBITDA | net_income | equity | st_liabilities: 1
+	net_income | equity | debt | st_assets | total_oper_liabilities: 1
+	EBIT | net_income | equity | st_assets: 1
+	EBIT | net_income | equity | total_oper_liabilities: 1
+	EBIT | net_income | equity | debt: 1
+	interest | net_income | inventories: 1
+	interest | net_income | total_oper_liabilities | st_liabilities: 1
+	interest | net_income | cash: 1
+	EBIT | EBITDA | net_income | equity: 1
+	interest | net_income | equity | cash: 1
+--------------
+Threshold: 0,60
+--------------
+	interest | net_income | debt | st_liabilities: 9
+	interest | EBIT | net_income | equity | debt: 9
+	interest | net_income | equity | debt | st_liabilities: 5
+	interest | EBITDA | net_income | debt: 5
+	EBITDA | net_income | equity | FFO: 5
+	net_income | equity | debt | st_liabilities: 5
+	EBIT | EBITDA | net_income | equity: 5
+	EBIT | EBITDA | net_income | debt: 5
+	EBIT | EBITDA | net_income: 4
+	interest | EBITDA | net_income | equity | debt: 4
+	EBIT | net_income | equity | debt: 4
+	interest | EBIT | net_income | equity: 4
+	interest | EBIT | net_income | debt: 4
+	interest | net_income | equity | FFO: 3
+	interest | net_income | debt | st_assets | FFO: 3
+	EBIT | EBITDA | net_income | FFO: 3
+	interest | EBIT | net_income | FFO: 3
+	interest | net_income | equity | debt: 3
+	interest | EBITDA | net_income | debt | st_liabilities: 2
+	EBIT | net_income | debt | st_liabilities: 2
+	EBIT | net_income | equity | debt | FFO: 2
+	interest | EBIT | net_income | equity | FFO: 2
+	EBIT | net_income | equity | debt | st_liabilities: 2
+	EBITDA | net_income | equity | cash | st_liabilities: 2
+	interest | net_income | equity | debt | FFO: 2
+	interest | net_income | debt | FFO: 2
+	interest | EBIT | EBITDA | net_income | equity: 2
+	interest | EBIT | EBITDA | net_income | debt: 2
+	EBIT | net_income | debt: 2
+	net_income | equity | debt: 2
+	EBIT | net_income | equity | st_assets | total_oper_liabilities: 2
+	net_income | equity | debt | FFO: 2
+	net_income | equity | debt | cash: 2
+	interest | EBIT | net_income | debt | inventories: 2
+	interest | EBIT | net_income | debt | st_liabilities: 2
+	interest | net_income | st_liabilities: 2
+	interest | net_income | total_oper_liabilities | FFO: 2
+	interest | net_income | total_oper_liabilities: 2
+	interest | EBIT | net_income | debt | st_assets: 2
+	EBIT | net_income | equity | total_oper_liabilities | FFO: 2
+	interest | net_income | equity | st_liabilities: 2
+	EBIT | net_income | equity | st_assets | FFO: 1
+	depreciation | interest | EBITDA | net_income | equity | debt: 1
+	interest | net_income | equity | debt | st_assets | FFO: 1
+	interest | EBITDA | net_income | debt | total_oper_liabilities: 1
+	interest | net_income | equity | debt | st_assets | st_liabilities: 1
+	net_income | debt | st_assets | FFO: 1
+	interest | net_income | st_assets | total_oper_liabilities | st_liabilities: 1
+	EBIT | net_income | debt | st_assets: 1
+	interest | net_income | equity | debt | st_assets: 1
+	interest | net_income | debt | cash | inventories: 1
+	interest | EBITDA | net_income | equity: 1
+	interest | EBITDA | debt | st_liabilities: 1
+	EBIT | net_income | equity | debt | total_oper_liabilities: 1
+	financial_expenses | interest | EBIT | net_income | FFO: 1
+	EBIT | net_income | debt | FFO: 1
+	interest | net_income | equity | debt | inventories: 1
+	net_income | equity | debt | cash | st_assets | total_oper_liabilities: 1
+	EBIT | net_income | FFO: 1
+	EBITDA | net_income | equity | debt: 1
+	EBITDA | net_income | equity | cash: 1
+	EBIT | net_income | debt | inventories | FFO: 1
+	EBITDA | net_income | equity | st_liabilities: 1
+	net_income | equity | FFO: 1
+	interest | EBITDA | net_income | FFO: 1
+	interest | net_income | debt | st_assets | total_oper_liabilities | st_liabilities: 1
+	depreciation | interest | net_income | debt | inventories: 1
+	financial_expenses | interest | net_income | equity | st_liabilities: 1
+	interest | net_income | debt | total_oper_liabilities: 1
+	EBITDA | net_income | equity | total_oper_liabilities | st_liabilities | inventories: 1
+	interest | EBIT | net_income | equity | total_oper_liabilities: 1
+	interest | EBITDA | net_income | cash | st_liabilities: 1
+	interest | EBIT | equity | debt | FFO: 1
+	interest | net_income | debt | inventories | FFO: 1
+	interest | net_income | debt | st_assets | st_liabilities: 1
+	interest | EBIT | net_income | total_oper_liabilities | FFO: 1
+	interest | EBITDA | net_income | total_oper_liabilities | inventories: 1
+	interest | EBIT | net_income | equity | debt | FFO: 1
+	interest | net_income | cash | st_liabilities | inventories: 1
+	interest | net_income | equity | cash | inventories: 1
+	interest | net_income | equity | total_oper_liabilities | st_liabilities: 1
+	financial_expenses | interest | net_income | equity | FFO: 1
+	net_income | equity | debt | inventories: 1
+	interest | EBIT | net_income: 1
+	interest | EBITDA | net_income | equity | cash: 1
+	EBIT | net_income | equity | st_assets: 1
+	EBIT | net_income | total_oper_liabilities | FFO: 1
+	depreciation | interest | EBIT | net_income | st_liabilities: 1
+	interest | net_income | debt | st_liabilities | FFO: 1
+	interest | EBIT | EBITDA | net_income | equity | st_liabilities: 1
+	interest | net_income | total_oper_liabilities | st_liabilities: 1
+	depreciation | net_income | equity | debt | st_liabilities: 1
+	interest | net_income | debt: 1
+	interest | net_income | equity: 1
+	depreciation | interest | net_income | equity | debt: 1
+	financial_expenses | interest | net_income | equity: 1
+	financial_expenses | interest | net_income | debt: 1
+	depreciation | interest | net_income | st_liabilities | inventories: 1
+	interest | debt | st_liabilities | FFO: 1
+	financial_expenses | interest | net_income | st_liabilities: 1
+	net_income | equity | st_liabilities | FFO: 1
+	interest | EBIT | net_income | st_liabilities: 1
+	interest | EBIT | net_income | inventories: 1
+	EBIT | net_income | cash | inventories: 1
+	interest | EBIT | net_income | st_assets: 1
+	interest | EBIT | net_income | total_oper_liabilities: 1
+	net_income | debt | st_assets | total_oper_liabilities | st_liabilities: 1
+	interest | net_income | equity | cash: 1
+	interest | EBIT | net_income | inventories | FFO: 1
+	interest | EBIT | net_income | debt | FFO: 1
+	interest | net_income | st_liabilities | inventories: 1
+	interest | net_income | equity | total_oper_liabilities: 1
+--------------
+Threshold: 0,70
+--------------
+	interest | EBITDA | net_income | debt | st_liabilities: 7
+	EBIT | EBITDA | net_income | equity | FFO: 7
+	interest | EBIT | net_income | equity | debt | FFO: 5
+	interest | net_income | equity | debt | st_assets | st_liabilities | FFO: 4
+	EBITDA | net_income | equity | debt | FFO: 4
+	interest | EBIT | net_income | equity | debt | total_oper_liabilities | st_liabilities: 3
+	interest | EBIT | net_income | equity | total_oper_liabilities | FFO: 3
+	interest | EBITDA | net_income | total_oper_liabilities | st_liabilities: 3
+	interest | EBITDA | net_income | equity | debt: 3
+	interest | EBITDA | net_income | equity | debt | st_liabilities: 3
+	interest | EBIT | net_income | equity | debt | inventories | FFO: 3
+	EBIT | EBITDA | net_income | equity | debt | FFO: 2
+	EBITDA | net_income | equity | debt | cash | st_liabilities: 2
+	interest | EBITDA | net_income | debt | total_oper_liabilities | st_liabilities: 2
+	interest | EBIT | net_income | debt | st_assets | st_liabilities: 2
+	EBIT | net_income | equity | debt | st_liabilities | FFO: 2
+	interest | net_income | equity | debt | st_liabilities: 2
+	interest | EBIT | net_income | equity | debt | st_liabilities | FFO: 2
+	interest | EBIT | net_income | total_oper_liabilities | st_liabilities: 2
+	interest | EBIT | EBITDA | net_income | debt | FFO: 2
+	interest | net_income | debt | total_oper_liabilities | st_liabilities | inventories: 2
+	interest | EBITDA | net_income | equity | total_oper_liabilities | st_liabilities: 2
+	interest | EBIT | net_income | equity | debt | total_oper_liabilities | FFO: 2
+	interest | net_income | equity | debt | st_assets | total_oper_liabilities | st_liabilities | FFO: 2
+	interest | EBIT | net_income | total_oper_liabilities | FFO: 2
+	interest | EBIT | net_income | debt | st_liabilities | FFO: 2
+	interest | net_income | equity | debt | st_liabilities | FFO: 2
+	EBIT | EBITDA | net_income | equity | debt: 2
+	EBIT | net_income | equity | debt | st_assets | FFO: 2
+	interest | EBITDA | net_income | equity | st_liabilities: 2
+	interest | EBIT | EBITDA | net_income | equity | cash: 2
+	interest | EBITDA | net_income | equity | FFO: 2
+	interest | EBIT | EBITDA | net_income | equity | debt: 2
+	interest | EBITDA | net_income | equity | debt | cash: 2
+	interest | net_income | equity | debt | inventories | FFO: 2
+	interest | EBITDA | net_income | equity | debt | total_oper_liabilities: 2
+	EBIT | EBITDA | net_income | equity: 2
+	interest | EBIT | net_income | debt: 2
+	EBIT | net_income | equity | st_assets | FFO: 1
+	interest | EBIT | net_income | equity | total_oper_liabilities | inventories | FFO: 1
+	EBITDA | net_income | equity | total_oper_liabilities | st_liabilities | inventories | FFO: 1
+	interest | EBITDA | net_income | equity | debt | inventories | FFO: 1
+	interest | EBITDA | net_income | debt | inventories: 1
+	financial_expenses | interest | EBITDA | net_income | equity | FFO: 1
+	financial_expenses | interest | EBIT | net_income | total_oper_liabilities: 1
+	EBIT | net_income | debt | st_liabilities: 1
+	interest | EBIT | net_income | st_liabilities | FFO: 1
+	EBIT | net_income | equity | debt | FFO: 1
+	depreciation | EBIT | net_income | equity | debt | st_liabilities: 1
+	interest | EBIT | net_income | equity | FFO: 1
+	EBIT | net_income | debt | st_assets | total_oper_liabilities | st_liabilities | FFO: 1
+	EBIT | net_income | equity | st_assets | total_oper_liabilities | FFO: 1
+	depreciation | EBIT | net_income | equity | debt: 1
+	interest | EBIT | net_income | equity | cash | inventories: 1
+	EBIT | net_income | debt | st_liabilities | FFO: 1
+	EBIT | net_income | equity | debt | st_liabilities | inventories: 1
+	interest | EBITDA | net_income | debt | FFO: 1
+	EBIT | net_income | total_oper_liabilities | st_liabilities | inventories | FFO: 1
+	financial_expenses | interest | EBIT | net_income | equity | total_oper_liabilities | FFO: 1
+	financial_expenses | interest | net_income | equity | debt | inventories: 1
+	interest | net_income | equity | total_oper_liabilities | st_liabilities | inventories: 1
+	interest | EBIT | net_income | total_oper_liabilities | st_liabilities | inventories: 1
+	depreciation | interest | EBIT | net_income | debt | cash | inventories: 1
+	interest | EBIT | EBITDA | net_income | FFO: 1
+	EBIT | net_income | debt | FFO: 1
+	EBITDA | net_income | equity | cash | st_liabilities: 1
+	financial_expenses | interest | net_income | debt | st_assets | st_liabilities | inventories: 1
+	interest | net_income | equity | debt | cash | FFO: 1
+	interest | net_income | equity | total_oper_liabilities | inventories | FFO: 1
+	interest | EBITDA | net_income | debt: 1
+	EBIT | net_income | equity | debt | total_oper_liabilities | st_liabilities: 1
+	interest | EBITDA | net_income | equity | st_liabilities | FFO: 1
+	EBIT | net_income | equity | debt | st_assets | inventories | FFO: 1
+	interest | EBIT | EBITDA | net_income | equity: 1
+	interest | EBIT | net_income | debt | cash | inventories: 1
+	net_income | equity | debt | st_liabilities | FFO: 1
+	interest | EBITDA | net_income | debt | total_oper_liabilities | st_liabilities | inventories: 1
+	interest | EBIT | EBITDA | net_income | debt: 1
+	interest | net_income | equity | debt | cash | inventories: 1
+	financial_expenses | interest | net_income | equity | inventories: 1
+	depreciation | interest | net_income | total_oper_liabilities | st_liabilities | inventories | OCF: 1
+	interest | EBITDA | net_income | debt | cash | st_liabilities: 1
+	interest | EBIT | net_income | equity | st_liabilities | FFO: 1
+	interest | EBIT | EBITDA | net_income | debt | st_assets: 1
+	interest | EBIT | net_income | st_assets | inventories | FFO: 1
+	interest | net_income | equity | debt | total_oper_liabilities | st_liabilities: 1
+	interest | EBIT | EBITDA | net_income | debt | st_liabilities: 1
+	depreciation | interest | EBITDA | net_income | equity | debt | st_liabilities | FFO: 1
+	interest | EBITDA | net_income | equity | debt | total_oper_liabilities | inventories: 1
+	interest | EBIT | net_income | equity | debt | st_liabilities | inventories: 1
+	EBITDA | net_income | equity | debt | inventories: 1
+	interest | EBIT | net_income | equity | inventories | FFO: 1
+	depreciation | financial_expenses | interest | EBIT | net_income | st_liabilities: 1
+	interest | net_income | equity | debt | st_liabilities | inventories | FFO: 1
+	interest | EBITDA | net_income | equity | cash | st_liabilities: 1
+	interest | EBIT | net_income | equity | debt | inventories: 1
+	interest | EBITDA | net_income | total_oper_liabilities | st_liabilities | inventories: 1
+	interest | EBIT | net_income | equity | debt | st_liabilities: 1
+	interest | EBIT | net_income | debt | st_assets | inventories | FFO: 1
+	interest | EBIT | net_income | equity | debt | st_assets: 1
+	net_income | equity | debt | st_assets | st_liabilities | FFO: 1
+	interest | EBIT | EBITDA | net_income | cash | st_liabilities: 1
+	depreciation | net_income | equity | debt | cash | st_liabilities: 1
+	interest | EBIT | net_income | debt | st_liabilities | inventories: 1
+	financial_expenses | interest | net_income | equity | total_oper_liabilities | FFO: 1
+	EBITDA | net_income | equity | debt | st_liabilities: 1
+	EBITDA | net_income | equity | FFO: 1
+	net_income | equity | debt | st_assets: 1
+	depreciation | interest | net_income | equity | cash | st_liabilities | inventories: 1
+	interest | EBIT | net_income | equity | total_oper_liabilities | st_liabilities | FFO: 1
+	financial_expenses | interest | EBIT | net_income | equity | debt | FFO: 1
+	EBIT | net_income | equity | debt | st_assets | st_liabilities: 1
+	interest | EBITDA | net_income | cash | total_oper_liabilities | FFO: 1
+	financial_expenses | net_income | equity | debt | cash | st_assets | total_oper_liabilities | st_liabilities: 1
+	interest | equity | debt | st_assets | st_liabilities | FFO: 1
+	financial_expenses | interest | EBITDA | net_income | equity | total_oper_liabilities | st_liabilities: 1
+	depreciation | interest | EBIT | EBITDA | net_income | equity | debt: 1
+	EBIT | EBITDA | net_income | FFO: 1
+	interest | EBIT | EBITDA | net_income | equity | total_oper_liabilities | st_liabilities: 1
+	EBITDA | net_income | equity | debt | st_liabilities | FFO: 1
+	interest | EBIT | EBITDA | net_income | equity | st_liabilities: 1
+	interest | EBIT | net_income | debt | st_assets: 1
+	interest | net_income | equity | st_liabilities | inventories | FFO: 1
+	interest | net_income | equity | st_liabilities | inventories: 1
+	financial_expenses | interest | net_income | total_oper_liabilities | inventories | FFO: 1
+	depreciation | net_income | equity | debt | st_assets | st_liabilities: 1
+	financial_expenses | interest | EBIT | net_income | total_oper_liabilities | st_liabilities: 1
+	interest | net_income | equity | st_assets | total_oper_liabilities | st_liabilities | FFO: 1
+	EBIT | EBITDA | net_income | debt | FFO: 1
+	interest | EBIT | net_income | equity | st_assets | FFO: 1
+	depreciation | EBITDA | net_income | equity | debt | st_liabilities: 1
+	EBIT | EBITDA | net_income | debt: 1
+	financial_expenses | interest | EBITDA | net_income | debt | inventories | FFO: 1
+	interest | EBIT | net_income | debt | inventories | FFO: 1
+	interest | EBIT | net_income | debt | total_oper_liabilities | inventories | FFO: 1
+	interest | EBIT | net_income | equity | st_assets | total_oper_liabilities: 1
+	financial_expenses | interest | EBIT | net_income | debt | st_assets | FFO: 1
+	interest | EBIT | net_income | inventories | FFO: 1
+	interest | EBIT | net_income | debt | FFO: 1
+--------------
+Threshold: 0,80
+--------------
+	interest | EBIT | EBITDA | net_income | equity | debt | FFO: 8
+	EBIT | EBITDA | net_income | equity | debt | FFO: 4
+	financial_expenses | interest | EBITDA | net_income | debt | total_oper_liabilities | st_liabilities: 4
+	financial_expenses | interest | EBITDA | net_income | equity | debt | total_oper_liabilities | st_liabilities: 4
+	interest | EBIT | EBITDA | net_income | equity | debt | inventories | FFO: 4
+	interest | EBIT | EBITDA | net_income | equity | debt | cash | st_liabilities: 4
+	interest | EBIT | net_income | equity | debt | st_assets | total_oper_liabilities | st_liabilities | FFO: 3
+	EBIT | EBITDA | net_income | equity | debt | inventories | FFO: 3
+	interest | EBIT | EBITDA | net_income | equity | debt | total_oper_liabilities | st_liabilities: 3
+	interest | EBIT | net_income | equity | debt | st_assets | inventories | FFO: 3
+	EBIT | EBITDA | net_income | equity | debt | cash | FFO: 3
+	interest | EBIT | net_income | equity | debt | st_assets | st_liabilities | FFO: 3
+	interest | EBITDA | net_income | equity | total_oper_liabilities | st_liabilities | FFO: 2
+	financial_expenses | interest | EBIT | net_income | equity | debt | total_oper_liabilities | inventories | FFO: 2
+	EBIT | EBITDA | net_income | equity | debt | st_liabilities | FFO: 2
+	interest | EBIT | net_income | equity | debt | st_liabilities | inventories | FFO: 2
+	interest | EBIT | net_income | equity | st_assets | total_oper_liabilities | st_liabilities | FFO: 2
+	interest | EBITDA | net_income | equity | total_oper_liabilities | st_liabilities | inventories: 2
+	financial_expenses | interest | EBIT | net_income | total_oper_liabilities | st_liabilities | inventories | FFO: 2
+	interest | EBIT | EBITDA | net_income | equity | total_oper_liabilities | st_liabilities | inventories | FFO: 2
+	interest | EBIT | EBITDA | net_income | equity | FFO: 2
+	financial_expenses | interest | EBITDA | net_income | equity | debt | st_liabilities: 2
+	EBIT | net_income | equity | debt | st_assets | total_oper_liabilities | st_liabilities | FFO: 2
+	interest | EBIT | EBITDA | net_income | debt | FFO: 2
+	depreciation | EBIT | net_income | equity | debt | cash | st_liabilities | inventories: 2
+	interest | EBITDA | net_income | equity | debt | total_oper_liabilities | st_liabilities: 2
+	financial_expenses | interest | EBIT | EBITDA | net_income | total_oper_liabilities | st_liabilities: 2
+	interest | EBITDA | net_income | debt | total_oper_liabilities | st_liabilities | inventories | FFO: 1
+	financial_expenses | EBIT | EBITDA | net_income | equity | debt | st_assets | inventories | FFO: 1
+	depreciation | interest | EBITDA | net_income | equity | debt | cash | st_liabilities | inventories: 1
+	interest | EBIT | EBITDA | net_income | equity | st_liabilities | FFO: 1
+	depreciation | interest | net_income | equity | debt | st_liabilities | inventories: 1
+	interest | EBITDA | net_income | debt | total_oper_liabilities | st_liabilities: 1
+	interest | EBIT | EBITDA | net_income | cash | total_oper_liabilities | st_liabilities | FFO: 1
+	interest | EBITDA | net_income | equity | debt | inventories | FFO: 1
+	interest | EBIT | EBITDA | net_income | debt | cash | st_liabilities: 1
+	interest | EBIT | EBITDA | net_income | st_assets | st_liabilities | inventories | FFO: 1
+	interest | EBIT | net_income | equity | debt | total_oper_liabilities | inventories | FFO: 1
+	depreciation | interest | EBIT | net_income | total_oper_liabilities | st_liabilities | inventories | FFO: 1
+	net_income | equity | debt | total_oper_liabilities | st_liabilities | inventories | FFO: 1
+	interest | EBIT | EBITDA | net_income | st_liabilities | FFO: 1
+	depreciation | interest | net_income | equity | debt | st_liabilities | inventories | FFO: 1
+	EBIT | EBITDA | net_income | equity | debt | cash | st_liabilities | inventories: 1
+	EBIT | EBITDA | net_income | debt | st_liabilities | FFO: 1
+	cost_of_labor | financial_expenses | interest | EBITDA | net_income | debt | cash | lt_liabilities | inventories | FFO: 1
+	interest | net_income | equity | debt | cash | total_oper_liabilities | st_liabilities | inventories | FFO: 1
+	financial_expenses | interest | EBIT | net_income | equity | total_oper_liabilities | inventories | FFO: 1
+	interest | EBIT | net_income | equity | debt | st_assets | total_oper_liabilities | FFO: 1
+	cost_of_labor | EBIT | net_income | debt | st_assets | total_oper_liabilities | st_liabilities | FFO: 1
+	financial_expenses | interest | EBIT | net_income | debt | total_oper_liabilities | st_liabilities | inventories: 1
+	interest | EBITDA | net_income | equity | debt | cash | st_liabilities | FFO: 1
+	depreciation | financial_expenses | interest | EBIT | net_income | equity | total_oper_liabilities | st_liabilities: 1
+	interest | EBIT | net_income | debt | cash | OCF: 1
+	EBITDA | net_income | equity | debt | st_assets | inventories | FFO: 1
+	financial_expenses | interest | EBITDA | net_income | equity | total_oper_liabilities | st_liabilities | inventories: 1
+	interest | EBIT | EBITDA | net_income | equity | st_liabilities | inventories | FFO: 1
+	EBIT | EBITDA | net_income | debt | inventories | FFO: 1
+	financial_expenses | interest | EBIT | EBITDA | net_income | equity | cash | total_oper_liabilities | inventories: 1
+	depreciation | EBITDA | net_income | equity | debt | st_assets | total_oper_liabilities | st_liabilities: 1
+	depreciation | financial_expenses | net_income | equity | debt | cash | st_assets | total_oper_liabilities | st_liabilities: 1
+	interest | EBITDA | net_income | equity | debt | total_oper_liabilities | st_liabilities | inventories: 1
+	interest | EBIT | EBITDA | net_income | equity | debt | st_liabilities: 1
+	interest | EBITDA | net_income | debt | total_oper_liabilities | st_liabilities | inventories: 1
+	financial_expenses | interest | EBIT | EBITDA | net_income | debt: 1
+	financial_expenses | EBITDA | net_income | equity | debt | st_assets: 1
+	financial_expenses | interest | EBITDA | net_income | equity | total_oper_liabilities | st_liabilities | FFO: 1
+	interest | EBIT | net_income | debt | st_assets | st_liabilities | FFO: 1
+	EBIT | EBITDA | net_income | equity | debt | st_liabilities | inventories | FFO: 1
+	depreciation | EBIT | net_income | equity | debt | st_assets | FFO | OCF: 1
+	interest | net_income | equity | debt | st_assets | total_oper_liabilities | st_liabilities | FFO: 1
+	financial_expenses | interest | EBITDA | net_income | equity | debt | total_oper_liabilities | st_liabilities | inventories: 1
+	interest | EBIT | EBITDA | net_income | debt | st_liabilities: 1
+	EBIT | EBITDA | net_income | equity | inventories | FFO: 1
+	interest | EBIT | EBITDA | net_income | debt | inventories: 1
+	interest | EBIT | net_income | equity | debt | st_assets | st_liabilities | inventories | FFO: 1
+	financial_expenses | interest | EBITDA | net_income | debt | st_liabilities | inventories: 1
+	interest | EBIT | net_income | equity | debt | cash | st_liabilities | inventories: 1
+	interest | EBIT | EBITDA | net_income | equity | debt | st_assets | FFO: 1
+	interest | EBIT | EBITDA | net_income | equity | st_assets | total_oper_liabilities | st_liabilities | inventories: 1
+	interest | net_income | equity | debt | st_liabilities | inventories | FFO: 1
+	financial_expenses | interest | EBIT | net_income | equity | debt | st_assets | inventories: 1
+	financial_expenses | interest | EBIT | net_income | equity | total_oper_liabilities | st_liabilities | inventories | FFO: 1
+	cost_of_labor | interest | EBITDA | net_income | equity | debt | st_liabilities | inventories | FFO: 1
+	interest | EBIT | EBITDA | net_income | equity | debt | cash | inventories: 1
+	financial_expenses | interest | EBITDA | net_income | equity | debt | st_liabilities | FFO: 1
+	EBIT | net_income | equity | debt | total_oper_liabilities | st_liabilities | inventories | OCF: 1
+	depreciation | interest | EBIT | net_income | equity | st_assets | total_oper_liabilities | FFO | OCF: 1
+	cost_of_labor | depreciation | interest | EBITDA | net_income | equity | debt | st_liabilities | inventories | FFO: 1
+	interest | EBITDA | net_income | equity | debt | cash | inventories | FFO: 1
+	financial_expenses | interest | EBIT | net_income | equity | st_assets | inventories | FFO: 1
+	interest | EBIT | EBITDA | net_income | equity | debt | st_liabilities | inventories | FFO: 1
+	interest | EBIT | net_income | equity | st_assets | total_oper_liabilities | inventories | FFO: 1
+	financial_expenses | interest | EBIT | net_income | equity | total_oper_liabilities | st_liabilities | inventories: 1
+	financial_expenses | interest | EBIT | net_income | equity | debt | total_oper_liabilities | st_liabilities | inventories: 1
+	interest | EBIT | net_income | equity | debt | cash | st_liabilities | inventories | FFO: 1
+	financial_expenses | interest | EBIT | EBITDA | net_income | total_oper_liabilities | FFO: 1
+	depreciation | interest | EBIT | net_income | debt | st_liabilities | inventories | FFO: 1
+	cost_of_labor | financial_expenses | interest | EBIT | net_income | equity | debt | st_assets | inventories | FFO: 1
+	EBITDA | net_income | equity | debt | st_assets | total_oper_liabilities | st_liabilities: 1
+	financial_expenses | interest | EBIT | net_income | equity | inventories | FFO: 1
+	financial_expenses | interest | EBIT | EBITDA | net_income | equity | debt | total_oper_liabilities | FFO: 1
+	interest | EBITDA | net_income | equity | debt | st_liabilities | FFO: 1
+	financial_expenses | interest | EBIT | net_income | equity | debt | st_assets | st_liabilities | FFO: 1
+	interest | EBITDA | net_income | equity | debt | st_assets | total_oper_liabilities | st_liabilities | inventories: 1
+	interest | EBIT | EBITDA | net_income | debt | st_assets | st_liabilities | inventories: 1
+	interest | net_income | equity | debt | total_oper_liabilities | st_liabilities | inventories | FFO: 1
+	financial_expenses | interest | EBITDA | net_income | equity | inventories | FFO: 1
+	financial_expenses | interest | EBITDA | net_income | equity | st_assets | total_oper_liabilities | st_liabilities | inventories: 1
+	EBIT | net_income | equity | debt | st_assets | st_liabilities | FFO: 1
+	depreciation | interest | EBIT | EBITDA | net_income | equity | debt | total_oper_liabilities: 1
+	depreciation | interest | EBIT | net_income | equity | debt | cash | st_liabilities | inventories: 1
+	financial_expenses | interest | net_income | equity | debt | cash | inventories | FFO: 1
+	depreciation | interest | EBIT | net_income | equity | debt | inventories | FFO: 1
+	interest | EBITDA | net_income | equity | debt | st_assets | total_oper_liabilities | st_liabilities | FFO: 1
+	financial_expenses | interest | EBITDA | net_income | equity | total_oper_liabilities | inventories: 1
+	financial_expenses | interest | EBITDA | net_income | equity | total_oper_liabilities | st_liabilities: 1
+	interest | EBIT | net_income | equity | debt | st_assets | total_oper_liabilities | inventories | FFO: 1
+	interest | EBIT | net_income | total_oper_liabilities | st_liabilities | inventories | FFO: 1
+	EBIT | EBITDA | net_income | equity | st_liabilities | inventories | FFO: 1
+	financial_expenses | interest | EBITDA | net_income | total_oper_liabilities | st_liabilities | FFO: 1
+	financial_expenses | EBIT | net_income | equity | debt | st_liabilities | inventories: 1
+	financial_expenses | interest | EBIT | net_income | st_assets | total_oper_liabilities | st_liabilities | inventories: 1
+	financial_expenses | EBIT | EBITDA | net_income | equity | debt | st_assets | FFO: 1
+	interest | EBITDA | net_income | debt | cash | st_liabilities | inventories: 1
+	financial_expenses | interest | EBIT | net_income | equity | st_assets | FFO: 1
+	interest | EBIT | EBITDA | net_income | debt | st_assets | st_liabilities: 1
+	interest | EBIT | EBITDA | net_income | equity | debt | st_liabilities | inventories: 1
+	financial_expenses | interest | EBITDA | net_income | equity | total_oper_liabilities | inventories | FFO: 1
+	interest | EBITDA | net_income | equity | debt | st_assets | total_oper_liabilities | st_liabilities | inventories | FFO: 1
+	depreciation | interest | EBIT | net_income | equity | cash | total_oper_liabilities | st_liabilities | inventories: 1
+	interest | EBIT | EBITDA | net_income | equity | debt | st_liabilities | FFO: 1
+	interest | EBIT | net_income | equity | debt | total_oper_liabilities | st_liabilities | inventories | FFO: 1
+	cost_of_labor | financial_expenses | interest | net_income | debt | st_assets | st_liabilities | inventories | FFO: 1
+	net_income | equity | debt | st_assets | total_oper_liabilities | st_liabilities | FFO: 1
+	cost_of_labor | interest | EBIT | EBITDA | net_income | equity | st_assets | inventories | FFO: 1
+	EBIT | EBITDA | net_income | equity | debt | cash | st_liabilities: 1
+	depreciation | EBIT | EBITDA | net_income | equity | debt | st_liabilities | inventories: 1
+	financial_expenses | interest | EBITDA | net_income | st_assets | total_oper_liabilities | st_liabilities | inventories: 1
+	depreciation | interest | EBIT | net_income | debt | cash | st_liabilities | inventories | OCF: 1
+	depreciation | EBIT | net_income | equity | debt | total_oper_liabilities | st_liabilities | inventories: 1
+	financial_expenses | interest | EBIT | EBITDA | net_income | equity | debt | FFO: 1
+	depreciation | interest | net_income | equity | st_assets | total_oper_liabilities | st_liabilities | inventories | FFO: 1
+	depreciation | EBIT | net_income | equity | debt | total_oper_liabilities | inventories: 1
+	interest | EBIT | net_income | equity | debt | inventories | FFO: 1
+	financial_expenses | interest | equity | debt | st_assets | st_liabilities | inventories | FFO: 1
+	depreciation | interest | EBITDA | net_income | debt | total_oper_liabilities | st_liabilities | inventories | OCF: 1
+	financial_expenses | interest | EBIT | net_income | total_oper_liabilities | st_liabilities | inventories: 1
+	interest | EBIT | EBITDA | net_income | equity | total_oper_liabilities | inventories | FFO: 1
+	interest | EBIT | net_income | equity | debt | st_assets | total_oper_liabilities | st_liabilities | inventories | FFO: 1
+	interest | EBIT | EBITDA | net_income | equity | debt | st_assets | inventories | FFO: 1
+	cost_of_labor | financial_expenses | interest | EBIT | net_income | equity | total_oper_liabilities | inventories | FFO: 1
+We remove max(NOISE,minNoise) groups, NOISE=0.0% -> 0, minNoise=0 we remove groups of size 0. Tree SHAP num of expl. inst. 200 (fold 1). Explaining class: A).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  1
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	net_income: 144
+	interest: 26
+	debt: 20
+	EBIT: 5
+	equity: 4
+	FFO: 1
+--------------
+Threshold: 0,20
+--------------
+	net_income: 135
+	debt: 18
+	interest | net_income: 16
+	interest: 12
+	equity | debt: 4
+	net_income | equity: 2
+	EBIT: 2
+	EBIT | debt: 2
+	interest | equity: 2
+	net_income | st_assets: 1
+	net_income | debt: 1
+	EBIT | net_income: 1
+	interest | EBIT: 1
+	debt | FFO: 1
+	interest | debt: 1
+	debt | st_liabilities: 1
+--------------
+Threshold: 0,30
+--------------
+	interest | net_income: 56
+	net_income: 42
+	EBIT | net_income: 27
+	net_income | debt: 21
+	net_income | equity: 17
+	interest | debt: 7
+	equity | debt: 5
+	net_income | FFO: 5
+	debt: 3
+	debt | st_liabilities: 3
+	net_income | st_liabilities: 2
+	EBITDA | net_income: 2
+	EBIT | debt: 2
+	interest | FFO: 1
+	net_income | cash: 1
+	interest | equity | debt: 1
+	interest | EBIT: 1
+	debt | FFO: 1
+	interest | net_income | st_liabilities: 1
+	net_income | st_assets | total_oper_liabilities: 1
+	interest | equity: 1
+--------------
+Threshold: 0,40
+--------------
+	interest | net_income: 35
+	EBIT | net_income: 29
+	interest | net_income | debt: 21
+	net_income | equity: 17
+	net_income | debt: 14
+	interest | EBIT | net_income: 11
+	EBIT | net_income | debt: 8
+	net_income | equity | debt: 6
+	net_income | debt | FFO: 6
+	interest | net_income | equity: 5
+	interest | equity | debt: 4
+	EBIT | net_income | equity: 4
+	interest | net_income | st_assets: 4
+	interest | net_income | st_liabilities: 3
+	interest | debt: 3
+	debt | st_liabilities: 3
+	net_income | st_liabilities: 2
+	EBITDA | net_income | equity: 2
+	EBITDA | net_income | debt: 2
+	net_income: 2
+	net_income | equity | FFO: 2
+	net_income | total_oper_liabilities: 1
+	EBITDA | net_income: 1
+	EBITDA | net_income | cash: 1
+	EBITDA | net_income | total_oper_liabilities: 1
+	net_income | cash | st_liabilities: 1
+	EBIT | net_income | FFO: 1
+	EBIT | debt | st_liabilities: 1
+	interest | EBITDA | net_income | st_liabilities: 1
+	net_income | equity | st_liabilities: 1
+	equity | debt | FFO: 1
+	interest | debt | st_liabilities: 1
+	net_income | debt | st_liabilities: 1
+	net_income | equity | st_assets | total_oper_liabilities: 1
+	interest | debt | FFO: 1
+	interest | net_income | inventories: 1
+	debt | st_assets | st_liabilities: 1
+	interest | net_income | cash: 1
+--------------
+Threshold: 0,50
+--------------
+	interest | net_income | debt: 20
+	interest | net_income | equity | debt: 11
+	EBIT | net_income | equity: 10
+	EBIT | net_income | debt: 9
+	net_income | equity | debt: 9
+	EBIT | EBITDA | net_income: 9
+	interest | EBIT | net_income: 9
+	interest | EBIT | net_income | debt: 9
+	interest | net_income: 8
+	interest | net_income | equity: 7
+	interest | EBIT | net_income | equity: 7
+	net_income | equity: 5
+	interest | net_income | debt | inventories: 5
+	EBITDA | net_income | equity: 4
+	EBIT | net_income: 4
+	net_income | equity | st_liabilities: 4
+	net_income | debt | st_liabilities: 4
+	net_income | debt | st_assets | FFO: 3
+	interest | net_income | total_oper_liabilities: 3
+	EBIT | EBITDA | net_income | debt: 3
+	EBITDA | net_income | debt: 2
+	EBIT | net_income | debt | FFO: 2
+	net_income | equity | FFO: 2
+	interest | net_income | debt | st_assets: 2
+	interest | debt | st_liabilities: 2
+	net_income | equity | debt | st_liabilities: 2
+	interest | net_income | cash | st_liabilities: 2
+	interest | net_income | FFO: 2
+	interest | net_income | st_liabilities: 2
+	interest | EBIT | net_income | FFO: 2
+	net_income | debt | FFO: 2
+	interest | net_income | equity | st_liabilities: 2
+	depreciation | interest | EBITDA | equity | debt: 1
+	interest | equity | debt | FFO: 1
+	net_income | debt: 1
+	interest | net_income | equity | FFO: 1
+	interest | net_income | equity | debt | st_assets: 1
+	interest | EBITDA | debt: 1
+	equity | debt | st_liabilities: 1
+	EBITDA | net_income | equity | debt: 1
+	EBITDA | net_income | equity | cash: 1
+	EBITDA | net_income | equity | total_oper_liabilities: 1
+	interest | EBITDA | net_income | debt: 1
+	EBIT | debt | st_liabilities: 1
+	interest | net_income | debt | st_liabilities: 1
+	EBIT | net_income | equity | FFO: 1
+	EBIT | net_income | cash: 1
+	EBIT | net_income | total_oper_liabilities: 1
+	net_income | debt | st_assets | st_liabilities: 1
+	depreciation | interest | net_income: 1
+	depreciation | net_income | st_liabilities | inventories: 1
+	interest | net_income | debt | st_assets | total_oper_liabilities: 1
+	interest | net_income | st_assets | total_oper_liabilities: 1
+	net_income | equity | st_assets | total_oper_liabilities: 1
+	interest | debt | FFO: 1
+	interest | EBITDA | net_income | equity | st_liabilities: 1
+	net_income | equity | debt | st_assets | total_oper_liabilities: 1
+	EBIT | net_income | equity | st_assets: 1
+	EBIT | net_income | equity | total_oper_liabilities: 1
+	EBIT | net_income | equity | debt: 1
+	interest | net_income | inventories: 1
+	interest | net_income | total_oper_liabilities | st_liabilities: 1
+	interest | net_income | cash: 1
+	EBIT | EBITDA | net_income | equity: 1
+	interest | net_income | equity | cash: 1
+--------------
+Threshold: 0,60
+--------------
+	interest | net_income | debt | st_liabilities: 9
+	interest | EBIT | net_income | equity | debt: 9
+	interest | net_income | equity | debt | st_liabilities: 5
+	interest | EBITDA | net_income | debt: 5
+	EBITDA | net_income | equity | FFO: 5
+	net_income | equity | debt | st_liabilities: 5
+	EBIT | EBITDA | net_income | equity: 5
+	EBIT | EBITDA | net_income | debt: 5
+	EBIT | EBITDA | net_income: 4
+	interest | EBITDA | net_income | equity | debt: 4
+	EBIT | net_income | equity | debt: 4
+	interest | EBIT | net_income | equity: 4
+	interest | EBIT | net_income | debt: 4
+	interest | net_income | equity | FFO: 3
+	interest | net_income | debt | st_assets | FFO: 3
+	EBIT | EBITDA | net_income | FFO: 3
+	interest | EBIT | net_income | FFO: 3
+	interest | net_income | equity | debt: 3
+	interest | EBITDA | net_income | debt | st_liabilities: 2
+	EBIT | net_income | debt | st_liabilities: 2
+	EBIT | net_income | equity | debt | FFO: 2
+	interest | EBIT | net_income | equity | FFO: 2
+	EBIT | net_income | equity | debt | st_liabilities: 2
+	EBITDA | net_income | equity | cash | st_liabilities: 2
+	interest | net_income | equity | debt | FFO: 2
+	interest | net_income | debt | FFO: 2
+	interest | EBIT | EBITDA | net_income | equity: 2
+	interest | EBIT | EBITDA | net_income | debt: 2
+	EBIT | net_income | debt: 2
+	net_income | equity | debt: 2
+	EBIT | net_income | equity | st_assets | total_oper_liabilities: 2
+	net_income | equity | debt | FFO: 2
+	net_income | equity | debt | cash: 2
+	interest | EBIT | net_income | debt | inventories: 2
+	interest | EBIT | net_income | debt | st_liabilities: 2
+	interest | net_income | st_liabilities: 2
+	interest | net_income | total_oper_liabilities | FFO: 2
+	interest | net_income | total_oper_liabilities: 2
+	interest | EBIT | net_income | debt | st_assets: 2
+	EBIT | net_income | equity | total_oper_liabilities | FFO: 2
+	interest | net_income | equity | st_liabilities: 2
+	EBIT | net_income | equity | st_assets | FFO: 1
+	depreciation | interest | EBITDA | net_income | equity | debt: 1
+	interest | net_income | equity | debt | st_assets | FFO: 1
+	interest | EBITDA | net_income | debt | total_oper_liabilities: 1
+	interest | net_income | equity | debt | st_assets | st_liabilities: 1
+	net_income | debt | st_assets | FFO: 1
+	interest | net_income | st_assets | total_oper_liabilities | st_liabilities: 1
+	EBIT | net_income | debt | st_assets: 1
+	interest | net_income | equity | debt | st_assets: 1
+	interest | net_income | debt | cash | inventories: 1
+	interest | EBITDA | net_income | equity: 1
+	interest | EBITDA | debt | st_liabilities: 1
+	EBIT | net_income | equity | debt | total_oper_liabilities: 1
+	financial_expenses | interest | EBIT | net_income | FFO: 1
+	EBIT | net_income | debt | FFO: 1
+	interest | net_income | equity | debt | inventories: 1
+	net_income | equity | debt | cash | st_assets | total_oper_liabilities: 1
+	EBIT | net_income | FFO: 1
+	EBITDA | net_income | equity | debt: 1
+	EBITDA | net_income | equity | cash: 1
+	EBIT | net_income | debt | inventories | FFO: 1
+	EBITDA | net_income | equity | st_liabilities: 1
+	net_income | equity | FFO: 1
+	interest | EBITDA | net_income | FFO: 1
+	interest | net_income | debt | st_assets | total_oper_liabilities | st_liabilities: 1
+	depreciation | interest | net_income | debt | inventories: 1
+	financial_expenses | interest | net_income | equity | st_liabilities: 1
+	interest | net_income | debt | total_oper_liabilities: 1
+	EBITDA | net_income | equity | total_oper_liabilities | st_liabilities | inventories: 1
+	interest | EBIT | net_income | equity | total_oper_liabilities: 1
+	interest | EBITDA | net_income | cash | st_liabilities: 1
+	interest | EBIT | equity | debt | FFO: 1
+	interest | net_income | debt | inventories | FFO: 1
+	interest | net_income | debt | st_assets | st_liabilities: 1
+	interest | EBIT | net_income | total_oper_liabilities | FFO: 1
+	interest | EBITDA | net_income | total_oper_liabilities | inventories: 1
+	interest | EBIT | net_income | equity | debt | FFO: 1
+	interest | net_income | cash | st_liabilities | inventories: 1
+	interest | net_income | equity | cash | inventories: 1
+	interest | net_income | equity | total_oper_liabilities | st_liabilities: 1
+	financial_expenses | interest | net_income | equity | FFO: 1
+	net_income | equity | debt | inventories: 1
+	interest | EBIT | net_income: 1
+	interest | EBITDA | net_income | equity | cash: 1
+	EBIT | net_income | equity | st_assets: 1
+	EBIT | net_income | total_oper_liabilities | FFO: 1
+	depreciation | interest | EBIT | net_income | st_liabilities: 1
+	interest | net_income | debt | st_liabilities | FFO: 1
+	interest | EBIT | EBITDA | net_income | equity | st_liabilities: 1
+	interest | net_income | total_oper_liabilities | st_liabilities: 1
+	depreciation | net_income | equity | debt | st_liabilities: 1
+	interest | net_income | debt: 1
+	interest | net_income | equity: 1
+	depreciation | interest | net_income | equity | debt: 1
+	financial_expenses | interest | net_income | equity: 1
+	financial_expenses | interest | net_income | debt: 1
+	depreciation | interest | net_income | st_liabilities | inventories: 1
+	interest | debt | st_liabilities | FFO: 1
+	financial_expenses | interest | net_income | st_liabilities: 1
+	net_income | equity | st_liabilities | FFO: 1
+	interest | EBIT | net_income | st_liabilities: 1
+	interest | EBIT | net_income | inventories: 1
+	EBIT | net_income | cash | inventories: 1
+	interest | EBIT | net_income | st_assets: 1
+	interest | EBIT | net_income | total_oper_liabilities: 1
+	net_income | debt | st_assets | total_oper_liabilities | st_liabilities: 1
+	interest | net_income | equity | cash: 1
+	interest | EBIT | net_income | inventories | FFO: 1
+	interest | EBIT | net_income | debt | FFO: 1
+	interest | net_income | st_liabilities | inventories: 1
+	interest | net_income | equity | total_oper_liabilities: 1
+--------------
+Threshold: 0,70
+--------------
+	interest | EBITDA | net_income | debt | st_liabilities: 7
+	EBIT | EBITDA | net_income | equity | FFO: 7
+	interest | EBIT | net_income | equity | debt | FFO: 5
+	interest | net_income | equity | debt | st_assets | st_liabilities | FFO: 4
+	EBITDA | net_income | equity | debt | FFO: 4
+	interest | EBIT | net_income | equity | debt | total_oper_liabilities | st_liabilities: 3
+	interest | EBIT | net_income | equity | total_oper_liabilities | FFO: 3
+	interest | EBITDA | net_income | total_oper_liabilities | st_liabilities: 3
+	interest | EBITDA | net_income | equity | debt: 3
+	interest | EBITDA | net_income | equity | debt | st_liabilities: 3
+	interest | EBIT | net_income | equity | debt | inventories | FFO: 3
+	EBIT | EBITDA | net_income | equity | debt | FFO: 2
+	EBITDA | net_income | equity | debt | cash | st_liabilities: 2
+	interest | EBITDA | net_income | debt | total_oper_liabilities | st_liabilities: 2
+	interest | EBIT | net_income | debt | st_assets | st_liabilities: 2
+	EBIT | net_income | equity | debt | st_liabilities | FFO: 2
+	interest | net_income | equity | debt | st_liabilities: 2
+	interest | EBIT | net_income | equity | debt | st_liabilities | FFO: 2
+	interest | EBIT | net_income | total_oper_liabilities | st_liabilities: 2
+	interest | EBIT | EBITDA | net_income | debt | FFO: 2
+	interest | net_income | debt | total_oper_liabilities | st_liabilities | inventories: 2
+	interest | EBITDA | net_income | equity | total_oper_liabilities | st_liabilities: 2
+	interest | EBIT | net_income | equity | debt | total_oper_liabilities | FFO: 2
+	interest | net_income | equity | debt | st_assets | total_oper_liabilities | st_liabilities | FFO: 2
+	interest | EBIT | net_income | total_oper_liabilities | FFO: 2
+	interest | EBIT | net_income | debt | st_liabilities | FFO: 2
+	interest | net_income | equity | debt | st_liabilities | FFO: 2
+	EBIT | EBITDA | net_income | equity | debt: 2
+	EBIT | net_income | equity | debt | st_assets | FFO: 2
+	interest | EBITDA | net_income | equity | st_liabilities: 2
+	interest | EBIT | EBITDA | net_income | equity | cash: 2
+	interest | EBITDA | net_income | equity | FFO: 2
+	interest | EBIT | EBITDA | net_income | equity | debt: 2
+	interest | EBITDA | net_income | equity | debt | cash: 2
+	interest | net_income | equity | debt | inventories | FFO: 2
+	interest | EBITDA | net_income | equity | debt | total_oper_liabilities: 2
+	EBIT | EBITDA | net_income | equity: 2
+	interest | EBIT | net_income | debt: 2
+	EBIT | net_income | equity | st_assets | FFO: 1
+	interest | EBIT | net_income | equity | total_oper_liabilities | inventories | FFO: 1
+	EBITDA | net_income | equity | total_oper_liabilities | st_liabilities | inventories | FFO: 1
+	interest | EBITDA | net_income | equity | debt | inventories | FFO: 1
+	interest | EBITDA | net_income | debt | inventories: 1
+	financial_expenses | interest | EBITDA | net_income | equity | FFO: 1
+	financial_expenses | interest | EBIT | net_income | total_oper_liabilities: 1
+	EBIT | net_income | debt | st_liabilities: 1
+	interest | EBIT | net_income | st_liabilities | FFO: 1
+	EBIT | net_income | equity | debt | FFO: 1
+	depreciation | EBIT | net_income | equity | debt | st_liabilities: 1
+	interest | EBIT | net_income | equity | FFO: 1
+	EBIT | net_income | debt | st_assets | total_oper_liabilities | st_liabilities | FFO: 1
+	EBIT | net_income | equity | st_assets | total_oper_liabilities | FFO: 1
+	depreciation | EBIT | net_income | equity | debt: 1
+	interest | EBIT | net_income | equity | cash | inventories: 1
+	EBIT | net_income | debt | st_liabilities | FFO: 1
+	EBIT | net_income | equity | debt | st_liabilities | inventories: 1
+	interest | EBITDA | net_income | debt | FFO: 1
+	EBIT | net_income | total_oper_liabilities | st_liabilities | inventories | FFO: 1
+	financial_expenses | interest | EBIT | net_income | equity | total_oper_liabilities | FFO: 1
+	financial_expenses | interest | net_income | equity | debt | inventories: 1
+	interest | net_income | equity | total_oper_liabilities | st_liabilities | inventories: 1
+	interest | EBIT | net_income | total_oper_liabilities | st_liabilities | inventories: 1
+	depreciation | interest | EBIT | net_income | debt | cash | inventories: 1
+	interest | EBIT | EBITDA | net_income | FFO: 1
+	EBIT | net_income | debt | FFO: 1
+	EBITDA | net_income | equity | cash | st_liabilities: 1
+	financial_expenses | interest | net_income | debt | st_assets | st_liabilities | inventories: 1
+	interest | net_income | equity | debt | cash | FFO: 1
+	interest | net_income | equity | total_oper_liabilities | inventories | FFO: 1
+	interest | EBITDA | net_income | debt: 1
+	EBIT | net_income | equity | debt | total_oper_liabilities | st_liabilities: 1
+	interest | EBITDA | net_income | equity | st_liabilities | FFO: 1
+	EBIT | net_income | equity | debt | st_assets | inventories | FFO: 1
+	interest | EBIT | EBITDA | net_income | equity: 1
+	interest | EBIT | net_income | debt | cash | inventories: 1
+	net_income | equity | debt | st_liabilities | FFO: 1
+	interest | EBITDA | net_income | debt | total_oper_liabilities | st_liabilities | inventories: 1
+	interest | EBIT | EBITDA | net_income | debt: 1
+	interest | net_income | equity | debt | cash | inventories: 1
+	financial_expenses | interest | net_income | equity | inventories: 1
+	depreciation | interest | net_income | total_oper_liabilities | st_liabilities | inventories | OCF: 1
+	interest | EBITDA | net_income | debt | cash | st_liabilities: 1
+	interest | EBIT | net_income | equity | st_liabilities | FFO: 1
+	interest | EBIT | EBITDA | net_income | debt | st_assets: 1
+	interest | EBIT | net_income | st_assets | inventories | FFO: 1
+	interest | net_income | equity | debt | total_oper_liabilities | st_liabilities: 1
+	interest | EBIT | EBITDA | net_income | debt | st_liabilities: 1
+	depreciation | interest | EBITDA | net_income | equity | debt | st_liabilities | FFO: 1
+	interest | EBITDA | net_income | equity | debt | total_oper_liabilities | inventories: 1
+	interest | EBIT | net_income | equity | debt | st_liabilities | inventories: 1
+	EBITDA | net_income | equity | debt | inventories: 1
+	interest | EBIT | net_income | equity | inventories | FFO: 1
+	depreciation | financial_expenses | interest | EBIT | net_income | st_liabilities: 1
+	interest | net_income | equity | debt | st_liabilities | inventories | FFO: 1
+	interest | EBITDA | net_income | equity | cash | st_liabilities: 1
+	interest | EBIT | net_income | equity | debt | inventories: 1
+	interest | EBITDA | net_income | total_oper_liabilities | st_liabilities | inventories: 1
+	interest | EBIT | net_income | equity | debt | st_liabilities: 1
+	interest | EBIT | net_income | debt | st_assets | inventories | FFO: 1
+	interest | EBIT | net_income | equity | debt | st_assets: 1
+	net_income | equity | debt | st_assets | st_liabilities | FFO: 1
+	interest | EBIT | EBITDA | net_income | cash | st_liabilities: 1
+	depreciation | net_income | equity | debt | cash | st_liabilities: 1
+	interest | EBIT | net_income | debt | st_liabilities | inventories: 1
+	financial_expenses | interest | net_income | equity | total_oper_liabilities | FFO: 1
+	EBITDA | net_income | equity | debt | st_liabilities: 1
+	EBITDA | net_income | equity | FFO: 1
+	net_income | equity | debt | st_assets: 1
+	depreciation | interest | net_income | equity | cash | st_liabilities | inventories: 1
+	interest | EBIT | net_income | equity | total_oper_liabilities | st_liabilities | FFO: 1
+	financial_expenses | interest | EBIT | net_income | equity | debt | FFO: 1
+	EBIT | net_income | equity | debt | st_assets | st_liabilities: 1
+	interest | EBITDA | net_income | cash | total_oper_liabilities | FFO: 1
+	financial_expenses | net_income | equity | debt | cash | st_assets | total_oper_liabilities | st_liabilities: 1
+	interest | equity | debt | st_assets | st_liabilities | FFO: 1
+	financial_expenses | interest | EBITDA | net_income | equity | total_oper_liabilities | st_liabilities: 1
+	depreciation | interest | EBIT | EBITDA | net_income | equity | debt: 1
+	EBIT | EBITDA | net_income | FFO: 1
+	interest | EBIT | EBITDA | net_income | equity | total_oper_liabilities | st_liabilities: 1
+	EBITDA | net_income | equity | debt | st_liabilities | FFO: 1
+	interest | EBIT | EBITDA | net_income | equity | st_liabilities: 1
+	interest | EBIT | net_income | debt | st_assets: 1
+	interest | net_income | equity | st_liabilities | inventories | FFO: 1
+	interest | net_income | equity | st_liabilities | inventories: 1
+	financial_expenses | interest | net_income | total_oper_liabilities | inventories | FFO: 1
+	depreciation | net_income | equity | debt | st_assets | st_liabilities: 1
+	financial_expenses | interest | EBIT | net_income | total_oper_liabilities | st_liabilities: 1
+	interest | net_income | equity | st_assets | total_oper_liabilities | st_liabilities | FFO: 1
+	EBIT | EBITDA | net_income | debt | FFO: 1
+	interest | EBIT | net_income | equity | st_assets | FFO: 1
+	depreciation | EBITDA | net_income | equity | debt | st_liabilities: 1
+	EBIT | EBITDA | net_income | debt: 1
+	financial_expenses | interest | EBITDA | net_income | debt | inventories | FFO: 1
+	interest | EBIT | net_income | debt | inventories | FFO: 1
+	interest | EBIT | net_income | debt | total_oper_liabilities | inventories | FFO: 1
+	interest | EBIT | net_income | equity | st_assets | total_oper_liabilities: 1
+	financial_expenses | interest | EBIT | net_income | debt | st_assets | FFO: 1
+	interest | EBIT | net_income | inventories | FFO: 1
+	interest | EBIT | net_income | debt | FFO: 1
+--------------
+Threshold: 0,80
+--------------
+	interest | EBIT | EBITDA | net_income | equity | debt | FFO: 8
+	EBIT | EBITDA | net_income | equity | debt | FFO: 4
+	financial_expenses | interest | EBITDA | net_income | debt | total_oper_liabilities | st_liabilities: 4
+	financial_expenses | interest | EBITDA | net_income | equity | debt | total_oper_liabilities | st_liabilities: 4
+	interest | EBIT | EBITDA | net_income | equity | debt | inventories | FFO: 4
+	interest | EBIT | EBITDA | net_income | equity | debt | cash | st_liabilities: 4
+	interest | EBIT | net_income | equity | debt | st_assets | total_oper_liabilities | st_liabilities | FFO: 3
+	EBIT | EBITDA | net_income | equity | debt | inventories | FFO: 3
+	interest | EBIT | EBITDA | net_income | equity | debt | total_oper_liabilities | st_liabilities: 3
+	interest | EBIT | net_income | equity | debt | st_assets | inventories | FFO: 3
+	EBIT | EBITDA | net_income | equity | debt | cash | FFO: 3
+	interest | EBIT | net_income | equity | debt | st_assets | st_liabilities | FFO: 3
+	interest | EBITDA | net_income | equity | total_oper_liabilities | st_liabilities | FFO: 2
+	financial_expenses | interest | EBIT | net_income | equity | debt | total_oper_liabilities | inventories | FFO: 2
+	EBIT | EBITDA | net_income | equity | debt | st_liabilities | FFO: 2
+	interest | EBIT | net_income | equity | debt | st_liabilities | inventories | FFO: 2
+	interest | EBIT | net_income | equity | st_assets | total_oper_liabilities | st_liabilities | FFO: 2
+	interest | EBITDA | net_income | equity | total_oper_liabilities | st_liabilities | inventories: 2
+	financial_expenses | interest | EBIT | net_income | total_oper_liabilities | st_liabilities | inventories | FFO: 2
+	interest | EBIT | EBITDA | net_income | equity | total_oper_liabilities | st_liabilities | inventories | FFO: 2
+	interest | EBIT | EBITDA | net_income | equity | FFO: 2
+	financial_expenses | interest | EBITDA | net_income | equity | debt | st_liabilities: 2
+	EBIT | net_income | equity | debt | st_assets | total_oper_liabilities | st_liabilities | FFO: 2
+	interest | EBIT | EBITDA | net_income | debt | FFO: 2
+	depreciation | EBIT | net_income | equity | debt | cash | st_liabilities | inventories: 2
+	interest | EBITDA | net_income | equity | debt | total_oper_liabilities | st_liabilities: 2
+	financial_expenses | interest | EBIT | EBITDA | net_income | total_oper_liabilities | st_liabilities: 2
+	interest | EBITDA | net_income | debt | total_oper_liabilities | st_liabilities | inventories | FFO: 1
+	financial_expenses | EBIT | EBITDA | net_income | equity | debt | st_assets | inventories | FFO: 1
+	depreciation | interest | EBITDA | net_income | equity | debt | cash | st_liabilities | inventories: 1
+	interest | EBIT | EBITDA | net_income | equity | st_liabilities | FFO: 1
+	depreciation | interest | net_income | equity | debt | st_liabilities | inventories: 1
+	interest | EBITDA | net_income | debt | total_oper_liabilities | st_liabilities: 1
+	interest | EBIT | EBITDA | net_income | cash | total_oper_liabilities | st_liabilities | FFO: 1
+	interest | EBITDA | net_income | equity | debt | inventories | FFO: 1
+	interest | EBIT | EBITDA | net_income | debt | cash | st_liabilities: 1
+	interest | EBIT | EBITDA | net_income | st_assets | st_liabilities | inventories | FFO: 1
+	interest | EBIT | net_income | equity | debt | total_oper_liabilities | inventories | FFO: 1
+	depreciation | interest | EBIT | net_income | total_oper_liabilities | st_liabilities | inventories | FFO: 1
+	net_income | equity | debt | total_oper_liabilities | st_liabilities | inventories | FFO: 1
+	interest | EBIT | EBITDA | net_income | st_liabilities | FFO: 1
+	depreciation | interest | net_income | equity | debt | st_liabilities | inventories | FFO: 1
+	EBIT | EBITDA | net_income | equity | debt | cash | st_liabilities | inventories: 1
+	EBIT | EBITDA | net_income | debt | st_liabilities | FFO: 1
+	cost_of_labor | financial_expenses | interest | EBITDA | net_income | debt | cash | lt_liabilities | inventories | FFO: 1
+	interest | net_income | equity | debt | cash | total_oper_liabilities | st_liabilities | inventories | FFO: 1
+	financial_expenses | interest | EBIT | net_income | equity | total_oper_liabilities | inventories | FFO: 1
+	interest | EBIT | net_income | equity | debt | st_assets | total_oper_liabilities | FFO: 1
+	cost_of_labor | EBIT | net_income | debt | st_assets | total_oper_liabilities | st_liabilities | FFO: 1
+	financial_expenses | interest | EBIT | net_income | debt | total_oper_liabilities | st_liabilities | inventories: 1
+	interest | EBITDA | net_income | equity | debt | cash | st_liabilities | FFO: 1
+	depreciation | financial_expenses | interest | EBIT | net_income | equity | total_oper_liabilities | st_liabilities: 1
+	interest | EBIT | net_income | debt | cash | OCF: 1
+	EBITDA | net_income | equity | debt | st_assets | inventories | FFO: 1
+	financial_expenses | interest | EBITDA | net_income | equity | total_oper_liabilities | st_liabilities | inventories: 1
+	interest | EBIT | EBITDA | net_income | equity | st_liabilities | inventories | FFO: 1
+	EBIT | EBITDA | net_income | debt | inventories | FFO: 1
+	financial_expenses | interest | EBIT | EBITDA | net_income | equity | cash | total_oper_liabilities | inventories: 1
+	depreciation | EBITDA | net_income | equity | debt | st_assets | total_oper_liabilities | st_liabilities: 1
+	depreciation | financial_expenses | net_income | equity | debt | cash | st_assets | total_oper_liabilities | st_liabilities: 1
+	interest | EBITDA | net_income | equity | debt | total_oper_liabilities | st_liabilities | inventories: 1
+	interest | EBIT | EBITDA | net_income | equity | debt | st_liabilities: 1
+	interest | EBITDA | net_income | debt | total_oper_liabilities | st_liabilities | inventories: 1
+	financial_expenses | interest | EBIT | EBITDA | net_income | debt: 1
+	financial_expenses | EBITDA | net_income | equity | debt | st_assets: 1
+	financial_expenses | interest | EBITDA | net_income | equity | total_oper_liabilities | st_liabilities | FFO: 1
+	interest | EBIT | net_income | debt | st_assets | st_liabilities | FFO: 1
+	EBIT | EBITDA | net_income | equity | debt | st_liabilities | inventories | FFO: 1
+	depreciation | EBIT | net_income | equity | debt | st_assets | FFO | OCF: 1
+	interest | net_income | equity | debt | st_assets | total_oper_liabilities | st_liabilities | FFO: 1
+	financial_expenses | interest | EBITDA | net_income | equity | debt | total_oper_liabilities | st_liabilities | inventories: 1
+	interest | EBIT | EBITDA | net_income | debt | st_liabilities: 1
+	EBIT | EBITDA | net_income | equity | inventories | FFO: 1
+	interest | EBIT | EBITDA | net_income | debt | inventories: 1
+	interest | EBIT | net_income | equity | debt | st_assets | st_liabilities | inventories | FFO: 1
+	financial_expenses | interest | EBITDA | net_income | debt | st_liabilities | inventories: 1
+	interest | EBIT | net_income | equity | debt | cash | st_liabilities | inventories: 1
+	interest | EBIT | EBITDA | net_income | equity | debt | st_assets | FFO: 1
+	interest | EBIT | EBITDA | net_income | equity | st_assets | total_oper_liabilities | st_liabilities | inventories: 1
+	interest | net_income | equity | debt | st_liabilities | inventories | FFO: 1
+	financial_expenses | interest | EBIT | net_income | equity | debt | st_assets | inventories: 1
+	financial_expenses | interest | EBIT | net_income | equity | total_oper_liabilities | st_liabilities | inventories | FFO: 1
+	cost_of_labor | interest | EBITDA | net_income | equity | debt | st_liabilities | inventories | FFO: 1
+	interest | EBIT | EBITDA | net_income | equity | debt | cash | inventories: 1
+	financial_expenses | interest | EBITDA | net_income | equity | debt | st_liabilities | FFO: 1
+	EBIT | net_income | equity | debt | total_oper_liabilities | st_liabilities | inventories | OCF: 1
+	depreciation | interest | EBIT | net_income | equity | st_assets | total_oper_liabilities | FFO | OCF: 1
+	cost_of_labor | depreciation | interest | EBITDA | net_income | equity | debt | st_liabilities | inventories | FFO: 1
+	interest | EBITDA | net_income | equity | debt | cash | inventories | FFO: 1
+	financial_expenses | interest | EBIT | net_income | equity | st_assets | inventories | FFO: 1
+	interest | EBIT | EBITDA | net_income | equity | debt | st_liabilities | inventories | FFO: 1
+	interest | EBIT | net_income | equity | st_assets | total_oper_liabilities | inventories | FFO: 1
+	financial_expenses | interest | EBIT | net_income | equity | total_oper_liabilities | st_liabilities | inventories: 1
+	financial_expenses | interest | EBIT | net_income | equity | debt | total_oper_liabilities | st_liabilities | inventories: 1
+	interest | EBIT | net_income | equity | debt | cash | st_liabilities | inventories | FFO: 1
+	financial_expenses | interest | EBIT | EBITDA | net_income | total_oper_liabilities | FFO: 1
+	depreciation | interest | EBIT | net_income | debt | st_liabilities | inventories | FFO: 1
+	cost_of_labor | financial_expenses | interest | EBIT | net_income | equity | debt | st_assets | inventories | FFO: 1
+	EBITDA | net_income | equity | debt | st_assets | total_oper_liabilities | st_liabilities: 1
+	financial_expenses | interest | EBIT | net_income | equity | inventories | FFO: 1
+	financial_expenses | interest | EBIT | EBITDA | net_income | equity | debt | total_oper_liabilities | FFO: 1
+	interest | EBITDA | net_income | equity | debt | st_liabilities | FFO: 1
+	financial_expenses | interest | EBIT | net_income | equity | debt | st_assets | st_liabilities | FFO: 1
+	interest | EBITDA | net_income | equity | debt | st_assets | total_oper_liabilities | st_liabilities | inventories: 1
+	interest | EBIT | EBITDA | net_income | debt | st_assets | st_liabilities | inventories: 1
+	interest | net_income | equity | debt | total_oper_liabilities | st_liabilities | inventories | FFO: 1
+	financial_expenses | interest | EBITDA | net_income | equity | inventories | FFO: 1
+	financial_expenses | interest | EBITDA | net_income | equity | st_assets | total_oper_liabilities | st_liabilities | inventories: 1
+	EBIT | net_income | equity | debt | st_assets | st_liabilities | FFO: 1
+	depreciation | interest | EBIT | EBITDA | net_income | equity | debt | total_oper_liabilities: 1
+	depreciation | interest | EBIT | net_income | equity | debt | cash | st_liabilities | inventories: 1
+	financial_expenses | interest | net_income | equity | debt | cash | inventories | FFO: 1
+	depreciation | interest | EBIT | net_income | equity | debt | inventories | FFO: 1
+	interest | EBITDA | net_income | equity | debt | st_assets | total_oper_liabilities | st_liabilities | FFO: 1
+	financial_expenses | interest | EBITDA | net_income | equity | total_oper_liabilities | inventories: 1
+	financial_expenses | interest | EBITDA | net_income | equity | total_oper_liabilities | st_liabilities: 1
+	interest | EBIT | net_income | equity | debt | st_assets | total_oper_liabilities | inventories | FFO: 1
+	interest | EBIT | net_income | total_oper_liabilities | st_liabilities | inventories | FFO: 1
+	EBIT | EBITDA | net_income | equity | st_liabilities | inventories | FFO: 1
+	financial_expenses | interest | EBITDA | net_income | total_oper_liabilities | st_liabilities | FFO: 1
+	financial_expenses | EBIT | net_income | equity | debt | st_liabilities | inventories: 1
+	financial_expenses | interest | EBIT | net_income | st_assets | total_oper_liabilities | st_liabilities | inventories: 1
+	financial_expenses | EBIT | EBITDA | net_income | equity | debt | st_assets | FFO: 1
+	interest | EBITDA | net_income | debt | cash | st_liabilities | inventories: 1
+	financial_expenses | interest | EBIT | net_income | equity | st_assets | FFO: 1
+	interest | EBIT | EBITDA | net_income | debt | st_assets | st_liabilities: 1
+	interest | EBIT | EBITDA | net_income | equity | debt | st_liabilities | inventories: 1
+	financial_expenses | interest | EBITDA | net_income | equity | total_oper_liabilities | inventories | FFO: 1
+	interest | EBITDA | net_income | equity | debt | st_assets | total_oper_liabilities | st_liabilities | inventories | FFO: 1
+	depreciation | interest | EBIT | net_income | equity | cash | total_oper_liabilities | st_liabilities | inventories: 1
+	interest | EBIT | EBITDA | net_income | equity | debt | st_liabilities | FFO: 1
+	interest | EBIT | net_income | equity | debt | total_oper_liabilities | st_liabilities | inventories | FFO: 1
+	cost_of_labor | financial_expenses | interest | net_income | debt | st_assets | st_liabilities | inventories | FFO: 1
+	net_income | equity | debt | st_assets | total_oper_liabilities | st_liabilities | FFO: 1
+	cost_of_labor | interest | EBIT | EBITDA | net_income | equity | st_assets | inventories | FFO: 1
+	EBIT | EBITDA | net_income | equity | debt | cash | st_liabilities: 1
+	depreciation | EBIT | EBITDA | net_income | equity | debt | st_liabilities | inventories: 1
+	financial_expenses | interest | EBITDA | net_income | st_assets | total_oper_liabilities | st_liabilities | inventories: 1
+	depreciation | interest | EBIT | net_income | debt | cash | st_liabilities | inventories | OCF: 1
+	depreciation | EBIT | net_income | equity | debt | total_oper_liabilities | st_liabilities | inventories: 1
+	financial_expenses | interest | EBIT | EBITDA | net_income | equity | debt | FFO: 1
+	depreciation | interest | net_income | equity | st_assets | total_oper_liabilities | st_liabilities | inventories | FFO: 1
+	depreciation | EBIT | net_income | equity | debt | total_oper_liabilities | inventories: 1
+	interest | EBIT | net_income | equity | debt | inventories | FFO: 1
+	financial_expenses | interest | equity | debt | st_assets | st_liabilities | inventories | FFO: 1
+	depreciation | interest | EBITDA | net_income | debt | total_oper_liabilities | st_liabilities | inventories | OCF: 1
+	financial_expenses | interest | EBIT | net_income | total_oper_liabilities | st_liabilities | inventories: 1
+	interest | EBIT | EBITDA | net_income | equity | total_oper_liabilities | inventories | FFO: 1
+	interest | EBIT | net_income | equity | debt | st_assets | total_oper_liabilities | st_liabilities | inventories | FFO: 1
+	interest | EBIT | EBITDA | net_income | equity | debt | st_assets | inventories | FFO: 1
+	cost_of_labor | financial_expenses | interest | EBIT | net_income | equity | total_oper_liabilities | inventories | FFO: 1
+*********************************************************************************
+All potential concepts based on thresholds
+	interest net_income ~#~ equity debt ~#~ net_income equity ~#~ EBIT debt ~#~ interest equity ~#~ net_income st_assets ~#~ net_income debt ~#~ EBIT net_income ~#~ interest EBIT ~#~ debt FFO ~#~ interest debt ~#~ debt st_liabilities ~#~ net_income FFO ~#~ net_income st_liabilities ~#~ EBITDA net_income ~#~ interest FFO ~#~ net_income cash ~#~ interest equity debt ~#~ interest net_income st_liabilities ~#~ net_income st_assets total_oper_liabilities ~#~ interest net_income debt ~#~ interest EBIT net_income ~#~ EBIT net_income debt ~#~ net_income equity debt ~#~ net_income debt FFO ~#~ interest net_income equity ~#~ EBIT net_income equity ~#~ interest net_income st_assets ~#~ EBITDA net_income equity ~#~ EBITDA net_income debt ~#~ net_income equity FFO ~#~ net_income total_oper_liabilities ~#~ EBITDA net_income cash ~#~ EBITDA net_income total_oper_liabilities ~#~ net_income cash st_liabilities ~#~ EBIT net_income FFO ~#~ EBIT debt st_liabilities ~#~ interest EBITDA net_income st_liabilities ~#~ net_income equity st_liabilities ~#~ equity debt FFO ~#~ interest debt st_liabilities ~#~ net_income debt st_liabilities ~#~ net_income equity st_assets total_oper_liabilities ~#~ interest debt FFO ~#~ interest net_income inventories ~#~ debt st_assets st_liabilities ~#~ interest net_income cash ~#~ interest net_income equity debt ~#~ EBIT EBITDA net_income ~#~ interest EBIT net_income debt ~#~ interest EBIT net_income equity ~#~ interest net_income debt inventories ~#~ net_income debt st_assets FFO ~#~ interest net_income total_oper_liabilities ~#~ EBIT EBITDA net_income debt ~#~ EBIT net_income debt FFO ~#~ interest net_income debt st_assets ~#~ net_income equity debt st_liabilities ~#~ interest net_income cash st_liabilities ~#~ interest net_income FFO ~#~ interest EBIT net_income FFO ~#~ interest net_income equity st_liabilities ~#~ depreciation interest EBITDA equity debt ~#~ interest equity debt FFO ~#~ interest net_income equity FFO ~#~ interest net_income equity debt st_assets ~#~ interest EBITDA debt ~#~ equity debt st_liabilities ~#~ EBITDA net_income equity debt ~#~ EBITDA net_income equity cash ~#~ EBITDA net_income equity total_oper_liabilities ~#~ interest EBITDA net_income debt ~#~ interest net_income debt st_liabilities ~#~ EBIT net_income equity FFO ~#~ EBIT net_income cash ~#~ EBIT net_income total_oper_liabilities ~#~ net_income debt st_assets st_liabilities ~#~ depreciation interest net_income ~#~ depreciation net_income st_liabilities inventories ~#~ interest net_income debt st_assets total_oper_liabilities ~#~ interest net_income st_assets total_oper_liabilities ~#~ interest EBITDA net_income equity st_liabilities ~#~ net_income equity debt st_assets total_oper_liabilities ~#~ EBIT net_income equity st_assets ~#~ EBIT net_income equity total_oper_liabilities ~#~ EBIT net_income equity debt ~#~ interest net_income total_oper_liabilities st_liabilities ~#~ EBIT EBITDA net_income equity ~#~ interest net_income equity cash ~#~ interest EBIT net_income equity debt ~#~ interest net_income equity debt st_liabilities ~#~ EBITDA net_income equity FFO ~#~ interest EBITDA net_income equity debt ~#~ interest net_income debt st_assets FFO ~#~ EBIT EBITDA net_income FFO ~#~ interest EBITDA net_income debt st_liabilities ~#~ EBIT net_income debt st_liabilities ~#~ EBIT net_income equity debt FFO ~#~ interest EBIT net_income equity FFO ~#~ EBIT net_income equity debt st_liabilities ~#~ EBITDA net_income equity cash st_liabilities ~#~ interest net_income equity debt FFO ~#~ interest net_income debt FFO ~#~ interest EBIT EBITDA net_income equity ~#~ interest EBIT EBITDA net_income debt ~#~ EBIT net_income equity st_assets total_oper_liabilities ~#~ net_income equity debt FFO ~#~ net_income equity debt cash ~#~ interest EBIT net_income debt inventories ~#~ interest EBIT net_income debt st_liabilities ~#~ interest net_income total_oper_liabilities FFO ~#~ interest EBIT net_income debt st_assets ~#~ EBIT net_income equity total_oper_liabilities FFO ~#~ EBIT net_income equity st_assets FFO ~#~ depreciation interest EBITDA net_income equity debt ~#~ interest net_income equity debt st_assets FFO ~#~ interest EBITDA net_income debt total_oper_liabilities ~#~ interest net_income equity debt st_assets st_liabilities ~#~ interest net_income st_assets total_oper_liabilities st_liabilities ~#~ EBIT net_income debt st_assets ~#~ interest net_income debt cash inventories ~#~ interest EBITDA net_income equity ~#~ interest EBITDA debt st_liabilities ~#~ EBIT net_income equity debt total_oper_liabilities ~#~ financial_expenses interest EBIT net_income FFO ~#~ interest net_income equity debt inventories ~#~ net_income equity debt cash st_assets total_oper_liabilities ~#~ EBIT net_income debt inventories FFO ~#~ EBITDA net_income equity st_liabilities ~#~ interest EBITDA net_income FFO ~#~ interest net_income debt st_assets total_oper_liabilities st_liabilities ~#~ depreciation interest net_income debt inventories ~#~ financial_expenses interest net_income equity st_liabilities ~#~ interest net_income debt total_oper_liabilities ~#~ EBITDA net_income equity total_oper_liabilities st_liabilities inventories ~#~ interest EBIT net_income equity total_oper_liabilities ~#~ interest EBITDA net_income cash st_liabilities ~#~ interest EBIT equity debt FFO ~#~ interest net_income debt inventories FFO ~#~ interest net_income debt st_assets st_liabilities ~#~ interest EBIT net_income total_oper_liabilities FFO ~#~ interest EBITDA net_income total_oper_liabilities inventories ~#~ interest EBIT net_income equity debt FFO ~#~ interest net_income cash st_liabilities inventories ~#~ interest net_income equity cash inventories ~#~ interest net_income equity total_oper_liabilities st_liabilities ~#~ financial_expenses interest net_income equity FFO ~#~ net_income equity debt inventories ~#~ interest EBITDA net_income equity cash ~#~ EBIT net_income total_oper_liabilities FFO ~#~ depreciation interest EBIT net_income st_liabilities ~#~ interest net_income debt st_liabilities FFO ~#~ interest EBIT EBITDA net_income equity st_liabilities ~#~ depreciation net_income equity debt st_liabilities ~#~ depreciation interest net_income equity debt ~#~ financial_expenses interest net_income equity ~#~ financial_expenses interest net_income debt ~#~ depreciation interest net_income st_liabilities inventories ~#~ interest debt st_liabilities FFO ~#~ financial_expenses interest net_income st_liabilities ~#~ net_income equity st_liabilities FFO ~#~ interest EBIT net_income st_liabilities ~#~ interest EBIT net_income inventories ~#~ EBIT net_income cash inventories ~#~ interest EBIT net_income st_assets ~#~ interest EBIT net_income total_oper_liabilities ~#~ net_income debt st_assets total_oper_liabilities st_liabilities ~#~ interest EBIT net_income inventories FFO ~#~ interest EBIT net_income debt FFO ~#~ interest net_income st_liabilities inventories ~#~ interest net_income equity total_oper_liabilities ~#~ EBIT EBITDA net_income equity FFO ~#~ interest net_income equity debt st_assets st_liabilities FFO ~#~ EBITDA net_income equity debt FFO ~#~ interest EBIT net_income equity debt total_oper_liabilities st_liabilities ~#~ interest EBIT net_income equity total_oper_liabilities FFO ~#~ interest EBITDA net_income total_oper_liabilities st_liabilities ~#~ interest EBITDA net_income equity debt st_liabilities ~#~ interest EBIT net_income equity debt inventories FFO ~#~ EBIT EBITDA net_income equity debt FFO ~#~ EBITDA net_income equity debt cash st_liabilities ~#~ interest EBITDA net_income debt total_oper_liabilities st_liabilities ~#~ interest EBIT net_income debt st_assets st_liabilities ~#~ EBIT net_income equity debt st_liabilities FFO ~#~ interest EBIT net_income equity debt st_liabilities FFO ~#~ interest EBIT net_income total_oper_liabilities st_liabilities ~#~ interest EBIT EBITDA net_income debt FFO ~#~ interest net_income debt total_oper_liabilities st_liabilities inventories ~#~ interest EBITDA net_income equity total_oper_liabilities st_liabilities ~#~ interest EBIT net_income equity debt total_oper_liabilities FFO ~#~ interest net_income equity debt st_assets total_oper_liabilities st_liabilities FFO ~#~ interest EBIT net_income debt st_liabilities FFO ~#~ interest net_income equity debt st_liabilities FFO ~#~ EBIT EBITDA net_income equity debt ~#~ EBIT net_income equity debt st_assets FFO ~#~ interest EBIT EBITDA net_income equity cash ~#~ interest EBITDA net_income equity FFO ~#~ interest EBIT EBITDA net_income equity debt ~#~ interest EBITDA net_income equity debt cash ~#~ interest net_income equity debt inventories FFO ~#~ interest EBITDA net_income equity debt total_oper_liabilities ~#~ interest EBIT net_income equity total_oper_liabilities inventories FFO ~#~ EBITDA net_income equity total_oper_liabilities st_liabilities inventories FFO ~#~ interest EBITDA net_income equity debt inventories FFO ~#~ interest EBITDA net_income debt inventories ~#~ financial_expenses interest EBITDA net_income equity FFO ~#~ financial_expenses interest EBIT net_income total_oper_liabilities ~#~ interest EBIT net_income st_liabilities FFO ~#~ depreciation EBIT net_income equity debt st_liabilities ~#~ EBIT net_income debt st_assets total_oper_liabilities st_liabilities FFO ~#~ EBIT net_income equity st_assets total_oper_liabilities FFO ~#~ depreciation EBIT net_income equity debt ~#~ interest EBIT net_income equity cash inventories ~#~ EBIT net_income debt st_liabilities FFO ~#~ EBIT net_income equity debt st_liabilities inventories ~#~ interest EBITDA net_income debt FFO ~#~ EBIT net_income total_oper_liabilities st_liabilities inventories FFO ~#~ financial_expenses interest EBIT net_income equity total_oper_liabilities FFO ~#~ financial_expenses interest net_income equity debt inventories ~#~ interest net_income equity total_oper_liabilities st_liabilities inventories ~#~ interest EBIT net_income total_oper_liabilities st_liabilities inventories ~#~ depreciation interest EBIT net_income debt cash inventories ~#~ interest EBIT EBITDA net_income FFO ~#~ financial_expenses interest net_income debt st_assets st_liabilities inventories ~#~ interest net_income equity debt cash FFO ~#~ interest net_income equity total_oper_liabilities inventories FFO ~#~ EBIT net_income equity debt total_oper_liabilities st_liabilities ~#~ interest EBITDA net_income equity st_liabilities FFO ~#~ EBIT net_income equity debt st_assets inventories FFO ~#~ interest EBIT net_income debt cash inventories ~#~ net_income equity debt st_liabilities FFO ~#~ interest EBITDA net_income debt total_oper_liabilities st_liabilities inventories ~#~ interest net_income equity debt cash inventories ~#~ financial_expenses interest net_income equity inventories ~#~ depreciation interest net_income total_oper_liabilities st_liabilities inventories OCF ~#~ interest EBITDA net_income debt cash st_liabilities ~#~ interest EBIT net_income equity st_liabilities FFO ~#~ interest EBIT EBITDA net_income debt st_assets ~#~ interest EBIT net_income st_assets inventories FFO ~#~ interest net_income equity debt total_oper_liabilities st_liabilities ~#~ interest EBIT EBITDA net_income debt st_liabilities ~#~ depreciation interest EBITDA net_income equity debt st_liabilities FFO ~#~ interest EBITDA net_income equity debt total_oper_liabilities inventories ~#~ interest EBIT net_income equity debt st_liabilities inventories ~#~ EBITDA net_income equity debt inventories ~#~ interest EBIT net_income equity inventories FFO ~#~ depreciation financial_expenses interest EBIT net_income st_liabilities ~#~ interest net_income equity debt st_liabilities inventories FFO ~#~ interest EBITDA net_income equity cash st_liabilities ~#~ interest EBIT net_income equity debt inventories ~#~ interest EBITDA net_income total_oper_liabilities st_liabilities inventories ~#~ interest EBIT net_income equity debt st_liabilities ~#~ interest EBIT net_income debt st_assets inventories FFO ~#~ interest EBIT net_income equity debt st_assets ~#~ net_income equity debt st_assets st_liabilities FFO ~#~ interest EBIT EBITDA net_income cash st_liabilities ~#~ depreciation net_income equity debt cash st_liabilities ~#~ interest EBIT net_income debt st_liabilities inventories ~#~ financial_expenses interest net_income equity total_oper_liabilities FFO ~#~ EBITDA net_income equity debt st_liabilities ~#~ net_income equity debt st_assets ~#~ depreciation interest net_income equity cash st_liabilities inventories ~#~ interest EBIT net_income equity total_oper_liabilities st_liabilities FFO ~#~ financial_expenses interest EBIT net_income equity debt FFO ~#~ EBIT net_income equity debt st_assets st_liabilities ~#~ interest EBITDA net_income cash total_oper_liabilities FFO ~#~ financial_expenses net_income equity debt cash st_assets total_oper_liabilities st_liabilities ~#~ interest equity debt st_assets st_liabilities FFO ~#~ financial_expenses interest EBITDA net_income equity total_oper_liabilities st_liabilities ~#~ depreciation interest EBIT EBITDA net_income equity debt ~#~ interest EBIT EBITDA net_income equity total_oper_liabilities st_liabilities ~#~ EBITDA net_income equity debt st_liabilities FFO ~#~ interest net_income equity st_liabilities inventories FFO ~#~ interest net_income equity st_liabilities inventories ~#~ financial_expenses interest net_income total_oper_liabilities inventories FFO ~#~ depreciation net_income equity debt st_assets st_liabilities ~#~ financial_expenses interest EBIT net_income total_oper_liabilities st_liabilities ~#~ interest net_income equity st_assets total_oper_liabilities st_liabilities FFO ~#~ EBIT EBITDA net_income debt FFO ~#~ interest EBIT net_income equity st_assets FFO ~#~ depreciation EBITDA net_income equity debt st_liabilities ~#~ financial_expenses interest EBITDA net_income debt inventories FFO ~#~ interest EBIT net_income debt inventories FFO ~#~ interest EBIT net_income debt total_oper_liabilities inventories FFO ~#~ interest EBIT net_income equity st_assets total_oper_liabilities ~#~ financial_expenses interest EBIT net_income debt st_assets FFO ~#~ interest EBIT EBITDA net_income equity debt FFO ~#~ financial_expenses interest EBITDA net_income debt total_oper_liabilities st_liabilities ~#~ financial_expenses interest EBITDA net_income equity debt total_oper_liabilities st_liabilities ~#~ interest EBIT EBITDA net_income equity debt inventories FFO ~#~ interest EBIT EBITDA net_income equity debt cash st_liabilities ~#~ interest EBIT net_income equity debt st_assets total_oper_liabilities st_liabilities FFO ~#~ EBIT EBITDA net_income equity debt inventories FFO ~#~ interest EBIT EBITDA net_income equity debt total_oper_liabilities st_liabilities ~#~ interest EBIT net_income equity debt st_assets inventories FFO ~#~ EBIT EBITDA net_income equity debt cash FFO ~#~ interest EBIT net_income equity debt st_assets st_liabilities FFO ~#~ interest EBITDA net_income equity total_oper_liabilities st_liabilities FFO ~#~ financial_expenses interest EBIT net_income equity debt total_oper_liabilities inventories FFO ~#~ EBIT EBITDA net_income equity debt st_liabilities FFO ~#~ interest EBIT net_income equity debt st_liabilities inventories FFO ~#~ interest EBIT net_income equity st_assets total_oper_liabilities st_liabilities FFO ~#~ interest EBITDA net_income equity total_oper_liabilities st_liabilities inventories ~#~ financial_expenses interest EBIT net_income total_oper_liabilities st_liabilities inventories FFO ~#~ interest EBIT EBITDA net_income equity total_oper_liabilities st_liabilities inventories FFO ~#~ interest EBIT EBITDA net_income equity FFO ~#~ financial_expenses interest EBITDA net_income equity debt st_liabilities ~#~ EBIT net_income equity debt st_assets total_oper_liabilities st_liabilities FFO ~#~ depreciation EBIT net_income equity debt cash st_liabilities inventories ~#~ interest EBITDA net_income equity debt total_oper_liabilities st_liabilities ~#~ financial_expenses interest EBIT EBITDA net_income total_oper_liabilities st_liabilities ~#~ interest EBITDA net_income debt total_oper_liabilities st_liabilities inventories FFO ~#~ financial_expenses EBIT EBITDA net_income equity debt st_assets inventories FFO ~#~ depreciation interest EBITDA net_income equity debt cash st_liabilities inventories ~#~ interest EBIT EBITDA net_income equity st_liabilities FFO ~#~ depreciation interest net_income equity debt st_liabilities inventories ~#~ interest EBIT EBITDA net_income cash total_oper_liabilities st_liabilities FFO ~#~ interest EBIT EBITDA net_income debt cash st_liabilities ~#~ interest EBIT EBITDA net_income st_assets st_liabilities inventories FFO ~#~ interest EBIT net_income equity debt total_oper_liabilities inventories FFO ~#~ depreciation interest EBIT net_income total_oper_liabilities st_liabilities inventories FFO ~#~ net_income equity debt total_oper_liabilities st_liabilities inventories FFO ~#~ interest EBIT EBITDA net_income st_liabilities FFO ~#~ depreciation interest net_income equity debt st_liabilities inventories FFO ~#~ EBIT EBITDA net_income equity debt cash st_liabilities inventories ~#~ EBIT EBITDA net_income debt st_liabilities FFO ~#~ cost_of_labor financial_expenses interest EBITDA net_income debt cash lt_liabilities inventories FFO ~#~ interest net_income equity debt cash total_oper_liabilities st_liabilities inventories FFO ~#~ financial_expenses interest EBIT net_income equity total_oper_liabilities inventories FFO ~#~ interest EBIT net_income equity debt st_assets total_oper_liabilities FFO ~#~ cost_of_labor EBIT net_income debt st_assets total_oper_liabilities st_liabilities FFO ~#~ financial_expenses interest EBIT net_income debt total_oper_liabilities st_liabilities inventories ~#~ interest EBITDA net_income equity debt cash st_liabilities FFO ~#~ depreciation financial_expenses interest EBIT net_income equity total_oper_liabilities st_liabilities ~#~ interest EBIT net_income debt cash OCF ~#~ EBITDA net_income equity debt st_assets inventories FFO ~#~ financial_expenses interest EBITDA net_income equity total_oper_liabilities st_liabilities inventories ~#~ interest EBIT EBITDA net_income equity st_liabilities inventories FFO ~#~ EBIT EBITDA net_income debt inventories FFO ~#~ financial_expenses interest EBIT EBITDA net_income equity cash total_oper_liabilities inventories ~#~ depreciation EBITDA net_income equity debt st_assets total_oper_liabilities st_liabilities ~#~ depreciation financial_expenses net_income equity debt cash st_assets total_oper_liabilities st_liabilities ~#~ interest EBITDA net_income equity debt total_oper_liabilities st_liabilities inventories ~#~ interest EBIT EBITDA net_income equity debt st_liabilities ~#~ financial_expenses interest EBIT EBITDA net_income debt ~#~ financial_expenses EBITDA net_income equity debt st_assets ~#~ financial_expenses interest EBITDA net_income equity total_oper_liabilities st_liabilities FFO ~#~ interest EBIT net_income debt st_assets st_liabilities FFO ~#~ EBIT EBITDA net_income equity debt st_liabilities inventories FFO ~#~ depreciation EBIT net_income equity debt st_assets FFO OCF ~#~ financial_expenses interest EBITDA net_income equity debt total_oper_liabilities st_liabilities inventories ~#~ EBIT EBITDA net_income equity inventories FFO ~#~ interest EBIT EBITDA net_income debt inventories ~#~ interest EBIT net_income equity debt st_assets st_liabilities inventories FFO ~#~ financial_expenses interest EBITDA net_income debt st_liabilities inventories ~#~ interest EBIT net_income equity debt cash st_liabilities inventories ~#~ interest EBIT EBITDA net_income equity debt st_assets FFO ~#~ interest EBIT EBITDA net_income equity st_assets total_oper_liabilities st_liabilities inventories ~#~ financial_expenses interest EBIT net_income equity debt st_assets inventories ~#~ financial_expenses interest EBIT net_income equity total_oper_liabilities st_liabilities inventories FFO ~#~ cost_of_labor interest EBITDA net_income equity debt st_liabilities inventories FFO ~#~ interest EBIT EBITDA net_income equity debt cash inventories ~#~ financial_expenses interest EBITDA net_income equity debt st_liabilities FFO ~#~ EBIT net_income equity debt total_oper_liabilities st_liabilities inventories OCF ~#~ depreciation interest EBIT net_income equity st_assets total_oper_liabilities FFO OCF ~#~ cost_of_labor depreciation interest EBITDA net_income equity debt st_liabilities inventories FFO ~#~ interest EBITDA net_income equity debt cash inventories FFO ~#~ financial_expenses interest EBIT net_income equity st_assets inventories FFO ~#~ interest EBIT EBITDA net_income equity debt st_liabilities inventories FFO ~#~ interest EBIT net_income equity st_assets total_oper_liabilities inventories FFO ~#~ financial_expenses interest EBIT net_income equity total_oper_liabilities st_liabilities inventories ~#~ financial_expenses interest EBIT net_income equity debt total_oper_liabilities st_liabilities inventories ~#~ interest EBIT net_income equity debt cash st_liabilities inventories FFO ~#~ financial_expenses interest EBIT EBITDA net_income total_oper_liabilities FFO ~#~ depreciation interest EBIT net_income debt st_liabilities inventories FFO ~#~ cost_of_labor financial_expenses interest EBIT net_income equity debt st_assets inventories FFO ~#~ EBITDA net_income equity debt st_assets total_oper_liabilities st_liabilities ~#~ financial_expenses interest EBIT net_income equity inventories FFO ~#~ financial_expenses interest EBIT EBITDA net_income equity debt total_oper_liabilities FFO ~#~ interest EBITDA net_income equity debt st_liabilities FFO ~#~ financial_expenses interest EBIT net_income equity debt st_assets st_liabilities FFO ~#~ interest EBITDA net_income equity debt st_assets total_oper_liabilities st_liabilities inventories ~#~ interest EBIT EBITDA net_income debt st_assets st_liabilities inventories ~#~ interest net_income equity debt total_oper_liabilities st_liabilities inventories FFO ~#~ financial_expenses interest EBITDA net_income equity inventories FFO ~#~ financial_expenses interest EBITDA net_income equity st_assets total_oper_liabilities st_liabilities inventories ~#~ EBIT net_income equity debt st_assets st_liabilities FFO ~#~ depreciation interest EBIT EBITDA net_income equity debt total_oper_liabilities ~#~ depreciation interest EBIT net_income equity debt cash st_liabilities inventories ~#~ financial_expenses interest net_income equity debt cash inventories FFO ~#~ depreciation interest EBIT net_income equity debt inventories FFO ~#~ interest EBITDA net_income equity debt st_assets total_oper_liabilities st_liabilities FFO ~#~ financial_expenses interest EBITDA net_income equity total_oper_liabilities inventories ~#~ interest EBIT net_income equity debt st_assets total_oper_liabilities inventories FFO ~#~ interest EBIT net_income total_oper_liabilities st_liabilities inventories FFO ~#~ EBIT EBITDA net_income equity st_liabilities inventories FFO ~#~ financial_expenses interest EBITDA net_income total_oper_liabilities st_liabilities FFO ~#~ financial_expenses EBIT net_income equity debt st_liabilities inventories ~#~ financial_expenses interest EBIT net_income st_assets total_oper_liabilities st_liabilities inventories ~#~ financial_expenses EBIT EBITDA net_income equity debt st_assets FFO ~#~ interest EBITDA net_income debt cash st_liabilities inventories ~#~ financial_expenses interest EBIT net_income equity st_assets FFO ~#~ interest EBIT EBITDA net_income debt st_assets st_liabilities ~#~ interest EBIT EBITDA net_income equity debt st_liabilities inventories ~#~ financial_expenses interest EBITDA net_income equity total_oper_liabilities inventories FFO ~#~ interest EBITDA net_income equity debt st_assets total_oper_liabilities st_liabilities inventories FFO ~#~ depreciation interest EBIT net_income equity cash total_oper_liabilities st_liabilities inventories ~#~ interest EBIT EBITDA net_income equity debt st_liabilities FFO ~#~ interest EBIT net_income equity debt total_oper_liabilities st_liabilities inventories FFO ~#~ cost_of_labor financial_expenses interest net_income debt st_assets st_liabilities inventories FFO ~#~ net_income equity debt st_assets total_oper_liabilities st_liabilities FFO ~#~ cost_of_labor interest EBIT EBITDA net_income equity st_assets inventories FFO ~#~ EBIT EBITDA net_income equity debt cash st_liabilities ~#~ depreciation EBIT EBITDA net_income equity debt st_liabilities inventories ~#~ financial_expenses interest EBITDA net_income st_assets total_oper_liabilities st_liabilities inventories ~#~ depreciation interest EBIT net_income debt cash st_liabilities inventories OCF ~#~ depreciation EBIT net_income equity debt total_oper_liabilities st_liabilities inventories ~#~ financial_expenses interest EBIT EBITDA net_income equity debt FFO ~#~ depreciation interest net_income equity st_assets total_oper_liabilities st_liabilities inventories FFO ~#~ depreciation EBIT net_income equity debt total_oper_liabilities inventories ~#~ financial_expenses interest equity debt st_assets st_liabilities inventories FFO ~#~ depreciation interest EBITDA net_income debt total_oper_liabilities st_liabilities inventories OCF ~#~ financial_expenses interest EBIT net_income total_oper_liabilities st_liabilities inventories ~#~ interest EBIT EBITDA net_income equity total_oper_liabilities inventories FFO ~#~ interest EBIT net_income equity debt st_assets total_oper_liabilities st_liabilities inventories FFO ~#~ interest EBIT EBITDA net_income equity debt st_assets inventories FFO ~#~ cost_of_labor financial_expenses interest EBIT net_income equity total_oper_liabilities inventories FFO ~#~ 
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=0.0% -> 0, minNoise=0 we remove groups of size 0. Tree SHAP num of expl. inst. 200 (fold 2). Explaining class: E).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  2
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	net_income: 160
+	debt: 23
+	interest: 15
+	equity: 1
+	FFO: 1
+--------------
+Threshold: 0,20
+--------------
+	net_income: 159
+	debt: 23
+	interest: 14
+	equity: 1
+	net_income | FFO: 1
+	debt | FFO: 1
+	interest | st_liabilities: 1
+--------------
+Threshold: 0,30
+--------------
+	net_income: 100
+	net_income | debt: 45
+	interest | net_income: 22
+	net_income | equity: 9
+	debt: 7
+	interest | debt: 7
+	net_income | FFO: 3
+	EBITDA | net_income: 1
+	equity | debt: 1
+	interest: 1
+	interest | EBIT: 1
+	debt | FFO: 1
+	interest | st_liabilities: 1
+	interest | equity: 1
+--------------
+Threshold: 0,40
+--------------
+	net_income | debt: 66
+	interest | net_income: 39
+	net_income: 33
+	net_income | equity: 23
+	interest | debt: 7
+	interest | net_income | debt: 5
+	EBIT | net_income: 4
+	net_income | debt | FFO: 4
+	EBITDA | net_income: 3
+	net_income | equity | debt: 3
+	net_income | st_liabilities: 1
+	net_income | total_oper_liabilities: 1
+	equity | debt: 1
+	net_income | FFO: 1
+	equity | debt | FFO: 1
+	net_income | total_oper_liabilities | FFO: 1
+	interest | debt | total_oper_liabilities: 1
+	interest | EBIT: 1
+	net_income | debt | total_oper_liabilities: 1
+	EBITDA | debt: 1
+	interest | net_income | equity: 1
+	interest | total_oper_liabilities | st_liabilities: 1
+	debt | total_oper_liabilities: 1
+--------------
+Threshold: 0,50
+--------------
+	net_income | debt: 37
+	interest | net_income | debt: 25
+	net_income | equity | debt: 20
+	interest | net_income: 18
+	net_income | equity: 15
+	interest | EBIT | net_income: 8
+	interest | net_income | equity: 8
+	interest | net_income | total_oper_liabilities: 7
+	EBITDA | net_income | debt: 6
+	EBIT | net_income | debt: 6
+	net_income | debt | st_liabilities: 5
+	net_income | total_oper_liabilities: 4
+	EBITDA | net_income | equity: 4
+	interest | debt | total_oper_liabilities: 4
+	EBITDA | net_income: 3
+	EBIT | net_income: 3
+	net_income | debt | total_oper_liabilities: 3
+	net_income | debt | FFO: 3
+	interest | net_income | equity | debt: 3
+	net_income: 2
+	net_income | equity | st_liabilities: 2
+	net_income | total_oper_liabilities | st_liabilities: 1
+	interest | equity | debt | FFO: 1
+	debt | total_oper_liabilities | st_liabilities: 1
+	EBITDA | debt | total_oper_liabilities: 1
+	net_income | st_liabilities | FFO: 1
+	net_income | equity | cash: 1
+	EBIT | net_income | equity: 1
+	net_income | equity | total_oper_liabilities: 1
+	net_income | total_oper_liabilities | FFO: 1
+	interest | debt | FFO: 1
+	net_income | debt | st_liabilities | FFO: 1
+	interest | EBITDA | total_oper_liabilities | st_liabilities: 1
+	EBITDA | net_income | debt | total_oper_liabilities: 1
+	interest | debt: 1
+--------------
+Threshold: 0,60
+--------------
+	interest | net_income | equity | debt: 22
+	net_income | equity | debt: 19
+	interest | net_income | debt | total_oper_liabilities: 17
+	net_income | debt | total_oper_liabilities: 11
+	interest | net_income | debt: 10
+	EBIT | net_income | debt: 8
+	interest | net_income | total_oper_liabilities: 8
+	net_income | debt: 6
+	net_income | equity | FFO: 6
+	EBITDA | net_income | equity: 5
+	EBITDA | net_income | equity | debt: 5
+	net_income | debt | st_liabilities | FFO: 5
+	interest | net_income | equity: 5
+	EBITDA | net_income | debt: 4
+	EBIT | net_income | equity | debt: 4
+	interest | EBIT | net_income | equity: 4
+	interest | EBIT | net_income | debt: 4
+	EBIT | net_income | equity: 3
+	net_income | debt | st_liabilities: 3
+	net_income | equity | debt | FFO: 3
+	interest | EBIT | net_income: 3
+	EBITDA | net_income | debt | total_oper_liabilities: 3
+	EBIT | EBITDA | net_income | debt: 3
+	interest | net_income | equity | debt | FFO: 2
+	EBITDA | net_income | equity | st_liabilities: 2
+	interest | EBITDA | net_income | debt: 2
+	interest | net_income | debt | st_liabilities: 2
+	net_income | debt | cash: 2
+	net_income | equity | debt | total_oper_liabilities: 2
+	net_income | equity | debt | st_liabilities: 2
+	interest | equity | debt | total_oper_liabilities: 2
+	interest | net_income | equity | total_oper_liabilities: 2
+	net_income | equity | total_oper_liabilities | inventories | FFO: 1
+	EBIT | net_income | debt | st_liabilities: 1
+	net_income | FFO: 1
+	net_income | total_oper_liabilities | st_liabilities | FFO: 1
+	interest | net_income | debt | FFO: 1
+	EBITDA | net_income | equity | cash: 1
+	interest | net_income | debt | inventories: 1
+	debt | total_oper_liabilities | st_liabilities | FFO: 1
+	net_income | equity | st_liabilities: 1
+	EBIT | net_income | equity | FFO: 1
+	interest | net_income: 1
+	interest | debt | FFO: 1
+	EBITDA | net_income | equity | FFO: 1
+	interest | net_income | equity | total_oper_liabilities | inventories: 1
+	interest | EBITDA | total_oper_liabilities | st_liabilities | inventories: 1
+	interest | net_income | FFO: 1
+	interest | debt | total_oper_liabilities | FFO: 1
+	interest | net_income | total_oper_liabilities | inventories: 1
+	EBITDA | net_income | debt | st_liabilities: 1
+	net_income | debt | FFO: 1
+	net_income | debt | total_oper_liabilities | FFO: 1
+--------------
+Threshold: 0,70
+--------------
+	interest | net_income | equity | debt | total_oper_liabilities: 16
+	interest | net_income | equity | debt | FFO: 11
+	interest | net_income | debt | total_oper_liabilities: 11
+	interest | EBIT | net_income | equity | debt: 9
+	net_income | equity | debt | FFO: 9
+	interest | EBITDA | net_income | debt | total_oper_liabilities: 4
+	EBIT | net_income | debt: 4
+	EBIT | net_income | equity | debt: 4
+	EBIT | EBITDA | net_income | equity: 4
+	interest | net_income | debt | total_oper_liabilities | FFO: 4
+	net_income | debt | total_oper_liabilities | FFO: 4
+	interest | EBITDA | net_income | debt | inventories: 3
+	EBITDA | net_income | equity | debt: 3
+	net_income | equity | debt: 3
+	net_income | equity | inventories | FFO: 3
+	EBITDA | net_income | equity | FFO: 3
+	interest | EBIT | net_income | debt | st_liabilities: 3
+	interest | net_income | debt | st_liabilities | FFO: 3
+	interest | net_income | equity | debt: 3
+	interest | EBIT | net_income | debt: 3
+	EBITDA | net_income | equity | cash | FFO: 2
+	interest | net_income | equity | FFO: 2
+	interest | net_income | debt | total_oper_liabilities | inventories: 2
+	EBITDA | net_income | equity | debt | total_oper_liabilities | st_liabilities: 2
+	EBIT | net_income | equity | debt | st_liabilities: 2
+	interest | net_income | equity | debt | st_liabilities: 2
+	interest | net_income | equity | debt | inventories: 2
+	interest | net_income | equity | total_oper_liabilities | inventories | FFO: 2
+	interest | EBITDA | net_income | debt: 2
+	interest | net_income | debt | st_liabilities: 2
+	EBIT | net_income | equity | FFO: 2
+	interest | net_income | equity | debt | total_oper_liabilities | FFO: 2
+	EBITDA | net_income | equity | debt | FFO: 2
+	EBITDA | net_income | equity | debt | total_oper_liabilities: 2
+	net_income | equity | debt | cash: 2
+	interest | net_income | equity | total_oper_liabilities | FFO: 2
+	EBIT | EBITDA | net_income | debt | st_liabilities: 2
+	interest | net_income | total_oper_liabilities: 2
+	interest | EBITDA | net_income | equity | debt | total_oper_liabilities: 2
+	net_income | equity | debt | cash | total_oper_liabilities: 2
+	interest | EBITDA | net_income | debt | st_liabilities: 1
+	interest | EBITDA | net_income | debt | total_oper_liabilities | FFO: 1
+	EBIT | net_income | debt | st_liabilities: 1
+	net_income | equity | debt | total_oper_liabilities | st_liabilities: 1
+	interest | net_income | debt | total_oper_liabilities | st_liabilities: 1
+	interest | net_income | debt | cash | inventories: 1
+	interest | net_income | equity | debt | cash: 1
+	interest | EBITDA | equity | total_oper_liabilities | st_liabilities | inventories: 1
+	EBIT | net_income | equity | debt | st_liabilities | FFO: 1
+	net_income | equity | debt | total_oper_liabilities | FFO: 1
+	net_income | debt | total_oper_liabilities | inventories | FFO: 1
+	EBIT | net_income | debt | FFO: 1
+	EBITDA | net_income | equity | cash | st_liabilities: 1
+	net_income | debt | cash | total_oper_liabilities | st_liabilities: 1
+	interest | net_income | debt | total_oper_liabilities | st_liabilities | FFO: 1
+	interest | net_income | debt | inventories: 1
+	cost_of_labor | interest | net_income | equity | debt | FFO: 1
+	net_income | equity | cash | st_liabilities | FFO: 1
+	debt | cash | total_oper_liabilities | st_liabilities | FFO: 1
+	interest | net_income | equity | debt | total_oper_liabilities | st_liabilities: 1
+	EBIT | EBITDA | net_income | equity | FFO: 1
+	net_income | debt | total_oper_liabilities: 1
+	net_income | equity | cash | st_liabilities | inventories: 1
+	interest | EBIT | equity | debt | total_oper_liabilities: 1
+	interest | EBITDA | net_income | total_oper_liabilities | inventories: 1
+	EBIT | EBITDA | net_income | equity | debt: 1
+	EBITDA | net_income | debt | st_liabilities | inventories: 1
+	interest | debt | total_oper_liabilities | st_liabilities | FFO: 1
+	interest | net_income | cash | total_oper_liabilities | FFO: 1
+	interest | net_income | total_oper_liabilities | st_liabilities | inventories: 1
+	net_income | equity | debt | total_oper_liabilities: 1
+	net_income | equity | debt | inventories | FFO: 1
+	net_income | cash | total_oper_liabilities | st_liabilities | FFO: 1
+	net_income | debt | st_liabilities | FFO: 1
+	interest | EBITDA | net_income | equity | st_liabilities: 1
+	interest | EBITDA | net_income | equity | debt: 1
+	net_income | equity | debt | total_oper_liabilities | inventories | FFO: 1
+	interest | net_income | total_oper_liabilities | FFO: 1
+	net_income | debt | cash | FFO: 1
+	interest | EBIT | net_income | debt | total_oper_liabilities: 1
+	EBITDA | net_income | debt | cash | total_oper_liabilities: 1
+	interest | net_income | debt: 1
+	interest | EBIT | EBITDA | net_income | equity | debt: 1
+	interest | net_income | debt | total_oper_liabilities | inventories | FFO: 1
+	interest | net_income | equity | debt | inventories | FFO: 1
+	EBITDA | net_income | debt | total_oper_liabilities: 1
+	EBITDA | net_income | debt | st_liabilities: 1
+	EBIT | EBITDA | net_income | debt | FFO: 1
+	EBIT | EBITDA | net_income | debt: 1
+	EBITDA | net_income | equity | total_oper_liabilities | FFO: 1
+	interest | net_income | debt | st_liabilities | inventories: 1
+	interest | EBIT | net_income | equity: 1
+	EBITDA | net_income | inventories | FFO: 1
+--------------
+Threshold: 0,80
+--------------
+	interest | net_income | equity | debt | total_oper_liabilities | FFO: 12
+	interest | EBITDA | net_income | equity | debt | total_oper_liabilities | FFO: 9
+	interest | net_income | equity | debt | total_oper_liabilities | inventories | FFO: 9
+	interest | EBIT | net_income | equity | debt | st_liabilities | FFO: 8
+	EBIT | EBITDA | net_income | equity | debt | FFO: 7
+	interest | EBITDA | net_income | debt | total_oper_liabilities | st_liabilities: 7
+	interest | EBITDA | net_income | equity | debt | total_oper_liabilities | st_liabilities: 6
+	interest | EBIT | net_income | equity | debt | FFO: 5
+	interest | EBITDA | net_income | debt | total_oper_liabilities | st_liabilities | inventories: 4
+	EBITDA | net_income | equity | cash | st_liabilities | FFO: 4
+	interest | EBIT | EBITDA | net_income | debt | st_liabilities: 3
+	EBIT | EBITDA | net_income | equity | inventories | FFO: 3
+	EBITDA | net_income | equity | debt | FFO: 3
+	interest | EBIT | EBITDA | net_income | equity | debt | FFO: 3
+	interest | net_income | debt | total_oper_liabilities | inventories | FFO: 3
+	interest | EBITDA | net_income | equity | debt | total_oper_liabilities: 3
+	interest | EBITDA | net_income | debt | total_oper_liabilities: 2
+	interest | EBITDA | net_income | debt | total_oper_liabilities | inventories: 2
+	interest | EBITDA | net_income | equity | debt | inventories | FFO: 2
+	interest | net_income | equity | debt | cash | total_oper_liabilities | FFO: 2
+	interest | EBITDA | net_income | debt | st_liabilities | inventories: 2
+	interest | net_income | debt | st_assets | total_oper_liabilities | FFO: 2
+	EBIT | EBITDA | net_income | equity | FFO: 2
+	interest | EBIT | net_income | equity | debt: 2
+	net_income | equity | debt | FFO: 2
+	EBITDA | net_income | equity | debt | inventories | FFO: 2
+	net_income | equity | debt | total_oper_liabilities | inventories | FFO: 2
+	interest | EBITDA | net_income | debt | cash | st_liabilities | inventories: 2
+	interest | net_income | equity | debt | inventories | FFO: 2
+	interest | EBITDA | net_income | equity | debt | inventories: 2
+	interest | EBITDA | net_income | debt | cash | total_oper_liabilities | inventories: 2
+	EBITDA | net_income | equity | debt | total_oper_liabilities | st_liabilities | inventories: 2
+	interest | net_income | equity | debt | total_oper_liabilities | st_liabilities | inventories: 1
+	EBIT | net_income | equity | debt | cash | total_oper_liabilities | inventories | FFO: 1
+	cost_of_labor | interest | net_income | debt | cash | st_liabilities | OCF: 1
+	interest | EBIT | net_income | equity | debt | cash | FFO: 1
+	EBITDA | net_income | equity | total_oper_liabilities | inventories | FFO: 1
+	interest | net_income | debt | cash | total_oper_liabilities | st_liabilities | FFO: 1
+	net_income | equity | debt | cash | FFO: 1
+	EBIT | net_income | debt | cash: 1
+	net_income | equity | debt | cash | OCF: 1
+	interest | EBIT | net_income | equity | debt | total_oper_liabilities | inventories: 1
+	EBITDA | net_income | equity | debt | cash | st_liabilities | FFO: 1
+	EBIT | debt | cash | total_oper_liabilities | st_liabilities | FFO: 1
+	interest | net_income | equity | debt | total_oper_liabilities: 1
+	cost_of_labor | interest | net_income | equity | debt | inventories | FFO: 1
+	EBITDA | net_income | equity | debt | total_oper_liabilities | inventories: 1
+	interest | net_income | equity | debt | cash: 1
+	net_income | equity | debt | total_oper_liabilities | st_liabilities | FFO: 1
+	interest | EBITDA | net_income | debt | total_oper_liabilities | st_liabilities | FFO: 1
+	interest | net_income | equity | debt | total_oper_liabilities | st_liabilities | OCF: 1
+	interest | net_income | equity | debt | total_oper_liabilities | st_liabilities | FFO: 1
+	cost_of_labor | interest | net_income | equity | debt | total_oper_liabilities | st_liabilities | FFO: 1
+	EBIT | net_income | debt | cash | total_oper_liabilities | inventories | FFO: 1
+	EBIT | net_income | equity | debt | st_liabilities | FFO: 1
+	EBIT | EBITDA | net_income | debt | st_liabilities | FFO: 1
+	interest | EBITDA | net_income | equity | cash | total_oper_liabilities | FFO: 1
+	interest | EBIT | EBITDA | net_income | equity | FFO: 1
+	interest | net_income | equity | debt | FFO: 1
+	EBIT | net_income | debt | inventories | FFO: 1
+	EBIT | net_income | equity | debt | total_oper_liabilities | FFO: 1
+	interest | EBIT | net_income | debt | cash | total_oper_liabilities: 1
+	interest | net_income | equity | debt | cash | total_oper_liabilities | st_liabilities | inventories: 1
+	interest | EBITDA | net_income | equity | debt | total_oper_liabilities | st_liabilities | inventories: 1
+	interest | EBITDA | net_income | equity | debt | cash | total_oper_liabilities: 1
+	EBIT | net_income | equity | debt | total_oper_liabilities | st_liabilities | FFO: 1
+	EBITDA | net_income | debt | inventories | FFO: 1
+	interest | EBITDA | net_income | debt | cash | total_oper_liabilities: 1
+	interest | EBIT | net_income | debt | total_oper_liabilities | FFO: 1
+	interest | net_income | equity | debt | total_oper_liabilities | inventories: 1
+	interest | EBITDA | net_income | debt | cash | total_oper_liabilities | inventories | FFO: 1
+	interest | EBIT | EBITDA | net_income | debt | total_oper_liabilities: 1
+	interest | net_income | debt | cash | total_oper_liabilities | inventories | FFO: 1
+	interest | EBITDA | net_income | equity | debt | total_oper_liabilities | inventories: 1
+	net_income | debt | cash | total_oper_liabilities | inventories | FFO: 1
+	interest | EBITDA | net_income | equity | total_oper_liabilities | FFO: 1
+	interest | EBIT | EBITDA | net_income | debt | st_liabilities | FFO: 1
+	cost_of_labor | interest | EBIT | net_income | debt | total_oper_liabilities | FFO: 1
+	interest | EBITDA | net_income | equity | cash | total_oper_liabilities | inventories | FFO: 1
+	interest | net_income | cash | total_oper_liabilities | inventories | FFO: 1
+	interest | net_income | equity | debt | st_liabilities | FFO: 1
+	interest | net_income | equity | debt | st_liabilities | inventories | FFO: 1
+	interest | EBITDA | equity | cash | total_oper_liabilities | st_liabilities | inventories: 1
+	interest | EBIT | net_income | equity | debt | total_oper_liabilities: 1
+	EBIT | net_income | debt | total_oper_liabilities | inventories | FFO: 1
+	interest | EBITDA | net_income | total_oper_liabilities | inventories: 1
+	interest | EBIT | net_income | equity | cash | total_oper_liabilities | FFO: 1
+	EBITDA | net_income | equity | cash | st_liabilities | inventories | FFO: 1
+	cost_of_labor | interest | net_income | equity | debt | total_oper_liabilities | FFO | OCF: 1
+	interest | net_income | equity | debt | cash | inventories | OCF: 1
+	EBITDA | net_income | equity | debt | cash | FFO | OCF: 1
+	EBIT | EBITDA | net_income | equity | cash | FFO: 1
+	interest | EBITDA | net_income | total_oper_liabilities | FFO: 1
+	EBIT | net_income | debt | total_oper_liabilities | FFO: 1
+	EBIT | EBITDA | net_income | equity | debt | total_oper_liabilities | st_liabilities: 1
+	interest | net_income | equity | total_oper_liabilities | FFO: 1
+	EBIT | net_income | equity | debt | inventories | FFO: 1
+	EBITDA | net_income | equity | debt | total_oper_liabilities | st_liabilities | FFO: 1
+	interest | EBIT | net_income | debt | total_oper_liabilities: 1
+	net_income | equity | debt | cash | total_oper_liabilities | OCF: 1
+	cost_of_labor | interest | EBIT | debt | cash | total_oper_liabilities | st_liabilities | FFO: 1
+	net_income | equity | debt | cash | st_liabilities | inventories | OCF: 1
+	net_income | equity | debt | cash | st_liabilities | inventories | FFO: 1
+	EBIT | net_income | debt | cash | st_assets | total_oper_liabilities | st_liabilities | FFO: 1
+	financial_expenses | EBITDA | net_income | equity | debt | total_oper_liabilities | inventories | OCF: 1
+	interest | EBITDA | net_income | equity | debt | total_oper_liabilities | inventories | FFO: 1
+	EBIT | EBITDA | net_income | debt | FFO: 1
+	interest | EBIT | net_income | equity | debt | total_oper_liabilities | st_liabilities | FFO: 1
+	cost_of_labor | net_income | equity | debt | cash | total_oper_liabilities | st_liabilities: 1
+	cost_of_labor | interest | EBITDA | net_income | debt | cash | inventories | OCF: 1
+	interest | EBITDA | net_income | equity | debt | FFO: 1
+We remove max(NOISE,minNoise) groups, NOISE=0.0% -> 0, minNoise=0 we remove groups of size 0. Tree SHAP num of expl. inst. 200 (fold 2). Explaining class: A).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  2
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	net_income: 160
+	debt: 23
+	interest: 15
+	equity: 1
+	FFO: 1
+--------------
+Threshold: 0,20
+--------------
+	net_income: 159
+	debt: 23
+	interest: 14
+	equity: 1
+	net_income | FFO: 1
+	debt | FFO: 1
+	interest | st_liabilities: 1
+--------------
+Threshold: 0,30
+--------------
+	net_income: 100
+	net_income | debt: 45
+	interest | net_income: 22
+	net_income | equity: 9
+	debt: 7
+	interest | debt: 7
+	net_income | FFO: 3
+	EBITDA | net_income: 1
+	equity | debt: 1
+	interest: 1
+	interest | EBIT: 1
+	debt | FFO: 1
+	interest | st_liabilities: 1
+	interest | equity: 1
+--------------
+Threshold: 0,40
+--------------
+	net_income | debt: 66
+	interest | net_income: 39
+	net_income: 33
+	net_income | equity: 23
+	interest | debt: 7
+	interest | net_income | debt: 5
+	EBIT | net_income: 4
+	net_income | debt | FFO: 4
+	EBITDA | net_income: 3
+	net_income | equity | debt: 3
+	net_income | st_liabilities: 1
+	net_income | total_oper_liabilities: 1
+	equity | debt: 1
+	net_income | FFO: 1
+	equity | debt | FFO: 1
+	net_income | total_oper_liabilities | FFO: 1
+	interest | debt | total_oper_liabilities: 1
+	interest | EBIT: 1
+	net_income | debt | total_oper_liabilities: 1
+	EBITDA | debt: 1
+	interest | net_income | equity: 1
+	interest | total_oper_liabilities | st_liabilities: 1
+	debt | total_oper_liabilities: 1
+--------------
+Threshold: 0,50
+--------------
+	net_income | debt: 37
+	interest | net_income | debt: 25
+	net_income | equity | debt: 20
+	interest | net_income: 18
+	net_income | equity: 15
+	interest | EBIT | net_income: 8
+	interest | net_income | equity: 8
+	interest | net_income | total_oper_liabilities: 7
+	EBITDA | net_income | debt: 6
+	EBIT | net_income | debt: 6
+	net_income | debt | st_liabilities: 5
+	net_income | total_oper_liabilities: 4
+	EBITDA | net_income | equity: 4
+	interest | debt | total_oper_liabilities: 4
+	EBITDA | net_income: 3
+	EBIT | net_income: 3
+	net_income | debt | total_oper_liabilities: 3
+	net_income | debt | FFO: 3
+	interest | net_income | equity | debt: 3
+	net_income: 2
+	net_income | equity | st_liabilities: 2
+	net_income | total_oper_liabilities | st_liabilities: 1
+	interest | equity | debt | FFO: 1
+	debt | total_oper_liabilities | st_liabilities: 1
+	EBITDA | debt | total_oper_liabilities: 1
+	net_income | st_liabilities | FFO: 1
+	net_income | equity | cash: 1
+	EBIT | net_income | equity: 1
+	net_income | equity | total_oper_liabilities: 1
+	net_income | total_oper_liabilities | FFO: 1
+	interest | debt | FFO: 1
+	net_income | debt | st_liabilities | FFO: 1
+	interest | EBITDA | total_oper_liabilities | st_liabilities: 1
+	EBITDA | net_income | debt | total_oper_liabilities: 1
+	interest | debt: 1
+--------------
+Threshold: 0,60
+--------------
+	interest | net_income | equity | debt: 22
+	net_income | equity | debt: 19
+	interest | net_income | debt | total_oper_liabilities: 17
+	net_income | debt | total_oper_liabilities: 11
+	interest | net_income | debt: 10
+	EBIT | net_income | debt: 8
+	interest | net_income | total_oper_liabilities: 8
+	net_income | debt: 6
+	net_income | equity | FFO: 6
+	EBITDA | net_income | equity: 5
+	EBITDA | net_income | equity | debt: 5
+	net_income | debt | st_liabilities | FFO: 5
+	interest | net_income | equity: 5
+	EBITDA | net_income | debt: 4
+	EBIT | net_income | equity | debt: 4
+	interest | EBIT | net_income | equity: 4
+	interest | EBIT | net_income | debt: 4
+	EBIT | net_income | equity: 3
+	net_income | debt | st_liabilities: 3
+	net_income | equity | debt | FFO: 3
+	interest | EBIT | net_income: 3
+	EBITDA | net_income | debt | total_oper_liabilities: 3
+	EBIT | EBITDA | net_income | debt: 3
+	interest | net_income | equity | debt | FFO: 2
+	EBITDA | net_income | equity | st_liabilities: 2
+	interest | EBITDA | net_income | debt: 2
+	interest | net_income | debt | st_liabilities: 2
+	net_income | debt | cash: 2
+	net_income | equity | debt | total_oper_liabilities: 2
+	net_income | equity | debt | st_liabilities: 2
+	interest | equity | debt | total_oper_liabilities: 2
+	interest | net_income | equity | total_oper_liabilities: 2
+	net_income | equity | total_oper_liabilities | inventories | FFO: 1
+	EBIT | net_income | debt | st_liabilities: 1
+	net_income | FFO: 1
+	net_income | total_oper_liabilities | st_liabilities | FFO: 1
+	interest | net_income | debt | FFO: 1
+	EBITDA | net_income | equity | cash: 1
+	interest | net_income | debt | inventories: 1
+	debt | total_oper_liabilities | st_liabilities | FFO: 1
+	net_income | equity | st_liabilities: 1
+	EBIT | net_income | equity | FFO: 1
+	interest | net_income: 1
+	interest | debt | FFO: 1
+	EBITDA | net_income | equity | FFO: 1
+	interest | net_income | equity | total_oper_liabilities | inventories: 1
+	interest | EBITDA | total_oper_liabilities | st_liabilities | inventories: 1
+	interest | net_income | FFO: 1
+	interest | debt | total_oper_liabilities | FFO: 1
+	interest | net_income | total_oper_liabilities | inventories: 1
+	EBITDA | net_income | debt | st_liabilities: 1
+	net_income | debt | FFO: 1
+	net_income | debt | total_oper_liabilities | FFO: 1
+--------------
+Threshold: 0,70
+--------------
+	interest | net_income | equity | debt | total_oper_liabilities: 16
+	interest | net_income | equity | debt | FFO: 11
+	interest | net_income | debt | total_oper_liabilities: 11
+	interest | EBIT | net_income | equity | debt: 9
+	net_income | equity | debt | FFO: 9
+	interest | EBITDA | net_income | debt | total_oper_liabilities: 4
+	EBIT | net_income | debt: 4
+	EBIT | net_income | equity | debt: 4
+	EBIT | EBITDA | net_income | equity: 4
+	interest | net_income | debt | total_oper_liabilities | FFO: 4
+	net_income | debt | total_oper_liabilities | FFO: 4
+	interest | EBITDA | net_income | debt | inventories: 3
+	EBITDA | net_income | equity | debt: 3
+	net_income | equity | debt: 3
+	net_income | equity | inventories | FFO: 3
+	EBITDA | net_income | equity | FFO: 3
+	interest | EBIT | net_income | debt | st_liabilities: 3
+	interest | net_income | debt | st_liabilities | FFO: 3
+	interest | net_income | equity | debt: 3
+	interest | EBIT | net_income | debt: 3
+	EBITDA | net_income | equity | cash | FFO: 2
+	interest | net_income | equity | FFO: 2
+	interest | net_income | debt | total_oper_liabilities | inventories: 2
+	EBITDA | net_income | equity | debt | total_oper_liabilities | st_liabilities: 2
+	EBIT | net_income | equity | debt | st_liabilities: 2
+	interest | net_income | equity | debt | st_liabilities: 2
+	interest | net_income | equity | debt | inventories: 2
+	interest | net_income | equity | total_oper_liabilities | inventories | FFO: 2
+	interest | EBITDA | net_income | debt: 2
+	interest | net_income | debt | st_liabilities: 2
+	EBIT | net_income | equity | FFO: 2
+	interest | net_income | equity | debt | total_oper_liabilities | FFO: 2
+	EBITDA | net_income | equity | debt | FFO: 2
+	EBITDA | net_income | equity | debt | total_oper_liabilities: 2
+	net_income | equity | debt | cash: 2
+	interest | net_income | equity | total_oper_liabilities | FFO: 2
+	EBIT | EBITDA | net_income | debt | st_liabilities: 2
+	interest | net_income | total_oper_liabilities: 2
+	interest | EBITDA | net_income | equity | debt | total_oper_liabilities: 2
+	net_income | equity | debt | cash | total_oper_liabilities: 2
+	interest | EBITDA | net_income | debt | st_liabilities: 1
+	interest | EBITDA | net_income | debt | total_oper_liabilities | FFO: 1
+	EBIT | net_income | debt | st_liabilities: 1
+	net_income | equity | debt | total_oper_liabilities | st_liabilities: 1
+	interest | net_income | debt | total_oper_liabilities | st_liabilities: 1
+	interest | net_income | debt | cash | inventories: 1
+	interest | net_income | equity | debt | cash: 1
+	interest | EBITDA | equity | total_oper_liabilities | st_liabilities | inventories: 1
+	EBIT | net_income | equity | debt | st_liabilities | FFO: 1
+	net_income | equity | debt | total_oper_liabilities | FFO: 1
+	net_income | debt | total_oper_liabilities | inventories | FFO: 1
+	EBIT | net_income | debt | FFO: 1
+	EBITDA | net_income | equity | cash | st_liabilities: 1
+	net_income | debt | cash | total_oper_liabilities | st_liabilities: 1
+	interest | net_income | debt | total_oper_liabilities | st_liabilities | FFO: 1
+	interest | net_income | debt | inventories: 1
+	cost_of_labor | interest | net_income | equity | debt | FFO: 1
+	net_income | equity | cash | st_liabilities | FFO: 1
+	debt | cash | total_oper_liabilities | st_liabilities | FFO: 1
+	interest | net_income | equity | debt | total_oper_liabilities | st_liabilities: 1
+	EBIT | EBITDA | net_income | equity | FFO: 1
+	net_income | debt | total_oper_liabilities: 1
+	net_income | equity | cash | st_liabilities | inventories: 1
+	interest | EBIT | equity | debt | total_oper_liabilities: 1
+	interest | EBITDA | net_income | total_oper_liabilities | inventories: 1
+	EBIT | EBITDA | net_income | equity | debt: 1
+	EBITDA | net_income | debt | st_liabilities | inventories: 1
+	interest | debt | total_oper_liabilities | st_liabilities | FFO: 1
+	interest | net_income | cash | total_oper_liabilities | FFO: 1
+	interest | net_income | total_oper_liabilities | st_liabilities | inventories: 1
+	net_income | equity | debt | total_oper_liabilities: 1
+	net_income | equity | debt | inventories | FFO: 1
+	net_income | cash | total_oper_liabilities | st_liabilities | FFO: 1
+	net_income | debt | st_liabilities | FFO: 1
+	interest | EBITDA | net_income | equity | st_liabilities: 1
+	interest | EBITDA | net_income | equity | debt: 1
+	net_income | equity | debt | total_oper_liabilities | inventories | FFO: 1
+	interest | net_income | total_oper_liabilities | FFO: 1
+	net_income | debt | cash | FFO: 1
+	interest | EBIT | net_income | debt | total_oper_liabilities: 1
+	EBITDA | net_income | debt | cash | total_oper_liabilities: 1
+	interest | net_income | debt: 1
+	interest | EBIT | EBITDA | net_income | equity | debt: 1
+	interest | net_income | debt | total_oper_liabilities | inventories | FFO: 1
+	interest | net_income | equity | debt | inventories | FFO: 1
+	EBITDA | net_income | debt | total_oper_liabilities: 1
+	EBITDA | net_income | debt | st_liabilities: 1
+	EBIT | EBITDA | net_income | debt | FFO: 1
+	EBIT | EBITDA | net_income | debt: 1
+	EBITDA | net_income | equity | total_oper_liabilities | FFO: 1
+	interest | net_income | debt | st_liabilities | inventories: 1
+	interest | EBIT | net_income | equity: 1
+	EBITDA | net_income | inventories | FFO: 1
+--------------
+Threshold: 0,80
+--------------
+	interest | net_income | equity | debt | total_oper_liabilities | FFO: 12
+	interest | EBITDA | net_income | equity | debt | total_oper_liabilities | FFO: 9
+	interest | net_income | equity | debt | total_oper_liabilities | inventories | FFO: 9
+	interest | EBIT | net_income | equity | debt | st_liabilities | FFO: 8
+	EBIT | EBITDA | net_income | equity | debt | FFO: 7
+	interest | EBITDA | net_income | debt | total_oper_liabilities | st_liabilities: 7
+	interest | EBITDA | net_income | equity | debt | total_oper_liabilities | st_liabilities: 6
+	interest | EBIT | net_income | equity | debt | FFO: 5
+	interest | EBITDA | net_income | debt | total_oper_liabilities | st_liabilities | inventories: 4
+	EBITDA | net_income | equity | cash | st_liabilities | FFO: 4
+	interest | EBIT | EBITDA | net_income | debt | st_liabilities: 3
+	EBIT | EBITDA | net_income | equity | inventories | FFO: 3
+	EBITDA | net_income | equity | debt | FFO: 3
+	interest | EBIT | EBITDA | net_income | equity | debt | FFO: 3
+	interest | net_income | debt | total_oper_liabilities | inventories | FFO: 3
+	interest | EBITDA | net_income | equity | debt | total_oper_liabilities: 3
+	interest | EBITDA | net_income | debt | total_oper_liabilities: 2
+	interest | EBITDA | net_income | debt | total_oper_liabilities | inventories: 2
+	interest | EBITDA | net_income | equity | debt | inventories | FFO: 2
+	interest | net_income | equity | debt | cash | total_oper_liabilities | FFO: 2
+	interest | EBITDA | net_income | debt | st_liabilities | inventories: 2
+	interest | net_income | debt | st_assets | total_oper_liabilities | FFO: 2
+	EBIT | EBITDA | net_income | equity | FFO: 2
+	interest | EBIT | net_income | equity | debt: 2
+	net_income | equity | debt | FFO: 2
+	EBITDA | net_income | equity | debt | inventories | FFO: 2
+	net_income | equity | debt | total_oper_liabilities | inventories | FFO: 2
+	interest | EBITDA | net_income | debt | cash | st_liabilities | inventories: 2
+	interest | net_income | equity | debt | inventories | FFO: 2
+	interest | EBITDA | net_income | equity | debt | inventories: 2
+	interest | EBITDA | net_income | debt | cash | total_oper_liabilities | inventories: 2
+	EBITDA | net_income | equity | debt | total_oper_liabilities | st_liabilities | inventories: 2
+	interest | net_income | equity | debt | total_oper_liabilities | st_liabilities | inventories: 1
+	EBIT | net_income | equity | debt | cash | total_oper_liabilities | inventories | FFO: 1
+	cost_of_labor | interest | net_income | debt | cash | st_liabilities | OCF: 1
+	interest | EBIT | net_income | equity | debt | cash | FFO: 1
+	EBITDA | net_income | equity | total_oper_liabilities | inventories | FFO: 1
+	interest | net_income | debt | cash | total_oper_liabilities | st_liabilities | FFO: 1
+	net_income | equity | debt | cash | FFO: 1
+	EBIT | net_income | debt | cash: 1
+	net_income | equity | debt | cash | OCF: 1
+	interest | EBIT | net_income | equity | debt | total_oper_liabilities | inventories: 1
+	EBITDA | net_income | equity | debt | cash | st_liabilities | FFO: 1
+	EBIT | debt | cash | total_oper_liabilities | st_liabilities | FFO: 1
+	interest | net_income | equity | debt | total_oper_liabilities: 1
+	cost_of_labor | interest | net_income | equity | debt | inventories | FFO: 1
+	EBITDA | net_income | equity | debt | total_oper_liabilities | inventories: 1
+	interest | net_income | equity | debt | cash: 1
+	net_income | equity | debt | total_oper_liabilities | st_liabilities | FFO: 1
+	interest | EBITDA | net_income | debt | total_oper_liabilities | st_liabilities | FFO: 1
+	interest | net_income | equity | debt | total_oper_liabilities | st_liabilities | OCF: 1
+	interest | net_income | equity | debt | total_oper_liabilities | st_liabilities | FFO: 1
+	cost_of_labor | interest | net_income | equity | debt | total_oper_liabilities | st_liabilities | FFO: 1
+	EBIT | net_income | debt | cash | total_oper_liabilities | inventories | FFO: 1
+	EBIT | net_income | equity | debt | st_liabilities | FFO: 1
+	EBIT | EBITDA | net_income | debt | st_liabilities | FFO: 1
+	interest | EBITDA | net_income | equity | cash | total_oper_liabilities | FFO: 1
+	interest | EBIT | EBITDA | net_income | equity | FFO: 1
+	interest | net_income | equity | debt | FFO: 1
+	EBIT | net_income | debt | inventories | FFO: 1
+	EBIT | net_income | equity | debt | total_oper_liabilities | FFO: 1
+	interest | EBIT | net_income | debt | cash | total_oper_liabilities: 1
+	interest | net_income | equity | debt | cash | total_oper_liabilities | st_liabilities | inventories: 1
+	interest | EBITDA | net_income | equity | debt | total_oper_liabilities | st_liabilities | inventories: 1
+	interest | EBITDA | net_income | equity | debt | cash | total_oper_liabilities: 1
+	EBIT | net_income | equity | debt | total_oper_liabilities | st_liabilities | FFO: 1
+	EBITDA | net_income | debt | inventories | FFO: 1
+	interest | EBITDA | net_income | debt | cash | total_oper_liabilities: 1
+	interest | EBIT | net_income | debt | total_oper_liabilities | FFO: 1
+	interest | net_income | equity | debt | total_oper_liabilities | inventories: 1
+	interest | EBITDA | net_income | debt | cash | total_oper_liabilities | inventories | FFO: 1
+	interest | EBIT | EBITDA | net_income | debt | total_oper_liabilities: 1
+	interest | net_income | debt | cash | total_oper_liabilities | inventories | FFO: 1
+	interest | EBITDA | net_income | equity | debt | total_oper_liabilities | inventories: 1
+	net_income | debt | cash | total_oper_liabilities | inventories | FFO: 1
+	interest | EBITDA | net_income | equity | total_oper_liabilities | FFO: 1
+	interest | EBIT | EBITDA | net_income | debt | st_liabilities | FFO: 1
+	cost_of_labor | interest | EBIT | net_income | debt | total_oper_liabilities | FFO: 1
+	interest | EBITDA | net_income | equity | cash | total_oper_liabilities | inventories | FFO: 1
+	interest | net_income | cash | total_oper_liabilities | inventories | FFO: 1
+	interest | net_income | equity | debt | st_liabilities | FFO: 1
+	interest | net_income | equity | debt | st_liabilities | inventories | FFO: 1
+	interest | EBITDA | equity | cash | total_oper_liabilities | st_liabilities | inventories: 1
+	interest | EBIT | net_income | equity | debt | total_oper_liabilities: 1
+	EBIT | net_income | debt | total_oper_liabilities | inventories | FFO: 1
+	interest | EBITDA | net_income | total_oper_liabilities | inventories: 1
+	interest | EBIT | net_income | equity | cash | total_oper_liabilities | FFO: 1
+	EBITDA | net_income | equity | cash | st_liabilities | inventories | FFO: 1
+	cost_of_labor | interest | net_income | equity | debt | total_oper_liabilities | FFO | OCF: 1
+	interest | net_income | equity | debt | cash | inventories | OCF: 1
+	EBITDA | net_income | equity | debt | cash | FFO | OCF: 1
+	EBIT | EBITDA | net_income | equity | cash | FFO: 1
+	interest | EBITDA | net_income | total_oper_liabilities | FFO: 1
+	EBIT | net_income | debt | total_oper_liabilities | FFO: 1
+	EBIT | EBITDA | net_income | equity | debt | total_oper_liabilities | st_liabilities: 1
+	interest | net_income | equity | total_oper_liabilities | FFO: 1
+	EBIT | net_income | equity | debt | inventories | FFO: 1
+	EBITDA | net_income | equity | debt | total_oper_liabilities | st_liabilities | FFO: 1
+	interest | EBIT | net_income | debt | total_oper_liabilities: 1
+	net_income | equity | debt | cash | total_oper_liabilities | OCF: 1
+	cost_of_labor | interest | EBIT | debt | cash | total_oper_liabilities | st_liabilities | FFO: 1
+	net_income | equity | debt | cash | st_liabilities | inventories | OCF: 1
+	net_income | equity | debt | cash | st_liabilities | inventories | FFO: 1
+	EBIT | net_income | debt | cash | st_assets | total_oper_liabilities | st_liabilities | FFO: 1
+	financial_expenses | EBITDA | net_income | equity | debt | total_oper_liabilities | inventories | OCF: 1
+	interest | EBITDA | net_income | equity | debt | total_oper_liabilities | inventories | FFO: 1
+	EBIT | EBITDA | net_income | debt | FFO: 1
+	interest | EBIT | net_income | equity | debt | total_oper_liabilities | st_liabilities | FFO: 1
+	cost_of_labor | net_income | equity | debt | cash | total_oper_liabilities | st_liabilities: 1
+	cost_of_labor | interest | EBITDA | net_income | debt | cash | inventories | OCF: 1
+	interest | EBITDA | net_income | equity | debt | FFO: 1
+*********************************************************************************
+All potential concepts based on thresholds
+	net_income FFO ~#~ debt FFO ~#~ interest st_liabilities ~#~ net_income debt ~#~ interest net_income ~#~ net_income equity ~#~ interest debt ~#~ EBITDA net_income ~#~ equity debt ~#~ interest EBIT ~#~ interest equity ~#~ interest net_income debt ~#~ EBIT net_income ~#~ net_income debt FFO ~#~ net_income equity debt ~#~ net_income st_liabilities ~#~ net_income total_oper_liabilities ~#~ equity debt FFO ~#~ net_income total_oper_liabilities FFO ~#~ interest debt total_oper_liabilities ~#~ net_income debt total_oper_liabilities ~#~ EBITDA debt ~#~ interest net_income equity ~#~ interest total_oper_liabilities st_liabilities ~#~ debt total_oper_liabilities ~#~ interest EBIT net_income ~#~ interest net_income total_oper_liabilities ~#~ EBITDA net_income debt ~#~ EBIT net_income debt ~#~ net_income debt st_liabilities ~#~ EBITDA net_income equity ~#~ interest net_income equity debt ~#~ net_income equity st_liabilities ~#~ net_income total_oper_liabilities st_liabilities ~#~ interest equity debt FFO ~#~ debt total_oper_liabilities st_liabilities ~#~ EBITDA debt total_oper_liabilities ~#~ net_income st_liabilities FFO ~#~ net_income equity cash ~#~ EBIT net_income equity ~#~ net_income equity total_oper_liabilities ~#~ interest debt FFO ~#~ net_income debt st_liabilities FFO ~#~ interest EBITDA total_oper_liabilities st_liabilities ~#~ EBITDA net_income debt total_oper_liabilities ~#~ interest net_income debt total_oper_liabilities ~#~ net_income equity FFO ~#~ EBITDA net_income equity debt ~#~ EBIT net_income equity debt ~#~ interest EBIT net_income equity ~#~ interest EBIT net_income debt ~#~ net_income equity debt FFO ~#~ EBIT EBITDA net_income debt ~#~ interest net_income equity debt FFO ~#~ EBITDA net_income equity st_liabilities ~#~ interest EBITDA net_income debt ~#~ interest net_income debt st_liabilities ~#~ net_income debt cash ~#~ net_income equity debt total_oper_liabilities ~#~ net_income equity debt st_liabilities ~#~ interest equity debt total_oper_liabilities ~#~ interest net_income equity total_oper_liabilities ~#~ net_income equity total_oper_liabilities inventories FFO ~#~ EBIT net_income debt st_liabilities ~#~ net_income total_oper_liabilities st_liabilities FFO ~#~ interest net_income debt FFO ~#~ EBITDA net_income equity cash ~#~ interest net_income debt inventories ~#~ debt total_oper_liabilities st_liabilities FFO ~#~ EBIT net_income equity FFO ~#~ EBITDA net_income equity FFO ~#~ interest net_income equity total_oper_liabilities inventories ~#~ interest EBITDA total_oper_liabilities st_liabilities inventories ~#~ interest net_income FFO ~#~ interest debt total_oper_liabilities FFO ~#~ interest net_income total_oper_liabilities inventories ~#~ EBITDA net_income debt st_liabilities ~#~ net_income debt total_oper_liabilities FFO ~#~ interest net_income equity debt total_oper_liabilities ~#~ interest EBIT net_income equity debt ~#~ interest EBITDA net_income debt total_oper_liabilities ~#~ EBIT EBITDA net_income equity ~#~ interest net_income debt total_oper_liabilities FFO ~#~ interest EBITDA net_income debt inventories ~#~ net_income equity inventories FFO ~#~ interest EBIT net_income debt st_liabilities ~#~ interest net_income debt st_liabilities FFO ~#~ EBITDA net_income equity cash FFO ~#~ interest net_income equity FFO ~#~ interest net_income debt total_oper_liabilities inventories ~#~ EBITDA net_income equity debt total_oper_liabilities st_liabilities ~#~ EBIT net_income equity debt st_liabilities ~#~ interest net_income equity debt st_liabilities ~#~ interest net_income equity debt inventories ~#~ interest net_income equity total_oper_liabilities inventories FFO ~#~ interest net_income equity debt total_oper_liabilities FFO ~#~ EBITDA net_income equity debt FFO ~#~ EBITDA net_income equity debt total_oper_liabilities ~#~ net_income equity debt cash ~#~ interest net_income equity total_oper_liabilities FFO ~#~ EBIT EBITDA net_income debt st_liabilities ~#~ interest EBITDA net_income equity debt total_oper_liabilities ~#~ net_income equity debt cash total_oper_liabilities ~#~ interest EBITDA net_income debt st_liabilities ~#~ interest EBITDA net_income debt total_oper_liabilities FFO ~#~ net_income equity debt total_oper_liabilities st_liabilities ~#~ interest net_income debt total_oper_liabilities st_liabilities ~#~ interest net_income debt cash inventories ~#~ interest net_income equity debt cash ~#~ interest EBITDA equity total_oper_liabilities st_liabilities inventories ~#~ EBIT net_income equity debt st_liabilities FFO ~#~ net_income equity debt total_oper_liabilities FFO ~#~ net_income debt total_oper_liabilities inventories FFO ~#~ EBIT net_income debt FFO ~#~ EBITDA net_income equity cash st_liabilities ~#~ net_income debt cash total_oper_liabilities st_liabilities ~#~ interest net_income debt total_oper_liabilities st_liabilities FFO ~#~ cost_of_labor interest net_income equity debt FFO ~#~ net_income equity cash st_liabilities FFO ~#~ debt cash total_oper_liabilities st_liabilities FFO ~#~ interest net_income equity debt total_oper_liabilities st_liabilities ~#~ EBIT EBITDA net_income equity FFO ~#~ net_income equity cash st_liabilities inventories ~#~ interest EBIT equity debt total_oper_liabilities ~#~ interest EBITDA net_income total_oper_liabilities inventories ~#~ EBIT EBITDA net_income equity debt ~#~ EBITDA net_income debt st_liabilities inventories ~#~ interest debt total_oper_liabilities st_liabilities FFO ~#~ interest net_income cash total_oper_liabilities FFO ~#~ interest net_income total_oper_liabilities st_liabilities inventories ~#~ net_income equity debt inventories FFO ~#~ net_income cash total_oper_liabilities st_liabilities FFO ~#~ interest EBITDA net_income equity st_liabilities ~#~ interest EBITDA net_income equity debt ~#~ net_income equity debt total_oper_liabilities inventories FFO ~#~ interest net_income total_oper_liabilities FFO ~#~ net_income debt cash FFO ~#~ interest EBIT net_income debt total_oper_liabilities ~#~ EBITDA net_income debt cash total_oper_liabilities ~#~ interest EBIT EBITDA net_income equity debt ~#~ interest net_income debt total_oper_liabilities inventories FFO ~#~ interest net_income equity debt inventories FFO ~#~ EBIT EBITDA net_income debt FFO ~#~ EBITDA net_income equity total_oper_liabilities FFO ~#~ interest net_income debt st_liabilities inventories ~#~ EBITDA net_income inventories FFO ~#~ interest EBITDA net_income equity debt total_oper_liabilities FFO ~#~ interest net_income equity debt total_oper_liabilities inventories FFO ~#~ interest EBIT net_income equity debt st_liabilities FFO ~#~ EBIT EBITDA net_income equity debt FFO ~#~ interest EBITDA net_income debt total_oper_liabilities st_liabilities ~#~ interest EBITDA net_income equity debt total_oper_liabilities st_liabilities ~#~ interest EBIT net_income equity debt FFO ~#~ interest EBITDA net_income debt total_oper_liabilities st_liabilities inventories ~#~ EBITDA net_income equity cash st_liabilities FFO ~#~ interest EBIT EBITDA net_income debt st_liabilities ~#~ EBIT EBITDA net_income equity inventories FFO ~#~ interest EBIT EBITDA net_income equity debt FFO ~#~ interest EBITDA net_income debt total_oper_liabilities inventories ~#~ interest EBITDA net_income equity debt inventories FFO ~#~ interest net_income equity debt cash total_oper_liabilities FFO ~#~ interest EBITDA net_income debt st_liabilities inventories ~#~ interest net_income debt st_assets total_oper_liabilities FFO ~#~ EBITDA net_income equity debt inventories FFO ~#~ interest EBITDA net_income debt cash st_liabilities inventories ~#~ interest EBITDA net_income equity debt inventories ~#~ interest EBITDA net_income debt cash total_oper_liabilities inventories ~#~ EBITDA net_income equity debt total_oper_liabilities st_liabilities inventories ~#~ interest net_income equity debt total_oper_liabilities st_liabilities inventories ~#~ EBIT net_income equity debt cash total_oper_liabilities inventories FFO ~#~ cost_of_labor interest net_income debt cash st_liabilities OCF ~#~ interest EBIT net_income equity debt cash FFO ~#~ EBITDA net_income equity total_oper_liabilities inventories FFO ~#~ interest net_income debt cash total_oper_liabilities st_liabilities FFO ~#~ net_income equity debt cash FFO ~#~ EBIT net_income debt cash ~#~ net_income equity debt cash OCF ~#~ interest EBIT net_income equity debt total_oper_liabilities inventories ~#~ EBITDA net_income equity debt cash st_liabilities FFO ~#~ EBIT debt cash total_oper_liabilities st_liabilities FFO ~#~ cost_of_labor interest net_income equity debt inventories FFO ~#~ EBITDA net_income equity debt total_oper_liabilities inventories ~#~ net_income equity debt total_oper_liabilities st_liabilities FFO ~#~ interest EBITDA net_income debt total_oper_liabilities st_liabilities FFO ~#~ interest net_income equity debt total_oper_liabilities st_liabilities OCF ~#~ interest net_income equity debt total_oper_liabilities st_liabilities FFO ~#~ cost_of_labor interest net_income equity debt total_oper_liabilities st_liabilities FFO ~#~ EBIT net_income debt cash total_oper_liabilities inventories FFO ~#~ EBIT EBITDA net_income debt st_liabilities FFO ~#~ interest EBITDA net_income equity cash total_oper_liabilities FFO ~#~ interest EBIT EBITDA net_income equity FFO ~#~ EBIT net_income debt inventories FFO ~#~ EBIT net_income equity debt total_oper_liabilities FFO ~#~ interest EBIT net_income debt cash total_oper_liabilities ~#~ interest net_income equity debt cash total_oper_liabilities st_liabilities inventories ~#~ interest EBITDA net_income equity debt total_oper_liabilities st_liabilities inventories ~#~ interest EBITDA net_income equity debt cash total_oper_liabilities ~#~ EBIT net_income equity debt total_oper_liabilities st_liabilities FFO ~#~ EBITDA net_income debt inventories FFO ~#~ interest EBITDA net_income debt cash total_oper_liabilities ~#~ interest EBIT net_income debt total_oper_liabilities FFO ~#~ interest net_income equity debt total_oper_liabilities inventories ~#~ interest EBITDA net_income debt cash total_oper_liabilities inventories FFO ~#~ interest EBIT EBITDA net_income debt total_oper_liabilities ~#~ interest net_income debt cash total_oper_liabilities inventories FFO ~#~ interest EBITDA net_income equity debt total_oper_liabilities inventories ~#~ net_income debt cash total_oper_liabilities inventories FFO ~#~ interest EBITDA net_income equity total_oper_liabilities FFO ~#~ interest EBIT EBITDA net_income debt st_liabilities FFO ~#~ cost_of_labor interest EBIT net_income debt total_oper_liabilities FFO ~#~ interest EBITDA net_income equity cash total_oper_liabilities inventories FFO ~#~ interest net_income cash total_oper_liabilities inventories FFO ~#~ interest net_income equity debt st_liabilities FFO ~#~ interest net_income equity debt st_liabilities inventories FFO ~#~ interest EBITDA equity cash total_oper_liabilities st_liabilities inventories ~#~ interest EBIT net_income equity debt total_oper_liabilities ~#~ EBIT net_income debt total_oper_liabilities inventories FFO ~#~ interest EBIT net_income equity cash total_oper_liabilities FFO ~#~ EBITDA net_income equity cash st_liabilities inventories FFO ~#~ cost_of_labor interest net_income equity debt total_oper_liabilities FFO OCF ~#~ interest net_income equity debt cash inventories OCF ~#~ EBITDA net_income equity debt cash FFO OCF ~#~ EBIT EBITDA net_income equity cash FFO ~#~ interest EBITDA net_income total_oper_liabilities FFO ~#~ EBIT net_income 

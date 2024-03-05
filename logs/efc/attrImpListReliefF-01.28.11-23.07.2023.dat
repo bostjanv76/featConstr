@@ -1,0 +1,573 @@
+dataset: cDisjunct.arff
+								--------------
+									Fold  1
+								--------------
+Feature evaluation: ReliefF (All features dataset) - After CI
+Ranked attributes:
+ 1          48 (A1 <= 0.5) and (A3 >= 0.4) and (A2 <= 0.7)
+ 0.831167   47 (A1 <= 0.5) and (A3 >= 0.4)
+ 0.829667   50 num-of-N((A1 <= 0.5) and (A3 >= 0.4) and (A2 <= 0.7))
+ 0.746444   49 num-of-N((A1 <= 0.5) and (A3 >= 0.4))
+ 0.744167    9 A1==B2of2 or A2==B2of2
+ 0.740611   46 A1_x_A3
+ 0.664722   44 A1_x_A2
+ 0.568778   45 A2_x_A3
+ 0.550722   17 A1==B2of2 xor A3==B2of2
+ 0.550722   14 A1==B2of2 equ A3==B2of2
+ 0.520167   12 A1==B2of2 equ A2==B2of2
+ 0.520167   15 A1==B2of2 xor A2==B2of2
+ 0.443667   13 A2==B2of2 equ A3==B2of2
+ 0.443667   16 A2==B2of2 xor A3==B2of2
+ 0.380611   40 A1 LESSTHAN A3
+ 0.354611   18 A1==B2of2 impl A2==B2of2
+ 0.322278    8 A1==B2of2 and A3==B2of2
+ 0.2695     10 A2==B2of2 or A3==B2of2
+ 0.2455     39 A2 LESSTHAN A3
+ 0.216778   11 A1==B2of2 or A3==B2of2
+ 0.168167    7 A2==B2of2 and A3==B2of2
+ 0.157944   22 A1==B2of2 or A2==B2of2 or A3==B2of2
+ 0.156645    1 A1
+ 0.141278   38 A1 LESSTHAN A2
+ 0.13677    28 A1 SUBTRACT A3
+ 0.121149    3 A3
+ 0.112132   23 A1 ADD A2
+ 0.111      20 A1==B2of2 impl A3==B2of2
+ 0.094697   27 A2 SUBTRACT A3
+ 0.087033   35 A1 MULTIPLY A2
+ 0.079499   37 A1 MULTIPLY A3
+ 0.077971    2 A2
+ 0.075333    6 A1==B2of2 and A2==B2of2
+ 0.074772   25 A1 ADD A3
+ 0.069652   26 A1 SUBTRACT A2
+ 0.064389   19 A2==B2of2 impl A3==B2of2
+ 0.060188   36 A2 MULTIPLY A3
+ 0.057223   24 A2 ADD A3
+ 0.037111   21 A1==B2of2 and A2==B2of2 and A3==B2of2
+ 0.01196     5 A5
+ 0.011712    4 A4
+ 0.010167   42 A2 DIFF A3
+ 0.008778   41 A1 DIFF A2
+-0.000389   29 A1 DIVIDE A2
+-0.000389   32 A3 DIVIDE A2
+-0.001944   34 A3 DIVIDE A1
+-0.001944   30 A2 DIVIDE A1
+-0.004222   43 A1 DIFF A3
+-0.008      33 A1 DIVIDE A3
+-0.008      31 A2 DIVIDE A3
+
+
+								--------------
+									Fold  2
+								--------------
+Feature evaluation: ReliefF (All features dataset) - After CI
+Ranked attributes:
+ 1         48 (A1 <= 0.5) and (A3 >= 0.4) and (A2 <= 0.7)
+ 0.82717   50 num-of-N((A1 <= 0.5) and (A3 >= 0.4) and (A2 <= 0.7))
+ 0.82344   47 (A1 <= 0.5) and (A3 >= 0.4)
+ 0.74889    9 A1==B2of2 or A2==B2of2
+ 0.73894   49 num-of-N((A1 <= 0.5) and (A3 >= 0.4))
+ 0.73294   46 A1_x_A3
+ 0.66717   44 A1_x_A2
+ 0.56694   45 A2_x_A3
+ 0.54339   14 A1==B2of2 equ A3==B2of2
+ 0.54339   17 A1==B2of2 xor A3==B2of2
+ 0.52172   12 A1==B2of2 equ A2==B2of2
+ 0.52172   15 A1==B2of2 xor A2==B2of2
+ 0.43444   16 A2==B2of2 xor A3==B2of2
+ 0.43444   13 A2==B2of2 equ A3==B2of2
+ 0.36544   40 A1 LESSTHAN A3
+ 0.35033   18 A1==B2of2 impl A2==B2of2
+ 0.32233    8 A1==B2of2 and A3==B2of2
+ 0.26017   10 A2==B2of2 or A3==B2of2
+ 0.23756   39 A2 LESSTHAN A3
+ 0.20906   11 A1==B2of2 or A3==B2of2
+ 0.17006    7 A2==B2of2 and A3==B2of2
+ 0.15488    1 A1
+ 0.14967   22 A1==B2of2 or A2==B2of2 or A3==B2of2
+ 0.14039   38 A1 LESSTHAN A2
+ 0.132     28 A1 SUBTRACT A3
+ 0.11725    3 A3
+ 0.11196   23 A1 ADD A2
+ 0.11106   20 A1==B2of2 impl A3==B2of2
+ 0.09445   27 A2 SUBTRACT A3
+ 0.08521   35 A1 MULTIPLY A2
+ 0.08036    2 A2
+ 0.07805   37 A1 MULTIPLY A3
+ 0.07355   25 A1 ADD A3
+ 0.0735     6 A1==B2of2 and A2==B2of2
+ 0.0712    26 A1 SUBTRACT A2
+ 0.06972   19 A2==B2of2 impl A3==B2of2
+ 0.06082   36 A2 MULTIPLY A3
+ 0.05584   24 A2 ADD A3
+ 0.03139   21 A1==B2of2 and A2==B2of2 and A3==B2of2
+ 0.01343    4 A4
+ 0.01283   42 A2 DIFF A3
+ 0.01251    5 A5
+ 0.00822   41 A1 DIFF A2
+-0.00161   34 A3 DIVIDE A1
+-0.00161   30 A2 DIVIDE A1
+-0.00306   29 A1 DIVIDE A2
+-0.00306   32 A3 DIVIDE A2
+-0.00311   43 A1 DIFF A3
+-0.00778   33 A1 DIVIDE A3
+-0.00778   31 A2 DIVIDE A3
+
+
+								--------------
+									Fold  3
+								--------------
+Feature evaluation: ReliefF (All features dataset) - After CI
+Ranked attributes:
+ 1           49 (A1 <= 0.5) and (A3 >= 0.4) and (A2 <= 0.7)
+ 0.8314444   52 num-of-N((A1 <= 0.5) and (A3 >= 0.4) and (A2 <= 0.7))
+ 0.8297778   47 (A1 <= 0.5) and (A3 >= 0.4)
+ 0.7454444   48 (A1 <= 0.5) and (A2 <= 0.7)
+ 0.7454444    9 A1==B2of2 or A2==B2of2
+ 0.7446111   50 num-of-N((A1 <= 0.5) and (A3 >= 0.4))
+ 0.7389444   46 A1_x_A3
+ 0.6739444   51 num-of-N((A1 <= 0.5) and (A2 <= 0.7))
+ 0.6687222   44 A1_x_A2
+ 0.5726667   45 A2_x_A3
+ 0.5417222   14 A1==B2of2 equ A3==B2of2
+ 0.5417222   17 A1==B2of2 xor A3==B2of2
+ 0.5224444   15 A1==B2of2 xor A2==B2of2
+ 0.5224444   12 A1==B2of2 equ A2==B2of2
+ 0.4452778   13 A2==B2of2 equ A3==B2of2
+ 0.4452778   16 A2==B2of2 xor A3==B2of2
+ 0.3670556   40 A1 LESSTHAN A3
+ 0.3594444   18 A1==B2of2 impl A2==B2of2
+ 0.3199444    8 A1==B2of2 and A3==B2of2
+ 0.2672778   10 A2==B2of2 or A3==B2of2
+ 0.2493889   39 A2 LESSTHAN A3
+ 0.2104444   11 A1==B2of2 or A3==B2of2
+ 0.1715556    7 A2==B2of2 and A3==B2of2
+ 0.1505828    1 A1
+ 0.15        22 A1==B2of2 or A2==B2of2 or A3==B2of2
+ 0.1348333   38 A1 LESSTHAN A2
+ 0.1301097   28 A1 SUBTRACT A3
+ 0.1177222   20 A1==B2of2 impl A3==B2of2
+ 0.1174578    3 A3
+ 0.1110495   23 A1 ADD A2
+ 0.0946153   27 A2 SUBTRACT A3
+ 0.0851555   35 A1 MULTIPLY A2
+ 0.0806578    2 A2
+ 0.08         6 A1==B2of2 and A2==B2of2
+ 0.0773741   37 A1 MULTIPLY A3
+ 0.0714346   25 A1 ADD A3
+ 0.0683836   26 A1 SUBTRACT A2
+ 0.0665556   19 A2==B2of2 impl A3==B2of2
+ 0.0594581   36 A2 MULTIPLY A3
+ 0.0562789   24 A2 ADD A3
+ 0.0371111   21 A1==B2of2 and A2==B2of2 and A3==B2of2
+ 0.0135039    4 A4
+ 0.0127222   42 A2 DIFF A3
+ 0.0116144    5 A5
+ 0.0075      41 A1 DIFF A2
+-0.0000556   29 A1 DIVIDE A2
+-0.0000556   32 A3 DIVIDE A2
+-0.0015      34 A3 DIVIDE A1
+-0.0015      30 A2 DIVIDE A1
+-0.0028889   43 A1 DIFF A3
+-0.007       31 A2 DIVIDE A3
+-0.007       33 A1 DIVIDE A3
+
+
+								--------------
+									Fold  4
+								--------------
+Feature evaluation: ReliefF (All features dataset) - After CI
+Ranked attributes:
+ 1          48 (A1 <= 0.5) and (A3 >= 0.4) and (A2 <= 0.7)
+ 0.827833   47 (A1 <= 0.5) and (A3 >= 0.4)
+ 0.827667   50 num-of-N((A1 <= 0.5) and (A3 >= 0.4) and (A2 <= 0.7))
+ 0.743       9 A1==B2of2 or A2==B2of2
+ 0.742333   49 num-of-N((A1 <= 0.5) and (A3 >= 0.4))
+ 0.736667   46 A1_x_A3
+ 0.662556   44 A1_x_A2
+ 0.569889   45 A2_x_A3
+ 0.545611   14 A1==B2of2 equ A3==B2of2
+ 0.545611   17 A1==B2of2 xor A3==B2of2
+ 0.515278   12 A1==B2of2 equ A2==B2of2
+ 0.515278   15 A1==B2of2 xor A2==B2of2
+ 0.438      13 A2==B2of2 equ A3==B2of2
+ 0.438      16 A2==B2of2 xor A3==B2of2
+ 0.3625     40 A1 LESSTHAN A3
+ 0.348278   18 A1==B2of2 impl A2==B2of2
+ 0.319556    8 A1==B2of2 and A3==B2of2
+ 0.264722   10 A2==B2of2 or A3==B2of2
+ 0.242722   39 A2 LESSTHAN A3
+ 0.214722   11 A1==B2of2 or A3==B2of2
+ 0.167611    7 A2==B2of2 and A3==B2of2
+ 0.154333   22 A1==B2of2 or A2==B2of2 or A3==B2of2
+ 0.153985    1 A1
+ 0.143778   38 A1 LESSTHAN A2
+ 0.132338   28 A1 SUBTRACT A3
+ 0.117883    3 A3
+ 0.112424   23 A1 ADD A2
+ 0.111222   20 A1==B2of2 impl A3==B2of2
+ 0.094753   27 A2 SUBTRACT A3
+ 0.086331   35 A1 MULTIPLY A2
+ 0.079403    2 A2
+ 0.079251   37 A1 MULTIPLY A3
+ 0.077611    6 A1==B2of2 and A2==B2of2
+ 0.073948   25 A1 ADD A3
+ 0.069778   19 A2==B2of2 impl A3==B2of2
+ 0.069237   26 A1 SUBTRACT A2
+ 0.058881   36 A2 MULTIPLY A3
+ 0.054858   24 A2 ADD A3
+ 0.032889   21 A1==B2of2 and A2==B2of2 and A3==B2of2
+ 0.012833   42 A2 DIFF A3
+ 0.012515    5 A5
+ 0.012511    4 A4
+ 0.007889   41 A1 DIFF A2
+-0.000778   29 A1 DIVIDE A2
+-0.000778   32 A3 DIVIDE A2
+-0.001556   34 A3 DIVIDE A1
+-0.001556   30 A2 DIVIDE A1
+-0.003444   43 A1 DIFF A3
+-0.007833   33 A1 DIVIDE A3
+-0.007833   31 A2 DIVIDE A3
+
+
+								--------------
+									Fold  5
+								--------------
+Feature evaluation: ReliefF (All features dataset) - After CI
+Ranked attributes:
+ 1          48 (A1 <= 0.5) and (A3 >= 0.4) and (A2 <= 0.7)
+ 0.831611   47 (A1 <= 0.5) and (A3 >= 0.4)
+ 0.826056   50 num-of-N((A1 <= 0.5) and (A3 >= 0.4) and (A2 <= 0.7))
+ 0.743722   49 num-of-N((A1 <= 0.5) and (A3 >= 0.4))
+ 0.738278    9 A1==B2of2 or A2==B2of2
+ 0.738      46 A1_x_A3
+ 0.656889   44 A1_x_A2
+ 0.569222   45 A2_x_A3
+ 0.544111   17 A1==B2of2 xor A3==B2of2
+ 0.544111   14 A1==B2of2 equ A3==B2of2
+ 0.514722   12 A1==B2of2 equ A2==B2of2
+ 0.514722   15 A1==B2of2 xor A2==B2of2
+ 0.443056   13 A2==B2of2 equ A3==B2of2
+ 0.443056   16 A2==B2of2 xor A3==B2of2
+ 0.364111   40 A1 LESSTHAN A3
+ 0.352889   18 A1==B2of2 impl A2==B2of2
+ 0.315722    8 A1==B2of2 and A3==B2of2
+ 0.272      10 A2==B2of2 or A3==B2of2
+ 0.251722   39 A2 LESSTHAN A3
+ 0.216944   11 A1==B2of2 or A3==B2of2
+ 0.164167    7 A2==B2of2 and A3==B2of2
+ 0.157611   22 A1==B2of2 or A2==B2of2 or A3==B2of2
+ 0.152161    1 A1
+ 0.141333   38 A1 LESSTHAN A2
+ 0.130945   28 A1 SUBTRACT A3
+ 0.119032    3 A3
+ 0.113804   23 A1 ADD A2
+ 0.111722   20 A1==B2of2 impl A3==B2of2
+ 0.095019   27 A2 SUBTRACT A3
+ 0.085646   35 A1 MULTIPLY A2
+ 0.079498    2 A2
+ 0.079461   37 A1 MULTIPLY A3
+ 0.076873   25 A1 ADD A3
+ 0.071889    6 A1==B2of2 and A2==B2of2
+ 0.068716   26 A1 SUBTRACT A2
+ 0.065444   19 A2==B2of2 impl A3==B2of2
+ 0.060052   36 A2 MULTIPLY A3
+ 0.056266   24 A2 ADD A3
+ 0.032556   21 A1==B2of2 and A2==B2of2 and A3==B2of2
+ 0.013623    4 A4
+ 0.012315    5 A5
+ 0.006778   42 A2 DIFF A3
+ 0.006722   41 A1 DIFF A2
+-0.000222   29 A1 DIVIDE A2
+-0.000222   32 A3 DIVIDE A2
+-0.002222   34 A3 DIVIDE A1
+-0.002222   30 A2 DIVIDE A1
+-0.003611   43 A1 DIFF A3
+-0.006944   33 A1 DIVIDE A3
+-0.006944   31 A2 DIVIDE A3
+
+
+								--------------
+									Fold  6
+								--------------
+Feature evaluation: ReliefF (All features dataset) - After CI
+Ranked attributes:
+ 1          48 (A1 <= 0.5) and (A3 >= 0.4) and (A2 <= 0.7)
+ 0.832056   47 (A1 <= 0.5) and (A3 >= 0.4)
+ 0.825333   50 num-of-N((A1 <= 0.5) and (A3 >= 0.4) and (A2 <= 0.7))
+ 0.747778   49 num-of-N((A1 <= 0.5) and (A3 >= 0.4))
+ 0.744556    9 A1==B2of2 or A2==B2of2
+ 0.742      46 A1_x_A3
+ 0.662444   44 A1_x_A2
+ 0.562722   45 A2_x_A3
+ 0.547611   14 A1==B2of2 equ A3==B2of2
+ 0.547611   17 A1==B2of2 xor A3==B2of2
+ 0.512778   12 A1==B2of2 equ A2==B2of2
+ 0.512778   15 A1==B2of2 xor A2==B2of2
+ 0.432167   16 A2==B2of2 xor A3==B2of2
+ 0.432167   13 A2==B2of2 equ A3==B2of2
+ 0.353944   18 A1==B2of2 impl A2==B2of2
+ 0.350778   40 A1 LESSTHAN A3
+ 0.3225      8 A1==B2of2 and A3==B2of2
+ 0.264944   10 A2==B2of2 or A3==B2of2
+ 0.256      39 A2 LESSTHAN A3
+ 0.213556   11 A1==B2of2 or A3==B2of2
+ 0.160333    7 A2==B2of2 and A3==B2of2
+ 0.155006    1 A1
+ 0.154667   22 A1==B2of2 or A2==B2of2 or A3==B2of2
+ 0.147889   38 A1 LESSTHAN A2
+ 0.131672   28 A1 SUBTRACT A3
+ 0.117119    3 A3
+ 0.115889   20 A1==B2of2 impl A3==B2of2
+ 0.112781   23 A1 ADD A2
+ 0.094769   27 A2 SUBTRACT A3
+ 0.087995   35 A1 MULTIPLY A2
+ 0.080245   37 A1 MULTIPLY A3
+ 0.079551    2 A2
+ 0.078222    6 A1==B2of2 and A2==B2of2
+ 0.074496   25 A1 ADD A3
+ 0.068757   26 A1 SUBTRACT A2
+ 0.066167   19 A2==B2of2 impl A3==B2of2
+ 0.0584     36 A2 MULTIPLY A3
+ 0.054749   24 A2 ADD A3
+ 0.032944   21 A1==B2of2 and A2==B2of2 and A3==B2of2
+ 0.013374    4 A4
+ 0.013045    5 A5
+ 0.004667   42 A2 DIFF A3
+-0.000278   29 A1 DIVIDE A2
+-0.000278   32 A3 DIVIDE A2
+-0.000278   41 A1 DIFF A2
+-0.002056   34 A3 DIVIDE A1
+-0.002056   30 A2 DIVIDE A1
+-0.003722   43 A1 DIFF A3
+-0.008      33 A1 DIVIDE A3
+-0.008      31 A2 DIVIDE A3
+
+
+								--------------
+									Fold  7
+								--------------
+Feature evaluation: ReliefF (All features dataset) - After CI
+Ranked attributes:
+ 1          48 (A1 <= 0.5) and (A3 >= 0.4) and (A2 <= 0.7)
+ 0.8265     47 (A1 <= 0.5) and (A3 >= 0.4)
+ 0.823278   50 num-of-N((A1 <= 0.5) and (A3 >= 0.4) and (A2 <= 0.7))
+ 0.746278    9 A1==B2of2 or A2==B2of2
+ 0.738056   49 num-of-N((A1 <= 0.5) and (A3 >= 0.4))
+ 0.7325     46 A1_x_A3
+ 0.665889   44 A1_x_A2
+ 0.566444   45 A2_x_A3
+ 0.535556   14 A1==B2of2 equ A3==B2of2
+ 0.535556   17 A1==B2of2 xor A3==B2of2
+ 0.525222   12 A1==B2of2 equ A2==B2of2
+ 0.525222   15 A1==B2of2 xor A2==B2of2
+ 0.439222   16 A2==B2of2 xor A3==B2of2
+ 0.439222   13 A2==B2of2 equ A3==B2of2
+ 0.359889   18 A1==B2of2 impl A2==B2of2
+ 0.359667   40 A1 LESSTHAN A3
+ 0.316889    8 A1==B2of2 and A3==B2of2
+ 0.265278   10 A2==B2of2 or A3==B2of2
+ 0.238889   39 A2 LESSTHAN A3
+ 0.207556   11 A1==B2of2 or A3==B2of2
+ 0.167944    7 A2==B2of2 and A3==B2of2
+ 0.151522    1 A1
+ 0.147833   22 A1==B2of2 or A2==B2of2 or A3==B2of2
+ 0.140222   38 A1 LESSTHAN A2
+ 0.129825   28 A1 SUBTRACT A3
+ 0.11725     3 A3
+ 0.114056   20 A1==B2of2 impl A3==B2of2
+ 0.1096     23 A1 ADD A2
+ 0.092763   27 A2 SUBTRACT A3
+ 0.08309    35 A1 MULTIPLY A2
+ 0.078134   37 A1 MULTIPLY A3
+ 0.076369    2 A2
+ 0.072771   25 A1 ADD A3
+ 0.070611    6 A1==B2of2 and A2==B2of2
+ 0.069228   26 A1 SUBTRACT A2
+ 0.063222   19 A2==B2of2 impl A3==B2of2
+ 0.058821   36 A2 MULTIPLY A3
+ 0.055344   24 A2 ADD A3
+ 0.034111   21 A1==B2of2 and A2==B2of2 and A3==B2of2
+ 0.012287    5 A5
+ 0.012041    4 A4
+ 0.010389   42 A2 DIFF A3
+ 0.008944   41 A1 DIFF A2
+ 0.000611   29 A1 DIVIDE A2
+ 0.000611   32 A3 DIVIDE A2
+-0.001333   34 A3 DIVIDE A1
+-0.001333   30 A2 DIVIDE A1
+-0.003444   43 A1 DIFF A3
+-0.007722   33 A1 DIVIDE A3
+-0.007722   31 A2 DIVIDE A3
+
+
+								--------------
+									Fold  8
+								--------------
+Feature evaluation: ReliefF (All features dataset) - After CI
+Ranked attributes:
+ 1           48 (A1 <= 0.5) and (A3 >= 0.4) and (A2 <= 0.7)
+ 0.8314444   47 (A1 <= 0.5) and (A3 >= 0.4)
+ 0.8290556   50 num-of-N((A1 <= 0.5) and (A3 >= 0.4) and (A2 <= 0.7))
+ 0.7483333    9 A1==B2of2 or A2==B2of2
+ 0.7471111   49 num-of-N((A1 <= 0.5) and (A3 >= 0.4))
+ 0.7411111   46 A1_x_A3
+ 0.6675556   44 A1_x_A2
+ 0.5659444   45 A2_x_A3
+ 0.5496667   14 A1==B2of2 equ A3==B2of2
+ 0.5496667   17 A1==B2of2 xor A3==B2of2
+ 0.5223333   12 A1==B2of2 equ A2==B2of2
+ 0.5223333   15 A1==B2of2 xor A2==B2of2
+ 0.4362222   16 A2==B2of2 xor A3==B2of2
+ 0.4362222   13 A2==B2of2 equ A3==B2of2
+ 0.3634444   40 A1 LESSTHAN A3
+ 0.3592778   18 A1==B2of2 impl A2==B2of2
+ 0.3258333    8 A1==B2of2 and A3==B2of2
+ 0.2625      10 A2==B2of2 or A3==B2of2
+ 0.2379444   39 A2 LESSTHAN A3
+ 0.2118333   11 A1==B2of2 or A3==B2of2
+ 0.1670556    7 A2==B2of2 and A3==B2of2
+ 0.1557122    1 A1
+ 0.1508889   22 A1==B2of2 or A2==B2of2 or A3==B2of2
+ 0.1419444   38 A1 LESSTHAN A2
+ 0.1330405   28 A1 SUBTRACT A3
+ 0.117625     3 A3
+ 0.1131111   20 A1==B2of2 impl A3==B2of2
+ 0.112177    23 A1 ADD A2
+ 0.0932648   27 A2 SUBTRACT A3
+ 0.0867222   35 A1 MULTIPLY A2
+ 0.0805326   37 A1 MULTIPLY A3
+ 0.0782922    2 A2
+ 0.0743095   25 A1 ADD A3
+ 0.0738889    6 A1==B2of2 and A2==B2of2
+ 0.0703128   26 A1 SUBTRACT A2
+ 0.0684444   19 A2==B2of2 impl A3==B2of2
+ 0.0594095   36 A2 MULTIPLY A3
+ 0.0555929   24 A2 ADD A3
+ 0.0352778   21 A1==B2of2 and A2==B2of2 and A3==B2of2
+ 0.0124472    4 A4
+ 0.0118544    5 A5
+ 0.0113889   42 A2 DIFF A3
+ 0.0100556   41 A1 DIFF A2
+-0.0000556   29 A1 DIVIDE A2
+-0.0000556   32 A3 DIVIDE A2
+-0.0021667   34 A3 DIVIDE A1
+-0.0021667   30 A2 DIVIDE A1
+-0.0033889   43 A1 DIFF A3
+-0.0067222   33 A1 DIVIDE A3
+-0.0067222   31 A2 DIVIDE A3
+
+
+								--------------
+									Fold  9
+								--------------
+Feature evaluation: ReliefF (All features dataset) - After CI
+Ranked attributes:
+ 1          48 (A1 <= 0.5) and (A3 >= 0.4) and (A2 <= 0.7)
+ 0.826111   50 num-of-N((A1 <= 0.5) and (A3 >= 0.4) and (A2 <= 0.7))
+ 0.824611   47 (A1 <= 0.5) and (A3 >= 0.4)
+ 0.751944    9 A1==B2of2 or A2==B2of2
+ 0.739      49 num-of-N((A1 <= 0.5) and (A3 >= 0.4))
+ 0.734056   46 A1_x_A3
+ 0.669333   44 A1_x_A2
+ 0.5685     45 A2_x_A3
+ 0.537056   14 A1==B2of2 equ A3==B2of2
+ 0.537056   17 A1==B2of2 xor A3==B2of2
+ 0.524722   12 A1==B2of2 equ A2==B2of2
+ 0.524722   15 A1==B2of2 xor A2==B2of2
+ 0.433778   16 A2==B2of2 xor A3==B2of2
+ 0.433778   13 A2==B2of2 equ A3==B2of2
+ 0.355889   40 A1 LESSTHAN A3
+ 0.353889   18 A1==B2of2 impl A2==B2of2
+ 0.320444    8 A1==B2of2 and A3==B2of2
+ 0.261278   10 A2==B2of2 or A3==B2of2
+ 0.258056   39 A2 LESSTHAN A3
+ 0.206722   11 A1==B2of2 or A3==B2of2
+ 0.166167    7 A2==B2of2 and A3==B2of2
+ 0.149527    1 A1
+ 0.144944   22 A1==B2of2 or A2==B2of2 or A3==B2of2
+ 0.144611   38 A1 LESSTHAN A2
+ 0.130858   28 A1 SUBTRACT A3
+ 0.119693    3 A3
+ 0.116333   20 A1==B2of2 impl A3==B2of2
+ 0.111116   23 A1 ADD A2
+ 0.096437   27 A2 SUBTRACT A3
+ 0.084022   35 A1 MULTIPLY A2
+ 0.081021    2 A2
+ 0.079543   37 A1 MULTIPLY A3
+ 0.073133   25 A1 ADD A3
+ 0.072222    6 A1==B2of2 and A2==B2of2
+ 0.070333   19 A2==B2of2 impl A3==B2of2
+ 0.069368   26 A1 SUBTRACT A2
+ 0.06139    36 A2 MULTIPLY A3
+ 0.056508   24 A2 ADD A3
+ 0.031111   21 A1==B2of2 and A2==B2of2 and A3==B2of2
+ 0.012425    4 A4
+ 0.012341    5 A5
+ 0.009833   42 A2 DIFF A3
+ 0.007889   41 A1 DIFF A2
+ 0.000389   29 A1 DIVIDE A2
+ 0.000389   32 A3 DIVIDE A2
+-0.002167   34 A3 DIVIDE A1
+-0.002167   30 A2 DIVIDE A1
+-0.003556   43 A1 DIFF A3
+-0.008444   33 A1 DIVIDE A3
+-0.008444   31 A2 DIVIDE A3
+
+
+								--------------
+									Fold 10
+								--------------
+Feature evaluation: ReliefF (All features dataset) - After CI
+Ranked attributes:
+ 1          48 (A1 <= 0.5) and (A3 >= 0.4) and (A2 <= 0.7)
+ 0.832111   47 (A1 <= 0.5) and (A3 >= 0.4)
+ 0.827056   50 num-of-N((A1 <= 0.5) and (A3 >= 0.4) and (A2 <= 0.7))
+ 0.749167    9 A1==B2of2 or A2==B2of2
+ 0.7445     49 num-of-N((A1 <= 0.5) and (A3 >= 0.4))
+ 0.738944   46 A1_x_A3
+ 0.669056   44 A1_x_A2
+ 0.568722   45 A2_x_A3
+ 0.540944   14 A1==B2of2 equ A3==B2of2
+ 0.540944   17 A1==B2of2 xor A3==B2of2
+ 0.523389   12 A1==B2of2 equ A2==B2of2
+ 0.523389   15 A1==B2of2 xor A2==B2of2
+ 0.439222   16 A2==B2of2 xor A3==B2of2
+ 0.439222   13 A2==B2of2 equ A3==B2of2
+ 0.359389   18 A1==B2of2 impl A2==B2of2
+ 0.3575     40 A1 LESSTHAN A3
+ 0.318667    8 A1==B2of2 and A3==B2of2
+ 0.268722   10 A2==B2of2 or A3==B2of2
+ 0.232222   39 A2 LESSTHAN A3
+ 0.211167   11 A1==B2of2 or A3==B2of2
+ 0.165056    7 A2==B2of2 and A3==B2of2
+ 0.153106    1 A1
+ 0.152167   22 A1==B2of2 or A2==B2of2 or A3==B2of2
+ 0.136778   38 A1 LESSTHAN A2
+ 0.131195   28 A1 SUBTRACT A3
+ 0.116997    3 A3
+ 0.115944   20 A1==B2of2 impl A3==B2of2
+ 0.110789   23 A1 ADD A2
+ 0.092781   27 A2 SUBTRACT A3
+ 0.085025   35 A1 MULTIPLY A2
+ 0.077967   37 A1 MULTIPLY A3
+ 0.077697    2 A2
+ 0.075444    6 A1==B2of2 and A2==B2of2
+ 0.073016   25 A1 ADD A3
+ 0.068842   26 A1 SUBTRACT A2
+ 0.066722   19 A2==B2of2 impl A3==B2of2
+ 0.058384   36 A2 MULTIPLY A3
+ 0.055621   24 A2 ADD A3
+ 0.033722   21 A1==B2of2 and A2==B2of2 and A3==B2of2
+ 0.012459    5 A5
+ 0.011974    4 A4
+ 0.010778   42 A2 DIFF A3
+ 0.008111   41 A1 DIFF A2
+ 0.0005     29 A1 DIVIDE A2
+ 0.0005     32 A3 DIVIDE A2
+-0.002167   34 A3 DIVIDE A1
+-0.002167   30 A2 DIVIDE A1
+-0.003833   43 A1 DIFF A3
+-0.007167   33 A1 DIVIDE A3
+-0.007167   31 A2 DIVIDE A3
+
+

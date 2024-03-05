@@ -1,0 +1,879 @@
+dataset: rConcept.arff
+								--------------
+									Fold  1
+								--------------
+Feature evaluation: ReliefF (All features dataset) - After CI
+Ranked attributes:
+ 0.290937    66 A2_x_A3
+ 0.283054    69 A2_x_A4
+ 0.274849    67 A1_x_A2
+ 0.261847    17 A2==(0.49972-inf) equ A3==(0.500096-inf)
+ 0.261847    22 A2==(0.49972-inf) xor A3==(0.500096-inf)
+ 0.256438     7 A2==(0.49972-inf) and A3==(0.500096-inf)
+ 0.253074    20 A2==(0.49972-inf) equ A4==(0.500486-inf)
+ 0.253074    25 A2==(0.49972-inf) xor A4==(0.500486-inf)
+ 0.249484    18 A1==(0.499969-inf) equ A2==(0.49972-inf)
+ 0.249484    23 A1==(0.499969-inf) xor A2==(0.49972-inf)
+ 0.238257     8 A1==(0.499969-inf) and A2==(0.49972-inf)
+ 0.192525    28 A1==(0.499969-inf) impl A2==(0.49972-inf)
+ 0.189185    33 A1==(0.499969-inf) and A2==(0.49972-inf) and A3==(0.500096-inf)
+ 0.167527    15 A2==(0.49972-inf) or A4==(0.500486-inf)
+ 0.163001    30 A2==(0.49972-inf) impl A4==(0.500486-inf)
+ 0.118193    10 A2==(0.49972-inf) and A4==(0.500486-inf)
+ 0.112402    32 A2==(0.49972-inf) and A3==(0.500096-inf) and A4==(0.500486-inf)
+ 0.096083    27 A2==(0.49972-inf) impl A3==(0.500096-inf)
+ 0.040912    56 A2 MULTIPLY A3
+ 0.040247    12 A2==(0.49972-inf) or A3==(0.500096-inf)
+ 0.037658    13 A1==(0.499969-inf) or A2==(0.49972-inf)
+ 0.033068    57 A1 MULTIPLY A2
+ 0.030741    34 A2==(0.49972-inf) or A3==(0.500096-inf) or A4==(0.500486-inf)
+ 0.028552     2 A2
+ 0.027342    61 A2 LESSTHAN A3
+ 0.025344    11 A1==(0.499969-inf) and A3==(0.500096-inf)
+ 0.024254    64 A2 LESSTHAN A4
+ 0.023765    29 A3==(0.500096-inf) impl A4==(0.500486-inf)
+ 0.021568    60 A1 MULTIPLY A3
+ 0.019158    68 A3_x_A4
+ 0.018837    36 A2 ADD A3
+ 0.01845     19 A3==(0.500096-inf) equ A4==(0.500486-inf)
+ 0.01845     24 A3==(0.500096-inf) xor A4==(0.500486-inf)
+ 0.017282    41 A2 SUBTRACT A3
+ 0.014568     3 A3
+ 0.014255    40 A1 ADD A3
+ 0.014165    37 A1 ADD A2
+ 0.01403     39 A2 ADD A4
+ 0.012586    44 A2 SUBTRACT A4
+ 0.011347    21 A1==(0.499969-inf) equ A3==(0.500096-inf)
+ 0.011347    26 A1==(0.499969-inf) xor A3==(0.500096-inf)
+ 0.011323    42 A1 SUBTRACT A2
+ 0.011109     9 A3==(0.500096-inf) and A4==(0.500486-inf)
+ 0.010037    59 A2 MULTIPLY A4
+ 0.00959     58 A3 MULTIPLY A4
+ 0.009339    62 A1 LESSTHAN A2
+ 0.009197    70 A1_x_A3
+ 0.008095    65 A1 LESSTHAN A3
+ 0.007912    14 A3==(0.500096-inf) or A4==(0.500486-inf)
+ 0.007742    38 A3 ADD A4
+ 0.007072    31 A1==(0.499969-inf) impl A3==(0.500096-inf)
+ 0.006985    43 A3 SUBTRACT A4
+ 0.006367    63 A3 LESSTHAN A4
+ 0.0036       4 A4
+ 0.001584    45 A1 SUBTRACT A3
+ 0.001435    50 A3 DIVIDE A4
+ 0.001373     1 A1
+ 0.001061    52 A2 DIVIDE A4
+ 0.000458    46 A2 DIVIDE A3
+ 0.000189    54 A1 DIVIDE A3
+-0.000184    49 A2 DIVIDE A1
+-0.000188    55 A3 DIVIDE A1
+-0.000335    51 A4 DIVIDE A3
+-0.002188    53 A4 DIVIDE A2
+-0.002375    47 A3 DIVIDE A2
+-0.002514    48 A1 DIVIDE A2
+-0.012746     5 A5
+-0.013039    16 A1==(0.499969-inf) or A3==(0.500096-inf)
+-0.013289     6 A6
+-0.02248     35 A1==(0.499969-inf) or A2==(0.49972-inf) or A3==(0.500096-inf)
+
+
+ReliefF (param. search)
+The best parameter when using M5P: ReliefF@0.5
+ReliefF (param. search)
+The best parameter when using LinearRegression: ReliefF@0.0
+ReliefF (param. search)
+The best parameter when using M5Rules: ReliefF@0.5
+ReliefF (param. search)
+The best parameter when using RandomForest: ReliefF@0.5
+								--------------
+									Fold  2
+								--------------
+Feature evaluation: ReliefF (All features dataset) - After CI
+Ranked attributes:
+ 0.2865953    66 A2_x_A3
+ 0.274012     69 A2_x_A4
+ 0.2658223    67 A1_x_A2
+ 0.2598546    17 A2==(0.499824-inf) equ A3==(0.500199-inf)
+ 0.2598546    22 A2==(0.499824-inf) xor A3==(0.500199-inf)
+ 0.2517768    20 A2==(0.499824-inf) equ A4==(0.50115-inf)
+ 0.2517768    25 A2==(0.499824-inf) xor A4==(0.50115-inf)
+ 0.2516058     7 A2==(0.499824-inf) and A3==(0.500199-inf)
+ 0.2397213    18 A1==(0.499969-inf) equ A2==(0.499824-inf)
+ 0.2397213    23 A1==(0.499969-inf) xor A2==(0.499824-inf)
+ 0.2255278     8 A1==(0.499969-inf) and A2==(0.499824-inf)
+ 0.1852876    28 A1==(0.499969-inf) impl A2==(0.499824-inf)
+ 0.178569     33 A1==(0.499969-inf) and A2==(0.499824-inf) and A3==(0.500199-inf)
+ 0.1588075    15 A2==(0.499824-inf) or A4==(0.50115-inf)
+ 0.1558529    30 A2==(0.499824-inf) impl A4==(0.50115-inf)
+ 0.1131511    10 A2==(0.499824-inf) and A4==(0.50115-inf)
+ 0.1105602    32 A2==(0.499824-inf) and A3==(0.500199-inf) and A4==(0.50115-inf)
+ 0.0989004    27 A2==(0.499824-inf) impl A3==(0.500199-inf)
+ 0.0429647    12 A2==(0.499824-inf) or A3==(0.500199-inf)
+ 0.0409011    56 A2 MULTIPLY A3
+ 0.0365814    34 A2==(0.499824-inf) or A3==(0.500199-inf) or A4==(0.50115-inf)
+ 0.0349598    13 A1==(0.499969-inf) or A2==(0.499824-inf)
+ 0.031736     57 A1 MULTIPLY A2
+ 0.0289984     2 A2
+ 0.0277363    61 A2 LESSTHAN A3
+ 0.0245673    11 A1==(0.499969-inf) and A3==(0.500199-inf)
+ 0.0212516    60 A1 MULTIPLY A3
+ 0.0195762    36 A2 ADD A3
+ 0.0174969    41 A2 SUBTRACT A3
+ 0.0160868    29 A3==(0.500199-inf) impl A4==(0.50115-inf)
+ 0.0159428    63 A3 LESSTHAN A4
+ 0.0154594    62 A1 LESSTHAN A2
+ 0.0146846    40 A1 ADD A3
+ 0.0146258     3 A3
+ 0.0142903    37 A1 ADD A2
+ 0.014282     39 A2 ADD A4
+ 0.0135527    64 A2 LESSTHAN A4
+ 0.0135316    68 A3_x_A4
+ 0.0127629    24 A3==(0.500199-inf) xor A4==(0.50115-inf)
+ 0.0127629    19 A3==(0.500199-inf) equ A4==(0.50115-inf)
+ 0.0127103    21 A1==(0.499969-inf) equ A3==(0.500199-inf)
+ 0.0127103    26 A1==(0.499969-inf) xor A3==(0.500199-inf)
+ 0.0123277    44 A2 SUBTRACT A4
+ 0.0115124    42 A1 SUBTRACT A2
+ 0.0113434    70 A1_x_A3
+ 0.0098481    59 A2 MULTIPLY A4
+ 0.0088426    58 A3 MULTIPLY A4
+ 0.0083857    14 A3==(0.500199-inf) or A4==(0.50115-inf)
+ 0.0075061    38 A3 ADD A4
+ 0.0070532    43 A3 SUBTRACT A4
+ 0.0069651    31 A1==(0.499969-inf) impl A3==(0.500199-inf)
+ 0.0064204     9 A3==(0.500199-inf) and A4==(0.50115-inf)
+ 0.0049017    52 A2 DIVIDE A4
+ 0.0034197    50 A3 DIVIDE A4
+ 0.0026212     4 A4
+ 0.002275      1 A1
+ 0.0020818    65 A1 LESSTHAN A3
+ 0.001769     45 A1 SUBTRACT A3
+ 0.0013887    46 A2 DIVIDE A3
+ 0.0008367    54 A1 DIVIDE A3
+-0.0000123    51 A4 DIVIDE A3
+-0.0001368    49 A2 DIVIDE A1
+-0.0001416    55 A3 DIVIDE A1
+-0.0019396    53 A4 DIVIDE A2
+-0.0028072    48 A1 DIVIDE A2
+-0.0038783    47 A3 DIVIDE A2
+-0.0100603    16 A1==(0.499969-inf) or A3==(0.500199-inf)
+-0.0131804     5 A5
+-0.013912      6 A6
+-0.0214632    35 A1==(0.499969-inf) or A2==(0.499824-inf) or A3==(0.500199-inf)
+
+
+ReliefF (param. search)
+The best parameter when using M5P: ReliefF@0.5
+ReliefF (param. search)
+The best parameter when using LinearRegression: ReliefF@0.0
+ReliefF (param. search)
+The best parameter when using M5Rules: ReliefF@0.5
+ReliefF (param. search)
+The best parameter when using RandomForest: ReliefF@0.5
+								--------------
+									Fold  3
+								--------------
+Feature evaluation: ReliefF (All features dataset) - After CI
+Ranked attributes:
+ 0.2878697    66 A2_x_A3
+ 0.2792372    69 A2_x_A4
+ 0.2704174    67 A1_x_A2
+ 0.2615056    22 A2==(0.49972-inf) xor A3==(0.500096-inf)
+ 0.2615056    17 A2==(0.49972-inf) equ A3==(0.500096-inf)
+ 0.2546212     7 A2==(0.49972-inf) and A3==(0.500096-inf)
+ 0.2524824    20 A2==(0.49972-inf) equ A4==(0.500486-inf)
+ 0.2524824    25 A2==(0.49972-inf) xor A4==(0.500486-inf)
+ 0.2442461    18 A1==(0.499969-inf) equ A2==(0.49972-inf)
+ 0.2442461    23 A1==(0.499969-inf) xor A2==(0.49972-inf)
+ 0.2353826     8 A1==(0.499969-inf) and A2==(0.49972-inf)
+ 0.1938218    28 A1==(0.499969-inf) impl A2==(0.49972-inf)
+ 0.1900719    33 A1==(0.499969-inf) and A2==(0.49972-inf) and A3==(0.500096-inf)
+ 0.1642763    15 A2==(0.49972-inf) or A4==(0.500486-inf)
+ 0.1551488    30 A2==(0.49972-inf) impl A4==(0.500486-inf)
+ 0.1203716    10 A2==(0.49972-inf) and A4==(0.500486-inf)
+ 0.1141398    32 A2==(0.49972-inf) and A3==(0.500096-inf) and A4==(0.500486-inf)
+ 0.0944853    27 A2==(0.49972-inf) impl A3==(0.500096-inf)
+ 0.0418014    56 A2 MULTIPLY A3
+ 0.036596     12 A2==(0.49972-inf) or A3==(0.500096-inf)
+ 0.0365857    61 A2 LESSTHAN A3
+ 0.0320785    13 A1==(0.499969-inf) or A2==(0.49972-inf)
+ 0.0317588    57 A1 MULTIPLY A2
+ 0.0293444    34 A2==(0.49972-inf) or A3==(0.500096-inf) or A4==(0.500486-inf)
+ 0.0289015     2 A2
+ 0.0283115    64 A2 LESSTHAN A4
+ 0.024557     11 A1==(0.499969-inf) and A3==(0.500096-inf)
+ 0.0213199    60 A1 MULTIPLY A3
+ 0.019793     29 A3==(0.500096-inf) impl A4==(0.500486-inf)
+ 0.0196292    36 A2 ADD A3
+ 0.0175534    41 A2 SUBTRACT A3
+ 0.0145457    40 A1 ADD A3
+ 0.0145418    62 A1 LESSTHAN A2
+ 0.014473      3 A3
+ 0.0140397    39 A2 ADD A4
+ 0.0135475    37 A1 ADD A2
+ 0.0134726    44 A2 SUBTRACT A4
+ 0.0121659    68 A3_x_A4
+ 0.0115598    42 A1 SUBTRACT A2
+ 0.0114189    19 A3==(0.500096-inf) equ A4==(0.500486-inf)
+ 0.0114189    24 A3==(0.500096-inf) xor A4==(0.500486-inf)
+ 0.0100042    59 A2 MULTIPLY A4
+ 0.0096761    63 A3 LESSTHAN A4
+ 0.0092884    58 A3 MULTIPLY A4
+ 0.0075895    43 A3 SUBTRACT A4
+ 0.0075745    38 A3 ADD A4
+ 0.006733     26 A1==(0.499969-inf) xor A3==(0.500096-inf)
+ 0.006733     21 A1==(0.499969-inf) equ A3==(0.500096-inf)
+ 0.0063237     9 A3==(0.500096-inf) and A4==(0.500486-inf)
+ 0.0058247    65 A1 LESSTHAN A3
+ 0.0056317    14 A3==(0.500096-inf) or A4==(0.500486-inf)
+ 0.0051212    70 A1_x_A3
+ 0.0050284    31 A1==(0.499969-inf) impl A3==(0.500096-inf)
+ 0.0036609     4 A4
+ 0.0020424    50 A3 DIVIDE A4
+ 0.0013805     1 A1
+ 0.0012704    45 A1 SUBTRACT A3
+ 0.0010821    52 A2 DIVIDE A4
+ 0.0003843    46 A2 DIVIDE A3
+ 0.000058     54 A1 DIVIDE A3
+-0.0001317    49 A2 DIVIDE A1
+-0.0001366    55 A3 DIVIDE A1
+-0.0003635    51 A4 DIVIDE A3
+-0.0026204    53 A4 DIVIDE A2
+-0.0029749    48 A1 DIVIDE A2
+-0.0029885    47 A3 DIVIDE A2
+-0.012637      5 A5
+-0.0136763     6 A6
+-0.0146624    16 A1==(0.499969-inf) or A3==(0.500096-inf)
+-0.0222178    35 A1==(0.499969-inf) or A2==(0.49972-inf) or A3==(0.500096-inf)
+
+
+ReliefF (param. search)
+The best parameter when using M5P: ReliefF@0.5
+ReliefF (param. search)
+The best parameter when using LinearRegression: ReliefF@0.0
+ReliefF (param. search)
+The best parameter when using M5Rules: ReliefF@0.5
+ReliefF (param. search)
+The best parameter when using RandomForest: ReliefF@0.0
+								--------------
+									Fold  4
+								--------------
+Feature evaluation: ReliefF (All features dataset) - After CI
+Ranked attributes:
+ 0.2786608    66 A2_x_A3
+ 0.2725215    69 A2_x_A4
+ 0.2623404    67 A1_x_A2
+ 0.2513518    25 A2==(0.49972-inf) xor A4==(0.500486-inf)
+ 0.2513518    20 A2==(0.49972-inf) equ A4==(0.500486-inf)
+ 0.2511385    17 A2==(0.49972-inf) equ A3==(0.499755-inf)
+ 0.2511385    22 A2==(0.49972-inf) xor A3==(0.499755-inf)
+ 0.2464475     7 A2==(0.49972-inf) and A3==(0.499755-inf)
+ 0.2384869    18 A1==(0.499827-inf) equ A2==(0.49972-inf)
+ 0.2384869    23 A1==(0.499827-inf) xor A2==(0.49972-inf)
+ 0.2234135     8 A1==(0.499827-inf) and A2==(0.49972-inf)
+ 0.1803552    28 A1==(0.499827-inf) impl A2==(0.49972-inf)
+ 0.1783602    33 A1==(0.499827-inf) and A2==(0.49972-inf) and A3==(0.499755-inf)
+ 0.1697644    15 A2==(0.49972-inf) or A4==(0.500486-inf)
+ 0.1643095    30 A2==(0.49972-inf) impl A4==(0.500486-inf)
+ 0.1035659    10 A2==(0.49972-inf) and A4==(0.500486-inf)
+ 0.098692     32 A2==(0.49972-inf) and A3==(0.499755-inf) and A4==(0.500486-inf)
+ 0.0935544    27 A2==(0.49972-inf) impl A3==(0.499755-inf)
+ 0.041435     56 A2 MULTIPLY A3
+ 0.0354613    12 A2==(0.49972-inf) or A3==(0.499755-inf)
+ 0.0346209    13 A1==(0.499827-inf) or A2==(0.49972-inf)
+ 0.033806     61 A2 LESSTHAN A3
+ 0.0318557    57 A1 MULTIPLY A2
+ 0.0288102     2 A2
+ 0.0280022    34 A2==(0.49972-inf) or A3==(0.499755-inf) or A4==(0.500486-inf)
+ 0.0242897    64 A2 LESSTHAN A4
+ 0.023655     11 A1==(0.499827-inf) and A3==(0.499755-inf)
+ 0.0219997    60 A1 MULTIPLY A3
+ 0.0188983    36 A2 ADD A3
+ 0.0181108    41 A2 SUBTRACT A3
+ 0.0161183    62 A1 LESSTHAN A2
+ 0.0147156    40 A1 ADD A3
+ 0.0141357     3 A3
+ 0.0139735    37 A1 ADD A2
+ 0.013631     39 A2 ADD A4
+ 0.0132174    44 A2 SUBTRACT A4
+ 0.0130786    29 A3==(0.499755-inf) impl A4==(0.500486-inf)
+ 0.0114524    42 A1 SUBTRACT A2
+ 0.0103642    63 A3 LESSTHAN A4
+ 0.009447     59 A2 MULTIPLY A4
+ 0.0089888    68 A3_x_A4
+ 0.0086166    24 A3==(0.499755-inf) xor A4==(0.500486-inf)
+ 0.0086166    19 A3==(0.499755-inf) equ A4==(0.500486-inf)
+ 0.0085329    58 A3 MULTIPLY A4
+ 0.0077635    65 A1 LESSTHAN A3
+ 0.0075683    38 A3 ADD A4
+ 0.0072829    43 A3 SUBTRACT A4
+ 0.0053887    31 A1==(0.499827-inf) impl A3==(0.499755-inf)
+ 0.0047808     9 A3==(0.499755-inf) and A4==(0.500486-inf)
+ 0.0046015    14 A3==(0.499755-inf) or A4==(0.500486-inf)
+ 0.0044098    21 A1==(0.499827-inf) equ A3==(0.499755-inf)
+ 0.0044098    26 A1==(0.499827-inf) xor A3==(0.499755-inf)
+ 0.0033206     4 A4
+ 0.0031368    70 A1_x_A3
+ 0.0027342    50 A3 DIVIDE A4
+ 0.0021424     1 A1
+ 0.001677     45 A1 SUBTRACT A3
+ 0.0016564    52 A2 DIVIDE A4
+ 0.0003809    46 A2 DIVIDE A3
+-0.0000138    54 A1 DIVIDE A3
+-0.0002153    49 A2 DIVIDE A1
+-0.0002213    55 A3 DIVIDE A1
+-0.0004354    51 A4 DIVIDE A3
+-0.0026063    53 A4 DIVIDE A2
+-0.0030576    47 A3 DIVIDE A2
+-0.0031684    48 A1 DIVIDE A2
+-0.0123353     5 A5
+-0.013236      6 A6
+-0.0150819    16 A1==(0.499827-inf) or A3==(0.499755-inf)
+-0.0243282    35 A1==(0.499827-inf) or A2==(0.49972-inf) or A3==(0.499755-inf)
+
+
+ReliefF (param. search)
+The best parameter when using M5P: ReliefF@0.25
+ReliefF (param. search)
+The best parameter when using LinearRegression: ReliefF@0.0
+ReliefF (param. search)
+The best parameter when using M5Rules: ReliefF@0.5
+ReliefF (param. search)
+The best parameter when using RandomForest: ReliefF@0.5
+								--------------
+									Fold  5
+								--------------
+Feature evaluation: ReliefF (All features dataset) - After CI
+Ranked attributes:
+ 0.28989     66 A2_x_A3
+ 0.282196    69 A2_x_A4
+ 0.271821    67 A1_x_A2
+ 0.259926    17 A2==(0.49972-inf) equ A3==(0.500096-inf)
+ 0.259926    22 A2==(0.49972-inf) xor A3==(0.500096-inf)
+ 0.257899     7 A2==(0.49972-inf) and A3==(0.500096-inf)
+ 0.257199    25 A2==(0.49972-inf) xor A4==(0.500486-inf)
+ 0.257199    20 A2==(0.49972-inf) equ A4==(0.500486-inf)
+ 0.244797    23 A1==(0.499969-inf) xor A2==(0.49972-inf)
+ 0.244797    18 A1==(0.499969-inf) equ A2==(0.49972-inf)
+ 0.234617     8 A1==(0.499969-inf) and A2==(0.49972-inf)
+ 0.189889    28 A1==(0.499969-inf) impl A2==(0.49972-inf)
+ 0.189575    33 A1==(0.499969-inf) and A2==(0.49972-inf) and A3==(0.500096-inf)
+ 0.165972    15 A2==(0.49972-inf) or A4==(0.500486-inf)
+ 0.162192    30 A2==(0.49972-inf) impl A4==(0.500486-inf)
+ 0.113744    10 A2==(0.49972-inf) and A4==(0.500486-inf)
+ 0.110019    32 A2==(0.49972-inf) and A3==(0.500096-inf) and A4==(0.500486-inf)
+ 0.092237    27 A2==(0.49972-inf) impl A3==(0.500096-inf)
+ 0.04189     56 A2 MULTIPLY A3
+ 0.036681    13 A1==(0.499969-inf) or A2==(0.49972-inf)
+ 0.03575     12 A2==(0.49972-inf) or A3==(0.500096-inf)
+ 0.033327    61 A2 LESSTHAN A3
+ 0.032404    57 A1 MULTIPLY A2
+ 0.029835    34 A2==(0.49972-inf) or A3==(0.500096-inf) or A4==(0.500486-inf)
+ 0.029167     2 A2
+ 0.028927    11 A1==(0.499969-inf) and A3==(0.500096-inf)
+ 0.022189    60 A1 MULTIPLY A3
+ 0.019678    36 A2 ADD A3
+ 0.019474    64 A2 LESSTHAN A4
+ 0.018996    29 A3==(0.500096-inf) impl A4==(0.500486-inf)
+ 0.017309    41 A2 SUBTRACT A3
+ 0.016869    68 A3_x_A4
+ 0.015518    19 A3==(0.500096-inf) equ A4==(0.500486-inf)
+ 0.015518    24 A3==(0.500096-inf) xor A4==(0.500486-inf)
+ 0.014738    40 A1 ADD A3
+ 0.014423     3 A3
+ 0.014224    39 A2 ADD A4
+ 0.014176    37 A1 ADD A2
+ 0.014036    62 A1 LESSTHAN A2
+ 0.01283     44 A2 SUBTRACT A4
+ 0.012356    26 A1==(0.499969-inf) xor A3==(0.500096-inf)
+ 0.012356    21 A1==(0.499969-inf) equ A3==(0.500096-inf)
+ 0.012241    63 A3 LESSTHAN A4
+ 0.011488    42 A1 SUBTRACT A2
+ 0.011114    70 A1_x_A3
+ 0.010077    59 A2 MULTIPLY A4
+ 0.009488    65 A1 LESSTHAN A3
+ 0.00887      9 A3==(0.500096-inf) and A4==(0.500486-inf)
+ 0.008865    14 A3==(0.500096-inf) or A4==(0.500486-inf)
+ 0.008792    58 A3 MULTIPLY A4
+ 0.008272    31 A1==(0.499969-inf) impl A3==(0.500096-inf)
+ 0.007441    43 A3 SUBTRACT A4
+ 0.007355    38 A3 ADD A4
+ 0.003396     4 A4
+ 0.002576     1 A1
+ 0.002547    50 A3 DIVIDE A4
+ 0.001884    45 A1 SUBTRACT A3
+ 0.001486    52 A2 DIVIDE A4
+-0.000189    49 A2 DIVIDE A1
+-0.000194    55 A3 DIVIDE A1
+-0.000376    46 A2 DIVIDE A3
+-0.000628    54 A1 DIVIDE A3
+-0.000694    51 A4 DIVIDE A3
+-0.002405    53 A4 DIVIDE A2
+-0.002698    47 A3 DIVIDE A2
+-0.00285     48 A1 DIVIDE A2
+-0.013326    16 A1==(0.499969-inf) or A3==(0.500096-inf)
+-0.013436     5 A5
+-0.014809     6 A6
+-0.023062    35 A1==(0.499969-inf) or A2==(0.49972-inf) or A3==(0.500096-inf)
+
+
+ReliefF (param. search)
+The best parameter when using M5P: ReliefF@0.25
+ReliefF (param. search)
+The best parameter when using LinearRegression: ReliefF@0.0
+ReliefF (param. search)
+The best parameter when using M5Rules: ReliefF@0.0
+ReliefF (param. search)
+The best parameter when using RandomForest: ReliefF@0.5
+								--------------
+									Fold  6
+								--------------
+Feature evaluation: ReliefF (All features dataset) - After CI
+Ranked attributes:
+ 0.2911307    66 A2_x_A3
+ 0.2808284    69 A2_x_A4
+ 0.2716578    67 A1_x_A2
+ 0.2604459    17 A2==(0.499649-inf) equ A3==(0.500096-inf)
+ 0.2604459    22 A2==(0.499649-inf) xor A3==(0.500096-inf)
+ 0.2588532    25 A2==(0.499649-inf) xor A4==(0.500486-inf)
+ 0.2588532    20 A2==(0.499649-inf) equ A4==(0.500486-inf)
+ 0.2544014     7 A2==(0.499649-inf) and A3==(0.500096-inf)
+ 0.2420833    18 A1==(0.499969-inf) equ A2==(0.499649-inf)
+ 0.2420833    23 A1==(0.499969-inf) xor A2==(0.499649-inf)
+ 0.2321466     8 A1==(0.499969-inf) and A2==(0.499649-inf)
+ 0.1904561    28 A1==(0.499969-inf) impl A2==(0.499649-inf)
+ 0.1846685    33 A1==(0.499969-inf) and A2==(0.499649-inf) and A3==(0.500096-inf)
+ 0.1603163    15 A2==(0.499649-inf) or A4==(0.500486-inf)
+ 0.1571296    30 A2==(0.499649-inf) impl A4==(0.500486-inf)
+ 0.1201535    10 A2==(0.499649-inf) and A4==(0.500486-inf)
+ 0.1139539    32 A2==(0.499649-inf) and A3==(0.500096-inf) and A4==(0.500486-inf)
+ 0.098695     27 A2==(0.499649-inf) impl A3==(0.500096-inf)
+ 0.042674     12 A2==(0.499649-inf) or A3==(0.500096-inf)
+ 0.0417488    56 A2 MULTIPLY A3
+ 0.0358466    13 A1==(0.499969-inf) or A2==(0.499649-inf)
+ 0.033653     34 A2==(0.499649-inf) or A3==(0.500096-inf) or A4==(0.500486-inf)
+ 0.0336074    61 A2 LESSTHAN A3
+ 0.0316316    11 A1==(0.499969-inf) and A3==(0.500096-inf)
+ 0.0312424    57 A1 MULTIPLY A2
+ 0.0286843     2 A2
+ 0.0220069    64 A2 LESSTHAN A4
+ 0.0212943    60 A1 MULTIPLY A3
+ 0.020245     36 A2 ADD A3
+ 0.018107     62 A1 LESSTHAN A2
+ 0.0166326    29 A3==(0.500096-inf) impl A4==(0.500486-inf)
+ 0.0163688    41 A2 SUBTRACT A3
+ 0.0145536     3 A3
+ 0.0142596    26 A1==(0.499969-inf) xor A3==(0.500096-inf)
+ 0.0142596    21 A1==(0.499969-inf) equ A3==(0.500096-inf)
+ 0.0142459    40 A1 ADD A3
+ 0.014008     39 A2 ADD A4
+ 0.0132645    70 A1_x_A3
+ 0.0132525    37 A1 ADD A2
+ 0.0124899    44 A2 SUBTRACT A4
+ 0.0124525    68 A3_x_A4
+ 0.011109     42 A1 SUBTRACT A2
+ 0.0110646    24 A3==(0.500096-inf) xor A4==(0.500486-inf)
+ 0.0110646    19 A3==(0.500096-inf) equ A4==(0.500486-inf)
+ 0.0100309    59 A2 MULTIPLY A4
+ 0.0090485    63 A3 LESSTHAN A4
+ 0.0087564    58 A3 MULTIPLY A4
+ 0.0071817    38 A3 ADD A4
+ 0.0071304    43 A3 SUBTRACT A4
+ 0.0069453    14 A3==(0.500096-inf) or A4==(0.500486-inf)
+ 0.0061054    31 A1==(0.499969-inf) impl A3==(0.500096-inf)
+ 0.005145      9 A3==(0.500096-inf) and A4==(0.500486-inf)
+ 0.0048617    65 A1 LESSTHAN A3
+ 0.0027433     4 A4
+ 0.0022748    50 A3 DIVIDE A4
+ 0.0016274    45 A1 SUBTRACT A3
+ 0.0013411    52 A2 DIVIDE A4
+ 0.0011781     1 A1
+ 0.0002397    46 A2 DIVIDE A3
+-0.000059     54 A1 DIVIDE A3
+-0.0001927    49 A2 DIVIDE A1
+-0.0001976    55 A3 DIVIDE A1
+-0.0003398    51 A4 DIVIDE A3
+-0.0025167    53 A4 DIVIDE A2
+-0.0030721    47 A3 DIVIDE A2
+-0.0031415    48 A1 DIVIDE A2
+-0.0127897     5 A5
+-0.0141752    16 A1==(0.499969-inf) or A3==(0.500096-inf)
+-0.014324      6 A6
+-0.0235912    35 A1==(0.499969-inf) or A2==(0.499649-inf) or A3==(0.500096-inf)
+
+
+ReliefF (param. search)
+The best parameter when using M5P: ReliefF@0.5
+ReliefF (param. search)
+The best parameter when using LinearRegression: ReliefF@0.0
+ReliefF (param. search)
+The best parameter when using M5Rules: ReliefF@0.5
+ReliefF (param. search)
+The best parameter when using RandomForest: ReliefF@0.5
+								--------------
+									Fold  7
+								--------------
+Feature evaluation: ReliefF (All features dataset) - After CI
+Ranked attributes:
+ 0.28851      79 A2_x_A3
+ 0.2769455    82 A2_x_A4
+ 0.2725747    80 A1_x_A2
+ 0.259968     19 A2==(0.49972-inf) equ A3==(0.500096-inf)
+ 0.259968     25 A2==(0.49972-inf) xor A3==(0.500096-inf)
+ 0.2508756    22 A2==(0.49972-inf) equ A4==(0.500486-inf)
+ 0.2508756    28 A2==(0.49972-inf) xor A4==(0.500486-inf)
+ 0.2480126     7 A2==(0.49972-inf) and A3==(0.500096-inf)
+ 0.2436885    20 A1==(0.499969-inf) equ A2==(0.49972-inf)
+ 0.2436885    26 A1==(0.499969-inf) xor A2==(0.49972-inf)
+ 0.2259591     8 A1==(0.499969-inf) and A2==(0.49972-inf)
+ 0.1845313    32 A1==(0.499969-inf) impl A2==(0.49972-inf)
+ 0.1719609    39 A1==(0.499969-inf) and A2==(0.49972-inf) and A3==(0.500096-inf)
+ 0.1587596    16 A2==(0.49972-inf) or A4==(0.500486-inf)
+ 0.1525059    34 A2==(0.49972-inf) impl A4==(0.500486-inf)
+ 0.1203991    10 A2==(0.49972-inf) and A4==(0.500486-inf)
+ 0.1133403    37 A2==(0.49972-inf) and A3==(0.500096-inf) and A4==(0.500486-inf)
+ 0.1036905    31 A2==(0.49972-inf) impl A3==(0.500096-inf)
+ 0.0952132    38 A1==(0.499969-inf) and A2==(0.49972-inf) and A4==(0.500486-inf)
+ 0.0433054    13 A2==(0.49972-inf) or A3==(0.500096-inf)
+ 0.0416647    67 A2 MULTIPLY A3
+ 0.0409228    14 A1==(0.499969-inf) or A2==(0.49972-inf)
+ 0.0319573    40 A2==(0.49972-inf) or A3==(0.500096-inf) or A4==(0.500486-inf)
+ 0.0315925    68 A1 MULTIPLY A2
+ 0.0301956    73 A2 LESSTHAN A3
+ 0.0293123     2 A2
+ 0.0281145    11 A1==(0.499969-inf) and A3==(0.500096-inf)
+ 0.0242378    76 A2 LESSTHAN A4
+ 0.0214534    71 A1 MULTIPLY A3
+ 0.0196125    43 A2 ADD A3
+ 0.0186789    41 A1==(0.499969-inf) or A2==(0.49972-inf) or A4==(0.500486-inf)
+ 0.0174288    33 A3==(0.500096-inf) impl A4==(0.500486-inf)
+ 0.0171351    49 A2 SUBTRACT A3
+ 0.0151599    29 A1==(0.499969-inf) xor A3==(0.500096-inf)
+ 0.0151599    23 A1==(0.499969-inf) equ A3==(0.500096-inf)
+ 0.0144992    74 A1 LESSTHAN A2
+ 0.0144292    47 A1 ADD A3
+ 0.0143826    46 A2 ADD A4
+ 0.0142891    83 A1_x_A3
+ 0.0141402    81 A3_x_A4
+ 0.0135099    44 A1 ADD A2
+ 0.0134223     3 A3
+ 0.0133074    27 A3==(0.500096-inf) xor A4==(0.500486-inf)
+ 0.0133074    21 A3==(0.500096-inf) equ A4==(0.500486-inf)
+ 0.0130348    52 A2 SUBTRACT A4
+ 0.0122225    50 A1 SUBTRACT A2
+ 0.0119951    75 A3 LESSTHAN A4
+ 0.0111832    70 A2 MULTIPLY A4
+ 0.0100572    69 A3 MULTIPLY A4
+ 0.0089686    36 A1==(0.499969-inf) impl A4==(0.500486-inf)
+ 0.0082252     9 A3==(0.500096-inf) and A4==(0.500486-inf)
+ 0.0073513    45 A3 ADD A4
+ 0.0070349    51 A3 SUBTRACT A4
+ 0.0057501    15 A3==(0.500096-inf) or A4==(0.500486-inf)
+ 0.0047319    35 A1==(0.499969-inf) impl A3==(0.500096-inf)
+ 0.0043803    77 A1 LESSTHAN A3
+ 0.0036977    72 A1 MULTIPLY A4
+ 0.0036667     4 A4
+ 0.0027764    65 A1 DIVIDE A4
+ 0.0026889    54 A1 SUBTRACT A4
+ 0.0023374    59 A3 DIVIDE A4
+ 0.0021128    48 A1 ADD A4
+ 0.0019202     1 A1
+ 0.0015104    12 A1==(0.499969-inf) and A4==(0.500486-inf)
+ 0.0013662    61 A2 DIVIDE A4
+ 0.0013496    53 A1 SUBTRACT A3
+ 0.0002829    55 A2 DIVIDE A3
+-0.0000663    63 A1 DIVIDE A3
+-0.0001989    58 A2 DIVIDE A1
+-0.0002042    64 A3 DIVIDE A1
+-0.0002136    66 A4 DIVIDE A1
+-0.0004532    60 A4 DIVIDE A3
+-0.0006917    84 A1_x_A4
+-0.0007651    30 A1==(0.499969-inf) xor A4==(0.500486-inf)
+-0.0007651    24 A1==(0.499969-inf) equ A4==(0.500486-inf)
+-0.0023919    62 A4 DIVIDE A2
+-0.0025648    56 A3 DIVIDE A2
+-0.0029845    57 A1 DIVIDE A2
+-0.0043603    18 A1==(0.499969-inf) or A4==(0.500486-inf)
+-0.0086314    78 A1 LESSTHAN A4
+-0.0093081    17 A1==(0.499969-inf) or A3==(0.500096-inf)
+-0.0131985     6 A6
+-0.0136765     5 A5
+-0.0209814    42 A1==(0.499969-inf) or A2==(0.49972-inf) or A3==(0.500096-inf)
+
+
+ReliefF (param. search)
+The best parameter when using M5P: ReliefF@0.25
+ReliefF (param. search)
+The best parameter when using LinearRegression: ReliefF@0.0
+ReliefF (param. search)
+The best parameter when using M5Rules: ReliefF@0.25
+ReliefF (param. search)
+The best parameter when using RandomForest: ReliefF@0.5
+								--------------
+									Fold  8
+								--------------
+Feature evaluation: ReliefF (All features dataset) - After CI
+Ranked attributes:
+ 0.299023     66 A2_x_A3
+ 0.2891321    69 A2_x_A4
+ 0.280467     67 A1_x_A2
+ 0.2714913    17 A2==(0.49972-inf) equ A3==(0.500096-inf)
+ 0.2714913    22 A2==(0.49972-inf) xor A3==(0.500096-inf)
+ 0.2636937     7 A2==(0.49972-inf) and A3==(0.500096-inf)
+ 0.2634082    25 A2==(0.49972-inf) xor A4==(0.500425-inf)
+ 0.2634082    20 A2==(0.49972-inf) equ A4==(0.500425-inf)
+ 0.2511929    23 A1==(0.500016-inf) xor A2==(0.49972-inf)
+ 0.2511929    18 A1==(0.500016-inf) equ A2==(0.49972-inf)
+ 0.2400472     8 A1==(0.500016-inf) and A2==(0.49972-inf)
+ 0.1980118    28 A1==(0.500016-inf) impl A2==(0.49972-inf)
+ 0.1923178    33 A1==(0.500016-inf) and A2==(0.49972-inf) and A3==(0.500096-inf)
+ 0.1723122    15 A2==(0.49972-inf) or A4==(0.500425-inf)
+ 0.1638135    30 A2==(0.49972-inf) impl A4==(0.500425-inf)
+ 0.1194055    10 A2==(0.49972-inf) and A4==(0.500425-inf)
+ 0.114645     32 A2==(0.49972-inf) and A3==(0.500096-inf) and A4==(0.500425-inf)
+ 0.0982672    27 A2==(0.49972-inf) impl A3==(0.500096-inf)
+ 0.0435573    12 A2==(0.49972-inf) or A3==(0.500096-inf)
+ 0.0415408    56 A2 MULTIPLY A3
+ 0.0353143    13 A1==(0.500016-inf) or A2==(0.49972-inf)
+ 0.0345274    34 A2==(0.49972-inf) or A3==(0.500096-inf) or A4==(0.500425-inf)
+ 0.0323901    57 A1 MULTIPLY A2
+ 0.0294918     2 A2
+ 0.0281368    11 A1==(0.500016-inf) and A3==(0.500096-inf)
+ 0.0241551    61 A2 LESSTHAN A3
+ 0.023555     60 A1 MULTIPLY A3
+ 0.0224336    64 A2 LESSTHAN A4
+ 0.0198278    36 A2 ADD A3
+ 0.0178099    41 A2 SUBTRACT A3
+ 0.0161387    29 A3==(0.500096-inf) impl A4==(0.500425-inf)
+ 0.0149437    40 A1 ADD A3
+ 0.0145163    63 A3 LESSTHAN A4
+ 0.0144733    39 A2 ADD A4
+ 0.0139734     3 A3
+ 0.0139602    37 A1 ADD A2
+ 0.0128959    62 A1 LESSTHAN A2
+ 0.0127804    44 A2 SUBTRACT A4
+ 0.0123284    68 A3_x_A4
+ 0.011568     42 A1 SUBTRACT A2
+ 0.0113855    24 A3==(0.500096-inf) xor A4==(0.500425-inf)
+ 0.0113855    19 A3==(0.500096-inf) equ A4==(0.500425-inf)
+ 0.0111577    26 A1==(0.500016-inf) xor A3==(0.500096-inf)
+ 0.0111577    21 A1==(0.500016-inf) equ A3==(0.500096-inf)
+ 0.0102711    59 A2 MULTIPLY A4
+ 0.0096571    70 A1_x_A3
+ 0.0089054    58 A3 MULTIPLY A4
+ 0.0075996     9 A3==(0.500096-inf) and A4==(0.500425-inf)
+ 0.0074383    38 A3 ADD A4
+ 0.0073927    65 A1 LESSTHAN A3
+ 0.0072981    43 A3 SUBTRACT A4
+ 0.0060921    31 A1==(0.500016-inf) impl A3==(0.500096-inf)
+ 0.0050159    14 A3==(0.500096-inf) or A4==(0.500425-inf)
+ 0.003681      4 A4
+ 0.0029651    50 A3 DIVIDE A4
+ 0.0019211     1 A1
+ 0.0015914    52 A2 DIVIDE A4
+ 0.0014789    45 A1 SUBTRACT A3
+ 0.0003834    46 A2 DIVIDE A3
+ 0.0000729    54 A1 DIVIDE A3
+-0.0003813    49 A2 DIVIDE A1
+-0.0004873    51 A4 DIVIDE A3
+-0.0005246    55 A3 DIVIDE A1
+-0.002399     53 A4 DIVIDE A2
+-0.0028976    47 A3 DIVIDE A2
+-0.0028977    48 A1 DIVIDE A2
+-0.0134188     5 A5
+-0.0135218     6 A6
+-0.0144772    16 A1==(0.500016-inf) or A3==(0.500096-inf)
+-0.0211877    35 A1==(0.500016-inf) or A2==(0.49972-inf) or A3==(0.500096-inf)
+
+
+ReliefF (param. search)
+The best parameter when using M5P: ReliefF@0.5
+ReliefF (param. search)
+The best parameter when using LinearRegression: ReliefF@0.0
+ReliefF (param. search)
+The best parameter when using M5Rules: ReliefF@0.5
+ReliefF (param. search)
+The best parameter when using RandomForest: ReliefF@0.5
+								--------------
+									Fold  9
+								--------------
+Feature evaluation: ReliefF (All features dataset) - After CI
+Ranked attributes:
+ 0.28916     66 A2_x_A3
+ 0.279984    69 A2_x_A4
+ 0.271908    67 A1_x_A2
+ 0.261778    17 A2==(0.49972-inf) equ A3==(0.500096-inf)
+ 0.261778    22 A2==(0.49972-inf) xor A3==(0.500096-inf)
+ 0.255395     7 A2==(0.49972-inf) and A3==(0.500096-inf)
+ 0.253748    25 A2==(0.49972-inf) xor A4==(0.500486-inf)
+ 0.253748    20 A2==(0.49972-inf) equ A4==(0.500486-inf)
+ 0.246641    23 A1==(0.499969-inf) xor A2==(0.49972-inf)
+ 0.246641    18 A1==(0.499969-inf) equ A2==(0.49972-inf)
+ 0.229819     8 A1==(0.499969-inf) and A2==(0.49972-inf)
+ 0.191397    28 A1==(0.499969-inf) impl A2==(0.49972-inf)
+ 0.180608    33 A1==(0.499969-inf) and A2==(0.49972-inf) and A3==(0.500096-inf)
+ 0.164637    15 A2==(0.49972-inf) or A4==(0.500486-inf)
+ 0.160643    30 A2==(0.49972-inf) impl A4==(0.500486-inf)
+ 0.113443    10 A2==(0.49972-inf) and A4==(0.500486-inf)
+ 0.109346    32 A2==(0.49972-inf) and A3==(0.500096-inf) and A4==(0.500486-inf)
+ 0.096297    27 A2==(0.49972-inf) impl A3==(0.500096-inf)
+ 0.041967    56 A2 MULTIPLY A3
+ 0.039569    12 A2==(0.49972-inf) or A3==(0.500096-inf)
+ 0.035507    13 A1==(0.499969-inf) or A2==(0.49972-inf)
+ 0.032497    57 A1 MULTIPLY A2
+ 0.031161    34 A2==(0.49972-inf) or A3==(0.500096-inf) or A4==(0.500486-inf)
+ 0.029846    61 A2 LESSTHAN A3
+ 0.029728     2 A2
+ 0.023536    64 A2 LESSTHAN A4
+ 0.0214      60 A1 MULTIPLY A3
+ 0.020297    11 A1==(0.499969-inf) and A3==(0.500096-inf)
+ 0.019759    36 A2 ADD A3
+ 0.017256    41 A2 SUBTRACT A3
+ 0.016962    29 A3==(0.500096-inf) impl A4==(0.500486-inf)
+ 0.015433    62 A1 LESSTHAN A2
+ 0.014547    39 A2 ADD A4
+ 0.014366    40 A1 ADD A3
+ 0.014299    68 A3_x_A4
+ 0.01428     37 A1 ADD A2
+ 0.013548    44 A2 SUBTRACT A4
+ 0.013492     3 A3
+ 0.013167    24 A3==(0.500096-inf) xor A4==(0.500486-inf)
+ 0.013167    19 A3==(0.500096-inf) equ A4==(0.500486-inf)
+ 0.012018    42 A1 SUBTRACT A2
+ 0.011951    63 A3 LESSTHAN A4
+ 0.01057      9 A3==(0.500096-inf) and A4==(0.500486-inf)
+ 0.010474    59 A2 MULTIPLY A4
+ 0.009737    58 A3 MULTIPLY A4
+ 0.007688    38 A3 ADD A4
+ 0.007567    21 A1==(0.499969-inf) equ A3==(0.500096-inf)
+ 0.007567    26 A1==(0.499969-inf) xor A3==(0.500096-inf)
+ 0.006976    70 A1_x_A3
+ 0.006676    43 A3 SUBTRACT A4
+ 0.006483    65 A1 LESSTHAN A3
+ 0.003985    14 A3==(0.500096-inf) or A4==(0.500486-inf)
+ 0.003471     4 A4
+ 0.003259    31 A1==(0.499969-inf) impl A3==(0.500096-inf)
+ 0.002798    50 A3 DIVIDE A4
+ 0.002747     1 A1
+ 0.001545    52 A2 DIVIDE A4
+ 0.001343    45 A1 SUBTRACT A3
+ 0.000433    46 A2 DIVIDE A3
+ 0.000117    54 A1 DIVIDE A3
+-0.000274    49 A2 DIVIDE A1
+-0.000278    55 A3 DIVIDE A1
+-0.000447    51 A4 DIVIDE A3
+-0.002465    53 A4 DIVIDE A2
+-0.002899    47 A3 DIVIDE A2
+-0.003072    48 A1 DIVIDE A2
+-0.010602    16 A1==(0.499969-inf) or A3==(0.500096-inf)
+-0.013281     5 A5
+-0.013355     6 A6
+-0.022421    35 A1==(0.499969-inf) or A2==(0.49972-inf) or A3==(0.500096-inf)
+
+
+ReliefF (param. search)
+The best parameter when using M5P: ReliefF@0.5
+ReliefF (param. search)
+The best parameter when using LinearRegression: ReliefF@0.0
+ReliefF (param. search)
+The best parameter when using M5Rules: ReliefF@0.5
+ReliefF (param. search)
+The best parameter when using RandomForest: ReliefF@0.5
+								--------------
+									Fold 10
+								--------------
+Feature evaluation: ReliefF (All features dataset) - After CI
+Ranked attributes:
+ 0.286799    79 A2_x_A3
+ 0.277229    82 A2_x_A4
+ 0.270723    80 A1_x_A2
+ 0.258052     7 A2==(0.49972-inf) and A3==(0.500096-inf)
+ 0.255715    25 A2==(0.49972-inf) xor A3==(0.500096-inf)
+ 0.255715    19 A2==(0.49972-inf) equ A3==(0.500096-inf)
+ 0.253522    28 A2==(0.49972-inf) xor A4==(0.500486-inf)
+ 0.253522    22 A2==(0.49972-inf) equ A4==(0.500486-inf)
+ 0.24095     20 A1==(0.499969-inf) equ A2==(0.49972-inf)
+ 0.24095     26 A1==(0.499969-inf) xor A2==(0.49972-inf)
+ 0.224741     8 A1==(0.499969-inf) and A2==(0.49972-inf)
+ 0.182688    39 A1==(0.499969-inf) and A2==(0.49972-inf) and A3==(0.500096-inf)
+ 0.182181    32 A1==(0.499969-inf) impl A2==(0.49972-inf)
+ 0.158947    16 A2==(0.49972-inf) or A4==(0.500486-inf)
+ 0.153599    34 A2==(0.49972-inf) impl A4==(0.500486-inf)
+ 0.119487    10 A2==(0.49972-inf) and A4==(0.500486-inf)
+ 0.115261    37 A2==(0.49972-inf) and A3==(0.500096-inf) and A4==(0.500486-inf)
+ 0.095201    38 A1==(0.499969-inf) and A2==(0.49972-inf) and A4==(0.500486-inf)
+ 0.090274    31 A2==(0.49972-inf) impl A3==(0.500096-inf)
+ 0.042246    14 A1==(0.499969-inf) or A2==(0.49972-inf)
+ 0.041475    67 A2 MULTIPLY A3
+ 0.035805    73 A2 LESSTHAN A3
+ 0.032625    13 A2==(0.49972-inf) or A3==(0.500096-inf)
+ 0.03152     68 A1 MULTIPLY A2
+ 0.031226    11 A1==(0.499969-inf) and A3==(0.500096-inf)
+ 0.02898      2 A2
+ 0.025494    40 A2==(0.49972-inf) or A3==(0.500096-inf) or A4==(0.500486-inf)
+ 0.022619    76 A2 LESSTHAN A4
+ 0.021262    71 A1 MULTIPLY A3
+ 0.020471    41 A1==(0.499969-inf) or A2==(0.49972-inf) or A4==(0.500486-inf)
+ 0.019343    43 A2 ADD A3
+ 0.018509    33 A3==(0.500096-inf) impl A4==(0.500486-inf)
+ 0.017153    49 A2 SUBTRACT A3
+ 0.015719    29 A1==(0.499969-inf) xor A3==(0.500096-inf)
+ 0.015719    23 A1==(0.499969-inf) equ A3==(0.500096-inf)
+ 0.015334    74 A1 LESSTHAN A2
+ 0.014951    83 A1_x_A3
+ 0.01466     46 A2 ADD A4
+ 0.014459    81 A3_x_A4
+ 0.014297    21 A3==(0.500096-inf) equ A4==(0.500486-inf)
+ 0.014297    27 A3==(0.500096-inf) xor A4==(0.500486-inf)
+ 0.013913    47 A1 ADD A3
+ 0.013828    44 A1 ADD A2
+ 0.013787     3 A3
+ 0.012705    52 A2 SUBTRACT A4
+ 0.011896    50 A1 SUBTRACT A2
+ 0.010609    70 A2 MULTIPLY A4
+ 0.009935     9 A3==(0.500096-inf) and A4==(0.500486-inf)
+ 0.008782    69 A3 MULTIPLY A4
+ 0.008653    35 A1==(0.499969-inf) impl A3==(0.500096-inf)
+ 0.008651    36 A1==(0.499969-inf) impl A4==(0.500486-inf)
+ 0.006901    45 A3 ADD A4
+ 0.00688     51 A3 SUBTRACT A4
+ 0.006337    75 A3 LESSTHAN A4
+ 0.005464    15 A3==(0.500096-inf) or A4==(0.500486-inf)
+ 0.003914    77 A1 LESSTHAN A3
+ 0.003413    72 A1 MULTIPLY A4
+ 0.003195     4 A4
+ 0.003153    65 A1 DIVIDE A4
+ 0.002994    12 A1==(0.499969-inf) and A4==(0.500486-inf)
+ 0.002746    59 A3 DIVIDE A4
+ 0.002487    48 A1 ADD A4
+ 0.002332    53 A1 SUBTRACT A3
+ 0.002062    54 A1 SUBTRACT A4
+ 0.001934     1 A1
+ 0.00147     61 A2 DIVIDE A4
+ 0.000631    55 A2 DIVIDE A3
+ 0.000339    63 A1 DIVIDE A3
+-0.000201    58 A2 DIVIDE A1
+-0.000206    64 A3 DIVIDE A1
+-0.000215    66 A4 DIVIDE A1
+-0.000339    60 A4 DIVIDE A3
+-0.002423    62 A4 DIVIDE A2
+-0.002971    56 A3 DIVIDE A2
+-0.003062    57 A1 DIVIDE A2
+-0.003275    84 A1_x_A4
+-0.003783    24 A1==(0.499969-inf) equ A4==(0.500486-inf)
+-0.003783    30 A1==(0.499969-inf) xor A4==(0.500486-inf)
+-0.006984    18 A1==(0.499969-inf) or A4==(0.500486-inf)
+-0.009439    78 A1 LESSTHAN A4
+-0.012024    17 A1==(0.499969-inf) or A3==(0.500096-inf)
+-0.012563     5 A5
+-0.014093     6 A6
+-0.0213      42 A1==(0.499969-inf) or A2==(0.49972-inf) or A3==(0.500096-inf)
+
+
+ReliefF (param. search)
+The best parameter when using M5P: ReliefF@0.5
+ReliefF (param. search)
+The best parameter when using LinearRegression: ReliefF@0.0
+ReliefF (param. search)
+The best parameter when using M5Rules: ReliefF@0.5
+ReliefF (param. search)
+The best parameter when using RandomForest: ReliefF@0.5

@@ -1,0 +1,95 @@
+dataset: rLinear.arff
+								--------------
+									Fold  1
+								--------------
+Feature evaluation: MDL (All features dataset) - After CI
+ 0,3903 A1_x_A3
+ 0,3903 A1_x_A2
+ 0,3902 A2_x_A3
+ 0,2452 A5
+ 0,2452 A4
+ 0,2452 A3 DIVIDE A2
+ 0,2452 A3 DIVIDE A1
+ 0,2452 A3
+ 0,2452 A2 SUBTRACT A3
+ 0,2452 A2 MULTIPLY A3
+ 0,2452 A2 DIVIDE A3
+ 0,2452 A2 DIVIDE A1
+ 0,2452 A2 ADD A3
+ 0,2452 A2
+ 0,2452 A1 SUBTRACT A3
+ 0,2452 A1 SUBTRACT A2
+ 0,2452 A1 MULTIPLY A3
+ 0,2452 A1 MULTIPLY A2
+ 0,2452 A1 DIVIDE A3
+ 0,2452 A1 DIVIDE A2
+ 0,2452 A1 ADD A3
+ 0,2452 A1 ADD A2
+ 0,2452 A1
+ 0,2452 A1 LESSTHAN A3
+ 0,2452 A1==(50.038406-inf) xor A2==(49.924849-inf)
+ 0,2452 A1==(50.038406-inf) equ A2==(49.924849-inf)
+ 0,2452 A2==(49.924849-inf) xor A3==(49.965708-inf)
+ 0,2452 A2==(49.924849-inf) equ A3==(49.965708-inf)
+ 0,2452 A1==(50.038406-inf) xor A3==(49.965708-inf)
+ 0,2452 A1==(50.038406-inf) equ A3==(49.965708-inf)
+ 0,2450 A2 LESSTHAN A3
+ 0,2449 A1 LESSTHAN A2
+ 0,1914 A2==(49.924849-inf) and A3==(49.965708-inf)
+ 0,1914 A1==(50.038406-inf) and A3==(49.965708-inf)
+ 0,1914 A1==(50.038406-inf) and A2==(49.924849-inf)
+ 0,1867 A2==(49.924849-inf) impl A3==(49.965708-inf)
+ 0,1813 A1==(50.038406-inf) or A3==(49.965708-inf)
+ 0,1813 A1==(50.038406-inf) impl A3==(49.965708-inf)
+ 0,1813 A1==(50.038406-inf) impl A2==(49.924849-inf)
+ 0,1793 A1==(50.038406-inf) or A2==(49.924849-inf)
+ 0,1757 A2==(49.924849-inf) or A3==(49.965708-inf)
+ 0,1228 A1==(50.038406-inf) and A2==(49.924849-inf) and A3==(49.965708-inf)
+ 0,0956 A1==(50.038406-inf) or A2==(49.924849-inf) or A3==(49.965708-inf)
+								--------------
+									Fold  2
+								--------------
+Feature evaluation: MDL (All features dataset) - After CI
+ 0,3901 A1_x_A2
+ 0,3896 A2_x_A3
+ 0,3895 A1_x_A3
+ 0,2452 A5
+ 0,2452 A4
+ 0,2452 A3 DIVIDE A2
+ 0,2452 A3 DIVIDE A1
+ 0,2452 A3
+ 0,2452 A2 SUBTRACT A3
+ 0,2452 A2 MULTIPLY A3
+ 0,2452 A2 DIVIDE A3
+ 0,2452 A2 DIVIDE A1
+ 0,2452 A2 ADD A3
+ 0,2452 A2
+ 0,2452 A1 SUBTRACT A3
+ 0,2452 A1 SUBTRACT A2
+ 0,2452 A1 MULTIPLY A3
+ 0,2452 A1 MULTIPLY A2
+ 0,2452 A1 DIVIDE A3
+ 0,2452 A1 DIVIDE A2
+ 0,2452 A1 ADD A3
+ 0,2452 A1 ADD A2
+ 0,2452 A1
+ 0,2452 A1 LESSTHAN A3
+ 0,2452 A1 LESSTHAN A2
+ 0,2452 A1==(49.980537-inf) xor A2==(50.023122-inf)
+ 0,2452 A1==(49.980537-inf) equ A2==(50.023122-inf)
+ 0,2451 A2 LESSTHAN A3
+ 0,2451 A1==(49.980537-inf) xor A3==(49.980094-inf)
+ 0,2451 A1==(49.980537-inf) equ A3==(49.980094-inf)
+ 0,2446 A2==(50.023122-inf) xor A3==(49.980094-inf)
+ 0,2446 A2==(50.023122-inf) equ A3==(49.980094-inf)
+ 0,1997 A1==(49.980537-inf) or A3==(49.980094-inf)
+ 0,1989 A2==(50.023122-inf) or A3==(49.980094-inf)
+ 0,1932 A1==(49.980537-inf) or A2==(50.023122-inf)
+ 0,1848 A2==(50.023122-inf) impl A3==(49.980094-inf)
+ 0,1838 A1==(49.980537-inf) impl A3==(49.980094-inf)
+ 0,1818 A2==(50.023122-inf) and A3==(49.980094-inf)
+ 0,1788 A1==(49.980537-inf) impl A2==(50.023122-inf)
+ 0,1788 A1==(49.980537-inf) and A2==(50.023122-inf)
+ 0,1736 A1==(49.980537-inf) and A3==(49.980094-inf)
+ 0,1283 A1==(49.980537-inf) or A2==(50.023122-inf) or A3==(49.980094-inf)
+ 0,1032 A1==(49.980537-inf) and A2==(50.023122-inf) and A3==(49.980094-inf)

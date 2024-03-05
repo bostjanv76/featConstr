@@ -1,0 +1,479 @@
+dataset: Tic-tac-toe.arff
+We remove max(NOISE,minNoise) groups, NOISE=10.0% -> 30, minNoise=3 we remove groups of size 30. Tree SHAP num of expl. inst. 299 (fold 1). Explaining class: negative).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  1
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	middle-middle-square: 156
+	top-right-square: 45
+	bottom-left-square: 40
+	bottom-right-square: 33
+--------------
+Threshold: 0,20
+--------------
+	middle-middle-square: 148
+	top-right-square: 41
+	bottom-left-square: 37
+	bottom-right-square: 31
+--------------
+Threshold: 0,30
+--------------
+	middle-middle-square: 37
+	middle-middle-square | bottom-left-square: 32
+	middle-middle-square | bottom-right-square: 32
+	top-right-square | middle-middle-square: 31
+--------------
+Threshold: 0,40
+--------------
+	middle-middle-square | bottom-right-square: 31
+--------------
+Threshold: 0,50
+--------------
+	top-right-square | middle-middle-square | bottom-left-square: 37
+	top-left-square | middle-middle-square | bottom-right-square: 33
+--------------
+Threshold: 0,60
+--------------
+	top-right-square | middle-middle-square | bottom-left-square: 43
+	top-left-square | middle-middle-square | bottom-right-square: 37
+--------------
+Threshold: 0,70
+--------------
+--------------
+Threshold: 0,80
+--------------
+*********************************************************************************
+All potential concepts based on thresholds
+	middle-middle-square bottom-left-square ~#~ middle-middle-square bottom-right-square ~#~ top-right-square middle-middle-square ~#~ top-right-square middle-middle-square bottom-left-square ~#~ top-left-square middle-middle-square bottom-right-square ~#~ 
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=10.0% -> 30, minNoise=3 we remove groups of size 30. Tree SHAP num of expl. inst. 299 (fold 2). Explaining class: negative).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  2
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	middle-middle-square: 153
+	top-left-square: 49
+	bottom-left-square: 39
+	top-right-square: 34
+--------------
+Threshold: 0,20
+--------------
+	middle-middle-square: 147
+	top-left-square: 43
+	bottom-left-square: 35
+--------------
+Threshold: 0,30
+--------------
+	top-left-square | middle-middle-square: 38
+	middle-middle-square | bottom-left-square: 37
+--------------
+Threshold: 0,40
+--------------
+	middle-middle-square | bottom-left-square: 36
+	top-left-square | middle-middle-square: 35
+--------------
+Threshold: 0,50
+--------------
+	top-left-square | middle-middle-square | bottom-right-square: 35
+	top-right-square | middle-middle-square | bottom-left-square: 34
+--------------
+Threshold: 0,60
+--------------
+	top-right-square | middle-middle-square | bottom-left-square: 36
+	top-left-square | middle-middle-square | bottom-right-square: 35
+--------------
+Threshold: 0,70
+--------------
+--------------
+Threshold: 0,80
+--------------
+*********************************************************************************
+All potential concepts based on thresholds
+	top-left-square middle-middle-square ~#~ middle-middle-square bottom-left-square ~#~ top-left-square middle-middle-square bottom-right-square ~#~ top-right-square middle-middle-square bottom-left-square ~#~ 
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=10.0% -> 30, minNoise=3 we remove groups of size 30. Tree SHAP num of expl. inst. 299 (fold 3). Explaining class: negative).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  3
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	middle-middle-square: 154
+	bottom-left-square: 51
+	top-left-square: 43
+--------------
+Threshold: 0,20
+--------------
+	middle-middle-square: 151
+	bottom-left-square: 45
+	top-left-square: 39
+--------------
+Threshold: 0,30
+--------------
+	middle-middle-square: 48
+	top-left-square | middle-middle-square: 42
+	middle-middle-square | bottom-left-square: 41
+--------------
+Threshold: 0,40
+--------------
+	middle-middle-square | bottom-left-square: 43
+	top-left-square | middle-middle-square: 43
+--------------
+Threshold: 0,50
+--------------
+	top-left-square | middle-middle-square | bottom-right-square: 43
+--------------
+Threshold: 0,60
+--------------
+	top-left-square | middle-middle-square | bottom-right-square: 36
+	top-right-square | middle-middle-square | bottom-left-square: 32
+--------------
+Threshold: 0,70
+--------------
+--------------
+Threshold: 0,80
+--------------
+	top-left-square | top-right-square | middle-middle-square | bottom-left-square | bottom-right-square: 37
+*********************************************************************************
+All potential concepts based on thresholds
+	top-left-square middle-middle-square ~#~ middle-middle-square bottom-left-square ~#~ top-left-square middle-middle-square bottom-right-square ~#~ top-right-square middle-middle-square bottom-left-square ~#~ top-left-square top-right-square middle-middle-square bottom-left-square bottom-right-square ~#~ 
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=10.0% -> 30, minNoise=3 we remove groups of size 30. Tree SHAP num of expl. inst. 299 (fold 4). Explaining class: negative).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  4
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	middle-middle-square: 141
+	bottom-left-square: 51
+	top-right-square: 47
+	top-left-square: 43
+--------------
+Threshold: 0,20
+--------------
+	middle-middle-square: 138
+	bottom-left-square: 45
+	top-right-square: 44
+	top-left-square: 40
+--------------
+Threshold: 0,30
+--------------
+	top-right-square | middle-middle-square: 40
+	middle-middle-square | bottom-right-square: 31
+--------------
+Threshold: 0,40
+--------------
+	top-right-square | middle-middle-square: 38
+--------------
+Threshold: 0,50
+--------------
+	top-right-square | middle-middle-square | bottom-left-square: 43
+	top-left-square | middle-middle-square | bottom-right-square: 37
+--------------
+Threshold: 0,60
+--------------
+	top-right-square | middle-middle-square | bottom-left-square: 39
+--------------
+Threshold: 0,70
+--------------
+--------------
+Threshold: 0,80
+--------------
+*********************************************************************************
+All potential concepts based on thresholds
+	top-right-square middle-middle-square ~#~ middle-middle-square bottom-right-square ~#~ top-right-square middle-middle-square bottom-left-square ~#~ top-left-square middle-middle-square bottom-right-square ~#~ 
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=10.0% -> 30, minNoise=3 we remove groups of size 30. Tree SHAP num of expl. inst. 299 (fold 5). Explaining class: negative).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  5
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	middle-middle-square: 150
+	top-left-square: 53
+	bottom-right-square: 50
+--------------
+Threshold: 0,20
+--------------
+	middle-middle-square: 143
+	top-left-square: 51
+	bottom-right-square: 45
+--------------
+Threshold: 0,30
+--------------
+	middle-middle-square | bottom-right-square: 43
+	middle-middle-square: 34
+	middle-middle-square | bottom-left-square: 34
+--------------
+Threshold: 0,40
+--------------
+	middle-middle-square | bottom-right-square: 41
+	middle-middle-square | bottom-left-square: 32
+--------------
+Threshold: 0,50
+--------------
+	top-right-square | middle-middle-square | bottom-left-square: 37
+	top-left-square | middle-middle-square | bottom-right-square: 37
+--------------
+Threshold: 0,60
+--------------
+	top-left-square | middle-middle-square | bottom-right-square: 41
+--------------
+Threshold: 0,70
+--------------
+--------------
+Threshold: 0,80
+--------------
+*********************************************************************************
+All potential concepts based on thresholds
+	middle-middle-square bottom-right-square ~#~ middle-middle-square bottom-left-square ~#~ top-right-square middle-middle-square bottom-left-square ~#~ top-left-square middle-middle-square bottom-right-square ~#~ 
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=10.0% -> 30, minNoise=3 we remove groups of size 30. Tree SHAP num of expl. inst. 299 (fold 6). Explaining class: negative).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  6
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	middle-middle-square: 161
+	bottom-right-square: 45
+	bottom-left-square: 41
+--------------
+Threshold: 0,20
+--------------
+	middle-middle-square: 159
+	bottom-right-square: 40
+	bottom-left-square: 38
+--------------
+Threshold: 0,30
+--------------
+	middle-middle-square: 44
+	middle-middle-square | bottom-left-square: 34
+--------------
+Threshold: 0,40
+--------------
+	middle-middle-square | bottom-left-square: 38
+--------------
+Threshold: 0,50
+--------------
+	top-right-square | middle-middle-square | bottom-left-square: 41
+	top-left-square | middle-middle-square | bottom-right-square: 34
+--------------
+Threshold: 0,60
+--------------
+	top-right-square | middle-middle-square | bottom-left-square: 44
+	top-left-square | middle-middle-square | bottom-right-square: 39
+--------------
+Threshold: 0,70
+--------------
+--------------
+Threshold: 0,80
+--------------
+	top-left-square | top-right-square | middle-middle-square | bottom-left-square | bottom-right-square: 39
+*********************************************************************************
+All potential concepts based on thresholds
+	middle-middle-square bottom-left-square ~#~ top-right-square middle-middle-square bottom-left-square ~#~ top-left-square middle-middle-square bottom-right-square ~#~ top-left-square top-right-square middle-middle-square bottom-left-square bottom-right-square ~#~ 
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=10.0% -> 30, minNoise=3 we remove groups of size 30. Tree SHAP num of expl. inst. 298 (fold 7). Explaining class: negative).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  7
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	middle-middle-square: 151
+	bottom-left-square: 56
+	top-right-square: 44
+	top-left-square: 35
+--------------
+Threshold: 0,20
+--------------
+	middle-middle-square: 137
+	bottom-left-square: 50
+	top-right-square: 39
+--------------
+Threshold: 0,30
+--------------
+	top-right-square | middle-middle-square: 34
+--------------
+Threshold: 0,40
+--------------
+--------------
+Threshold: 0,50
+--------------
+	top-right-square | middle-middle-square | bottom-left-square: 37
+	top-left-square | middle-middle-square | bottom-right-square: 36
+--------------
+Threshold: 0,60
+--------------
+	top-left-square | middle-middle-square | bottom-right-square: 31
+--------------
+Threshold: 0,70
+--------------
+--------------
+Threshold: 0,80
+--------------
+*********************************************************************************
+All potential concepts based on thresholds
+	top-right-square middle-middle-square ~#~ top-right-square middle-middle-square bottom-left-square ~#~ top-left-square middle-middle-square bottom-right-square ~#~ 
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=10.0% -> 30, minNoise=3 we remove groups of size 30. Tree SHAP num of expl. inst. 298 (fold 8). Explaining class: negative).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  8
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	middle-middle-square: 153
+	bottom-right-square: 53
+	bottom-left-square: 41
+	top-left-square: 36
+--------------
+Threshold: 0,20
+--------------
+	middle-middle-square: 144
+	bottom-right-square: 51
+	bottom-left-square: 34
+	top-left-square: 32
+--------------
+Threshold: 0,30
+--------------
+	middle-middle-square | bottom-right-square: 38
+	middle-middle-square | bottom-left-square: 34
+--------------
+Threshold: 0,40
+--------------
+	middle-middle-square | bottom-right-square: 35
+--------------
+Threshold: 0,50
+--------------
+	top-left-square | middle-middle-square | bottom-right-square: 41
+	top-right-square | middle-middle-square | bottom-left-square: 40
+--------------
+Threshold: 0,60
+--------------
+	top-left-square | middle-middle-square | bottom-right-square: 41
+	top-right-square | middle-middle-square | bottom-left-square: 34
+--------------
+Threshold: 0,70
+--------------
+--------------
+Threshold: 0,80
+--------------
+*********************************************************************************
+All potential concepts based on thresholds
+	middle-middle-square bottom-right-square ~#~ middle-middle-square bottom-left-square ~#~ top-left-square middle-middle-square bottom-right-square ~#~ top-right-square middle-middle-square bottom-left-square ~#~ 
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=10.0% -> 30, minNoise=3 we remove groups of size 30. Tree SHAP num of expl. inst. 299 (fold 9). Explaining class: negative).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  9
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	middle-middle-square: 135
+	bottom-right-square: 59
+	top-left-square: 50
+	top-right-square: 39
+--------------
+Threshold: 0,20
+--------------
+	middle-middle-square: 127
+	bottom-right-square: 52
+	top-left-square: 46
+	top-right-square: 35
+--------------
+Threshold: 0,30
+--------------
+	middle-middle-square | bottom-right-square: 51
+	top-right-square | middle-middle-square: 37
+--------------
+Threshold: 0,40
+--------------
+	middle-middle-square | bottom-right-square: 46
+	top-right-square | middle-middle-square: 31
+--------------
+Threshold: 0,50
+--------------
+	top-right-square | middle-middle-square | bottom-left-square: 36
+	top-left-square | middle-middle-square | bottom-right-square: 32
+--------------
+Threshold: 0,60
+--------------
+	top-left-square | middle-middle-square | bottom-right-square: 42
+	top-right-square | middle-middle-square | bottom-left-square: 36
+--------------
+Threshold: 0,70
+--------------
+--------------
+Threshold: 0,80
+--------------
+*********************************************************************************
+All potential concepts based on thresholds
+	middle-middle-square bottom-right-square ~#~ top-right-square middle-middle-square ~#~ top-right-square middle-middle-square bottom-left-square ~#~ top-left-square middle-middle-square bottom-right-square ~#~ 
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=10.0% -> 30, minNoise=3 we remove groups of size 30. Tree SHAP num of expl. inst. 299 (fold 10). Explaining class: negative).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold 10
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	middle-middle-square: 143
+	bottom-right-square: 46
+	bottom-left-square: 39
+	top-right-square: 37
+	top-left-square: 34
+--------------
+Threshold: 0,20
+--------------
+	middle-middle-square: 143
+	bottom-right-square: 42
+	bottom-left-square: 35
+	top-right-square: 33
+--------------
+Threshold: 0,30
+--------------
+	middle-middle-square: 49
+	middle-middle-square | bottom-left-square: 47
+	top-left-square | middle-middle-square: 32
+--------------
+Threshold: 0,40
+--------------
+	middle-middle-square | bottom-left-square: 48
+--------------
+Threshold: 0,50
+--------------
+	top-left-square | middle-middle-square | bottom-right-square: 38
+	top-right-square | middle-middle-square | bottom-left-square: 37
+--------------
+Threshold: 0,60
+--------------
+	top-right-square | middle-middle-square | bottom-left-square: 34
+	top-left-square | middle-middle-square | bottom-right-square: 33
+--------------
+Threshold: 0,70
+--------------
+--------------
+Threshold: 0,80
+--------------
+*********************************************************************************
+All potential concepts based on thresholds
+	middle-middle-square bottom-left-square ~#~ top-left-square middle-middle-square ~#~ top-left-square middle-middle-square bottom-right-square ~#~ top-right-square middle-middle-square bottom-left-square ~#~ 
+*********************************************************************************

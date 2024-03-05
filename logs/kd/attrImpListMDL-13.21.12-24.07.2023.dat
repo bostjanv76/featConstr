@@ -1,0 +1,1164 @@
+dataset: cBinClassDisAttr-uniqueInst.arff
+MDL - after CI
+ 0,4968 A1_x_A2
+ 0,3969 A1==1 impl A2==1
+ 0,3953 A1_x_A4
+ 0,3953 A1_x_A3
+ 0,3887 (A1 = 1)
+ 0,3763 A1
+ 0,2804 num-of-N((A1 = 1) and (A2 = 2))
+ 0,2804 num-of-N((A1 = 1) and (A2 = 0))
+ 0,2487 A1==1 or A4==0
+ 0,2487 A1==1 or A3==1
+ 0,2444 A1==1 impl A4==1
+ 0,2444 A1==1 impl A4==0
+ 0,2444 A1==1 impl A3==1
+ 0,2444 A1==1 impl A3==0
+ 0,2152 num-of-N((A1 = 1) and (A4 = 2))
+ 0,2152 num-of-N((A1 = 1) and (A3 = 2))
+ 0,2133 A1==1 or A2==2 or A3==1
+ 0,2133 A1==1 or A2==0 or A4==0
+ 0,1971 A1==1 or A2==2
+ 0,1971 A1==1 or A2==0
+ 0,1635 A1==1 and A4==2
+ 0,1635 A1==1 and A3==2
+ 0,1635 A1==1 and A2==2
+ 0,1635 A1==1 and A2==0
+ 0,1635 (A1 = 1) and (A4 = 2)
+ 0,1635 (A1 = 1) and (A3 = 2)
+ 0,1635 (A1 = 1) and (A2 = 2)
+ 0,1635 (A1 = 1) and (A2 = 0)
+ 0,1440 A1==2 impl A3==1
+ 0,1440 A1==2 impl A2==0
+ 0,1440 A1==0 impl A4==0
+ 0,1440 A1==0 impl A2==2
+ 0,1437 A1==1 impl A4==2
+ 0,1437 A1==1 impl A3==2
+ 0,1437 A1==1 impl A2==2
+ 0,1437 A1==1 impl A2==0
+ 0,1181 A1==2 or A2==1
+ 0,1181 A1==0 or A2==1
+ 0,1161 A1==1 or A4==2
+ 0,1161 A1==1 or A4==1
+ 0,1161 A1==1 or A3==2
+ 0,1161 A1==1 or A3==0
+ 0,1025 A1==1 or A2==2 or A4==2
+ 0,1025 A1==1 or A2==2 or A4==1
+ 0,1025 A1==1 or A2==2 or A4==0
+ 0,1025 A1==1 or A2==1 or A4==0
+ 0,1025 A1==1 or A2==1 or A3==1
+ 0,1025 A1==1 or A2==0 or A3==2
+ 0,1025 A1==1 or A2==0 or A3==1
+ 0,1025 A1==1 or A2==0 or A3==0
+ 0,0875 A1==1 xor A4==0
+ 0,0875 A1==1 xor A3==1
+ 0,0875 A1==1 equ A4==0
+ 0,0875 A1==1 equ A3==1
+ 0,0844 A1==1 or A2==1
+ 0,0811 A1==2 or A2==1 or A4==2
+ 0,0811 A1==2 or A2==1 or A4==1
+ 0,0811 A1==0 or A2==1 or A3==2
+ 0,0811 A1==0 or A2==1 or A3==0
+ 0,0704 num-of-N((A4 = 0) and (A2 = 2) and (A1 = 0))
+ 0,0704 num-of-N((A3 = 1) and (A2 = 0) and (A1 = 2))
+ 0,0676 A1==1 or A2==2 or A3==2
+ 0,0676 A1==1 or A2==2 or A3==0
+ 0,0676 A1==1 or A2==0 or A4==2
+ 0,0676 A1==1 or A2==0 or A4==1
+ 0,0613 A1==2 or A4==1
+ 0,0613 A1==0 or A3==0
+ 0,0573 A1==1 and A4==1
+ 0,0573 A1==1 and A4==0
+ 0,0573 A1==1 and A3==1
+ 0,0573 A1==1 and A3==0
+ 0,0572 A1==2 and A3==2
+ 0,0572 A1==2 and A3==0
+ 0,0572 A1==2 and A2==2
+ 0,0572 A1==2 and A2==1
+ 0,0572 A1==0 and A4==2
+ 0,0572 A1==0 and A4==1
+ 0,0572 A1==0 and A2==1
+ 0,0572 A1==0 and A2==0
+ 0,0546 A1==2 or A2==1 or A3==2
+ 0,0546 A1==2 or A2==1 or A3==1
+ 0,0546 A1==2 or A2==1 or A3==0
+ 0,0546 A1==0 or A2==1 or A4==2
+ 0,0546 A1==0 or A2==1 or A4==1
+ 0,0546 A1==0 or A2==1 or A4==0
+ 0,0506 A2==1 impl A4==2
+ 0,0506 A2==1 impl A3==2
+ 0,0506 A1==2 impl A4==2
+ 0,0506 A1==2 impl A4==1
+ 0,0506 A1==2 impl A4==0
+ 0,0506 A1==0 impl A3==2
+ 0,0506 A1==0 impl A3==1
+ 0,0506 A1==0 impl A3==0
+ 0,0431 A1==2 and A2==0 and A3==1
+ 0,0431 A1==1 and A2==2 and A4==2
+ 0,0431 A1==1 and A2==2 and A4==1
+ 0,0431 A1==1 and A2==2 and A4==0
+ 0,0431 A1==1 and A2==2 and A3==2
+ 0,0431 A1==1 and A2==2 and A3==1
+ 0,0431 A1==1 and A2==2 and A3==0
+ 0,0431 A1==1 and A2==1 and A4==2
+ 0,0431 A1==1 and A2==1 and A3==2
+ 0,0431 A1==1 and A2==0 and A4==2
+ 0,0431 A1==1 and A2==0 and A4==1
+ 0,0431 A1==1 and A2==0 and A4==0
+ 0,0431 A1==1 and A2==0 and A3==2
+ 0,0431 A1==1 and A2==0 and A3==1
+ 0,0431 A1==1 and A2==0 and A3==0
+ 0,0431 A1==0 and A2==2 and A4==0
+ 0,0431 (A4 = 0) and (A2 = 2) and (A1 = 0)
+ 0,0431 (A3 = 1) and (A2 = 0) and (A1 = 2)
+ 0,0393 A1==2 or A3==1
+ 0,0393 A1==2 or A3==0
+ 0,0393 A1==1 xor A2==1
+ 0,0393 A1==1 equ A2==1
+ 0,0393 A1==0 or A4==1
+ 0,0393 A1==0 or A4==0
+ 0,0359 A1==2 xor A3==1
+ 0,0359 A1==2 xor A2==1
+ 0,0359 A1==2 equ A3==1
+ 0,0359 A1==2 equ A2==1
+ 0,0359 A1==0 xor A4==0
+ 0,0359 A1==0 xor A2==1
+ 0,0359 A1==0 equ A4==0
+ 0,0359 A1==0 equ A2==1
+ 0,0328 A1==2 or A2==0 or A4==1
+ 0,0328 A1==0 or A2==2 or A3==0
+ 0,0283 A2
+ 0,0269 A2==2 and A4==0
+ 0,0269 A2==0 and A3==1
+ 0,0246 A1==2 impl A3==2
+ 0,0246 A1==2 impl A3==0
+ 0,0246 A1==2 impl A2==2
+ 0,0246 A1==2 impl A2==1
+ 0,0246 A1==0 impl A4==2
+ 0,0246 A1==0 impl A4==1
+ 0,0246 A1==0 impl A2==1
+ 0,0246 A1==0 impl A2==0
+ 0,0217 A2_x_A4
+ 0,0217 A2_x_A3
+ 0,0214 A2==1 or A4==2
+ 0,0214 A2==1 or A4==1
+ 0,0214 A2==1 or A3==2
+ 0,0214 A2==1 or A3==0
+ 0,0214 A1==2 or A4==2
+ 0,0214 A1==2 or A2==0
+ 0,0214 A1==1 xor A4==1
+ 0,0214 A1==1 xor A3==0
+ 0,0214 A1==1 xor A2==2
+ 0,0214 A1==1 xor A2==0
+ 0,0214 A1==1 equ A4==1
+ 0,0214 A1==1 equ A3==0
+ 0,0214 A1==1 equ A2==2
+ 0,0214 A1==1 equ A2==0
+ 0,0214 A1==0 or A3==2
+ 0,0214 A1==0 or A2==2
+ 0,0199 A1==1 or A2==1 or A4==2
+ 0,0199 A1==1 or A2==1 or A4==1
+ 0,0199 A1==1 or A2==1 or A3==2
+ 0,0199 A1==1 or A2==1 or A3==0
+ 0,0184 A2==1 xor A4==2
+ 0,0184 A2==1 xor A3==2
+ 0,0184 A2==1 equ A4==2
+ 0,0184 A2==1 equ A3==2
+ 0,0184 A1==2 xor A4==1
+ 0,0184 A1==2 xor A2==0
+ 0,0184 A1==2 equ A4==1
+ 0,0184 A1==2 equ A2==0
+ 0,0184 A1==0 xor A3==0
+ 0,0184 A1==0 xor A2==2
+ 0,0184 A1==0 equ A3==0
+ 0,0184 A1==0 equ A2==2
+ 0,0174 A2==1 and A4==1
+ 0,0174 A2==1 and A4==0
+ 0,0174 A2==1 and A3==1
+ 0,0174 A2==1 and A3==0
+ 0,0174 A1==2 and A4==2
+ 0,0174 A1==2 and A4==1
+ 0,0174 A1==2 and A4==0
+ 0,0174 A1==0 and A3==2
+ 0,0174 A1==0 and A3==1
+ 0,0174 A1==0 and A3==0
+ 0,0154 A1==2 or A2==1 or A4==0
+ 0,0154 A1==2 or A2==0 or A3==1
+ 0,0154 A1==2 or A2==0 or A3==0
+ 0,0154 A1==0 or A2==2 or A4==1
+ 0,0154 A1==0 or A2==2 or A4==0
+ 0,0154 A1==0 or A2==1 or A3==1
+ 0,0107 A1==2 and A2==2 and A4==2
+ 0,0107 A1==2 and A2==2 and A4==1
+ 0,0107 A1==2 and A2==2 and A4==0
+ 0,0107 A1==2 and A2==2 and A3==2
+ 0,0107 A1==2 and A2==2 and A3==1
+ 0,0107 A1==2 and A2==2 and A3==0
+ 0,0107 A1==2 and A2==1 and A4==2
+ 0,0107 A1==2 and A2==1 and A4==1
+ 0,0107 A1==2 and A2==1 and A4==0
+ 0,0107 A1==2 and A2==1 and A3==2
+ 0,0107 A1==2 and A2==1 and A3==1
+ 0,0107 A1==2 and A2==1 and A3==0
+ 0,0107 A1==2 and A2==0 and A3==2
+ 0,0107 A1==2 and A2==0 and A3==0
+ 0,0107 A1==0 and A2==2 and A4==2
+ 0,0107 A1==0 and A2==2 and A4==1
+ 0,0107 A1==0 and A2==1 and A4==2
+ 0,0107 A1==0 and A2==1 and A4==1
+ 0,0107 A1==0 and A2==1 and A4==0
+ 0,0107 A1==0 and A2==1 and A3==2
+ 0,0107 A1==0 and A2==1 and A3==1
+ 0,0107 A1==0 and A2==1 and A3==0
+ 0,0107 A1==0 and A2==0 and A4==2
+ 0,0107 A1==0 and A2==0 and A4==1
+ 0,0107 A1==0 and A2==0 and A4==0
+ 0,0107 A1==0 and A2==0 and A3==2
+ 0,0107 A1==0 and A2==0 and A3==1
+ 0,0107 A1==0 and A2==0 and A3==0
+ 0,0076 A2==2 impl A4==2
+ 0,0076 A2==2 impl A4==1
+ 0,0076 A2==0 impl A3==2
+ 0,0076 A2==0 impl A3==0
+ 0,0075 A2==2 xor A4==2
+ 0,0075 A2==2 equ A4==2
+ 0,0075 A2==0 xor A3==2
+ 0,0075 A2==0 equ A3==2
+ 0,0075 A1==2 or A4==0
+ 0,0075 A1==2 or A3==2
+ 0,0075 A1==0 or A4==2
+ 0,0075 A1==0 or A3==1
+ 0,0067 A2==1 impl A4==1
+ 0,0067 A2==1 impl A4==0
+ 0,0067 A2==1 impl A3==1
+ 0,0067 A2==1 impl A3==0
+ 0,0063 A1==1 and A2==1
+ 0,0050 A2==2 or A4==2
+ 0,0050 A2==2 or A3==1
+ 0,0050 A2==0 or A4==0
+ 0,0050 A2==0 or A3==2
+ 0,0025 A1==2 or A2==0 or A4==2
+ 0,0025 A1==0 or A2==2 or A3==2
+ -0,0025 A2==2 xor A3==1
+ -0,0025 A2==2 equ A3==1
+ -0,0025 A2==0 xor A4==0
+ -0,0025 A2==0 equ A4==0
+ -0,0025 A1==2 xor A2==2
+ -0,0025 A1==2 equ A2==2
+ -0,0025 A1==1 xor A4==2
+ -0,0025 A1==1 xor A3==2
+ -0,0025 A1==1 equ A4==2
+ -0,0025 A1==1 equ A3==2
+ -0,0025 A1==0 xor A2==0
+ -0,0025 A1==0 equ A2==0
+ -0,0034 A2==2 impl A3==2
+ -0,0034 A2==2 impl A3==1
+ -0,0034 A2==2 impl A3==0
+ -0,0034 A2==0 impl A4==2
+ -0,0034 A2==0 impl A4==1
+ -0,0034 A2==0 impl A4==0
+ -0,0043 A2==2 xor A4==0
+ -0,0043 A2==2 or A3==2
+ -0,0043 A2==2 equ A4==0
+ -0,0043 A2==1 xor A4==1
+ -0,0043 A2==1 xor A3==0
+ -0,0043 A2==1 equ A4==1
+ -0,0043 A2==1 equ A3==0
+ -0,0043 A2==0 xor A3==1
+ -0,0043 A2==0 or A4==2
+ -0,0043 A2==0 equ A3==1
+ -0,0043 A1==2 xor A4==2
+ -0,0043 A1==2 xor A3==0
+ -0,0043 A1==2 equ A4==2
+ -0,0043 A1==2 equ A3==0
+ -0,0043 A1==0 xor A4==1
+ -0,0043 A1==0 xor A3==2
+ -0,0043 A1==0 equ A4==1
+ -0,0043 A1==0 equ A3==2
+ -0,0055 A2==2 and A3==2
+ -0,0055 A2==2 and A3==1
+ -0,0055 A2==2 and A3==0
+ -0,0055 A2==0 and A4==2
+ -0,0055 A2==0 and A4==1
+ -0,0055 A2==0 and A4==0
+ -0,0058 A1==2 and A2==0 and A4==2
+ -0,0058 A1==2 and A2==0 and A4==1
+ -0,0058 A1==2 and A2==0 and A4==0
+ -0,0058 A1==1 and A2==1 and A4==1
+ -0,0058 A1==1 and A2==1 and A4==0
+ -0,0058 A1==1 and A2==1 and A3==1
+ -0,0058 A1==1 and A2==1 and A3==0
+ -0,0058 A1==0 and A2==2 and A3==2
+ -0,0058 A1==0 and A2==2 and A3==1
+ -0,0058 A1==0 and A2==2 and A3==0
+ -0,0061 A1==2 or A2==2 or A4==1
+ -0,0061 A1==2 or A2==2 or A4==0
+ -0,0061 A1==2 or A2==2 or A3==1
+ -0,0061 A1==2 or A2==2 or A3==0
+ -0,0061 A1==2 or A2==0 or A4==0
+ -0,0061 A1==2 or A2==0 or A3==2
+ -0,0061 A1==0 or A2==2 or A4==2
+ -0,0061 A1==0 or A2==2 or A3==1
+ -0,0061 A1==0 or A2==0 or A4==1
+ -0,0061 A1==0 or A2==0 or A4==0
+ -0,0061 A1==0 or A2==0 or A3==1
+ -0,0061 A1==0 or A2==0 or A3==0
+ -0,0083 A2==2 and A4==2
+ -0,0083 A2==2 and A4==1
+ -0,0083 A2==1 and A4==2
+ -0,0083 A2==1 and A3==2
+ -0,0083 A2==0 and A3==2
+ -0,0083 A2==0 and A3==0
+ -0,0083 A1==2 and A3==1
+ -0,0083 A1==2 and A2==0
+ -0,0083 A1==0 and A4==0
+ -0,0083 A1==0 and A2==2
+ -0,0087 A2==2 xor A4==1
+ -0,0087 A2==2 xor A3==2
+ -0,0087 A2==2 equ A4==1
+ -0,0087 A2==2 equ A3==2
+ -0,0087 A2==1 xor A4==0
+ -0,0087 A2==1 xor A3==1
+ -0,0087 A2==1 or A4==0
+ -0,0087 A2==1 or A3==1
+ -0,0087 A2==1 equ A4==0
+ -0,0087 A2==1 equ A3==1
+ -0,0087 A2==0 xor A4==2
+ -0,0087 A2==0 xor A3==0
+ -0,0087 A2==0 equ A4==2
+ -0,0087 A2==0 equ A3==0
+ -0,0087 A1==2 or A2==2
+ -0,0087 A1==0 or A2==0
+ -0,0096 A2==2 impl A4==0
+ -0,0096 A2==0 impl A3==1
+ -0,0096 A2==2 xor A3==0
+ -0,0096 A2==2 or A4==1
+ -0,0096 A2==2 or A4==0
+ -0,0096 A2==2 equ A3==0
+ -0,0096 A2==0 xor A4==1
+ -0,0096 A2==0 or A3==1
+ -0,0096 A2==0 or A3==0
+ -0,0096 A2==0 equ A4==1
+ -0,0096 A1==2 xor A4==0
+ -0,0096 A1==2 equ A4==0
+ -0,0096 A1==0 xor A3==1
+ -0,0096 A1==0 equ A3==1
+ -0,0099 A1==2 or A2==2 or A4==2
+ -0,0099 A1==2 or A2==2 or A3==2
+ -0,0099 A1==0 or A2==0 or A4==2
+ -0,0099 A1==0 or A2==0 or A3==2
+ -0,0111 A2==2 or A3==0
+ -0,0111 A2==0 or A4==1
+ -0,0111 A1==2 xor A3==2
+ -0,0111 A1==2 equ A3==2
+ -0,0111 A1==0 xor A4==2
+ -0,0111 A1==0 equ A4==2
+ -0,0141 A4
+ -0,0141 A3
+ -0,0208 A5
+dataset: cBinClassNumBinAttr.arff
+MDL - after CI
+ 0,2687 (A3 >= 0.703754) and (A2 = 0) and (A1 = 1)
+ 0,2653 num-of-N((A3 >= 0.703754) and (A2 = 0) and (A1 = 1))
+ 0,2215 A3_x_A4
+ 0,2121 num-of-N((A3 >= 0.703754) and (A2 = 0) and (A4 <= 0.190471))
+ 0,2029 num-of-N((A3 >= 0.703754) and (A4 <= 0.096518))
+ 0,1765 A1_x_A3
+ 0,1743 A2_x_A3
+ 0,1691 A1_x_A4
+ 0,1665 (A3 >= 0.703754) and (A2 = 0)
+ 0,1654 num-of-N((A3 >= 0.703754) and (A2 = 0))
+ 0,1511 num-of-N((A4 <= 0.099398) and (A1 = 0))
+ 0,1351 A2_x_A4
+ 0,1347 A1 and A3==B3of3
+ 0,1109 A3
+ 0,1036 A1 or A4==B2of2
+ 0,1036 (A4 <= 0.099398) and (A1 = 0)
+ 0,1014 A2 and A4==B2of2
+ 0,0935 A3==B1of3 or A4==B2of2
+ 0,0914 A3 SUBTRACT A4
+ 0,0859 A2 or A3==B1of3
+ 0,0849 A4 DIVIDE A3
+ 0,0849 A3 DIVIDE A4
+ 0,0835 A1 xor A4==B2of2
+ 0,0835 A1 equ A4==B2of2
+ 0,0810 A1_x_A2
+ 0,0802 A3==B2of3 and A4==B2of2
+ 0,0781 A1 impl A3==B3of3
+ 0,0774 A3==B3of3 xor A4==B2of2
+ 0,0774 A3==B3of3 equ A4==B2of2
+ 0,0701 A4
+ 0,0699 A3 LESSTHAN A4
+ 0,0698 A2 or A3==B2of3
+ 0,0690 num-of-N((A3 >= 0.70054) and (A2 = 0) and (A4 >= 0.493154) and (A4 <= 0.909693))
+ 0,0632 A3==B3of3 impl A4==B2of2
+ 0,0632 (A3 >= 0.703754) and (A4 <= 0.096518)
+ 0,0620 A1 impl A2
+ 0,0574 (A3 >= 0.703754) and (A2 = 0) and (A4 <= 0.190471)
+ 0,0572 A2 or A3==B1of3 or A4==B2of2
+ 0,0528 A1 or A2 or A4==B2of2
+ 0,0518 A3==B1of3 and A4==B2of2
+ 0,0518 num-of-N((A3 >= 0.979681) and (A2 = 0))
+ 0,0515 num-of-N((A3 >= 0.70054) and (A2 = 0) and (A4 <= 0.347861) and (A3 <= 0.834578) and (A4 >= 0.229537))
+ 0,0489 A1 impl A3==B2of3
+ 0,0478 (A3 >= 0.70054) and (A2 = 0) and (A4 >= 0.493154) and (A4 <= 0.909693)
+ 0,0478 A1 and A2
+ 0,0455 A1 xor A3==B3of3
+ 0,0455 A1 equ A3==B3of3
+ 0,0436 A3==B3of3 and A4==B2of2
+ 0,0432 A1 and A2 and A4==B2of2
+ 0,0430 A1 xor A3==B2of3
+ 0,0430 A1 equ A3==B2of3
+ 0,0422 A2 xor A3==B1of3
+ 0,0422 A2 equ A3==B1of3
+ 0,0416 A2 or A4==B2of2
+ 0,0396 A1 and A3==B2of3
+ 0,0392 A1 xor A2
+ 0,0392 A1 equ A2
+ 0,0387 A2
+ 0,0356 A2 xor A3==B3of3
+ 0,0356 A2 equ A3==B3of3
+ 0,0347 A3==B2of3 or A4==B2of2
+ 0,0339 A2 impl A3==B3of3
+ 0,0332 A2 and A3==B2of3 and A4==B2of2
+ 0,0323 A2 xor A3==B2of3
+ 0,0323 A2 equ A3==B2of3
+ 0,0296 A1 impl A3==B1of3
+ 0,0296 A2 or A3==B3of3
+ 0,0278 A3==B2of3 impl A4==B2of2
+ 0,0250 A1 and A3==B1of3
+ 0,0235 A2 or A3==B2of3 or A4==B2of2
+ 0,0226 (A3 >= 0.70054) and (A2 = 0) and (A4 <= 0.347861) and (A3 <= 0.834578) and (A4 >= 0.229537)
+ 0,0226 A2 xor A4==B2of2
+ 0,0226 A2 equ A4==B2of2
+ 0,0225 A2 and A3==B1of3
+ 0,0217 A2 impl A4==B2of2
+ 0,0207 A2 and A3==B1of3 and A4==B2of2
+ 0,0199 A2 and A3==B3of3 and A4==B2of2
+ 0,0197 (A3 >= 0.979681) and (A2 = 0)
+ 0,0175 A2 impl A3==B2of3
+ 0,0172 A1 and A2 and A3==B2of3
+ 0,0146 A3==B3of3 or A4==B2of2
+ 0,0139 A3==B2of3 xor A4==B2of2
+ 0,0139 A3==B2of3 equ A4==B2of2
+ 0,0124 A2 impl A3==B1of3
+ 0,0117 A3 MULTIPLY A4
+ 0,0104 A3 ADD A4
+ 0,0098 A1 and A2 and A3==B1of3
+ 0,0091 A1 and A2 and A3==B3of3
+ 0,0091 A2 and A3==B2of3
+ 0,0090 A1 or A3==B3of3
+ 0,0075 A2 or A3==B3of3 or A4==B2of2
+ 0,0057 A1 xor A3==B1of3
+ 0,0057 A1 equ A3==B1of3
+ 0,0047 A1
+ 0,0046 A1 or A3==B2of3
+ 0,0039 A1 and A4==B2of2
+ 0,0018 A1 or A2 or A3==B2of3
+ 0,0017 A1 or A2 or A3==B3of3
+ 0,0012 A3==B1of3 impl A4==B2of2
+ 0,0004 A5
+ 0,0002 A1 or A2
+ -0,0000 A2 and A3==B3of3
+ -0,0005 A3==B1of3 xor A4==B2of2
+ -0,0005 A3==B1of3 equ A4==B2of2
+ -0,0016 A1 impl A4==B2of2
+ -0,0022 A1 or A2 or A3==B1of3
+ -0,0024 A1 or A3==B1of3
+dataset: cBinClassNumDisAttr.arff
+MDL - after CI
+ 0,3952 A1_x_A2
+ 0,3488 num-of-N((A1 = 2) and (A2 = 1) and (A4 >= 0.15057))
+ 0,3041 num-of-N((A1 = 2) and (A2 = 1))
+ 0,2748 A1==2 and A2==1 and A4==B2of2
+ 0,2748 (A1 = 2) and (A2 = 1) and (A4 >= 0.15057)
+ 0,2485 num-of-N((A2 = 0) and (A1 = 0) and (A3 <= 0.499262))
+ 0,2485 num-of-N((A1 = 0) and (A2 = 0) and (A3 <= 0.499262))
+ 0,2107 A1==2 and A2==1
+ 0,2107 (A1 = 2) and (A2 = 1)
+ 0,1885 num-of-N((A2 = 0) and (A1 = 0))
+ 0,1885 num-of-N((A1 = 0) and (A2 = 0))
+ 0,1819 A1==2 xor A2==1
+ 0,1819 A1==2 equ A2==1
+ 0,1754 A1==0 xor A2==0
+ 0,1754 A1==0 equ A2==0
+ 0,1731 A1==1 xor A2==2
+ 0,1731 A1==1 equ A2==2
+ 0,1575 num-of-N((A2 = 2) and (A1 = 1) and (A3 >= 0.508382) and (A4 >= 0.505984))
+ 0,1472 (A2 = 0) and (A1 = 0) and (A3 <= 0.499262)
+ 0,1472 (A1 = 0) and (A2 = 0) and (A3 <= 0.499262)
+ 0,1355 num-of-N((A3 >= 0.508382) and (A2 = 2) and (A1 = 1) and (A3 <= 0.642115))
+ 0,1178 num-of-N((A3 >= 0.775574) and (A2 = 2) and (A1 = 1))
+ 0,1074 A1==2 xor A2==0
+ 0,1074 A1==2 equ A2==0
+ 0,1051 num-of-N((A4 >= 0.51469) and (A2 = 2) and (A1 = 1))
+ 0,1046 A1==0 xor A2==1
+ 0,1046 A1==0 equ A2==1
+ 0,1009 A1==1 or A2==2 or A3
+ 0,1009 A1==1 or A2==2
+ 0,0767 A1==2 impl A2==0
+ 0,0751 (A2 = 2) and (A1 = 1) and (A3 >= 0.508382) and (A4 >= 0.505984)
+ 0,0733 A1==1 impl A2==2
+ 0,0727 A1==2 impl A2==2
+ 0,0706 A1==2 impl A2==1
+ 0,0704 A1==0 impl A2==0
+ 0,0561 A1==2 or A2==0 or A3
+ 0,0561 A1==2 or A2==0
+ 0,0557 A1_x_A4
+ 0,0547 A2_x_A4
+ 0,0534 A1==0 or A2==1 or A3
+ 0,0534 A1==0 or A2==1
+ 0,0502 A1==0 and A2==0
+ 0,0502 (A2 = 0) and (A1 = 0)
+ 0,0502 (A1 = 0) and (A2 = 0)
+ 0,0411 A1==2 and A4==B2of2
+ 0,0400 A2==1 and A4==B2of2
+ 0,0399 A1==2 xor A2==2
+ 0,0399 A1==2 equ A2==2
+ 0,0396 A1==0 and A2==0 and A4==B2of2
+ 0,0373 A1==0 or A2==0 or A3
+ 0,0373 A1==0 or A2==0
+ 0,0372 A1==1 xor A2==1
+ 0,0372 A1==1 equ A2==1
+ 0,0335 A1==1 and A2==1
+ 0,0328 A1==0 and A2==1
+ 0,0320 A1==2 and A2==0
+ 0,0308 A1==1 and A2==0
+ 0,0300 A1==2 and A2==2
+ 0,0300 A1_x_A3
+ 0,0300 A1
+ 0,0293 A2==0 or A4==B2of2
+ 0,0293 A2==0 or A3 or A4==B2of2
+ 0,0290 A1==0 and A2==2
+ 0,0287 A1==0 or A4==B2of2
+ 0,0287 A1==0 or A3 or A4==B2of2
+ 0,0270 A1==0 and A2==1 and A4==B2of2
+ 0,0265 A1==2 and A2==0 and A4==B2of2
+ 0,0262 A1==1 and A2==1 and A4==B2of2
+ 0,0259 A1==2 and A2==2 and A4==B2of2
+ 0,0257 (A4 >= 0.51469) and (A2 = 2) and (A1 = 1)
+ 0,0255 num-of-N((A2 = 1) and (A4 >= 0.911069))
+ 0,0255 A1==1 and A2==0 and A4==B2of2
+ 0,0250 A2_x_A3
+ 0,0250 A2
+ 0,0248 A1==2 xor A3
+ 0,0248 A1==2 or A3
+ 0,0248 A1==2 impl A3
+ 0,0248 A1==2 equ A3
+ 0,0234 A1==0 and A2==2 and A4==B2of2
+ 0,0222 A1==1 xor A3
+ 0,0222 A1==1 or A3
+ 0,0222 A1==1 impl A3
+ 0,0222 A1==1 equ A3
+ 0,0221 A2==1 xor A4==B2of2
+ 0,0221 A2==1 equ A4==B2of2
+ 0,0210 A2==1 xor A3
+ 0,0210 A2==1 or A3
+ 0,0210 A2==1 impl A3
+ 0,0210 A2==1 equ A3
+ 0,0199 A1==2 xor A4==B2of2
+ 0,0199 A1==2 equ A4==B2of2
+ 0,0199 A1==2 or A2==0 or A4==B2of2
+ 0,0186 A2==2 xor A4==B2of2
+ 0,0186 A2==2 equ A4==B2of2
+ 0,0186 A1==0 or A2==2 or A4==B2of2
+ 0,0184 A1==1 xor A4==B2of2
+ 0,0184 A1==1 equ A4==B2of2
+ 0,0183 A2==2 xor A3
+ 0,0183 A2==2 or A3
+ 0,0183 A2==2 impl A3
+ 0,0183 A2==2 equ A3
+ 0,0181 A1==0 or A2==0 or A4==B2of2
+ 0,0181 A3 SUBTRACT A4
+ 0,0179 A4 DIVIDE A3
+ 0,0179 A3 DIVIDE A4
+ 0,0177 (A3 >= 0.775574) and (A2 = 2) and (A1 = 1)
+ 0,0163 A1==1 or A2==0 or A4==B2of2
+ 0,0163 A1==0 or A2==1 or A4==B2of2
+ 0,0157 A4_x_A5
+ 0,0157 A4==B2of2 xor A5
+ 0,0157 A4==B2of2 or A5
+ 0,0157 A4==B2of2 impl A5
+ 0,0157 A4==B2of2 equ A5
+ 0,0157 A4
+ 0,0157 A3_x_A4
+ 0,0157 A3 xor A4==B2of2
+ 0,0157 A3 or A4==B2of2 or A5
+ 0,0157 A3 or A4==B2of2
+ 0,0157 A3 equ A4==B2of2
+ 0,0154 A5 DIVIDE A4
+ 0,0154 A4 DIVIDE A5
+ 0,0141 A1==1 impl A4==B2of2
+ 0,0139 A2==1 impl A4==B2of2
+ 0,0134 (A2 = 1) and (A4 >= 0.911069)
+ 0,0119 A1==2 or A2==2 or A3
+ 0,0119 A1==2 or A2==2
+ 0,0115 A2==2 impl A4==B2of2
+ 0,0108 A1==2 impl A4==B2of2
+ 0,0104 (A3 >= 0.508382) and (A2 = 2) and (A1 = 1) and (A3 <= 0.642115)
+ 0,0099 A1==1 and A4==B2of2
+ 0,0096 A3 LESSTHAN A4
+ 0,0095 A2==0 xor A4==B2of2
+ 0,0095 A2==0 equ A4==B2of2
+ 0,0086 A1==1 or A2==1 or A3
+ 0,0086 A1==1 or A2==1
+ 0,0085 A2==2 and A4==B2of2
+ 0,0083 A1==0 xor A4==B2of2
+ 0,0083 A1==0 equ A4==B2of2
+ 0,0066 A1==1 and A2==2 and A4==B2of2
+ 0,0066 A4 MULTIPLY A5
+ 0,0065 A4 SUBTRACT A5
+ 0,0060 A1==0 impl A2==1
+ 0,0058 A4 ADD A5
+ 0,0054 A1==2 or A4==B2of2
+ 0,0054 A1==2 or A3 or A4==B2of2
+ 0,0049 A2==2 or A4==B2of2
+ 0,0049 A2==2 or A3 or A4==B2of2
+ 0,0043 A3 MULTIPLY A4
+ 0,0039 A1==0 impl A2==2
+ 0,0034 A2==1 or A4==B2of2
+ 0,0034 A2==1 or A3 or A4==B2of2
+ 0,0033 A1==1 or A4==B2of2
+ 0,0033 A1==1 or A3 or A4==B2of2
+ 0,0032 A3 ADD A4
+ 0,0031 A1==1 or A2==0 or A3
+ 0,0031 A1==1 or A2==0
+ 0,0022 A1==1 and A2==2
+ 0,0020 A1==1 impl A2==0
+ 0,0016 A1==0 or A2==2 or A3
+ 0,0016 A1==0 or A2==2
+ 0,0014 A3 MULTIPLY A5
+ 0,0014 A3
+ 0,0012 A3 SUBTRACT A5
+ 0,0011 A1==1 impl A2==1
+ 0,0008 A3 ADD A5
+ 0,0007 A3 DIFF A4
+ 0,0001 A5 DIVIDE A3
+ 0,0001 A3 DIVIDE A5
+ -0,0002 A5
+ -0,0002 A1==2 or A2==2 or A4==B2of2
+ -0,0006 A1==2 or A2==1 or A4==B2of2
+ -0,0007 A1==1 or A2==2 or A4==B2of2
+ -0,0008 A4 LESSTHAN A5
+ -0,0011 A1==1 or A2==1 or A4==B2of2
+ -0,0014 A1==2 or A2==1 or A3
+ -0,0014 A1==2 or A2==1
+ -0,0016 A1==0 impl A4==B2of2
+ -0,0016 A2==0 impl A4==B2of2
+ -0,0017 A1==0 xor A2==2
+ -0,0017 A1==0 equ A2==2
+ -0,0018 A2==0 and A4==B2of2
+ -0,0018 A2==0 xor A3
+ -0,0018 A2==0 or A3
+ -0,0018 A2==0 impl A3
+ -0,0018 A2==0 equ A3
+ -0,0019 A1==0 xor A3
+ -0,0019 A1==0 or A3
+ -0,0019 A1==0 impl A3
+ -0,0019 A1==0 equ A3
+ -0,0019 A1==0 and A4==B2of2
+ -0,0020 A1==1 xor A2==0
+ -0,0020 A1==1 equ A2==0
+ -0,0021 A3 LESSTHAN A5
+dataset: cConcepts-uniqueInst.arff
+MDL - after CI
+ 0,2814 A1 or A2
+ 0,2814 (A1 = 0) and (A2 = 0)
+ 0,2435 num-of-N((A1 = 0) and (A2 = 0))
+ 0,2111 A1_x_A2
+ 0,1606 A1 and A4
+ 0,1285 A1_x_A4
+ 0,0947 A1 or A2 or A4
+ 0,0589 A2
+ 0,0589 A1 xor A4
+ 0,0589 A1 xor A2
+ 0,0589 A1 equ A4
+ 0,0589 A1 equ A2
+ 0,0589 A1
+ 0,0546 A2 or A4
+ 0,0444 A1 and A2 and A4
+ 0,0196 A2_x_A4
+ -0,0041 A2 impl A4
+ -0,0041 A2 and A4
+ -0,0041 A1 impl A2
+ -0,0041 A1 and A2
+ -0,0293 A4
+ -0,0293 A3
+ -0,0293 A2 xor A4
+ -0,0293 A2 equ A4
+ -0,0309 A1 or A4
+ -0,0309 A1 impl A4
+ -0,0401 A5
+dataset: cDisjunct.arff
+MDL - after CI
+ 0,7477 (A1 <= 0.5) and (A3 >= 0.4) and (A2 <= 0.7)
+ 0,7400 num-of-N((A1 <= 0.5) and (A3 >= 0.4) and (A2 <= 0.7))
+ 0,4919 (A1 <= 0.5) and (A3 >= 0.4)
+ 0,4878 num-of-N((A1 <= 0.5) and (A3 >= 0.4))
+ 0,4838 A1_x_A3
+ 0,3997 A1==B2of2 or A2==B2of2
+ 0,3919 A1_x_A2
+ 0,3237 A2_x_A3
+ 0,2972 A1 SUBTRACT A3
+ 0,2889 A3 DIVIDE A1
+ 0,2889 A1 DIVIDE A3
+ 0,2568 A1==B2of2 xor A3==B2of2
+ 0,2568 A1==B2of2 equ A3==B2of2
+ 0,2483 A1==B2of2 xor A2==B2of2
+ 0,2483 A1==B2of2 equ A2==B2of2
+ 0,2443 A1
+ 0,2410 A1 LESSTHAN A3
+ 0,2161 A2==B2of2 xor A3==B2of2
+ 0,2161 A2==B2of2 equ A3==B2of2
+ 0,1912 A3
+ 0,1793 A1 ADD A2
+ 0,1782 A2 SUBTRACT A3
+ 0,1714 A3 DIVIDE A2
+ 0,1714 A2 DIVIDE A3
+ 0,1640 A2 LESSTHAN A3
+ 0,1449 A1==B2of2 impl A2==B2of2
+ 0,1372 A1 MULTIPLY A2
+ 0,1266 A2
+ 0,1182 A1==B2of2 and A3==B2of2
+ 0,1135 A2==B2of2 or A3==B2of2
+ 0,0820 A1==B2of2 or A3==B2of2
+ 0,0750 A1==B2of2 impl A3==B2of2
+ 0,0632 A1 MULTIPLY A3
+ 0,0623 A2==B2of2 and A3==B2of2
+ 0,0536 A1==B2of2 and A2==B2of2
+ 0,0515 A1==B2of2 or A2==B2of2 or A3==B2of2
+ 0,0502 A1 ADD A3
+ 0,0471 A2==B2of2 impl A3==B2of2
+ 0,0447 A1 SUBTRACT A2
+ 0,0326 A2 ADD A3
+ 0,0279 A1==B2of2 and A2==B2of2 and A3==B2of2
+ 0,0196 A2 MULTIPLY A3
+ 0,0188 A2 DIVIDE A1
+ 0,0188 A1 DIVIDE A2
+ 0,0137 A1 LESSTHAN A2
+ 0,0002 A1 DIFF A3
+ 0,0001 A1 DIFF A2
+ -0,0002 A5
+ -0,0009 A4
+ -0,0011 A2 DIFF A3
+dataset: cLogicalConcB-uniqueInst.arff
+MDL - after CI
+ 0,3409 A2 and A6
+ 0,3409 (A2 = 1) and (A6 = 1)
+ 0,3243 num-of-N((A2 = 1) and (A6 = 1))
+ 0,3093 A2_x_A6
+ 0,2159 A1 or A2
+ 0,1946 A2_x_A3
+ 0,1946 A1_x_A2
+ 0,1628 num-of-N((A1 = 1) and (A3 = 0) and (A2 = 0))
+ 0,1344 A2 and A3 and A6
+ 0,1344 A1 and A2 and A6
+ 0,1344 (A1 = 1) and (A3 = 0) and (A2 = 0)
+ 0,1235 A1 impl A3
+ 0,1109 A3_x_A6
+ 0,1109 A1_x_A6
+ 0,0934 A1_x_A3
+ 0,0868 A6
+ 0,0868 A2 xor A6
+ 0,0868 A2 equ A6
+ 0,0868 A2
+ 0,0865 A3 impl A6
+ 0,0865 A1 or A6
+ 0,0826 A1 or A2 or A6
+ 0,0826 A1 or A2 or A3
+ 0,0794 A1 and A6
+ 0,0294 A1 or A3 or A6
+ 0,0283 A3
+ 0,0283 A2 xor A3
+ 0,0283 A2 equ A3
+ 0,0283 A1 xor A3
+ 0,0283 A1 xor A2
+ 0,0283 A1 equ A3
+ 0,0283 A1 equ A2
+ 0,0283 A1
+ 0,0187 A2 or A6
+ 0,0187 A2 impl A6
+ 0,0180 A2 impl A3
+ 0,0180 A2 and A3
+ 0,0180 A1 and A2
+ 0,0013 A1 and A2 and A3
+ -0,0008 A1 or A3
+ -0,0008 A1 and A3
+ -0,0060 A5
+ -0,0060 A4
+ -0,0112 A2 or A3 or A6
+ -0,0112 A1 and A3 and A6
+ -0,0119 A3 and A6
+ -0,0119 A2 or A3
+ -0,0119 A1 impl A2
+ -0,0121 A3 or A6
+ -0,0121 A1 impl A6
+ -0,0173 A7
+ -0,0173 A3 xor A6
+ -0,0173 A3 equ A6
+ -0,0173 A1 xor A6
+ -0,0173 A1 equ A6
+dataset: cLogicalConcBNoisy-uniqueInst.arff
+MDL - after CI
+ 0,3081 A2 and A6
+ 0,3081 (A2 = 1) and (A6 = 1)
+ 0,2916 num-of-N((A2 = 1) and (A6 = 1))
+ 0,2768 A2_x_A6
+ 0,2030 A1 or A2
+ 0,1841 A1_x_A2
+ 0,1471 A2_x_A3
+ 0,1420 A1 and A2 and A6
+ 0,1036 A2 and A3 and A6
+ 0,0942 A1_x_A6
+ 0,0895 A1 impl A3
+ 0,0878 A2 xor A6
+ 0,0878 A2 equ A6
+ 0,0878 A2
+ 0,0845 num-of-N((A3 = 0) and (A1 = 1) and (A2 = 0))
+ 0,0811 A3_x_A6
+ 0,0773 A1 or A6
+ 0,0771 A1 or A2 or A6
+ 0,0771 A1 or A2 or A3
+ 0,0741 (A3 = 0) and (A1 = 1) and (A2 = 0)
+ 0,0706 A6
+ 0,0700 A1 and A6
+ 0,0610 A1_x_A3
+ 0,0572 A3 impl A6
+ 0,0287 A1
+ 0,0255 A1 or A3 or A6
+ 0,0240 A2 impl A3
+ 0,0240 A1 and A2
+ 0,0178 A3
+ 0,0178 A1 xor A2
+ 0,0178 A1 equ A2
+ 0,0133 A2 or A6
+ 0,0133 A2 impl A6
+ 0,0127 A2 and A3
+ 0,0084 A2 xor A3
+ 0,0084 A2 equ A3
+ 0,0084 A1 xor A3
+ 0,0084 A1 equ A3
+ 0,0039 A1 and A2 and A3
+ -0,0043 A1 or A3
+ -0,0059 A5
+ -0,0059 A4
+ -0,0100 A3 or A6
+ -0,0100 A1 and A3
+ -0,0103 A1 and A3 and A6
+ -0,0128 A2 or A3 or A6
+ -0,0136 A3 and A6
+ -0,0136 A1 impl A2
+ -0,0138 A1 impl A6
+ -0,0155 A2 or A3
+ -0,0166 A3 xor A6
+ -0,0166 A3 equ A6
+ -0,0173 A7
+ -0,0173 A1 xor A6
+ -0,0173 A1 equ A6
+dataset: cModGroups.arff
+MDL - after CI
+ 0,2836 num-of-N((I1 <= 0.313643) and (I2 >= 0.669821))
+ 0,2827 num-of-N((I1 <= 0.313643) and (I2 >= 0.710789))
+ 0,2659 num-of-N((I2 <= 0.304998) and (I1 >= 0.703413))
+ 0,2633 num-of-N((I1 <= 0.265298) and (I2 >= 0.669821))
+ 0,2602 num-of-N((I1 >= 0.372994) and (I2 <= 0.596417) and (I1 <= 0.640129) and (I2 >= 0.396389))
+ 0,2460 num-of-N((I1 >= 0.408338) and (I2 <= 0.596417) and (I2 >= 0.403317) and (I1 <= 0.630798))
+ 0,1932 I1 ADD I2
+ 0,1881 I1 MULTIPLY I2
+ 0,1332 (I1 <= 0.313643) and (I2 >= 0.669821)
+ 0,1323 (I1 <= 0.313643) and (I2 >= 0.710789)
+ 0,1290 I1 SUBTRACT I2
+ 0,1272 (I1 <= 0.265298) and (I2 >= 0.669821)
+ 0,1210 (I1 >= 0.372994) and (I2 <= 0.596417) and (I1 <= 0.640129) and (I2 >= 0.396389)
+ 0,1175 (I1 >= 0.408338) and (I2 <= 0.596417) and (I2 >= 0.403317) and (I1 <= 0.630798)
+ 0,1091 (I2 <= 0.304998) and (I1 >= 0.703413)
+ 0,0943 num-of-N((I2 <= 0.509555) and (I2 >= 0.38795) and (I1 <= 0.628351) and (I1 >= 0.357829))
+ 0,0904 num-of-N((I2 <= 0.594098) and (I1 >= 0.372994) and (I2 >= 0.38795) and (I1 <= 0.505561))
+ 0,0739 I2 DIVIDE I1
+ 0,0739 I1 DIVIDE I2
+ 0,0734 num-of-N((I1 >= 0.407799) and (I2 <= 0.596417) and (I2 >= 0.511121) and (I1 <= 0.630798))
+ 0,0585 (I2 <= 0.594098) and (I1 >= 0.372994) and (I2 >= 0.38795) and (I1 <= 0.505561)
+ 0,0561 (I1 >= 0.407799) and (I2 <= 0.596417) and (I2 >= 0.511121) and (I1 <= 0.630798)
+ 0,0543 (I2 <= 0.509555) and (I2 >= 0.38795) and (I1 <= 0.628351) and (I1 >= 0.357829)
+ 0,0480 num-of-N((I1 <= 0.140835) and (I2 >= 0.737664))
+ 0,0391 (I1 <= 0.140835) and (I2 >= 0.737664)
+ 0,0031 R1
+ 0,0020 R2 DIVIDE I1
+ 0,0020 I1 DIVIDE R2
+ 0,0017 R1 DIVIDE I1
+ 0,0017 I1 DIVIDE R1
+ 0,0015 I1 SUBTRACT R2
+ 0,0013 R1 DIVIDE I2
+ 0,0013 I2 DIVIDE R1
+ 0,0012 I1 MULTIPLY R1
+ 0,0012 I1 ADD R1
+ 0,0011 I1
+ 0,0011 I1 MULTIPLY R2
+ 0,0011 R2 DIVIDE R1
+ 0,0011 R1 DIVIDE R2
+ 0,0008 R1 MULTIPLY R2
+ 0,0008 I2 MULTIPLY R1
+ 0,0008 I2 ADD R1
+ 0,0008 I1 SUBTRACT R1
+ 0,0007 R1 ADD R2
+ 0,0007 R2 DIVIDE I2
+ 0,0007 R2
+ 0,0007 I2 DIVIDE R2
+ 0,0007 R1 SUBTRACT R2
+ 0,0007 I2 SUBTRACT R1
+ 0,0006 I2 SUBTRACT R2
+ 0,0003 I2
+ 0,0003 I1 ADD R2
+ -0,0000 I2 MULTIPLY R2
+ -0,0001 I2 ADD R2
+ -0,0028 I2 LESSTHAN R1
+ -0,0030 I2 LESSTHAN R2
+ -0,0036 I1 LESSTHAN I2
+ -0,0036 R1 LESSTHAN R2
+ -0,0037 I1 LESSTHAN R2
+ -0,0038 I1 LESSTHAN R1
+dataset: cMultiVClassDisAttr-uniqueInst.arff
+MDL - after CI
+ 0,7064 A1_x_A2
+ 0,6624 A1
+ 0,6288 (A1 = 1)
+ 0,6048 A1_x_A4
+ 0,4350 A1==1 impl A2==1
+ 0,4074 num-of-N((A1 = 1) and (A2 = 2))
+ 0,3635 A1==1 or A4==0
+ 0,3525 num-of-N((A1 = 1) and (A2 = 0))
+ 0,3479 A1==1 impl A4==1
+ 0,3479 A1==1 impl A4==0
+ 0,3387 A1==1 or A2==2
+ 0,3269 A1==1 impl A4==2
+ 0,3269 A1==1 impl A2==2
+ 0,3269 A1==1 impl A2==0
+ 0,2632 num-of-N((A1 = 1) and (A4 = 2))
+ 0,2595 A1==1 or A2==0
+ 0,2403 A1==1 or A2==0 or A4==0
+ 0,1996 A1==2 or A2==1
+ 0,1786 A1==1 or A2==2 or A4==2
+ 0,1786 A1==1 or A2==2 or A4==1
+ 0,1786 A1==1 or A2==2 or A4==0
+ 0,1786 A1==1 or A2==1 or A4==0
+ 0,1702 A1==1 or A4==2
+ 0,1702 A1==1 or A4==1
+ 0,1694 A1==1 and A4==2
+ 0,1694 A1==1 and A2==2
+ 0,1694 A1==1 and A2==0
+ 0,1694 (A1 = 1) and (A4 = 2)
+ 0,1694 (A1 = 1) and (A2 = 2)
+ 0,1694 (A1 = 1) and (A2 = 0)
+ 0,1655 A1==1 and A2==1
+ 0,1574 A1==2 impl A2==0
+ 0,1574 A1==0 impl A4==0
+ 0,1574 A1==0 impl A2==2
+ 0,1504 A1==1 or A2==1
+ 0,1384 A1==2 xor A2==1
+ 0,1384 A1==2 equ A2==1
+ 0,1332 A1==1 and A4==1
+ 0,1332 A1==1 and A4==0
+ 0,1176 A1==2 or A2==1 or A4==2
+ 0,1176 A1==2 or A2==1 or A4==1
+ 0,1169 A1==2 impl A2==2
+ 0,1169 A1==2 impl A2==1
+ 0,1139 A1==2 impl A4==2
+ 0,1139 A1==2 impl A4==1
+ 0,1139 A1==2 impl A4==0
+ 0,1081 A1==1 xor A2==0
+ 0,1081 A1==1 equ A2==0
+ 0,1081 A1==0 or A2==2
+ 0,1070 A1==1 xor A2==1
+ 0,1070 A1==1 equ A2==1
+ 0,0973 A1==1 xor A4==0
+ 0,0973 A1==1 equ A4==0
+ 0,0931 A1==1 or A2==0 or A4==2
+ 0,0931 A1==1 or A2==0 or A4==1
+ 0,0925 A1==2 or A4==1
+ 0,0795 A1==0 or A2==2 or A4==2
+ 0,0779 num-of-N((A4 = 0) and (A2 = 2) and (A1 = 0))
+ 0,0742 A1==2 xor A2==0
+ 0,0742 A1==2 equ A2==0
+ 0,0742 A1==0 xor A2==2
+ 0,0742 A1==0 equ A2==2
+ 0,0709 A1==2 and A2==0
+ 0,0666 A1==0 or A2==1
+ 0,0618 A1==1 and A2==1 and A4==1
+ 0,0618 A1==1 and A2==1 and A4==0
+ 0,0562 A1==2 and A2==2
+ 0,0562 A1==2 and A2==1
+ 0,0562 A1==0 and A4==2
+ 0,0562 A1==0 and A4==1
+ 0,0562 A1==0 and A2==1
+ 0,0562 A1==0 and A2==0
+ 0,0539 A1==2 or A4==2
+ 0,0539 A1==2 or A2==0
+ 0,0539 A1==1 xor A2==2
+ 0,0539 A1==1 equ A2==2
+ 0,0523 A1==0 or A4==2
+ 0,0518 A2==1 impl A4==2
+ 0,0475 A1==2 or A2==0 or A4==1
+ 0,0460 A1==2 or A2==1 or A4==0
+ 0,0429 A1==2 or A2==0 or A4==2
+ 0,0405 A1==2 and A4==2
+ 0,0405 A1==2 and A4==1
+ 0,0405 A1==2 and A4==0
+ 0,0405 A2==2 or A4==2
+ 0,0402 A1==1 or A2==1 or A4==2
+ 0,0402 A1==1 or A2==1 or A4==1
+ 0,0393 A1==1 and A2==2 and A4==2
+ 0,0393 A1==1 and A2==2 and A4==1
+ 0,0393 A1==1 and A2==2 and A4==0
+ 0,0393 A1==1 and A2==1 and A4==2
+ 0,0393 A1==1 and A2==0 and A4==2
+ 0,0393 A1==1 and A2==0 and A4==1
+ 0,0393 A1==1 and A2==0 and A4==0
+ 0,0393 A1==0 and A2==2 and A4==0
+ 0,0393 (A4 = 0) and (A2 = 2) and (A1 = 0)
+ 0,0378 A1==0 impl A4==2
+ 0,0378 A1==0 impl A4==1
+ 0,0378 A1==0 impl A2==1
+ 0,0378 A1==0 impl A2==0
+ 0,0318 A2
+ 0,0312 A1==0 or A4==1
+ 0,0312 A1==0 or A4==0
+ 0,0292 A2==2 and A4==0
+ 0,0250 A1==0 or A2==2 or A4==1
+ 0,0250 A1==0 or A2==2 or A4==0
+ 0,0244 A2==2 impl A4==2
+ 0,0244 A2==2 impl A4==1
+ 0,0243 A1==0 xor A4==0
+ 0,0243 A1==0 equ A4==0
+ 0,0241 A1==0 or A2==1 or A4==2
+ 0,0241 A1==0 or A2==1 or A4==1
+ 0,0241 A1==0 or A2==1 or A4==0
+ 0,0221 A1==2 xor A4==1
+ 0,0221 A1==2 equ A4==1
+ 0,0201 A2==2 xor A4==2
+ 0,0201 A2==2 equ A4==2
+ 0,0199 A1==2 or A4==0
+ 0,0197 A1==1 xor A4==1
+ 0,0197 A1==1 equ A4==1
+ 0,0188 A1==1 xor A4==2
+ 0,0188 A1==1 equ A4==2
+ 0,0185 A3
+ 0,0162 A2==1 xor A4==2
+ 0,0162 A2==1 equ A4==2
+ 0,0142 A2==1 and A4==1
+ 0,0142 A2==1 and A4==0
+ 0,0132 A1==2 and A2==0 and A4==2
+ 0,0132 A1==2 and A2==0 and A4==1
+ 0,0132 A1==2 and A2==0 and A4==0
+ 0,0055 A1==0 xor A2==1
+ 0,0055 A1==0 equ A2==1
+ 0,0052 A1==2 and A2==2 and A4==2
+ 0,0052 A1==2 and A2==2 and A4==1
+ 0,0052 A1==2 and A2==2 and A4==0
+ 0,0052 A1==2 and A2==1 and A4==2
+ 0,0052 A1==2 and A2==1 and A4==1
+ 0,0052 A1==2 and A2==1 and A4==0
+ 0,0052 A1==0 and A2==2 and A4==2
+ 0,0052 A1==0 and A2==2 and A4==1
+ 0,0052 A1==0 and A2==1 and A4==2
+ 0,0052 A1==0 and A2==1 and A4==1
+ 0,0052 A1==0 and A2==1 and A4==0
+ 0,0052 A1==0 and A2==0 and A4==2
+ 0,0052 A1==0 and A2==0 and A4==1
+ 0,0052 A1==0 and A2==0 and A4==0
+ 0,0049 A1==0 xor A4==2
+ 0,0049 A1==0 equ A4==2
+ 0,0048 A2==1 or A4==2
+ 0,0048 A2==1 or A4==1
+ 0,0047 A2==2 impl A4==0
+ 0,0046 A1==2 or A2==2 or A4==2
+ 0,0046 A1==0 or A2==0 or A4==2
+ 0,0036 A1==2 xor A4==2
+ 0,0036 A1==2 equ A4==2
+ -0,0010 A1==2 or A2==2
+ -0,0010 A1==0 or A2==0
+ -0,0050 A2_x_A4
+ -0,0069 A2==0 or A4==0
+ -0,0078 A1==2 or A2==2 or A4==1
+ -0,0078 A1==2 or A2==2 or A4==0
+ -0,0078 A1==2 or A2==0 or A4==0
+ -0,0078 A1==0 or A2==0 or A4==1
+ -0,0078 A1==0 or A2==0 or A4==0
+ -0,0083 A2==2 and A4==2
+ -0,0083 A2==2 and A4==1
+ -0,0083 A2==1 and A4==2
+ -0,0083 A1==0 and A4==0
+ -0,0083 A1==0 and A2==2
+ -0,0096 A2==1 impl A4==1
+ -0,0096 A2==1 impl A4==0
+ -0,0106 A2==0 xor A4==0
+ -0,0106 A2==0 equ A4==0
+ -0,0125 A2==0 or A4==1
+ -0,0140 A2==2 or A4==1
+ -0,0140 A2==2 or A4==0
+ -0,0140 A2==0 xor A4==1
+ -0,0140 A2==0 equ A4==1
+ -0,0140 A1==2 xor A4==0
+ -0,0140 A1==2 equ A4==0
+ -0,0149 A2==1 or A4==0
+ -0,0149 A2==0 xor A4==2
+ -0,0149 A2==0 equ A4==2
+ -0,0150 A2==0 and A4==2
+ -0,0150 A2==0 and A4==1
+ -0,0150 A2==0 and A4==0
+ -0,0162 A2==2 xor A4==0
+ -0,0162 A2==2 equ A4==0
+ -0,0162 A2==1 xor A4==1
+ -0,0162 A2==1 equ A4==1
+ -0,0162 A1==0 xor A4==1
+ -0,0162 A1==0 equ A4==1
+ -0,0171 A2==0 or A4==2
+ -0,0172 A2==0 impl A4==2
+ -0,0172 A2==0 impl A4==1
+ -0,0172 A2==0 impl A4==0
+ -0,0174 A2==2 xor A4==1
+ -0,0174 A2==2 equ A4==1
+ -0,0174 A2==1 xor A4==0
+ -0,0174 A2==1 equ A4==0
+ -0,0212 A1==2 xor A2==2
+ -0,0212 A1==2 equ A2==2
+ -0,0212 A1==0 xor A2==0
+ -0,0212 A1==0 equ A2==0
+ -0,0213 A4
+ -0,0403 A5
+dataset: condInd-uniqueInst.arff
+MDL - after CI
+ 0,3541 I80_x_I90
+ 0,3521 num-of-N((I90 = 0) and (I80 = 0))
+ 0,2909 I70_x_I90
+ 0,2770 num-of-N((I70 = 0) and (I90 = 0))
+ 0,2315 I80 or I90
+ 0,2315 (I90 = 0) and (I80 = 0)
+ 0,2237 I80 and I90
+ 0,2158 I90
+ 0,2158 (I90 = 0)
+ 0,1853 I70 and I90
+ 0,1778 I70 or I90
+ 0,1778 (I70 = 0) and (I90 = 0)
+ 0,1558 num-of-N((I80 = 0) and (I70 = 0))
+ 0,1494 I70_x_I80
+ 0,1251 I70 or I80 or I90
+ 0,1122 I70 and I80 and I90
+ 0,1095 I70 or I80
+ 0,1095 (I80 = 0) and (I70 = 0)
+ 0,1005 I70 and I80
+ 0,0927 I80
+ 0,0536 I70
+ 0,0052 I70 impl I90
+ -0,0019 R3
+ -0,0039 I80 impl I90
+ -0,0061 R1
+ -0,0077 R2
+ -0,0077 I60
+ -0,0088 I70 impl I80
+ -0,0103 R4
+ -0,0103 I80 xor I90
+ -0,0103 I80 equ I90
+ -0,0103 I70 xor I80
+ -0,0103 I70 equ I80
+ -0,0105 I70 xor I90
+ -0,0105 I70 equ I90

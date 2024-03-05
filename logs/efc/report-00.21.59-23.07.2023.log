@@ -1,0 +1,147 @@
+dataset: Glass.arff
+Number of folds for testing (CV): 10
+*********************************************************************************
+number of instances: 214
+number of attributes: 9
+number of classes: 7
+---------------------------------------------------------------------------------
+Alg. for searching concepts: TreeSHAP (XGBOOST) parameters: numOfRounds->100 maxDepth->3 eta->0.3 gamma->1.0
+Explaining class: headlamps explaining whole dataset: NO
+---------------------------------------------------------------------------------
+Testing method: CV, number of folds: 10
+Feature selection on validation dataset. Percentage of split (subTrain:validation) 75%:25%
+---------------------------------------------------------------------------------
+Avg. explanation time: 2,30 [ms] (stdev 0,64)
+Avg. number of instances that we explain: 26,10 (stdev 0,30)
+---------------------------------------------------------------------------------
+Internal (during building) accuracy of explanation model: 94,44 (stdev 0,90) ACC on the test dataset: 76,62 (stdev 4,24)
+---------------------------------------------------------------------------------
+Avg. model building time: 138,80 [ms] (stdev 14,16)
+---------------------------------------------------------------------------------
+Feature types included in construction: logical operators based, decision rule, threshold, relational, Cartesian product, numerical
+*********************************************************************************
+Original dataset
+*********************************************************************************
+Avg. tree size: 44,20 (stdev 5,23) avg. number of leaves: 22,60 (stdev 2,62) avg. number of nodes: 21,60 (stdev 2,62)
+Avg. ruleset size: 0,00 (stdev 0,00) avg. number of attributes in rules: 0,00 (stdev 0,00) avg. number of attributes per rule: 0,00 (stdev 0,00)
+-----ACC-----
+Avg. class. ACC J48 	66,75 (stdev 7,53)
+Avg. class. ACC NB 	48,59 (stdev 6,21)
+-----Learning and testing time-----
+Avg. learning time J48 	6,40 [ms] (stdev 15,21 [ms])
+Avg. learning time NB 	0,90 [ms] (stdev 2,70 [ms])
+*********************************************************************************
+Only Logical features
+*********************************************************************************
+Number of logical feat: 539,50 (stdev 222,58)
+Avg. tree size (nodes+leaves): 45,00 (stdev 3,90) avg. number of leaves: 23,00 (stdev 1,95) avg. sum of constructs: 32,30 (stdev 3,66) avg. sum of constructs / num of nodes: 1,47 (stdev 0,12)
+Avg. num of logical feat in tree: 8,90 (stdev 2,07) avg. sum of (logical) constructs: 19,20 (stdev 4,71)
+Avg. ruleset size: 0,00 (stdev 0,00) avg. number of terms of construct in Furia feat.: 0,00 (stdev 0,00) avg. number of terms in constructs per ruleset: 0,00 (stdev 0,00)
+-----ACC-----
+Avg. class. ACC J48 	66,28 (stdev 9,56)
+Avg. class. ACC NB 	54,16 (stdev 8,68)
+-----Learning and testing time-----
+Avg. learning time from FC (all feat), for J48 	22,00 [ms] (stdev 24,94)
+Avg. learning time from FC (all feat), for NB 	11,40 [ms] (stdev 9,12)
+-----Feature construction time-----
+Avg. FC time (only Log feat): 1162,30 [ms] stdev 746,53
+*********************************************************************************
+Numerical features
+*********************************************************************************
+Number of numerical feat: 94,50 (stdev 25,04)
+Avg. tree size (nodes+leaves): 44,20 (stdev 2,71) avg. number of leaves: 22,60 (stdev 1,36) avg. sum of constructs: 35,40 (stdev 2,87) avg. sum of constructs / num of nodes: 1,64 (stdev 0,10)
+Avg. num of numerical feat in tree: 13,80 (stdev 2,27) avg. sum of (only numerical) constructs (in tree): 27,60 (stdev 4,54)
+Avg. ruleset size: 0,00 (stdev 0,00) avg. number of terms of construct in Furia feat.: 0,00 (stdev 0,00) avg. number of terms in constructs per ruleset: 0,00 (stdev 0,00)
+-----ACC-----
+Avg. class. ACC J48 	64,74 (stdev 14,31)
+Avg. class. ACC NB 	43,51 (stdev 5,46)
+-----Learning and testing time-----
+Avg. learning time from FC (all feat), for J48 	18,00 [ms] (stdev 14,09)
+Avg. learning time from FC (all feat), for NB 	7,00 [ms] (stdev 5,16)
+-----Feature construction time-----
+Avg. FC time (only Num feat): 13,80 [ms] stdev 5,46
+*********************************************************************************
+Relational features
+*********************************************************************************
+Number of relational feat: 13,60 (stdev 1,11)
+Avg. tree size (nodes+leaves): 49,60 (stdev 4,20) avg. number of leaves: 25,30 (stdev 2,10) avg. sum of constructs: 28,50 (stdev 2,84) avg. sum of constructs / num of nodes: 1,17 (stdev 0,05)
+Avg. num of relational feat in tree: 4,20 (stdev 1,25) avg. sum of (only Cartesian) constructs (in tree): 8,40 (stdev 2,50)
+Avg. ruleset size: 0,00 (stdev 0,00) avg. number of terms of construct in Furia feat.: 0,00 (stdev 0,00) avg. number of terms in constructs per ruleset: 0,00 (stdev 0,00)
+-----ACC-----
+Avg. class. ACC J48 	66,32 (stdev 6,06)
+Avg. class. ACC NB 	50,45 (stdev 6,32)
+-----Learning and testing time-----
+Avg. learning time from FC (all feat), for J48 	2,40 [ms] (stdev 1,28)
+Avg. learning time from FC (all feat), for NB 	0,40 [ms] (stdev 0,66)
+-----Feature construction time-----
+Avg. FC time (only Rel feat): 4,50 [ms] stdev 2,54
+*********************************************************************************
+Cartesian product
+*********************************************************************************
+Number of "Cartesian" feat: 18,00 (stdev 4,84)
+Avg. tree size (nodes+leaves): 60,00 (stdev 11,22) avg. number of leaves: 41,00 (stdev 11,30) avg. sum of constructs: 24,30 (stdev 2,00) avg. sum of constructs / num of nodes: 1,28 (stdev 0,10)
+Avg. num of "Cartesian" feat in tree: 5,30 (stdev 1,73) avg. sum of (only Cartesian) constructs (in tree): 10,60 (stdev 3,47)
+Avg. ruleset size: 0,00 (stdev 0,00) avg. number of terms of construct in Furia feat.: 0,00 (stdev 0,00) avg. number of terms in constructs per ruleset: 0,00 (stdev 0,00)
+-----ACC-----
+Avg. class. ACC J48 	68,66 (stdev 7,65)
+Avg. class. ACC NB 	59,29 (stdev 8,09)
+-----Learning and testing time-----
+Avg. learning time from FC (all feat), for J48 	1,50 [ms] (stdev 1,20)
+Avg. learning time from FC (all feat), for NB 	0,40 [ms] (stdev 0,66)
+-----Feature construction time-----
+Avg. FC time (only Cart feat): 4,20 [ms] stdev 2,68
+*********************************************************************************
+Only Furia and THR feat
+*********************************************************************************
+Number of FURIA feat: 5,80 (stdev 2,71) number of thr. feat: 4,70 (stdev 2,61)
+Avg. tree size (nodes+leaves): 49,10 (stdev 5,47) avg. number of leaves: 27,40 (stdev 3,83) avg. sum of constructs: 28,60 (stdev 4,20) avg. sum of constructs / num of nodes: 1,31 (stdev 0,12)
+Avg. num of FURIA feat. in tree: 1,20 (stdev 0,40) avg. sum of terms in constructs (Furia feat) in tree: 3,40 (stdev 1,11) avg. num of THR feat. in tree: 3,00 (stdev 1,61) avg. sum of terms in constructs (THR feat) in tree: 7,70 (stdev 4,12)
+Avg. ruleset size: 0,00 (stdev 0,00) avg. number of terms of construct in Furia feat.: 0,00 (stdev 0,00) avg. number of terms in constructs per ruleset: 0,00 (stdev 0,00)
+-----ACC-----
+Avg. class. ACC J48 	69,55 (stdev 8,33)
+Avg. class. ACC NB 	49,05 (stdev 6,49)
+-----Learning and testing time-----
+Avg. learning time from FC(only Furia and THR feat) J48 2,10 [ms] (stdev 1,37)
+Avg. learning time from FC(only Furia and THR feat) NB 0,30 [ms] (stdev 0,90)
+-----Feature construction time-----
+Avg. FC time (only Furia and THR feat): 346,70 [ms] stdev 170,84
+*********************************************************************************
+All features dataset
+*********************************************************************************
+Avg. number of groups for feature construction: 11,60 (stdev 4,00)
+Avg. size of groups (num. of candidate attr.) per folds (num of attr. in all groups):: 43,50 (stdev 16,74)
+Avg. size of groups (num. of candidate attr.) per groups per folds (avg. of avg.): 3,69 (stdev 0,25)
+Max avg. group (length) of constructs (num of attr.): 5,60 (stdev 0,49)
+Number of logical feat: 539,50 (stdev 222,58) number of numerical feat: 94,50 (stdev 25,04) number of relational feat: 13,60 (stdev 1,11) number of "Cartesian" feat: 18,00 (stdev 4,84) number of FURIA feat: 5,80 (stdev 2,71) number of thr. feat: 4,70 (stdev 2,61)
+Avg. tree size (nodes+leaves): 46,80 (stdev 7,44) avg. number of leaves: 25,30 (stdev 4,20) avg. sum of constructs: 40,80 (stdev 4,85) avg. sum of constructs / num of nodes: 1,91 (stdev 0,12)
+Avg. num of logical feat in tree: 6,30 (stdev 1,68) avg. sum of (only logical) constructs: 14,30 (stdev 3,26) avg. num of numerical feat in tree: 6,20 (stdev 1,60) avg. sum of (only numerical) constructs: 12,40 (stdev 3,20) avg. num of relational feat in tree: 0,60 (stdev 0,80) avg. sum of (only relational) constructs: 1,20 (stdev 1,60) avg. num of "Cartesian" feat in tree: 0,10 (stdev 0,30) avg. sum of (Cartesian) constructs (in tree): 0,20 (stdev 0,60) avg. num of FURIA feat. in tree: 1,00 (stdev 0,00) avg. sum of terms in constructs (Furia feat) in tree: 2,80 (stdev 0,40) avg. num of THR feat. in tree: 1,40 (stdev 0,49) avg. sum of terms in constructs (THR feat) in tree: 4,00 (stdev 1,67)
+Avg. ruleset size: 0,00 (stdev 0,00) avg. number of terms of construct in Furia feat.: 0,00 (stdev 0,00) avg. number of terms in constructs per ruleset: 0,00 (stdev 0,00)
+Mean unimp. OR feat.: 0,00 (stdev 0,00) mean unimp. EQU feat.: 0,00 (stdev 0,00) mean unimp. XOR feat.: 0,00 (stdev 0,00) mean unimp. IMPL feat.: 0,00 (stdev 0,00) mean unimp. AND feat.: 0,00 (stdev 0,00) mean unimp. LESSTHAN feat.: 11,20 (stdev 3,99) mean unimp. DIFF feat.: 13,00 (stdev 5,14) mean unimp. "Cartesian" feat.: 0,90 (stdev 0,30)
+-----ACC-----
+Avg. class. ACC J48 	67,77 (stdev 10,03)
+Avg. class. ACC NB 	54,11 (stdev 8,63)
+-----Learning and testing time-----
+Avg. learning time from FC (all feat), for J48 	29,70 [ms] (stdev 12,96)
+Avg. learning time from FC (all feat), for NB 	16,70 [ms] (stdev 8,78)
+-----Feature construction time-----
+Avg. FC time (all feat): 1531,50 [ms] (stdev 913,26)
+*********************************************************************************
+FS on validation dataset - results
+*********************************************************************************
+When using J48, number of logical feat: 169,70 (stdev 222,37) number of numerical feat: 8,90 (stdev 26,37) number of relational feat: 1,60 (stdev 4,48) number of "Cartesian" feat: 10,70 (stdev 9,64) number of FURIA feat: 0,80 (stdev 1,78) number of thr. feat: 2,30 (stdev 2,41)
+When using NB, number of logical feat: 267,80 (stdev 266,81) number of numerical feat: 21,40 (stdev 43,35) number of relational feat: 2,80 (stdev 5,62) number of "Cartesian" feat: 15,40 (stdev 5,14) number of FURIA feat: 1,60 (stdev 3,04) number of thr. feat: 3,40 (stdev 2,20)
+Avg. tree size (nodes+leaves): 47,30 (stdev 4,03) avg. number of leaves: 25,20 (stdev 2,82) avg. sum of constructs: 30,30 (stdev 7,96) avg. sum of constructs / num of nodes: 1,37 (stdev 0,34)
+Avg. num of logical feat. in tree: 4,50 (stdev 4,06) avg. sum of (only logical) constructs in tree: 9,60 (stdev 8,70) avg. num of numerical feat. in tree: 0,70 (stdev 2,10) avg. sum of (only numerical) constructs in tree: 1,40 (stdev 4,20) avg. num of relational feat. in tree: 0,10 (stdev 0,30) avg. sum of (only relational) constructs in tree: 0,20 (stdev 0,60) avg. num of Cartesian feat. in tree: 0,00 (stdev 0,00) avg. sum of constructs (of Cartesian feat) in tree: 0,00 (stdev 0,00) avg. num of FURIA feat. in tree: 0,10 (stdev 0,30) avg. sum of terms in constructs (Furia feat) in tree: 0,30 (stdev 0,90) avg. num of THR feat. in tree: 1,40 (stdev 1,50) avg. sum of terms in constructs (THR feat) in tree: 3,50 (stdev 3,61)
+Avg. ruleset size: 0,00 (stdev 0,00) avg. number of terms of construct in Furia feat.: 0,00 (stdev 0,00) avg. number of terms in constructs per ruleset: 0,00 (stdev 0,00)
+-----ACC-----
+Avg. class. ACC J48 	66,71 (stdev 6,86)
+Avg. class. ACC NB 	55,56 (stdev 8,03)
+-----Search time-----
+Avg. search time J48 	315,60 (stdev 113,14)
+Avg. search time NB 	330,70 (stdev 123,36)
+-----Learning and testing time-----
+Avg. learn time J48 	6,80 (stdev 9,73)
+Avg. learn time NB 	6,00 (stdev 7,36)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Total processing time (Glass.arff): 52828
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

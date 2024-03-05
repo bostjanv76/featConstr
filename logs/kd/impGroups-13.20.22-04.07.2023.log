@@ -1,0 +1,703 @@
+dataset: cBinClassDisAttr-uniqueInst.arff
+IME (explanation), aproxErrSampling, N_SAMPLES: 100 - alg. for searching concepts: ScikitLearnClassifier
+Explaining class: 1, explaining all dataset: NO
+---------------------------------------------------------------------------------
+Sampling based on mi=(<1-alpha, e>), pctErr = 95 error = 0.1.
+---------------------------------------------------------------------------------
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 1, minNoise=3 we remove groups of size 3. Number of instances from class (1) is 87
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+Explanation time: 110722 [ms]
+--------------
+Threshold: 0,10
+--------------
+	A1: 78
+	A2: 5
+--------------
+Threshold: 0,20
+--------------
+	A1: 78
+	A2: 5
+--------------
+Threshold: 0,30
+--------------
+	A1: 78
+	A2: 5
+--------------
+Threshold: 0,40
+--------------
+	A1: 75
+--------------
+Threshold: 0,50
+--------------
+	A1: 67
+	A1 | A2: 9
+--------------
+Threshold: 0,60
+--------------
+	A1: 52
+	A1 | A2: 21
+	A1 | A4: 5
+	A1 | A3: 4
+--------------
+Threshold: 0,70
+--------------
+	A1: 37
+	A1 | A2: 32
+	A1 | A3: 6
+	A1 | A4: 5
+--------------
+Threshold: 0,80
+--------------
+	A1 | A2: 37
+	A1: 19
+	A1 | A2 | A4: 13
+	A1 | A2 | A3: 8
+	A1 | A3: 4
+*********************************************************************************
+All potential concepts, based on thresholds.
+	A1 A2 ~#~ A1 A4 ~#~ A1 A3 ~#~ A1 A2 A4 ~#~ A1 A2 A3 ~#~ 
+*********************************************************************************
+dataset: cBinClassNumBinAttr.arff
+IME (explanation), aproxErrSampling, N_SAMPLES: 100 - alg. for searching concepts: ScikitLearnClassifier
+Explaining class: 1, explaining all dataset: NO
+---------------------------------------------------------------------------------
+Sampling based on mi=(<1-alpha, e>), pctErr = 95 error = 0.1.
+---------------------------------------------------------------------------------
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 3, minNoise=3 we remove groups of size 3. Number of instances from class (1) is 233
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+Explanation time: 292644 [ms]
+--------------
+Threshold: 0,10
+--------------
+	A3: 109
+	A4: 79
+	A2: 24
+	A1: 21
+--------------
+Threshold: 0,20
+--------------
+	A3: 109
+	A4: 79
+	A2: 24
+	A1: 21
+--------------
+Threshold: 0,30
+--------------
+	A3: 109
+	A4: 79
+	A2: 24
+	A1: 21
+--------------
+Threshold: 0,40
+--------------
+	A3: 91
+	A4: 73
+	A1: 19
+	A2: 16
+	A2 | A3: 13
+	A1 | A3: 11
+	A1 | A4: 4
+--------------
+Threshold: 0,50
+--------------
+	A4: 66
+	A3: 53
+	A2 | A3: 40
+	A1 | A3: 35
+	A3 | A4: 10
+	A1 | A4: 10
+	A2: 7
+	A1 | A2: 7
+	A1: 4
+--------------
+Threshold: 0,60
+--------------
+	A2 | A3: 61
+	A1 | A3: 51
+	A4: 48
+	A3 | A4: 22
+	A3: 20
+	A1 | A4: 18
+	A1 | A2: 8
+--------------
+Threshold: 0,70
+--------------
+	A2 | A3: 61
+	A1 | A3: 53
+	A1 | A4: 36
+	A3 | A4: 26
+	A4: 19
+	A1 | A2 | A3: 15
+	A3: 8
+	A1 | A2: 5
+	A1 | A3 | A4: 4
+--------------
+Threshold: 0,80
+--------------
+	A1 | A2 | A3: 70
+	A2 | A3: 34
+	A1 | A4: 33
+	A1 | A3: 28
+	A1 | A3 | A4: 19
+	A3 | A4: 19
+	A4: 10
+	A2 | A3 | A4: 6
+	A1 | A2: 5
+	A1 | A2 | A4: 4
+	A2 | A4: 4
+*********************************************************************************
+All potential concepts, based on thresholds.
+	A2 A3 ~#~ A1 A3 ~#~ A1 A4 ~#~ A3 A4 ~#~ A1 A2 ~#~ A1 A2 A3 ~#~ A1 A3 A4 ~#~ A2 A3 A4 ~#~ A1 A2 A4 ~#~ A2 A4 ~#~ 
+*********************************************************************************
+dataset: cBinClassNumDisAttr.arff
+IME (explanation), aproxErrSampling, N_SAMPLES: 100 - alg. for searching concepts: ScikitLearnClassifier
+Explaining class: 1, explaining all dataset: NO
+---------------------------------------------------------------------------------
+Sampling based on mi=(<1-alpha, e>), pctErr = 95 error = 0.1.
+---------------------------------------------------------------------------------
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 4, minNoise=3 we remove groups of size 4. Number of instances from class (1) is 375
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+Explanation time: 515693 [ms]
+--------------
+Threshold: 0,10
+--------------
+	A1: 171
+	A2: 164
+	A3: 31
+	A4: 9
+--------------
+Threshold: 0,20
+--------------
+	A1: 171
+	A2: 164
+	A3: 31
+	A4: 9
+--------------
+Threshold: 0,30
+--------------
+	A1: 170
+	A2: 164
+	A3: 31
+	A4: 9
+--------------
+Threshold: 0,40
+--------------
+	A1: 150
+	A2: 149
+	A3: 20
+	A1 | A2: 18
+	A1 | A3: 12
+	A1 | A4: 7
+	A2 | A3: 6
+	A2 | A4: 6
+	A4: 5
+--------------
+Threshold: 0,50
+--------------
+	A1 | A2: 106
+	A2: 95
+	A1: 86
+	A1 | A3: 27
+	A2 | A3: 18
+	A1 | A4: 16
+	A2 | A4: 11
+	A3: 7
+	A3 | A4: 5
+--------------
+Threshold: 0,60
+--------------
+	A1 | A2: 200
+	A1: 38
+	A1 | A3: 35
+	A2: 31
+	A2 | A3: 28
+	A1 | A4: 18
+	A2 | A4: 14
+	A3 | A4: 7
+--------------
+Threshold: 0,70
+--------------
+	A1 | A2: 231
+	A1 | A3: 30
+	A2 | A3: 25
+	A1 | A2 | A3: 16
+	A1 | A4: 14
+	A1 | A2 | A4: 13
+	A2: 10
+	A2 | A4: 9
+	A1: 8
+	A1 | A3 | A4: 8
+	A2 | A3 | A4: 6
+--------------
+Threshold: 0,80
+--------------
+	A1 | A2: 193
+	A1 | A2 | A3: 55
+	A1 | A2 | A4: 45
+	A1 | A3: 20
+	A2 | A3 | A4: 17
+	A1 | A3 | A4: 14
+	A2 | A3: 12
+	A2: 7
+*********************************************************************************
+All potential concepts, based on thresholds.
+	A1 A2 ~#~ A1 A3 ~#~ A1 A4 ~#~ A2 A3 ~#~ A2 A4 ~#~ A3 A4 ~#~ A1 A2 A3 ~#~ A1 A2 A4 ~#~ A1 A3 A4 ~#~ A2 A3 A4 ~#~ 
+*********************************************************************************
+dataset: cConcepts-uniqueInst.arff
+IME (explanation), aproxErrSampling, N_SAMPLES: 100 - alg. for searching concepts: ScikitLearnClassifier
+Explaining class: 0, explaining all dataset: NO
+---------------------------------------------------------------------------------
+Sampling based on mi=(<1-alpha, e>), pctErr = 95 error = 0.1.
+---------------------------------------------------------------------------------
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 1, minNoise=1 we remove groups of size 1. Number of instances from class (0) is 14
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+Explanation time: 15424 [ms]
+--------------
+Threshold: 0,10
+--------------
+	A2: 8
+	A1: 4
+--------------
+Threshold: 0,20
+--------------
+	A2: 8
+	A1: 4
+--------------
+Threshold: 0,30
+--------------
+	A2: 8
+	A1: 4
+--------------
+Threshold: 0,40
+--------------
+	A2: 7
+	A1: 4
+--------------
+Threshold: 0,50
+--------------
+	A1 | A2: 8
+	A2: 3
+--------------
+Threshold: 0,60
+--------------
+	A1 | A2: 10
+	A3 | A4: 2
+--------------
+Threshold: 0,70
+--------------
+	A1 | A2: 9
+	A3 | A4: 2
+--------------
+Threshold: 0,80
+--------------
+	A1 | A2: 5
+	A1 | A2 | A3: 3
+	A1 | A2 | A4: 3
+*********************************************************************************
+All potential concepts, based on thresholds.
+	A1 A2 ~#~ A3 A4 ~#~ A1 A2 A3 ~#~ A1 A2 A4 ~#~ 
+*********************************************************************************
+dataset: cDisjunct.arff
+IME (explanation), aproxErrSampling, N_SAMPLES: 100 - alg. for searching concepts: ScikitLearnClassifier
+Explaining class: 0, explaining all dataset: NO
+---------------------------------------------------------------------------------
+Sampling based on mi=(<1-alpha, e>), pctErr = 95 error = 0.1.
+---------------------------------------------------------------------------------
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 5, minNoise=3 we remove groups of size 5. Number of instances from class (0) is 434
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+Explanation time: 518994 [ms]
+--------------
+Threshold: 0,10
+--------------
+	A1: 280
+	A3: 118
+	A2: 36
+--------------
+Threshold: 0,20
+--------------
+	A1: 280
+	A3: 118
+	A2: 36
+--------------
+Threshold: 0,30
+--------------
+	A1: 280
+	A3: 118
+	A2: 36
+--------------
+Threshold: 0,40
+--------------
+	A1: 246
+	A3: 110
+	A2: 30
+	A1 | A3: 28
+	A1 | A2: 12
+	A2 | A3: 8
+--------------
+Threshold: 0,50
+--------------
+	A1: 151
+	A1 | A3: 128
+	A3: 63
+	A1 | A2: 57
+	A2 | A3: 27
+	A2: 8
+--------------
+Threshold: 0,60
+--------------
+	A1 | A3: 214
+	A1 | A2: 96
+	A1: 65
+	A2 | A3: 42
+	A3: 14
+--------------
+Threshold: 0,70
+--------------
+	A1 | A3: 247
+	A1 | A2: 98
+	A2 | A3: 42
+	A1: 23
+	A1 | A2 | A3: 19
+--------------
+Threshold: 0,80
+--------------
+	A1 | A3: 181
+	A1 | A2 | A3: 153
+	A1 | A2: 70
+	A2 | A3: 21
+	A1: 8
+*********************************************************************************
+All potential concepts, based on thresholds.
+	A1 A3 ~#~ A1 A2 ~#~ A2 A3 ~#~ A1 A2 A3 ~#~ 
+*********************************************************************************
+dataset: cLogicalConcB-uniqueInst.arff
+IME (explanation), aproxErrSampling, N_SAMPLES: 100 - alg. for searching concepts: ScikitLearnClassifier
+Explaining class: 1, explaining all dataset: NO
+---------------------------------------------------------------------------------
+Sampling based on mi=(<1-alpha, e>), pctErr = 95 error = 0.1.
+---------------------------------------------------------------------------------
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 1, minNoise=3 we remove groups of size 3. Number of instances from class (1) is 56
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+Explanation time: 96058 [ms]
+--------------
+Threshold: 0,10
+--------------
+	A2: 18
+	A6: 17
+	A3: 9
+	A1: 8
+--------------
+Threshold: 0,20
+--------------
+	A2: 18
+	A6: 17
+	A3: 9
+	A1: 8
+--------------
+Threshold: 0,30
+--------------
+	A6: 17
+	A2: 14
+	A3: 8
+	A1: 6
+--------------
+Threshold: 0,40
+--------------
+	A6: 15
+	A2: 11
+	A2 | A6: 6
+	A1: 5
+	A3: 5
+--------------
+Threshold: 0,50
+--------------
+	A2 | A6: 12
+	A6: 10
+	A2: 5
+	A1 | A2: 5
+	A2 | A3: 4
+--------------
+Threshold: 0,60
+--------------
+	A2 | A6: 13
+	A6: 6
+	A1 | A3: 5
+	A2: 4
+	A1 | A2: 4
+--------------
+Threshold: 0,70
+--------------
+	A2 | A6: 16
+	A1 | A2 | A3: 8
+	A1 | A3 | A6: 4
+	A1 | A6: 4
+--------------
+Threshold: 0,80
+--------------
+	A2 | A6: 11
+	A1 | A2 | A3: 8
+	A1 | A2 | A6: 5
+	A1 | A6: 5
+*********************************************************************************
+All potential concepts, based on thresholds.
+	A2 A6 ~#~ A1 A2 ~#~ A2 A3 ~#~ A1 A3 ~#~ A1 A2 A3 ~#~ A1 A3 A6 ~#~ A1 A6 ~#~ A1 A2 A6 ~#~ 
+*********************************************************************************
+dataset: cLogicalConcBNoisy-uniqueInst.arff
+IME (explanation), aproxErrSampling, N_SAMPLES: 100 - alg. for searching concepts: ScikitLearnClassifier
+Explaining class: 1, explaining all dataset: NO
+---------------------------------------------------------------------------------
+Sampling based on mi=(<1-alpha, e>), pctErr = 95 error = 0.1.
+---------------------------------------------------------------------------------
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 1, minNoise=3 we remove groups of size 3. Number of instances from class (1) is 54
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+Explanation time: 92362 [ms]
+--------------
+Threshold: 0,10
+--------------
+	A2: 23
+	A6: 14
+	A1: 8
+	A3: 5
+--------------
+Threshold: 0,20
+--------------
+	A2: 23
+	A6: 14
+	A1: 8
+	A3: 5
+--------------
+Threshold: 0,30
+--------------
+	A2: 22
+	A6: 12
+	A1: 7
+	A3: 5
+--------------
+Threshold: 0,40
+--------------
+	A2: 20
+	A6: 10
+	A1: 4
+--------------
+Threshold: 0,50
+--------------
+	A2: 12
+	A2 | A6: 11
+	A6: 5
+	A1 | A2: 4
+	A1 | A6: 4
+	A3 | A6: 4
+--------------
+Threshold: 0,60
+--------------
+	A2 | A6: 19
+	A2 | A3: 5
+	A6: 4
+	A1 | A6: 4
+--------------
+Threshold: 0,70
+--------------
+	A2 | A6: 20
+	A1 | A2 | A3: 5
+	A3 | A6: 4
+--------------
+Threshold: 0,80
+--------------
+	A2 | A6: 14
+	A1 | A2 | A3: 6
+	A1 | A2 | A6: 6
+	A2 | A3 | A6: 4
+*********************************************************************************
+All potential concepts, based on thresholds.
+	A2 A6 ~#~ A1 A2 ~#~ A1 A6 ~#~ A3 A6 ~#~ A2 A3 ~#~ A1 A2 A3 ~#~ A1 A2 A6 ~#~ A2 A3 A6 ~#~ 
+*********************************************************************************
+dataset: cModGroups.arff
+IME (explanation), aproxErrSampling, N_SAMPLES: 100 - alg. for searching concepts: ScikitLearnClassifier
+Explaining class: 2, explaining all dataset: NO
+---------------------------------------------------------------------------------
+Sampling based on mi=(<1-alpha, e>), pctErr = 95 error = 0.1.
+---------------------------------------------------------------------------------
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 7, minNoise=3 we remove groups of size 7. Number of instances from class (2) is 648
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+Explanation time: 1138640 [ms]
+--------------
+Threshold: 0,10
+--------------
+	I1: 329
+	I2: 313
+--------------
+Threshold: 0,20
+--------------
+	I1: 329
+	I2: 313
+--------------
+Threshold: 0,30
+--------------
+	I1: 329
+	I2: 313
+--------------
+Threshold: 0,40
+--------------
+	I1: 326
+	I2: 310
+--------------
+Threshold: 0,50
+--------------
+	I1: 300
+	I2: 283
+	I1 | I2: 52
+--------------
+Threshold: 0,60
+--------------
+	I1 | I2: 274
+	I2: 176
+	I1: 174
+	I2 | R1: 11
+--------------
+Threshold: 0,70
+--------------
+	I1 | I2: 411
+	I2: 108
+	I1: 98
+	I2 | R1: 13
+	I1 | R1: 11
+--------------
+Threshold: 0,80
+--------------
+	I1 | I2: 525
+	I2: 42
+	I1: 37
+	I1 | I2 | R1: 15
+	I2 | R1: 8
+	I1 | R1: 8
+*********************************************************************************
+All potential concepts, based on thresholds.
+	I1 I2 ~#~ I2 R1 ~#~ I1 R1 ~#~ I1 I2 R1 ~#~ 
+*********************************************************************************
+dataset: cMultiVClassDisAttr-uniqueInst.arff
+IME (explanation), aproxErrSampling, N_SAMPLES: 100 - alg. for searching concepts: ScikitLearnClassifier
+Explaining class: 2, explaining all dataset: NO
+---------------------------------------------------------------------------------
+Sampling based on mi=(<1-alpha, e>), pctErr = 95 error = 0.1.
+---------------------------------------------------------------------------------
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 1, minNoise=3 we remove groups of size 3. Number of instances from class (2) is 78
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+Explanation time: 164251 [ms]
+--------------
+Threshold: 0,10
+--------------
+	A1: 69
+	A2: 7
+--------------
+Threshold: 0,20
+--------------
+	A1: 69
+	A2: 7
+--------------
+Threshold: 0,30
+--------------
+	A1: 69
+	A2: 7
+--------------
+Threshold: 0,40
+--------------
+	A1: 69
+	A2: 5
+--------------
+Threshold: 0,50
+--------------
+	A1: 69
+--------------
+Threshold: 0,60
+--------------
+	A1: 66
+	A2 | A4: 5
+	A1 | A2: 4
+--------------
+Threshold: 0,70
+--------------
+	A1: 47
+	A1 | A2: 20
+	A2 | A4: 7
+--------------
+Threshold: 0,80
+--------------
+	A1 | A2: 28
+	A1: 26
+	A1 | A4: 9
+	A2 | A4: 6
+	A1 | A3: 5
+*********************************************************************************
+All potential concepts, based on thresholds.
+	A2 A4 ~#~ A1 A2 ~#~ A1 A4 ~#~ A1 A3 ~#~ 
+*********************************************************************************
+dataset: condInd-uniqueInst.arff
+IME (explanation), aproxErrSampling, N_SAMPLES: 100 - alg. for searching concepts: ScikitLearnClassifier
+Explaining class: 0, explaining all dataset: NO
+---------------------------------------------------------------------------------
+Sampling based on mi=(<1-alpha, e>), pctErr = 95 error = 0.1.
+---------------------------------------------------------------------------------
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 2, minNoise=3 we remove groups of size 3. Number of instances from class (0) is 124
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+Explanation time: 247695 [ms]
+--------------
+Threshold: 0,10
+--------------
+	I90: 81
+	I80: 31
+	I70: 12
+--------------
+Threshold: 0,20
+--------------
+	I90: 81
+	I80: 31
+	I70: 12
+--------------
+Threshold: 0,30
+--------------
+	I90: 76
+	I80: 29
+	I70: 9
+	I70 | I90: 4
+--------------
+Threshold: 0,40
+--------------
+	I90: 46
+	I80 | I90: 35
+	I70 | I90: 19
+	I80: 14
+	I70 | I80: 6
+--------------
+Threshold: 0,50
+--------------
+	I80 | I90: 70
+	I70 | I90: 27
+	I90: 13
+	I70 | I80: 8
+--------------
+Threshold: 0,60
+--------------
+	I80 | I90: 67
+	I70 | I90: 24
+	I70 | I80 | I90: 14
+	I70 | I80: 9
+	I90: 5
+--------------
+Threshold: 0,70
+--------------
+	I70 | I80 | I90: 61
+	I80 | I90: 39
+	I70 | I90: 4
+--------------
+Threshold: 0,80
+--------------
+	I70 | I80 | I90: 67
+	I70 | I80 | I90 | R3: 18
+	I80 | I90: 11
+	I70 | I80 | I90 | R1: 7
+	I60 | I70 | I80 | I90: 6
+	I80 | I90 | R3: 4
+*********************************************************************************
+All potential concepts, based on thresholds.
+	I70 I90 ~#~ I80 I90 ~#~ I70 I80 ~#~ I70 I80 I90 ~#~ I70 I80 I90 R3 ~#~ I70 I80 I90 R1 ~#~ I60 I70 I80 I90 ~#~ I80 I90 R3 ~#~ 
+*********************************************************************************

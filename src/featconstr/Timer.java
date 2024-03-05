@@ -34,7 +34,8 @@ public class Timer{
       //return System.currentTimeMillis()-startTime;
       return System.nanoTime()-startTime;
     else 
-      return TimeUnit.NANOSECONDS.toMillis(stopTime-startTime);    
+    return TimeUnit.NANOSECONDS.toMillis(stopTime-startTime);  
+    //return System.nanoTime()-startTime;
   }
 
   public String toString(){    //for conversion from milli seconds

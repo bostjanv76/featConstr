@@ -1,0 +1,47 @@
+dataset: Australian credit.arff
+Number of folds for testing (CV): 10
+*********************************************************************************
+number of instances: 690
+number of attributes: 14
+number of classes: 2
+---------------------------------------------------------------------------------
+Starting FC (exhaustive search, All features method): 20. 09. 2023 14:00:05 fold: 1
+Starting FC (exhaustive search, All features method): 20. 09. 2023 14:00:07 fold: 2
+Starting FC (exhaustive search, All features method): 20. 09. 2023 14:00:08 fold: 3
+Starting FC (exhaustive search, All features method): 20. 09. 2023 14:00:09 fold: 4
+Starting FC (exhaustive search, All features method): 20. 09. 2023 14:00:10 fold: 5
+Starting FC (exhaustive search, All features method): 20. 09. 2023 14:00:11 fold: 6
+Starting FC (exhaustive search, All features method): 20. 09. 2023 14:00:11 fold: 7
+Starting FC (exhaustive search, All features method): 20. 09. 2023 14:00:12 fold: 8
+Starting FC (exhaustive search, All features method): 20. 09. 2023 14:00:13 fold: 9
+Starting FC (exhaustive search, All features method): 20. 09. 2023 14:00:13 fold: 10
+---------------------------------------------------------------------------------
+Number of all combinations: 91
+*********************************************************************************
+Jakulin's interaction information
+*********************************************************************************
+Number of "Cartesian" feat: 4,000 (stdev 0,000)
+Avg. tree size (nodes+leaves): 40,500 (stdev 24,250) avg. number of leaves: 32,900 (stdev 21,422) avg. sum of constructs: 8,700 (stdev 3,770) avg. sum of constructs / num of nodes: 1,128 (stdev 0,073)
+Avg. num of "Cartesian" feat in tree: 1,100 (stdev 0,700) avg. sum of (only Cartesian) constructs (in tree): 2,200 (stdev 1,400)
+Avg. ruleset size: 8,500 (stdev 2,907) avg. number of terms of construct in Furia feat.: 25,100 (stdev 12,389) avg. number of terms in constructs per ruleset: 2,844 (stdev 0,467)
+-----ACC-----
+Avg. class. ACC J48 	85,507 (stdev 4,936)
+Avg. class. ACC NB 	82,609 (stdev 3,723)
+Avg. class. ACC SMO 	83,333 (stdev 3,565)
+Avg. class. ACC SMO 	85,797 (stdev 3,417)
+Avg. class. ACC IB 	83,913 (stdev 3,396)
+Avg. class. ACC FU 	86,232 (stdev 4,774)
+Avg. class. ACC RF 	84,348 (stdev 4,289)
+-----Learning and testing time-----
+Avg. learning time from FC (all feat), for J48 	5,000 [ms] (stdev 3,493)
+Avg. learning time from FC (all feat), for NB 	2,600 [ms] (stdev 4,176)
+Avg. learning time from FC (all feat), for SMO 	165,800 [ms] (stdev 68,632)
+Avg. learning time from FC (all feat), for SMO 	115,800 [ms] (stdev 11,814)
+Avg. learning time from FC (all feat), for IB 	8,000 [ms] (stdev 3,194)
+Avg. learning time from FC (all feat), for FU 	97,600 [ms] (stdev 19,479)
+Avg. learning time from FC (all feat), for RF 	34,900 [ms] (stdev 10,756)
+-----Feature construction time-----
+Avg. FC time (only Cart feat): 64,500 [ms] stdev 42,221
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Total processing time (Australian credit.arff): 10185
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

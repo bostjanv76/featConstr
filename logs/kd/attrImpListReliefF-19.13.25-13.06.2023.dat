@@ -1,0 +1,1627 @@
+dataset: credit_score.arff
+ReliefF - after CI
+Ranked attributes:
+ 0.44529147982062167         1167 (net_income >= 97163) and (interest <= 171415)
+ 0.44484304932734814         1132 (net_income >= 78502) and (interest <= 253726)
+ 0.4197309417040312          1068 (net_income >= 78502) and (debt <= 3735270)
+ 0.4197309417040312          1069 (net_income >= 78502) and (debt <= 3788009)
+ 0.4174887892376636          1065 (net_income >= 78502) and (interest <= 138370)
+ 0.41345291479820195         1146 (net_income >= 78502) and (st_liabilities <= 4899133)
+ 0.41345291479820195         1238 num-of-N((net_income >= 78502) and (interest <= 253726))
+ 0.41121076233183435         1074 (net_income >= 97163) and (interest <= 143618)
+ 0.4089686098654668          1119 (net_income >= 97163) and (debt <= 3735270)
+ 0.40044843049326995         1269 num-of-N((net_income >= 97163) and (interest <= 171415))
+ 0.3968609865470818          1072 (net_income >= 97163) and (interest <= 135997)
+ 0.3959641255605348            44 net_income==B3of3 and equity==B2of2
+ 0.3932735426008937          1183 num-of-N((net_income >= 78502) and (debt <= 3735270))
+ 0.39237668161434663           57 net_income==B3of3 and FFO==B3of3
+ 0.39237668161434663          578 net_income==B3of3 and equity==B2of2 and FFO==B3of3
+ 0.39237668161434663          465 net_income==B3of3 impl FFO==B2of3
+ 0.39192825112107316         1184 num-of-N((net_income >= 78502) and (debt <= 3788009))
+ 0.3914798206277996          1099 (net_income >= 100907) and (interest <= 138370)
+ 0.38968609865470555         1251 num-of-N((net_income >= 78502) and (st_liabilities <= 4899133))
+ 0.38968609865470555         1088 (net_income >= 97163)
+ 0.388340807174885           1152 (net_income >= 97163) and (debt <= 3500000)
+ 0.3878923766816115           125 net_income==B3of3 or inventories
+ 0.3878923766816115           345 net_income==B3of3 xor total_oper_liabilities
+ 0.3878923766816115           122 net_income==B3of3 or st_liabilities
+ 0.3878923766816115           629 cost_of_labor or net_income==B3of3 or st_liabilities
+ 0.3878923766816115           136 financial_expenses or net_income==B3of3
+ 0.3878923766816115           348 net_income==B3of3 xor st_liabilities
+ 0.3878923766816115          1046 cost_of_labor or net_income==B3of3 or total_oper_liabilities
+ 0.3878923766816115           235 net_income==B3of3 equ st_liabilities
+ 0.3878923766816115           464 net_income==B3of3 impl FFO==B1of3
+ 0.3878923766816115           238 net_income==B3of3 equ inventories
+ 0.3878923766816115           232 net_income==B3of3 equ total_oper_liabilities
+ 0.3878923766816115          1104 (net_income >= 78502)
+ 0.3878923766816115           362 financial_expenses xor net_income==B3of3
+ 0.3878923766816115           249 financial_expenses equ net_income==B3of3
+ 0.3878923766816115           206 cost_of_labor equ net_income==B3of3
+ 0.3878923766816115           351 net_income==B3of3 xor inventories
+ 0.3878923766816115           119 net_income==B3of3 or total_oper_liabilities
+ 0.3878923766816115           453 net_income==B3of3 impl inventories
+ 0.3878923766816115           319 cost_of_labor xor net_income==B3of3
+ 0.3878923766816115            93 cost_of_labor or net_income==B3of3
+ 0.3878923766816115           875 financial_expenses or net_income==B3of3 or inventories
+ 0.3878923766816115           447 net_income==B3of3 impl total_oper_liabilities
+ 0.3878923766816115           705 net_income==B3of3 or total_oper_liabilities or inventories
+ 0.3878923766816115           866 financial_expenses or net_income==B3of3 or total_oper_liabilities
+ 0.3878923766816115           702 net_income==B3of3 or total_oper_liabilities or st_liabilities
+ 0.3878923766816115           450 net_income==B3of3 impl st_liabilities
+ 0.3852017937219704          1225 num-of-N((net_income >= 97163) and (debt <= 3735270))
+ 0.3780269058295941           710 EBIT==B1of3 or net_income==B2of3 or FFO==B1of3
+ 0.3780269058295941          1140 (net_income >= 78502) and (st_liabilities <= 4185734)
+ 0.3704035874439443           611 EBIT==B3of3 and net_income==B3of3 and equity==B2of2
+ 0.36995515695067077         1215 num-of-N((net_income >= 78502) and (EBIT >= 517177))
+ 0.3695067264573973          1181 num-of-N((net_income >= 78502) and (interest <= 138370))
+ 0.36591928251120914          531 EBIT==B3of3 and net_income==B3of3 and FFO==B3of3
+ 0.3650224215246621          1257 num-of-N((net_income >= 97163) and (debt <= 3500000))
+ 0.36367713004484153         1595 net_income_x_inventories
+ 0.36367713004484153         1600 financial_expenses_x_net_income
+ 0.36367713004484153         1593 net_income_x_total_oper_liabilities
+ 0.36367713004484153         1594 net_income_x_st_liabilities
+ 0.36367713004484153         1583 cost_of_labor_x_net_income
+ 0.36322869955156806         1563 interest LESSTHAN net_income
+ 0.362331838565021             31 EBIT==B3of3 and net_income==B3of3
+ 0.361434977578474           1188 num-of-N((net_income >= 97163) and (interest <= 143618))
+ 0.35829596412555936         1067 (net_income >= 102445)
+ 0.35605381165919175         1093 (net_income >= 97163) and (interest <= 80359)
+ 0.3538116591928242          1186 num-of-N((net_income >= 97163) and (interest <= 135997))
+ 0.3488789237668155          1134 (net_income >= 78502) and (debt <= 2466556)
+ 0.34753363228699496         1240 num-of-N((net_income >= 78502) and (debt <= 2466556))
+ 0.3466367713004479          1209 num-of-N((net_income >= 100907) and (interest <= 138370))
+ 0.3439461883408068          1245 num-of-N((net_income >= 78502) and (st_liabilities <= 4185734))
+ 0.34260089686098627         1128 (net_income >= 78502) and (debt <= 2274055)
+ 0.34215246636771274         1276 num-of-N((net_income >= 97163) and (debt <= 2466556))
+ 0.34125560538116567         1162 (net_income >= 78502) and (interest <= 79608)
+ 0.33991031390134513         1228 num-of-N((net_income >= 97163) and (interest <= 80359) and (interest >= 544))
+ 0.33811659192825105         1174 (net_income >= 97163) and (debt <= 2466556)
+ 0.33632286995515703         1122 (net_income >= 97163) and (interest <= 80359) and (interest >= 544)
+ 0.33632286995515703         1234 num-of-N((net_income >= 78502) and (debt <= 2274055))
+ 0.33497757847533643         1549 financial_expenses LESSTHAN net_income
+ 0.32735426008968666          692 interest==B2of2 or EBIT==B1of3 or net_income==B2of3
+ 0.32645739910313964         1217 num-of-N((net_income >= 78502) and (total_oper_liabilities <= 2408953))
+ 0.3251121076233191           831 interest==B2of2 or net_income==B2of3 or FFO==B1of3
+ 0.32242152466367796         1275 num-of-N((net_income >= 97163) and (total_oper_liabilities <= 2408953))
+ 0.3219730941704045          1252 num-of-N((net_income >= 78502) and (total_oper_liabilities <= 2286996))
+ 0.3201793721973104           711 EBIT==B1of3 or net_income==B2of3 or FFO==B2of3
+ 0.3201793721973104           424 EBIT==B3of3 impl net_income==B2of3
+ 0.31838565022421633         1203 num-of-N((net_income >= 97163) and (total_oper_liabilities <= 2286996))
+ 0.31748878923766927         1204 num-of-N((net_income >= 97163) and (interest <= 80359))
+ 0.31659192825112226          140 net_income==B2of3 or FFO==B1of3
+ 0.31659192825112226          784 net_income==B2of3 or total_oper_liabilities or FFO==B1of3
+ 0.31659192825112226          685 cost_of_labor or net_income==B2of3 or FFO==B1of3
+ 0.31659192825112226          879 net_income==B2of3 or st_liabilities or FFO==B1of3
+ 0.31659192825112226          946 net_income==B2of3 or inventories or FFO==B1of3
+ 0.31659192825112226          903 financial_expenses or net_income==B2of3 or FFO==B1of3
+ 0.31569506726457525          616 EBIT==B1of3 or net_income==B2of3 or total_oper_liabilities
+ 0.31569506726457525          634 EBIT==B1of3 or net_income==B2of3 or inventories
+ 0.31569506726457525          989 cost_of_labor or EBIT==B1of3 or net_income==B2of3
+ 0.31569506726457525           79 EBIT==B1of3 or net_income==B2of3
+ 0.31569506726457525          646 EBIT==B1of3 or net_income==B2of3 or st_liabilities
+ 0.31121076233184003         1226 num-of-N((net_income >= 97163) and (debt <= 2466556) and (total_oper_liabilities <= 2714836))
+ 0.31121076233184003         1580 EBIT_x_net_income
+ 0.3098654708520195          1589 net_income_x_debt
+ 0.3098654708520195          1601 net_income_x_FFO
+ 0.3089686098654725          1147 (net_income >= 78502) and (total_oper_liabilities <= 2286996)
+ 0.30852017937219894         1614 interest_x_net_income
+ 0.30762331838565193         1111 (net_income >= 78502) and (total_oper_liabilities <= 2408953)
+ 0.3062780269058314           694 interest==B2of2 or EBIT==B2of3 or net_income==B1of3
+ 0.3062780269058314          1264 num-of-N((net_income >= 78502) and (interest <= 79608))
+ 0.30269058295964324          305 EBIT==B1of3 xor net_income==B2of3
+ 0.30269058295964324          192 EBIT==B1of3 equ net_income==B2of3
+ 0.2991031390134551          1092 (net_income >= 97163) and (total_oper_liabilities <= 2286996)
+ 0.2982062780269081          1588 net_income_x_equity
+ 0.29775784753363455         1120 (net_income >= 97163) and (debt <= 2466556) and (total_oper_liabilities <= 2714836)
+ 0.29775784753363455         1173 (net_income >= 97163) and (total_oper_liabilities <= 2408953)
+ 0.2932735426008994           717 EBIT==B2of3 or net_income==B1of3 or FFO==B2of3
+ 0.2834080717488817           423 EBIT==B3of3 impl net_income==B1of3
+ 0.2834080717488817           508 EBIT==B3of3 and equity==B2of2 and FFO==B3of3
+ 0.2834080717488817            40 EBIT==B3of3 and FFO==B3of3
+ 0.27802690582959916          719 EBIT==B2of3 or net_income==B2of3 or FFO==B1of3
+ 0.27309417040359013          623 EBIT==B3of3 or net_income==B3of3 or total_oper_liabilities
+ 0.27309417040359013          996 cost_of_labor or EBIT==B3of3 or net_income==B3of3
+ 0.27309417040359013           86 EBIT==B3of3 or net_income==B3of3
+ 0.27309417040359013          653 EBIT==B3of3 or net_income==B3of3 or st_liabilities
+ 0.27309417040359013          641 EBIT==B3of3 or net_income==B3of3 or inventories
+ 0.2717488789237695           829 interest==B2of2 or net_income==B1of3 or FFO==B2of3
+ 0.2677130044843075            74 EBIT==B3of3 and equity==B2of2
+ 0.2677130044843075           810 interest==B2of2 or net_income==B2of3 or total_oper_liabilities
+ 0.2677130044843075           169 interest==B2of2 or net_income==B2of3
+ 0.2677130044843075           792 financial_expenses or interest==B2of2 or net_income==B2of3
+ 0.2677130044843075           813 interest==B2of2 or net_income==B2of3 or st_liabilities
+ 0.2677130044843075           956 cost_of_labor or interest==B2of2 or net_income==B2of3
+ 0.2677130044843075           816 interest==B2of2 or net_income==B2of3 or inventories
+ 0.2654708520179398           743 interest==B2of2 or EBIT==B2of3 or FFO==B1of3
+ 0.263228699551572            193 EBIT==B1of3 equ net_income==B3of3
+ 0.263228699551572            306 EBIT==B1of3 xor net_income==B3of3
+ 0.2627802690582985           716 EBIT==B2of3 or net_income==B1of3 or FFO==B1of3
+ 0.26233183856502496          432 EBIT==B3of3 impl FFO==B1of3
+ 0.26233183856502496          433 EBIT==B3of3 impl FFO==B2of3
+ 0.25964125560538365          832 interest==B2of2 or net_income==B2of3 or FFO==B2of3
+ 0.2573991031390159           648 EBIT==B2of3 or net_income==B1of3 or st_liabilities
+ 0.2573991031390159           618 EBIT==B2of3 or net_income==B1of3 or total_oper_liabilities
+ 0.2573991031390159           636 EBIT==B2of3 or net_income==B1of3 or inventories
+ 0.2573991031390159           253 net_income==B2of3 equ FFO==B1of3
+ 0.2573991031390159            81 EBIT==B2of3 or net_income==B1of3
+ 0.2573991031390159           366 net_income==B2of3 xor FFO==B1of3
+ 0.2573991031390159           991 cost_of_labor or EBIT==B2of3 or net_income==B1of3
+ 0.25426008968610103         1256 num-of-N((net_income >= 18063) and (FFO >= 1090104))
+ 0.2538116591928275           647 EBIT==B1of3 or net_income==B3of3 or st_liabilities
+ 0.2538116591928275           635 EBIT==B1of3 or net_income==B3of3 or inventories
+ 0.2538116591928275            80 EBIT==B1of3 or net_income==B3of3
+ 0.2538116591928275           990 cost_of_labor or EBIT==B1of3 or net_income==B3of3
+ 0.2538116591928275           617 EBIT==B1of3 or net_income==B3of3 or total_oper_liabilities
+ 0.25067264573991266          695 interest==B2of2 or EBIT==B2of3 or net_income==B2of3
+ 0.2484304932735449          1212 num-of-N((net_income >= 173241) and (EBIT >= 517177))
+ 0.24439461883408298         1613 interest_x_EBIT
+ 0.24215246636771523          300 EBIT==B3of3 equ st_liabilities
+ 0.24215246636771523           90 cost_of_labor or EBIT==B3of3
+ 0.24215246636771523          416 EBIT==B3of3 xor inventories
+ 0.24215246636771523          203 cost_of_labor equ EBIT==B3of3
+ 0.24215246636771523          183 EBIT==B3of3 or total_oper_liabilities
+ 0.24215246636771523          190 EBIT==B3of3 or inventories
+ 0.24215246636771523          187 EBIT==B3of3 or st_liabilities
+ 0.24215246636771523          296 EBIT==B3of3 equ total_oper_liabilities
+ 0.24215246636771523          303 EBIT==B3of3 equ inventories
+ 0.24215246636771523          978 cost_of_labor or EBIT==B3of3 or total_oper_liabilities
+ 0.24215246636771523          500 EBIT==B3of3 impl inventories
+ 0.24215246636771523          915 EBIT==B3of3 or total_oper_liabilities or st_liabilities
+ 0.24215246636771523          316 cost_of_labor xor EBIT==B3of3
+ 0.24215246636771523          497 EBIT==B3of3 impl st_liabilities
+ 0.24215246636771523          981 cost_of_labor or EBIT==B3of3 or st_liabilities
+ 0.24215246636771523          409 EBIT==B3of3 xor total_oper_liabilities
+ 0.24215246636771523          494 EBIT==B3of3 impl total_oper_liabilities
+ 0.24215246636771523          413 EBIT==B3of3 xor st_liabilities
+ 0.24080717488789458         1070 (net_income >= 237480) and (interest <= 171415)
+ 0.23946188340807395          688 cost_of_labor or net_income==B3of3 or FFO==B1of3
+ 0.23946188340807395          906 financial_expenses or net_income==B3of3 or FFO==B1of3
+ 0.23946188340807395          143 net_income==B3of3 or FFO==B1of3
+ 0.23946188340807395          882 net_income==B3of3 or st_liabilities or FFO==B1of3
+ 0.23946188340807395          369 net_income==B3of3 xor FFO==B1of3
+ 0.23946188340807395          787 net_income==B3of3 or total_oper_liabilities or FFO==B1of3
+ 0.23946188340807395          256 net_income==B3of3 equ FFO==B1of3
+ 0.23946188340807395          949 net_income==B3of3 or inventories or FFO==B1of3
+ 0.2390134529148004           744 interest==B2of2 or EBIT==B2of3 or FFO==B2of3
+ 0.2381165919282533          1617 EBIT_x_debt
+ 0.235426008968612           1211 num-of-N((net_income >= 18063) and (equity >= 2150541))
+ 0.23497757847533846         1243 num-of-N((net_income >= 18063) and (EBIT >= 2344965))
+ 0.23497757847533846         1584 EBIT_x_FFO
+ 0.2345291479820649          1622 EBIT_x_inventories
+ 0.2345291479820649          1582 cost_of_labor_x_EBIT
+ 0.2345291479820649          1619 EBIT_x_total_oper_liabilities
+ 0.2345291479820649          1621 EBIT_x_st_liabilities
+ 0.23408071748879136          741 interest==B2of2 or EBIT==B1of3 or FFO==B2of3
+ 0.23228699551569715          655 interest==B2of2 or EBIT==B2of3 or inventories
+ 0.23228699551569715          643 interest==B2of2 or EBIT==B2of3 or st_liabilities
+ 0.23228699551569715          166 interest==B2of2 or EBIT==B2of3
+ 0.23228699551569715          631 interest==B2of2 or EBIT==B2of3 or total_oper_liabilities
+ 0.23228699551569715          953 cost_of_labor or interest==B2of2 or EBIT==B2of3
+ 0.23183856502242361          339 net_income==B3of3 xor debt==B2of2
+ 0.23183856502242361          226 net_income==B3of3 equ debt==B2of2
+ 0.2300448430493294          1172 (net_income >= 320544) and (interest <= 171415) and (total_oper_liabilities <= 34890452)
+ 0.2291479820627823          1273 num-of-N((net_income >= 21858) and (equity >= 2382394))
+ 0.2282511210762352           686 cost_of_labor or net_income==B2of3 or FFO==B2of3
+ 0.2282511210762352          1261 num-of-N((net_income >= 18063) and (equity >= 2469145))
+ 0.2282511210762352           785 net_income==B2of3 or total_oper_liabilities or FFO==B2of3
+ 0.2282511210762352           904 financial_expenses or net_income==B2of3 or FFO==B2of3
+ 0.2282511210762352           947 net_income==B2of3 or inventories or FFO==B2of3
+ 0.2282511210762352           141 net_income==B2of3 or FFO==B2of3
+ 0.2282511210762352           880 net_income==B2of3 or st_liabilities or FFO==B2of3
+ 0.22780269058296165          307 EBIT==B2of3 xor net_income==B1of3
+ 0.22780269058296165          194 EBIT==B2of3 equ net_income==B1of3
+ 0.22690582959641456          828 interest==B2of2 or net_income==B1of3 or FFO==B1of3
+ 0.22690582959641456          740 interest==B2of2 or EBIT==B1of3 or FFO==B1of3
+ 0.22645739910314103          874 financial_expenses or net_income==B2of3 or inventories
+ 0.22645739910314103          344 net_income==B2of3 xor total_oper_liabilities
+ 0.22645739910314103          350 net_income==B2of3 xor inventories
+ 0.22645739910314103          361 financial_expenses xor net_income==B2of3
+ 0.22645739910314103          446 net_income==B2of3 impl total_oper_liabilities
+ 0.22645739910314103          347 net_income==B2of3 xor st_liabilities
+ 0.22645739910314103          135 financial_expenses or net_income==B2of3
+ 0.22645739910314103           92 cost_of_labor or net_income==B2of3
+ 0.22645739910314103         1113 (net_income >= 211730) and (interest <= 143618)
+ 0.22645739910314103          118 net_income==B2of3 or total_oper_liabilities
+ 0.22645739910314103          121 net_income==B2of3 or st_liabilities
+ 0.22645739910314103          124 net_income==B2of3 or inventories
+ 0.22645739910314103          205 cost_of_labor equ net_income==B2of3
+ 0.22645739910314103          865 financial_expenses or net_income==B2of3 or total_oper_liabilities
+ 0.22645739910314103          318 cost_of_labor xor net_income==B2of3
+ 0.22645739910314103          231 net_income==B2of3 equ total_oper_liabilities
+ 0.22645739910314103          248 financial_expenses equ net_income==B2of3
+ 0.22645739910314103          237 net_income==B2of3 equ inventories
+ 0.22645739910314103          234 net_income==B2of3 equ st_liabilities
+ 0.22645739910314103          449 net_income==B2of3 impl st_liabilities
+ 0.22645739910314103         1045 cost_of_labor or net_income==B2of3 or total_oper_liabilities
+ 0.22645739910314103          628 cost_of_labor or net_income==B2of3 or st_liabilities
+ 0.22645739910314103          701 net_income==B2of3 or total_oper_liabilities or st_liabilities
+ 0.22645739910314103          452 net_income==B2of3 impl inventories
+ 0.22645739910314103          704 net_income==B2of3 or total_oper_liabilities or inventories
+ 0.2246636771300468          1202 num-of-N((net_income >= 18063) and (equity >= 2137782) and (total_oper_liabilities <= 5376892))
+ 0.22376681614349972         1087 (net_income >= 320544) and (interest <= 253726)
+ 0.2233183856502262           257 net_income==B3of3 equ FFO==B2of3
+ 0.2233183856502262          1116 (net_income >= 237480) and (interest <= 171415) and (cost_of_labor >= 744260) and (total_oper_liabilities <= 34890452)
+ 0.2233183856502262           370 net_income==B3of3 xor FFO==B2of3
+ 0.22286995515695263           50 equity==B2of2 and FFO==B3of3
+ 0.22242152466367907           46 net_income==B2of3 and debt==B2of2
+ 0.22062780269058488          336 net_income==B3of3 xor equity==B2of2
+ 0.22062780269058488          223 net_income==B3of3 equ equity==B2of2
+ 0.21973094170403779         1207 num-of-N((net_income >= 18063) and (equity >= 2150541) and (st_liabilities <= 5566453))
+ 0.21973094170403779          708 EBIT==B1of3 or net_income==B1of3 or FFO==B2of3
+ 0.21928251121076422         1103 (net_income >= 18063) and (equity >= 2150541)
+ 0.2188340807174907           144 net_income==B3of3 or FFO==B2of3
+ 0.2188340807174907           689 cost_of_labor or net_income==B3of3 or FFO==B2of3
+ 0.2188340807174907          1213 num-of-N((net_income >= 18063) and (equity >= 2469145) and (total_oper_liabilities <= 1950672))
+ 0.2188340807174907           788 net_income==B3of3 or total_oper_liabilities or FFO==B2of3
+ 0.2188340807174907           950 net_income==B3of3 or inventories or FFO==B2of3
+ 0.2188340807174907           907 financial_expenses or net_income==B3of3 or FFO==B2of3
+ 0.2188340807174907           883 net_income==B3of3 or st_liabilities or FFO==B2of3
+ 0.21838565022421713          720 EBIT==B2of3 or net_income==B2of3 or FFO==B2of3
+ 0.21838565022421713          619 EBIT==B2of3 or net_income==B2of3 or total_oper_liabilities
+ 0.21838565022421713          992 cost_of_labor or EBIT==B2of3 or net_income==B2of3
+ 0.21838565022421713          649 EBIT==B2of3 or net_income==B2of3 or st_liabilities
+ 0.21838565022421713           82 EBIT==B2of3 or net_income==B2of3
+ 0.21838565022421713          637 EBIT==B2of3 or net_income==B2of3 or inventories
+ 0.21479820627802876         1206 num-of-N((net_income >= 237480) and (EBIT >= 2344965))
+ 0.2143497757847552          1262 num-of-N((net_income >= 18063) and (equity >= 2382394) and (total_oper_liabilities <= 1950672))
+ 0.21390134529148164         1089 (net_income >= 237480)
+ 0.2134529147982081          1091 (net_income >= 18063) and (equity >= 2137782) and (total_oper_liabilities <= 5376892)
+ 0.2098654708520197          1164 (net_income >= 30613) and (total_oper_liabilities <= 1967237) and (total_oper_liabilities >= 901156)
+ 0.20941704035874617          251 net_income==B1of3 equ FFO==B2of3
+ 0.20941704035874617          138 net_income==B1of3 or FFO==B2of3
+ 0.20941704035874617          782 net_income==B1of3 or total_oper_liabilities or FFO==B2of3
+ 0.20941704035874617          877 net_income==B1of3 or st_liabilities or FFO==B2of3
+ 0.20941704035874617          364 net_income==B1of3 xor FFO==B2of3
+ 0.20941704035874617          944 net_income==B1of3 or inventories or FFO==B2of3
+ 0.20941704035874617          683 cost_of_labor or net_income==B1of3 or FFO==B2of3
+ 0.20941704035874617          901 financial_expenses or net_income==B1of3 or FFO==B2of3
+ 0.2089686098654726          1185 num-of-N((net_income >= 237480) and (interest <= 171415))
+ 0.20762331838565196          713 EBIT==B1of3 or net_income==B3of3 or FFO==B1of3
+ 0.20672645739910486         1615 interest_x_FFO
+ 0.2062780269058313          1222 num-of-N((net_income >= 237480) and (interest <= 171415) and (cost_of_labor >= 744260) and (total_oper_liabilities <= 34890452))
+ 0.2062780269058313          1108 (net_income >= 320544) and (interest <= 170643)
+ 0.20448430493273712          377 financial_expenses xor FFO==B3of3
+ 0.20448430493273712          218 cost_of_labor equ FFO==B3of3
+ 0.20448430493273712          384 inventories xor FFO==B3of3
+ 0.20448430493273712          354 st_liabilities xor FFO==B3of3
+ 0.20448430493273712          387 total_oper_liabilities xor FFO==B3of3
+ 0.20448430493273712          869 total_oper_liabilities or inventories or FFO==B3of3
+ 0.20448430493273712          768 financial_expenses or total_oper_liabilities or FFO==B3of3
+ 0.20448430493273712          241 st_liabilities equ FFO==B3of3
+ 0.20448430493273712          927 financial_expenses or inventories or FFO==B3of3
+ 0.20448430493273712          271 inventories equ FFO==B3of3
+ 0.20448430493273712          930 cost_of_labor or total_oper_liabilities or FFO==B3of3
+ 0.20448430493273712          264 financial_expenses equ FFO==B3of3
+ 0.20448430493273712          151 financial_expenses or FFO==B3of3
+ 0.20448430493273712          105 cost_of_labor or FFO==B3of3
+ 0.20448430493273712          128 st_liabilities or FFO==B3of3
+ 0.20448430493273712          331 cost_of_labor xor FFO==B3of3
+ 0.20448430493273712          840 total_oper_liabilities or st_liabilities or FFO==B3of3
+ 0.20448430493273712          158 inventories or FFO==B3of3
+ 0.20448430493273712          659 cost_of_labor or st_liabilities or FFO==B3of3
+ 0.20448430493273712          274 total_oper_liabilities equ FFO==B3of3
+ 0.20448430493273712          161 total_oper_liabilities or FFO==B3of3
+ 0.20313901345291646         1219 num-of-N((net_income >= 211730) and (interest <= 143618))
+ 0.20313901345291646          691 interest==B2of2 or EBIT==B1of3 or net_income==B1of3
+ 0.20313901345291646          461 net_income==B2of3 impl FFO==B1of3
+ 0.20224215246636937           97 EBIT==B2of3 or FFO==B1of3
+ 0.20224215246636937         1001 cost_of_labor or EBIT==B2of3 or FFO==B1of3
+ 0.20224215246636937          663 EBIT==B2of3 or st_liabilities or FFO==B1of3
+ 0.20224215246636937          760 EBIT==B2of3 or inventories or FFO==B1of3
+ 0.20224215246636937          934 EBIT==B2of3 or total_oper_liabilities or FFO==B1of3
+ 0.20000000000000162          690 cost_of_labor or net_income==B3of3 or FFO==B3of3
+ 0.20000000000000162          145 net_income==B3of3 or FFO==B3of3
+ 0.20000000000000162          908 financial_expenses or net_income==B3of3 or FFO==B3of3
+ 0.20000000000000162          951 net_income==B3of3 or inventories or FFO==B3of3
+ 0.20000000000000162          884 net_income==B3of3 or st_liabilities or FFO==B3of3
+ 0.20000000000000162          789 net_income==B3of3 or total_oper_liabilities or FFO==B3of3
+ 0.19910313901345453           76 EBIT==B2of3 and debt==B2of2
+ 0.19686098654708678         1616 EBIT_x_equity
+ 0.19641255605381325         1266 num-of-N((net_income >= 30613) and (total_oper_liabilities <= 1967237) and (total_oper_liabilities >= 901156))
+ 0.19551569506726613          812 interest==B2of2 or net_income==B1of3 or st_liabilities
+ 0.19551569506726613          955 cost_of_labor or interest==B2of2 or net_income==B1of3
+ 0.19551569506726613          168 interest==B2of2 or net_income==B1of3
+ 0.19551569506726613          815 interest==B2of2 or net_income==B1of3 or inventories
+ 0.19551569506726613          809 interest==B2of2 or net_income==B1of3 or total_oper_liabilities
+ 0.19551569506726613         1097 (net_income >= 18063) and (equity >= 2150541) and (st_liabilities <= 5566453)
+ 0.19551569506726613          791 financial_expenses or interest==B2of2 or net_income==B1of3
+ 0.19372197309417194         1274 num-of-N((net_income >= 320544) and (interest <= 171415) and (total_oper_liabilities <= 34890452))
+ 0.19372197309417194         1562 interest LESSTHAN EBIT
+ 0.19192825112107775         1239 num-of-N((net_income >= 320544) and (debt <= 4516999))
+ 0.1914798206278042          1081 (equity >= 1487584) and (debt <= 2523298)
+ 0.1914798206278042          1159 (net_income >= 18063) and (equity >= 2469145)
+ 0.19103139013453066         1133 (net_income >= 320544) and (debt <= 4516999)
+ 0.1905829596412571          1200 num-of-N((net_income >= 320544) and (interest <= 253726))
+ 0.18968609865471             476 debt==B2of2 impl FFO==B3of3
+ 0.18923766816143645         1115 (net_income >= 320544) and (interest <= 143618)
+ 0.18789237668161582         1130 (net_income >= 345491) and (debt <= 6552946)
+ 0.18789237668161582         1171 (net_income >= 21858) and (equity >= 2382394)
+ 0.1852017937219745          1176 (FFO >= 688731) and (debt <= 4516999) and (total_oper_liabilities <= 18769290)
+ 0.18430493273542742         1011 interest==B2of2 or total_oper_liabilities or FFO==B1of3
+ 0.18430493273542742          803 financial_expenses or interest==B2of2 or FFO==B1of3
+ 0.18430493273542742          171 interest==B2of2 or FFO==B1of3
+ 0.18430493273542742          841 interest==B2of2 or inventories or FFO==B1of3
+ 0.18430493273542742          970 cost_of_labor or interest==B2of2 or FFO==B1of3
+ 0.18430493273542742          818 interest==B2of2 or st_liabilities or FFO==B1of3
+ 0.18295964125560676         1236 num-of-N((net_income >= 345491) and (debt <= 6552946))
+ 0.18206278026905967         1596 st_liabilities_x_FFO
+ 0.18206278026905967         1610 inventories_x_FFO
+ 0.18206278026905967         1605 financial_expenses_x_FFO
+ 0.18206278026905967         1585 cost_of_labor_x_FFO
+ 0.18206278026905967         1611 total_oper_liabilities_x_FFO
+ 0.18116591928251258         1214 num-of-N((net_income >= 320544) and (interest <= 170643))
+ 0.18071748878923902         1064 (net_income >= 345491)
+ 0.18071748878923902         1165 (net_income >= 392599) and (interest <= 364151)
+ 0.18026905829596548          935 EBIT==B2of3 or total_oper_liabilities or FFO==B2of3
+ 0.18026905829596548         1002 cost_of_labor or EBIT==B2of3 or FFO==B2of3
+ 0.18026905829596548           98 EBIT==B2of3 or FFO==B2of3
+ 0.18026905829596548          761 EBIT==B2of3 or inventories or FFO==B2of3
+ 0.18026905829596548          664 EBIT==B2of3 or st_liabilities or FFO==B2of3
+ 0.17937219730941836         1073 (FFO >= 688731) and (debt <= 4516999)
+ 0.17892376681614483          435 equity==B2of2 impl debt==B2of2
+ 0.1748878923766829           422 EBIT==B2of3 impl net_income==B3of3
+ 0.17443946188340934          642 interest==B2of2 or EBIT==B1of3 or st_liabilities
+ 0.17443946188340934          952 cost_of_labor or interest==B2of2 or EBIT==B1of3
+ 0.17443946188340934          630 interest==B2of2 or EBIT==B1of3 or total_oper_liabilities
+ 0.17443946188340934          165 interest==B2of2 or EBIT==B1of3
+ 0.17443946188340934          654 interest==B2of2 or EBIT==B1of3 or inventories
+ 0.17399103139013578         1229 num-of-N((net_income >= 21858) and (interest <= 16478) and (debt >= 223368))
+ 0.17354260089686224          958 net_income==B1of3 or debt==B2of2 or FFO==B1of3
+ 0.17354260089686224          772 EBIT==B1of3 or debt==B2of2 or FFO==B1of3
+ 0.17354260089686224         1158 (FFO >= 700888) and (debt <= 5406379)
+ 0.17309417040358868         1221 num-of-N((net_income >= 320544) and (interest <= 143618))
+ 0.17174887892376806          170 interest==B2of2 or net_income==B3of3
+ 0.17174887892376806          817 interest==B2of2 or net_income==B3of3 or inventories
+ 0.17174887892376806          957 cost_of_labor or interest==B2of2 or net_income==B3of3
+ 0.17174887892376806          814 interest==B2of2 or net_income==B3of3 or st_liabilities
+ 0.17174887892376806          793 financial_expenses or interest==B2of2 or net_income==B3of3
+ 0.17174887892376806          811 interest==B2of2 or net_income==B3of3 or total_oper_liabilities
+ 0.1713004484304945           396 interest==B2of2 xor net_income==B3of3
+ 0.1713004484304945           283 interest==B2of2 equ net_income==B3of3
+ 0.17085201793722093         1083 (FFO >= 103264) and (debt <= 829862)
+ 0.1695067264574003           596 EBIT==B2of3 and net_income==B2of3 and debt==B2of2
+ 0.16905829596412675          699 interest==B2of2 or EBIT==B3of3 or net_income==B3of3
+ 0.1686098654708532          1280 num-of-N((equity >= 2382394) and (total_oper_liabilities <= 1950672) and (net_income >= -84300))
+ 0.16816143497757965          393 interest==B2of2 xor EBIT==B3of3
+ 0.16816143497757965          280 interest==B2of2 equ EBIT==B3of3
+ 0.16816143497757965         1155 (net_income >= 388822)
+ 0.16726457399103256          971 cost_of_labor or interest==B2of2 or FFO==B2of3
+ 0.16726457399103256         1012 interest==B2of2 or total_oper_liabilities or FFO==B2of3
+ 0.16726457399103256          819 interest==B2of2 or st_liabilities or FFO==B2of3
+ 0.16726457399103256          804 financial_expenses or interest==B2of2 or FFO==B2of3
+ 0.16726457399103256          842 interest==B2of2 or inventories or FFO==B2of3
+ 0.16726457399103256          731 EBIT==B3of3 or net_income==B3of3 or FFO==B1of3
+ 0.16726457399103256          172 interest==B2of2 or FFO==B2of3
+ 0.166816143497759           1270 num-of-N((interest <= 24296) and (total_oper_liabilities <= 1508233))
+ 0.166816143497759            668 EBIT==B3of3 or st_liabilities or FFO==B3of3
+ 0.166816143497759           1154 (FFO >= 700888) and (debt <= 4516999)
+ 0.166816143497759            102 EBIT==B3of3 or FFO==B3of3
+ 0.166816143497759            733 EBIT==B3of3 or net_income==B3of3 or FFO==B3of3
+ 0.166816143497759            765 EBIT==B3of3 or inventories or FFO==B3of3
+ 0.166816143497759           1006 cost_of_labor or EBIT==B3of3 or FFO==B3of3
+ 0.166816143497759            939 EBIT==B3of3 or total_oper_liabilities or FFO==B3of3
+ 0.1659192825112119           405 EBIT==B3of3 xor debt==B2of2
+ 0.1659192825112119           292 EBIT==B3of3 equ debt==B2of2
+ 0.16502242152466481          844 debt==B2of2 or st_liabilities or FFO==B1of3
+ 0.16502242152466481          162 debt==B2of2 or FFO==B1of3
+ 0.16502242152466481          624 debt==B2of2 or total_oper_liabilities or FFO==B1of3
+ 0.16502242152466481          769 cost_of_labor or debt==B2of2 or FFO==B1of3
+ 0.16502242152466481          885 debt==B2of2 or inventories or FFO==B1of3
+ 0.16367713004484416         1190 num-of-N((FFO >= 688731) and (net_income >= 1629286))
+ 0.16367713004484416         1080 (debt <= 560000) and (EBIT >= -21159)
+ 0.1623318385650235            27 EBIT==B2of3 and net_income==B2of3
+ 0.1614349775784764           707 EBIT==B1of3 or net_income==B1of3 or FFO==B1of3
+ 0.1614349775784764           847 interest==B2of2 or debt==B2of2 or FFO==B1of3
+ 0.16053811659192932         1271 num-of-N((debt <= 560000) and (total_oper_liabilities <= 1508233))
+ 0.15964125560538223          310 EBIT==B3of3 xor net_income==B1of3
+ 0.15964125560538223         1195 num-of-N((equity >= 1487584) and (debt <= 2523298))
+ 0.15964125560538223          197 EBIT==B3of3 equ net_income==B1of3
+ 0.15919282511210867         1197 num-of-N((FFO >= 103264) and (debt <= 829862))
+ 0.15829596412556157         1612 debt_x_FFO
+ 0.157847533632288           1187 num-of-N((FFO >= 688731) and (debt <= 4516999))
+ 0.157847533632288           1156 (net_income >= 392599)
+ 0.15739910313901448         1208 num-of-N((debt <= 560000) and (net_income >= -84300))
+ 0.15695067264574092         1606 interest_x_debt
+ 0.15695067264574092         1267 num-of-N((net_income >= 392599) and (interest <= 364151))
+ 0.15650224215246739          600 EBIT==B3of3 and net_income==B3of3 and debt==B2of2
+ 0.15515695067264673         1278 num-of-N((FFO >= 688731) and (debt <= 4516999) and (total_oper_liabilities <= 18769290))
+ 0.15470852017937317         1077 (FFO >= 700888) and (debt <= 3984667)
+ 0.15381165919282608          213 EBIT==B3of3 equ FFO==B1of3
+ 0.15381165919282608          326 EBIT==B3of3 xor FFO==B1of3
+ 0.15336322869955255         1194 num-of-N((debt <= 560000) and (EBIT >= -21159))
+ 0.15291479820627898          638 EBIT==B2of3 or net_income==B3of3 or inventories
+ 0.15291479820627898          620 EBIT==B2of3 or net_income==B3of3 or total_oper_liabilities
+ 0.15291479820627898           83 EBIT==B2of3 or net_income==B3of3
+ 0.15291479820627898         1085 (debt <= 560000) and (FFO >= 103264)
+ 0.15291479820627898          993 cost_of_labor or EBIT==B2of3 or net_income==B3of3
+ 0.15291479820627898          650 EBIT==B2of3 or net_income==B3of3 or st_liabilities
+ 0.15246636771300545         1029 EBIT==B1of3 or net_income==B1of3 or debt==B2of2
+ 0.15246636771300545          177 EBIT==B1of3 or debt==B2of2
+ 0.15246636771300545          752 EBIT==B1of3 or debt==B2of2 or inventories
+ 0.15246636771300545          749 EBIT==B1of3 or debt==B2of2 or st_liabilities
+ 0.15246636771300545          735 EBIT==B1of3 or debt==B2of2 or total_oper_liabilities
+ 0.15246636771300545         1098 (debt <= 560000) and (net_income >= -84300)
+ 0.15246636771300545         1022 cost_of_labor or net_income==B1of3 or debt==B2of2
+ 0.15246636771300545          909 net_income==B1of3 or debt==B2of2 or total_oper_liabilities
+ 0.15246636771300545          967 cost_of_labor or EBIT==B1of3 or debt==B2of2
+ 0.15246636771300545          111 net_income==B1of3 or debt==B2of2
+ 0.15246636771300545          919 net_income==B1of3 or debt==B2of2 or inventories
+ 0.15246636771300545          916 net_income==B1of3 or debt==B2of2 or st_liabilities
+ 0.1520179372197319          1260 num-of-N((FFO >= 700888) and (debt <= 5406379))
+ 0.1520179372197319           399 interest==B2of2 xor FFO==B3of3
+ 0.1520179372197319           286 interest==B2of2 equ FFO==B3of3
+ 0.15067264573991124           43 net_income==B2of3 and equity==B2of2
+ 0.15067264573991124          666 EBIT==B3of3 or st_liabilities or FFO==B1of3
+ 0.15067264573991124          100 EBIT==B3of3 or FFO==B1of3
+ 0.15067264573991124          937 EBIT==B3of3 or total_oper_liabilities or FFO==B1of3
+ 0.15067264573991124         1004 cost_of_labor or EBIT==B3of3 or FFO==B1of3
+ 0.15067264573991124          570 net_income==B2of3 and equity==B2of2 and debt==B2of2
+ 0.15067264573991124          763 EBIT==B3of3 or inventories or FFO==B1of3
+ 0.14977578475336414         1244 num-of-N((net_income >= 18063) and (equity >= 2469145) and (debt <= 3788009) and (equity <= 4723607))
+ 0.14932735426009058          214 EBIT==B3of3 equ FFO==B2of3
+ 0.14932735426009058          834 interest==B2of2 or net_income==B3of3 or FFO==B1of3
+ 0.14932735426009058          327 EBIT==B3of3 xor FFO==B2of3
+ 0.14887892376681705          799 interest==B2of2 or net_income==B1of3 or debt==B2of2
+ 0.14887892376681705         1056 interest==B2of2 or EBIT==B1of3 or debt==B2of2
+ 0.1484304932735435           323 EBIT==B2of3 xor FFO==B1of3
+ 0.1484304932735435           210 EBIT==B2of3 equ FFO==B1of3
+ 0.14798206278026996          585 net_income==B3of3 and debt==B2of2 and FFO==B3of3
+ 0.14798206278026996           47 net_income==B3of3 and debt==B2of2
+ 0.14798206278026996          571 net_income==B3of3 and equity==B2of2 and debt==B2of2
+ 0.14798206278026996          454 equity==B2of2 impl FFO==B1of3
+ 0.1475336322869964          1199 num-of-N((debt <= 560000) and (FFO >= 103264))
+ 0.14708520179372286           89 cost_of_labor or EBIT==B2of3
+ 0.14708520179372286          189 EBIT==B2of3 or inventories
+ 0.14708520179372286          315 cost_of_labor xor EBIT==B2of3
+ 0.14708520179372286          295 EBIT==B2of3 equ total_oper_liabilities
+ 0.14708520179372286          202 cost_of_labor equ EBIT==B2of3
+ 0.14708520179372286         1180 num-of-N((FFO >= 700888) and (debt <= 9677732) and (EBIT >= 425171))
+ 0.14708520179372286          496 EBIT==B2of3 impl st_liabilities
+ 0.14708520179372286          299 EBIT==B2of3 equ st_liabilities
+ 0.14708520179372286          914 EBIT==B2of3 or total_oper_liabilities or st_liabilities
+ 0.14708520179372286          499 EBIT==B2of3 impl inventories
+ 0.14708520179372286          186 EBIT==B2of3 or st_liabilities
+ 0.14708520179372286          182 EBIT==B2of3 or total_oper_liabilities
+ 0.14708520179372286          980 cost_of_labor or EBIT==B2of3 or st_liabilities
+ 0.14708520179372286          408 EBIT==B2of3 xor total_oper_liabilities
+ 0.14708520179372286          493 EBIT==B2of3 impl total_oper_liabilities
+ 0.14708520179372286          977 cost_of_labor or EBIT==B2of3 or total_oper_liabilities
+ 0.14708520179372286          415 EBIT==B2of3 xor inventories
+ 0.14708520179372286          412 EBIT==B2of3 xor st_liabilities
+ 0.14708520179372286          302 EBIT==B2of3 equ inventories
+ 0.1466367713004493           309 EBIT==B2of3 xor net_income==B3of3
+ 0.1466367713004493           196 EBIT==B2of3 equ net_income==B3of3
+ 0.1466367713004493           732 EBIT==B3of3 or net_income==B3of3 or FFO==B2of3
+ 0.14618834080717574         1259 num-of-N((FFO >= 700888) and (debt <= 4516999))
+ 0.14529147982062865          999 cost_of_labor or EBIT==B1of3 or FFO==B2of3
+ 0.14529147982062865          994 cost_of_labor or EBIT==B3of3 or net_income==B1of3
+ 0.14529147982062865           84 EBIT==B3of3 or net_income==B1of3
+ 0.14529147982062865           95 EBIT==B1of3 or FFO==B2of3
+ 0.14529147982062865          932 EBIT==B1of3 or total_oper_liabilities or FFO==B2of3
+ 0.14529147982062865          758 EBIT==B1of3 or inventories or FFO==B2of3
+ 0.14529147982062865          639 EBIT==B3of3 or net_income==B1of3 or inventories
+ 0.14529147982062865          621 EBIT==B3of3 or net_income==B1of3 or total_oper_liabilities
+ 0.14529147982062865          651 EBIT==B3of3 or net_income==B1of3 or st_liabilities
+ 0.14529147982062865          661 EBIT==B1of3 or st_liabilities or FFO==B2of3
+ 0.14439461883408156          209 EBIT==B1of3 equ FFO==B3of3
+ 0.14439461883408156          322 EBIT==B1of3 xor FFO==B3of3
+ 0.143946188340808            289 EBIT==B3of3 equ equity==B2of2
+ 0.143946188340808            402 EBIT==B3of3 xor equity==B2of2
+ 0.14260089686098737         1063 (FFO >= 700888) and (debt <= 9677732) and (EBIT >= 425171)
+ 0.14260089686098737         1117 (FFO >= 688731) and (total_oper_liabilities <= 5036867) and (debt <= 4516999)
+ 0.1421524663677138          1157 (net_income >= 397188)
+ 0.14170403587444028          900 financial_expenses or net_income==B1of3 or FFO==B1of3
+ 0.14170403587444028          943 net_income==B1of3 or inventories or FFO==B1of3
+ 0.14170403587444028          781 net_income==B1of3 or total_oper_liabilities or FFO==B1of3
+ 0.14170403587444028          682 cost_of_labor or net_income==B1of3 or FFO==B1of3
+ 0.14170403587444028          137 net_income==B1of3 or FFO==B1of3
+ 0.14170403587444028          876 net_income==B1of3 or st_liabilities or FFO==B1of3
+ 0.14125560538116672          279 interest==B2of2 equ EBIT==B2of3
+ 0.14125560538116672          392 interest==B2of2 xor EBIT==B2of3
+ 0.14125560538116672         1079 (EBIT >= 517177) and (debt <= 9677732)
+ 0.14125560538116672          693 interest==B2of2 or EBIT==B1of3 or net_income==B3of3
+ 0.14080717488789316          395 interest==B2of2 xor net_income==B2of3
+ 0.14080717488789316          282 interest==B2of2 equ net_income==B2of3
+ 0.13991031390134606          420 EBIT==B2of3 impl net_income==B1of3
+ 0.13901345291479897         1532 equity LESSTHAN debt
+ 0.1385650224215254          1106 (net_income >= 173241) and (EBIT >= 517177)
+ 0.1385650224215254          1109 (net_income >= 78502) and (EBIT >= 517177)
+ 0.13766816143497831          954 cost_of_labor or interest==B2of2 or EBIT==B3of3
+ 0.13766816143497831          167 interest==B2of2 or EBIT==B3of3
+ 0.13766816143497831          656 interest==B2of2 or EBIT==B3of3 or inventories
+ 0.13766816143497831          632 interest==B2of2 or EBIT==B3of3 or total_oper_liabilities
+ 0.13766816143497831          644 interest==B2of2 or EBIT==B3of3 or st_liabilities
+ 0.1363228699551577          1191 num-of-N((FFO >= 700888) and (debt <= 3984667))
+ 0.13587443946188413         1597 equity_x_FFO
+ 0.13587443946188413          723 EBIT==B2of3 or net_income==B3of3 or FFO==B2of3
+ 0.13587443946188413          321 EBIT==B1of3 xor FFO==B2of3
+ 0.13587443946188413          208 EBIT==B1of3 equ FFO==B2of3
+ 0.13497757847533703          757 EBIT==B1of3 or inventories or FFO==B1of3
+ 0.13497757847533703          660 EBIT==B1of3 or st_liabilities or FFO==B1of3
+ 0.13497757847533703          998 cost_of_labor or EBIT==B1of3 or FFO==B1of3
+ 0.13497757847533703          931 EBIT==B1of3 or total_oper_liabilities or FFO==B1of3
+ 0.13497757847533703           94 EBIT==B1of3 or FFO==B1of3
+ 0.13408071748878994         1118 (debt <= 430423) and (equity >= 1135178) and (EBIT >= -21159)
+ 0.13363228699551638         1223 num-of-N((FFO >= 688731) and (total_oper_liabilities <= 5036867) and (debt <= 4516999))
+ 0.1327354260089693           590 EBIT==B2of3 and equity==B2of2 and debt==B2of2
+ 0.1318385650224222          1005 cost_of_labor or EBIT==B3of3 or FFO==B2of3
+ 0.1318385650224222           667 EBIT==B3of3 or st_liabilities or FFO==B2of3
+ 0.1318385650224222           764 EBIT==B3of3 or inventories or FFO==B2of3
+ 0.1318385650224222           938 EBIT==B3of3 or total_oper_liabilities or FFO==B2of3
+ 0.1318385650224222           101 EBIT==B3of3 or FFO==B2of3
+ 0.1309417040358751           725 EBIT==B3of3 or net_income==B1of3 or FFO==B1of3
+ 0.13004484304932798           78 EBIT==B1of3 or net_income==B1of3
+ 0.13004484304932798          633 EBIT==B1of3 or net_income==B1of3 or inventories
+ 0.13004484304932798          645 EBIT==B1of3 or net_income==B1of3 or st_liabilities
+ 0.13004484304932798          615 EBIT==B1of3 or net_income==B1of3 or total_oper_liabilities
+ 0.13004484304932798          988 cost_of_labor or EBIT==B1of3 or net_income==B1of3
+ 0.12959641255605445         1169 (debt <= 560000) and (total_oper_liabilities <= 1508233)
+ 0.12959641255605445         1536 equity LESSTHAN st_liabilities
+ 0.12914798206278089         1078 (debt <= 560000) and (equity >= 1135178) and (EBIT >= -2659)
+ 0.12869955156950735         1247 num-of-N((net_income >= 1629286) and (EBIT >= 517177))
+ 0.1282511210762338           429 EBIT==B2of3 impl FFO==B1of3
+ 0.1273542600896867           746 interest==B2of2 or EBIT==B3of3 or FFO==B1of3
+ 0.12690582959641314         1100 (debt <= 560000) and (equity >= 1135178)
+ 0.1264573991031396          1148 (st_liabilities <= 1174034) and (debt <= 560000)
+ 0.1264573991031396          1145 (debt <= 560000) and (st_liabilities <= 1174034)
+ 0.12600896860986605         1193 num-of-N((EBIT >= 517177) and (debt <= 9677732))
+ 0.1246636771300454          1192 num-of-N((debt <= 560000) and (equity >= 1135178) and (EBIT >= -2659))
+ 0.12331838565022475         1224 num-of-N((debt <= 430423) and (equity >= 1135178) and (EBIT >= -21159))
+ 0.12242152466367766          255 net_income==B2of3 equ FFO==B3of3
+ 0.12242152466367766          368 net_income==B2of3 xor FFO==B3of3
+ 0.12197309417040411          261 interest==B2of2 equ equity==B2of2
+ 0.12197309417040411          467 debt==B2of2 impl st_liabilities
+ 0.12197309417040411          359 debt==B2of2 xor total_oper_liabilities
+ 0.12197309417040411          374 interest==B2of2 xor equity==B2of2
+ 0.12197309417040411          457 debt==B2of2 impl total_oper_liabilities
+ 0.12197309417040411          133 debt==B2of2 or total_oper_liabilities
+ 0.12197309417040411          468 debt==B2of2 impl inventories
+ 0.12197309417040411          259 debt==B2of2 equ st_liabilities
+ 0.12197309417040411          260 debt==B2of2 equ inventories
+ 0.12197309417040411         1620 cost_of_labor_x_debt
+ 0.12197309417040411          372 debt==B2of2 xor st_liabilities
+ 0.12197309417040411          672 cost_of_labor or debt==B2of2 or total_oper_liabilities
+ 0.12197309417040411          373 debt==B2of2 xor inventories
+ 0.12197309417040411          146 debt==B2of2 or st_liabilities
+ 0.12197309417040411          147 debt==B2of2 or inventories
+ 0.12197309417040411          738 debt==B2of2 or total_oper_liabilities or inventories
+ 0.12197309417040411          734 debt==B2of2 or total_oper_liabilities or st_liabilities
+ 0.12197309417040411         1603 debt_x_inventories
+ 0.12197309417040411         1599 debt_x_total_oper_liabilities
+ 0.12197309417040411          246 debt==B2of2 equ total_oper_liabilities
+ 0.12197309417040411          706 cost_of_labor or debt==B2of2 or st_liabilities
+ 0.12197309417040411          410 cost_of_labor xor debt==B2of2
+ 0.12197309417040411         1602 debt_x_st_liabilities
+ 0.12197309417040411          184 cost_of_labor or debt==B2of2
+ 0.12197309417040411          297 cost_of_labor equ debt==B2of2
+ 0.12152466367713056         1000 cost_of_labor or EBIT==B1of3 or FFO==B3of3
+ 0.12152466367713056          759 EBIT==B1of3 or inventories or FFO==B3of3
+ 0.12152466367713056          198 EBIT==B3of3 equ net_income==B2of3
+ 0.12152466367713056          371 net_income==B3of3 xor FFO==B3of3
+ 0.12152466367713056           96 EBIT==B1of3 or FFO==B3of3
+ 0.12152466367713056          311 EBIT==B3of3 xor net_income==B2of3
+ 0.12152466367713056          933 EBIT==B1of3 or total_oper_liabilities or FFO==B3of3
+ 0.12152466367713056          662 EBIT==B1of3 or st_liabilities or FFO==B3of3
+ 0.12152466367713056          258 net_income==B3of3 equ FFO==B3of3
+ 0.121076233183857            252 net_income==B1of3 equ FFO==B3of3
+ 0.121076233183857            365 net_income==B1of3 xor FFO==B3of3
+ 0.121076233183857            335 net_income==B2of3 xor equity==B2of2
+ 0.121076233183857           1153 (FFO >= 714285) and (debt <= 3735270)
+ 0.121076233183857           1177 (debt <= 560000) and (equity >= 1135178) and (FFO >= 103264) and (net_income >= -84300)
+ 0.121076233183857            222 net_income==B2of3 equ equity==B2of2
+ 0.12062780269058346          607 EBIT==B2of3 and net_income==B2of3 and equity==B2of2
+ 0.12017937219730991          697 interest==B2of2 or EBIT==B3of3 or net_income==B1of3
+ 0.11973094170403638          715 EBIT==B1of3 or net_income==B3of3 or FFO==B3of3
+ 0.11973094170403636         1604 interest_x_equity
+ 0.11973094170403636         1258 num-of-N((FFO >= 714285) and (debt <= 3735270))
+ 0.11928251121076282         1232 num-of-N((equity >= 3255508) and (total_oper_liabilities <= 1950672) and (EBIT >= -113520))
+ 0.11928251121076282         1279 num-of-N((debt <= 560000) and (equity >= 1135178) and (FFO >= 103264) and (net_income >= -84300))
+ 0.11883408071748927         1216 num-of-N((FFO >= 688731) and (total_oper_liabilities <= 5036867) and (cost_of_labor >= 4502930))
+ 0.11838565022421571          827 interest==B2of2 or debt==B2of2 or st_liabilities
+ 0.11838565022421571          837 interest==B2of2 or debt==B2of2 or inventories
+ 0.11838565022421571          922 cost_of_labor or interest==B2of2 or debt==B2of2
+ 0.11838565022421571          152 interest==B2of2 or debt==B2of2
+ 0.11838565022421571          824 interest==B2of2 or debt==B2of2 or total_oper_liabilities
+ 0.11748878923766862         1151 (net_income >= 18063) and (FFO >= 1090104)
+ 0.11659192825112152          398 interest==B2of2 xor FFO==B2of3
+ 0.11659192825112152          285 interest==B2of2 equ FFO==B2of3
+ 0.11614349775784798          964 net_income==B3of3 or debt==B2of2 or FFO==B1of3
+ 0.11390134529148023          778 EBIT==B3of3 or debt==B2of2 or FFO==B1of3
+ 0.11300448430493312          117 net_income==B1of3 or total_oper_liabilities
+ 0.11300448430493312          873 financial_expenses or net_income==B1of3 or inventories
+ 0.11300448430493312          230 net_income==B1of3 equ total_oper_liabilities
+ 0.11300448430493312          459 net_income==B1of3 impl FFO==B2of3
+ 0.11300448430493312          247 financial_expenses equ net_income==B1of3
+ 0.11300448430493312          864 financial_expenses or net_income==B1of3 or total_oper_liabilities
+ 0.11300448430493312          236 net_income==B1of3 equ inventories
+ 0.11300448430493312           91 cost_of_labor or net_income==B1of3
+ 0.11300448430493312          445 net_income==B1of3 impl total_oper_liabilities
+ 0.11300448430493312          451 net_income==B1of3 impl inventories
+ 0.11300448430493312          123 net_income==B1of3 or inventories
+ 0.11300448430493312          448 net_income==B1of3 impl st_liabilities
+ 0.11300448430493312          233 net_income==B1of3 equ st_liabilities
+ 0.11300448430493312          120 net_income==B1of3 or st_liabilities
+ 0.11300448430493312          360 financial_expenses xor net_income==B1of3
+ 0.11300448430493312          346 net_income==B1of3 xor st_liabilities
+ 0.11300448430493312          212 EBIT==B2of3 equ FFO==B3of3
+ 0.11300448430493312          317 cost_of_labor xor net_income==B1of3
+ 0.11300448430493312          349 net_income==B1of3 xor inventories
+ 0.11300448430493312          325 EBIT==B2of3 xor FFO==B3of3
+ 0.11300448430493312          134 financial_expenses or net_income==B1of3
+ 0.11300448430493312          343 net_income==B1of3 xor total_oper_liabilities
+ 0.11300448430493312          204 cost_of_labor equ net_income==B1of3
+ 0.11300448430493312          627 cost_of_labor or net_income==B1of3 or st_liabilities
+ 0.11300448430493312         1044 cost_of_labor or net_income==B1of3 or total_oper_liabilities
+ 0.11300448430493312          703 net_income==B1of3 or total_oper_liabilities or inventories
+ 0.11300448430493312          700 net_income==B1of3 or total_oper_liabilities or st_liabilities
+ 0.11255605381165958         1168 (interest <= 24296) and (total_oper_liabilities <= 1508233)
+ 0.11210762331838603         1149 (debt <= 430423) and (st_liabilities <= 1174034)
+ 0.11165919282511248         1249 num-of-N((debt <= 560000) and (total_oper_liabilities <= 906417) and (net_income >= -84300))
+ 0.11121076233183894         1237 num-of-N((debt <= 560000) and (equity >= 1135178) and (FFO >= 103264))
+ 0.11121076233183894         1246 num-of-N((debt <= 560000) and (FFO >= 103264) and (equity >= 1135178))
+ 0.10986547085201828         1554 financial_expenses LESSTHAN FFO
+ 0.10986547085201828         1131 (debt <= 560000) and (equity >= 1135178) and (FFO >= 103264)
+ 0.10986547085201828         1141 (debt <= 560000) and (FFO >= 103264) and (equity >= 1135178)
+ 0.10852017937219764          291 EBIT==B2of3 equ debt==B2of2
+ 0.10852017937219764          404 EBIT==B2of3 xor debt==B2of2
+ 0.1080717488789241           959 net_income==B1of3 or debt==B2of2 or FFO==B2of3
+ 0.1080717488789241           773 EBIT==B1of3 or debt==B2of2 or FFO==B2of3
+ 0.10762331838565053          215 EBIT==B3of3 equ FFO==B3of3
+ 0.10762331838565053          328 EBIT==B3of3 xor FFO==B3of3
+ 0.10672645739910344         1564 interest LESSTHAN FFO
+ 0.1062780269058299           441 net_income==B2of3 impl debt==B2of2
+ 0.1062780269058299          1210 num-of-N((debt <= 560000) and (equity >= 1135178))
+ 0.1062780269058299          1031 EBIT==B1of3 or net_income==B3of3 or debt==B2of2
+ 0.10582959641255635          482 interest==B2of2 impl net_income==B3of3
+ 0.1053811659192828           334 net_income==B1of3 xor equity==B2of2
+ 0.1053811659192828           221 net_income==B1of3 equ equity==B2of2
+ 0.10403587443946215         1569 cost_of_labor LESSTHAN debt
+ 0.10358744394618861         1277 num-of-N((interest <= 24296) and (interest >= 8964) and (equity >= 602538) and (net_income >= -17144))
+ 0.1035874439461886            59 interest==B2of2 and debt==B2of2
+ 0.1035874439461886          1201 num-of-N((FFO >= 740256) and (debt <= 9677732) and (equity >= 4056412))
+ 0.10313901345291505          490 EBIT==B2of3 impl debt==B2of2
+ 0.10313901345291505         1035 EBIT==B3of3 or net_income==B1of3 or debt==B2of2
+ 0.10269058295964151           73 EBIT==B2of3 and equity==B2of2
+ 0.10000000000000021          391 interest==B2of2 xor EBIT==B1of3
+ 0.10000000000000021          278 interest==B2of2 equ EBIT==B1of3
+ 0.09955156950672665         1090 (FFO >= 740256) and (debt <= 9677732) and (equity >= 4056412)
+ 0.09955156950672665         1253 num-of-N((st_liabilities <= 1174034) and (debt <= 560000))
+ 0.09955156950672665         1250 num-of-N((debt <= 560000) and (st_liabilities <= 1174034))
+ 0.0991031390134531           381 interest==B2of2 xor inventories
+ 0.0991031390134531          1608 interest_x_st_liabilities
+ 0.0991031390134531           380 interest==B2of2 xor st_liabilities
+ 0.0991031390134531           379 interest==B2of2 xor total_oper_liabilities
+ 0.0991031390134531           471 interest==B2of2 impl total_oper_liabilities
+ 0.0991031390134531           313 cost_of_labor xor interest==B2of2
+ 0.0991031390134531          1598 financial_expenses_x_interest
+ 0.0991031390134531          1609 interest_x_inventories
+ 0.0991031390134531           358 financial_expenses xor interest==B2of2
+ 0.0991031390134531           473 interest==B2of2 impl inventories
+ 0.0991031390134531            87 cost_of_labor or interest==B2of2
+ 0.0991031390134531           200 cost_of_labor equ interest==B2of2
+ 0.0991031390134531           245 financial_expenses equ interest==B2of2
+ 0.0991031390134531           755 financial_expenses or interest==B2of2 or total_oper_liabilities
+ 0.0991031390134531           267 interest==B2of2 equ st_liabilities
+ 0.0991031390134531          1007 interest==B2of2 or total_oper_liabilities or inventories
+ 0.0991031390134531           997 interest==B2of2 or total_oper_liabilities or st_liabilities
+ 0.0991031390134531           154 interest==B2of2 or st_liabilities
+ 0.0991031390134531           268 interest==B2of2 equ inventories
+ 0.0991031390134531           472 interest==B2of2 impl st_liabilities
+ 0.0991031390134531          1581 cost_of_labor_x_interest
+ 0.0991031390134531           153 interest==B2of2 or total_oper_liabilities
+ 0.0991031390134531          1607 interest_x_total_oper_liabilities
+ 0.0991031390134531           155 interest==B2of2 or inventories
+ 0.0991031390134531           924 cost_of_labor or interest==B2of2 or st_liabilities
+ 0.0991031390134531           266 interest==B2of2 equ total_oper_liabilities
+ 0.0991031390134531           923 cost_of_labor or interest==B2of2 or total_oper_liabilities
+ 0.0991031390134531           756 financial_expenses or interest==B2of2 or inventories
+ 0.0991031390134531           132 financial_expenses or interest==B2of2
+ 0.09775784753363247         1241 num-of-N((FFO >= 1151120) and (net_income >= 1629286))
+ 0.09775784753363247          455 equity==B2of2 impl FFO==B2of3
+ 0.09686098654708536         1013 interest==B2of2 or total_oper_liabilities or FFO==B3of3
+ 0.09686098654708536          805 financial_expenses or interest==B2of2 or FFO==B3of3
+ 0.09686098654708536          972 cost_of_labor or interest==B2of2 or FFO==B3of3
+ 0.09686098654708536          843 interest==B2of2 or inventories or FFO==B3of3
+ 0.09686098654708536          820 interest==B2of2 or st_liabilities or FFO==B3of3
+ 0.09686098654708536          173 interest==B2of2 or FFO==B3of3
+ 0.09596412556053827          548 EBIT==B3of3 and debt==B2of2 and FFO==B3of3
+ 0.09551569506726472          394 interest==B2of2 xor net_income==B1of3
+ 0.09551569506726472          281 interest==B2of2 equ net_income==B1of3
+ 0.09551569506726472         1144 (debt <= 560000) and (total_oper_liabilities <= 906417) and (net_income >= -84300)
+ 0.09506726457399117          284 interest==B2of2 equ FFO==B1of3
+ 0.09506726457399117          397 interest==B2of2 xor FFO==B1of3
+ 0.09461883408071763          878 net_income==B1of3 or st_liabilities or FFO==B3of3
+ 0.09461883408071763          902 financial_expenses or net_income==B1of3 or FFO==B3of3
+ 0.09461883408071763          139 net_income==B1of3 or FFO==B3of3
+ 0.09461883408071763          945 net_income==B1of3 or inventories or FFO==B3of3
+ 0.09461883408071763          783 net_income==B1of3 or total_oper_liabilities or FFO==B3of3
+ 0.09461883408071763          684 cost_of_labor or net_income==B1of3 or FFO==B3of3
+ 0.09417040358744407         1547 debt LESSTHAN total_oper_liabilities
+ 0.09372197309417052          921 net_income==B3of3 or debt==B2of2 or inventories
+ 0.09372197309417052          113 net_income==B3of3 or debt==B2of2
+ 0.09372197309417052         1024 cost_of_labor or net_income==B3of3 or debt==B2of2
+ 0.09372197309417052          918 net_income==B3of3 or debt==B2of2 or st_liabilities
+ 0.09372197309417052          911 net_income==B3of3 or debt==B2of2 or total_oper_liabilities
+ 0.09372197309417052          801 interest==B2of2 or net_income==B3of3 or debt==B2of2
+ 0.09282511210762343          265 interest==B2of2 equ debt==B2of2
+ 0.09282511210762343          378 interest==B2of2 xor debt==B2of2
+ 0.09282511210762343         1586 equity_x_debt
+ 0.09192825112107635          431 EBIT==B2of3 impl FFO==B3of3
+ 0.09192825112107633         1125 (EBIT >= 667000) and (debt <= 9677732)
+ 0.09192825112107633          288 EBIT==B2of3 equ equity==B2of2
+ 0.09192825112107633          401 EBIT==B2of3 xor equity==B2of2
+ 0.09147982062780279         1102 (debt <= 1377150)
+ 0.09147982062780279          709 EBIT==B1of3 or net_income==B1of3 or FFO==B3of3
+ 0.09103139013452924          463 net_income==B2of3 impl FFO==B3of3
+ 0.08968609865470858          836 interest==B2of2 or net_income==B3of3 or FFO==B3of3
+ 0.08878923766816149          751 EBIT==B3of3 or debt==B2of2 or st_liabilities
+ 0.08878923766816149          969 cost_of_labor or EBIT==B3of3 or debt==B2of2
+ 0.08878923766816149          737 EBIT==B3of3 or debt==B2of2 or total_oper_liabilities
+ 0.08878923766816149          179 EBIT==B3of3 or debt==B2of2
+ 0.08878923766816149          754 EBIT==B3of3 or debt==B2of2 or inventories
+ 0.08878923766816149         1058 interest==B2of2 or EBIT==B3of3 or debt==B2of2
+ 0.08744394618834084         1263 num-of-N((FFO >= 1151120) and (net_income >= 1165380))
+ 0.08699551569506729          403 EBIT==B1of3 xor debt==B2of2
+ 0.08699551569506729          290 EBIT==B1of3 equ debt==B2of2
+ 0.08654708520179374          625 debt==B2of2 or total_oper_liabilities or FFO==B2of3
+ 0.08654708520179374          886 debt==B2of2 or inventories or FFO==B2of3
+ 0.08654708520179374          770 cost_of_labor or debt==B2of2 or FFO==B2of3
+ 0.08654708520179374          845 debt==B2of2 or st_liabilities or FFO==B2of3
+ 0.08654708520179374          163 debt==B2of2 or FFO==B2of3
+ 0.0860986547085202          1178 (equity >= 2382394) and (total_oper_liabilities <= 1950672) and (net_income >= -84300)
+ 0.08475336322869954          748 interest==B2of2 or EBIT==B3of3 or FFO==B3of3
+ 0.084304932735426           1163 (debt <= 560000) and (total_oper_liabilities <= 970874)
+ 0.084304932735426             45 net_income==B1of3 and debt==B2of2
+ 0.08385650224215245          382 inventories xor FFO==B1of3
+ 0.08385650224215245          925 financial_expenses or inventories or FFO==B1of3
+ 0.08385650224215245          766 financial_expenses or total_oper_liabilities or FFO==B1of3
+ 0.08385650224215245          375 financial_expenses xor FFO==B1of3
+ 0.08385650224215245          928 cost_of_labor or total_oper_liabilities or FFO==B1of3
+ 0.08385650224215245          103 cost_of_labor or FFO==B1of3
+ 0.08385650224215245          838 total_oper_liabilities or st_liabilities or FFO==B1of3
+ 0.08385650224215245          867 total_oper_liabilities or inventories or FFO==B1of3
+ 0.08385650224215245          657 cost_of_labor or st_liabilities or FFO==B1of3
+ 0.08385650224215245          239 st_liabilities equ FFO==B1of3
+ 0.08385650224215245          329 cost_of_labor xor FFO==B1of3
+ 0.08385650224215245          269 inventories equ FFO==B1of3
+ 0.08385650224215245          149 financial_expenses or FFO==B1of3
+ 0.08385650224215245          272 total_oper_liabilities equ FFO==B1of3
+ 0.08385650224215245          156 inventories or FFO==B1of3
+ 0.08385650224215245          352 st_liabilities xor FFO==B1of3
+ 0.08385650224215245          126 st_liabilities or FFO==B1of3
+ 0.08385650224215245          159 total_oper_liabilities or FFO==B1of3
+ 0.08385650224215245          216 cost_of_labor equ FFO==B1of3
+ 0.08385650224215245          262 financial_expenses equ FFO==B1of3
+ 0.08385650224215245          385 total_oper_liabilities xor FFO==B1of3
+ 0.0834080717488789          1121 (debt <= 560000) and (total_oper_liabilities <= 906417)
+ 0.08295964125560534         1231 num-of-N((EBIT >= 667000) and (debt <= 9677732))
+ 0.08295964125560534         1166 (equity >= 2382394) and (debt <= 2156655)
+ 0.08206278026905825          591 EBIT==B3of3 and equity==B2of2 and debt==B2of2
+ 0.08206278026905825          848 interest==B2of2 or debt==B2of2 or FFO==B2of3
+ 0.0816143497757847           714 EBIT==B1of3 or net_income==B3of3 or FFO==B2of3
+ 0.08071748878923761           55 net_income==B2of3 and FFO==B3of3
+ 0.08071748878923761         1265 num-of-N((debt <= 560000) and (total_oper_liabilities <= 970874))
+ 0.08026905829596405          338 net_income==B2of3 xor debt==B2of2
+ 0.08026905829596405          225 net_income==B2of3 equ debt==B2of2
+ 0.0798206278026905           492 EBIT==B1of3 impl total_oper_liabilities
+ 0.0798206278026905           301 EBIT==B1of3 equ inventories
+ 0.0798206278026905           314 cost_of_labor xor EBIT==B1of3
+ 0.0798206278026905           495 EBIT==B1of3 impl st_liabilities
+ 0.0798206278026905           188 EBIT==B1of3 or inventories
+ 0.0798206278026905           498 EBIT==B1of3 impl inventories
+ 0.0798206278026905           201 cost_of_labor equ EBIT==B1of3
+ 0.0798206278026905          1037 EBIT==B3of3 or net_income==B3of3 or debt==B2of2
+ 0.0798206278026905           414 EBIT==B1of3 xor inventories
+ 0.0798206278026905           976 cost_of_labor or EBIT==B1of3 or total_oper_liabilities
+ 0.0798206278026905           979 cost_of_labor or EBIT==B1of3 or st_liabilities
+ 0.0798206278026905           294 EBIT==B1of3 equ total_oper_liabilities
+ 0.0798206278026905            88 cost_of_labor or EBIT==B1of3
+ 0.0798206278026905           298 EBIT==B1of3 equ st_liabilities
+ 0.0798206278026905           185 EBIT==B1of3 or st_liabilities
+ 0.0798206278026905           181 EBIT==B1of3 or total_oper_liabilities
+ 0.0798206278026905           407 EBIT==B1of3 xor total_oper_liabilities
+ 0.0798206278026905           913 EBIT==B1of3 or total_oper_liabilities or st_liabilities
+ 0.0798206278026905           411 EBIT==B1of3 xor st_liabilities
+ 0.07937219730941696          583 net_income==B2of3 and debt==B2of2 and FFO==B3of3
+ 0.07847533632286986          835 interest==B2of2 or net_income==B3of3 or FFO==B2of3
+ 0.07802690582959632          224 net_income==B1of3 equ debt==B2of2
+ 0.07802690582959632          337 net_income==B1of3 xor debt==B2of2
+ 0.07757847533632276         1205 num-of-N((debt <= 560000) and (equity >= 1135178) and (equity <= 1708654))
+ 0.07713004484304921          367 net_income==B2of3 xor FFO==B2of3
+ 0.07713004484304921          742 interest==B2of2 or EBIT==B1of3 or FFO==B3of3
+ 0.07713004484304921          254 net_income==B2of3 equ FFO==B2of3
+ 0.07713004484304921         1129 (equity >= 3899182) and (debt <= 12107354)
+ 0.07668161434977566          576 net_income==B2of3 and equity==B2of2 and FFO==B3of3
+ 0.07578475336322857          658 cost_of_labor or st_liabilities or FFO==B2of3
+ 0.07578475336322857          157 inventories or FFO==B2of3
+ 0.07578475336322857          273 total_oper_liabilities equ FFO==B2of3
+ 0.07578475336322857          150 financial_expenses or FFO==B2of3
+ 0.07578475336322857          839 total_oper_liabilities or st_liabilities or FFO==B2of3
+ 0.07578475336322857          330 cost_of_labor xor FFO==B2of3
+ 0.07578475336322857          767 financial_expenses or total_oper_liabilities or FFO==B2of3
+ 0.07578475336322857          160 total_oper_liabilities or FFO==B2of3
+ 0.07578475336322857          868 total_oper_liabilities or inventories or FFO==B2of3
+ 0.07578475336322857          926 financial_expenses or inventories or FFO==B2of3
+ 0.07578475336322857          929 cost_of_labor or total_oper_liabilities or FFO==B2of3
+ 0.07578475336322857          240 st_liabilities equ FFO==B2of3
+ 0.07578475336322857          383 inventories xor FFO==B2of3
+ 0.07578475336322857          263 financial_expenses equ FFO==B2of3
+ 0.07578475336322857          217 cost_of_labor equ FFO==B2of3
+ 0.07578475336322857          104 cost_of_labor or FFO==B2of3
+ 0.07578475336322857          127 st_liabilities or FFO==B2of3
+ 0.07578475336322857          270 inventories equ FFO==B2of3
+ 0.07578475336322857          353 st_liabilities xor FFO==B2of3
+ 0.07578475336322857          386 total_oper_liabilities xor FFO==B2of3
+ 0.07578475336322857          376 financial_expenses xor FFO==B2of3
+ 0.07533632286995502          462 net_income==B2of3 impl FFO==B2of3
+ 0.07533632286995502          830 interest==B2of2 or net_income==B1of3 or FFO==B3of3
+ 0.07488789237668146          419 EBIT==B1of3 impl net_income==B3of3
+ 0.07488789237668146         1268 num-of-N((equity >= 2382394) and (debt <= 2156655))
+ 0.07443946188340791          277 debt==B2of2 equ FFO==B3of3
+ 0.07443946188340791         1254 num-of-N((debt <= 430423) and (st_liabilities <= 1174034))
+ 0.07443946188340791          390 debt==B2of2 xor FFO==B3of3
+ 0.07399103139013437          324 EBIT==B2of3 xor FFO==B2of3
+ 0.07399103139013437          211 EBIT==B2of3 equ FFO==B2of3
+ 0.07399103139013437          427 EBIT==B1of3 impl FFO==B2of3
+ 0.07399103139013437          244 equity==B2of2 equ FFO==B3of3
+ 0.07399103139013437          418 EBIT==B1of3 impl net_income==B2of3
+ 0.07399103139013437          357 equity==B2of2 xor FFO==B3of3
+ 0.07264573991031374          727 EBIT==B3of3 or net_income==B1of3 or FFO==B3of3
+ 0.07264573991031373           77 EBIT==B3of3 and debt==B2of2
+ 0.07219730941704017           85 EBIT==B3of3 or net_income==B2of3
+ 0.07219730941704017          729 EBIT==B3of3 or net_income==B2of3 or FFO==B2of3
+ 0.07219730941704017          995 cost_of_labor or EBIT==B3of3 or net_income==B2of3
+ 0.07219730941704017          622 EBIT==B3of3 or net_income==B2of3 or total_oper_liabilities
+ 0.07219730941704017          652 EBIT==B3of3 or net_income==B2of3 or st_liabilities
+ 0.07219730941704017          640 EBIT==B3of3 or net_income==B2of3 or inventories
+ 0.07040358744394601         1235 num-of-N((equity >= 3899182) and (debt <= 12107354))
+ 0.07040358744394601           54 net_income==B2of3 and FFO==B2of3
+ 0.06950672645739893          936 EBIT==B2of3 or total_oper_liabilities or FFO==B3of3
+ 0.06950672645739893         1160 (net_income >= 18063) and (equity >= 2382394) and (total_oper_liabilities <= 1950672)
+ 0.06950672645739893         1003 cost_of_labor or EBIT==B2of3 or FFO==B3of3
+ 0.06950672645739893           99 EBIT==B2of3 or FFO==B3of3
+ 0.06950672645739893          762 EBIT==B2of3 or inventories or FFO==B3of3
+ 0.06950672645739893          665 EBIT==B2of3 or st_liabilities or FFO==B3of3
+ 0.06950672645739893         1561 debt LESSTHAN FFO
+ 0.06950672645739893         1107 (net_income >= 18063) and (equity >= 2469145) and (total_oper_liabilities <= 1950672)
+ 0.06905829596412538           23 EBIT==B1of3 and net_income==B1of3
+ 0.06905829596412538          456 equity==B2of2 impl FFO==B3of3
+ 0.06905829596412538          505 EBIT==B2of3 and equity==B2of2 and FFO==B3of3
+ 0.06860986547085185          747 interest==B2of2 or EBIT==B3of3 or FFO==B2of3
+ 0.06860986547085185         1220 num-of-N((debt <= 201036) and (interest >= 17377))
+ 0.0681614349775783          1127 (debt <= 560000) and (equity >= 1135178) and (interest >= 8964)
+ 0.06726457399103122          960 net_income==B1of3 or debt==B2of2 or FFO==B3of3
+ 0.06726457399103122          774 EBIT==B1of3 or debt==B2of2 or FFO==B3of3
+ 0.06681614349775768         1139 (net_income >= 18063) and (equity >= 2469145) and (debt <= 3788009) and (equity <= 4723607)
+ 0.06681614349775768           37 EBIT==B2of3 and FFO==B3of3
+ 0.06681614349775768          523 EBIT==B2of3 and net_income==B2of3 and FFO==B3of3
+ 0.06681614349775768         1227 num-of-N((debt <= 560000) and (total_oper_liabilities <= 906417))
+ 0.0659192825112106          1233 num-of-N((debt <= 560000) and (equity >= 1135178) and (interest >= 8964))
+ 0.06412556053811644          287 EBIT==B1of3 equ equity==B2of2
+ 0.06412556053811644          400 EBIT==B1of3 xor equity==B2of2
+ 0.06412556053811644         1198 num-of-N((equity >= 2997107) and (debt <= 1786476))
+ 0.06367713004484289         1150 (interest <= 24296) and (total_oper_liabilities <= 1057717)
+ 0.06322869955156936         1533 equity LESSTHAN total_oper_liabilities
+ 0.06322869955156936          477 interest==B2of2 impl EBIT==B1of3
+ 0.06233183856502227          786 net_income==B2of3 or total_oper_liabilities or FFO==B3of3
+ 0.06233183856502227         1175 (interest <= 24296) and (interest >= 8964) and (equity >= 602538) and (net_income >= -17144)
+ 0.06233183856502227          142 net_income==B2of3 or FFO==B3of3
+ 0.06233183856502227          881 net_income==B2of3 or st_liabilities or FFO==B3of3
+ 0.06233183856502227          687 cost_of_labor or net_income==B2of3 or FFO==B3of3
+ 0.06233183856502227          905 financial_expenses or net_income==B2of3 or FFO==B3of3
+ 0.06233183856502227          948 net_income==B2of3 or inventories or FFO==B3of3
+ 0.06188340807174873          722 EBIT==B2of3 or net_income==B3of3 or FFO==B1of3
+ 0.06188340807174873           42 net_income==B1of3 and equity==B2of2
+ 0.061434977578475186         724 EBIT==B2of3 or net_income==B3of3 or FFO==B3of3
+ 0.06008968609865457         1112 (interest <= 24296) and (total_oper_liabilities <= 970874)
+ 0.06008968609865457          549 interest==B2of2 and equity==B2of2 and debt==B2of2
+ 0.05964125560538103          164 debt==B2of2 or FFO==B3of3
+ 0.05964125560538103          846 debt==B2of2 or st_liabilities or FFO==B3of3
+ 0.05964125560538103          849 interest==B2of2 or debt==B2of2 or FFO==B3of3
+ 0.05964125560538103          771 cost_of_labor or debt==B2of2 or FFO==B3of3
+ 0.05964125560538103          887 debt==B2of2 or inventories or FFO==B3of3
+ 0.05964125560538103          626 debt==B2of2 or total_oper_liabilities or FFO==B3of3
+ 0.05874439461883394         1071 (net_income >= 1002998)
+ 0.0582959641255604           483 interest==B2of2 impl FFO==B1of3
+ 0.0582959641255604           480 interest==B2of2 impl net_income==B1of3
+ 0.0582959641255604          1105 (net_income >= 1119234)
+ 0.05784753363228686         1101 (net_income >= 978246)
+ 0.05784753363228686          721 EBIT==B2of3 or net_income==B2of3 or FFO==B3of3
+ 0.05784753363228686          388 debt==B2of2 xor FFO==B1of3
+ 0.05784753363228686          275 debt==B2of2 equ FFO==B1of3
+ 0.05739910313901332         1094 (debt <= 560000) and (equity >= 1135178) and (equity <= 1708654)
+ 0.05695067264573978         1084 (equity >= 2997107) and (debt <= 1786476)
+ 0.056502242152466235         484 interest==B2of2 impl FFO==B2of3
+ 0.056502242152466235         726 EBIT==B3of3 or net_income==B1of3 or FFO==B2of3
+ 0.056502242152466235        1255 num-of-N((interest <= 24296) and (total_oper_liabilities <= 1057717))
+ 0.056053811659192695         460 net_income==B1of3 impl FFO==B3of3
+ 0.056053811659192695          49 equity==B2of2 and FFO==B2of3
+ 0.056053811659192695          51 net_income==B1of3 and FFO==B1of3
+ 0.055605381165919156          58 interest==B2of2 and equity==B2of2
+ 0.055156950672645616         575 net_income==B2of3 and equity==B2of2 and FFO==B2of3
+ 0.055156950672645616         966 net_income==B3of3 or debt==B2of2 or FFO==B3of3
+ 0.054708520179372076        1161 (FFO >= 1151120) and (net_income >= 1165380)
+ 0.054708520179372076        1062 (equity >= 4080902) and (net_income >= 1165380)
+ 0.054708520179372076        1095 (net_income >= 1165380)
+ 0.05426008968609853         1179 num-of-N((equity >= 4080902) and (net_income >= 1165380))
+ 0.05426008968609853         1030 EBIT==B1of3 or net_income==B2of3 or debt==B2of2
+ 0.05426008968609853          442 net_income==B3of3 impl debt==B2of2
+ 0.05336322869955145          199 EBIT==B3of3 equ net_income==B3of3
+ 0.05336322869955145           36 EBIT==B2of3 and FFO==B2of3
+ 0.05336322869955145          522 EBIT==B2of3 and net_income==B2of3 and FFO==B2of3
+ 0.05336322869955145          312 EBIT==B3of3 xor net_income==B3of3
+ 0.05246636771300437         1552 debt LESSTHAN inventories
+ 0.051569506726457284          60 debt==B2of2 and FFO==B1of3
+ 0.051121076233183745        1546 total_oper_liabilities LESSTHAN st_liabilities
+ 0.050672645739910205         545 EBIT==B2of3 and debt==B2of2 and FFO==B3of3
+ 0.050224215246636665          75 EBIT==B1of3 and debt==B2of2
+ 0.049775784753363125        1075 (FFO >= 1151120) and (total_oper_liabilities <= 4594001) and (equity >= 5854267)
+ 0.04932735426008958          961 net_income==B2of3 or debt==B2of2 or FFO==B1of3
+ 0.04887892376681604         1189 num-of-N((FFO >= 1151120) and (total_oper_liabilities <= 4594001) and (equity >= 5854267))
+ 0.0484304932735425           485 interest==B2of2 impl FFO==B3of3
+ 0.04798206278026896         1114 (debt <= 201036) and (interest >= 17377)
+ 0.04708520179372188         1136 (FFO >= 1151120) and (net_income >= 1629286)
+ 0.04708520179372188         1142 (net_income >= 1629286) and (EBIT >= 517177)
+ 0.04708520179372188         1076 (FFO >= 688731) and (net_income >= 1629286)
+ 0.04708520179372188         1135 (net_income >= 1629286)
+ 0.04663677130044833          242 equity==B2of2 equ FFO==B1of3
+ 0.04663677130044833          491 EBIT==B3of3 impl debt==B2of2
+ 0.04663677130044833         1182 num-of-N((interest <= 24296) and (interest >= 8964) and (inventories >= 181495))
+ 0.04663677130044833          355 equity==B2of2 xor FFO==B1of3
+ 0.04663677130044833         1032 EBIT==B2of3 or net_income==B1of3 or debt==B2of2
+ 0.046188340807174794         962 net_income==B2of3 or debt==B2of2 or FFO==B2of3
+ 0.046188340807174794        1096 (net_income >= 237480) and (EBIT >= 2344965)
+ 0.046188340807174794        1124 (interest <= 24296) and (equity >= 1564993) and (EBIT <= 193887) and (EBIT >= -2659)
+ 0.046188340807174794        1138 (net_income >= 18063) and (EBIT >= 2344965)
+ 0.046188340807174794         474 debt==B2of2 impl FFO==B1of3
+ 0.04573991031390126          569 net_income==B1of3 and equity==B2of2 and debt==B2of2
+ 0.045291479820627714         219 equity==B2of2 equ debt==B2of2
+ 0.045291479820627714         430 EBIT==B2of3 impl FFO==B2of3
+ 0.045291479820627714         332 equity==B2of2 xor debt==B2of2
+ 0.044843049327354174        1218 num-of-N((interest <= 24296) and (total_oper_liabilities <= 970874))
+ 0.04439461883408063          504 EBIT==B2of3 and equity==B2of2 and FFO==B2of3
+ 0.04394618834080709          730 EBIT==B3of3 or net_income==B2of3 or FFO==B3of3
+ 0.04349775784753355          780 EBIT==B3of3 or debt==B2of2 or FFO==B3of3
+ 0.04304932735426001          478 interest==B2of2 impl EBIT==B2of3
+ 0.04304932735426001          592 EBIT==B1of3 and net_income==B1of3 and debt==B2of2
+ 0.04260089686098647          428 EBIT==B1of3 impl FFO==B3of3
+ 0.04215246636771293         1230 num-of-N((interest <= 24296) and (equity >= 1564993) and (EBIT <= 193887) and (EBIT >= -2659))
+ 0.04215246636771293          425 EBIT==B3of3 impl net_income==B3of3
+ 0.04170403587443938          775 EBIT==B2of3 or debt==B2of2 or FFO==B1of3
+ 0.04170403587443938         1126 (equity >= 3255508) and (total_oper_liabilities <= 1950672) and (EBIT >= -113520)
+ 0.0408071748878923          1023 cost_of_labor or net_income==B2of3 or debt==B2of2
+ 0.0408071748878923           112 net_income==B2of3 or debt==B2of2
+ 0.0408071748878923           910 net_income==B2of3 or debt==B2of2 or total_oper_liabilities
+ 0.0408071748878923           920 net_income==B2of3 or debt==B2of2 or inventories
+ 0.0408071748878923           917 net_income==B2of3 or debt==B2of2 or st_liabilities
+ 0.04035874439461876          356 equity==B2of2 xor FFO==B2of3
+ 0.04035874439461876          243 equity==B2of2 equ FFO==B2of3
+ 0.03946188340807168         1066 (interest <= 24296) and (interest >= 8964) and (inventories >= 181495)
+ 0.03946188340807168          582 net_income==B2of3 and debt==B2of2 and FFO==B2of3
+ 0.03946188340807168           61 debt==B2of2 and FFO==B2of3
+ 0.03901345291479814          568 interest==B2of2 and debt==B2of2 and FFO==B3of3
+ 0.0385650224215246           579 net_income==B1of3 and debt==B2of2 and FFO==B1of3
+ 0.03811659192825106          779 EBIT==B3of3 or debt==B2of2 or FFO==B2of3
+ 0.03811659192825106           71 interest==B2of2 and FFO==B3of3
+ 0.03811659192825106          558 interest==B2of2 and equity==B2of2 and FFO==B3of3
+ 0.03766816143497752          516 EBIT==B1of3 and net_income==B1of3 and FFO==B1of3
+ 0.03766816143497752           32 EBIT==B1of3 and FFO==B1of3
+ 0.03677130044843043         1086 (net_income >= 1825123)
+ 0.03677130044843043          696 interest==B2of2 or EBIT==B2of3 or net_income==B3of3
+ 0.03632286995515689           62 debt==B2of2 and FFO==B3of3
+ 0.03632286995515689           72 EBIT==B1of3 and equity==B2of2
+ 0.03632286995515689          800 interest==B2of2 or net_income==B2of3 or debt==B2of2
+ 0.03632286995515689          479 interest==B2of2 impl EBIT==B3of3
+ 0.03587443946188335          776 EBIT==B2of3 or debt==B2of2 or FFO==B2of3
+ 0.03587443946188335         1573 cost_of_labor LESSTHAN st_liabilities
+ 0.03542600896860981         1123 (net_income >= 21858) and (interest <= 16478) and (debt >= 223368)
+ 0.03542600896860981          588 equity==B2of2 and debt==B2of2 and FFO==B3of3
+ 0.03497757847533627          736 EBIT==B2of3 or debt==B2of2 or total_oper_liabilities
+ 0.03497757847533627          968 cost_of_labor or EBIT==B2of3 or debt==B2of2
+ 0.03497757847533627          750 EBIT==B2of3 or debt==B2of2 or st_liabilities
+ 0.03497757847533627          178 EBIT==B2of3 or debt==B2of2
+ 0.03497757847533627          544 EBIT==B2of3 and debt==B2of2 and FFO==B2of3
+ 0.03497757847533627          753 EBIT==B2of3 or debt==B2of2 or inventories
+ 0.034529147982062726          67 interest==B2of2 and net_income==B2of3
+ 0.034529147982062726         554 interest==B2of2 and net_income==B2of3 and debt==B2of2
+ 0.033632286995515646        1559 inventories LESSTHAN FFO
+ 0.03273542600896857           66 interest==B2of2 and net_income==B1of3
+ 0.03273542600896857          553 interest==B2of2 and net_income==B1of3 and debt==B2of2
+ 0.03228699551569503          614 interest==B2of2 and EBIT==B3of3 and debt==B2of2
+ 0.03228699551569503          604 EBIT==B1of3 and net_income==B1of3 and equity==B2of2
+ 0.03139013452914794         1571 EBIT LESSTHAN inventories
+ 0.03139013452914794           30 EBIT==B3of3 and net_income==B2of3
+ 0.03049327354260086         1057 interest==B2of2 or EBIT==B2of3 or debt==B2of2
+ 0.03049327354260086           65 interest==B2of2 and EBIT==B3of3
+ 0.030044843049327318        1566 EBIT LESSTHAN debt
+ 0.02959641255605378         1535 net_income LESSTHAN debt
+ 0.02959641255605378         1541 net_income LESSTHAN inventories
+ 0.028251121076233156         539 interest==B2of2 and EBIT==B3of3 and FFO==B3of3
+ 0.028251121076233156         587 equity==B2of2 and debt==B2of2 and FFO==B2of3
+ 0.027802690582959613         965 net_income==B3of3 or debt==B2of2 or FFO==B2of3
+ 0.027354260089686073        1555 interest LESSTHAN debt
+ 0.027354260089686073        1033 EBIT==B2of3 or net_income==B2of3 or debt==B2of2
+ 0.02645739910313899         1526 EBIT LESSTHAN net_income
+ 0.02556053811659191          610 EBIT==B3of3 and net_income==B2of3 and equity==B2of2
+ 0.02556053811659191         1110 (FFO >= 688731) and (total_oper_liabilities <= 5036867) and (cost_of_labor >= 4502930)
+ 0.024663677130044828          69 interest==B2of2 and FFO==B1of3
+ 0.024663677130044828         566 interest==B2of2 and debt==B2of2 and FFO==B1of3
+ 0.023766816143497745         603 interest==B2of2 and EBIT==B3of3 and equity==B2of2
+ 0.02286995515695066           52 net_income==B1of3 and FFO==B3of3
+ 0.02286995515695066          540 EBIT==B1of3 and debt==B2of2 and FFO==B1of3
+ 0.02286995515695066          745 interest==B2of2 or EBIT==B2of3 or FFO==B3of3
+ 0.02286995515695066          573 net_income==B1of3 and equity==B2of2 and FFO==B3of3
+ 0.02286995515695066          458 net_income==B1of3 impl FFO==B1of3
+ 0.022421524663677122         551 interest==B2of2 and net_income==B2of3 and equity==B2of2
+ 0.022421524663677122         515 interest==B2of2 and EBIT==B3of3 and net_income==B3of3
+ 0.021973094170403582         559 interest==B2of2 and net_income==B1of3 and FFO==B1of3
+ 0.021973094170403582        1574 financial_expenses DIFF interest
+ 0.02152466367713004         1272 num-of-N((equity >= 3445271) and (total_oper_liabilities <= 4736986) and (total_oper_liabilities >= 3283080) and (net_income <= 397188))
+ 0.0210762331838565           195 EBIT==B2of3 equ net_income==B2of3
+ 0.0210762331838565           308 EBIT==B2of3 xor net_income==B2of3
+ 0.0210762331838565           589 EBIT==B1of3 and equity==B2of2 and debt==B2of2
+ 0.020627802690582956         507 EBIT==B3of3 and equity==B2of2 and FFO==B2of3
+ 0.020179372197309416         728 EBIT==B3of3 or net_income==B2of3 or FFO==B1of3
+ 0.020179372197309416          39 EBIT==B3of3 and FFO==B2of3
+ 0.020179372197309416         320 EBIT==B1of3 xor FFO==B1of3
+ 0.020179372197309416         207 EBIT==B1of3 equ FFO==B1of3
+ 0.019730941704035877        1170 (equity >= 3445271) and (total_oper_liabilities <= 4736986) and (total_oper_liabilities >= 3283080) and (net_income <= 397188)
+ 0.019730941704035877         580 net_income==B1of3 and debt==B2of2 and FFO==B3of3
+ 0.018834080717488794         434 EBIT==B3of3 impl FFO==B3of3
+ 0.018385650224215254         436 equity==B2of2 impl total_oper_liabilities
+ 0.018385650224215254        1018 cost_of_labor or equity==B2of2 or total_oper_liabilities
+ 0.018385650224215254        1025 cost_of_labor or equity==B2of2 or st_liabilities
+ 0.018385650224215254         850 financial_expenses or equity==B2of2 or total_oper_liabilities
+ 0.018385650224215254         443 equity==B2of2 impl st_liabilities
+ 0.018385650224215254        1587 equity_x_total_oper_liabilities
+ 0.018385650224215254        1034 EBIT==B2of3 or net_income==B3of3 or debt==B2of2
+ 0.018385650224215254        1590 equity_x_st_liabilities
+ 0.018385650224215254         826 equity==B2of2 or total_oper_liabilities or inventories
+ 0.018385650224215254        1592 financial_expenses_x_equity
+ 0.018385650224215254         406 cost_of_labor xor equity==B2of2
+ 0.018385650224215254        1591 equity_x_inventories
+ 0.018385650224215254         825 equity==B2of2 or total_oper_liabilities or st_liabilities
+ 0.018385650224215254         333 equity==B2of2 xor total_oper_liabilities
+ 0.018385650224215254         444 equity==B2of2 impl inventories
+ 0.018385650224215254        1575 total_oper_liabilities DIFF st_liabilities
+ 0.018385650224215254         293 cost_of_labor equ equity==B2of2
+ 0.018385650224215254         341 equity==B2of2 xor inventories
+ 0.018385650224215254         107 equity==B2of2 or total_oper_liabilities
+ 0.018385650224215254        1618 cost_of_labor_x_equity
+ 0.018385650224215254         342 financial_expenses xor equity==B2of2
+ 0.018385650224215254         114 equity==B2of2 or st_liabilities
+ 0.018385650224215254         115 equity==B2of2 or inventories
+ 0.018385650224215254         116 financial_expenses or equity==B2of2
+ 0.018385650224215254         229 financial_expenses equ equity==B2of2
+ 0.018385650224215254         180 cost_of_labor or equity==B2of2
+ 0.018385650224215254         340 equity==B2of2 xor st_liabilities
+ 0.018385650224215254         228 equity==B2of2 equ inventories
+ 0.018385650224215254         220 equity==B2of2 equ total_oper_liabilities
+ 0.018385650224215254         860 financial_expenses or equity==B2of2 or inventories
+ 0.018385650224215254         227 equity==B2of2 equ st_liabilities
+ 0.01793721973094171         1537 equity LESSTHAN inventories
+ 0.01793721973094171         1551 debt LESSTHAN st_liabilities
+ 0.017488789237668174          48 equity==B2of2 and FFO==B1of3
+ 0.017040358744394624         563 interest==B2of2 and net_income==B2of3 and FFO==B3of3
+ 0.016591928251121085         565 interest==B2of2 and net_income==B3of3 and FFO==B3of3
+ 0.01614349775784754           41 equity==B2of2 and debt==B2of2
+ 0.01614349775784754          481 interest==B2of2 impl net_income==B2of3
+ 0.015695067264573998         698 interest==B2of2 or EBIT==B3of3 or net_income==B2of3
+ 0.015695067264573998         250 net_income==B1of3 equ FFO==B1of3
+ 0.015695067264573998         528 EBIT==B3of3 and net_income==B2of3 and FFO==B2of3
+ 0.015695067264573998         502 EBIT==B1of3 and equity==B2of2 and FFO==B3of3
+ 0.015695067264573998          34 EBIT==B1of3 and FFO==B3of3
+ 0.015695067264573998         363 net_income==B1of3 xor FFO==B1of3
+ 0.015695067264573998         777 EBIT==B2of3 or debt==B2of2 or FFO==B3of3
+ 0.015246636771300455         514 interest==B2of2 and EBIT==B3of3 and net_income==B2of3
+ 0.015246636771300455         517 EBIT==B1of3 and net_income==B1of3 and FFO==B3of3
+ 0.015246636771300455         718 EBIT==B2of3 or net_income==B1of3 or FFO==B3of3
+ 0.015158403696180878        1421 total_oper_liabilities DIVIDE st_liabilities
+ 0.014798206278026914        1082 (financial_expenses <= 243) and (equity >= 740444)
+ 0.014798206278026914         599 EBIT==B3of3 and net_income==B2of3 and debt==B2of2
+ 0.01479820627802691          276 debt==B2of2 equ FFO==B2of3
+ 0.01479820627802691          389 debt==B2of2 xor FFO==B2of3
+ 0.01434977578475337          612 interest==B2of2 and EBIT==B1of3 and debt==B2of2
+ 0.01434977578475337           63 interest==B2of2 and EBIT==B1of3
+ 0.014349775784753369        1560 total_oper_liabilities LESSTHAN FFO
+ 0.014349775784753369        1196 num-of-N((financial_expenses <= 243) and (equity >= 740444))
+ 0.013901345291479829         550 interest==B2of2 and net_income==B1of3 and equity==B2of2
+ 0.013901345291479827         552 interest==B2of2 and net_income==B3of3 and equity==B2of2
+ 0.013901345291479827          68 interest==B2of2 and net_income==B3of3
+ 0.013901345291479827         555 interest==B2of2 and net_income==B3of3 and debt==B2of2
+ 0.013901345291479825        1391 equity DIVIDE debt
+ 0.013901345291479825        1424 total_oper_liabilities DIVIDE debt
+ 0.013901345291479825        1439 interest DIVIDE debt
+ 0.013901345291479825        1467 cost_of_labor DIVIDE debt
+ 0.013901345291479825        1432 st_liabilities DIVIDE debt
+ 0.013901345291479825        1434 inventories DIVIDE debt
+ 0.013452914798206284         475 debt==B2of2 impl FFO==B2of3
+ 0.013452914798206284         426 EBIT==B1of3 impl FFO==B1of3
+ 0.013004484304932739         856 financial_expenses or net_income==B3of3 or equity==B2of2
+ 0.013004484304932739         110 net_income==B3of3 or equity==B2of2
+ 0.013004484304932739         872 net_income==B3of3 or equity==B2of2 or inventories
+ 0.013004484304932739         859 net_income==B3of3 or equity==B2of2 or st_liabilities
+ 0.013004484304932739        1028 cost_of_labor or net_income==B3of3 or equity==B2of2
+ 0.013004484304932739         863 net_income==B3of3 or equity==B2of2 or total_oper_liabilities
+ 0.012967119371226896        1406 total_oper_liabilities DIVIDE net_income
+ 0.012556053811659197         542 EBIT==B1of3 and debt==B2of2 and FFO==B3of3
+ 0.011210762331838571         572 net_income==B1of3 and equity==B2of2 and FFO==B1of3
+ 0.01121076233183857          529 EBIT==B3of3 and net_income==B2of3 and FFO==B3of3
+ 0.01098241984223166         1416 FFO DIVIDE st_liabilities
+ 0.010897782386544659        1474 total_oper_liabilities DIVIDE cost_of_labor
+ 0.010383758421141257        1450 FFO DIVIDE total_oper_liabilities
+ 0.010313901345291483         532 interest==B2of2 and EBIT==B1of3 and FFO==B1of3
+ 0.010313901345291483         509 interest==B2of2 and EBIT==B1of3 and net_income==B1of3
+ 0.00986547085201794          598 EBIT==B3of3 and net_income==B1of3 and debt==B2of2
+ 0.00986547085201794          609 EBIT==B3of3 and net_income==B1of3 and equity==B2of2
+ 0.00986547085201794           29 EBIT==B3of3 and net_income==B1of3
+ 0.00964125560538116         1461 EBIT DIVIDE debt
+ 0.00942842450224304         1386 net_income DIVIDE cost_of_labor
+ 0.009155153170656214        1405 net_income DIVIDE total_oper_liabilities
+ 0.008968609865470855         802 interest==B2of2 or equity==B2of2 or st_liabilities
+ 0.008968609865470855         794 interest==B2of2 or equity==B2of2 or total_oper_liabilities
+ 0.008968609865470855         798 interest==B2of2 or equity==B2of2 or inventories
+ 0.008968609865470855         739 financial_expenses or interest==B2of2 or equity==B2of2
+ 0.008968609865470855         148 interest==B2of2 or equity==B2of2
+ 0.008968609865470855         912 cost_of_labor or interest==B2of2 or equity==B2of2
+ 0.008968609865470854        1059 EBIT==B1of3 or equity==B2of2 or st_liabilities
+ 0.008968609865470854         973 cost_of_labor or EBIT==B1of3 or equity==B2of2
+ 0.008968609865470854        1019 EBIT==B1of3 or equity==B2of2 or total_oper_liabilities
+ 0.008968609865470854        1041 EBIT==B1of3 or equity==B2of2 or inventories
+ 0.008968609865470854         174 EBIT==B1of3 or equity==B2of2
+ 0.008529846110814289        1430 FFO DIVIDE net_income
+ 0.008295964125560546        1452 FFO DIVIDE debt
+ 0.008218033303083318        1396 equity DIVIDE net_income
+ 0.00808303921602641         1367 interest SUBTRACT EBIT
+ 0.00807174887892377         1567 cost_of_labor LESSTHAN equity
+ 0.0079318820212607          1475 cost_of_labor DIVIDE st_liabilities
+ 0.007847533632286999        1397 net_income DIVIDE debt
+ 0.007623318385650226         526 EBIT==B3of3 and net_income==B1of3 and FFO==B3of3
+ 0.007506597038996681        1469 EBIT DIVIDE st_liabilities
+ 0.007426746289046895        1368 interest SUBTRACT net_income
+ 0.007346246328436359        1465 EBIT DIVIDE total_oper_liabilities
+ 0.007174887892376685         942 equity==B2of2 or st_liabilities or FFO==B3of3
+ 0.007174887892376685         131 equity==B2of2 or FFO==B3of3
+ 0.007174887892376685         586 equity==B2of2 and debt==B2of2 and FFO==B1of3
+ 0.007174887892376685         890 financial_expenses or equity==B2of2 or FFO==B3of3
+ 0.007174887892376685         987 equity==B2of2 or inventories or FFO==B3of3
+ 0.007174887892376685         671 cost_of_labor or equity==B2of2 or FFO==B3of3
+ 0.007174887892376685         808 equity==B2of2 or total_oper_liabilities or FFO==B3of3
+ 0.007174887892376682        1036 EBIT==B3of3 or net_income==B2of3 or debt==B2of2
+ 0.007083738247462627        1466 total_oper_liabilities DIVIDE EBIT
+ 0.006873142386454554        1407 net_income DIVIDE st_liabilities
+ 0.006844440638597869        1281 EBIT ADD net_income
+ 0.006726457399103142        1026 cost_of_labor or net_income==B1of3 or equity==B2of2
+ 0.006726457399103142         857 net_income==B1of3 or equity==B2of2 or st_liabilities
+ 0.006726457399103142         108 net_income==B1of3 or equity==B2of2
+ 0.006726457399103142         854 financial_expenses or net_income==B1of3 or equity==B2of2
+ 0.006726457399103142         870 net_income==B1of3 or equity==B2of2 or inventories
+ 0.006726457399103142         861 net_income==B1of3 or equity==B2of2 or total_oper_liabilities
+ 0.006537537904648632        1385 cost_of_labor DIVIDE net_income
+ 0.006278026905829597         524 EBIT==B2of3 and net_income==B3of3 and FFO==B3of3
+ 0.006278026905829597          28 EBIT==B2of3 and net_income==B3of3
+ 0.006278026905829597         608 EBIT==B2of3 and net_income==B3of3 and equity==B2of2
+ 0.006108610160645846           9 net_income
+ 0.005879143204528678        1344 net_income SUBTRACT st_liabilities
+ 0.0058403013355334136       1410 inventories DIVIDE net_income
+ 0.005770359668506661           8 EBITDA
+ 0.005758918860399679        1366 debt SUBTRACT FFO
+ 0.0057543259268637015       1339 net_income SUBTRACT debt
+ 0.0055358932493390686       1348 st_liabilities SUBTRACT FFO
+ 0.005530072568946759        1431 debt DIVIDE st_liabilities
+ 0.0054443046144700726       1384 EBIT DIVIDE cost_of_labor
+ 0.005437649224529125        1390 FFO DIVIDE cost_of_labor
+ 0.005381165919282511        1248 num-of-N((interest >= 703179) and (interest <= 760013))
+ 0.005381165919282511         530 EBIT==B3of3 and net_income==B3of3 and FFO==B2of3
+ 0.005381165919282511         466 net_income==B3of3 impl FFO==B3of3
+ 0.005381165919282511        1049 EBIT==B1of3 or net_income==B3of3 or equity==B2of2
+ 0.005381165919282511        1143 (interest >= 703179) and (interest <= 760013)
+ 0.005381165919282511         833 interest==B2of2 or net_income==B2of3 or FFO==B3of3
+ 0.005381165919282511         982 equity==B2of2 or debt==B2of2 or FFO==B1of3
+ 0.005381165919282511          56 net_income==B3of3 and FFO==B2of3
+ 0.00538116591928251         1043 EBIT==B3of3 or equity==B2of2 or inventories
+ 0.00538116591928251          975 cost_of_labor or EBIT==B3of3 or equity==B2of2
+ 0.00538116591928251         1061 EBIT==B3of3 or equity==B2of2 or st_liabilities
+ 0.00538116591928251          176 EBIT==B3of3 or equity==B2of2
+ 0.00538116591928251         1021 EBIT==B3of3 or equity==B2of2 or total_oper_liabilities
+ 0.00538116591928251         1055 EBIT==B3of3 or net_income==B3of3 or equity==B2of2
+ 0.00532599212548956         1382 interest DIVIDE cost_of_labor
+ 0.005314135101665017        1375 EBIT SUBTRACT st_liabilities
+ 0.005006734987141606           7 EBIT
+ 0.004974167005492293        1285 EBIT ADD FFO
+ 0.00493273542600897          556 interest==B2of2 and equity==B2of2 and FFO==B1of3
+ 0.004932735426008968        1414 inventories DIVIDE financial_expenses
+ 0.004932735426008968        1412 total_oper_liabilities DIVIDE financial_expenses
+ 0.004932735426008968        1015 EBIT==B1of3 or equity==B2of2 or debt==B2of2
+ 0.004932735426008968         851 net_income==B1of3 or equity==B2of2 or debt==B2of2
+ 0.004932735426008968        1404 equity DIVIDE financial_expenses
+ 0.004932735426008968        1420 interest DIVIDE financial_expenses
+ 0.004932735426008968        1438 FFO DIVIDE financial_expenses
+ 0.0049003847308832504       1371 EBIT SUBTRACT debt
+ 0.004494611307104403        1464 equity DIVIDE cost_of_labor
+ 0.004484304932735426         797 interest==B2of2 or net_income==B3of3 or equity==B2of2
+ 0.004484304932735426        1040 interest==B2of2 or EBIT==B3of3 or equity==B2of2
+ 0.004484304932735425         577 net_income==B3of3 and equity==B2of2 and FFO==B2of3
+ 0.004484304932735425         584 net_income==B3of3 and debt==B2of2 and FFO==B2of3
+ 0.004484304932735425         513 interest==B2of2 and EBIT==B3of3 and net_income==B1of3
+ 0.004484304932735425         489 EBIT==B1of3 impl debt==B2of2
+ 0.004484304932735425         440 net_income==B1of3 impl debt==B2of2
+ 0.004411050736937703        1303 debt ADD total_oper_liabilities
+ 0.004371576799782354        1354 financial_expenses SUBTRACT net_income
+ 0.0042969312051215          1284 cost_of_labor ADD net_income
+ 0.004266172005586671        1302 total_oper_liabilities ADD st_liabilities
+ 0.004260893737264599        1307 debt ADD st_liabilities
+ 0.0041560978353727          1329 cost_of_labor ADD st_liabilities
+ 0.004087948447754957        1408 st_liabilities DIVIDE net_income
+ 0.004035874439461883         106 equity==B2of2 or debt==B2of2
+ 0.004035874439461883        1578 interest DIFF debt
+ 0.004035874439461883         790 interest==B2of2 or equity==B2of2 or debt==B2of2
+ 0.004035874439461883        1014 cost_of_labor or equity==B2of2 or debt==B2of2
+ 0.004035874439461883        1009 equity==B2of2 or debt==B2of2 or st_liabilities
+ 0.004035874439461883        1010 equity==B2of2 or debt==B2of2 or inventories
+ 0.004035874439461883        1008 equity==B2of2 or debt==B2of2 or total_oper_liabilities
+ 0.004018368609429345        1313 interest ADD st_liabilities
+ 0.0040183020926175626       1306 net_income ADD FFO
+ 0.003879123355695835        1369 interest SUBTRACT FFO
+ 0.0038760678151151646          6 interest
+ 0.0037755773746694587         14 lt_assets
+ 0.0037708824297049805       1319 interest ADD net_income
+ 0.003758487323175066          19 st_liabilities
+ 0.003749806057336597        1325 cost_of_labor ADD debt
+ 0.00367381485309686         1311 interest ADD debt
+ 0.0035874439461883413        501 EBIT==B1of3 and equity==B2of2 and FFO==B1of3
+ 0.0035874439461883413       1047 EBIT==B1of3 or net_income==B1of3 or equity==B2of2
+ 0.003549825080619335        1399 equity DIVIDE st_liabilities
+ 0.0035382845132772593       1357 debt SUBTRACT inventories
+ 0.00353385242058362           12 debt
+ 0.003478977578699972        1362 interest SUBTRACT st_liabilities
+ 0.003376567516579501        1360 interest SUBTRACT debt
+ 0.003295838914400633        1296 net_income ADD inventories
+ 0.00318605392423431         1308 debt ADD inventories
+ 0.0031622328847775234       1383 cost_of_labor DIVIDE EBIT
+ 0.003145271854276173        1489 financial_expenses MULTIPLY equity
+ 0.003139013452914798         601 interest==B2of2 and EBIT==B1of3 and equity==B2of2
+ 0.003122983390101306        1286 cost_of_labor ADD FFO
+ 0.003073999476951598        1373 EBIT SUBTRACT total_oper_liabilities
+ 0.0029781145786177883       1283 cost_of_labor ADD EBIT
+ 0.002877512190972176        1521 cost_of_labor MULTIPLY debt
+ 0.0028732148529874812       1301 financial_expenses ADD interest
+ 0.0028666726498655696       1343 net_income SUBTRACT total_oper_liabilities
+ 0.002778552625790593        1378 cost_of_labor SUBTRACT st_liabilities
+ 0.0026946896525459627       1327 EBIT ADD inventories
+ 0.002690582959641257         899 net_income==B3of3 or equity==B2of2 or FFO==B3of3
+ 0.0026905829596412553       1527 cost_of_labor LESSTHAN interest
+ 0.0026324364032152925       1318 interest ADD EBIT
+ 0.002555296441478776        1525 cost_of_labor MULTIPLY st_liabilities
+ 0.002539049041148294        1443 interest DIVIDE st_liabilities
+ 0.002466367713004484        1428 net_income DIVIDE financial_expenses
+ 0.0024611676611003396         21 FFO
+ 0.0023991293566435366       1359 financial_expenses SUBTRACT FFO
+ 0.0023947774161549406       1460 equity DIVIDE EBIT
+ 0.002381019302609172        1485 net_income MULTIPLY equity
+ 0.002378644597600545        1326 EBIT ADD st_liabilities
+ 0.0023773148582099273       1365 total_oper_liabilities SUBTRACT FFO
+ 0.002366750632348882        1291 equity ADD st_liabilities
+ 0.0022701382732565386       1476 st_liabilities DIVIDE cost_of_labor
+ 0.0022467838547635386       1322 EBIT ADD debt
+ 0.0022424351966796176       1374 cost_of_labor SUBTRACT debt
+ 0.0022421524663677143        438 net_income==B2of3 impl equity==B2of2
+ 0.002242152466367714         675 EBIT==B1of3 or equity==B2of2 or FFO==B3of3
+ 0.002242152466367713         547 EBIT==B3of3 and debt==B2of2 and FFO==B2of3
+ 0.0022359322877170567       1468 debt DIVIDE cost_of_labor
+ 0.0021803092178730357          4 depreciation
+ 0.00207980399461301         1312 interest ADD total_oper_liabilities
+ 0.0020691276356185765       1305 financial_expenses ADD net_income
+ 0.0020442379478049695       1377 cost_of_labor SUBTRACT total_oper_liabilities
+ 0.002033426438705776        1333 cost_of_labor SUBTRACT net_income
+ 0.0019940054845434393         10 assets
+ 0.0018580617327207411       1345 net_income SUBTRACT inventories
+ 0.0018277398384945066       1315 inventories ADD FFO
+ 0.001827708301133544           5 financial_expenses
+ 0.001821680613086765        1486 net_income MULTIPLY debt
+ 0.0018156535000122456       1297 financial_expenses ADD total_oper_liabilities
+ 0.0018105417108068675       1393 equity DIVIDE total_oper_liabilities
+ 0.0017937219730941704        470 interest==B2of2 impl debt==B2of2
+ 0.0017937219730941704        984 equity==B2of2 or debt==B2of2 or FFO==B3of3
+ 0.0017937219730941704        560 interest==B2of2 and net_income==B1of3 and FFO==B3of3
+ 0.001769685837326513        1340 equity SUBTRACT st_liabilities
+ 0.0017676030135905416       1379 EBIT DIVIDE net_income
+ 0.0017404316867213466       1497 financial_expenses MULTIPLY interest
+ 0.0017286200233569721       1282 cost_of_labor ADD interest
+ 0.0017151957394430345       1304 total_oper_liabilities ADD inventories
+ 0.0017127810780901132       1336 equity SUBTRACT debt
+ 0.0016297427108696457         16 total_oper_liabilities
+ 0.0015988542830039786         17 st_oper_liabilities
+ 0.001563189508271705        1293 financial_expenses ADD equity
+ 0.0015552472468668148       1299 st_liabilities ADD FFO
+ 0.0015491398561123988       1523 EBIT MULTIPLY inventories
+ 0.0015403463866427887       1427 financial_expenses DIVIDE net_income
+ 0.0015386213894672052       1341 equity SUBTRACT inventories
+ 0.001532964225142202        1310 financial_expenses ADD FFO
+ 0.0014357780483022148       1323 cost_of_labor ADD equity
+ 0.0014314084638939076       1295 net_income ADD st_liabilities
+ 0.001428136006565116        1519 cost_of_labor MULTIPLY equity
+ 0.0014171008427076282       1473 cost_of_labor DIVIDE total_oper_liabilities
+ 0.0013856849126742          1320 interest ADD FFO
+ 0.001345291479820629         567 interest==B2of2 and debt==B2of2 and FFO==B2of3
+ 0.001345291479820629          70 interest==B2of2 and FFO==B2of3
+ 0.0013452914798206287        823 interest==B2of2 or equity==B2of2 or FFO==B3of3
+ 0.001345291479820628         963 net_income==B2of3 or debt==B2of2 or FFO==B3of3
+ 0.0013320941197797376       1337 equity SUBTRACT total_oper_liabilities
+ 0.0013221475177605825       1338 net_income SUBTRACT equity
+ 0.0013051712543642932       1353 total_oper_liabilities SUBTRACT inventories
+ 0.0012998928173672598         15 st_assets
+ 0.0012059167245369938       1361 interest SUBTRACT total_oper_liabilities
+ 0.0011856821104360416       1455 interest DIVIDE net_income
+ 0.0011811455443187806       1321 EBIT ADD equity
+ 0.0011710856998401163       1287 equity ADD debt
+ 0.00116097181206621         1328 cost_of_labor ADD total_oper_liabilities
+ 0.0011553106151352358       1347 financial_expenses SUBTRACT inventories
+ 0.0011551658236775854       1332 cost_of_labor SUBTRACT EBIT
+ 0.0011388363296626254       1441 interest DIVIDE total_oper_liabilities
+ 0.0011374012875201142       1298 financial_expenses ADD inventories
+ 0.0011326052224518678       1324 EBIT ADD total_oper_liabilities
+ 0.0011302138391994995          3 cost_of_labor
+ 0.0011210762331838567       1471 EBIT DIVIDE inventories
+ 0.001114833155025359        1505 interest MULTIPLY equity
+ 0.0011102506210701477       1314 interest ADD inventories
+ 0.0010775650653224462       1492 net_income MULTIPLY inventories
+ 0.001067830261144301        1349 equity SUBTRACT FFO
+ 0.0010318956821500727       1300 equity ADD FFO
+ 0.0010295108478911548       1289 net_income ADD equity
+ 0.000996316065570704        1376 EBIT SUBTRACT inventories
+ 0.0009838767800109342       1294 net_income ADD total_oper_liabilities
+ 0.0009812314467901651       1498 total_oper_liabilities MULTIPLY st_liabilities
+ 0.0009368579870985948       1363 interest SUBTRACT inventories
+ 0.0008985760739726559       1364 inventories SUBTRACT FFO
+ 0.0008970296514630244         20 inventories
+ 0.0008968609865470881        795 interest==B2of2 or net_income==B1of3 or equity==B2of2
+ 0.0008968609865470853       1137 (equity >= 6022214) and (equity <= 8570398)
+ 0.0008968609865470853       1242 num-of-N((equity >= 6022214) and (equity <= 8570398))
+ 0.0008968609865470852       1456 net_income DIVIDE interest
+ 0.0008968609865470851        439 net_income==B3of3 impl equity==B2of2
+ 0.0008968609865470851        894 net_income==B2of3 or equity==B2of2 or FFO==B1of3
+ 0.0008852266922794039       1331 cost_of_labor SUBTRACT interest
+ 0.0008571469763524858       1309 interest ADD equity
+ 0.0008371326724355305       1358 interest SUBTRACT equity
+ 0.0008326802405618396         11 equity
+ 0.0008259073478158288       1503 debt MULTIPLY st_liabilities
+ 0.0008236468304226685       1481 EBIT MULTIPLY FFO
+ 0.0008130629596708469       1290 net_income ADD debt
+ 0.0008123202350352885       1509 interest MULTIPLY st_liabilities
+ 0.0007992598101028922       1478 cost_of_labor MULTIPLY interest
+ 0.0007795914749428869       1491 net_income MULTIPLY st_liabilities
+ 0.0007777183442060101       1342 financial_expenses SUBTRACT equity
+ 0.000773585634658464        1351 total_oper_liabilities SUBTRACT st_liabilities
+ 0.0007547224854327095       1507 interest MULTIPLY debt
+ 0.0007530713449963811       1352 debt SUBTRACT total_oper_liabilities
+ 0.0007476376976003833       1346 financial_expenses SUBTRACT total_oper_liabilities
+ 0.0007442618192816965       1317 debt ADD FFO
+ 0.0007342046290791052       1500 total_oper_liabilities MULTIPLY inventories
+ 0.0006906522419762856         22 OCF
+ 0.0006301033356550433       1480 cost_of_labor MULTIPLY net_income
+ 0.0006120893761335781       1335 cost_of_labor SUBTRACT FFO
+ 0.00060626658522995         1517 EBIT MULTIPLY equity
+ 0.0006017574519060443       1370 EBIT SUBTRACT equity
+ 0.0005698876228695303       1288 equity ADD total_oper_liabilities
+ 0.0005487029623457155       1499 debt MULTIPLY total_oper_liabilities
+ 0.0005397577533787522       1350 financial_expenses SUBTRACT interest
+ 0.0005176752360647551       1504 debt MULTIPLY inventories
+ 0.0004583345494118043       1330 EBIT SUBTRACT net_income
+ 0.0004580754893566097       1524 cost_of_labor MULTIPLY total_oper_liabilities
+ 0.00044843049327354347       985 equity==B2of2 or inventories or FFO==B1of3
+ 0.00044843049327354347       562 interest==B2of2 and net_income==B2of3 and FFO==B2of3
+ 0.00044843049327354347       806 equity==B2of2 or total_oper_liabilities or FFO==B1of3
+ 0.00044843049327354347       669 cost_of_labor or equity==B2of2 or FFO==B1of3
+ 0.00044843049327354347       940 equity==B2of2 or st_liabilities or FFO==B1of3
+ 0.00044843049327354347       891 net_income==B1of3 or equity==B2of2 or FFO==B1of3
+ 0.00044843049327354347       129 equity==B2of2 or FFO==B1of3
+ 0.00044843049327354347       888 financial_expenses or equity==B2of2 or FFO==B1of3
+ 0.00044843049327354277       853 net_income==B3of3 or equity==B2of2 or debt==B2of2
+ 0.00044843049327354277      1017 EBIT==B3of3 or equity==B2of2 or debt==B2of2
+ 0.0004484304932735425        488 EBIT==B3of3 impl equity==B2of2
+ 0.0004483344039752621         18 lt_liabilities
+ 0.00042459326358854706      1487 equity MULTIPLY st_liabilities
+ 0.0004158225477561748       1520 EBIT MULTIPLY total_oper_liabilities
+ 0.000405161532460576        1515 interest MULTIPLY net_income
+ 0.00038950389168357206      1316 total_oper_liabilities ADD FFO
+ 0.0003359022378287659       1477 EBIT MULTIPLY net_income
+ 0.0003293843248670901       1292 equity ADD inventories
+ 0.0003162230752918517       1372 cost_of_labor SUBTRACT equity
+ 0.0003023833816662171       1423 debt DIVIDE total_oper_liabilities
+ 0.00030042507515086985      1411 financial_expenses DIVIDE total_oper_liabilities
+ 0.000267567908644177        1490 net_income MULTIPLY total_oper_liabilities
+ 0.00019798515835943168      1508 interest MULTIPLY total_oper_liabilities
+ 0.00018137633264528162      1388 FFO DIVIDE EBIT
+ 0.00010913733378958981      1494 financial_expenses MULTIPLY inventories
+ 0.0001080904140055506       1483 equity MULTIPLY debt
+ 0.00009687047503241644         1 net_sales
+ 0.00009239779958181674      1470 st_liabilities DIVIDE EBIT
+ 0.000011653074332069336     1355 net_income SUBTRACT FFO
+ 0.000000000000000000871      673 EBIT==B1of3 or equity==B2of2 or FFO==B1of3
+-0.000000000000000000124      564 interest==B2of2 and net_income==B3of3 and FFO==B2of3
+-0.000016320598646140455     1493 financial_expenses MULTIPLY total_oper_liabilities
+-0.0001005522788602007       1518 EBIT MULTIPLY debt
+-0.00013355281584400005      1511 inventories MULTIPLY FFO
+-0.0001833693047300637       1501 financial_expenses MULTIPLY net_income
+-0.00024413947531142814      1472 inventories DIVIDE EBIT
+-0.0003034294164045389       1488 equity MULTIPLY inventories
+-0.0003902202352251625       1484 equity MULTIPLY total_oper_liabilities
+-0.0004116809560487425       1334 EBIT SUBTRACT FFO
+-0.00042444670833813113      1502 net_income MULTIPLY FFO
+-0.00042689581975775343      1479 cost_of_labor MULTIPLY EBIT
+-0.00044843049327354277      1557 interest LESSTHAN st_liabilities
+-0.00044843049327354277      1579 interest DIFF inventories
+-0.00044843049327354277       605 EBIT==B1of3 and net_income==B3of3 and equity==B2of2
+-0.00044843049327354277       510 interest==B2of2 and EBIT==B1of3 and net_income==B3of3
+-0.00044843049327354277       519 EBIT==B1of3 and net_income==B3of3 and FFO==B3of3
+-0.00044843049327354277       594 EBIT==B1of3 and net_income==B3of3 and debt==B2of2
+-0.00044843049327354277       525 EBIT==B3of3 and net_income==B1of3 and FFO==B1of3
+-0.00044843049327354277        25 EBIT==B1of3 and net_income==B3of3
+-0.0004853895964373862          2 cost_of_goods_and_services
+-0.0005554797740070122       1512 total_oper_liabilities MULTIPLY FFO
+-0.0005646870202641732       1506 financial_expenses MULTIPLY FFO
+-0.0006386633280409029       1516 interest MULTIPLY FFO
+-0.0006525858683238885       1514 interest MULTIPLY EBIT
+-0.0007545086102990094       1495 st_liabilities MULTIPLY FFO
+-0.0008968609865470824        893 net_income==B1of3 or equity==B2of2 or FFO==B3of3
+-0.0008968609865470843       1038 interest==B2of2 or EBIT==B1of3 or equity==B2of2
+-0.0008968609865470853       1534 net_income LESSTHAN equity
+-0.0008968609865470853       1556 interest LESSTHAN total_oper_liabilities
+-0.0009054047320200156       1513 debt MULTIPLY FFO
+-0.0009272887265181891       1356 debt SUBTRACT st_liabilities
+-0.0009384270466199194       1522 EBIT MULTIPLY st_liabilities
+-0.0009934422521588808       1482 cost_of_labor MULTIPLY FFO
+-0.001004261092315873        1394 total_oper_liabilities DIVIDE equity
+-0.0010215471582153846       1510 interest MULTIPLY inventories
+-0.0010324156925931274       1417 equity DIVIDE FFO
+-0.0010738845262903926       1496 equity MULTIPLY FFO
+-0.0011084262037356258       1453 interest DIVIDE EBIT
+-0.0011805405654598533         13 cash
+-0.0012525019727652918       1422 st_liabilities DIVIDE total_oper_liabilities
+-0.001272131632275521        1400 st_liabilities DIVIDE equity
+-0.0012974139169871014       1435 interest DIVIDE equity
+-0.001345291479820627          64 interest==B2of2 and EBIT==B2of3
+-0.001345291479820627         613 interest==B2of2 and EBIT==B2of3 and debt==B2of2
+-0.001345291479820628         538 interest==B2of2 and EBIT==B3of3 and FFO==B2of3
+-0.001345291479820628         533 interest==B2of2 and EBIT==B1of3 and FFO==B3of3
+-0.001345291479820628        1542 financial_expenses LESSTHAN total_oper_liabilities
+-0.0015355346791932384       1462 debt DIVIDE EBIT
+-0.0016397245786198722       1398 debt DIVIDE net_income
+-0.0017678993865251288       1380 net_income DIVIDE EBIT
+-0.0017937219730941696        557 interest==B2of2 and equity==B2of2 and FFO==B2of3
+-0.0017937219730941696         35 EBIT==B2of3 and FFO==B1of3
+-0.0017937219730941696       1558 interest LESSTHAN inventories
+-0.0017937219730941704       1050 EBIT==B2of3 or net_income==B1of3 or equity==B2of2
+-0.0017937219730941704        852 net_income==B2of3 or equity==B2of2 or debt==B2of2
+-0.0017937219730941704       1577 debt DIFF inventories
+-0.0017937219730941704       1016 EBIT==B2of3 or equity==B2of2 or debt==B2of2
+-0.0017937219730941704        537 interest==B2of2 and EBIT==B3of3 and FFO==B1of3
+-0.0017937219730941704        597 EBIT==B2of3 and net_income==B3of3 and debt==B2of2
+-0.0017937219730941704        676 EBIT==B2of3 or equity==B2of2 or FFO==B1of3
+-0.0018454378058180058       1402 inventories DIVIDE equity
+-0.002017937219730941        1401 equity DIVIDE inventories
+-0.002079456307788225        1403 financial_expenses DIVIDE equity
+-0.002148081318361613        1463 cost_of_labor DIVIDE equity
+-0.0021998750983662427       1392 debt DIVIDE equity
+-0.002242152466367712        1543 financial_expenses LESSTHAN inventories
+-0.002242152466367712         487 EBIT==B2of3 impl equity==B2of2
+-0.002242152466367713         546 EBIT==B3of3 and debt==B2of2 and FFO==B1of3
+-0.002242152466367713          38 EBIT==B3of3 and FFO==B1of3
+-0.002242152466367713         506 EBIT==B3of3 and equity==B2of2 and FFO==B1of3
+-0.0022806305335037486       1395 net_income DIVIDE equity
+-0.002465269171552286        1426 inventories DIVIDE total_oper_liabilities
+-0.0026818671935925297       1459 EBIT DIVIDE equity
+-0.0026905829596412523       1053 EBIT==B3of3 or net_income==B1of3 or equity==B2of2
+-0.0026905829596412544        191 EBIT==B1of3 equ net_income==B1of3
+-0.0026905829596412544        535 interest==B2of2 and EBIT==B2of3 and FFO==B2of3
+-0.0026905829596412544        304 EBIT==B1of3 xor net_income==B1of3
+-0.0026905829596412553       1039 interest==B2of2 or EBIT==B2of3 or equity==B2of2
+-0.0026905829596412553        527 EBIT==B3of3 and net_income==B2of3 and FFO==B1of3
+-0.0028290287648676422       1387 EBIT DIVIDE FFO
+-0.0028448532692373915       1389 cost_of_labor DIVIDE FFO
+-0.003054971736039383        1418 FFO DIVIDE equity
+-0.0031390134529147968        681 EBIT==B3of3 or equity==B2of2 or FFO==B3of3
+-0.0031390134529147968       1445 interest DIVIDE inventories
+-0.0031390134529147968       1413 financial_expenses DIVIDE inventories
+-0.0031390134529147968       1433 debt DIVIDE inventories
+-0.0031390134529147968       1425 total_oper_liabilities DIVIDE inventories
+-0.003139013452914798         541 EBIT==B1of3 and debt==B2of2 and FFO==B2of3
+-0.003139013452914798          24 EBIT==B1of3 and net_income==B2of3
+-0.003139013452914798         518 EBIT==B1of3 and net_income==B2of3 and FFO==B2of3
+-0.003139013452914798          33 EBIT==B1of3 and FFO==B2of3
+-0.003139013452914798         593 EBIT==B1of3 and net_income==B2of3 and debt==B2of2
+-0.003139013452914799        1458 FFO DIVIDE interest
+-0.0033632286995515684       1448 FFO DIVIDE inventories
+-0.0033632286995515684       1409 net_income DIVIDE inventories
+-0.003460397008834887        1449 total_oper_liabilities DIVIDE FFO
+-0.0035874439461883395       1531 cost_of_labor LESSTHAN FFO
+-0.0035874439461883395       1572 cost_of_labor LESSTHAN total_oper_liabilities
+-0.0035874439461883395        602 interest==B2of2 and EBIT==B2of3 and equity==B2of2
+-0.0035874439461883404       1576 net_income DIFF FFO
+-0.0035874439461883404        417 EBIT==B1of3 impl net_income==B1of3
+-0.0035874439461883404       1550 net_income LESSTHAN FFO
+-0.0037824118968788857       1429 net_income DIVIDE FFO
+-0.004035874439461882         897 net_income==B3of3 or equity==B2of2 or FFO==B1of3
+-0.004035874439461883        1545 equity LESSTHAN FFO
+-0.004484304932735424         511 interest==B2of2 and EBIT==B2of3 and net_income==B1of3
+-0.004484304932735424         821 interest==B2of2 or equity==B2of2 or FFO==B1of3
+-0.004484304932735425        1540 net_income LESSTHAN st_liabilities
+-0.004484304932735425        1570 EBIT LESSTHAN st_liabilities
+-0.004484304932735425        1538 financial_expenses LESSTHAN equity
+-0.004484304932735426        1454 EBIT DIVIDE interest
+-0.004563097591901746        1415 st_liabilities DIVIDE FFO
+-0.005046645296991986        1437 financial_expenses DIVIDE FFO
+-0.00538116591928251         1048 EBIT==B1of3 or net_income==B2of3 or equity==B2of2
+-0.00538116591928251          521 EBIT==B2of3 and net_income==B2of3 and FFO==B1of3
+-0.005381165919282511         983 equity==B2of2 or debt==B2of2 or FFO==B2of3
+-0.005424659230695233        1451 debt DIVIDE FFO
+-0.005829596412556054         536 interest==B2of2 and EBIT==B2of3 and FFO==B3of3
+-0.005829596412556054        1568 EBIT LESSTHAN total_oper_liabilities
+-0.005893104371078038        1447 inventories DIVIDE FFO
+-0.005938799643774027        1457 interest DIVIDE FFO
+-0.006726457399103139         892 net_income==B1of3 or equity==B2of2 or FFO==B2of3
+-0.007174887892376682        1553 interest LESSTHAN equity
+-0.007174887892376682        1436 equity DIVIDE interest
+-0.007174887892376682        1419 financial_expenses DIVIDE interest
+-0.007174887892376682        1381 cost_of_labor DIVIDE interest
+-0.007174887892376682        1444 st_liabilities DIVIDE interest
+-0.007174887892376682        1442 total_oper_liabilities DIVIDE interest
+-0.007174887892376682        1440 debt DIVIDE interest
+-0.007174887892376682         534 interest==B2of2 and EBIT==B2of3 and FFO==B1of3
+-0.007174887892376682        1446 inventories DIVIDE interest
+-0.007623318385650225         512 interest==B2of2 and EBIT==B2of3 and net_income==B2of3
+-0.007623318385650225        1565 EBIT LESSTHAN equity
+-0.008071748878923767         796 interest==B2of2 or net_income==B2of3 or equity==B2of2
+-0.008071748878923767         574 net_income==B2of3 and equity==B2of2 and FFO==B1of3
+-0.008071748878923767        1530 EBIT LESSTHAN FFO
+-0.008071748878923767         679 EBIT==B3of3 or equity==B2of2 or FFO==B1of3
+-0.008071748878923767          53 net_income==B2of3 and FFO==B1of3
+-0.00852017937219731          469 interest==B2of2 impl equity==B2of2
+-0.00852017937219731         1529 cost_of_labor LESSTHAN net_income
+-0.00852017937219731          674 EBIT==B1of3 or equity==B2of2 or FFO==B2of3
+-0.008968609865470854         175 EBIT==B2of3 or equity==B2of2
+-0.008968609865470854        1060 EBIT==B2of3 or equity==B2of2 or st_liabilities
+-0.008968609865470854        1042 EBIT==B2of3 or equity==B2of2 or inventories
+-0.008968609865470854        1020 EBIT==B2of3 or equity==B2of2 or total_oper_liabilities
+-0.008968609865470854         974 cost_of_labor or EBIT==B2of3 or equity==B2of2
+-0.008968609865470854         678 EBIT==B2of3 or equity==B2of2 or FFO==B3of3
+-0.009417040358744397        1544 st_liabilities LESSTHAN FFO
+-0.00986547085201794          503 EBIT==B2of3 and equity==B2of2 and FFO==B1of3
+-0.00986547085201794          561 interest==B2of2 and net_income==B2of3 and FFO==B1of3
+-0.010762331838565026         606 EBIT==B2of3 and net_income==B1of3 and equity==B2of2
+-0.010762331838565026        1051 EBIT==B2of3 or net_income==B2of3 or equity==B2of2
+-0.011210762331838566         712 EBIT==B1of3 or net_income==B2of3 or FFO==B3of3
+-0.01121076233183857          822 interest==B2of2 or equity==B2of2 or FFO==B2of3
+-0.01121076233183857          486 EBIT==B1of3 impl equity==B2of2
+-0.012107623318385654        1548 total_oper_liabilities LESSTHAN inventories
+-0.012556053811659197        1052 EBIT==B2of3 or net_income==B3of3 or equity==B2of2
+-0.012556053811659197         677 EBIT==B2of3 or equity==B2of2 or FFO==B2of3
+-0.012556053811659197        1539 net_income LESSTHAN total_oper_liabilities
+-0.013004484304932739         543 EBIT==B2of3 and debt==B2of2 and FFO==B1of3
+-0.013452914798206284         858 net_income==B2of3 or equity==B2of2 or st_liabilities
+-0.013452914798206284         862 net_income==B2of3 or equity==B2of2 or total_oper_liabilities
+-0.013452914798206284         855 financial_expenses or net_income==B2of3 or equity==B2of2
+-0.013452914798206284         109 net_income==B2of3 or equity==B2of2
+-0.013452914798206284         871 net_income==B2of3 or equity==B2of2 or inventories
+-0.013452914798206284         896 net_income==B2of3 or equity==B2of2 or FFO==B3of3
+-0.013452914798206284        1027 cost_of_labor or net_income==B2of3 or equity==B2of2
+-0.013901345291479825         986 equity==B2of2 or inventories or FFO==B2of3
+-0.013901345291479825         898 net_income==B3of3 or equity==B2of2 or FFO==B2of3
+-0.013901345291479825         680 EBIT==B3of3 or equity==B2of2 or FFO==B2of3
+-0.013901345291479825         807 equity==B2of2 or total_oper_liabilities or FFO==B2of3
+-0.013901345291479825         670 cost_of_labor or equity==B2of2 or FFO==B2of3
+-0.013901345291479825         130 equity==B2of2 or FFO==B2of3
+-0.013901345291479825         889 financial_expenses or equity==B2of2 or FFO==B2of3
+-0.013901345291479825         941 equity==B2of2 or st_liabilities or FFO==B2of3
+-0.014349775784753369         421 EBIT==B2of3 impl net_income==B2of3
+-0.015246636771300453         595 EBIT==B2of3 and net_income==B1of3 and debt==B2of2
+-0.015246636771300453          26 EBIT==B2of3 and net_income==B1of3
+-0.015246636771300453         520 EBIT==B2of3 and net_income==B1of3 and FFO==B1of3
+-0.015246636771300455        1054 EBIT==B3of3 or net_income==B2of3 or equity==B2of2
+-0.015246636771300455         437 net_income==B1of3 impl equity==B2of2
+-0.015246636771300455         895 net_income==B2of3 or equity==B2of2 or FFO==B2of3
+-0.015695067264573998         581 net_income==B2of3 and debt==B2of2 and FFO==B1of3
+-0.015695067264573998        1528 cost_of_labor LESSTHAN EBIT
+
+

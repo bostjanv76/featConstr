@@ -1,0 +1,8 @@
+dataset: cLogicalConcBEasy-JustTwoDiffInstInEacsClass.arff
+MDL - after CI
+ 0,7954 A4
+ 0,1962 A5
+ 0,1962 A3
+ -0,0022 A6
+ -0,0022 A1
+ -Infinity A2

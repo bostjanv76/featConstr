@@ -1,0 +1,12 @@
+dataset: rConcept.arff
+Number of folds for testing (CV): 10
+*********************************************************************************
+number of instances: 2000
+number of attributes: 6
+number of classes: 1
+---------------------------------------------------------------------------------
+IME (explanation), aproxErrSampling, N_SAMPLES: 100 - alg. for searching concepts: RandomForest
+---------------------------------------------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Time exceeds the limit (10800000 [ms]) of FC for one fold!
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

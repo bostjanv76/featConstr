@@ -1,0 +1,193 @@
+dataset: cLogicalConcB.arff
+IME (explanation), equalSampling, N_SAMPLES: 10 - alg. for searching concepts: ScikitLearnClassifier
+Explaining class: 1, explaining all dataset: NO
+---------------------------------------------------------------------------------
+We take only 500 instances out of 855.
+We remove max(NOISE,minNoise) groups, NOISE=0.0% -> 0, minNoise=0 we remove groups of size 0. Number of instances from class (1) is 500
+Lower threshold thrL: 0.6 upper threshold thrU: 0.8 with step: 0.1
+--------------
+Threshold: 0,60
+--------------
+	A2 | A6: 160
+	A1 | A3: 49
+	A2: 33
+	A1 | A6: 27
+	A2 | A5: 21
+	A1 | A2: 21
+	A6: 20
+	A3 | A6: 17
+	A2 | A3: 17
+	A2 | A3 | A6: 13
+	A2 | A4 | A5: 13
+	A1 | A3 | A6: 12
+	A1 | A2 | A3: 12
+	A3: 9
+	A2 | A4: 9
+	A4 | A6: 8
+	A5 | A6: 7
+	A4 | A5: 7
+	A2 | A4 | A6: 6
+	A1: 5
+	A4 | A5 | A6: 5
+	A1 | A2 | A6: 5
+	A2 | A3 | A4: 4
+	A2 | A5 | A6: 3
+	A1 | A5: 3
+	A3 | A4 | A6: 2
+	A1 | A3 | A4: 2
+	A1 | A5 | A6: 2
+	A4: 1
+	A3 | A4 | A5: 1
+	A1 | A3 | A5: 1
+	A1 | A2 | A5: 1
+	A1 | A2 | A4: 1
+	A1 | A4: 1
+	A1 | A4 | A5: 1
+	A2 | A3 | A5: 1
+--------------
+Threshold: 0,70
+--------------
+	A2 | A6: 130
+	A1 | A3: 41
+	A1 | A2 | A6: 31
+	A2 | A3 | A6: 30
+	A1 | A3 | A6: 24
+	A1 | A2 | A3: 20
+	A2 | A5 | A6: 17
+	A1 | A2: 17
+	A2 | A4 | A5: 17
+	A2: 16
+	A2 | A4 | A6: 16
+	A2 | A3: 15
+	A1 | A6: 14
+	A6: 13
+	A3 | A6: 13
+	A2 | A5: 11
+	A4 | A6: 7
+	A4 | A5 | A6: 7
+	A5 | A6: 5
+	A4 | A5: 5
+	A2 | A4: 5
+	A2 | A3 | A4: 5
+	A1 | A3 | A5: 4
+	A1 | A2 | A5: 4
+	A1 | A2 | A4: 3
+	A1 | A2 | A3 | A6: 3
+	A1 | A4 | A5: 3
+	A1 | A5 | A6: 3
+	A2 | A3 | A5: 3
+	A1: 2
+	A3: 2
+	A1 | A3 | A5 | A6: 2
+	A1 | A4 | A6: 2
+	A1 | A5: 2
+	A3 | A4 | A5: 1
+	A3 | A4 | A6: 1
+	A3 | A5 | A6: 1
+	A2 | A3 | A4 | A6: 1
+	A1 | A3 | A4: 1
+	A1 | A3 | A4 | A5: 1
+	A1 | A3 | A4 | A6: 1
+	A1 | A2 | A5 | A6: 1
+--------------
+Threshold: 0,80
+--------------
+	A2 | A6: 86
+	A1 | A2 | A6: 43
+	A2 | A3 | A6: 36
+	A1 | A2 | A3: 31
+	A1 | A2 | A3 | A6: 29
+	A2 | A5 | A6: 26
+	A1 | A3 | A6: 26
+	A1 | A3: 24
+	A2 | A4 | A6: 22
+	A2 | A4 | A5 | A6: 12
+	A2 | A4 | A5: 11
+	A3 | A6: 10
+	A2: 9
+	A1 | A2 | A5 | A6: 9
+	A1 | A2: 9
+	A2 | A3 | A4 | A6: 7
+	A2 | A3: 7
+	A1 | A3 | A5 | A6: 6
+	A2 | A5: 6
+	A1 | A2 | A4 | A6: 6
+	A1 | A3 | A4 | A6: 5
+	A4 | A5 | A6: 5
+	A1 | A4 | A6: 5
+	A2 | A4: 5
+	A1 | A6: 5
+	A1 | A5 | A6: 5
+	A2 | A3 | A4 | A5: 4
+	A4 | A6: 4
+	A3 | A4 | A5 | A6: 4
+	A1 | A2 | A5: 4
+	A2 | A3 | A5: 4
+	A6: 3
+	A2 | A3 | A5 | A6: 3
+	A4 | A5: 3
+	A1 | A3 | A5: 3
+	A1 | A3 | A4 | A5: 3
+	A1 | A2 | A4: 3
+	A1 | A2 | A4 | A5: 3
+	A1 | A4 | A5 | A6: 2
+	A3 | A5 | A6: 2
+	A1 | A2 | A3 | A5: 2
+	A1 | A2 | A3 | A4: 2
+	A1 | A2 | A3 | A5 | A6: 1
+	A3 | A4 | A5: 1
+	A1 | A3 | A4: 1
+	A1 | A5: 1
+	A1 | A4 | A5: 1
+	A2 | A3 | A4: 1
+*********************************************************************************
+All potential concepts, based on thresholds.
+	A2 A6 ~#~ A1 A3 ~#~ A1 A6 ~#~ A2 A5 ~#~ A1 A2 ~#~ A3 A6 ~#~ A2 A3 ~#~ A2 A3 A6 ~#~ A2 A4 A5 ~#~ A1 A3 A6 ~#~ A1 A2 A3 ~#~ A2 A4 ~#~ A4 A6 ~#~ A5 A6 ~#~ A4 A5 ~#~ A2 A4 A6 ~#~ A4 A5 A6 ~#~ A1 A2 A6 ~#~ A2 A3 A4 ~#~ A2 A5 A6 ~#~ A1 A5 ~#~ A3 A4 A6 ~#~ A1 A3 A4 ~#~ A1 A5 A6 ~#~ A3 A4 A5 ~#~ A1 A3 A5 ~#~ A1 A2 A5 ~#~ A1 A2 A4 ~#~ A1 A4 ~#~ A1 A4 A5 ~#~ A2 A3 A5 ~#~ A1 A2 A3 A6 ~#~ A1 A3 A5 A6 ~#~ A1 A4 A6 ~#~ A3 A5 A6 ~#~ A2 A3 A4 A6 ~#~ A1 A3 A4 A5 ~#~ A1 A3 A4 A6 ~#~ A1 A2 A5 A6 ~#~ A2 A4 A5 A6 ~#~ A1 A2 A4 A6 ~#~ A2 A3 A4 A5 ~#~ A3 A4 A5 A6 ~#~ A2 A3 A5 A6 ~#~ A1 A2 A4 A5 ~#~ A1 A4 A5 A6 ~#~ A1 A2 A3 A5 ~#~ A1 A2 A3 A4 ~#~ A1 A2 A3 A5 A6 ~#~ 
+*********************************************************************************
+dataset: cLogicalConcBEasy-uniqueSamples.arff
+IME (explanation), equalSampling, N_SAMPLES: 10 - alg. for searching concepts: ScikitLearnClassifier
+Explaining class: 1, explaining all dataset: NO
+---------------------------------------------------------------------------------
+We remove max(NOISE,minNoise) groups, NOISE=0.0% -> 0, minNoise=0 we remove groups of size 0. Number of instances from class (1) is 16
+Lower threshold thrL: 0.6 upper threshold thrU: 0.8 with step: 0.1
+--------------
+Threshold: 0,60
+--------------
+	A2 | A3: 3
+	A1 | A5: 3
+	A4 | A5: 3
+	A1 | A3: 2
+	A1 | A4: 2
+	A1 | A2: 1
+	A3 | A4: 1
+	A3 | A5: 1
+--------------
+Threshold: 0,70
+--------------
+	A1 | A2 | A3: 2
+	A1 | A4 | A5: 2
+	A1 | A3: 2
+	A1 | A4: 2
+	A4 | A5: 2
+	A2 | A3: 1
+	A1 | A3 | A5: 1
+	A1 | A5: 1
+	A2 | A3 | A4: 1
+	A3 | A4: 1
+	A3 | A5: 1
+--------------
+Threshold: 0,80
+--------------
+	A1 | A2 | A3: 3
+	A1 | A4 | A5: 3
+	A1 | A3 | A5: 3
+	A2 | A3 | A4: 2
+	A1 | A2 | A4: 1
+	A1 | A3: 1
+	A1 | A4: 1
+	A2 | A3: 1
+	A4 | A5: 1
+*********************************************************************************
+All potential concepts, based on thresholds.
+	A2 A3 ~#~ A1 A5 ~#~ A4 A5 ~#~ A1 A3 ~#~ A1 A4 ~#~ A1 A2 ~#~ A3 A4 ~#~ A3 A5 ~#~ A1 A2 A3 ~#~ A1 A4 A5 ~#~ A1 A3 A5 ~#~ A2 A3 A4 ~#~ A1 A2 A4 ~#~ 
+*********************************************************************************

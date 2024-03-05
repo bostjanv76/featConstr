@@ -1,0 +1,91 @@
+dataset: cLogicalConcBEasy-uniqueSamples.arff
+ReliefF - after CI
+Ranked attributes:
+ 0.41875    71 (A4 = 1) and (A5 = 1) and (A1 = 1)
+ 0.41875    59 A1 and A4 and A5
+ 0.4125     68 (A2 = 1) and (A3 = 1) and (A1 = 0)
+ 0.34688    70 (A4 = 1) and (A5 = 1)
+ 0.34688     7 A4 and A5
+ 0.34688    69 (A5 = 1) and (A4 = 1)
+ 0.30625    67 (A2 = 1) and (A3 = 1)
+ 0.30625     8 A2 and A3
+ 0.2625     75 num-of-N((A4 = 1) and (A5 = 1))
+ 0.2625     74 num-of-N((A5 = 1) and (A4 = 1))
+ 0.25       76 num-of-N((A4 = 1) and (A5 = 1) and (A1 = 1))
+ 0.24062    77 A4_x_A5
+ 0.2375     14 A1 and A4
+ 0.23437    73 num-of-N((A2 = 1) and (A3 = 1) and (A1 = 0))
+ 0.23125    16 A1 and A5
+ 0.22969    84 A1_x_A4
+ 0.22812    72 num-of-N((A2 = 1) and (A3 = 1))
+ 0.22344    81 A1_x_A3
+ 0.22187    78 A2_x_A3
+ 0.20312    79 A1_x_A2
+ 0.20156    86 A1_x_A5
+ 0.19531    80 A3_x_A4
+ 0.18906    83 A2_x_A4
+ 0.17969    82 A3_x_A5
+ 0.17344     4 A4
+ 0.17187    37 A4 xor A5
+ 0.17187    27 A4 equ A5
+ 0.16562    60 A3 and A4 and A5
+ 0.16094     3 A3
+ 0.15937    44 A1 xor A4
+ 0.15937    31 A1 equ A3
+ 0.15937    34 A1 equ A4
+ 0.15937    41 A1 xor A3
+ 0.15781    85 A2_x_A5
+ 0.15156    54 A1 impl A4
+ 0.14375    61 A2 and A3 and A5
+ 0.14219    28 A2 equ A3
+ 0.14219    57 A2 and A3 and A4
+ 0.14219    38 A2 xor A3
+ 0.14062     2 A2
+ 0.14062    36 A1 equ A5
+ 0.14062    21 A1 or A3
+ 0.14062    46 A1 xor A5
+ 0.13906    29 A1 equ A2
+ 0.13906    39 A1 xor A2
+ 0.13594     5 A5
+ 0.13125    10 A3 and A4
+ 0.12656    13 A2 and A4
+ 0.12656     1 A1
+ 0.12656    56 A1 impl A5
+ 0.12187    19 A1 or A2
+ 0.11406    12 A3 and A5
+ 0.1125     15 A2 and A5
+ 0.10625    20 A3 or A4
+ 0.1        23 A2 or A4
+ 0.09531    22 A3 or A5
+ 0.07656    25 A2 or A5
+ 0.07344    53 A2 impl A4
+ 0.07187    48 A2 impl A3
+ 0.07031    50 A3 impl A4
+ 0.06406    43 A2 xor A4
+ 0.06406    33 A2 equ A4
+ 0.0625     52 A3 impl A5
+ 0.0625     32 A3 equ A5
+ 0.0625     42 A3 xor A5
+ 0.06094    47 A4 impl A5
+ 0.05625    40 A3 xor A4
+ 0.05625    55 A2 impl A5
+ 0.05625    30 A3 equ A4
+ 0.05469     9 A1 and A2
+ 0.04375    11 A1 and A3
+ 0.03906    45 A2 xor A5
+ 0.03906    35 A2 equ A5
+ 0.03281    51 A1 impl A3
+ 0.025      49 A1 impl A2
+ 0.01875    24 A1 or A4
+ 0.00781    64 A1 or A4 or A5
+ 0.00781    18 A2 or A3
+ 0.00625    26 A1 or A5
+ 0.00625     6 A6
+ 0.00625    17 A4 or A5
+-0.00625    58 A1 and A2 and A3
+-0.01875    62 A2 or A3 or A4
+-0.02031    66 A2 or A3 or A5
+-0.02031    63 A1 or A2 or A3
+-0.02188    65 A3 or A4 or A5
+
+

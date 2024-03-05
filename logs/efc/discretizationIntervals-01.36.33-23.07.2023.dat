@@ -1,0 +1,450 @@
+dataset: Balance scale.arff
+								--------------
+									Fold  1
+								--------------
+left-weight='(2.5-inf)'
+left-distance='(2.5-inf)'
+right-weight='(2.5-inf)'
+right-distance='(2.5-inf)'
+								--------------
+									Fold  2
+								--------------
+left-weight='(2.5-inf)'
+left-distance='(2.5-inf)'
+right-weight='(-inf-1.5]'
+right-weight='(1.5-3.5]'
+right-weight='(3.5-inf)'
+right-distance='(2.5-inf)'
+								--------------
+									Fold  3
+								--------------
+left-weight='(2.5-inf)'
+left-distance='(2.5-inf)'
+right-weight='(2.5-inf)'
+right-distance='(2.5-inf)'
+								--------------
+									Fold  4
+								--------------
+left-weight='(2.5-inf)'
+left-distance='(2.5-inf)'
+right-weight='(2.5-inf)'
+right-distance='(2.5-inf)'
+								--------------
+									Fold  5
+								--------------
+left-weight='(2.5-inf)'
+left-distance='(-inf-1.5]'
+left-distance='(1.5-3.5]'
+left-distance='(3.5-inf)'
+right-weight='(2.5-inf)'
+right-distance='(2.5-inf)'
+								--------------
+									Fold  6
+								--------------
+left-weight='(2.5-inf)'
+left-distance='(2.5-inf)'
+right-weight='(2.5-inf)'
+right-distance='(2.5-inf)'
+								--------------
+									Fold  7
+								--------------
+left-weight='(2.5-inf)'
+left-distance='(2.5-inf)'
+right-weight='(2.5-inf)'
+right-distance='(2.5-inf)'
+								--------------
+									Fold  8
+								--------------
+left-weight='(2.5-inf)'
+left-distance='(2.5-inf)'
+right-weight='(2.5-inf)'
+right-distance='(2.5-inf)'
+								--------------
+									Fold  9
+								--------------
+left-weight='(2.5-inf)'
+left-distance='(2.5-inf)'
+right-weight='(2.5-inf)'
+right-distance='(2.5-inf)'
+								--------------
+									Fold 10
+								--------------
+left-weight='(2.5-inf)'
+left-distance='(2.5-inf)'
+right-weight='(2.5-inf)'
+right-distance='(2.5-inf)'
+dataset: Heart.arff
+								--------------
+									Fold  1
+								--------------
+A1='(54.5-inf)'
+A2='(0.5-inf)'
+A3='(3.5-inf)'
+A4
+A5
+A6
+A7
+A8='(147.5-inf)'
+A9='(0.5-inf)'
+A10='(0.85-inf)'
+A11='(1.5-inf)'
+A12='(0.5-inf)'
+A13='(4.5-inf)'
+								--------------
+									Fold  2
+								--------------
+A1='(54.5-inf)'
+A2='(0.5-inf)'
+A3='(3.5-inf)'
+A4
+A5
+A6
+A7
+A8='(147.5-inf)'
+A9='(0.5-inf)'
+A10='(1.7-inf)'
+A11='(1.5-inf)'
+A12='(0.5-inf)'
+A13='(4.5-inf)'
+								--------------
+									Fold  3
+								--------------
+A1
+A2='(0.5-inf)'
+A3='(3.5-inf)'
+A4
+A5
+A6
+A7
+A8='(147.5-inf)'
+A9='(0.5-inf)'
+A10='(1.7-inf)'
+A11='(1.5-inf)'
+A12='(0.5-inf)'
+A13='(4.5-inf)'
+								--------------
+									Fold  4
+								--------------
+A1='(54.5-inf)'
+A2
+A3='(3.5-inf)'
+A4
+A5
+A6
+A7
+A8='(147.5-inf)'
+A9='(0.5-inf)'
+A10='(1.7-inf)'
+A11='(1.5-inf)'
+A12='(0.5-inf)'
+A13='(4.5-inf)'
+								--------------
+									Fold  5
+								--------------
+A1='(54.5-inf)'
+A2='(0.5-inf)'
+A3='(3.5-inf)'
+A4
+A5
+A6
+A7
+A8='(147.5-inf)'
+A9='(0.5-inf)'
+A10='(0.85-inf)'
+A11='(1.5-inf)'
+A12='(0.5-inf)'
+A13='(4.5-inf)'
+								--------------
+									Fold  6
+								--------------
+A1='(54.5-inf)'
+A2='(0.5-inf)'
+A3='(3.5-inf)'
+A4
+A5
+A6
+A7
+A8='(147.5-inf)'
+A9='(0.5-inf)'
+A10='(1.7-inf)'
+A11='(1.5-inf)'
+A12='(0.5-inf)'
+A13='(4.5-inf)'
+								--------------
+									Fold  7
+								--------------
+A1='(53.5-inf)'
+A2='(0.5-inf)'
+A3='(3.5-inf)'
+A4
+A5
+A6
+A7
+A8='(147.5-inf)'
+A9='(0.5-inf)'
+A10='(0.85-inf)'
+A11='(1.5-inf)'
+A12='(0.5-inf)'
+A13='(4.5-inf)'
+								--------------
+									Fold  8
+								--------------
+A1
+A2='(0.5-inf)'
+A3='(3.5-inf)'
+A4
+A5
+A6
+A7
+A8='(147.5-inf)'
+A9='(0.5-inf)'
+A10='(1.7-inf)'
+A11='(1.5-inf)'
+A12='(0.5-inf)'
+A13='(4.5-inf)'
+								--------------
+									Fold  9
+								--------------
+A1='(54.5-inf)'
+A2='(0.5-inf)'
+A3='(3.5-inf)'
+A4
+A5
+A6
+A7
+A8='(147.5-inf)'
+A9='(0.5-inf)'
+A10='(1.7-inf)'
+A11='(1.5-inf)'
+A12='(0.5-inf)'
+A13='(4.5-inf)'
+								--------------
+									Fold 10
+								--------------
+A1='(54.5-inf)'
+A2='(0.5-inf)'
+A3='(3.5-inf)'
+A4
+A5
+A6
+A7
+A8='(147.5-inf)'
+A9='(0.5-inf)'
+A10='(1.7-inf)'
+A11='(1.5-inf)'
+A12='(0.5-inf)'
+A13='(4.5-inf)'
+dataset: Liver disorders.arff
+								--------------
+									Fold  1
+								--------------
+mcv
+alkphos
+sgpt
+sgot
+gammagt='(20.5-inf)'
+drinks
+								--------------
+									Fold  2
+								--------------
+mcv
+alkphos
+sgpt
+sgot
+gammagt='(7.5-inf)'
+drinks
+								--------------
+									Fold  3
+								--------------
+mcv
+alkphos
+sgpt
+sgot
+gammagt='(20.5-inf)'
+drinks
+								--------------
+									Fold  4
+								--------------
+mcv
+alkphos
+sgpt
+sgot
+gammagt='(7.5-inf)'
+drinks
+								--------------
+									Fold  5
+								--------------
+mcv
+alkphos
+sgpt
+sgot
+gammagt='(20.5-inf)'
+drinks
+								--------------
+									Fold  6
+								--------------
+mcv
+alkphos
+sgpt
+sgot
+gammagt
+drinks
+								--------------
+									Fold  7
+								--------------
+mcv
+alkphos
+sgpt
+sgot
+gammagt
+drinks
+								--------------
+									Fold  8
+								--------------
+mcv
+alkphos
+sgpt
+sgot
+gammagt='(20.5-inf)'
+drinks
+								--------------
+									Fold  9
+								--------------
+mcv
+alkphos
+sgpt
+sgot
+gammagt='(20.5-inf)'
+drinks
+								--------------
+									Fold 10
+								--------------
+mcv
+alkphos
+sgpt
+sgot
+gammagt='(8.5-inf)'
+drinks
+dataset: Lung cancer.arff
+								--------------
+									Fold  1
+								--------------
+No numeric attributes.
+								--------------
+									Fold  2
+								--------------
+No numeric attributes.
+								--------------
+									Fold  3
+								--------------
+No numeric attributes.
+								--------------
+									Fold  4
+								--------------
+No numeric attributes.
+								--------------
+									Fold  5
+								--------------
+No numeric attributes.
+								--------------
+									Fold  6
+								--------------
+No numeric attributes.
+								--------------
+									Fold  7
+								--------------
+No numeric attributes.
+								--------------
+									Fold  8
+								--------------
+No numeric attributes.
+								--------------
+									Fold  9
+								--------------
+No numeric attributes.
+								--------------
+									Fold 10
+								--------------
+No numeric attributes.
+dataset: Monks1.arff
+								--------------
+									Fold  1
+								--------------
+No numeric attributes.
+								--------------
+									Fold  2
+								--------------
+No numeric attributes.
+								--------------
+									Fold  3
+								--------------
+No numeric attributes.
+								--------------
+									Fold  4
+								--------------
+No numeric attributes.
+								--------------
+									Fold  5
+								--------------
+No numeric attributes.
+								--------------
+									Fold  6
+								--------------
+No numeric attributes.
+								--------------
+									Fold  7
+								--------------
+No numeric attributes.
+								--------------
+									Fold  8
+								--------------
+No numeric attributes.
+								--------------
+									Fold  9
+								--------------
+No numeric attributes.
+								--------------
+									Fold 10
+								--------------
+No numeric attributes.
+dataset: Monks2.arff
+								--------------
+									Fold  1
+								--------------
+No numeric attributes.
+								--------------
+									Fold  2
+								--------------
+No numeric attributes.
+								--------------
+									Fold  3
+								--------------
+No numeric attributes.
+								--------------
+									Fold  4
+								--------------
+No numeric attributes.
+								--------------
+									Fold  5
+								--------------
+No numeric attributes.
+								--------------
+									Fold  6
+								--------------
+No numeric attributes.
+								--------------
+									Fold  7
+								--------------
+No numeric attributes.
+								--------------
+									Fold  8
+								--------------
+No numeric attributes.
+								--------------
+									Fold  9
+								--------------
+No numeric attributes.
+								--------------
+									Fold 10
+								--------------
+No numeric attributes.

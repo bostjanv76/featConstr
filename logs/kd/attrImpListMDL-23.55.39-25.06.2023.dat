@@ -1,0 +1,121 @@
+dataset: cLogicalConcB.arff
+MDL - after CI
+ 0,3799 (A6 = 1) and (A2 = 1)
+ 0,3779 num-of-N((A6 = 1) and (A2 = 1))
+ 0,2118 num-of-N((A1 = 1) and (A3 = 0) and (A2 = 0))
+ 0,1733 num-of-N((A6 = 1) and (A1 = 1))
+ 0,1689 num-of-N((A5 = 1) and (A4 = 1) and (A2 = 1))
+ 0,1689 num-of-N((A2 = 1) and (A4 = 1) and (A5 = 1))
+ 0,1639 (A5 = 1) and (A4 = 1) and (A2 = 1)
+ 0,1639 (A2 = 1) and (A4 = 1) and (A5 = 1)
+ 0,1601 (A1 = 1) and (A3 = 0) and (A2 = 0)
+ 0,1493 num-of-N((A6 = 1) and (A3 = 0))
+ 0,1350 A1 impl A3
+ 0,1350 (A3 = 0) and (A1 = 1)
+ 0,1350 (A1 = 1) and (A3 = 0)
+ 0,1330 num-of-N((A3 = 0) and (A1 = 1))
+ 0,1330 num-of-N((A1 = 1) and (A3 = 0))
+ 0,1147 A6
+ 0,1107 num-of-N((A1 = 1) and (A3 = 0) and (A4 = 1))
+ 0,1055 A2 xor A6
+ 0,1055 A2 equ A6
+ 0,1035 (A6 = 1) and (A1 = 1)
+ 0,1000 A3 impl A6
+ 0,0958 (A6 = 1) and (A3 = 0)
+ 0,0946 num-of-N((A2 = 1) and (A5 = 1))
+ 0,0941 A2
+ 0,0934 num-of-N((A2 = 1) and (A4 = 1))
+ 0,0885 (A2 = 1) and (A4 = 1)
+ 0,0829 (A2 = 1) and (A5 = 1)
+ 0,0819 (A1 = 1) and (A3 = 0) and (A4 = 1)
+ 0,0738 num-of-N((A5 = 1) and (A4 = 1) and (A1 = 1))
+ 0,0738 num-of-N((A1 = 1) and (A4 = 1) and (A5 = 1))
+ 0,0607 num-of-N((A5 = 1) and (A4 = 1) and (A3 = 0))
+ 0,0576 (A5 = 1) and (A4 = 1) and (A1 = 1)
+ 0,0576 (A1 = 1) and (A4 = 1) and (A5 = 1)
+ 0,0518 A2 xor A3
+ 0,0518 A2 equ A3
+ 0,0509 A1
+ 0,0405 A2 impl A6
+ 0,0404 A1 xor A3
+ 0,0404 A1 equ A3
+ 0,0397 (A5 = 1) and (A4 = 1) and (A3 = 0)
+ 0,0378 A1 xor A2
+ 0,0378 A1 equ A2
+ 0,0347 A3
+ 0,0291 A3 impl A5
+ 0,0291 A3 impl A4
+ 0,0216 A2 impl A3
+ 0,0179 A4 xor A5
+ 0,0179 A4 equ A5
+ 0,0114 A2 xor A4
+ 0,0114 A2 equ A4
+ 0,0109 A5 xor A6
+ 0,0109 A5 equ A6
+ 0,0104 A5
+ 0,0089 A4
+ 0,0058 A4 impl A6
+ 0,0051 A4 impl A5
+ 0,0047 A2 xor A5
+ 0,0047 A2 equ A5
+ 0,0040 A4 xor A6
+ 0,0040 A4 equ A6
+ 0,0030 A1 impl A2
+ 0,0027 A1 impl A5
+ 0,0021 A5 impl A6
+ 0,0020 A2 impl A5
+ 0,0008 A1 impl A6
+ 0,0008 A1 impl A4
+ 0,0005 A2 impl A4
+ -0,0010 A1 xor A4
+ -0,0010 A1 equ A4
+ -0,0018 A1 xor A6
+ -0,0018 A1 equ A6
+ -0,0021 A3 xor A4
+ -0,0021 A3 equ A4
+ -0,0021 A3 xor A5
+ -0,0021 A3 equ A5
+ -0,0021 A1 xor A5
+ -0,0021 A1 equ A5
+ -0,0021 A7
+ -0,0021 A3 xor A6
+ -0,0021 A3 equ A6
+dataset: cLogicalConcBEasy-uniqueSamples.arff
+MDL - after CI
+ 0,2408 (A4 = 1) and (A5 = 1) and (A1 = 1)
+ 0,2408 (A2 = 1) and (A3 = 1) and (A1 = 0)
+ 0,2015 num-of-N((A4 = 1) and (A5 = 1) and (A1 = 1))
+ 0,2015 num-of-N((A2 = 1) and (A3 = 1) and (A1 = 0))
+ 0,0637 A1 impl A5
+ 0,0637 A1 impl A4
+ 0,0288 A5
+ 0,0288 A4 xor A5
+ 0,0288 A4 equ A5
+ 0,0288 A4
+ 0,0288 A3
+ 0,0288 A2 xor A3
+ 0,0288 A2 equ A3
+ 0,0288 A2
+ 0,0288 A1 xor A5
+ 0,0288 A1 xor A4
+ 0,0288 A1 xor A3
+ 0,0288 A1 xor A2
+ 0,0288 A1 equ A5
+ 0,0288 A1 equ A4
+ 0,0288 A1 equ A3
+ 0,0288 A1 equ A2
+ -0,0094 A4 impl A5
+ -0,0094 A2 impl A3
+ -0,0271 A3 impl A5
+ -0,0271 A3 impl A4
+ -0,0271 A2 impl A4
+ -0,0271 A1 impl A3
+ -0,0271 A1 impl A2
+ -0,0301 A6
+ -0,0301 A3 xor A5
+ -0,0301 A3 xor A4
+ -0,0301 A3 equ A5
+ -0,0301 A3 equ A4
+ -0,0301 A2 xor A4
+ -0,0301 A2 equ A4
+ -0,0301 A1

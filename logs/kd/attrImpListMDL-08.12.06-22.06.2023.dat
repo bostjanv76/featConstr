@@ -1,0 +1,48 @@
+dataset: cLogicalConcBEasy.arff
+MDL - after CI
+ 0,0747 A4_x_A5
+ 0,0747 A2_x_A3
+ 0,0637 A1 impl A5
+ 0,0637 A1 impl A4
+ 0,0493 A1_x_A5
+ 0,0493 A1_x_A4
+ 0,0493 A3_x_A5
+ 0,0493 A3_x_A4
+ 0,0493 A2_x_A5
+ 0,0493 A2_x_A4
+ 0,0493 A1_x_A3
+ 0,0493 A1_x_A2
+ 0,0288 A5
+ 0,0288 A4 xor A5
+ 0,0288 A4 equ A5
+ 0,0288 A4
+ 0,0288 A3
+ 0,0288 A2 xor A3
+ 0,0288 A2 equ A3
+ 0,0288 A2
+ 0,0288 A1 xor A5
+ 0,0288 A1 xor A4
+ 0,0288 A1 xor A3
+ 0,0288 A1 xor A2
+ 0,0288 A1 equ A5
+ 0,0288 A1 equ A4
+ 0,0288 A1 equ A3
+ 0,0288 A1 equ A2
+ -0,0094 A4 impl A5
+ -0,0094 A2 impl A3
+ -0,0271 A3 impl A5
+ -0,0271 A3 impl A4
+ -0,0271 A2 impl A5
+ -0,0271 A2 impl A4
+ -0,0271 A1 impl A3
+ -0,0271 A1 impl A2
+ -0,0301 A6
+ -0,0301 A3 xor A5
+ -0,0301 A3 xor A4
+ -0,0301 A3 equ A5
+ -0,0301 A3 equ A4
+ -0,0301 A2 xor A5
+ -0,0301 A2 xor A4
+ -0,0301 A2 equ A5
+ -0,0301 A2 equ A4
+ -0,0301 A1

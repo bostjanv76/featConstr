@@ -1,0 +1,84 @@
+dataset: rConcept.arff
+								--------------
+								Fold  1
+								--------------
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 2, minNoise=3 we remove groups of size 3. Explanation method: IME, num. of expl. inst. is 180, pct of expl. instances is 10, (fold 1). Number of bins for discretisation (simple binning) is 2.
+--------------
+Threshold: 0,10
+--------------
+	A2: 113
+	A3: 37
+	A4: 17
+	A1: 13
+--------------
+Threshold: 0,20
+--------------
+	A2: 113
+	A3: 37
+	A4: 17
+	A1: 13
+--------------
+Threshold: 0,30
+--------------
+	A2: 112
+	A3: 37
+	A4: 17
+	A1: 13
+--------------
+Threshold: 0,40
+--------------
+	A2: 100
+	A3: 28
+	A2 | A3: 12
+	A2 | A4: 12
+	A1: 8
+	A4: 8
+	A1 | A3: 6
+--------------
+Threshold: 0,50
+--------------
+	A2: 55
+	A2 | A3: 33
+	A2 | A4: 33
+	A1 | A2: 20
+	A1 | A3: 14
+	A3: 13
+	A3 | A4: 4
+--------------
+Threshold: 0,60
+--------------
+	A2 | A3: 48
+	A2 | A4: 41
+	A1 | A2: 27
+	A2: 26
+	A1 | A3: 16
+	A3: 5
+	A3 | A4: 4
+--------------
+Threshold: 0,70
+--------------
+	A2 | A3: 41
+	A2 | A4: 39
+	A1 | A2: 30
+	A1 | A2 | A3: 15
+	A2 | A3 | A4: 13
+	A1 | A3: 12
+	A1 | A2 | A4: 8
+	A2: 7
+--------------
+Threshold: 0,80
+--------------
+	A1 | A2 | A3: 45
+	A2 | A3 | A4: 32
+	A2 | A3: 22
+	A1 | A2: 19
+	A2 | A4: 18
+	A1 | A2 | A4: 13
+	A1 | A3: 6
+	A1 | A2 | A3 | A4: 4
+	A2 | A4 | A5: 4
+	A2 | A3 | A5: 4
+*********************************************************************************
+All potential concepts based on thresholds
+	A2 A3 ~#~ A2 A4 ~#~ A1 A3 ~#~ A1 A2 ~#~ A3 A4 ~#~ A1 A2 A3 ~#~ A2 A3 A4 ~#~ A1 A2 A4 ~#~ A1 A2 A3 A4 ~#~ A2 A4 A5 ~#~ A2 A3 A5 ~#~ 
+*********************************************************************************

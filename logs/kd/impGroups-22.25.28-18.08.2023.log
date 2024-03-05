@@ -1,0 +1,801 @@
+dataset: rConcept.arff
+Internal evaluation of the model (OOB): 92.47358176139525 IME (explanation), aproxErrSampling, N_SAMPLES: 100 - alg. for searching concepts: RandomForest, explaining all dataset: YES
+---------------------------------------------------------------------------------
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 20, minNoise=3 we remove groups of size 20. Explanation method: IME, num. of expl. inst. is 2000 (all data). Number of bins for discretisation (simple binning) is 2.
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+Explanation time: 0 [ms]
+--------------
+Threshold: 0,10
+--------------
+	A2: 1295
+	A3: 376
+	A4: 184
+	A1: 142
+--------------
+Threshold: 0,20
+--------------
+	A2: 1295
+	A3: 376
+	A4: 184
+	A1: 142
+--------------
+Threshold: 0,30
+--------------
+	A2: 1285
+	A3: 371
+	A4: 179
+	A1: 139
+--------------
+Threshold: 0,40
+--------------
+	A2: 1115
+	A3: 272
+	A2 | A3: 131
+	A4: 116
+	A1: 95
+	A2 | A4: 92
+	A1 | A2: 76
+	A1 | A3: 48
+	A3 | A4: 37
+--------------
+Threshold: 0,50
+--------------
+	A2: 696
+	A2 | A3: 362
+	A2 | A4: 301
+	A1 | A2: 225
+	A3: 137
+	A1 | A3: 106
+	A3 | A4: 58
+	A4: 42
+	A1: 35
+--------------
+Threshold: 0,60
+--------------
+	A2 | A3: 537
+	A2 | A4: 430
+	A1 | A2: 328
+	A2: 325
+	A1 | A3: 147
+	A3 | A4: 56
+	A3: 41
+	A2 | A3 | A4: 25
+	A1 | A4: 23
+--------------
+Threshold: 0,70
+--------------
+	A2 | A3: 511
+	A2 | A4: 390
+	A1 | A2: 305
+	A1 | A2 | A3: 177
+	A2 | A3 | A4: 142
+	A1 | A3: 118
+	A2: 97
+	A1 | A2 | A4: 86
+	A3 | A4: 37
+	A2 | A5: 33
+	A2 | A4 | A5: 26
+--------------
+Threshold: 0,80
+--------------
+	A1 | A2 | A3: 484
+	A2 | A3 | A4: 326
+	A2 | A3: 264
+	A2 | A4: 200
+	A1 | A2 | A4: 183
+	A1 | A2: 153
+	A2 | A4 | A5: 76
+	A1 | A3: 61
+	A1 | A2 | A3 | A4: 40
+	A2 | A5: 31
+	A1 | A3 | A4: 29
+	A2 | A3 | A5: 29
+	A2 | A3 | A4 | A5: 25
+	A1 | A2 | A5: 23
+*********************************************************************************
+All potential concepts, based on thresholds.
+	A2 A3 ~#~ A2 A4 ~#~ A1 A2 ~#~ A1 A3 ~#~ A3 A4 ~#~ A2 A3 A4 ~#~ A1 A4 ~#~ A1 A2 A3 ~#~ A1 A2 A4 ~#~ A2 A5 ~#~ A2 A4 A5 ~#~ A1 A2 A3 A4 ~#~ A1 A3 A4 ~#~ A2 A3 A5 ~#~ A2 A3 A4 A5 ~#~ A1 A2 A5 ~#~ 
+*********************************************************************************
+dataset: rConceptCond.arff
+Internal evaluation of the model (OOB): 90.61323487770565 IME (explanation), aproxErrSampling, N_SAMPLES: 100 - alg. for searching concepts: RandomForest, explaining all dataset: YES
+---------------------------------------------------------------------------------
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 20, minNoise=3 we remove groups of size 20. Explanation method: IME, num. of expl. inst. is 2000 (all data). Number of bins for discretisation (simple binning) is 2.
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+Explanation time: 0 [ms]
+--------------
+Threshold: 0,10
+--------------
+	A2: 1910
+	A1: 65
+--------------
+Threshold: 0,20
+--------------
+	A2: 1910
+	A1: 65
+--------------
+Threshold: 0,30
+--------------
+	A2: 1909
+	A1: 63
+--------------
+Threshold: 0,40
+--------------
+	A2: 1859
+	A1 | A2: 60
+	A1: 34
+--------------
+Threshold: 0,50
+--------------
+	A2: 1643
+	A2 | A6: 119
+	A1 | A2: 98
+	A2 | A4: 76
+	A2 | A3: 33
+--------------
+Threshold: 0,60
+--------------
+	A2: 1106
+	A2 | A4: 359
+	A2 | A6: 210
+	A2 | A3: 167
+	A1 | A2: 122
+--------------
+Threshold: 0,70
+--------------
+	A2: 757
+	A2 | A4: 527
+	A2 | A6: 234
+	A2 | A3: 217
+	A1 | A2: 87
+	A1 | A2 | A4: 74
+	A2 | A3 | A4: 38
+	A1 | A2 | A3: 23
+--------------
+Threshold: 0,80
+--------------
+	A2 | A4: 558
+	A2: 324
+	A2 | A6: 251
+	A2 | A3: 242
+	A2 | A3 | A4: 175
+	A1 | A2 | A4: 123
+	A2 | A4 | A6: 113
+	A1 | A2: 85
+	A1 | A2 | A3: 55
+	A2 | A3 | A6: 27
+*********************************************************************************
+All potential concepts, based on thresholds.
+	A1 A2 ~#~ A2 A6 ~#~ A2 A4 ~#~ A2 A3 ~#~ A1 A2 A4 ~#~ A2 A3 A4 ~#~ A1 A2 A3 ~#~ A2 A4 A6 ~#~ A2 A3 A6 ~#~ 
+*********************************************************************************
+dataset: rDisjunctBin.arff
+Internal evaluation of the model (OOB): 99.937899136459 IME (explanation), aproxErrSampling, N_SAMPLES: 100 - alg. for searching concepts: RandomForest, explaining all dataset: YES
+---------------------------------------------------------------------------------
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 20, minNoise=3 we remove groups of size 20. Explanation method: IME, num. of expl. inst. is 2000 (all data). Number of bins for discretisation (simple binning) is 2.
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+Explanation time: 0 [ms]
+--------------
+Threshold: 0,10
+--------------
+	A1: 750
+	A2: 652
+	A3: 560
+	A5: 33
+--------------
+Threshold: 0,20
+--------------
+	A1: 750
+	A2: 652
+	A3: 560
+	A5: 33
+--------------
+Threshold: 0,30
+--------------
+	A1: 750
+	A2: 652
+	A3: 560
+	A5: 33
+--------------
+Threshold: 0,40
+--------------
+	A1: 696
+	A2: 611
+	A3: 543
+	A1 | A2: 60
+	A5: 33
+	A1 | A3: 26
+	A2 | A3: 25
+--------------
+Threshold: 0,50
+--------------
+	A1: 579
+	A2: 514
+	A3: 477
+	A1 | A2: 160
+	A1 | A3: 122
+	A2 | A3: 109
+	A5: 33
+--------------
+Threshold: 0,60
+--------------
+	A1: 440
+	A2: 400
+	A3: 381
+	A1 | A2: 283
+	A1 | A3: 240
+	A2 | A3: 216
+	A5: 31
+--------------
+Threshold: 0,70
+--------------
+	A1 | A2: 350
+	A1: 343
+	A1 | A3: 322
+	A2 | A3: 317
+	A2: 297
+	A3: 272
+	A1 | A2 | A3: 57
+	A5: 29
+--------------
+Threshold: 0,80
+--------------
+	A2 | A3: 325
+	A1 | A2: 314
+	A1 | A3: 306
+	A1: 293
+	A1 | A2 | A3: 273
+	A2: 228
+	A3: 216
+	A5: 28
+*********************************************************************************
+All potential concepts, based on thresholds.
+	A1 A2 ~#~ A1 A3 ~#~ A2 A3 ~#~ A1 A2 A3 ~#~ 
+*********************************************************************************
+dataset: rLinear.arff
+Internal evaluation of the model (OOB): 93.11093913928407 IME (explanation), aproxErrSampling, N_SAMPLES: 100 - alg. for searching concepts: RandomForest, explaining all dataset: YES
+---------------------------------------------------------------------------------
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 20, minNoise=3 we remove groups of size 20. Explanation method: IME, num. of expl. inst. is 2000 (all data). Number of bins for discretisation (simple binning) is 2.
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+Explanation time: 0 [ms]
+--------------
+Threshold: 0,10
+--------------
+	A3: 1271
+	A2: 637
+	A1: 92
+--------------
+Threshold: 0,20
+--------------
+	A3: 1271
+	A2: 637
+	A1: 92
+--------------
+Threshold: 0,30
+--------------
+	A3: 1271
+	A2: 637
+	A1: 92
+--------------
+Threshold: 0,40
+--------------
+	A3: 1238
+	A2: 610
+	A1: 76
+	A2 | A3: 43
+--------------
+Threshold: 0,50
+--------------
+	A3: 985
+	A2 | A3: 419
+	A2: 408
+	A1 | A2: 70
+	A1 | A3: 70
+	A1: 48
+--------------
+Threshold: 0,60
+--------------
+	A2 | A3: 862
+	A3: 597
+	A2: 199
+	A1 | A3: 168
+	A1 | A2: 155
+--------------
+Threshold: 0,70
+--------------
+	A2 | A3: 1139
+	A1 | A3: 282
+	A3: 270
+	A1 | A2: 217
+	A2: 65
+	A1 | A2 | A3: 21
+--------------
+Threshold: 0,80
+--------------
+	A2 | A3: 1047
+	A1 | A2 | A3: 348
+	A1 | A3: 323
+	A1 | A2: 183
+	A3: 80
+*********************************************************************************
+All potential concepts, based on thresholds.
+	A2 A3 ~#~ A1 A2 ~#~ A1 A3 ~#~ A1 A2 A3 ~#~ 
+*********************************************************************************
+dataset: rLinNoisy.arff
+Internal evaluation of the model (OOB): 80.76495098470507 IME (explanation), aproxErrSampling, N_SAMPLES: 100 - alg. for searching concepts: RandomForest, explaining all dataset: YES
+---------------------------------------------------------------------------------
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 20, minNoise=3 we remove groups of size 20. Explanation method: IME, num. of expl. inst. is 2000 (all data). Number of bins for discretisation (simple binning) is 2.
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+Explanation time: 0 [ms]
+--------------
+Threshold: 0,10
+--------------
+	A3: 1321
+	A2: 589
+	A1: 90
+--------------
+Threshold: 0,20
+--------------
+	A3: 1321
+	A2: 589
+	A1: 90
+--------------
+Threshold: 0,30
+--------------
+	A3: 1321
+	A2: 589
+	A1: 90
+--------------
+Threshold: 0,40
+--------------
+	A3: 1294
+	A2: 556
+	A1: 73
+	A2 | A3: 42
+--------------
+Threshold: 0,50
+--------------
+	A3: 1017
+	A2 | A3: 412
+	A2: 368
+	A1 | A2: 86
+	A1 | A3: 78
+	A1: 39
+--------------
+Threshold: 0,60
+--------------
+	A2 | A3: 887
+	A3: 594
+	A2: 171
+	A1 | A2: 169
+	A1 | A3: 163
+--------------
+Threshold: 0,70
+--------------
+	A2 | A3: 1131
+	A3: 266
+	A1 | A3: 263
+	A1 | A2: 222
+	A2: 65
+	A1 | A2 | A3: 46
+--------------
+Threshold: 0,80
+--------------
+	A2 | A3: 1033
+	A1 | A2 | A3: 416
+	A1 | A3: 283
+	A1 | A2: 164
+	A3: 82
+*********************************************************************************
+All potential concepts, based on thresholds.
+	A2 A3 ~#~ A1 A2 ~#~ A1 A3 ~#~ A1 A2 A3 ~#~ 
+*********************************************************************************
+dataset: rLocLinear.arff
+Internal evaluation of the model (OOB): 91.20413592698011 IME (explanation), aproxErrSampling, N_SAMPLES: 100 - alg. for searching concepts: RandomForest, explaining all dataset: YES
+---------------------------------------------------------------------------------
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 20, minNoise=3 we remove groups of size 20. Explanation method: IME, num. of expl. inst. is 2000 (all data). Number of bins for discretisation (simple binning) is 2.
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+Explanation time: 0 [ms]
+--------------
+Threshold: 0,10
+--------------
+	A4: 1949
+	A2: 36
+--------------
+Threshold: 0,20
+--------------
+	A4: 1949
+	A2: 36
+--------------
+Threshold: 0,30
+--------------
+	A4: 1949
+	A2: 35
+--------------
+Threshold: 0,40
+--------------
+	A4: 1943
+	A2: 31
+--------------
+Threshold: 0,50
+--------------
+	A4: 1802
+	A2 | A4: 82
+	A1 | A4: 48
+	A3 | A4: 44
+--------------
+Threshold: 0,60
+--------------
+	A4: 1462
+	A2 | A4: 250
+	A3 | A4: 144
+	A1 | A4: 128
+--------------
+Threshold: 0,70
+--------------
+	A4: 942
+	A2 | A4: 473
+	A3 | A4: 294
+	A1 | A4: 250
+--------------
+Threshold: 0,80
+--------------
+	A2 | A4: 573
+	A4: 415
+	A3 | A4: 360
+	A1 | A4: 287
+	A2 | A3 | A4: 142
+	A1 | A3 | A4: 132
+	A1 | A2 | A4: 86
+*********************************************************************************
+All potential concepts, based on thresholds.
+	A2 A4 ~#~ A1 A4 ~#~ A3 A4 ~#~ A2 A3 A4 ~#~ A1 A3 A4 ~#~ A1 A2 A4 ~#~ 
+*********************************************************************************
+dataset: rNonLinPoly.arff
+Internal evaluation of the model (OOB): 93.86717174187652 IME (explanation), aproxErrSampling, N_SAMPLES: 100 - alg. for searching concepts: RandomForest, explaining all dataset: YES
+---------------------------------------------------------------------------------
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 20, minNoise=3 we remove groups of size 20. Explanation method: IME, num. of expl. inst. is 2000 (all data). Number of bins for discretisation (simple binning) is 2.
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+Explanation time: 0 [ms]
+--------------
+Threshold: 0,10
+--------------
+	A2: 1275
+	A1: 643
+	A3: 82
+--------------
+Threshold: 0,20
+--------------
+	A2: 1275
+	A1: 643
+	A3: 82
+--------------
+Threshold: 0,30
+--------------
+	A2: 1275
+	A1: 643
+	A3: 82
+--------------
+Threshold: 0,40
+--------------
+	A2: 1245
+	A1: 609
+	A3: 67
+	A1 | A2: 37
+	A1 | A3: 22
+--------------
+Threshold: 0,50
+--------------
+	A2: 980
+	A1 | A2: 429
+	A1: 390
+	A1 | A3: 90
+	A2 | A3: 75
+	A3: 36
+--------------
+Threshold: 0,60
+--------------
+	A1 | A2: 867
+	A2: 602
+	A1: 177
+	A2 | A3: 171
+	A1 | A3: 168
+--------------
+Threshold: 0,70
+--------------
+	A1 | A2: 1151
+	A2: 283
+	A2 | A3: 266
+	A1 | A3: 204
+	A1: 69
+	A1 | A2 | A3: 22
+--------------
+Threshold: 0,80
+--------------
+	A1 | A2: 1084
+	A1 | A2 | A3: 374
+	A2 | A3: 258
+	A1 | A3: 160
+	A2: 101
+	A1: 22
+*********************************************************************************
+All potential concepts, based on thresholds.
+	A1 A2 ~#~ A1 A3 ~#~ A2 A3 ~#~ A1 A2 A3 ~#~ 
+*********************************************************************************
+dataset: rNonLinTrig.arff
+Internal evaluation of the model (OOB): 93.22036084334434 IME (explanation), aproxErrSampling, N_SAMPLES: 100 - alg. for searching concepts: RandomForest, explaining all dataset: YES
+---------------------------------------------------------------------------------
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 20, minNoise=3 we remove groups of size 20. Explanation method: IME, num. of expl. inst. is 2000 (all data). Number of bins for discretisation (simple binning) is 2.
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+Explanation time: 0 [ms]
+--------------
+Threshold: 0,10
+--------------
+	A1: 1648
+	A2: 182
+	A3: 170
+--------------
+Threshold: 0,20
+--------------
+	A1: 1648
+	A2: 182
+	A3: 170
+--------------
+Threshold: 0,30
+--------------
+	A1: 1648
+	A2: 182
+	A3: 170
+--------------
+Threshold: 0,40
+--------------
+	A1: 1590
+	A2: 158
+	A3: 144
+	A1 | A2: 51
+	A1 | A3: 38
+--------------
+Threshold: 0,50
+--------------
+	A1: 1306
+	A1 | A2: 227
+	A1 | A3: 221
+	A2 | A3: 94
+	A2: 83
+	A3: 69
+--------------
+Threshold: 0,60
+--------------
+	A1: 848
+	A1 | A3: 476
+	A1 | A2: 469
+	A2 | A3: 135
+	A2: 41
+	A3: 31
+--------------
+Threshold: 0,70
+--------------
+	A1 | A2: 710
+	A1 | A3: 700
+	A1: 380
+	A2 | A3: 148
+	A1 | A2 | A3: 38
+--------------
+Threshold: 0,80
+--------------
+	A1 | A2: 652
+	A1 | A3: 616
+	A1 | A2 | A3: 511
+	A1: 117
+	A2 | A3: 95
+*********************************************************************************
+All potential concepts, based on thresholds.
+	A1 A2 ~#~ A1 A3 ~#~ A2 A3 ~#~ A1 A2 A3 ~#~ 
+*********************************************************************************
+dataset: rRandom.arff
+Internal evaluation of the model (OOB): 73.85940830295058 IME (explanation), aproxErrSampling, N_SAMPLES: 100 - alg. for searching concepts: RandomForest, explaining all dataset: YES
+---------------------------------------------------------------------------------
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 20, minNoise=3 we remove groups of size 20. Explanation method: IME, num. of expl. inst. is 2000 (all data). Number of bins for discretisation (simple binning) is 2.
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+Explanation time: 0 [ms]
+--------------
+Threshold: 0,10
+--------------
+	A3: 499
+	A5: 437
+	A2: 402
+	A4: 353
+	A1: 309
+--------------
+Threshold: 0,20
+--------------
+	A3: 499
+	A5: 437
+	A2: 402
+	A4: 353
+	A1: 309
+--------------
+Threshold: 0,30
+--------------
+	A3: 428
+	A5: 390
+	A2: 343
+	A4: 302
+	A1: 255
+	A3 | A4: 34
+	A1 | A2: 34
+	A2 | A3: 33
+	A1 | A3: 29
+	A1 | A5: 27
+	A4 | A5: 27
+	A3 | A5: 26
+	A1 | A4: 26
+	A2 | A4: 26
+--------------
+Threshold: 0,40
+--------------
+	A5: 200
+	A3: 187
+	A2: 180
+	A3 | A5: 157
+	A2 | A3: 140
+	A4: 139
+	A1 | A3: 134
+	A3 | A4: 131
+	A1 | A2: 115
+	A4 | A5: 113
+	A1: 110
+	A1 | A5: 105
+	A1 | A4: 99
+	A2 | A4: 99
+	A2 | A5: 91
+--------------
+Threshold: 0,50
+--------------
+	A3 | A5: 209
+	A2 | A3: 196
+	A3 | A4: 177
+	A1 | A3: 173
+	A4 | A5: 173
+	A2 | A5: 155
+	A1 | A2: 154
+	A1 | A4: 142
+	A2 | A4: 137
+	A1 | A5: 133
+	A3: 73
+	A5: 71
+	A2: 58
+	A4: 48
+	A1: 34
+--------------
+Threshold: 0,60
+--------------
+	A2 | A3: 160
+	A3 | A5: 155
+	A3 | A4: 141
+	A4 | A5: 141
+	A2 | A5: 136
+	A1 | A3: 125
+	A1 | A2: 113
+	A2 | A4: 110
+	A1 | A4: 100
+	A1 | A5: 100
+	A1 | A3 | A5: 73
+	A3 | A4 | A5: 73
+	A1 | A3 | A4: 69
+	A2 | A3 | A5: 68
+	A1 | A2 | A3: 67
+	A2 | A3 | A4: 65
+	A1 | A4 | A5: 61
+	A1 | A2 | A5: 58
+	A1 | A2 | A4: 57
+	A2 | A4 | A5: 54
+--------------
+Threshold: 0,70
+--------------
+	A1 | A3 | A5: 157
+	A1 | A2 | A3: 147
+	A1 | A3 | A4: 145
+	A2 | A3 | A4: 143
+	A3 | A4 | A5: 141
+	A2 | A3 | A5: 131
+	A2 | A4 | A5: 130
+	A1 | A2 | A4: 113
+	A1 | A4 | A5: 113
+	A1 | A2 | A5: 92
+	A2 | A5: 75
+	A4 | A5: 69
+	A3 | A4: 68
+	A3 | A5: 67
+	A2 | A3: 66
+	A1 | A3: 58
+	A2 | A4: 54
+	A1 | A2: 51
+	A1 | A4: 43
+	A1 | A5: 42
+	A1 | A2 | A4 | A5: 21
+--------------
+Threshold: 0,80
+--------------
+	A1 | A3 | A4 | A5: 149
+	A2 | A3 | A4 | A5: 145
+	A1 | A2 | A3 | A4: 139
+	A1 | A2 | A3 | A5: 137
+	A3 | A4 | A5: 130
+	A1 | A3 | A5: 128
+	A2 | A3 | A4: 127
+	A1 | A2 | A4 | A5: 125
+	A2 | A3 | A5: 120
+	A2 | A4 | A5: 117
+	A1 | A3 | A4: 116
+	A1 | A2 | A3: 113
+	A1 | A4 | A5: 104
+	A1 | A2 | A4: 103
+	A1 | A2 | A5: 75
+	A2 | A5: 28
+	A4 | A5: 22
+	A3 | A4: 21
+*********************************************************************************
+All potential concepts, based on thresholds.
+	A3 A4 ~#~ A1 A2 ~#~ A2 A3 ~#~ A1 A3 ~#~ A1 A5 ~#~ A4 A5 ~#~ A3 A5 ~#~ A1 A4 ~#~ A2 A4 ~#~ A2 A5 ~#~ A1 A3 A5 ~#~ A3 A4 A5 ~#~ A1 A3 A4 ~#~ A2 A3 A5 ~#~ A1 A2 A3 ~#~ A2 A3 A4 ~#~ A1 A4 A5 ~#~ A1 A2 A5 ~#~ A1 A2 A4 ~#~ A2 A4 A5 ~#~ A1 A2 A4 A5 ~#~ A1 A3 A4 A5 ~#~ A2 A3 A4 A5 ~#~ A1 A2 A3 A4 ~#~ A1 A2 A3 A5 ~#~ 
+*********************************************************************************
+dataset: rRedundant.arff
+Internal evaluation of the model (OOB): 97.76864467671153 IME (explanation), aproxErrSampling, N_SAMPLES: 100 - alg. for searching concepts: RandomForest, explaining all dataset: YES
+---------------------------------------------------------------------------------
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 20, minNoise=3 we remove groups of size 20. Explanation method: IME, num. of expl. inst. is 2000 (all data). Number of bins for discretisation (simple binning) is 2.
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+Explanation time: 0 [ms]
+--------------
+Threshold: 0,10
+--------------
+	A1: 1278
+	A2: 710
+--------------
+Threshold: 0,20
+--------------
+	A1: 1278
+	A2: 710
+--------------
+Threshold: 0,30
+--------------
+	A1: 1278
+	A2: 710
+--------------
+Threshold: 0,40
+--------------
+	A1: 1261
+	A2: 695
+	A1 | A2: 24
+--------------
+Threshold: 0,50
+--------------
+	A1: 1023
+	A1 | A2: 478
+	A2: 446
+	A2 | A3: 37
+--------------
+Threshold: 0,60
+--------------
+	A1 | A2: 964
+	A1: 701
+	A2: 197
+	A2 | A3: 112
+	A1 | A3: 26
+--------------
+Threshold: 0,70
+--------------
+	A1 | A2: 1248
+	A1: 447
+	A2 | A3: 182
+	A2: 74
+	A1 | A3: 41
+--------------
+Threshold: 0,80
+--------------
+	A1 | A2: 1274
+	A1: 237
+	A1 | A2 | A3: 230
+	A2 | A3: 193
+	A1 | A3: 61
+*********************************************************************************
+All potential concepts, based on thresholds.
+	A1 A2 ~#~ A2 A3 ~#~ A1 A3 ~#~ A1 A2 A3 ~#~ 
+*********************************************************************************

@@ -1,0 +1,11 @@
+dataset: Australian credit.arff
+Number of folds for testing (CV): 10
+*********************************************************************************
+number of instances: 690
+number of attributes: 14
+number of classes: 2
+---------------------------------------------------------------------------------
+Alg. for searching concepts: TreeSHAP (XGBOOST) parameters: numOfRounds->100 maxDepth->3 eta->0.3 gamma->1.0
+Explaining class: 1 explaining whole dataset: NO
+---------------------------------------------------------------------------------
+Time exceeds the limit (9000 [ms]) of FC for one fold!

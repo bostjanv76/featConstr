@@ -1,0 +1,6 @@
+dataset: Autos.arff
+Exhaustive search
+*********************************************************************************
+All potential concepts based on thresholds
+	normalized-losses engine-type fuel-system ~#~ normalized-losses make num-of-doors ~#~ stroke peak-rpm price ~#~ num-of-doors width num-of-cylinders ~#~ drive-wheels bore price ~#~ aspiration wheel-base num-of-cylinders ~#~ engine-location engine-size highway-mpg ~#~ drive-wheels engine-type num-of-cylinders ~#~ num-of-doors stroke city-mpg ~#~ 
+*********************************************************************************

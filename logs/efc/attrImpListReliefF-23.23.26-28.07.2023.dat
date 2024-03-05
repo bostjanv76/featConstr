@@ -1,0 +1,401 @@
+dataset: rDisjunctBin.arff
+								--------------
+									Fold  1
+								--------------
+Feature evaluation: ReliefF (All features dataset) - After CI
+Ranked attributes:
+NaN   25 A1_x_A3
+NaN   12 A1 equ A2
+NaN    8 A1 and A3
+NaN    9 A1 or A2
+NaN   10 A2 or A3
+NaN    7 A2 and A3
+NaN    6 A1 and A2
+NaN    5 A5
+NaN    2 A2
+NaN    3 A3
+NaN    4 A4
+NaN   11 A1 or A3
+NaN   13 A2 equ A3
+NaN   24 A2_x_A3
+NaN   14 A1 equ A3
+NaN   21 A1 and A2 and A3
+NaN   22 A1 or A2 or A3
+NaN   23 A1_x_A2
+NaN   20 A1 impl A3
+NaN   19 A2 impl A3
+NaN   18 A1 impl A2
+NaN   15 A1 xor A2
+NaN   16 A2 xor A3
+NaN   17 A1 xor A3
+NaN    1 A1
+
+
+ReliefF (param. search)
+The best parameter when using M5P: ReliefF@0.0
+ReliefF (param. search)
+The best parameter when using LinearRegression: ReliefF@0.25
+ReliefF (param. search)
+The best parameter when using M5Rules: ReliefF@0.0
+ReliefF (param. search)
+The best parameter when using RandomForest: ReliefF@0.0
+								--------------
+									Fold  2
+								--------------
+Feature evaluation: ReliefF (All features dataset) - After CI
+Ranked attributes:
+NaN   25 A1_x_A3
+NaN   12 A1 equ A2
+NaN    8 A1 and A3
+NaN    9 A1 or A2
+NaN   10 A2 or A3
+NaN    7 A2 and A3
+NaN    6 A1 and A2
+NaN    5 A5
+NaN    2 A2
+NaN    3 A3
+NaN    4 A4
+NaN   11 A1 or A3
+NaN   13 A2 equ A3
+NaN   24 A2_x_A3
+NaN   14 A1 equ A3
+NaN   21 A1 and A2 and A3
+NaN   22 A1 or A2 or A3
+NaN   23 A1_x_A2
+NaN   20 A1 impl A3
+NaN   19 A2 impl A3
+NaN   18 A1 impl A2
+NaN   15 A1 xor A2
+NaN   16 A2 xor A3
+NaN   17 A1 xor A3
+NaN    1 A1
+
+
+ReliefF (param. search)
+The best parameter when using M5P: ReliefF@0.25
+ReliefF (param. search)
+The best parameter when using LinearRegression: ReliefF@0.5
+ReliefF (param. search)
+The best parameter when using M5Rules: ReliefF@0.25
+ReliefF (param. search)
+The best parameter when using RandomForest: ReliefF@0.25
+								--------------
+									Fold  3
+								--------------
+Feature evaluation: ReliefF (All features dataset) - After CI
+Ranked attributes:
+NaN   25 A1_x_A3
+NaN   12 A1 equ A2
+NaN    8 A1 and A3
+NaN    9 A1 or A2
+NaN   10 A2 or A3
+NaN    7 A2 and A3
+NaN    6 A1 and A2
+NaN    5 A5
+NaN    2 A2
+NaN    3 A3
+NaN    4 A4
+NaN   11 A1 or A3
+NaN   13 A2 equ A3
+NaN   24 A2_x_A3
+NaN   14 A1 equ A3
+NaN   21 A1 and A2 and A3
+NaN   22 A1 or A2 or A3
+NaN   23 A1_x_A2
+NaN   20 A1 impl A3
+NaN   19 A2 impl A3
+NaN   18 A1 impl A2
+NaN   15 A1 xor A2
+NaN   16 A2 xor A3
+NaN   17 A1 xor A3
+NaN    1 A1
+
+
+ReliefF (param. search)
+The best parameter when using M5P: ReliefF@0.25
+ReliefF (param. search)
+The best parameter when using LinearRegression: ReliefF@0.5
+ReliefF (param. search)
+The best parameter when using M5Rules: ReliefF@0.25
+ReliefF (param. search)
+The best parameter when using RandomForest: ReliefF@0.25
+								--------------
+									Fold  4
+								--------------
+Feature evaluation: ReliefF (All features dataset) - After CI
+Ranked attributes:
+NaN   25 A1_x_A3
+NaN   12 A1 equ A2
+NaN    8 A1 and A3
+NaN    9 A1 or A2
+NaN   10 A2 or A3
+NaN    7 A2 and A3
+NaN    6 A1 and A2
+NaN    5 A5
+NaN    2 A2
+NaN    3 A3
+NaN    4 A4
+NaN   11 A1 or A3
+NaN   13 A2 equ A3
+NaN   24 A2_x_A3
+NaN   14 A1 equ A3
+NaN   21 A1 and A2 and A3
+NaN   22 A1 or A2 or A3
+NaN   23 A1_x_A2
+NaN   20 A1 impl A3
+NaN   19 A2 impl A3
+NaN   18 A1 impl A2
+NaN   15 A1 xor A2
+NaN   16 A2 xor A3
+NaN   17 A1 xor A3
+NaN    1 A1
+
+
+ReliefF (param. search)
+The best parameter when using M5P: ReliefF@0.0
+ReliefF (param. search)
+The best parameter when using LinearRegression: ReliefF@0.25
+ReliefF (param. search)
+The best parameter when using M5Rules: ReliefF@0.25
+ReliefF (param. search)
+The best parameter when using RandomForest: ReliefF@0.25
+								--------------
+									Fold  5
+								--------------
+Feature evaluation: ReliefF (All features dataset) - After CI
+Ranked attributes:
+NaN   25 A1_x_A3
+NaN   12 A2 equ A3
+NaN    8 A1 and A3
+NaN    9 A2 or A3
+NaN   10 A1 or A2
+NaN    7 A1 and A2
+NaN    6 A2 and A3
+NaN    5 A5
+NaN    2 A2
+NaN    3 A3
+NaN    4 A4
+NaN   11 A1 or A3
+NaN   13 A1 equ A2
+NaN   24 A1_x_A2
+NaN   14 A1 equ A3
+NaN   21 A1 and A2 and A3
+NaN   22 A1 or A2 or A3
+NaN   23 A2_x_A3
+NaN   20 A1 impl A3
+NaN   19 A1 impl A2
+NaN   18 A2 impl A3
+NaN   15 A2 xor A3
+NaN   16 A1 xor A2
+NaN   17 A1 xor A3
+NaN    1 A1
+
+
+ReliefF (param. search)
+The best parameter when using M5P: ReliefF@0.5
+ReliefF (param. search)
+The best parameter when using LinearRegression: ReliefF@0.5
+ReliefF (param. search)
+The best parameter when using M5Rules: ReliefF@0.5
+ReliefF (param. search)
+The best parameter when using RandomForest: ReliefF@0.0
+								--------------
+									Fold  6
+								--------------
+Feature evaluation: ReliefF (All features dataset) - After CI
+Ranked attributes:
+NaN   25 A1_x_A3
+NaN   12 A1 equ A2
+NaN    8 A1 and A3
+NaN    9 A1 or A2
+NaN   10 A2 or A3
+NaN    7 A2 and A3
+NaN    6 A1 and A2
+NaN    5 A5
+NaN    2 A2
+NaN    3 A3
+NaN    4 A4
+NaN   11 A1 or A3
+NaN   13 A2 equ A3
+NaN   24 A2_x_A3
+NaN   14 A1 equ A3
+NaN   21 A1 and A2 and A3
+NaN   22 A1 or A2 or A3
+NaN   23 A1_x_A2
+NaN   20 A1 impl A3
+NaN   19 A2 impl A3
+NaN   18 A1 impl A2
+NaN   15 A1 xor A2
+NaN   16 A2 xor A3
+NaN   17 A1 xor A3
+NaN    1 A1
+
+
+ReliefF (param. search)
+The best parameter when using M5P: ReliefF@0.25
+ReliefF (param. search)
+The best parameter when using LinearRegression: ReliefF@0.5
+ReliefF (param. search)
+The best parameter when using M5Rules: ReliefF@0.25
+ReliefF (param. search)
+The best parameter when using RandomForest: ReliefF@0.0
+								--------------
+									Fold  7
+								--------------
+Feature evaluation: ReliefF (All features dataset) - After CI
+Ranked attributes:
+NaN   25 A1_x_A3
+NaN   12 A2 equ A3
+NaN    8 A1 and A3
+NaN    9 A2 or A3
+NaN   10 A1 or A2
+NaN    7 A1 and A2
+NaN    6 A2 and A3
+NaN    5 A5
+NaN    2 A2
+NaN    3 A3
+NaN    4 A4
+NaN   11 A1 or A3
+NaN   13 A1 equ A2
+NaN   24 A1_x_A2
+NaN   14 A1 equ A3
+NaN   21 A1 and A2 and A3
+NaN   22 A1 or A2 or A3
+NaN   23 A2_x_A3
+NaN   20 A1 impl A3
+NaN   19 A1 impl A2
+NaN   18 A2 impl A3
+NaN   15 A2 xor A3
+NaN   16 A1 xor A2
+NaN   17 A1 xor A3
+NaN    1 A1
+
+
+ReliefF (param. search)
+The best parameter when using M5P: ReliefF@0.0
+ReliefF (param. search)
+The best parameter when using LinearRegression: ReliefF@0.0
+ReliefF (param. search)
+The best parameter when using M5Rules: ReliefF@0.25
+ReliefF (param. search)
+The best parameter when using RandomForest: ReliefF@0.5
+								--------------
+									Fold  8
+								--------------
+Feature evaluation: ReliefF (All features dataset) - After CI
+Ranked attributes:
+NaN   25 A1_x_A3
+NaN   12 A2 equ A3
+NaN    8 A1 and A3
+NaN    9 A2 or A3
+NaN   10 A1 or A2
+NaN    7 A1 and A2
+NaN    6 A2 and A3
+NaN    5 A5
+NaN    2 A2
+NaN    3 A3
+NaN    4 A4
+NaN   11 A1 or A3
+NaN   13 A1 equ A2
+NaN   24 A1_x_A2
+NaN   14 A1 equ A3
+NaN   21 A1 and A2 and A3
+NaN   22 A1 or A2 or A3
+NaN   23 A2_x_A3
+NaN   20 A1 impl A3
+NaN   19 A1 impl A2
+NaN   18 A2 impl A3
+NaN   15 A2 xor A3
+NaN   16 A1 xor A2
+NaN   17 A1 xor A3
+NaN    1 A1
+
+
+ReliefF (param. search)
+The best parameter when using M5P: ReliefF@0.5
+ReliefF (param. search)
+The best parameter when using LinearRegression: ReliefF@0.25
+ReliefF (param. search)
+The best parameter when using M5Rules: ReliefF@0.5
+ReliefF (param. search)
+The best parameter when using RandomForest: ReliefF@0.0
+								--------------
+									Fold  9
+								--------------
+Feature evaluation: ReliefF (All features dataset) - After CI
+Ranked attributes:
+NaN   25 A1_x_A3
+NaN   12 A1 equ A2
+NaN    8 A1 and A3
+NaN    9 A1 or A2
+NaN   10 A2 or A3
+NaN    7 A2 and A3
+NaN    6 A1 and A2
+NaN    5 A5
+NaN    2 A2
+NaN    3 A3
+NaN    4 A4
+NaN   11 A1 or A3
+NaN   13 A2 equ A3
+NaN   24 A2_x_A3
+NaN   14 A1 equ A3
+NaN   21 A1 and A2 and A3
+NaN   22 A1 or A2 or A3
+NaN   23 A1_x_A2
+NaN   20 A1 impl A3
+NaN   19 A2 impl A3
+NaN   18 A1 impl A2
+NaN   15 A1 xor A2
+NaN   16 A2 xor A3
+NaN   17 A1 xor A3
+NaN    1 A1
+
+
+ReliefF (param. search)
+The best parameter when using M5P: ReliefF@0.5
+ReliefF (param. search)
+The best parameter when using LinearRegression: ReliefF@0.25
+ReliefF (param. search)
+The best parameter when using M5Rules: ReliefF@0.5
+ReliefF (param. search)
+The best parameter when using RandomForest: ReliefF@0.5
+								--------------
+									Fold 10
+								--------------
+Feature evaluation: ReliefF (All features dataset) - After CI
+Ranked attributes:
+NaN   25 A1_x_A3
+NaN   12 A1 equ A2
+NaN    8 A1 and A3
+NaN    9 A1 or A2
+NaN   10 A2 or A3
+NaN    7 A2 and A3
+NaN    6 A1 and A2
+NaN    5 A5
+NaN    2 A2
+NaN    3 A3
+NaN    4 A4
+NaN   11 A1 or A3
+NaN   13 A2 equ A3
+NaN   24 A2_x_A3
+NaN   14 A1 equ A3
+NaN   21 A1 and A2 and A3
+NaN   22 A1 or A2 or A3
+NaN   23 A1_x_A2
+NaN   20 A1 impl A3
+NaN   19 A2 impl A3
+NaN   18 A1 impl A2
+NaN   15 A1 xor A2
+NaN   16 A2 xor A3
+NaN   17 A1 xor A3
+NaN    1 A1
+
+
+ReliefF (param. search)
+The best parameter when using M5P: ReliefF@0.0
+ReliefF (param. search)
+The best parameter when using LinearRegression: ReliefF@0.5
+ReliefF (param. search)
+The best parameter when using M5Rules: ReliefF@0.0
+ReliefF (param. search)
+The best parameter when using RandomForest: ReliefF@0.25

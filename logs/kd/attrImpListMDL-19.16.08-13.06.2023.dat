@@ -1,0 +1,1624 @@
+dataset: credit_score.arff
+MDL - after CI
+ 0,4842 net_income DIVIDE debt
+ 0,4498 EBIT DIVIDE debt
+ 0,4254 FFO DIVIDE debt
+ 0,4252 net_income DIVIDE interest
+ 0,4125 interest_x_net_income
+ 0,4049 interest SUBTRACT net_income
+ 0,4021 EBIT DIVIDE interest
+ 0,3944 net_income_x_debt
+ 0,3942 financial_expenses SUBTRACT net_income
+ 0,3817 net_income DIVIDE st_liabilities
+ 0,3713 net_income DIVIDE financial_expenses
+ 0,3700 num-of-N((net_income >= 78502) and (interest <= 138370))
+ 0,3660 num-of-N((net_income >= 97163) and (interest <= 171415))
+ 0,3643 num-of-N((net_income >= 97163) and (interest <= 80359))
+ 0,3643 (net_income >= 97163) and (interest <= 171415)
+ 0,3637 (net_income >= 78502) and (interest <= 253726)
+ 0,3635 num-of-N((net_income >= 97163) and (interest <= 143618))
+ 0,3599 (net_income >= 78502) and (interest <= 138370)
+ 0,3582 num-of-N((net_income >= 78502) and (interest <= 79608))
+ 0,3576 num-of-N((net_income >= 78502) and (interest <= 253726))
+ 0,3565 num-of-N((net_income >= 97163) and (interest <= 135997))
+ 0,3565 num-of-N((net_income >= 100907) and (interest <= 138370))
+ 0,3526 net_income DIVIDE total_oper_liabilities
+ 0,3526 (net_income >= 97163) and (interest <= 143618)
+ 0,3473 num-of-N((net_income >= 78502) and (st_liabilities <= 4899133))
+ 0,3454 num-of-N((net_income >= 97163) and (interest <= 80359) and (interest >= 544))
+ 0,3452 num-of-N((net_income >= 78502) and (debt <= 3735270))
+ 0,3439 (net_income >= 78502) and (st_liabilities <= 4899133)
+ 0,3435 net_income_x_equity
+ 0,3426 (net_income >= 97163) and (interest <= 135997)
+ 0,3426 (net_income >= 100907) and (interest <= 138370)
+ 0,3417 FFO DIVIDE st_liabilities
+ 0,3415 num-of-N((net_income >= 78502) and (debt <= 2274055))
+ 0,3396 num-of-N((net_income >= 78502) and (debt <= 2466556))
+ 0,3394 num-of-N((net_income >= 97163) and (debt <= 3735270))
+ 0,3383 num-of-N((net_income >= 78502) and (debt <= 3788009))
+ 0,3382 net_income_x_total_oper_liabilities
+ 0,3382 net_income_x_st_liabilities
+ 0,3382 net_income_x_inventories
+ 0,3382 financial_expenses_x_net_income
+ 0,3382 cost_of_labor_x_net_income
+ 0,3362 num-of-N((net_income >= 97163) and (debt <= 2466556))
+ 0,3357 net_income_x_FFO
+ 0,3353 (net_income >= 78502) and (debt <= 3735270)
+ 0,3334 num-of-N((debt <= 560000) and (equity >= 1135178) and (FFO >= 103264) and (net_income >= -84300))
+ 0,3289 (net_income >= 78502) and (debt <= 3788009)
+ 0,3286 num-of-N((net_income >= 97163) and (debt <= 3500000))
+ 0,3273 num-of-N((net_income >= 18063) and (equity >= 2382394) and (total_oper_liabilities <= 1950672))
+ 0,3268 (net_income >= 97163) and (debt <= 3735270)
+ 0,3258 interest LESSTHAN net_income
+ 0,3258 FFO DIVIDE interest
+ 0,3254 EBIT DIVIDE st_liabilities
+ 0,3248 interest SUBTRACT EBIT
+ 0,3229 EBIT_x_net_income
+ 0,3225 num-of-N((net_income >= 18063) and (equity >= 2469145) and (total_oper_liabilities <= 1950672))
+ 0,3216 num-of-N((net_income >= 78502) and (st_liabilities <= 4185734))
+ 0,3204 (net_income >= 97163) and (interest <= 80359)
+ 0,3157 net_income==B3of3 and equity==B2of2
+ 0,3154 net_income==B3of3 impl FFO==B2of3
+ 0,3154 net_income==B3of3 and equity==B2of2 and FFO==B3of3
+ 0,3154 net_income==B3of3 and FFO==B3of3
+ 0,3137 interest_x_EBIT
+ 0,3125 (net_income >= 78502) and (interest <= 79608)
+ 0,3124 num-of-N((net_income >= 211730) and (interest <= 143618))
+ 0,3110 (net_income >= 97163) and (interest <= 80359) and (interest >= 544)
+ 0,3103 (net_income >= 97163) and (debt <= 3500000)
+ 0,3096 (net_income >= 78502) and (st_liabilities <= 4185734)
+ 0,3062 EBIT==B3of3 and net_income==B3of3 and FFO==B3of3
+ 0,3062 net_income==B3of3 xor total_oper_liabilities
+ 0,3062 net_income==B3of3 xor st_liabilities
+ 0,3062 net_income==B3of3 xor inventories
+ 0,3062 net_income==B3of3 or total_oper_liabilities or st_liabilities
+ 0,3062 net_income==B3of3 or total_oper_liabilities or inventories
+ 0,3062 net_income==B3of3 or total_oper_liabilities
+ 0,3062 net_income==B3of3 or st_liabilities
+ 0,3062 net_income==B3of3 or inventories
+ 0,3062 net_income==B3of3 impl total_oper_liabilities
+ 0,3062 net_income==B3of3 impl st_liabilities
+ 0,3062 net_income==B3of3 impl inventories
+ 0,3062 net_income==B3of3 impl FFO==B1of3
+ 0,3062 net_income==B3of3 equ total_oper_liabilities
+ 0,3062 net_income==B3of3 equ st_liabilities
+ 0,3062 net_income==B3of3 equ inventories
+ 0,3062 net_income DIVIDE cost_of_labor
+ 0,3062 net_income
+ 0,3062 financial_expenses xor net_income==B3of3
+ 0,3062 financial_expenses or net_income==B3of3 or total_oper_liabilities
+ 0,3062 financial_expenses or net_income==B3of3 or inventories
+ 0,3062 financial_expenses or net_income==B3of3
+ 0,3062 financial_expenses equ net_income==B3of3
+ 0,3062 cost_of_labor xor net_income==B3of3
+ 0,3062 cost_of_labor or net_income==B3of3 or total_oper_liabilities
+ 0,3062 cost_of_labor or net_income==B3of3 or st_liabilities
+ 0,3062 cost_of_labor or net_income==B3of3
+ 0,3062 cost_of_labor equ net_income==B3of3
+ 0,3062 (net_income >= 78502)
+ 0,3057 EBIT==B3of3 and net_income==B3of3 and equity==B2of2
+ 0,3057 (net_income >= 97163)
+ 0,3034 num-of-N((net_income >= 18063) and (equity >= 2150541) and (st_liabilities <= 5566453))
+ 0,3016 num-of-N((net_income >= 78502) and (total_oper_liabilities <= 2286996))
+ 0,2986 num-of-N((net_income >= 97163) and (total_oper_liabilities <= 2286996))
+ 0,2980 EBIT_x_debt
+ 0,2970 net_income MULTIPLY equity
+ 0,2960 EBIT==B3of3 and net_income==B3of3
+ 0,2946 (net_income >= 78502) and (debt <= 2466556)
+ 0,2940 debt_x_FFO
+ 0,2932 num-of-N((net_income >= 320544) and (interest <= 171415) and (total_oper_liabilities <= 34890452))
+ 0,2910 cost_of_labor MULTIPLY net_income
+ 0,2889 EBIT==B1of3 or net_income==B2of3 or FFO==B1of3
+ 0,2889 num-of-N((net_income >= 320544) and (interest <= 143618))
+ 0,2878 num-of-N((net_income >= 97163) and (debt <= 2466556) and (total_oper_liabilities <= 2714836))
+ 0,2870 (net_income >= 97163) and (debt <= 2466556)
+ 0,2870 (net_income >= 78502) and (debt <= 2274055)
+ 0,2867 FFO DIVIDE financial_expenses
+ 0,2866 num-of-N((net_income >= 237480) and (interest <= 171415))
+ 0,2865 (net_income >= 102445)
+ 0,2836 num-of-N((net_income >= 78502) and (total_oper_liabilities <= 2408953))
+ 0,2836 interest SUBTRACT FFO
+ 0,2829 num-of-N((net_income >= 18063) and (equity >= 2137782) and (total_oper_liabilities <= 5376892))
+ 0,2826 interest_x_FFO
+ 0,2823 num-of-N((debt <= 560000) and (equity >= 1135178) and (EBIT >= -2659))
+ 0,2821 (net_income >= 211730) and (interest <= 143618)
+ 0,2816 (net_income >= 320544) and (interest <= 171415) and (total_oper_liabilities <= 34890452)
+ 0,2803 num-of-N((net_income >= 97163) and (total_oper_liabilities <= 2408953))
+ 0,2801 num-of-N((debt <= 560000) and (equity >= 1135178) and (FFO >= 103264))
+ 0,2801 num-of-N((debt <= 560000) and (FFO >= 103264) and (equity >= 1135178))
+ 0,2792 num-of-N((net_income >= 78502) and (EBIT >= 517177))
+ 0,2792 financial_expenses SUBTRACT FFO
+ 0,2788 interest==B2of2 or EBIT==B2of3 or net_income==B1of3
+ 0,2771 financial_expenses LESSTHAN net_income
+ 0,2745 (net_income >= 97163) and (debt <= 2466556) and (total_oper_liabilities <= 2714836)
+ 0,2721 equity MULTIPLY FFO
+ 0,2721 FFO DIVIDE total_oper_liabilities
+ 0,2693 num-of-N((equity >= 2382394) and (total_oper_liabilities <= 1950672) and (net_income >= -84300))
+ 0,2674 (net_income >= 237480) and (interest <= 171415) and (cost_of_labor >= 744260) and (total_oper_liabilities <= 34890452)
+ 0,2672 num-of-N((net_income >= 320544) and (interest <= 170643))
+ 0,2647 (net_income >= 237480) and (interest <= 171415)
+ 0,2626 num-of-N((net_income >= 237480) and (interest <= 171415) and (cost_of_labor >= 744260) and (total_oper_liabilities <= 34890452))
+ 0,2620 net_income DIVIDE inventories
+ 0,2604 (net_income >= 320544) and (interest <= 143618)
+ 0,2603 (net_income >= 78502) and (total_oper_liabilities <= 2286996)
+ 0,2570 EBIT ADD net_income
+ 0,2562 EBIT_x_FFO
+ 0,2551 num-of-N((net_income >= 320544) and (interest <= 253726))
+ 0,2532 (net_income >= 97163) and (total_oper_liabilities <= 2286996)
+ 0,2532 (net_income >= 320544) and (interest <= 253726)
+ 0,2523 net_income ADD FFO
+ 0,2522 num-of-N((net_income >= 320544) and (debt <= 4516999))
+ 0,2520 interest==B2of2 or net_income==B2of3 or FFO==B1of3
+ 0,2514 num-of-N((debt <= 560000) and (FFO >= 103264))
+ 0,2513 (net_income >= 320544) and (interest <= 170643)
+ 0,2504 (net_income >= 78502) and (total_oper_liabilities <= 2408953)
+ 0,2463 num-of-N((debt <= 430423) and (equity >= 1135178) and (EBIT >= -21159))
+ 0,2462 equity==B2of2 impl FFO==B1of3
+ 0,2459 num-of-N((net_income >= 18063) and (EBIT >= 2344965))
+ 0,2434 (net_income >= 97163) and (total_oper_liabilities <= 2408953)
+ 0,2423 total_oper_liabilities_x_FFO
+ 0,2423 st_liabilities_x_FFO
+ 0,2423 inventories_x_FFO
+ 0,2423 financial_expenses_x_FFO
+ 0,2423 cost_of_labor_x_FFO
+ 0,2422 debt==B2of2 impl FFO==B3of3
+ 0,2415 EBIT==B3of3 impl net_income==B1of3
+ 0,2410 net_income MULTIPLY total_oper_liabilities
+ 0,2407 EBIT_x_equity
+ 0,2400 equity_x_FFO
+ 0,2398 interest==B2of2 or EBIT==B1of3 or net_income==B2of3
+ 0,2397 net_income==B2of3 or total_oper_liabilities or FFO==B1of3
+ 0,2397 net_income==B2of3 or st_liabilities or FFO==B1of3
+ 0,2397 net_income==B2of3 or inventories or FFO==B1of3
+ 0,2397 net_income==B2of3 or FFO==B1of3
+ 0,2397 financial_expenses or net_income==B2of3 or FFO==B1of3
+ 0,2397 cost_of_labor or net_income==B2of3 or FFO==B1of3
+ 0,2384 num-of-N((net_income >= 18063) and (FFO >= 1090104))
+ 0,2369 EBIT==B2of3 or net_income==B1of3 or FFO==B2of3
+ 0,2366 num-of-N((net_income >= 173241) and (EBIT >= 517177))
+ 0,2359 EBIT==B1of3 or net_income==B1of3 or FFO==B1of3
+ 0,2358 EBIT==B3of3 impl net_income==B2of3
+ 0,2338 EBIT==B1of3 or net_income==B1of3 or FFO==B2of3
+ 0,2334 num-of-N((net_income >= 345491) and (debt <= 6552946))
+ 0,2326 num-of-N((FFO >= 688731) and (debt <= 4516999))
+ 0,2319 num-of-N((interest <= 24296) and (interest >= 8964) and (equity >= 602538) and (net_income >= -17144))
+ 0,2311 net_income MULTIPLY st_liabilities
+ 0,2308 (net_income >= 320544) and (debt <= 4516999)
+ 0,2307 num-of-N((net_income >= 18063) and (equity >= 2150541))
+ 0,2305 EBIT==B3of3 and equity==B2of2 and FFO==B3of3
+ 0,2305 EBIT==B3of3 and FFO==B3of3
+ 0,2297 EBIT ADD FFO
+ 0,2293 num-of-N((FFO >= 700888) and (debt <= 3984667))
+ 0,2281 interest LESSTHAN EBIT
+ 0,2274 interest LESSTHAN FFO
+ 0,2274 cost_of_labor or EBIT==B1of3 or FFO==B1of3
+ 0,2274 EBIT==B1of3 or total_oper_liabilities or FFO==B1of3
+ 0,2274 EBIT==B1of3 or st_liabilities or FFO==B1of3
+ 0,2274 EBIT==B1of3 or inventories or FFO==B1of3
+ 0,2274 EBIT==B1of3 or FFO==B1of3
+ 0,2267 num-of-N((FFO >= 103264) and (debt <= 829862))
+ 0,2266 EBIT==B2of3 or net_income==B1of3 or FFO==B1of3
+ 0,2259 cost_of_labor_x_EBIT
+ 0,2259 EBIT_x_total_oper_liabilities
+ 0,2259 EBIT_x_st_liabilities
+ 0,2259 EBIT_x_inventories
+ 0,2248 num-of-N((FFO >= 700888) and (debt <= 4516999))
+ 0,2247 equity==B2of2 and FFO==B3of3
+ 0,2247 num-of-N((net_income >= 30613) and (total_oper_liabilities <= 1967237) and (total_oper_liabilities >= 901156))
+ 0,2242 num-of-N((FFO >= 688731) and (debt <= 4516999) and (total_oper_liabilities <= 18769290))
+ 0,2241 (net_income >= 345491) and (debt <= 6552946)
+ 0,2235 num-of-N((FFO >= 714285) and (debt <= 3735270))
+ 0,2225 EBIT DIVIDE total_oper_liabilities
+ 0,2216 EBIT==B3of3 impl FFO==B1of3
+ 0,2202 net_income==B1of3 xor FFO==B2of3
+ 0,2202 net_income==B1of3 or total_oper_liabilities or FFO==B2of3
+ 0,2202 net_income==B1of3 or st_liabilities or FFO==B2of3
+ 0,2202 net_income==B1of3 or inventories or FFO==B2of3
+ 0,2202 net_income==B1of3 or FFO==B2of3
+ 0,2202 net_income==B1of3 equ FFO==B2of3
+ 0,2202 financial_expenses or net_income==B1of3 or FFO==B2of3
+ 0,2202 cost_of_labor or net_income==B1of3 or FFO==B2of3
+ 0,2195 num-of-N((net_income >= 18063) and (equity >= 2469145))
+ 0,2194 cost_of_labor or EBIT==B2of3 or net_income==B1of3
+ 0,2194 EBIT==B2of3 or net_income==B1of3 or total_oper_liabilities
+ 0,2194 EBIT==B2of3 or net_income==B1of3 or st_liabilities
+ 0,2194 EBIT==B2of3 or net_income==B1of3 or inventories
+ 0,2194 EBIT==B2of3 or net_income==B1of3
+ 0,2180 interest==B2of2 or net_income==B1of3 or FFO==B2of3
+ 0,2174 interest==B2of2 or EBIT==B2of3 or FFO==B1of3
+ 0,2172 net_income==B1of3 or total_oper_liabilities or FFO==B1of3
+ 0,2172 net_income==B1of3 or st_liabilities or FFO==B1of3
+ 0,2172 net_income==B1of3 or inventories or FFO==B1of3
+ 0,2172 net_income==B1of3 or FFO==B1of3
+ 0,2172 financial_expenses or net_income==B1of3 or FFO==B1of3
+ 0,2172 cost_of_labor or net_income==B1of3 or FFO==B1of3
+ 0,2172 cost_of_labor MULTIPLY FFO
+ 0,2161 num-of-N((net_income >= 392599) and (interest <= 364151))
+ 0,2158 EBIT==B1of3 or net_income==B2of3 or FFO==B2of3
+ 0,2146 EBIT==B3of3 and equity==B2of2
+ 0,2136 (FFO >= 688731) and (debt <= 4516999) and (total_oper_liabilities <= 18769290)
+ 0,2131 EBIT==B2of3 or net_income==B2of3 or FFO==B1of3
+ 0,2129 (net_income >= 237480)
+ 0,2122 num-of-N((net_income >= 21858) and (equity >= 2382394))
+ 0,2116 total_oper_liabilities xor FFO==B3of3
+ 0,2116 total_oper_liabilities or st_liabilities or FFO==B3of3
+ 0,2116 total_oper_liabilities or inventories or FFO==B3of3
+ 0,2116 total_oper_liabilities or FFO==B3of3
+ 0,2116 total_oper_liabilities equ FFO==B3of3
+ 0,2116 st_liabilities xor FFO==B3of3
+ 0,2116 st_liabilities or FFO==B3of3
+ 0,2116 st_liabilities equ FFO==B3of3
+ 0,2116 inventories xor FFO==B3of3
+ 0,2116 inventories or FFO==B3of3
+ 0,2116 inventories equ FFO==B3of3
+ 0,2116 financial_expenses xor FFO==B3of3
+ 0,2116 financial_expenses or total_oper_liabilities or FFO==B3of3
+ 0,2116 financial_expenses or inventories or FFO==B3of3
+ 0,2116 financial_expenses or FFO==B3of3
+ 0,2116 financial_expenses equ FFO==B3of3
+ 0,2116 cost_of_labor xor FFO==B3of3
+ 0,2116 cost_of_labor or total_oper_liabilities or FFO==B3of3
+ 0,2116 cost_of_labor or st_liabilities or FFO==B3of3
+ 0,2116 cost_of_labor or FFO==B3of3
+ 0,2116 cost_of_labor equ FFO==B3of3
+ 0,2116 FFO
+ 0,2111 financial_expenses MULTIPLY net_income
+ 0,2110 (net_income >= 392599) and (interest <= 364151)
+ 0,2105 (net_income >= 18063) and (equity >= 2137782) and (total_oper_liabilities <= 5376892)
+ 0,2104 cost_of_labor or EBIT==B1of3 or net_income==B2of3
+ 0,2104 EBIT==B1of3 or net_income==B2of3 or total_oper_liabilities
+ 0,2104 EBIT==B1of3 or net_income==B2of3 or st_liabilities
+ 0,2104 EBIT==B1of3 or net_income==B2of3 or inventories
+ 0,2104 EBIT==B1of3 or net_income==B2of3
+ 0,2102 num-of-N((FFO >= 688731) and (total_oper_liabilities <= 5036867) and (debt <= 4516999))
+ 0,2101 net_income==B3of3 or total_oper_liabilities or FFO==B3of3
+ 0,2101 net_income==B3of3 or st_liabilities or FFO==B3of3
+ 0,2101 net_income==B3of3 or inventories or FFO==B3of3
+ 0,2101 net_income==B3of3 or FFO==B3of3
+ 0,2101 financial_expenses or net_income==B3of3 or FFO==B3of3
+ 0,2101 cost_of_labor or net_income==B3of3 or FFO==B3of3
+ 0,2096 num-of-N((FFO >= 700888) and (debt <= 5406379))
+ 0,2092 cost_of_labor or EBIT==B3of3 or net_income==B3of3
+ 0,2092 EBIT==B3of3 or net_income==B3of3 or total_oper_liabilities
+ 0,2092 EBIT==B3of3 or net_income==B3of3 or st_liabilities
+ 0,2092 EBIT==B3of3 or net_income==B3of3 or inventories
+ 0,2092 EBIT==B3of3 or net_income==B3of3
+ 0,2092 equity DIVIDE interest
+ 0,2084 (net_income >= 18063) and (equity >= 2150541) and (st_liabilities <= 5566453)
+ 0,2060 net_income==B3of3 xor FFO==B2of3
+ 0,2060 net_income==B3of3 equ FFO==B2of3
+ 0,2049 num-of-N((net_income >= 21858) and (interest <= 16478) and (debt >= 223368))
+ 0,2042 num-of-N((equity >= 3255508) and (total_oper_liabilities <= 1950672) and (EBIT >= -113520))
+ 0,2035 interest ADD net_income
+ 0,2035 EBIT==B1of3 xor net_income==B2of3
+ 0,2035 EBIT==B1of3 equ net_income==B2of3
+ 0,2031 net_income==B3of3 or total_oper_liabilities or FFO==B2of3
+ 0,2031 net_income==B3of3 or st_liabilities or FFO==B2of3
+ 0,2031 net_income==B3of3 or inventories or FFO==B2of3
+ 0,2031 net_income==B3of3 or FFO==B2of3
+ 0,2031 financial_expenses or net_income==B3of3 or FFO==B2of3
+ 0,2031 cost_of_labor or net_income==B3of3 or FFO==B2of3
+ 0,2026 financial_expenses ADD net_income
+ 0,2020 FFO DIVIDE cost_of_labor
+ 0,2018 EBIT==B3of3 impl FFO==B2of3
+ 0,1992 net_income MULTIPLY debt
+ 0,1992 debt DIVIDE net_income
+ 0,1992 cost_of_labor or EBIT==B1of3 or net_income==B1of3
+ 0,1992 EBIT==B1of3 or net_income==B1of3 or total_oper_liabilities
+ 0,1992 EBIT==B1of3 or net_income==B1of3 or st_liabilities
+ 0,1992 EBIT==B1of3 or net_income==B1of3 or inventories
+ 0,1992 EBIT==B1of3 or net_income==B1of3
+ 0,1990 financial_expenses DIVIDE net_income
+ 0,1988 (net_income >= 18063) and (equity >= 2150541)
+ 0,1975 equity DIVIDE debt
+ 0,1967 net_income==B2of3 xor FFO==B1of3
+ 0,1967 net_income==B2of3 equ FFO==B1of3
+ 0,1967 FFO DIVIDE inventories
+ 0,1967 net_income DIVIDE equity
+ 0,1945 EBIT MULTIPLY equity
+ 0,1944 cost_of_labor xor EBIT==B3of3
+ 0,1944 cost_of_labor or EBIT==B3of3 or total_oper_liabilities
+ 0,1944 cost_of_labor or EBIT==B3of3 or st_liabilities
+ 0,1944 cost_of_labor or EBIT==B3of3
+ 0,1944 cost_of_labor equ EBIT==B3of3
+ 0,1944 EBIT==B3of3 xor total_oper_liabilities
+ 0,1944 EBIT==B3of3 xor st_liabilities
+ 0,1944 EBIT==B3of3 xor inventories
+ 0,1944 EBIT==B3of3 or total_oper_liabilities or st_liabilities
+ 0,1944 EBIT==B3of3 or total_oper_liabilities
+ 0,1944 EBIT==B3of3 or st_liabilities
+ 0,1944 EBIT==B3of3 or inventories
+ 0,1944 EBIT==B3of3 impl total_oper_liabilities
+ 0,1944 EBIT==B3of3 impl st_liabilities
+ 0,1944 EBIT==B3of3 impl inventories
+ 0,1944 EBIT==B3of3 equ total_oper_liabilities
+ 0,1944 EBIT==B3of3 equ st_liabilities
+ 0,1944 EBIT==B3of3 equ inventories
+ 0,1944 EBIT
+ 0,1943 num-of-N((net_income >= 237480) and (EBIT >= 2344965))
+ 0,1933 net_income==B1of3 xor equity==B2of2
+ 0,1933 net_income==B1of3 equ equity==B2of2
+ 0,1932 equity DIVIDE st_liabilities
+ 0,1923 num-of-N((net_income >= 18063) and (equity >= 2469145) and (debt <= 3788009) and (equity <= 4723607))
+ 0,1919 (FFO >= 688731) and (debt <= 4516999)
+ 0,1915 num-of-N((FFO >= 700888) and (debt <= 9677732) and (EBIT >= 425171))
+ 0,1906 num-of-N((debt <= 560000) and (EBIT >= -21159))
+ 0,1905 cost_of_labor or EBIT==B3of3 or FFO==B3of3
+ 0,1905 EBIT==B3of3 or total_oper_liabilities or FFO==B3of3
+ 0,1905 EBIT==B3of3 or st_liabilities or FFO==B3of3
+ 0,1905 EBIT==B3of3 or net_income==B3of3 or FFO==B3of3
+ 0,1905 EBIT==B3of3 or inventories or FFO==B3of3
+ 0,1905 EBIT==B3of3 or FFO==B3of3
+ 0,1891 financial_expenses LESSTHAN FFO
+ 0,1891 equity DIVIDE net_income
+ 0,1891 cost_of_labor DIVIDE net_income
+ 0,1883 (FFO >= 688731) and (total_oper_liabilities <= 5036867) and (debt <= 4516999)
+ 0,1882 num-of-N((debt <= 560000) and (net_income >= -84300))
+ 0,1875 interest MULTIPLY net_income
+ 0,1859 total_oper_liabilities xor FFO==B1of3
+ 0,1859 total_oper_liabilities or st_liabilities or FFO==B1of3
+ 0,1859 total_oper_liabilities or inventories or FFO==B1of3
+ 0,1859 total_oper_liabilities or FFO==B1of3
+ 0,1859 total_oper_liabilities equ FFO==B1of3
+ 0,1859 st_liabilities xor FFO==B1of3
+ 0,1859 st_liabilities or FFO==B1of3
+ 0,1859 st_liabilities equ FFO==B1of3
+ 0,1859 inventories xor FFO==B1of3
+ 0,1859 inventories or FFO==B1of3
+ 0,1859 inventories equ FFO==B1of3
+ 0,1859 financial_expenses xor FFO==B1of3
+ 0,1859 financial_expenses or total_oper_liabilities or FFO==B1of3
+ 0,1859 financial_expenses or inventories or FFO==B1of3
+ 0,1859 financial_expenses or FFO==B1of3
+ 0,1859 financial_expenses equ FFO==B1of3
+ 0,1859 cost_of_labor xor FFO==B1of3
+ 0,1859 cost_of_labor or total_oper_liabilities or FFO==B1of3
+ 0,1859 cost_of_labor or st_liabilities or FFO==B1of3
+ 0,1859 cost_of_labor or FFO==B1of3
+ 0,1859 cost_of_labor equ FFO==B1of3
+ 0,1841 EBIT DIVIDE inventories
+ 0,1832 total_oper_liabilities DIVIDE net_income
+ 0,1832 st_liabilities DIVIDE net_income
+ 0,1817 net_income==B1of3 xor total_oper_liabilities
+ 0,1817 net_income==B1of3 xor st_liabilities
+ 0,1817 net_income==B1of3 xor inventories
+ 0,1817 net_income==B1of3 or total_oper_liabilities or st_liabilities
+ 0,1817 net_income==B1of3 or total_oper_liabilities or inventories
+ 0,1817 net_income==B1of3 or total_oper_liabilities
+ 0,1817 net_income==B1of3 or st_liabilities
+ 0,1817 net_income==B1of3 or inventories
+ 0,1817 net_income==B1of3 impl total_oper_liabilities
+ 0,1817 net_income==B1of3 impl st_liabilities
+ 0,1817 net_income==B1of3 impl inventories
+ 0,1817 net_income==B1of3 impl FFO==B2of3
+ 0,1817 net_income==B1of3 equ total_oper_liabilities
+ 0,1817 net_income==B1of3 equ st_liabilities
+ 0,1817 net_income==B1of3 equ inventories
+ 0,1817 financial_expenses xor net_income==B1of3
+ 0,1817 financial_expenses or net_income==B1of3 or total_oper_liabilities
+ 0,1817 financial_expenses or net_income==B1of3 or inventories
+ 0,1817 financial_expenses or net_income==B1of3
+ 0,1817 financial_expenses equ net_income==B1of3
+ 0,1817 cost_of_labor xor net_income==B1of3
+ 0,1817 cost_of_labor or net_income==B1of3 or total_oper_liabilities
+ 0,1817 cost_of_labor or net_income==B1of3 or st_liabilities
+ 0,1817 cost_of_labor or net_income==B1of3
+ 0,1817 cost_of_labor equ net_income==B1of3
+ 0,1813 (net_income >= 345491)
+ 0,1806 equity DIVIDE financial_expenses
+ 0,1795 (FFO >= 700888) and (debt <= 4516999)
+ 0,1787 EBIT DIVIDE cost_of_labor
+ 0,1775 FFO DIVIDE net_income
+ 0,1768 net_income MULTIPLY inventories
+ 0,1761 num-of-N((equity >= 1487584) and (debt <= 2523298))
+ 0,1760 total_oper_liabilities MULTIPLY FFO
+ 0,1757 interest DIVIDE net_income
+ 0,1754 cost_of_labor or EBIT==B2of3 or FFO==B1of3
+ 0,1754 EBIT==B2of3 or total_oper_liabilities or FFO==B1of3
+ 0,1754 EBIT==B2of3 or st_liabilities or FFO==B1of3
+ 0,1754 EBIT==B2of3 or inventories or FFO==B1of3
+ 0,1754 EBIT==B2of3 or FFO==B1of3
+ 0,1746 (FFO >= 700888) and (debt <= 5406379)
+ 0,1745 st_liabilities MULTIPLY FFO
+ 0,1742 num-of-N((EBIT >= 517177) and (debt <= 9677732))
+ 0,1735 financial_expenses ADD FFO
+ 0,1734 (FFO >= 700888) and (debt <= 3984667)
+ 0,1731 EBIT==B2of3 xor net_income==B1of3
+ 0,1731 EBIT==B2of3 equ net_income==B1of3
+ 0,1730 interest DIVIDE equity
+ 0,1730 interest ADD FFO
+ 0,1725 (equity >= 1487584) and (debt <= 2523298)
+ 0,1704 (net_income >= 18063) and (equity >= 2469145)
+ 0,1689 interest MULTIPLY EBIT
+ 0,1689 debt DIVIDE EBIT
+ 0,1689 EBIT==B1of3 xor equity==B2of2
+ 0,1689 EBIT==B1of3 equ equity==B2of2
+ 0,1689 EBIT MULTIPLY st_liabilities
+ 0,1689 EBIT MULTIPLY debt
+ 0,1685 (EBIT >= 517177) and (debt <= 9677732)
+ 0,1684 (net_income >= 21858) and (equity >= 2382394)
+ 0,1683 interest==B2of2 or EBIT==B1of3 or FFO==B2of3
+ 0,1667 interest==B2of2 or net_income==B1of3 or FFO==B1of3
+ 0,1660 equity SUBTRACT debt
+ 0,1634 equity==B2of2 xor FFO==B1of3
+ 0,1634 equity==B2of2 equ FFO==B1of3
+ 0,1634 equity ADD FFO
+ 0,1634 debt DIVIDE equity
+ 0,1634 EBIT MULTIPLY total_oper_liabilities
+ 0,1625 (net_income >= 30613) and (total_oper_liabilities <= 1967237) and (total_oper_liabilities >= 901156)
+ 0,1622 debt DIVIDE FFO
+ 0,1616 cost_of_labor MULTIPLY EBIT
+ 0,1606 inventories DIVIDE net_income
+ 0,1602 interest==B2of2 or EBIT==B1of3 or FFO==B1of3
+ 0,1593 net_income==B1of3 and debt==B2of2
+ 0,1581 (debt <= 560000) and (equity >= 1135178) and (EBIT >= -2659)
+ 0,1579 debt==B2of2 and FFO==B1of3
+ 0,1579 EBIT MULTIPLY inventories
+ 0,1569 st_liabilities DIVIDE equity
+ 0,1548 (net_income >= 388822)
+ 0,1528 num-of-N((debt <= 560000) and (equity >= 1135178))
+ 0,1525 net_income==B1of3 impl FFO==B3of3
+ 0,1525 net_income==B1of3 and FFO==B1of3
+ 0,1525 net_income ADD equity
+ 0,1525 FFO DIVIDE equity
+ 0,1523 (net_income >= 78502) and (EBIT >= 517177)
+ 0,1523 (net_income >= 173241) and (EBIT >= 517177)
+ 0,1523 (equity >= 2382394) and (total_oper_liabilities <= 1950672) and (net_income >= -84300)
+ 0,1523 (debt <= 560000) and (equity >= 1135178) and (FFO >= 103264) and (net_income >= -84300)
+ 0,1520 cost_of_labor or EBIT==B1of3 or FFO==B2of3
+ 0,1520 EBIT==B1of3 or total_oper_liabilities or FFO==B2of3
+ 0,1520 EBIT==B1of3 or st_liabilities or FFO==B2of3
+ 0,1520 EBIT==B1of3 or inventories or FFO==B2of3
+ 0,1520 EBIT==B1of3 or FFO==B2of3
+ 0,1497 (FFO >= 714285) and (debt <= 3735270)
+ 0,1494 equity SUBTRACT st_liabilities
+ 0,1489 (net_income >= 392599)
+ 0,1484 interest DIVIDE EBIT
+ 0,1476 interest==B2of2 or EBIT==B1of3 or net_income==B1of3
+ 0,1473 EBIT==B2of3 or net_income==B3of3 or FFO==B2of3
+ 0,1472 num-of-N((equity >= 2382394) and (debt <= 2156655))
+ 0,1471 cost_of_labor DIVIDE FFO
+ 0,1471 EBIT DIVIDE equity
+ 0,1466 EBITDA
+ 0,1466 EBIT==B1of3 xor FFO==B2of3
+ 0,1466 EBIT==B1of3 equ FFO==B2of3
+ 0,1456 financial_expenses DIVIDE equity
+ 0,1454 net_income==B3of3 xor equity==B2of2
+ 0,1454 net_income==B3of3 equ equity==B2of2
+ 0,1454 num-of-N((debt <= 560000) and (total_oper_liabilities <= 906417) and (net_income >= -84300))
+ 0,1452 cost_of_labor or EBIT==B2of3 or net_income==B3of3
+ 0,1452 EBIT==B2of3 or net_income==B3of3 or total_oper_liabilities
+ 0,1452 EBIT==B2of3 or net_income==B3of3 or st_liabilities
+ 0,1452 EBIT==B2of3 or net_income==B3of3 or inventories
+ 0,1452 EBIT==B2of3 or net_income==B3of3
+ 0,1451 EBIT==B3of3 or net_income==B3of3 or FFO==B2of3
+ 0,1450 (FFO >= 700888) and (debt <= 9677732) and (EBIT >= 425171)
+ 0,1443 cost_of_labor DIVIDE EBIT
+ 0,1432 (net_income >= 397188)
+ 0,1430 net_income==B2of3 or total_oper_liabilities or FFO==B3of3
+ 0,1430 net_income==B2of3 or st_liabilities or FFO==B3of3
+ 0,1430 net_income==B2of3 or inventories or FFO==B3of3
+ 0,1430 net_income==B2of3 or FFO==B3of3
+ 0,1430 financial_expenses or net_income==B2of3 or FFO==B3of3
+ 0,1430 cost_of_labor or net_income==B2of3 or FFO==B3of3
+ 0,1421 interest_x_equity
+ 0,1417 total_oper_liabilities DIVIDE FFO
+ 0,1417 st_liabilities DIVIDE FFO
+ 0,1417 financial_expenses MULTIPLY FFO
+ 0,1417 financial_expenses DIVIDE FFO
+ 0,1417 EBIT ADD equity
+ 0,1416 interest==B2of2 or net_income==B1of3 or total_oper_liabilities
+ 0,1416 interest==B2of2 or net_income==B1of3 or st_liabilities
+ 0,1416 interest==B2of2 or net_income==B1of3 or inventories
+ 0,1416 interest==B2of2 or net_income==B1of3
+ 0,1416 financial_expenses or interest==B2of2 or net_income==B1of3
+ 0,1416 cost_of_labor or interest==B2of2 or net_income==B1of3
+ 0,1407 (net_income >= 18063) and (equity >= 2469145) and (total_oper_liabilities <= 1950672)
+ 0,1407 (net_income >= 18063) and (equity >= 2382394) and (total_oper_liabilities <= 1950672)
+ 0,1394 debt SUBTRACT FFO
+ 0,1390 total_oper_liabilities DIVIDE EBIT
+ 0,1390 st_liabilities DIVIDE EBIT
+ 0,1390 equity DIVIDE EBIT
+ 0,1383 equity LESSTHAN debt
+ 0,1382 (debt <= 430423) and (equity >= 1135178) and (EBIT >= -21159)
+ 0,1365 num-of-N((equity >= 2997107) and (debt <= 1786476))
+ 0,1365 net_income==B1of3 and debt==B2of2 and FFO==B1of3
+ 0,1365 net_income DIVIDE FFO
+ 0,1365 equity DIVIDE FFO
+ 0,1365 cost_of_labor xor EBIT==B1of3
+ 0,1365 cost_of_labor or EBIT==B1of3 or total_oper_liabilities
+ 0,1365 cost_of_labor or EBIT==B1of3 or st_liabilities
+ 0,1365 cost_of_labor or EBIT==B1of3
+ 0,1365 cost_of_labor equ EBIT==B1of3
+ 0,1365 EBIT==B3of3 or net_income==B2of3 or FFO==B3of3
+ 0,1365 EBIT==B1of3 xor total_oper_liabilities
+ 0,1365 EBIT==B1of3 xor st_liabilities
+ 0,1365 EBIT==B1of3 xor inventories
+ 0,1365 EBIT==B1of3 or total_oper_liabilities or st_liabilities
+ 0,1365 EBIT==B1of3 or total_oper_liabilities
+ 0,1365 EBIT==B1of3 or st_liabilities
+ 0,1365 EBIT==B1of3 or inventories
+ 0,1365 EBIT==B1of3 impl total_oper_liabilities
+ 0,1365 EBIT==B1of3 impl st_liabilities
+ 0,1365 EBIT==B1of3 impl inventories
+ 0,1365 EBIT==B1of3 equ total_oper_liabilities
+ 0,1365 EBIT==B1of3 equ st_liabilities
+ 0,1365 EBIT==B1of3 equ inventories
+ 0,1357 interest==B2of2 or total_oper_liabilities or FFO==B1of3
+ 0,1357 interest==B2of2 or st_liabilities or FFO==B1of3
+ 0,1357 interest==B2of2 or inventories or FFO==B1of3
+ 0,1357 interest==B2of2 or FFO==B1of3
+ 0,1357 financial_expenses or interest==B2of2 or FFO==B1of3
+ 0,1357 cost_of_labor or interest==B2of2 or FFO==B1of3
+ 0,1350 equity_x_debt
+ 0,1338 interest==B2of2 impl net_income==B3of3
+ 0,1326 (debt <= 560000) and (equity >= 1135178) and (FFO >= 103264)
+ 0,1326 (debt <= 560000) and (FFO >= 103264) and (equity >= 1135178)
+ 0,1312 interest MULTIPLY FFO
+ 0,1312 interest DIVIDE FFO
+ 0,1312 debt MULTIPLY FFO
+ 0,1312 EBIT==B1of3 impl net_income==B2of3
+ 0,1312 EBIT==B1of3 impl FFO==B2of3
+ 0,1298 interest ADD EBIT
+ 0,1298 (equity >= 2382394) and (debt <= 2156655)
+ 0,1284 net_income==B2of3 xor FFO==B3of3
+ 0,1284 net_income==B2of3 equ FFO==B3of3
+ 0,1277 equity LESSTHAN st_liabilities
+ 0,1272 EBIT==B3of3 xor FFO==B2of3
+ 0,1272 EBIT==B3of3 equ FFO==B2of3
+ 0,1268 cost_of_labor or EBIT==B3of3 or FFO==B2of3
+ 0,1268 EBIT==B3of3 or total_oper_liabilities or FFO==B2of3
+ 0,1268 EBIT==B3of3 or st_liabilities or FFO==B2of3
+ 0,1268 EBIT==B3of3 or inventories or FFO==B2of3
+ 0,1268 EBIT==B3of3 or FFO==B2of3
+ 0,1265 (FFO >= 103264) and (debt <= 829862)
+ 0,1262 num-of-N((FFO >= 688731) and (total_oper_liabilities <= 5036867) and (cost_of_labor >= 4502930))
+ 0,1260 EBIT==B1of3 impl net_income==B3of3
+ 0,1258 num-of-N((FFO >= 688731) and (net_income >= 1629286))
+ 0,1252 EBIT==B3of3 and net_income==B3of3 and debt==B2of2
+ 0,1248 EBIT==B3of3 xor net_income==B2of3
+ 0,1248 EBIT==B3of3 equ net_income==B2of3
+ 0,1235 inventories DIVIDE EBIT
+ 0,1224 interest==B2of2 or EBIT==B2of3 or net_income==B2of3
+ 0,1224 interest==B2of2 or EBIT==B2of3 or FFO==B2of3
+ 0,1222 net_income==B1of3 and equity==B2of2
+ 0,1209 inventories MULTIPLY FFO
+ 0,1209 inventories DIVIDE FFO
+ 0,1209 interest==B2of2 impl FFO==B3of3
+ 0,1209 financial_expenses SUBTRACT equity
+ 0,1209 EBIT==B1of3 and net_income==B1of3
+ 0,1201 interest==B2of2 or net_income==B2of3 or FFO==B2of3
+ 0,1192 interest==B2of2 or net_income==B2of3 or total_oper_liabilities
+ 0,1192 interest==B2of2 or net_income==B2of3 or st_liabilities
+ 0,1192 interest==B2of2 or net_income==B2of3 or inventories
+ 0,1192 interest==B2of2 or net_income==B2of3
+ 0,1192 interest==B2of2 or EBIT==B2of3 or total_oper_liabilities
+ 0,1192 interest==B2of2 or EBIT==B2of3 or st_liabilities
+ 0,1192 interest==B2of2 or EBIT==B2of3 or inventories
+ 0,1192 interest==B2of2 or EBIT==B2of3
+ 0,1192 financial_expenses or interest==B2of2 or net_income==B2of3
+ 0,1192 cost_of_labor or interest==B2of2 or net_income==B2of3
+ 0,1192 cost_of_labor or interest==B2of2 or EBIT==B2of3
+ 0,1187 num-of-N((FFO >= 740256) and (debt <= 9677732) and (equity >= 4056412))
+ 0,1185 net_income==B2of3 and debt==B2of2
+ 0,1185 cost_of_labor or EBIT==B3of3 or net_income==B2of3
+ 0,1185 EBIT==B3of3 or net_income==B2of3 or total_oper_liabilities
+ 0,1185 EBIT==B3of3 or net_income==B2of3 or st_liabilities
+ 0,1185 EBIT==B3of3 or net_income==B2of3 or inventories
+ 0,1185 EBIT==B3of3 or net_income==B2of3 or FFO==B2of3
+ 0,1185 EBIT==B3of3 or net_income==B2of3
+ 0,1183 net_income==B3of3 and debt==B2of2 and FFO==B3of3
+ 0,1176 debt DIVIDE cost_of_labor
+ 0,1176 cost_of_labor DIVIDE debt
+ 0,1176 num-of-N((EBIT >= 667000) and (debt <= 9677732))
+ 0,1170 net_income==B3of3 and equity==B2of2 and debt==B2of2
+ 0,1170 net_income==B3of3 and debt==B2of2
+ 0,1163 net_income==B3of3 xor debt==B2of2
+ 0,1163 net_income==B3of3 equ debt==B2of2
+ 0,1161 EBIT SUBTRACT debt
+ 0,1158 interest==B2of2 impl EBIT==B3of3
+ 0,1158 equity DIVIDE total_oper_liabilities
+ 0,1158 EBIT==B1of3 and debt==B2of2
+ 0,1156 equity SUBTRACT inventories
+ 0,1156 EBIT==B2of3 xor net_income==B3of3
+ 0,1156 EBIT==B2of3 equ net_income==B3of3
+ 0,1151 net_income MULTIPLY FFO
+ 0,1136 interest==B2of2 or EBIT==B1of3 or total_oper_liabilities
+ 0,1136 interest==B2of2 or EBIT==B1of3 or st_liabilities
+ 0,1136 interest==B2of2 or EBIT==B1of3 or inventories
+ 0,1136 interest==B2of2 or EBIT==B1of3
+ 0,1136 cost_of_labor or interest==B2of2 or EBIT==B1of3
+ 0,1128 (equity >= 3255508) and (total_oper_liabilities <= 1950672) and (EBIT >= -113520)
+ 0,1117 interest DIVIDE cost_of_labor
+ 0,1117 cost_of_labor DIVIDE interest
+ 0,1108 interest SUBTRACT equity
+ 0,1108 equity==B2of2 and FFO==B1of3
+ 0,1095 EBIT==B2of3 xor FFO==B1of3
+ 0,1095 EBIT==B2of3 equ FFO==B1of3
+ 0,1085 EBIT==B1of3 xor net_income==B3of3
+ 0,1085 EBIT==B1of3 equ net_income==B3of3
+ 0,1084 (debt <= 560000) and (FFO >= 103264)
+ 0,1075 num-of-N((net_income >= 1629286) and (EBIT >= 517177))
+ 0,1074 (net_income >= 18063) and (equity >= 2469145) and (debt <= 3788009) and (equity <= 4723607)
+ 0,1072 net_income==B1of3 and equity==B2of2 and debt==B2of2
+ 0,1072 EBIT==B2of3 or net_income==B2of3 or FFO==B3of3
+ 0,1070 EBIT==B2of3 or net_income==B3of3 or FFO==B3of3
+ 0,1070 EBIT==B2of3 and debt==B2of2
+ 0,1065 (equity >= 2997107) and (debt <= 1786476)
+ 0,1058 equity SUBTRACT total_oper_liabilities
+ 0,1058 EBIT==B1of3 impl FFO==B3of3
+ 0,1053 (EBIT >= 667000) and (debt <= 9677732)
+ 0,1052 net_income ADD inventories
+ 0,1047 net_income DIVIDE EBIT
+ 0,1038 cost_of_labor or EBIT==B2of3 or FFO==B3of3
+ 0,1038 EBIT==B2of3 or total_oper_liabilities or FFO==B3of3
+ 0,1038 EBIT==B2of3 or st_liabilities or FFO==B3of3
+ 0,1038 EBIT==B2of3 or inventories or FFO==B3of3
+ 0,1038 EBIT==B2of3 or FFO==B3of3
+ 0,1031 net_income==B1of3 or debt==B2of2 or FFO==B2of3
+ 0,1031 EBIT==B1of3 or debt==B2of2 or FFO==B2of3
+ 0,1027 net_income SUBTRACT debt
+ 0,1013 equity==B2of2 xor FFO==B3of3
+ 0,1013 equity==B2of2 equ FFO==B3of3
+ 0,1009 EBIT==B1of3 and net_income==B1of3 and debt==B2of2
+ 0,1009 EBIT==B1of3 and net_income==B1of3 and FFO==B1of3
+ 0,1009 EBIT==B1of3 and FFO==B1of3
+ 0,1000 EBIT MULTIPLY FFO
+ 0,0991 (FFO >= 740256) and (debt <= 9677732) and (equity >= 4056412)
+ 0,0989 cost_of_labor or EBIT==B1of3 or net_income==B3of3
+ 0,0989 EBIT==B1of3 or net_income==B3of3 or total_oper_liabilities
+ 0,0989 EBIT==B1of3 or net_income==B3of3 or st_liabilities
+ 0,0989 EBIT==B1of3 or net_income==B3of3 or inventories
+ 0,0989 EBIT==B1of3 or net_income==B3of3
+ 0,0978 (debt <= 560000) and (equity >= 1135178)
+ 0,0966 EBIT==B1of3 xor FFO==B3of3
+ 0,0966 EBIT==B1of3 equ FFO==B3of3
+ 0,0966 EBIT MULTIPLY net_income
+ 0,0960 net_income==B1of3 and equity==B2of2 and FFO==B1of3
+ 0,0960 equity==B2of2 and debt==B2of2 and FFO==B1of3
+ 0,0955 inventories ADD FFO
+ 0,0954 EBIT==B3of3 xor equity==B2of2
+ 0,0954 EBIT==B3of3 equ equity==B2of2
+ 0,0921 equity==B2of2 impl FFO==B3of3
+ 0,0911 financial_expenses_x_equity
+ 0,0911 financial_expenses xor equity==B2of2
+ 0,0911 financial_expenses or equity==B2of2 or total_oper_liabilities
+ 0,0911 financial_expenses or equity==B2of2 or inventories
+ 0,0911 financial_expenses or equity==B2of2
+ 0,0911 financial_expenses equ equity==B2of2
+ 0,0911 equity_x_total_oper_liabilities
+ 0,0911 equity_x_st_liabilities
+ 0,0911 equity_x_inventories
+ 0,0911 equity==B2of2 xor total_oper_liabilities
+ 0,0911 equity==B2of2 xor st_liabilities
+ 0,0911 equity==B2of2 xor inventories
+ 0,0911 equity==B2of2 or total_oper_liabilities or st_liabilities
+ 0,0911 equity==B2of2 or total_oper_liabilities or inventories
+ 0,0911 equity==B2of2 or total_oper_liabilities
+ 0,0911 equity==B2of2 or st_liabilities
+ 0,0911 equity==B2of2 or inventories
+ 0,0911 equity==B2of2 impl total_oper_liabilities
+ 0,0911 equity==B2of2 impl st_liabilities
+ 0,0911 equity==B2of2 impl inventories
+ 0,0911 equity==B2of2 equ total_oper_liabilities
+ 0,0911 equity==B2of2 equ st_liabilities
+ 0,0911 equity==B2of2 equ inventories
+ 0,0911 equity DIVIDE inventories
+ 0,0911 equity
+ 0,0911 cost_of_labor_x_equity
+ 0,0911 cost_of_labor xor equity==B2of2
+ 0,0911 cost_of_labor or equity==B2of2 or total_oper_liabilities
+ 0,0911 cost_of_labor or equity==B2of2 or st_liabilities
+ 0,0911 cost_of_labor or equity==B2of2
+ 0,0911 cost_of_labor equ equity==B2of2
+ 0,0911 EBIT==B1of3 and equity==B2of2
+ 0,0910 total_oper_liabilities SUBTRACT FFO
+ 0,0910 net_income==B3of3 impl debt==B2of2
+ 0,0910 EBIT==B1of3 or net_income==B2of3 or debt==B2of2
+ 0,0898 cost_of_labor SUBTRACT debt
+ 0,0896 cost_of_labor ADD net_income
+ 0,0893 net_income==B1of3 or debt==B2of2 or FFO==B1of3
+ 0,0893 EBIT==B1of3 or debt==B2of2 or FFO==B1of3
+ 0,0889 EBIT DIVIDE net_income
+ 0,0879 num-of-N((FFO >= 1151120) and (total_oper_liabilities <= 4594001) and (equity >= 5854267))
+ 0,0879 EBIT==B2of3 and net_income==B2of3 and debt==B2of2
+ 0,0864 st_liabilities DIVIDE cost_of_labor
+ 0,0864 cost_of_labor DIVIDE st_liabilities
+ 0,0863 total_oper_liabilities DIVIDE equity
+ 0,0863 net_income==B3of3 or equity==B2of2 or total_oper_liabilities
+ 0,0863 net_income==B3of3 or equity==B2of2 or st_liabilities
+ 0,0863 net_income==B3of3 or equity==B2of2 or inventories
+ 0,0863 net_income==B3of3 or equity==B2of2
+ 0,0863 interest==B2of2 and debt==B2of2 and FFO==B1of3
+ 0,0863 interest==B2of2 and FFO==B1of3
+ 0,0863 financial_expenses or net_income==B3of3 or equity==B2of2
+ 0,0863 cost_of_labor or net_income==B3of3 or equity==B2of2
+ 0,0863 EBIT==B1of3 xor FFO==B1of3
+ 0,0863 EBIT==B1of3 equ FFO==B1of3
+ 0,0863 EBIT==B1of3 and debt==B2of2 and FFO==B1of3
+ 0,0858 (net_income >= 18063) and (FFO >= 1090104)
+ 0,0849 interest DIVIDE inventories
+ 0,0846 (debt <= 560000) and (EBIT >= -21159)
+ 0,0844 interest==B2of2 or total_oper_liabilities or FFO==B2of3
+ 0,0844 interest==B2of2 or st_liabilities or FFO==B2of3
+ 0,0844 interest==B2of2 or inventories or FFO==B2of3
+ 0,0844 interest==B2of2 or FFO==B2of3
+ 0,0844 financial_expenses or interest==B2of2 or FFO==B2of3
+ 0,0844 cost_of_labor or interest==B2of2 or FFO==B2of3
+ 0,0841 EBIT==B3of3 impl debt==B2of2
+ 0,0841 EBIT==B2of3 or net_income==B1of3 or debt==B2of2
+ 0,0838 num-of-N((debt <= 560000) and (equity >= 1135178) and (interest >= 8964))
+ 0,0833 cost_of_labor MULTIPLY equity
+ 0,0832 cost_of_labor ADD FFO
+ 0,0827 inventories DIVIDE financial_expenses
+ 0,0827 financial_expenses DIVIDE inventories
+ 0,0820 equity==B2of2 impl debt==B2of2
+ 0,0820 debt==B2of2 or total_oper_liabilities or FFO==B1of3
+ 0,0820 debt==B2of2 or st_liabilities or FFO==B1of3
+ 0,0820 debt==B2of2 or inventories or FFO==B1of3
+ 0,0820 debt==B2of2 or FFO==B1of3
+ 0,0820 cost_of_labor or debt==B2of2 or FFO==B1of3
+ 0,0816 financial_expenses or equity==B2of2 or FFO==B3of3
+ 0,0816 equity==B2of2 or total_oper_liabilities or FFO==B3of3
+ 0,0816 equity==B2of2 or st_liabilities or FFO==B3of3
+ 0,0816 equity==B2of2 or inventories or FFO==B3of3
+ 0,0816 equity==B2of2 or FFO==B3of3
+ 0,0816 cost_of_labor or equity==B2of2 or FFO==B3of3
+ 0,0816 EBIT==B1of3 and net_income==B1of3 and equity==B2of2
+ 0,0810 total_oper_liabilities LESSTHAN FFO
+ 0,0803 st_liabilities SUBTRACT FFO
+ 0,0799 interest==B2of2 xor equity==B2of2
+ 0,0799 interest==B2of2 equ equity==B2of2
+ 0,0792 net_income==B2of3 or debt==B2of2 or FFO==B1of3
+ 0,0786 interest==B2of2 and net_income==B1of3 and debt==B2of2
+ 0,0786 interest==B2of2 and net_income==B1of3
+ 0,0786 inventories DIVIDE interest
+ 0,0784 debt SUBTRACT inventories
+ 0,0783 num-of-N((equity >= 3899182) and (debt <= 12107354))
+ 0,0781 debt LESSTHAN FFO
+ 0,0777 (equity >= 3899182) and (debt <= 12107354)
+ 0,0776 FFO DIVIDE EBIT
+ 0,0775 interest==B2of2 or debt==B2of2 or FFO==B1of3
+ 0,0769 net_income==B3of3 or equity==B2of2 or FFO==B3of3
+ 0,0769 interest==B2of2 and net_income==B1of3 and FFO==B1of3
+ 0,0769 cost_of_labor or EBIT==B3of3 or equity==B2of2
+ 0,0769 EBIT==B3of3 or net_income==B3of3 or equity==B2of2
+ 0,0769 EBIT==B3of3 or equity==B2of2 or total_oper_liabilities
+ 0,0769 EBIT==B3of3 or equity==B2of2 or st_liabilities
+ 0,0769 EBIT==B3of3 or equity==B2of2 or inventories
+ 0,0769 EBIT==B3of3 or equity==B2of2
+ 0,0769 EBIT==B1of3 and equity==B2of2 and debt==B2of2
+ 0,0761 net_income==B2of3 and equity==B2of2 and debt==B2of2
+ 0,0761 (FFO >= 1151120) and (total_oper_liabilities <= 4594001) and (equity >= 5854267)
+ 0,0760 interest ADD equity
+ 0,0756 cost_of_labor SUBTRACT st_liabilities
+ 0,0752 net_income==B1of3 or debt==B2of2 or total_oper_liabilities
+ 0,0752 net_income==B1of3 or debt==B2of2 or st_liabilities
+ 0,0752 net_income==B1of3 or debt==B2of2 or inventories
+ 0,0752 net_income==B1of3 or debt==B2of2
+ 0,0752 cost_of_labor or net_income==B1of3 or debt==B2of2
+ 0,0752 cost_of_labor or EBIT==B1of3 or debt==B2of2
+ 0,0752 EBIT==B1of3 or net_income==B1of3 or debt==B2of2
+ 0,0752 EBIT==B1of3 or debt==B2of2 or total_oper_liabilities
+ 0,0752 EBIT==B1of3 or debt==B2of2 or st_liabilities
+ 0,0752 EBIT==B1of3 or debt==B2of2 or inventories
+ 0,0752 EBIT==B1of3 or debt==B2of2
+ 0,0752 (debt <= 560000) and (net_income >= -84300)
+ 0,0747 equity==B2of2 impl FFO==B2of3
+ 0,0737 EBIT==B2of3 or debt==B2of2 or FFO==B1of3
+ 0,0737 OCF
+ 0,0725 equity LESSTHAN total_oper_liabilities
+ 0,0719 financial_expenses ADD equity
+ 0,0716 cash
+ 0,0708 interest==B2of2 or net_income==B1of3 or debt==B2of2
+ 0,0708 interest==B2of2 or EBIT==B1of3 or debt==B2of2
+ 0,0705 cost_of_labor or EBIT==B1of3 or FFO==B3of3
+ 0,0705 EBIT==B1of3 or total_oper_liabilities or FFO==B3of3
+ 0,0705 EBIT==B1of3 or st_liabilities or FFO==B3of3
+ 0,0705 EBIT==B1of3 or inventories or FFO==B3of3
+ 0,0705 EBIT==B1of3 or FFO==B3of3
+ 0,0705 cost_of_labor SUBTRACT equity
+ 0,0699 equity DIVIDE cost_of_labor
+ 0,0697 EBIT==B1of3 or net_income==B3of3 or FFO==B3of3
+ 0,0696 interest==B2of2 or net_income==B3of3 or total_oper_liabilities
+ 0,0696 interest==B2of2 or net_income==B3of3 or st_liabilities
+ 0,0696 interest==B2of2 or net_income==B3of3 or inventories
+ 0,0696 interest==B2of2 or net_income==B3of3
+ 0,0696 financial_expenses or interest==B2of2 or net_income==B3of3
+ 0,0696 cost_of_labor or interest==B2of2 or net_income==B3of3
+ 0,0691 interest==B2of2 or EBIT==B3of3 or FFO==B3of3
+ 0,0678 interest==B2of2 or EBIT==B3of3 or net_income==B3of3
+ 0,0678 EBIT==B2of3 xor FFO==B3of3
+ 0,0678 EBIT==B2of3 equ FFO==B3of3
+ 0,0677 EBIT==B3of3 or equity==B2of2 or FFO==B3of3
+ 0,0675 debt==B2of2 or total_oper_liabilities or FFO==B2of3
+ 0,0675 debt==B2of2 or st_liabilities or FFO==B2of3
+ 0,0675 debt==B2of2 or inventories or FFO==B2of3
+ 0,0675 debt==B2of2 or FFO==B2of3
+ 0,0675 cost_of_labor or debt==B2of2 or FFO==B2of3
+ 0,0671 EBIT ADD inventories
+ 0,0665 EBIT==B3of3 and debt==B2of2 and FFO==B3of3
+ 0,0659 cost_of_labor ADD equity
+ 0,0655 EBIT==B2of3 and equity==B2of2 and debt==B2of2
+ 0,0648 equity MULTIPLY total_oper_liabilities
+ 0,0647 num-of-N((FFO >= 1151120) and (net_income >= 1629286))
+ 0,0645 EBIT LESSTHAN debt
+ 0,0641 num-of-N((FFO >= 1151120) and (net_income >= 1165380))
+ 0,0639 net_income SUBTRACT total_oper_liabilities
+ 0,0635 net_income==B1of3 xor FFO==B3of3
+ 0,0635 net_income==B1of3 equ FFO==B3of3
+ 0,0632 interest==B2of2 or debt==B2of2 or FFO==B2of3
+ 0,0631 equity ADD total_oper_liabilities
+ 0,0631 inventories DIVIDE equity
+ 0,0631 interest==B2of2 and EBIT==B1of3 and debt==B2of2
+ 0,0631 interest==B2of2 and EBIT==B1of3
+ 0,0631 EBIT==B1of3 and equity==B2of2 and FFO==B1of3
+ 0,0626 interest_x_debt
+ 0,0625 num-of-N((financial_expenses <= 243) and (equity >= 740444))
+ 0,0617 interest==B2of2 or net_income==B3of3 or FFO==B3of3
+ 0,0615 interest==B2of2 xor EBIT==B2of3
+ 0,0615 interest==B2of2 equ EBIT==B2of3
+ 0,0612 EBIT SUBTRACT total_oper_liabilities
+ 0,0606 EBIT==B2of3 or net_income==B2of3 or FFO==B2of3
+ 0,0602 net_income==B2of3 or debt==B2of2 or FFO==B2of3
+ 0,0595 interest MULTIPLY debt
+ 0,0586 net_income==B2of3 and debt==B2of2 and FFO==B2of3
+ 0,0586 interest==B2of2 and equity==B2of2 and FFO==B1of3
+ 0,0586 equity ADD inventories
+ 0,0586 interest==B2of2 or total_oper_liabilities or FFO==B3of3
+ 0,0586 interest==B2of2 or st_liabilities or FFO==B3of3
+ 0,0586 interest==B2of2 or inventories or FFO==B3of3
+ 0,0586 interest==B2of2 or FFO==B3of3
+ 0,0586 financial_expenses or interest==B2of2 or FFO==B3of3
+ 0,0586 cost_of_labor or interest==B2of2 or FFO==B3of3
+ 0,0585 cost_of_labor LESSTHAN debt
+ 0,0584 EBIT SUBTRACT st_liabilities
+ 0,0580 cost_of_labor or EBIT==B2of3 or net_income==B2of3
+ 0,0580 EBIT==B2of3 or net_income==B2of3 or total_oper_liabilities
+ 0,0580 EBIT==B2of3 or net_income==B2of3 or st_liabilities
+ 0,0580 EBIT==B2of3 or net_income==B2of3 or inventories
+ 0,0580 EBIT==B2of3 or net_income==B2of3
+ 0,0579 cost_of_labor SUBTRACT total_oper_liabilities
+ 0,0572 equity LESSTHAN inventories
+ 0,0569 EBIT==B2of3 impl FFO==B3of3
+ 0,0568 num-of-N((interest <= 24296) and (equity >= 1564993) and (EBIT <= 193887) and (EBIT >= -2659))
+ 0,0564 inventories SUBTRACT FFO
+ 0,0564 net_income SUBTRACT inventories
+ 0,0559 EBIT==B2of3 or debt==B2of2 or FFO==B2of3
+ 0,0556 (interest <= 24296) and (total_oper_liabilities <= 1508233)
+ 0,0555 (net_income >= 1119234)
+ 0,0543 interest==B2of2 xor FFO==B2of3
+ 0,0543 interest==B2of2 equ FFO==B2of3
+ 0,0542 net_income==B3of3 or equity==B2of2 or FFO==B2of3
+ 0,0542 interest==B2of2 or equity==B2of2 or total_oper_liabilities
+ 0,0542 interest==B2of2 or equity==B2of2 or st_liabilities
+ 0,0542 interest==B2of2 or equity==B2of2 or inventories
+ 0,0542 interest==B2of2 or equity==B2of2
+ 0,0542 interest==B2of2 and EBIT==B1of3 and net_income==B1of3
+ 0,0542 financial_expenses or interest==B2of2 or equity==B2of2
+ 0,0542 financial_expenses or equity==B2of2 or FFO==B2of3
+ 0,0542 equity==B2of2 or total_oper_liabilities or FFO==B2of3
+ 0,0542 equity==B2of2 or st_liabilities or FFO==B2of3
+ 0,0542 equity==B2of2 or inventories or FFO==B2of3
+ 0,0542 equity==B2of2 or FFO==B2of3
+ 0,0542 cost_of_labor or interest==B2of2 or equity==B2of2
+ 0,0542 cost_of_labor or equity==B2of2 or FFO==B2of3
+ 0,0542 EBIT==B3of3 or equity==B2of2 or FFO==B2of3
+ 0,0537 net_income SUBTRACT st_liabilities
+ 0,0533 net_income==B3of3 xor FFO==B1of3
+ 0,0533 net_income==B3of3 or total_oper_liabilities or FFO==B1of3
+ 0,0533 net_income==B3of3 or st_liabilities or FFO==B1of3
+ 0,0533 net_income==B3of3 or inventories or FFO==B1of3
+ 0,0533 net_income==B3of3 or FFO==B1of3
+ 0,0533 net_income==B3of3 equ FFO==B1of3
+ 0,0533 financial_expenses or net_income==B3of3 or FFO==B1of3
+ 0,0533 cost_of_labor or net_income==B3of3 or FFO==B1of3
+ 0,0533 EBIT==B1of3 or net_income==B3of3 or FFO==B2of3
+ 0,0528 cost_of_labor ADD EBIT
+ 0,0528 (net_income >= 21858) and (interest <= 16478) and (debt >= 223368)
+ 0,0528 (net_income >= 1002998)
+ 0,0528 (debt <= 560000) and (equity >= 1135178) and (interest >= 8964)
+ 0,0528 interest==B2of2 and debt==B2of2
+ 0,0525 EBIT==B2of3 impl net_income==B3of3
+ 0,0524 net_income==B2of3 or debt==B2of2 or total_oper_liabilities
+ 0,0524 net_income==B2of3 or debt==B2of2 or st_liabilities
+ 0,0524 net_income==B2of3 or debt==B2of2 or inventories
+ 0,0524 net_income==B2of3 or debt==B2of2
+ 0,0524 cost_of_labor or net_income==B2of3 or debt==B2of2
+ 0,0521 interest==B2of2 and net_income==B1of3 and equity==B2of2
+ 0,0520 interest ADD debt
+ 0,0520 debt_x_total_oper_liabilities
+ 0,0520 debt_x_st_liabilities
+ 0,0520 debt_x_inventories
+ 0,0520 debt==B2of2 xor total_oper_liabilities
+ 0,0520 debt==B2of2 xor st_liabilities
+ 0,0520 debt==B2of2 xor inventories
+ 0,0520 debt==B2of2 or total_oper_liabilities or st_liabilities
+ 0,0520 debt==B2of2 or total_oper_liabilities or inventories
+ 0,0520 debt==B2of2 or total_oper_liabilities
+ 0,0520 debt==B2of2 or st_liabilities
+ 0,0520 debt==B2of2 or inventories
+ 0,0520 debt==B2of2 impl total_oper_liabilities
+ 0,0520 debt==B2of2 impl st_liabilities
+ 0,0520 debt==B2of2 impl inventories
+ 0,0520 debt==B2of2 equ total_oper_liabilities
+ 0,0520 debt==B2of2 equ st_liabilities
+ 0,0520 debt==B2of2 equ inventories
+ 0,0520 debt
+ 0,0520 cost_of_labor_x_debt
+ 0,0520 cost_of_labor xor debt==B2of2
+ 0,0520 cost_of_labor or debt==B2of2 or total_oper_liabilities
+ 0,0520 cost_of_labor or debt==B2of2 or st_liabilities
+ 0,0520 cost_of_labor or debt==B2of2
+ 0,0520 cost_of_labor equ debt==B2of2
+ 0,0520 debt MULTIPLY st_liabilities
+ 0,0510 total_oper_liabilities DIVIDE cost_of_labor
+ 0,0510 cost_of_labor DIVIDE total_oper_liabilities
+ 0,0509 (net_income >= 1165380)
+ 0,0509 (interest <= 24296) and (interest >= 8964) and (equity >= 602538) and (net_income >= -17144)
+ 0,0509 (equity >= 4080902) and (net_income >= 1165380)
+ 0,0509 (debt <= 560000) and (total_oper_liabilities <= 906417) and (net_income >= -84300)
+ 0,0509 (FFO >= 1151120) and (net_income >= 1165380)
+ 0,0507 num-of-N((interest <= 24296) and (total_oper_liabilities <= 1508233))
+ 0,0506 interest==B2of2 or EBIT==B3of3 or total_oper_liabilities
+ 0,0506 interest==B2of2 or EBIT==B3of3 or st_liabilities
+ 0,0506 interest==B2of2 or EBIT==B3of3 or inventories
+ 0,0506 interest==B2of2 or EBIT==B3of3
+ 0,0506 cost_of_labor or interest==B2of2 or EBIT==B3of3
+ 0,0502 num-of-N((equity >= 4080902) and (net_income >= 1165380))
+ 0,0502 interest==B2of2 or net_income==B3of3 or FFO==B2of3
+ 0,0498 interest==B2of2 or net_income==B3of3 or equity==B2of2
+ 0,0498 interest==B2of2 or EBIT==B3of3 or equity==B2of2
+ 0,0498 interest==B2of2 and EBIT==B1of3 and FFO==B1of3
+ 0,0498 cost_of_labor or EBIT==B1of3 or equity==B2of2
+ 0,0498 EBIT==B1of3 or equity==B2of2 or total_oper_liabilities
+ 0,0498 EBIT==B1of3 or equity==B2of2 or st_liabilities
+ 0,0498 EBIT==B1of3 or equity==B2of2 or inventories
+ 0,0498 EBIT==B1of3 or equity==B2of2
+ 0,0497 net_income==B2of3 or total_oper_liabilities or FFO==B2of3
+ 0,0497 net_income==B2of3 or st_liabilities or FFO==B2of3
+ 0,0497 net_income==B2of3 or inventories or FFO==B2of3
+ 0,0497 net_income==B2of3 or FFO==B2of3
+ 0,0497 financial_expenses or net_income==B2of3 or FFO==B2of3
+ 0,0497 cost_of_labor or net_income==B2of3 or FFO==B2of3
+ 0,0494 EBIT==B3of3 and equity==B2of2 and debt==B2of2
+ 0,0494 cost_of_labor or EBIT==B2of3 or debt==B2of2
+ 0,0494 EBIT==B2of3 or debt==B2of2 or total_oper_liabilities
+ 0,0494 EBIT==B2of3 or debt==B2of2 or st_liabilities
+ 0,0494 EBIT==B2of3 or debt==B2of2 or inventories
+ 0,0494 EBIT==B2of3 or debt==B2of2
+ 0,0493 interest==B2of2 xor EBIT==B3of3
+ 0,0493 interest==B2of2 equ EBIT==B3of3
+ 0,0492 EBIT==B3of3 xor debt==B2of2
+ 0,0492 EBIT==B3of3 equ debt==B2of2
+ 0,0486 num-of-N((equity >= 3445271) and (total_oper_liabilities <= 4736986) and (total_oper_liabilities >= 3283080) and (net_income <= 397188))
+ 0,0486 interest SUBTRACT debt
+ 0,0484 interest_x_total_oper_liabilities
+ 0,0484 interest_x_st_liabilities
+ 0,0484 interest_x_inventories
+ 0,0484 interest==B2of2 xor total_oper_liabilities
+ 0,0484 interest==B2of2 xor st_liabilities
+ 0,0484 interest==B2of2 xor inventories
+ 0,0484 interest==B2of2 or total_oper_liabilities or st_liabilities
+ 0,0484 interest==B2of2 or total_oper_liabilities or inventories
+ 0,0484 interest==B2of2 or total_oper_liabilities
+ 0,0484 interest==B2of2 or st_liabilities
+ 0,0484 interest==B2of2 or inventories
+ 0,0484 interest==B2of2 impl total_oper_liabilities
+ 0,0484 interest==B2of2 impl st_liabilities
+ 0,0484 interest==B2of2 impl inventories
+ 0,0484 interest==B2of2 equ total_oper_liabilities
+ 0,0484 interest==B2of2 equ st_liabilities
+ 0,0484 interest==B2of2 equ inventories
+ 0,0484 interest
+ 0,0484 financial_expenses_x_interest
+ 0,0484 financial_expenses xor interest==B2of2
+ 0,0484 financial_expenses or interest==B2of2 or total_oper_liabilities
+ 0,0484 financial_expenses or interest==B2of2 or inventories
+ 0,0484 financial_expenses or interest==B2of2
+ 0,0484 financial_expenses equ interest==B2of2
+ 0,0484 financial_expenses MULTIPLY interest
+ 0,0484 cost_of_labor_x_interest
+ 0,0484 cost_of_labor xor interest==B2of2
+ 0,0484 cost_of_labor or interest==B2of2 or total_oper_liabilities
+ 0,0484 cost_of_labor or interest==B2of2 or st_liabilities
+ 0,0484 cost_of_labor or interest==B2of2
+ 0,0484 cost_of_labor equ interest==B2of2
+ 0,0483 interest==B2of2 or net_income==B2of3 or debt==B2of2
+ 0,0482 interest==B2of2 or debt==B2of2 or total_oper_liabilities
+ 0,0482 interest==B2of2 or debt==B2of2 or st_liabilities
+ 0,0482 interest==B2of2 or debt==B2of2 or inventories
+ 0,0482 interest==B2of2 or debt==B2of2
+ 0,0482 cost_of_labor or interest==B2of2 or debt==B2of2
+ 0,0479 debt==B2of2 and FFO==B2of3
+ 0,0479 EBIT==B1of3 xor net_income==B1of3
+ 0,0479 EBIT==B1of3 equ net_income==B1of3
+ 0,0476 net_income==B2of3 xor total_oper_liabilities
+ 0,0476 net_income==B2of3 xor st_liabilities
+ 0,0476 net_income==B2of3 xor inventories
+ 0,0476 net_income==B2of3 xor equity==B2of2
+ 0,0476 net_income==B2of3 or total_oper_liabilities or st_liabilities
+ 0,0476 net_income==B2of3 or total_oper_liabilities or inventories
+ 0,0476 net_income==B2of3 or total_oper_liabilities
+ 0,0476 net_income==B2of3 or st_liabilities
+ 0,0476 net_income==B2of3 or inventories
+ 0,0476 net_income==B2of3 impl total_oper_liabilities
+ 0,0476 net_income==B2of3 impl st_liabilities
+ 0,0476 net_income==B2of3 impl inventories
+ 0,0476 net_income==B2of3 equ total_oper_liabilities
+ 0,0476 net_income==B2of3 equ st_liabilities
+ 0,0476 net_income==B2of3 equ inventories
+ 0,0476 net_income==B2of3 equ equity==B2of2
+ 0,0476 financial_expenses xor net_income==B2of3
+ 0,0476 financial_expenses or net_income==B2of3 or total_oper_liabilities
+ 0,0476 financial_expenses or net_income==B2of3 or inventories
+ 0,0476 financial_expenses or net_income==B2of3
+ 0,0476 financial_expenses equ net_income==B2of3
+ 0,0476 cost_of_labor xor net_income==B2of3
+ 0,0476 cost_of_labor or net_income==B2of3 or total_oper_liabilities
+ 0,0476 cost_of_labor or net_income==B2of3 or st_liabilities
+ 0,0476 cost_of_labor or net_income==B2of3
+ 0,0476 cost_of_labor equ net_income==B2of3
+ 0,0473 (net_income >= 978246)
+ 0,0469 inventories DIVIDE debt
+ 0,0462 total_oper_liabilities DIVIDE interest
+ 0,0462 interest DIVIDE total_oper_liabilities
+ 0,0458 interest==B2of2 xor net_income==B2of3
+ 0,0458 interest==B2of2 equ net_income==B2of3
+ 0,0456 EBIT==B3of3 xor net_income==B1of3
+ 0,0456 EBIT==B3of3 equ net_income==B1of3
+ 0,0455 interest==B2of2 or equity==B2of2 or FFO==B3of3
+ 0,0455 EBIT==B2of3 and debt==B2of2 and FFO==B2of3
+ 0,0455 EBIT==B1of3 or net_income==B3of3 or equity==B2of2
+ 0,0454 interest==B2of2 or EBIT==B2of3 or debt==B2of2
+ 0,0447 cost_of_labor DIVIDE equity
+ 0,0445 debt DIVIDE inventories
+ 0,0444 EBIT SUBTRACT inventories
+ 0,0442 net_income LESSTHAN debt
+ 0,0442 EBIT==B2of3 or net_income==B2of3 or debt==B2of2
+ 0,0438 equity==B2of2 xor FFO==B2of3
+ 0,0438 equity==B2of2 equ FFO==B2of3
+ 0,0428 cost_of_labor or EBIT==B2of3 or FFO==B2of3
+ 0,0428 EBIT==B2of3 or total_oper_liabilities or FFO==B2of3
+ 0,0428 EBIT==B2of3 or st_liabilities or FFO==B2of3
+ 0,0428 EBIT==B2of3 or inventories or FFO==B2of3
+ 0,0428 EBIT==B2of3 or FFO==B2of3
+ 0,0428 EBIT SUBTRACT equity
+ 0,0426 financial_expenses ADD interest
+ 0,0426 financial_expenses
+ 0,0422 EBIT LESSTHAN total_oper_liabilities
+ 0,0422 (net_income >= 1629286) and (EBIT >= 517177)
+ 0,0422 (net_income >= 1629286)
+ 0,0422 (interest <= 24296) and (equity >= 1564993) and (EBIT <= 193887) and (EBIT >= -2659)
+ 0,0422 (FFO >= 688731) and (net_income >= 1629286)
+ 0,0422 (FFO >= 1151120) and (net_income >= 1629286)
+ 0,0421 interest MULTIPLY st_liabilities
+ 0,0420 EBIT SUBTRACT FFO
+ 0,0419 EBIT==B3of3 and debt==B2of2
+ 0,0417 total_oper_liabilities SUBTRACT inventories
+ 0,0415 total_oper_liabilities DIVIDE debt
+ 0,0415 debt DIVIDE total_oper_liabilities
+ 0,0413 net_income==B1of3 or equity==B2of2 or total_oper_liabilities
+ 0,0413 net_income==B1of3 or equity==B2of2 or st_liabilities
+ 0,0413 net_income==B1of3 or equity==B2of2 or inventories
+ 0,0413 net_income==B1of3 or equity==B2of2
+ 0,0413 interest==B2of2 and EBIT==B1of3 and equity==B2of2
+ 0,0413 financial_expenses or net_income==B1of3 or equity==B2of2
+ 0,0413 cost_of_labor or net_income==B1of3 or equity==B2of2
+ 0,0413 EBIT==B1of3 or equity==B2of2 or FFO==B3of3
+ 0,0411 net_income LESSTHAN inventories
+ 0,0409 debt MULTIPLY total_oper_liabilities
+ 0,0408 EBIT DIVIDE FFO
+ 0,0406 num-of-N((debt <= 560000) and (total_oper_liabilities <= 1508233))
+ 0,0405 num-of-N((debt <= 560000) and (equity >= 1135178) and (equity <= 1708654))
+ 0,0405 net_income SUBTRACT equity
+ 0,0403 (debt <= 560000) and (total_oper_liabilities <= 1508233)
+ 0,0400 interest==B2of2 xor FFO==B3of3
+ 0,0400 interest==B2of2 equ FFO==B3of3
+ 0,0399 cost_of_labor MULTIPLY debt
+ 0,0398 cost_of_labor SUBTRACT FFO
+ 0,0398 interest==B2of2 or net_income==B2of3 or FFO==B3of3
+ 0,0398 equity MULTIPLY st_liabilities
+ 0,0390 debt ADD st_liabilities
+ 0,0390 num-of-N((st_liabilities <= 1174034) and (debt <= 560000))
+ 0,0390 num-of-N((debt <= 560000) and (st_liabilities <= 1174034))
+ 0,0386 total_oper_liabilities SUBTRACT st_liabilities
+ 0,0385 cost_of_labor LESSTHAN st_liabilities
+ 0,0384 (debt <= 1377150)
+ 0,0383 interest==B2of2 xor EBIT==B1of3
+ 0,0383 interest==B2of2 equ EBIT==B1of3
+ 0,0376 (FFO >= 688731) and (total_oper_liabilities <= 5036867) and (cost_of_labor >= 4502930)
+ 0,0375 cost_of_labor SUBTRACT net_income
+ 0,0371 cost_of_labor xor EBIT==B2of3
+ 0,0371 cost_of_labor or EBIT==B2of3 or total_oper_liabilities
+ 0,0371 cost_of_labor or EBIT==B2of3 or st_liabilities
+ 0,0371 cost_of_labor or EBIT==B2of3
+ 0,0371 cost_of_labor equ EBIT==B2of3
+ 0,0371 EBIT==B2of3 xor total_oper_liabilities
+ 0,0371 EBIT==B2of3 xor st_liabilities
+ 0,0371 EBIT==B2of3 xor inventories
+ 0,0371 EBIT==B2of3 xor equity==B2of2
+ 0,0371 EBIT==B2of3 or total_oper_liabilities or st_liabilities
+ 0,0371 EBIT==B2of3 or total_oper_liabilities
+ 0,0371 EBIT==B2of3 or st_liabilities
+ 0,0371 EBIT==B2of3 or inventories
+ 0,0371 EBIT==B2of3 impl total_oper_liabilities
+ 0,0371 EBIT==B2of3 impl st_liabilities
+ 0,0371 EBIT==B2of3 impl inventories
+ 0,0371 EBIT==B2of3 equ total_oper_liabilities
+ 0,0371 EBIT==B2of3 equ st_liabilities
+ 0,0371 EBIT==B2of3 equ inventories
+ 0,0371 EBIT==B2of3 equ equity==B2of2
+ 0,0371 total_oper_liabilities ADD FFO
+ 0,0371 net_income==B2of3 or equity==B2of2 or total_oper_liabilities
+ 0,0371 net_income==B2of3 or equity==B2of2 or st_liabilities
+ 0,0371 net_income==B2of3 or equity==B2of2 or inventories
+ 0,0371 net_income==B2of3 or equity==B2of2 or FFO==B3of3
+ 0,0371 net_income==B2of3 or equity==B2of2
+ 0,0371 net_income==B2of3 impl equity==B2of2
+ 0,0371 interest==B2of2 or EBIT==B1of3 or equity==B2of2
+ 0,0371 financial_expenses or net_income==B2of3 or equity==B2of2
+ 0,0371 cost_of_labor or net_income==B2of3 or equity==B2of2
+ 0,0371 cost_of_labor or EBIT==B2of3 or equity==B2of2
+ 0,0371 EBIT==B2of3 or equity==B2of2 or total_oper_liabilities
+ 0,0371 EBIT==B2of3 or equity==B2of2 or st_liabilities
+ 0,0371 EBIT==B2of3 or equity==B2of2 or inventories
+ 0,0371 EBIT==B2of3 or equity==B2of2 or FFO==B3of3
+ 0,0371 EBIT==B2of3 or equity==B2of2
+ 0,0371 EBIT==B2of3 impl equity==B2of2
+ 0,0371 EBIT==B2of3 and FFO==B1of3
+ 0,0371 EBIT==B1of3 or net_income==B1of3 or equity==B2of2
+ 0,0369 net_income==B1of3 or total_oper_liabilities or FFO==B3of3
+ 0,0369 net_income==B1of3 or st_liabilities or FFO==B3of3
+ 0,0369 net_income==B1of3 or inventories or FFO==B3of3
+ 0,0369 net_income==B1of3 or FFO==B3of3
+ 0,0369 financial_expenses or net_income==B1of3 or FFO==B3of3
+ 0,0369 cost_of_labor or net_income==B1of3 or FFO==B3of3
+ 0,0367 cost_of_labor ADD debt
+ 0,0363 EBIT==B1of3 or net_income==B3of3 or FFO==B1of3
+ 0,0363 debt ADD total_oper_liabilities
+ 0,0360 net_income==B2of3 impl FFO==B3of3
+ 0,0359 interest==B2of2 xor net_income==B1of3
+ 0,0359 interest==B2of2 equ net_income==B1of3
+ 0,0358 net_income==B1of3 xor FFO==B1of3
+ 0,0358 net_income==B1of3 equ FFO==B1of3
+ 0,0358 total_oper_liabilities DIVIDE financial_expenses
+ 0,0358 financial_expenses DIVIDE total_oper_liabilities
+ 0,0356 (st_liabilities <= 1174034) and (debt <= 560000)
+ 0,0356 (debt <= 560000) and (st_liabilities <= 1174034)
+ 0,0354 interest==B2of2 or EBIT==B2of3 or net_income==B3of3
+ 0,0352 interest==B2of2 xor FFO==B1of3
+ 0,0352 interest==B2of2 equ FFO==B1of3
+ 0,0350 (interest <= 24296) and (total_oper_liabilities <= 1057717)
+ 0,0348 net_income ADD total_oper_liabilities
+ 0,0348 EBIT==B3of3 or net_income==B1of3 or FFO==B3of3
+ 0,0344 equity SUBTRACT FFO
+ 0,0343 num-of-N((debt <= 430423) and (st_liabilities <= 1174034))
+ 0,0339 EBIT==B3of3 xor FFO==B1of3
+ 0,0339 EBIT==B3of3 equ FFO==B1of3
+ 0,0336 EBIT==B1of3 or net_income==B1of3 or FFO==B3of3
+ 0,0331 interest==B2of2 and net_income==B2of3 and debt==B2of2
+ 0,0331 interest==B2of2 and net_income==B2of3
+ 0,0331 (net_income >= 237480) and (EBIT >= 2344965)
+ 0,0331 (net_income >= 18063) and (EBIT >= 2344965)
+ 0,0329 net_income==B2of3 or equity==B2of2 or FFO==B2of3
+ 0,0329 net_income==B1of3 or equity==B2of2 or FFO==B3of3
+ 0,0329 net_income==B1of3 impl equity==B2of2
+ 0,0329 interest==B2of2 or net_income==B1of3 or equity==B2of2
+ 0,0329 interest==B2of2 and EBIT==B2of3 and debt==B2of2
+ 0,0329 interest==B2of2 and EBIT==B2of3
+ 0,0329 EBIT==B3of3 or net_income==B2of3 or equity==B2of2
+ 0,0329 EBIT==B2of3 or net_income==B3of3 or equity==B2of2
+ 0,0326 debt SUBTRACT total_oper_liabilities
+ 0,0324 interest==B2of2 xor net_income==B3of3
+ 0,0324 interest==B2of2 equ net_income==B3of3
+ 0,0319 st_liabilities DIVIDE debt
+ 0,0319 debt DIVIDE st_liabilities
+ 0,0318 cost_of_labor LESSTHAN FFO
+ 0,0318 (debt <= 430423) and (st_liabilities <= 1174034)
+ 0,0311 (interest <= 24296) and (total_oper_liabilities <= 970874)
+ 0,0311 (debt <= 560000) and (total_oper_liabilities <= 906417)
+ 0,0300 num-of-N((debt <= 201036) and (interest >= 17377))
+ 0,0295 financial_expenses MULTIPLY total_oper_liabilities
+ 0,0295 cost_of_labor SUBTRACT interest
+ 0,0291 EBIT==B3of3 or net_income==B3of3 or FFO==B1of3
+ 0,0291 EBIT==B2of3 and net_income==B2of3
+ 0,0291 st_liabilities LESSTHAN FFO
+ 0,0291 (interest <= 24296) and (interest >= 8964) and (inventories >= 181495)
+ 0,0289 st_liabilities DIVIDE interest
+ 0,0289 interest DIVIDE st_liabilities
+ 0,0289 net_income==B1of3 or equity==B2of2 or FFO==B1of3
+ 0,0289 interest==B2of2 or equity==B2of2 or FFO==B2of3
+ 0,0289 interest==B2of2 and EBIT==B2of3 and equity==B2of2
+ 0,0289 financial_expenses or equity==B2of2 or FFO==B1of3
+ 0,0289 equity==B2of2 or total_oper_liabilities or FFO==B1of3
+ 0,0289 equity==B2of2 or st_liabilities or FFO==B1of3
+ 0,0289 equity==B2of2 or inventories or FFO==B1of3
+ 0,0289 equity==B2of2 or FFO==B1of3
+ 0,0289 cost_of_labor or equity==B2of2 or FFO==B1of3
+ 0,0289 EBIT==B3of3 or net_income==B1of3 or equity==B2of2
+ 0,0289 EBIT==B2of3 and debt==B2of2 and FFO==B1of3
+ 0,0287 (net_income >= 1825123)
+ 0,0287 (debt <= 560000) and (equity >= 1135178) and (equity <= 1708654)
+ 0,0285 interest MULTIPLY total_oper_liabilities
+ 0,0284 net_income==B2of3 impl FFO==B1of3
+ 0,0283 net_income==B2of3 and debt==B2of2 and FFO==B3of3
+ 0,0281 financial_expenses SUBTRACT inventories
+ 0,0276 num-of-N((equity >= 6022214) and (equity <= 8570398))
+ 0,0276 (equity >= 6022214) and (equity <= 8570398)
+ 0,0275 total_oper_liabilities DIVIDE st_liabilities
+ 0,0275 st_liabilities DIVIDE total_oper_liabilities
+ 0,0275 (debt <= 560000) and (total_oper_liabilities <= 970874)
+ 0,0270 interest==B2of2 and equity==B2of2 and debt==B2of2
+ 0,0269 num-of-N((interest <= 24296) and (total_oper_liabilities <= 1057717))
+ 0,0263 debt LESSTHAN inventories
+ 0,0263 interest==B2of2 impl FFO==B2of3
+ 0,0259 interest==B2of2 and net_income==B2of3 and equity==B2of2
+ 0,0253 debt ADD inventories
+ 0,0252 interest==B2of2 or EBIT==B3of3 or FFO==B2of3
+ 0,0250 cost_of_labor or EBIT==B3of3 or net_income==B1of3
+ 0,0250 EBIT==B3of3 or net_income==B1of3 or total_oper_liabilities
+ 0,0250 EBIT==B3of3 or net_income==B1of3 or st_liabilities
+ 0,0250 EBIT==B3of3 or net_income==B1of3 or inventories
+ 0,0250 EBIT==B3of3 or net_income==B1of3
+ 0,0249 total_oper_liabilities ADD st_liabilities
+ 0,0249 net_income==B3of3 or equity==B2of2 or FFO==B1of3
+ 0,0249 financial_expenses LESSTHAN equity
+ 0,0249 EBIT==B2of3 or net_income==B2of3 or equity==B2of2
+ 0,0249 EBIT==B1of3 or equity==B2of2 or FFO==B1of3
+ 0,0249 EBIT==B1of3 impl equity==B2of2
+ 0,0248 interest==B2of2 or EBIT==B3of3 or net_income==B2of3
+ 0,0248 interest SUBTRACT inventories
+ 0,0244 equity==B2of2 and debt==B2of2 and FFO==B2of3
+ 0,0244 EBIT==B1of3 or net_income==B2of3 or FFO==B3of3
+ 0,0244 EBIT SUBTRACT net_income
+ 0,0236 cost_of_labor MULTIPLY interest
+ 0,0236 interest==B2of2 and equity==B2of2
+ 0,0232 num-of-N((debt <= 560000) and (total_oper_liabilities <= 906417))
+ 0,0229 equity==B2of2 and debt==B2of2 and FFO==B3of3
+ 0,0222 cost_of_labor or EBIT==B3of3 or FFO==B1of3
+ 0,0222 EBIT==B3of3 or total_oper_liabilities or FFO==B1of3
+ 0,0222 EBIT==B3of3 or st_liabilities or FFO==B1of3
+ 0,0222 EBIT==B3of3 or inventories or FFO==B1of3
+ 0,0222 EBIT==B3of3 or FFO==B1of3
+ 0,0217 num-of-N((interest <= 24296) and (total_oper_liabilities <= 970874))
+ 0,0211 equity MULTIPLY inventories
+ 0,0211 st_liabilities
+ 0,0211 interest==B2of2 or equity==B2of2 or FFO==B1of3
+ 0,0211 interest==B2of2 impl equity==B2of2
+ 0,0211 interest SUBTRACT st_liabilities
+ 0,0211 interest ADD st_liabilities
+ 0,0211 EBIT==B2of3 or equity==B2of2 or FFO==B2of3
+ 0,0211 EBIT==B1of3 or equity==B2of2 or FFO==B2of3
+ 0,0203 net_income LESSTHAN total_oper_liabilities
+ 0,0203 (equity >= 3445271) and (total_oper_liabilities <= 4736986) and (total_oper_liabilities >= 3283080) and (net_income <= 397188)
+ 0,0201 debt==B2of2 and FFO==B3of3
+ 0,0195 interest==B2of2 or EBIT==B1of3 or net_income==B3of3
+ 0,0195 equity ADD st_liabilities
+ 0,0191 cost_of_labor LESSTHAN equity
+ 0,0191 num-of-N((debt <= 560000) and (total_oper_liabilities <= 970874))
+ 0,0190 debt SUBTRACT st_liabilities
+ 0,0188 EBIT==B2of3 or net_income==B3of3 or FFO==B1of3
+ 0,0184 num-of-N((interest <= 24296) and (interest >= 8964) and (inventories >= 181495))
+ 0,0184 total_oper_liabilities xor FFO==B2of3
+ 0,0184 total_oper_liabilities or st_liabilities or FFO==B2of3
+ 0,0184 total_oper_liabilities or inventories or FFO==B2of3
+ 0,0184 total_oper_liabilities or FFO==B2of3
+ 0,0184 total_oper_liabilities equ FFO==B2of3
+ 0,0184 st_liabilities xor FFO==B2of3
+ 0,0184 st_liabilities or FFO==B2of3
+ 0,0184 st_liabilities equ FFO==B2of3
+ 0,0184 inventories xor FFO==B2of3
+ 0,0184 inventories or FFO==B2of3
+ 0,0184 inventories equ FFO==B2of3
+ 0,0184 interest==B2of2 or EBIT==B1of3 or FFO==B3of3
+ 0,0184 financial_expenses xor FFO==B2of3
+ 0,0184 financial_expenses or total_oper_liabilities or FFO==B2of3
+ 0,0184 financial_expenses or inventories or FFO==B2of3
+ 0,0184 financial_expenses or FFO==B2of3
+ 0,0184 financial_expenses equ FFO==B2of3
+ 0,0184 cost_of_labor xor FFO==B2of3
+ 0,0184 cost_of_labor or total_oper_liabilities or FFO==B2of3
+ 0,0184 cost_of_labor or st_liabilities or FFO==B2of3
+ 0,0184 cost_of_labor or FFO==B2of3
+ 0,0184 cost_of_labor equ FFO==B2of3
+ 0,0184 lt_liabilities
+ 0,0182 interest==B2of2 or EBIT==B2of3 or FFO==B3of3
+ 0,0175 debt LESSTHAN total_oper_liabilities
+ 0,0174 net_income==B2of3 and FFO==B2of3
+ 0,0173 interest==B2of2 and debt==B2of2 and FFO==B2of3
+ 0,0173 interest==B2of2 and FFO==B2of3
+ 0,0173 interest==B2of2 and EBIT==B2of3 and net_income==B2of3
+ 0,0173 interest LESSTHAN equity
+ 0,0173 depreciation
+ 0,0173 cost_of_labor ADD st_liabilities
+ 0,0173 EBIT==B3of3 or equity==B2of2 or FFO==B1of3
+ 0,0173 EBIT==B2of3 and net_income==B1of3 and debt==B2of2
+ 0,0173 EBIT==B2of3 and net_income==B1of3 and FFO==B1of3
+ 0,0173 EBIT==B2of3 and net_income==B1of3
+ 0,0173 EBIT==B1of3 impl FFO==B1of3
+ 0,0173 (debt <= 201036) and (interest >= 17377)
+ 0,0173 st_assets
+ 0,0173 assets
+ 0,0169 EBIT==B2of3 impl net_income==B1of3
+ 0,0166 financial_expenses ADD total_oper_liabilities
+ 0,0165 net_income==B3of3 xor FFO==B3of3
+ 0,0165 net_income==B3of3 equ FFO==B3of3
+ 0,0160 interest ADD total_oper_liabilities
+ 0,0159 interest==B2of2 impl EBIT==B2of3
+ 0,0159 EBIT==B3of3 impl net_income==B3of3
+ 0,0159 EBIT==B2of3 and net_income==B2of3 and FFO==B2of3
+ 0,0159 EBIT==B2of3 and FFO==B2of3
+ 0,0157 EBIT ADD total_oper_liabilities
+ 0,0156 total_oper_liabilities MULTIPLY st_liabilities
+ 0,0151 financial_expenses SUBTRACT interest
+ 0,0147 interest DIVIDE debt
+ 0,0144 debt MULTIPLY inventories
+ 0,0139 total_oper_liabilities LESSTHAN st_liabilities
+ 0,0139 net_income==B1of3 impl FFO==B1of3
+ 0,0139 net_income==B1of3 and equity==B2of2 and FFO==B3of3
+ 0,0139 net_income==B1of3 and FFO==B3of3
+ 0,0139 debt ADD FFO
+ 0,0138 cost_of_labor SUBTRACT EBIT
+ 0,0137 st_liabilities ADD FFO
+ 0,0137 net_income==B2of3 and FFO==B1of3
+ 0,0137 net_income ADD debt
+ 0,0137 interest==B2of2 or net_income==B2of3 or equity==B2of2
+ 0,0137 interest==B2of2 and net_income==B2of3 and FFO==B2of3
+ 0,0137 interest MULTIPLY equity
+ 0,0137 financial_expenses MULTIPLY equity
+ 0,0137 equity MULTIPLY debt
+ 0,0137 EBIT==B2of3 and equity==B2of2 and FFO==B1of3
+ 0,0137 EBIT==B1of3 and equity==B2of2 and FFO==B3of3
+ 0,0137 EBIT==B1of3 and FFO==B3of3
+ 0,0131 total_oper_liabilities
+ 0,0131 interest SUBTRACT total_oper_liabilities
+ 0,0127 st_oper_liabilities
+ 0,0127 net_income==B2of3 xor FFO==B2of3
+ 0,0127 net_income==B2of3 equ FFO==B2of3
+ 0,0127 financial_expenses MULTIPLY inventories
+ 0,0126 net_income==B2of3 and equity==B2of2
+ 0,0126 EBIT==B3of3 and net_income==B2of3 and debt==B2of2
+ 0,0125 interest MULTIPLY inventories
+ 0,0125 EBIT ADD debt
+ 0,0121 debt DIVIDE interest
+ 0,0121 EBIT==B3of3 or net_income==B1of3 or FFO==B1of3
+ 0,0116 net_income==B2of3 impl FFO==B2of3
+ 0,0107 net_income==B1of3 and debt==B2of2 and FFO==B3of3
+ 0,0107 EBIT==B3of3 and net_income==B1of3 and equity==B2of2
+ 0,0107 EBIT==B3of3 and net_income==B1of3 and debt==B2of2
+ 0,0107 EBIT==B3of3 and net_income==B1of3
+ 0,0105 interest==B2of2 or net_income==B1of3 or FFO==B3of3
+ 0,0104 EBIT==B2of3 xor FFO==B2of3
+ 0,0104 EBIT==B2of3 equ FFO==B2of3
+ 0,0103 inventories LESSTHAN FFO
+ 0,0103 net_income==B1of3 or equity==B2of2 or FFO==B2of3
+ 0,0103 net_income SUBTRACT FFO
+ 0,0103 net_income ADD st_liabilities
+ 0,0103 interest==B2of2 or equity==B2of2 or debt==B2of2
+ 0,0103 interest==B2of2 or EBIT==B2of3 or equity==B2of2
+ 0,0103 interest==B2of2 and equity==B2of2 and FFO==B2of3
+ 0,0103 interest==B2of2 and EBIT==B2of3 and FFO==B1of3
+ 0,0103 financial_expenses SUBTRACT total_oper_liabilities
+ 0,0103 equity==B2of2 or debt==B2of2 or total_oper_liabilities
+ 0,0103 equity==B2of2 or debt==B2of2 or st_liabilities
+ 0,0103 equity==B2of2 or debt==B2of2 or inventories
+ 0,0103 equity==B2of2 or debt==B2of2
+ 0,0103 cost_of_labor or equity==B2of2 or debt==B2of2
+ 0,0103 cost_of_labor MULTIPLY st_liabilities
+ 0,0103 EBIT==B2of3 and net_income==B2of3 and FFO==B1of3
+ 0,0103 EBIT==B1of3 and debt==B2of2 and FFO==B3of3
+ 0,0103 EBIT ADD st_liabilities
+ 0,0101 cost_of_labor LESSTHAN EBIT
+ 0,0100 debt==B2of2 xor FFO==B3of3
+ 0,0100 debt==B2of2 equ FFO==B3of3
+ 0,0098 interest==B2of2 or net_income==B3of3 or FFO==B1of3
+ 0,0096 lt_assets
+ 0,0096 interest==B2of2 and EBIT==B3of3 and net_income==B2of3
+ 0,0096 EBIT==B2of3 and debt==B2of2 and FFO==B3of3
+ 0,0094 equity ADD debt
+ 0,0090 EBIT LESSTHAN inventories
+ 0,0089 interest LESSTHAN debt
+ 0,0087 (financial_expenses <= 243) and (equity >= 740444)
+ 0,0082 EBIT==B3of3 xor net_income==B3of3
+ 0,0082 EBIT==B3of3 equ net_income==B3of3
+ 0,0081 total_oper_liabilities DIVIDE inventories
+ 0,0081 inventories DIVIDE total_oper_liabilities
+ 0,0081 interest==B2of2 impl net_income==B2of3
+ 0,0072 EBIT==B2of3 xor net_income==B2of3
+ 0,0072 EBIT==B2of3 equ net_income==B2of3
+ 0,0070 net_income==B3of3 or equity==B2of2 or debt==B2of2
+ 0,0070 net_income==B2of3 or debt==B2of2 or FFO==B3of3
+ 0,0070 net_income==B2of3 and debt==B2of2 and FFO==B1of3
+ 0,0070 net_income==B1of3 or equity==B2of2 or debt==B2of2
+ 0,0070 net_income==B1of3 impl debt==B2of2
+ 0,0070 interest==B2of2 and EBIT==B2of3 and net_income==B1of3
+ 0,0070 interest==B2of2 and EBIT==B2of3 and FFO==B2of3
+ 0,0070 financial_expenses ADD inventories
+ 0,0070 equity==B2of2 or debt==B2of2 or FFO==B3of3
+ 0,0070 cost_of_labor MULTIPLY total_oper_liabilities
+ 0,0070 cost_of_labor LESSTHAN interest
+ 0,0070 cost_of_labor ADD total_oper_liabilities
+ 0,0070 cost_of_labor ADD interest
+ 0,0070 cost_of_labor
+ 0,0070 EBIT==B3of3 or equity==B2of2 or debt==B2of2
+ 0,0070 EBIT==B3of3 and equity==B2of2 and FFO==B1of3
+ 0,0070 EBIT==B3of3 and debt==B2of2 and FFO==B1of3
+ 0,0070 EBIT==B3of3 and FFO==B1of3
+ 0,0070 EBIT==B2of3 or net_income==B1of3 or equity==B2of2
+ 0,0070 EBIT==B2of3 or equity==B2of2 or FFO==B1of3
+ 0,0070 EBIT==B2of3 and net_income==B1of3 and equity==B2of2
+ 0,0070 EBIT==B1of3 or net_income==B2of3 or equity==B2of2
+ 0,0070 EBIT==B1of3 or equity==B2of2 or debt==B2of2
+ 0,0070 EBIT==B1of3 impl debt==B2of2
+ 0,0070 EBIT==B1of3 and net_income==B1of3 and FFO==B3of3
+ 0,0069 EBIT==B2of3 impl FFO==B2of3
+ 0,0069 cost_of_labor LESSTHAN net_income
+ 0,0068 interest==B2of2 and net_income==B2of3 and FFO==B3of3
+ 0,0060 EBIT==B2of3 and net_income==B2of3 and equity==B2of2
+ 0,0056 EBIT==B2of3 and equity==B2of2 and FFO==B2of3
+ 0,0055 EBIT==B2of3 impl FFO==B1of3
+ 0,0055 EBIT==B2of3 and equity==B2of2
+ 0,0053 net_income LESSTHAN st_liabilities
+ 0,0053 cost_of_goods_and_services
+ 0,0053 EBIT==B2of3 and net_income==B3of3 and equity==B2of2
+ 0,0053 EBIT==B2of3 and net_income==B3of3 and FFO==B3of3
+ 0,0053 EBIT==B2of3 and net_income==B3of3
+ 0,0049 net_sales
+ 0,0041 equity==B2of2 xor debt==B2of2
+ 0,0041 equity==B2of2 equ debt==B2of2
+ 0,0041 total_oper_liabilities MULTIPLY inventories
+ 0,0041 total_oper_liabilities ADD inventories
+ 0,0041 net_income==B2of3 and equity==B2of2 and FFO==B1of3
+ 0,0041 inventories
+ 0,0041 interest==B2of2 and EBIT==B3of3 and FFO==B2of3
+ 0,0041 interest==B2of2 and EBIT==B3of3 and FFO==B1of3
+ 0,0041 interest==B2of2 and EBIT==B1of3 and FFO==B3of3
+ 0,0041 interest ADD inventories
+ 0,0041 equity==B2of2 or debt==B2of2 or FFO==B2of3
+ 0,0041 equity==B2of2 or debt==B2of2 or FFO==B1of3
+ 0,0041 EBIT==B3of3 impl equity==B2of2
+ 0,0041 EBIT==B3of3 and net_income==B1of3 and FFO==B1of3
+ 0,0041 EBIT==B1of3 impl net_income==B1of3
+ 0,0039 EBIT==B3of3 xor FFO==B3of3
+ 0,0039 EBIT==B3of3 equ FFO==B3of3
+ 0,0036 interest==B2of2 or EBIT==B3of3 or net_income==B1of3
+ 0,0030 financial_expenses LESSTHAN inventories
+ 0,0022 interest==B2of2 and EBIT==B3of3 and net_income==B1of3
+ 0,0022 financial_expenses LESSTHAN total_oper_liabilities
+ 0,0022 EBIT==B3of3 and net_income==B1of3 and FFO==B3of3
+ 0,0018 EBIT==B3of3 impl FFO==B3of3
+ 0,0018 interest==B2of2 or EBIT==B3of3 or FFO==B1of3
+ 0,0016 interest==B2of2 impl EBIT==B1of3
+ 0,0015 net_income==B2of3 or equity==B2of2 or debt==B2of2
+ 0,0015 interest==B2of2 and net_income==B2of3 and FFO==B1of3
+ 0,0015 interest==B2of2 and EBIT==B2of3 and FFO==B3of3
+ 0,0015 interest==B2of2 and EBIT==B1of3 and net_income==B3of3
+ 0,0015 interest LESSTHAN total_oper_liabilities
+ 0,0015 EBIT==B2of3 or equity==B2of2 or debt==B2of2
+ 0,0015 EBIT==B1of3 and net_income==B3of3 and equity==B2of2
+ 0,0015 EBIT==B1of3 and net_income==B3of3 and debt==B2of2
+ 0,0015 EBIT==B1of3 and net_income==B3of3 and FFO==B3of3
+ 0,0015 EBIT==B1of3 and net_income==B3of3
+ 0,0013 EBIT LESSTHAN st_liabilities
+ 0,0009 net_income==B2of3 and equity==B2of2 and FFO==B2of3
+ 0,0006 EBIT==B3of3 and net_income==B2of3
+ 0,0002 interest==B2of2 impl debt==B2of2
+ 0,0002 interest DIFF debt
+ 0,0002 EBIT==B2of3 and net_income==B3of3 and debt==B2of2
+ 0,0000 interest==B2of2 and net_income==B1of3 and FFO==B3of3
+ 0,0000 EBIT LESSTHAN equity
+ -0,0001 equity==B2of2 and FFO==B2of3
+ -0,0002 net_income==B3of3 impl equity==B2of2
+ -0,0002 net_income==B2of3 or equity==B2of2 or FFO==B1of3
+ -0,0002 net_income LESSTHAN equity
+ -0,0002 interest==B2of2 and net_income==B3of3 and FFO==B2of3
+ -0,0002 interest LESSTHAN st_liabilities
+ -0,0002 interest DIFF inventories
+ -0,0002 EBIT==B3of3 and net_income==B2of3 and FFO==B1of3
+ -0,0002 EBIT==B1of3 and net_income==B2of3 and debt==B2of2
+ -0,0002 EBIT==B1of3 and net_income==B2of3 and FFO==B2of3
+ -0,0002 EBIT==B1of3 and net_income==B2of3
+ -0,0002 EBIT==B1of3 and debt==B2of2 and FFO==B2of3
+ -0,0002 EBIT==B1of3 and FFO==B2of3
+ -0,0003 EBIT==B3of3 and net_income==B2of3 and FFO==B3of3
+ -0,0006 debt LESSTHAN st_liabilities
+ -0,0007 debt==B2of2 xor FFO==B2of3
+ -0,0007 debt==B2of2 equ FFO==B2of3
+ -0,0007 total_oper_liabilities DIFF st_liabilities
+ -0,0009 net_income==B2of3 and FFO==B3of3
+ -0,0013 EBIT LESSTHAN FFO
+ -0,0013 EBIT==B3of3 or debt==B2of2 or FFO==B1of3
+ -0,0015 debt==B2of2 impl FFO==B2of3
+ -0,0016 cost_of_labor LESSTHAN total_oper_liabilities
+ -0,0017 EBIT==B3of3 and debt==B2of2 and FFO==B2of3
+ -0,0019 net_income==B3of3 or debt==B2of2 or FFO==B1of3
+ -0,0021 EBIT==B2of3 or net_income==B1of3 or FFO==B3of3
+ -0,0021 EBIT==B2of3 impl net_income==B2of3
+ -0,0021 EBIT==B2of3 or debt==B2of2 or FFO==B3of3
+ -0,0024 num-of-N((interest >= 703179) and (interest <= 760013))
+ -0,0024 (interest >= 703179) and (interest <= 760013)
+ -0,0024 financial_expenses DIVIDE interest
+ -0,0025 EBIT==B3of3 or net_income==B1of3 or FFO==B2of3
+ -0,0026 net_income==B3of3 and equity==B2of2 and FFO==B2of3
+ -0,0026 net_income==B3of3 and debt==B2of2 and FFO==B2of3
+ -0,0026 net_income==B2of3 xor debt==B2of2
+ -0,0026 net_income==B2of3 equ debt==B2of2
+ -0,0028 net_income==B3of3 impl FFO==B3of3
+ -0,0028 net_income==B3of3 and FFO==B2of3
+ -0,0028 EBIT==B3of3 and net_income==B3of3 and FFO==B2of3
+ -0,0029 EBIT==B3of3 and net_income==B2of3 and equity==B2of2
+ -0,0030 interest LESSTHAN inventories
+ -0,0035 EBIT==B3of3 or net_income==B2of3 or debt==B2of2
+ -0,0035 interest==B2of2 and EBIT==B3of3 and net_income==B3of3
+ -0,0035 EBIT==B3of3 or net_income==B1of3 or debt==B2of2
+ -0,0035 EBIT==B2of3 impl debt==B2of2
+ -0,0035 EBIT==B3of3 or net_income==B2of3 or FFO==B1of3
+ -0,0038 net_income LESSTHAN FFO
+ -0,0038 net_income DIFF FFO
+ -0,0038 EBIT==B3of3 and equity==B2of2 and FFO==B2of3
+ -0,0038 EBIT==B3of3 or debt==B2of2 or FFO==B3of3
+ -0,0040 net_income==B2of3 and equity==B2of2 and FFO==B3of3
+ -0,0040 equity LESSTHAN FFO
+ -0,0040 net_income==B2of3 impl debt==B2of2
+ -0,0040 EBIT==B1of3 or net_income==B3of3 or debt==B2of2
+ -0,0042 EBIT==B3of3 and net_income==B2of3 and FFO==B2of3
+ -0,0044 equity==B2of2 and debt==B2of2
+ -0,0046 EBIT==B3of3 and FFO==B2of3
+ -0,0046 EBIT==B2of3 or net_income==B3of3 or debt==B2of2
+ -0,0047 debt DIFF inventories
+ -0,0051 interest==B2of2 and net_income==B3of3 and FFO==B3of3
+ -0,0052 interest==B2of2 or debt==B2of2 or FFO==B3of3
+ -0,0052 debt==B2of2 or total_oper_liabilities or FFO==B3of3
+ -0,0052 debt==B2of2 or st_liabilities or FFO==B3of3
+ -0,0052 debt==B2of2 or inventories or FFO==B3of3
+ -0,0052 debt==B2of2 or FFO==B3of3
+ -0,0052 cost_of_labor or debt==B2of2 or FFO==B3of3
+ -0,0052 interest DIVIDE financial_expenses
+ -0,0054 interest==B2of2 impl FFO==B1of3
+ -0,0057 EBIT==B2of3 and net_income==B2of3 and FFO==B3of3
+ -0,0061 total_oper_liabilities LESSTHAN inventories
+ -0,0062 net_income==B3of3 or debt==B2of2 or FFO==B3of3
+ -0,0063 interest==B2of2 impl net_income==B1of3
+ -0,0064 interest==B2of2 and net_income==B3of3 and equity==B2of2
+ -0,0064 interest==B2of2 and net_income==B3of3
+ -0,0069 EBIT==B3of3 or debt==B2of2 or FFO==B2of3
+ -0,0072 net_income==B3of3 or debt==B2of2 or FFO==B2of3
+ -0,0073 EBIT==B2of3 xor debt==B2of2
+ -0,0073 EBIT==B2of3 equ debt==B2of2
+ -0,0074 interest==B2of2 and net_income==B3of3 and debt==B2of2
+ -0,0075 net_income==B1of3 or debt==B2of2 or FFO==B3of3
+ -0,0075 EBIT==B1of3 or debt==B2of2 or FFO==B3of3
+ -0,0076 EBIT==B2of3 and equity==B2of2 and FFO==B3of3
+ -0,0083 EBIT==B2of3 and FFO==B3of3
+ -0,0085 interest==B2of2 or EBIT==B3of3 or debt==B2of2
+ -0,0085 cost_of_labor or EBIT==B3of3 or debt==B2of2
+ -0,0085 EBIT==B3of3 or debt==B2of2 or total_oper_liabilities
+ -0,0085 EBIT==B3of3 or debt==B2of2 or st_liabilities
+ -0,0085 EBIT==B3of3 or debt==B2of2 or inventories
+ -0,0085 EBIT==B3of3 or debt==B2of2
+ -0,0087 net_income==B3of3 or debt==B2of2 or total_oper_liabilities
+ -0,0087 net_income==B3of3 or debt==B2of2 or st_liabilities
+ -0,0087 net_income==B3of3 or debt==B2of2 or inventories
+ -0,0087 net_income==B3of3 or debt==B2of2
+ -0,0087 interest==B2of2 or net_income==B3of3 or debt==B2of2
+ -0,0087 cost_of_labor or net_income==B3of3 or debt==B2of2
+ -0,0087 debt==B2of2 impl FFO==B1of3
+ -0,0088 EBIT==B3of3 or net_income==B3of3 or debt==B2of2
+ -0,0094 financial_expenses DIFF interest
+ -0,0094 EBIT LESSTHAN net_income
+ -0,0095 net_income==B1of3 xor debt==B2of2
+ -0,0095 net_income==B1of3 equ debt==B2of2
+ -0,0095 interest==B2of2 and EBIT==B3of3 and debt==B2of2
+ -0,0100 interest==B2of2 and debt==B2of2 and FFO==B3of3
+ -0,0100 interest==B2of2 and EBIT==B3of3 and FFO==B3of3
+ -0,0101 interest==B2of2 xor debt==B2of2
+ -0,0101 interest==B2of2 equ debt==B2of2
+ -0,0101 EBIT==B1of3 xor debt==B2of2
+ -0,0101 EBIT==B1of3 equ debt==B2of2
+ -0,0101 interest==B2of2 and EBIT==B3of3
+ -0,0104 interest==B2of2 and equity==B2of2 and FFO==B3of3
+ -0,0104 interest==B2of2 and FFO==B3of3
+ -0,0106 interest==B2of2 and EBIT==B3of3 and equity==B2of2
+ -0,0112 debt==B2of2 xor FFO==B1of3
+ -0,0112 debt==B2of2 equ FFO==B1of3

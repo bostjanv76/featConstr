@@ -1,0 +1,20 @@
+dataset: cBinClassDisAttr-uniqueInst.arff
+MDL - after CI
+dataset: cBinClassNumBinAttr.arff
+MDL - after CI
+dataset: cBinClassNumDisAttr.arff
+MDL - after CI
+dataset: cConcepts-uniqueInst.arff
+MDL - after CI
+dataset: cDisjunct.arff
+MDL - after CI
+dataset: cLogicalConcB-uniqueInst.arff
+MDL - after CI
+dataset: cLogicalConcBNoisy-uniqueInst.arff
+MDL - after CI
+dataset: cModGroups.arff
+MDL - after CI
+dataset: cMultiVClassDisAttr-uniqueInst.arff
+MDL - after CI
+dataset: condInd-uniqueInst.arff
+MDL - after CI

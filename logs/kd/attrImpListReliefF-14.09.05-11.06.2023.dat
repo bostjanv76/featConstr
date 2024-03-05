@@ -1,0 +1,11 @@
+dataset: cLogicalConcBEasy-JustTwoDiffInstInEacsClass.arff
+ReliefF - after CI
+Ranked attributes:
+ 1       4 A4
+ 0.4507  3 A3
+ 0.4507  5 A5
+ 0.0488  6 A6
+ 0.0488  1 A1
+ 0       2 A2
+
+

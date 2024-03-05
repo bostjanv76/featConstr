@@ -1,0 +1,771 @@
+dataset: Heart.arff
+								--------------
+									Fold  1
+								--------------
+Feature evaluation: ReliefF (All features dataset) - After CI
+Ranked attributes:
+ 0.266255     840 num-of-N((A12 >= 1) and (A3 >= 4) and (A2 >= 1))
+ 0.266255     851 num-of-N((A3 >= 4) and (A12 >= 1) and (A2 >= 1))
+ 0.253498     811 num-of-N((A3 >= 4) and (A12 >= 1))
+ 0.253498     850 num-of-N((A12 >= 1) and (A3 >= 4))
+ 0.25144      718 A3_x_A12
+ 0.244444     700 A2_x_A12
+ 0.236214     702 A2_x_A3
+ 0.23251      812 num-of-N((A13 >= 7) and (A3 >= 4))
+ 0.23251      826 num-of-N((A3 >= 4) and (A13 >= 7))
+ 0.225103     802 num-of-N((A13 >= 6) and (A3 >= 4))
+ 0.223457     719 A3_x_A13
+ 0.220988      42 A3==B2of2 and A12==B2of2
+ 0.220988     783 (A12 >= 1) and (A3 >= 4)
+ 0.220988     741 (A3 >= 4) and (A12 >= 1)
+ 0.219342     824 num-of-N((A3 >= 4) and (A2 >= 1))
+ 0.217695     800 num-of-N((A12 >= 1) and (A11 >= 2) and (A13 >= 6))
+ 0.215638     717 A3_x_A11
+ 0.214815     206 A2==B2of2 impl A12==B2of2
+ 0.214815     676 A12_x_A13
+ 0.214403     822 num-of-N((A12 >= 1) and (A13 >= 6))
+ 0.214403     852 num-of-N((A13 >= 6) and (A12 >= 1))
+ 0.2107       685 A3_x_A8
+ 0.209465     712 A9_x_A12
+ 0.204115     703 A11_x_A12
+ 0.200412     797 num-of-N((A8 <= 147) and (A3 >= 4))
+ 0.199177     118 A2==B2of2 equ A12==B2of2
+ 0.199177     165 A2==B2of2 xor A12==B2of2
+ 0.195473     701 A2_x_A13
+ 0.195062     688 A3_x_A10
+ 0.192181     687 A3_x_A9
+ 0.189712     773 (A12 >= 1) and (A3 >= 4) and (A2 >= 1)
+ 0.189712     784 (A3 >= 4) and (A12 >= 1) and (A2 >= 1)
+ 0.189712     858 num-of-N((A12 >= 1) and (A11 >= 2))
+ 0.189712     251 A2==B2of2 and A3==B2of2 and A12==B2of2
+ 0.183128     855 num-of-N((A3 >= 4) and (A13 >= 7) and (A10 >= 0.8))
+ 0.183128     807 num-of-N((A13 >= 7) and (A3 >= 4) and (A10 >= 0.8))
+ 0.181893     839 num-of-N((A11 >= 2) and (A13 >= 7) and (A3 >= 2) and (A10 >= 0.9))
+ 0.18107      721 A1_x_A12
+ 0.180247     689 A10_x_A12
+ 0.179424     144 A3==B2of2 xor A5
+ 0.179424     143 A3==B2of2 xor A4
+ 0.179424     190 A3==B2of2 impl A4
+ 0.179424     166 A2==B2of2 xor A13==B2of2
+ 0.179424     167 A2==B2of2 xor A3==B2of2
+ 0.179424     191 A3==B2of2 impl A5
+ 0.179424     761 (A3 >= 4)
+ 0.179424     678 A3_x_A4
+ 0.179424      49 A3==B2of2 or A4
+ 0.179424     119 A2==B2of2 equ A13==B2of2
+ 0.179424      96 A3==B2of2 equ A4
+ 0.179424      97 A3==B2of2 equ A5
+ 0.179424     323 A3==B2of2 or A4 or A5
+ 0.179424     679 A3_x_A5
+ 0.179424      50 A3==B2of2 or A5
+ 0.179424     120 A2==B2of2 equ A3==B2of2
+ 0.178601     354 A5 or A10==B2of2 or A12==B2of2
+ 0.178601     383 A4 or A10==B2of2 or A12==B2of2
+ 0.178601      60 A10==B2of2 or A12==B2of2
+ 0.177366     208 A2==B2of2 impl A3==B2of2
+ 0.176132     589 A1 DIVIDE A12
+ 0.176132     539 A4 DIVIDE A12
+ 0.176132     531 A8 DIVIDE A12
+ 0.176132     545 A2 DIVIDE A12
+ 0.176132     697 A4_x_A12
+ 0.176132     551 A11 DIVIDE A12
+ 0.176132     583 A3 DIVIDE A12
+ 0.176132     577 A5 DIVIDE A12
+ 0.176132     523 A10 DIVIDE A12
+ 0.176132     693 A8_x_A12
+ 0.176132     571 A9 DIVIDE A12
+ 0.176132     498 A13 DIVIDE A12
+ 0.176132     715 A5_x_A12
+ 0.176132     162 A4 xor A12==B2of2
+ 0.176132     133 A5 equ A12==B2of2
+ 0.176132     115 A4 equ A12==B2of2
+ 0.176132      68 A4 or A12==B2of2
+ 0.176132     180 A5 xor A12==B2of2
+ 0.176132     304 A4 or A5 or A12==B2of2
+ 0.176132     793 (A12 >= 1)
+ 0.176132      86 A5 or A12==B2of2
+ 0.174486     841 num-of-N((A3 >= 4) and (A12 >= 1) and (A11 >= 2) and (A5 <= 299))
+ 0.174486     854 num-of-N((A1 >= 58) and (A1 <= 61) and (A12 >= 1))
+ 0.173251     698 A2_x_A11
+ 0.17284       29 A2==B2of2 and A12==B2of2
+ 0.17284      708 A2_x_A8
+ 0.17284      711 A2_x_A10
+ 0.172428     804 num-of-N((A13 >= 6) and (A10 >= 0.6) and (A3 >= 2))
+ 0.172016     845 num-of-N((A13 >= 6) and (A11 >= 2) and (A8 <= 142))
+ 0.17037       36 A2==B2of2 and A8==B2of2
+ 0.169547     184 A3==B2of2 xor A13==B2of2
+ 0.169547     818 num-of-N((A4 >= 152) and (A3 >= 4))
+ 0.169547     137 A3==B2of2 equ A13==B2of2
+ 0.168724     202 A8==B2of2 impl A12==B2of2
+ 0.168313     825 num-of-N((A11 >= 2) and (A13 >= 7) and (A8 <= 140))
+ 0.168313     829 num-of-N((A13 >= 7) and (A11 >= 2) and (A8 <= 140))
+ 0.16749      705 A11_x_A13
+ 0.165432     808 num-of-N((A10 >= 0.8) and (A3 >= 4))
+ 0.165432     836 num-of-N((A3 >= 4) and (A10 >= 0.8))
+ 0.165021     838 num-of-N((A13 >= 6) and (A11 >= 2))
+ 0.165021     713 A9_x_A13
+ 0.165021     733 (A13 >= 6) and (A10 >= 0.6) and (A3 >= 2)
+ 0.162551     853 num-of-N((A12 >= 1) and (A11 >= 2) and (A10 >= 0.6))
+ 0.162551     837 num-of-N((A11 >= 2) and (A12 >= 1) and (A10 >= 0.6))
+ 0.16214      846 num-of-N((A11 >= 2) and (A13 >= 7))
+ 0.16214      831 num-of-N((A13 >= 7) and (A11 >= 2))
+ 0.160082     207 A2==B2of2 impl A13==B2of2
+ 0.159259     843 num-of-N((A13 >= 6) and (A8 <= 144) and (A11 >= 2))
+ 0.158436     177 A9==B2of2 xor A12==B2of2
+ 0.158436     130 A9==B2of2 equ A12==B2of2
+ 0.158025     680 A1_x_A3
+ 0.158025     691 A10_x_A13
+ 0.157613     367 A2==B2of2 or A5 or A13==B2of2
+ 0.157613      72 A2==B2of2 or A13==B2of2
+ 0.157202     329 A5 or A9==B2of2 or A12==B2of2
+ 0.157202     814 num-of-N((A13 >= 6) and (A12 >= 1) and (A8 <= 142))
+ 0.157202      83 A9==B2of2 or A12==B2of2
+ 0.15679      833 num-of-N((A13 >= 7) and (A10 >= 0.8))
+ 0.155556     769 (A3 >= 4) and (A10 >= 0.8)
+ 0.155556      94 A12==B2of2 equ A13==B2of2
+ 0.155556     738 (A10 >= 0.8) and (A3 >= 4)
+ 0.155556     141 A12==B2of2 xor A13==B2of2
+ 0.154733     216 A2==B2of2 impl A10==B2of2
+ 0.154321      18 A10==B2of2 and A11==B2of2
+ 0.154321     710 A9_x_A11
+ 0.153498     856 num-of-N((A13 >= 6) and (A5 >= 246) and (A3 >= 4))
+ 0.15144      345 A5 or A12==B2of2 or A13==B2of2
+ 0.15144      828 num-of-N((A13 >= 6) and (A9 >= 1) and (A5 >= 246))
+ 0.15144      377 A4 or A12==B2of2 or A13==B2of2
+ 0.15144       47 A12==B2of2 or A13==B2of2
+ 0.148971     182 A3==B2of2 xor A11==B2of2
+ 0.148971     135 A3==B2of2 equ A11==B2of2
+ 0.148148     823 num-of-N((A3 >= 4) and (A5 >= 274))
+ 0.148148     799 num-of-N((A3 >= 4) and (A5 >= 304) and (A5 <= 330))
+ 0.147737     781 (A13 >= 6) and (A10 >= 0.6)
+ 0.147737     131 A9==B2of2 equ A13==B2of2
+ 0.147737     340 A1==B2of2 or A12==B2of2 or A13==B2of2
+ 0.147737     178 A9==B2of2 xor A13==B2of2
+ 0.147325     136 A3==B2of2 equ A12==B2of2
+ 0.147325     183 A3==B2of2 xor A12==B2of2
+ 0.146914     695 A8_x_A13
+ 0.146502     758 (A3 >= 4) and (A13 >= 7)
+ 0.146502     742 (A13 >= 7) and (A3 >= 4)
+ 0.144444     318 A3==B2of2 or A4 or A13==B2of2
+ 0.144444      90 A3==B2of2 or A13==B2of2
+ 0.144444     338 A3==B2of2 or A5 or A13==B2of2
+ 0.143621     817 num-of-N((A13 >= 6) and (A5 >= 243) and (A3 >= 4))
+ 0.141975     848 num-of-N((A13 >= 6) and (A10 >= 0.6))
+ 0.141152     150 A3==B2of2 xor A8==B2of2
+ 0.141152     103 A3==B2of2 equ A8==B2of2
+ 0.140858     547 A2 DIVIDE A13
+ 0.140741     809 num-of-N((A13 >= 7) and (A3 >= 4) and (A5 >= 243))
+ 0.139918     692 A8_x_A11
+ 0.138683     333 A3==B2of2 or A5 or A12==B2of2
+ 0.138683     756 (A3 >= 4) and (A2 >= 1)
+ 0.138683      31 A2==B2of2 and A3==B2of2
+ 0.138683     319 A3==B2of2 or A4 or A12==B2of2
+ 0.138683      89 A3==B2of2 or A12==B2of2
+ 0.138272     704 A8_x_A9
+ 0.138272     847 num-of-N((A5 >= 246) and (A2 >= 1))
+ 0.13786       19 A3==B2of2 and A9==B2of2
+ 0.136626      41 A3==B2of2 and A11==B2of2
+ 0.136214      43 A3==B2of2 and A13==B2of2
+ 0.136214     731 (A13 >= 6) and (A3 >= 4)
+ 0.135802     677 A1_x_A2
+ 0.135802     766 (A13 >= 7) and (A10 >= 0.8)
+ 0.135802      20 A3==B2of2 and A10==B2of2
+ 0.135391     832 num-of-N((A13 >= 7) and (A8 <= 144) and (A10 >= 0.8))
+ 0.134156     170 A11==B2of2 xor A13==B2of2
+ 0.134156     123 A11==B2of2 equ A13==B2of2
+ 0.133745     722 A1_x_A13
+ 0.133333     830 num-of-N((A12 >= 1) and (A10 >= 2))
+ 0.133333     798 num-of-N((A3 >= 4) and (A2 >= 1) and (A10 <= 0.2))
+ 0.132099     665 A2 DIFF A11
+ 0.132099     205 A2==B2of2 impl A11==B2of2
+ 0.132099     647 A2 LESSTHAN A11
+ 0.131276     173 A2==B2of2 xor A8==B2of2
+ 0.131276     126 A2==B2of2 equ A8==B2of2
+ 0.130453     337 A2==B2of2 or A3==B2of2 or A13==B2of2
+ 0.130041      51 A1==B2of2 or A3==B2of2
+ 0.130041     223 A1==B2of2 impl A12==B2of2
+ 0.130041     116 A2==B2of2 equ A11==B2of2
+ 0.130041     163 A2==B2of2 xor A11==B2of2
+ 0.130041     375 A1==B2of2 or A3==B2of2 or A5
+ 0.129218     168 A11==B2of2 xor A12==B2of2
+ 0.129218     121 A11==B2of2 equ A12==B2of2
+ 0.128807      17 A3==B2of2 and A8==B2of2
+ 0.12716      794 (A12 >= 1) and (A11 >= 2)
+ 0.12716       32 A11==B2of2 and A12==B2of2
+ 0.126749      93 A1==B2of2 or A13==B2of2
+ 0.126749     400 A1==B2of2 or A5 or A13==B2of2
+ 0.126337     725 (A8 <= 147) and (A3 >= 4)
+ 0.126337     194 A3==B2of2 impl A8==B2of2
+ 0.126337     176 A2==B2of2 xor A10==B2of2
+ 0.126337     129 A2==B2of2 equ A10==B2of2
+ 0.124691     842 num-of-N((A13 >= 6) and (A8 <= 144))
+ 0.12428       88 A3==B2of2 or A11==B2of2
+ 0.12428      226 A3==B2of2 and A10==B2of2 and A11==B2of2
+ 0.12428      335 A3==B2of2 or A5 or A11==B2of2
+ 0.12428      316 A3==B2of2 or A4 or A11==B2of2
+ 0.12428      706 A8_x_A10
+ 0.123354     619 A2 MULTIPLY A3
+ 0.123182     541 A2 DIVIDE A11
+ 0.123045     360 A4 or A11==B2of2 or A12==B2of2
+ 0.123045     326 A5 or A11==B2of2 or A12==B2of2
+ 0.123045      74 A11==B2of2 or A12==B2of2
+ 0.123045      23 A10==B2of2 and A13==B2of2
+ 0.122634     397 A1==B2of2 or A5 or A12==B2of2
+ 0.122634      92 A1==B2of2 or A12==B2of2
+ 0.122222     686 A10_x_A11
+ 0.121811      14 A12==B2of2 and A13==B2of2
+ 0.121811     786 (A13 >= 6) and (A12 >= 1)
+ 0.121811     754 (A12 >= 1) and (A13 >= 6)
+ 0.121399     128 A9==B2of2 equ A11==B2of2
+ 0.121399     175 A9==B2of2 xor A11==B2of2
+ 0.120576     105 A3==B2of2 equ A9==B2of2
+ 0.120576     152 A3==B2of2 xor A9==B2of2
+ 0.120576     341 A2==B2of2 or A3==B2of2 or A5
+ 0.120576      73 A2==B2of2 or A3==B2of2
+ 0.119342     815 num-of-N((A13 >= 6) and (A8 <= 142))
+ 0.119342     736 (A13 >= 7) and (A3 >= 4) and (A10 >= 0.8)
+ 0.119342     790 (A3 >= 4) and (A13 >= 7) and (A10 >= 0.8)
+ 0.117695     816 num-of-N((A13 >= 6) and (A5 >= 243))
+ 0.116872     343 A3==B2of2 or A5 or A9==B2of2
+ 0.116872     287 A3==B2of2 and A9==B2of2 and A11==B2of2
+ 0.116872      58 A3==B2of2 or A9==B2of2
+ 0.114815     239 A2==B2of2 and A10==B2of2 and A11==B2of2
+ 0.114815     770 (A11 >= 2) and (A12 >= 1) and (A10 >= 0.6)
+ 0.114815     787 (A12 >= 1) and (A11 >= 2) and (A10 >= 0.6)
+ 0.113992     234 A10==B2of2 and A11==B2of2 and A13==B2of2
+ 0.11358      172 A2==B2of2 xor A5
+ 0.11358      548 A13 DIVIDE A2
+ 0.11358      550 A3 DIVIDE A2
+ 0.11358      672 A9 DIFF A12
+ 0.11358      570 A10 DIVIDE A2
+ 0.11358      499 A1 DIVIDE A2
+ 0.11358      125 A2==B2of2 equ A5
+ 0.11358        2 A2
+ 0.11358      707 A2_x_A5
+ 0.11358      546 A12 DIVIDE A2
+ 0.11358      213 A2==B2of2 impl A5
+ 0.11358      542 A11 DIVIDE A2
+ 0.11358      562 A5 DIVIDE A2
+ 0.11358      564 A8 DIVIDE A2
+ 0.11358       78 A2==B2of2 or A5
+ 0.113169     780 (A5 >= 246) and (A2 >= 1)
+ 0.112346     109 A10==B2of2 equ A13==B2of2
+ 0.112346     156 A10==B2of2 xor A13==B2of2
+ 0.111934      37 A9==B2of2 and A11==B2of2
+ 0.111934     139 A1==B2of2 equ A12==B2of2
+ 0.111934     186 A1==B2of2 xor A12==B2of2
+ 0.111934     810 num-of-N((A1 >= 55) and (A5 >= 273) and (A2 >= 1))
+ 0.109465     253 A2==B2of2 and A3==B2of2 and A8==B2of2
+ 0.108642     214 A2==B2of2 impl A8==B2of2
+ 0.108642     819 num-of-N((A11 >= 2) and (A5 >= 244))
+ 0.107819     737 (A13 >= 7)
+ 0.107407     220 A3==B2of2 impl A12==B2of2
+ 0.107407     690 A1_x_A8
+ 0.107407     604 A3 MULTIPLY A9
+ 0.106996     749 (A11 >= 2) and (A5 >= 244)
+ 0.106584     772 (A11 >= 2) and (A13 >= 7) and (A3 >= 2) and (A10 >= 0.9)
+ 0.106584     835 num-of-N((A11 >= 2) and (A12 >= 1) and (A8 >= 160))
+ 0.106173      34 A11==B2of2 and A13==B2of2
+ 0.106173     771 (A13 >= 6) and (A11 >= 2)
+ 0.105761     102 A5 equ A10==B2of2
+ 0.105761      55 A5 or A10==B2of2
+ 0.105761      80 A4 or A10==B2of2
+ 0.105761     684 A5_x_A10
+ 0.105761     174 A4 xor A10==B2of2
+ 0.105761     149 A5 xor A10==B2of2
+ 0.105761     127 A4 equ A10==B2of2
+ 0.105761     307 A4 or A5 or A10==B2of2
+ 0.105761     709 A4_x_A10
+ 0.104938     153 A3==B2of2 xor A10==B2of2
+ 0.104938     106 A3==B2of2 equ A10==B2of2
+ 0.104527      16 A1==B2of2 and A3==B2of2
+ 0.104527     801 num-of-N((A13 >= 7) and (A8 <= 139))
+ 0.104527     197 A3==B2of2 impl A10==B2of2
+ 0.104115     849 num-of-N((A13 >= 6) and (A1 <= 51) and (A3 >= 4))
+ 0.104115     286 A3==B2of2 and A9==B2of2 and A12==B2of2
+ 0.102881     132 A5 equ A11==B2of2
+ 0.102881     696 A4_x_A11
+ 0.102881      67 A4 or A11==B2of2
+ 0.102881     161 A4 xor A11==B2of2
+ 0.102881     714 A5_x_A11
+ 0.102881     179 A5 xor A11==B2of2
+ 0.102881      85 A5 or A11==B2of2
+ 0.102881     114 A4 equ A11==B2of2
+ 0.102881     353 A9==B2of2 or A12==B2of2 or A13==B2of2
+ 0.102881     302 A4 or A5 or A11==B2of2
+ 0.102551     426 A2 ADD A13
+ 0.102469     746 (A13 >= 6) and (A5 >= 243)
+ 0.102469     666 A2 DIFF A12
+ 0.102058     720 A1_x_A11
+ 0.102058     204 A8==B2of2 impl A13==B2of2
+ 0.101646     328 A3==B2of2 or A4 or A10==B2of2
+ 0.101646     349 A3==B2of2 or A5 or A10==B2of2
+ 0.101646      59 A3==B2of2 or A10==B2of2
+ 0.101646     694 A1_x_A10
+ 0.101646     813 num-of-N((A11 >= 2) and (A12 >= 2))
+ 0.101235      44 A1==B2of2 and A11==B2of2
+ 0.100938     637 A3 MULTIPLY A13
+ 0.100823      52 A5 or A8==B2of2
+ 0.100823     681 A5_x_A8
+ 0.100823      99 A5 equ A8==B2of2
+ 0.100823     146 A5 xor A8==B2of2
+ 0.100412      84 A9==B2of2 or A13==B2of2
+ 0.100412     336 A5 or A9==B2of2 or A13==B2of2
+ 0.100412      13 A13
+ 0.099588     821 num-of-N((A10 >= 0.8) and (A5 >= 249) and (A5 <= 353))
+ 0.098765      38 A2==B2of2 and A10==B2of2
+ 0.097942     134 A5 equ A13==B2of2
+ 0.097942      70 A4 or A13==B2of2
+ 0.097942     117 A4 equ A13==B2of2
+ 0.097942     716 A5_x_A13
+ 0.097942     181 A5 xor A13==B2of2
+ 0.097942     164 A4 xor A13==B2of2
+ 0.097942     699 A4_x_A13
+ 0.097942     303 A4 or A5 or A13==B2of2
+ 0.097942     753 (A13 >= 6)
+ 0.097942      87 A5 or A13==B2of2
+ 0.097531     209 A11==B2of2 impl A12==B2of2
+ 0.097449     474 A2 SUBTRACT A13
+ 0.096708     779 (A11 >= 2) and (A13 >= 7)
+ 0.096708     764 (A13 >= 7) and (A11 >= 2)
+ 0.096066     626 A2 MULTIPLY A8
+ 0.096049     439 A9 ADD A13
+ 0.095885     395 A3==B2of2 or A9==B2of2 or A12==B2of2
+ 0.095473     140 A1==B2of2 equ A13==B2of2
+ 0.095473     305 A2==B2of2 or A12==B2of2 or A13==B2of2
+ 0.095473     187 A1==B2of2 xor A13==B2of2
+ 0.095473     655 A9 LESSTHAN A12
+ 0.095062     160 A8==B2of2 xor A13==B2of2
+ 0.095062     113 A8==B2of2 equ A13==B2of2
+ 0.093827     227 A3==B2of2 and A10==B2of2 and A13==B2of2
+ 0.092593      28 A2==B2of2 and A11==B2of2
+ 0.092593     221 A3==B2of2 impl A13==B2of2
+ 0.091358     250 A2==B2of2 and A3==B2of2 and A13==B2of2
+ 0.091358     122 A8==B2of2 equ A9==B2of2
+ 0.091358     169 A8==B2of2 xor A9==B2of2
+ 0.091358     356 A1==B2of2 or A2==B2of2 or A13==B2of2
+ 0.091358     834 num-of-N((A8 <= 131) and (A5 >= 273))
+ 0.090947     765 (A13 >= 7) and (A8 <= 144) and (A10 >= 0.8)
+ 0.090123      69 A2==B2of2 or A11==B2of2
+ 0.090123     366 A2==B2of2 or A5 or A11==B2of2
+ 0.089771     445 A3 ADD A13
+ 0.089712     364 A4 or A11==B2of2 or A13==B2of2
+ 0.089712     278 A3==B2of2 and A8==B2of2 and A12==B2of2
+ 0.089712     324 A5 or A11==B2of2 or A13==B2of2
+ 0.089712      76 A11==B2of2 or A13==B2of2
+ 0.089712     803 num-of-N((A13 >= 7) and (A11 >= 2) and (A5 >= 263))
+ 0.088889      22 A1==B2of2 and A8==B2of2
+ 0.088713     401 A12 ADD A13
+ 0.088066     264 A1==B2of2 and A2==B2of2 and A8==B2of2
+ 0.087654     282 A3==B2of2 and A11==B2of2 and A13==B2of2
+ 0.087654     238 A1==B2of2 and A8==B2of2 and A11==B2of2
+ 0.087243     350 A1==B2of2 or A10==B2of2 or A12==B2of2
+ 0.086831     196 A3==B2of2 impl A9==B2of2
+ 0.086667     487 A9 SUBTRACT A13
+ 0.08642      373 A1==B2of2 or A3==B2of2 or A13==B2of2
+ 0.086008      21 A10==B2of2 and A12==B2of2
+ 0.085747     625 A2 MULTIPLY A5
+ 0.085597       7 A7
+ 0.085597     299 A2==B2of2 or A11==B2of2 or A13==B2of2
+ 0.085597     399 A3==B2of2 or A9==B2of2 or A13==B2of2
+ 0.085597     225 A3==B2of2 and A12==B2of2 and A13==B2of2
+ 0.085185      82 A2==B2of2 or A10==B2of2
+ 0.085185      39 A9==B2of2 and A12==B2of2
+ 0.085185     378 A2==B2of2 or A5 or A10==B2of2
+ 0.085185     235 A10==B2of2 and A11==B2of2 and A12==B2of2
+ 0.084774     219 A3==B2of2 impl A11==B2of2
+ 0.084362      54 A5 or A9==B2of2
+ 0.084362     101 A5 equ A9==B2of2
+ 0.084362     368 A1==B2of2 or A3==B2of2 or A12==B2of2
+ 0.084362       9 A9
+ 0.084362     574 A13 DIVIDE A9
+ 0.084362     568 A11 DIVIDE A9
+ 0.084362     683 A5_x_A9
+ 0.084362     572 A12 DIVIDE A9
+ 0.084362     519 A3 DIVIDE A9
+ 0.084362     511 A5 DIVIDE A9
+ 0.084362     555 A8 DIVIDE A9
+ 0.084362     148 A5 xor A9==B2of2
+ 0.084362     284 A3==B2of2 and A11==B2of2 and A12==B2of2
+ 0.083951     254 A1==B2of2 and A10==B2of2 and A11==B2of2
+ 0.083951     142 A1==B2of2 xor A2==B2of2
+ 0.083951      95 A1==B2of2 equ A2==B2of2
+ 0.083128      71 A2==B2of2 or A12==B2of2
+ 0.083128     370 A2==B2of2 or A5 or A12==B2of2
+ 0.082716     775 (A13 >= 6) and (A8 <= 144)
+ 0.082369     594 A1 MULTIPLY A2
+ 0.082305     212 A8==B2of2 impl A10==B2of2
+ 0.08155      431 A11 ADD A13
+ 0.081481     288 A3==B2of2 and A9==B2of2 and A13==B2of2
+ 0.081481      45 A1==B2of2 and A12==B2of2
+ 0.081481     726 (A3 >= 4) and (A2 >= 1) and (A10 <= 0.2)
+ 0.08107       40 A9==B2of2 and A13==B2of2
+ 0.080658     311 A2==B2of2 or A10==B2of2 or A13==B2of2
+ 0.080247     776 (A13 >= 6) and (A8 <= 144) and (A11 >= 2)
+ 0.080247      48 A1==B2of2 or A2==B2of2
+ 0.080247     778 (A13 >= 6) and (A11 >= 2) and (A8 <= 142)
+ 0.080247     361 A1==B2of2 or A2==B2of2 or A5
+ 0.079424     236 A2==B2of2 and A12==B2of2 and A13==B2of2
+ 0.079365     631 A9 MULTIPLY A13
+ 0.079218     412 A3 ADD A9
+ 0.078777     618 A2 MULTIPLY A13
+ 0.078601     107 A10==B2of2 equ A12==B2of2
+ 0.078601     314 A10==B2of2 or A12==B2of2 or A13==B2of2
+ 0.078601     154 A10==B2of2 xor A12==B2of2
+ 0.078189     231 A2==B2of2 and A8==B2of2 and A13==B2of2
+ 0.078189     274 A1==B2of2 and A3==B2of2 and A8==B2of2
+ 0.077778      27 A8==B2of2 and A13==B2of2
+ 0.076132       3 A3
+ 0.076132     110 A8==B2of2 equ A11==B2of2
+ 0.076132     157 A8==B2of2 xor A11==B2of2
+ 0.075823     425 A2 ADD A12
+ 0.07572      211 A11==B2of2 impl A13==B2of2
+ 0.075309     158 A8==B2of2 xor A12==B2of2
+ 0.075309     229 A3==B2of2 and A10==B2of2 and A12==B2of2
+ 0.075309     358 A11==B2of2 or A12==B2of2 or A13==B2of2
+ 0.075309     111 A8==B2of2 equ A12==B2of2
+ 0.074966     636 A3 MULTIPLY A12
+ 0.074074      24 A8==B2of2 and A11==B2of2
+ 0.074074     682 A1_x_A5
+ 0.074074     100 A1==B2of2 equ A5
+ 0.074074     193 A1==B2of2 impl A5
+ 0.074074      53 A1==B2of2 or A5
+ 0.074074     147 A1==B2of2 xor A5
+ 0.073663     331 A5 or A9==B2of2 or A11==B2of2
+ 0.073663      81 A9==B2of2 or A11==B2of2
+ 0.07356      427 A2 ADD A3
+ 0.073251     745 (A13 >= 6) and (A8 <= 142)
+ 0.073251     217 A9==B2of2 impl A12==B2of2
+ 0.07284      444 A3 ADD A12
+ 0.07284      751 (A10 >= 0.8) and (A5 >= 249) and (A5 <= 353)
+ 0.072016     230 A2==B2of2 and A8==B2of2 and A11==B2of2
+ 0.072016     232 A2==B2of2 and A11==B2of2 and A12==B2of2
+ 0.072016     228 A2==B2of2 and A8==B2of2 and A12==B2of2
+ 0.072016     301 A10==B2of2 or A11==B2of2 or A12==B2of2
+ 0.071605     387 A4 or A10==B2of2 or A13==B2of2
+ 0.071605      62 A10==B2of2 or A13==B2of2
+ 0.071605     352 A5 or A10==B2of2 or A13==B2of2
+ 0.071193      65 A1==B2of2 or A10==B2of2
+ 0.071193     291 A1==B2of2 or A5 or A10==B2of2
+ 0.071056     615 A2 MULTIPLY A11
+ 0.070782     262 A11==B2of2 and A12==B2of2 and A13==B2of2
+ 0.070782     729 (A12 >= 1) and (A11 >= 2) and (A13 >= 6)
+ 0.070782     654 A2 LESSTHAN A10
+ 0.070782     785 (A10 >= 1.8)
+ 0.070782     248 A9==B2of2 and A11==B2of2 and A13==B2of2
+ 0.070782      26 A1==B2of2 and A10==B2of2
+ 0.070645      12 A12
+ 0.069136     391 A3==B2of2 or A11==B2of2 or A13==B2of2
+ 0.069136     658 A3 LESSTHAN A13
+ 0.06893      479 A11 SUBTRACT A13
+ 0.068568     585 A3 DIVIDE A13
+ 0.068519     438 A9 ADD A12
+ 0.068313     396 A3==B2of2 or A9==B2of2 or A11==B2of2
+ 0.067901     269 A1==B2of2 and A3==B2of2 and A11==B2of2
+ 0.06749      750 (A1 >= 58) and (A11 >= 2) and (A5 >= 244) and (A5 <= 294)
+ 0.067284     573 A9 DIVIDE A13
+ 0.066961     493 A3 SUBTRACT A13
+ 0.066667     760 (A13 >= 6) and (A9 >= 1) and (A5 >= 246)
+ 0.066255      15 A1==B2of2 and A2==B2of2
+ 0.066255      33 A8==B2of2 and A9==B2of2
+ 0.066255     339 A2==B2of2 or A3==B2of2 or A12==B2of2
+ 0.065947     549 A2 DIVIDE A3
+ 0.065432     747 (A13 >= 6) and (A5 >= 243) and (A3 >= 4)
+ 0.065222     561 A2 DIVIDE A5
+ 0.065021     289 A3==B2of2 or A12==B2of2 or A13==B2of2
+ 0.064918     473 A2 SUBTRACT A12
+ 0.064883     628 A9 MULTIPLY A11
+ 0.064609     241 A2==B2of2 and A10==B2of2 and A13==B2of2
+ 0.064609     330 A9==B2of2 or A11==B2of2 or A12==B2of2
+ 0.064198     827 num-of-N((A8 <= 142) and (A5 >= 237))
+ 0.064054     535 A8 DIVIDE A13
+ 0.063786     249 A2==B2of2 and A3==B2of2 and A11==B2of2
+ 0.063604     500 A2 DIVIDE A1
+ 0.063374     820 num-of-N((A1 >= 58) and (A11 >= 2) and (A5 >= 244) and (A5 <= 294))
+ 0.062689     423 A2 ADD A11
+ 0.062551     255 A2==B2of2 and A3==B2of2 and A10==B2of2
+ 0.062551      98 A1==B2of2 equ A3==B2of2
+ 0.062551     145 A1==B2of2 xor A3==B2of2
+ 0.06214      201 A8==B2of2 impl A11==B2of2
+ 0.061728     277 A3==B2of2 and A8==B2of2 and A13==B2of2
+ 0.061324     563 A2 DIVIDE A8
+ 0.061317     623 A11 MULTIPLY A13
+ 0.061235     428 A11 ADD A12
+ 0.061134     558 A13 DIVIDE A11
+ 0.060905     805 num-of-N((A13 >= 7) and (A11 >= 2) and (A5 <= 233))
+ 0.060905     246 A1==B2of2 and A11==B2of2 and A12==B2of2
+ 0.060631     436 A9 ADD A11
+ 0.060494     774 (A3 >= 4) and (A12 >= 1) and (A11 >= 2) and (A5 <= 299)
+ 0.060082     188 A12==B2of2 impl A13==B2of2
+ 0.059996     622 A8 MULTIPLY A9
+ 0.059203     540 A12 DIVIDE A4
+ 0.058436     267 A1==B2of2 and A3==B2of2 and A12==B2of2
+ 0.058436     257 A1==B2of2 and A10==B2of2 and A12==B2of2
+ 0.058436     203 A1==B2of2 impl A10==B2of2
+ 0.058025     252 A1==B2of2 and A12==B2of2 and A13==B2of2
+ 0.058025     791 (A13 >= 6) and (A5 >= 246) and (A3 >= 4)
+ 0.057894     581 A3 DIVIDE A11
+ 0.057613     210 A8==B2of2 impl A9==B2of2
+ 0.057202     276 A3==B2of2 and A8==B2of2 and A11==B2of2
+ 0.057202     663 A10 DIFF A12
+ 0.056927     471 A2 SUBTRACT A11
+ 0.05679      796 num-of-N((A11 >= 2) and (A13 >= 7) and (A5 <= 230) and (A3 >= 2))
+ 0.05679      792 (A5 >= 319) and (A5 <= 335) and (A8 <= 169)
+ 0.056626     443 A3 ADD A11
+ 0.056481     475 A2 SUBTRACT A3
+ 0.056379     795 num-of-N((A11 >= 2) and (A13 >= 7) and (A5 <= 229))
+ 0.056379     617 A2 MULTIPLY A12
+ 0.055967     295 A3==B2of2 or A10==B2of2 or A12==B2of2
+ 0.055967     351 A5 or A10==B2of2 or A11==B2of2
+ 0.055967      57 A10==B2of2 or A11==B2of2
+ 0.055967     224 A1==B2of2 impl A13==B2of2
+ 0.055967     735 (A1 >= 58) and (A11 >= 2) and (A5 >= 244) and (A5 <= 288) and (A11 <= 2)
+ 0.055967     384 A4 or A10==B2of2 or A11==B2of2
+ 0.055368     635 A3 MULTIPLY A11
+ 0.055144     218 A9==B2of2 impl A13==B2of2
+ 0.055144     806 num-of-N((A1 >= 58) and (A11 >= 2) and (A5 >= 244) and (A5 <= 288) and (A11 <= 2))
+ 0.054733      25 A8==B2of2 and A12==B2of2
+ 0.054733     755 (A3 >= 4) and (A5 >= 274)
+ 0.054425     610 A8 MULTIPLY A12
+ 0.054321     247 A9==B2of2 and A11==B2of2 and A12==B2of2
+ 0.054115      11 A11
+ 0.053498     243 A10==B2of2 and A12==B2of2 and A13==B2of2
+ 0.053498     357 A1==B2of2 or A2==B2of2 or A12==B2of2
+ 0.053274     556 A9 DIVIDE A8
+ 0.053215     590 A12 DIVIDE A1
+ 0.052773     593 A12 MULTIPLY A13
+ 0.052686     543 A4 DIVIDE A13
+ 0.052675     198 A10==B2of2 impl A12==B2of2
+ 0.052675      91 A1==B2of2 or A11==B2of2
+ 0.052675     381 A1==B2of2 or A3==B2of2 or A10==B2of2
+ 0.052675     398 A1==B2of2 or A5 or A11==B2of2
+ 0.052417     416 A10 ADD A13
+ 0.052263     240 A1==B2of2 and A8==B2of2 and A13==B2of2
+ 0.052263     757 (A11 >= 2) and (A13 >= 7) and (A8 <= 140)
+ 0.052263     739 (A13 >= 7) and (A3 >= 4) and (A5 >= 243)
+ 0.052263     762 (A13 >= 7) and (A11 >= 2) and (A8 <= 140)
+ 0.051914     639 A1 MULTIPLY A12
+ 0.051878     614 A4 MULTIPLY A12
+ 0.051852     332 A9==B2of2 or A11==B2of2 or A13==B2of2
+ 0.051713     600 A5 MULTIPLY A9
+ 0.051239     616 A4 MULTIPLY A13
+ 0.051231     532 A12 DIVIDE A8
+ 0.050735     449 A12 SUBTRACT A13
+ 0.050617     275 A1==B2of2 and A3==B2of2 and A10==B2of2
+ 0.050412     486 A9 SUBTRACT A12
+ 0.050331     512 A9 DIVIDE A5
+ 0.050206     317 A5 or A8==B2of2 or A12==B2of2
+ 0.050206      64 A8==B2of2 or A12==B2of2
+ 0.049931     567 A9 DIVIDE A11
+ 0.049794     261 A1==B2of2 and A2==B2of2 and A12==B2of2
+ 0.049794     293 A3==B2of2 or A10==B2of2 or A13==B2of2
+ 0.049794     334 A2==B2of2 or A3==B2of2 or A11==B2of2
+ 0.049794      30 A2==B2of2 and A13==B2of2
+ 0.049448     529 A8 DIVIDE A11
+ 0.049383     740 (A1 >= 55) and (A5 >= 273) and (A2 >= 1)
+ 0.049383     233 A2==B2of2 and A11==B2of2 and A13==B2of2
+ 0.049054     536 A13 DIVIDE A8
+ 0.049047     464 A10 SUBTRACT A13
+ 0.048971     348 A1==B2of2 or A10==B2of2 or A13==B2of2
+ 0.048971     675 A3 DIFF A13
+ 0.04856      309 A2==B2of2 or A10==B2of2 or A11==B2of2
+ 0.047867     640 A1 MULTIPLY A13
+ 0.047737      46 A1==B2of2 and A13==B2of2
+ 0.047706     595 A3 MULTIPLY A4
+ 0.047325     268 A8==B2of2 and A9==B2of2 and A11==B2of2
+ 0.047325     322 A1==B2of2 or A11==B2of2 or A12==B2of2
+ 0.046934     544 A13 DIVIDE A4
+ 0.046914     645 A10 LESSTHAN A12
+ 0.046028     597 A1 MULTIPLY A3
+ 0.045885     460 A3 SUBTRACT A9
+ 0.045388     537 A4 DIVIDE A11
+ 0.045267     192 A1==B2of2 impl A3==B2of2
+ 0.045126     591 A1 DIVIDE A13
+ 0.044707     557 A11 DIVIDE A13
+ 0.044444     285 A3==B2of2 and A8==B2of2 and A9==B2of2
+ 0.044444     259 A1==B2of2 and A2==B2of2 and A11==B2of2
+ 0.044072     497 A12 DIVIDE A13
+ 0.043164     620 A11 MULTIPLY A12
+ 0.042844     612 A8 MULTIPLY A13
+ 0.042798     292 A3==B2of2 or A10==B2of2 or A11==B2of2
+ 0.042387     371 A1==B2of2 or A3==B2of2 or A11==B2of2
+ 0.041993     414 A10 ADD A12
+ 0.041975     124 A8==B2of2 equ A10==B2of2
+ 0.041975     171 A8==B2of2 xor A10==B2of2
+ 0.041701     484 A9 SUBTRACT A11
+ 0.041508     592 A13 DIVIDE A1
+ 0.041152     646 A10 LESSTHAN A13
+ 0.041048     596 A3 MULTIPLY A5
+ 0.041038     552 A12 DIVIDE A11
+ 0.040871     634 A5 MULTIPLY A13
+ 0.040658     491 A3 SUBTRACT A11
+ 0.040115     515 A3 DIVIDE A8
+ 0.039918     237 A2==B2of2 and A10==B2of2 and A12==B2of2
+ 0.039918     155 A1==B2of2 xor A8==B2of2
+ 0.039918     108 A1==B2of2 equ A8==B2of2
+ 0.039766     578 A12 DIVIDE A5
+ 0.039506     280 A8==B2of2 and A10==B2of2 and A11==B2of2
+ 0.039506     347 A2==B2of2 or A3==B2of2 or A10==B2of2
+ 0.039265     413 A3 ADD A10
+ 0.039095     759 (A8 <= 142) and (A5 >= 237)
+ 0.038683     200 A10==B2of2 impl A13==B2of2
+ 0.038651     633 A5 MULTIPLY A12
+ 0.03786      199 A1==B2of2 impl A8==B2of2
+ 0.037561     602 A3 MULTIPLY A8
+ 0.037449     266 A8==B2of2 and A11==B2of2 and A13==B2of2
+ 0.036626     189 A1==B2of2 impl A2==B2of2
+ 0.036626     727 (A3 >= 4) and (A5 >= 304) and (A5 <= 330)
+ 0.036457     587 A1 DIVIDE A11
+ 0.036316     538 A11 DIVIDE A4
+ 0.036214     245 A1==B2of2 and A8==B2of2 and A10==B2of2
+ 0.036214     359 A1==B2of2 or A2==B2of2 or A3==B2of2
+ 0.036214     374 A8==B2of2 or A9==B2of2 or A12==B2of2
+ 0.036023     501 A3 DIVIDE A4
+ 0.035802     104 A10==B2of2 equ A11==B2of2
+ 0.035802     151 A10==B2of2 xor A11==B2of2
+ 0.035802     748 (A4 >= 152) and (A3 >= 4)
+ 0.035802     258 A9==B2of2 and A12==B2of2 and A13==B2of2
+ 0.03572      492 A3 SUBTRACT A12
+ 0.035678     437 A2 ADD A10
+ 0.035391     222 A1==B2of2 impl A11==B2of2
+ 0.035288     579 A5 DIVIDE A13
+ 0.034979     788 (A10 >= 2.5)
+ 0.034568      66 A8==B2of2 or A13==B2of2
+ 0.034568     315 A5 or A8==B2of2 or A13==B2of2
+ 0.034568     300 A10==B2of2 or A11==B2of2 or A13==B2of2
+ 0.034568     667 A2 DIFF A3
+ 0.034568     320 A1==B2of2 or A11==B2of2 or A13==B2of2
+ 0.034568     649 A2 LESSTHAN A3
+ 0.034156     644 A3 LESSTHAN A10
+ 0.034156      35 A8==B2of2 and A10==B2of2
+ 0.033876     530 A11 DIVIDE A8
+ 0.033333     306 A2==B2of2 or A10==B2of2 or A12==B2of2
+ 0.033333     394 A3==B2of2 or A8==B2of2 or A9==B2of2
+ 0.033086     476 A11 SUBTRACT A12
+ 0.032922     671 A2 DIFF A10
+ 0.032922     346 A3==B2of2 or A5 or A8==B2of2
+ 0.032922      56 A3==B2of2 or A8==B2of2
+ 0.032615     527 A10 DIVIDE A13
+ 0.03251      327 A5 or A8==B2of2 or A9==B2of2
+ 0.03251      782 (A13 >= 6) and (A1 <= 51) and (A3 >= 4)
+ 0.03251       75 A8==B2of2 or A9==B2of2
+ 0.032189     411 A10 ADD A11
+ 0.032099     730 (A13 >= 7) and (A8 <= 139)
+ 0.032099     244 A1==B2of2 and A11==B2of2 and A13==B2of2
+ 0.031951     586 A13 DIVIDE A3
+ 0.031276     273 A8==B2of2 and A12==B2of2 and A13==B2of2
+ 0.031107     638 A1 MULTIPLY A11
+ 0.03059      630 A9 MULTIPLY A12
+ 0.030434     613 A4 MULTIPLY A11
+ 0.030121     632 A5 MULTIPLY A11
+ 0.030041     271 A1==B2of2 and A3==B2of2 and A13==B2of2
+ 0.030041     393 A3==B2of2 or A11==B2of2 or A12==B2of2
+ 0.029733     520 A9 DIVIDE A3
+ 0.029637     516 A8 DIVIDE A3
+ 0.02963      857 num-of-N((A5 >= 319) and (A5 <= 335) and (A8 <= 169))
+ 0.02963      270 A8==B2of2 and A9==B2of2 and A13==B2of2
+ 0.029607     461 A3 SUBTRACT A10
+ 0.029355     584 A12 DIVIDE A3
+ 0.02924      605 A3 MULTIPLY A10
+ 0.029104     485 A2 SUBTRACT A10
+ 0.029094     566 A10 DIVIDE A4
+ 0.028807     728 (A10 >= 3)
+ 0.028807     513 A5 DIVIDE A10
+ 0.028807     559 A8 DIVIDE A10
+ 0.028807     569 A2 DIVIDE A10
+ 0.028807     533 A1 DIVIDE A10
+ 0.028807     528 A13 DIVIDE A10
+ 0.028807     524 A12 DIVIDE A10
+ 0.028807     521 A3 DIVIDE A10
+ 0.028807     518 A11 DIVIDE A10
+ 0.028807     565 A4 DIVIDE A10
+ 0.028644     534 A10 DIVIDE A1
+ 0.02769      629 A2 MULTIPLY A10
+ 0.027398     575 A5 DIVIDE A11
+ 0.02716      185 A1==B2of2 xor A11==B2of2
+ 0.02716      138 A1==B2of2 equ A11==B2of2
+ 0.02716      388 A8==B2of2 or A10==B2of2 or A12==B2of2
+ 0.027076     507 A5 DIVIDE A8
+ 0.026922      10 A10
+ 0.026337     744 (A13 >= 6) and (A12 >= 1) and (A8 <= 142)
+ 0.026264     560 A10 DIVIDE A8
+ 0.025746     609 A8 MULTIPLY A11
+ 0.025566     580 A13 DIVIDE A5
+ 0.025485     506 A3 DIVIDE A1
+ 0.025055     601 A5 MULTIPLY A10
+ 0.024691     668 A11 DIFF A12
+ 0.024439     627 A4 MULTIPLY A10
+ 0.02428      379 A8==B2of2 or A12==B2of2 or A13==B2of2
+ 0.024022     424 A4 ADD A13
+ 0.023868     385 A3==B2of2 or A8==B2of2 or A13==B2of2
+ 0.023813     451 A3 SUBTRACT A4
+ 0.023765     469 A4 SUBTRACT A11
+ 0.023712     470 A4 SUBTRACT A12
+ 0.023696     624 A8 MULTIPLY A10
+ 0.023674     468 A8 SUBTRACT A13
+ 0.023667     454 A5 SUBTRACT A8
+ 0.023586     611 A1 MULTIPLY A10
+ 0.023543     435 A4 ADD A10
+ 0.023488     621 A4 MULTIPLY A5
+ 0.023457     159 A1==B2of2 xor A10==B2of2
+ 0.023457     656 A3 LESSTHAN A11
+ 0.023457     256 A1==B2of2 and A10==B2of2 and A13==B2of2
+ 0.023457     112 A1==B2of2 equ A10==B2of2
+ 0.023424     483 A4 SUBTRACT A10
+ 0.023298       4 A4
+ 0.023268     403 A3 ADD A4
+ 0.023045     386 A3==B2of2 or A8==B2of2 or A12==B2of2
+ 0.023015     422 A4 ADD A12
+ 0.023007     421 A4 ADD A11
+ 0.022796     582 A11 DIVIDE A3
+ 0.022621     466 A8 SUBTRACT A12
+ 0.022514     608 A10 MULTIPLY A13
+ 0.022374     458 A3 SUBTRACT A8
+ 0.022265     472 A4 SUBTRACT A13
+ 0.022222     743 (A11 >= 2) and (A12 >= 2)
+ 0.022222     283 A3==B2of2 and A8==B2of2 and A10==B2of2
+ 0.022219     502 A4 DIVIDE A3
+ 0.022189     505 A1 DIVIDE A3
+ 0.022122     480 A8 SUBTRACT A10
+ 0.021936     478 A8 SUBTRACT A9
+ 0.021839     603 A10 MULTIPLY A11
+ 0.021811     674 A3 DIFF A12
+ 0.021811     363 A8==B2of2 or A11==B2of2 or A12==B2of2
+ 0.021811     298 A2==B2of2 or A11==B2of2 or A12==B2of2
+ 0.021726     482 A2 SUBTRACT A8
+ 0.021714     508 A8 DIVIDE A5
+ 0.021602     465 A8 SUBTRACT A11
+ 0.021437       8 A8
+ 0.021399     344 A1==B2of2 or A10==B2of2 or A11==B2of2
+ 0.021399     664 A10 DIFF A13
+ 0.021314     417 A8 ADD A11
+ 0.021255     415 A1 ADD A8
+ 0.021204     588 A11 DIVIDE A1
+ 0.021198     434 A2 ADD A8
+ 0.021187     599 A1 MULTIPLY A5
+ 0.021006     429 A4 ADD A5
+ 0.021002     432 A8 ADD A10
+ 0.020988     670 A9 DIFF A11
+ 0.020988     653 A9 LESSTHAN A11
+ 0.020988     215 A9==B2of2 impl A11==B2of2
+ 0.02095      430 A8 ADD A9
+ 0.020582     503 A3 DIVIDE A5
+ 0.020576     844 num-of-N((A10 >= 3) and (A11 <= 2))
+ 0.020541     410 A3 ADD A8
+ 0.020428     418 A8 ADD A12
+ 0.020267     576 A11 DIVIDE A5
+ 0.020165     777 (A10 >= 3) and (A11 <= 2)
+ 0.019753     420 A8 ADD A13
+ 0.019648     463 A1 SUBTRACT A8
+ 0.019472     504 A5 DIVIDE A3
+ 0.019342     734 (A13 >= 7) and (A11 >= 2) and (A5 <= 233)
+ 0.01893      380 A1==B2of2 or A3==B2of2 or A8==B2of2
+ 0.017695     281 A8==B2of2 and A10==B2of2 and A13==B2of2
+ 0.017695     279 A8==B2of2 and A10==B2of2 and A12==B2of2
+ 0.017054     462 A10 SUBTRACT A12
+ 0.017046     407 A1 ADD A5
+ 0.017003     517 A10 DIVIDE A11
+ 0.016872     372 A8==B2of2 or A9==B2of2 or A13==B2of2
+ 0.016569     607 A1 MULTIPLY A8
+ 0.016469     514 A10 DIVIDE A5
+ 0.016

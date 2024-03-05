@@ -1,0 +1,90 @@
+dataset: cLogicalConcBEasy.arff
+ReliefF - after CI
+Ranked attributes:
+ 0.631   40 num-of-N((A4 = 1) and (A5 = 1) and (A1 = 1))
+ 0.63    39 num-of-N((A2 = 1) and (A3 = 1) and (A1 = 0))
+ 0.502   38 (A4 = 1) and (A5 = 1) and (A1 = 1)
+ 0.498   37 (A2 = 1) and (A3 = 1) and (A1 = 0)
+ 0.475   12 A3 equ A5
+ 0.475   22 A3 xor A5
+ 0.471   11 A1 equ A3
+ 0.471   21 A1 xor A3
+ 0.471   26 A1 xor A5
+ 0.471   16 A1 equ A5
+ 0.464   10 A3 equ A4
+ 0.464   20 A3 xor A4
+ 0.454   14 A1 equ A4
+ 0.454   24 A1 xor A4
+ 0.453   25 A2 xor A5
+ 0.453   15 A2 equ A5
+ 0.449    9 A1 equ A2
+ 0.449   19 A1 xor A2
+ 0.442   23 A2 xor A4
+ 0.442   13 A2 equ A4
+ 0.34     7 A2 equ A3
+ 0.34    17 A2 xor A3
+ 0.338    8 A4 equ A5
+ 0.338   18 A4 xor A5
+ 0.33    36 A1 impl A5
+ 0.311   34 A1 impl A4
+ 0.261    1 A1
+ 0.242   30 A3 impl A4
+ 0.24    32 A3 impl A5
+ 0.238    5 A5
+ 0.237    3 A3
+ 0.227    4 A4
+ 0.227   33 A2 impl A4
+ 0.219   35 A2 impl A5
+ 0.215    2 A2
+ 0.181   27 A2 impl A3
+ 0.174   28 A4 impl A5
+ 0.121   31 A1 impl A3
+ 0.115   29 A1 impl A2
+ 0        6 A6
+
+
+dataset: cLogicalConcBEasyNoisy.arff
+ReliefF - after CI
+Ranked attributes:
+ 0.4609   40 num-of-N((A3 = 1) and (A2 = 1) and (A1 = 0))
+ 0.4475   39 num-of-N((A5 = 1) and (A4 = 1) and (A1 = 1))
+ 0.3521   38 (A3 = 1) and (A2 = 1) and (A1 = 0)
+ 0.3192   22 A1 xor A3
+ 0.3192   12 A1 equ A3
+ 0.3124   10 A1 equ A2
+ 0.3124   20 A1 xor A2
+ 0.3099   24 A1 xor A4
+ 0.3099   14 A1 equ A4
+ 0.3083   16 A1 equ A5
+ 0.3083   26 A1 xor A5
+ 0.297    37 (A5 = 1) and (A4 = 1) and (A1 = 1)
+ 0.2963    9 A3 equ A4
+ 0.2963   19 A3 xor A4
+ 0.295    11 A3 equ A5
+ 0.295    21 A3 xor A5
+ 0.2903   17 A2 xor A3
+ 0.2903    7 A2 equ A3
+ 0.285    23 A2 xor A4
+ 0.285    13 A2 equ A4
+ 0.2837   15 A2 equ A5
+ 0.2837   25 A2 xor A5
+ 0.2769    8 A4 equ A5
+ 0.2769   18 A4 xor A5
+ 0.2065   36 A1 impl A5
+ 0.1984   34 A1 impl A4
+ 0.1684    1 A1
+ 0.1635   31 A3 impl A5
+ 0.1554    3 A3
+ 0.1441   27 A2 impl A3
+ 0.144     2 A2
+ 0.1417   28 A4 impl A5
+ 0.1416   35 A2 impl A5
+ 0.1409    4 A4
+ 0.1408   33 A2 impl A4
+ 0.1396    5 A5
+ 0.1365   29 A3 impl A4
+ 0.0764   32 A1 impl A3
+ 0.0724   30 A1 impl A2
+ 0.0224    6 A6
+
+

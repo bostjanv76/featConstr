@@ -1,0 +1,55 @@
+dataset: rConcept.arff
+A1='(0.499969-inf)'
+A2='(0.49972-inf)'
+A3='(0.500096-inf)'
+A4='(0.500486-inf)'
+A5='(0.498512-inf)'
+A6='(0.50014-inf)'
+dataset: rConceptCond.arff
+A1='(0.500175-inf)'
+A2='(0.500293-inf)'
+A3='(0.499977-inf)'
+A4='(0.500117-inf)'
+A5='(0.50012-inf)'
+dataset: rDisjunctBin.arff
+A5='(0.499285-inf)'
+dataset: rLinear.arff
+A1='(0.499791-inf)'
+A2='(0.4998-inf)'
+A3='(0.499872-inf)'
+A4='(0.500424-inf)'
+A5='(0.499609-inf)'
+dataset: rLinNoisy.arff
+A1='(0.511591-inf)'
+A2='(0.498307-inf)'
+A3='(0.497679-inf)'
+A4='(0.500152-inf)'
+A5='(0.496755-inf)'
+dataset: rLocLinear.arff
+A1='(0.50008-inf)'
+A2='(0.49991-inf)'
+A5='(0.50034-inf)'
+dataset: rNonLinPoly.arff
+A1='(0.5-inf)'
+A2='(0.500065-inf)'
+A3='(0.499977-inf)'
+A4='(0.5002-inf)'
+A5='(0.500143-inf)'
+dataset: rNonLinTrig.arff
+A1='(0.500172-inf)'
+A2='(0.500601-inf)'
+A3='(0.500023-inf)'
+A4='(0.500577-inf)'
+A5='(0.500269-inf)'
+dataset: rRandom.arff
+A1='(0.500236-inf)'
+A2='(0.500781-inf)'
+A3='(0.50007-inf)'
+A4='(0.500266-inf)'
+A5='(0.500244-inf)'
+dataset: rRedundant.arff
+A1='(0.500055-inf)'
+A2='(0.499958-inf)'
+A3='(0.499958-inf)'
+A4='(0.50012-inf)'
+A5='(0.50012-inf)'

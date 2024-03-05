@@ -1,0 +1,5758 @@
+dataset: cBinClassDisAttr-uniqueInst.arff
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 1, minNoise=3 we remove groups of size 3. Tree SHAP num of expl. inst. 78 (fold 1). Explaining class: 1).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  1
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	A1: 78
+--------------
+Threshold: 0,20
+--------------
+	A1: 78
+--------------
+Threshold: 0,30
+--------------
+	A1: 78
+--------------
+Threshold: 0,40
+--------------
+	A1: 72
+	A1 | A2: 6
+--------------
+Threshold: 0,50
+--------------
+	A1: 62
+	A1 | A2: 11
+--------------
+Threshold: 0,60
+--------------
+	A1: 51
+	A1 | A2: 22
+--------------
+Threshold: 0,70
+--------------
+	A1 | A2: 51
+	A1: 16
+	A1 | A2 | A3: 6
+--------------
+Threshold: 0,80
+--------------
+	A1 | A2: 42
+	A1 | A2 | A3: 15
+	A1 | A2 | A4: 15
+	A1: 6
+*********************************************************************************
+All potential concepts based on thresholds
+	A1 A2 ~#~ A1 A2 A3 ~#~ A1 A2 A4 ~#~ 
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 1, minNoise=3 we remove groups of size 3. Tree SHAP num of expl. inst. 78 (fold 2). Explaining class: 1).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  2
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	A1: 78
+--------------
+Threshold: 0,20
+--------------
+	A1: 78
+--------------
+Threshold: 0,30
+--------------
+	A1: 78
+--------------
+Threshold: 0,40
+--------------
+	A1: 69
+	A1 | A2: 6
+--------------
+Threshold: 0,50
+--------------
+	A1: 63
+	A1 | A2: 6
+	A1 | A4: 5
+	A1 | A3: 4
+--------------
+Threshold: 0,60
+--------------
+	A1: 46
+	A1 | A2: 23
+	A1 | A4: 5
+	A1 | A3: 4
+--------------
+Threshold: 0,70
+--------------
+	A1 | A2: 50
+	A1: 13
+	A1 | A2 | A4: 6
+	A1 | A3: 4
+--------------
+Threshold: 0,80
+--------------
+	A1 | A2: 44
+	A1 | A2 | A4: 16
+	A1 | A2 | A3: 13
+	A1: 5
+*********************************************************************************
+All potential concepts based on thresholds
+	A1 A2 ~#~ A1 A4 ~#~ A1 A3 ~#~ A1 A2 A4 ~#~ A1 A2 A3 ~#~ 
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 1, minNoise=3 we remove groups of size 3. Tree SHAP num of expl. inst. 78 (fold 3). Explaining class: 1).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  3
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	A1: 75
+--------------
+Threshold: 0,20
+--------------
+	A1: 75
+--------------
+Threshold: 0,30
+--------------
+	A1: 75
+--------------
+Threshold: 0,40
+--------------
+	A1: 65
+	A1 | A3: 5
+--------------
+Threshold: 0,50
+--------------
+	A1: 62
+	A1 | A4: 6
+	A1 | A3: 5
+--------------
+Threshold: 0,60
+--------------
+	A1: 50
+	A1 | A2: 14
+	A1 | A4: 6
+	A1 | A3: 5
+--------------
+Threshold: 0,70
+--------------
+	A1 | A2: 39
+	A1: 23
+	A1 | A2 | A3: 7
+	A1 | A2 | A4: 6
+--------------
+Threshold: 0,80
+--------------
+	A1 | A2: 51
+	A1 | A2 | A3: 11
+	A1 | A2 | A4: 10
+	A1: 6
+*********************************************************************************
+All potential concepts based on thresholds
+	A1 A3 ~#~ A1 A4 ~#~ A1 A2 ~#~ A1 A2 A3 ~#~ A1 A2 A4 ~#~ 
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 1, minNoise=3 we remove groups of size 3. Tree SHAP num of expl. inst. 78 (fold 4). Explaining class: 1).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  4
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	A1: 75
+--------------
+Threshold: 0,20
+--------------
+	A1: 75
+--------------
+Threshold: 0,30
+--------------
+	A1: 75
+--------------
+Threshold: 0,40
+--------------
+	A1: 64
+	A1 | A4: 9
+	A1 | A3: 5
+--------------
+Threshold: 0,50
+--------------
+	A1: 61
+	A1 | A4: 9
+	A1 | A3: 8
+--------------
+Threshold: 0,60
+--------------
+	A1: 44
+	A1 | A2: 17
+	A1 | A4: 9
+	A1 | A3: 8
+--------------
+Threshold: 0,70
+--------------
+	A1 | A2: 43
+	A1: 18
+	A1 | A3: 6
+	A1 | A4: 6
+--------------
+Threshold: 0,80
+--------------
+	A1 | A2: 41
+	A1 | A2 | A3: 16
+	A1 | A2 | A4: 15
+	A1: 6
+*********************************************************************************
+All potential concepts based on thresholds
+	A1 A4 ~#~ A1 A3 ~#~ A1 A2 ~#~ A1 A2 A3 ~#~ A1 A2 A4 ~#~ 
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 1, minNoise=3 we remove groups of size 3. Tree SHAP num of expl. inst. 78 (fold 5). Explaining class: 1).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  5
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	A1: 65
+	A3: 8
+	A4: 5
+--------------
+Threshold: 0,20
+--------------
+	A1: 65
+	A3: 8
+	A4: 5
+--------------
+Threshold: 0,30
+--------------
+	A1: 65
+	A3: 8
+	A4: 5
+--------------
+Threshold: 0,40
+--------------
+	A1: 62
+	A1 | A3: 5
+	A1 | A4: 5
+--------------
+Threshold: 0,50
+--------------
+	A1: 62
+	A1 | A3: 5
+	A1 | A4: 5
+--------------
+Threshold: 0,60
+--------------
+	A1: 38
+	A1 | A2: 24
+	A1 | A3: 5
+	A1 | A4: 5
+--------------
+Threshold: 0,70
+--------------
+	A1 | A2: 47
+	A1: 15
+	A1 | A2 | A4: 8
+	A1 | A2 | A3: 5
+--------------
+Threshold: 0,80
+--------------
+	A1 | A2: 42
+	A1 | A2 | A4: 16
+	A1 | A2 | A3: 14
+	A1: 6
+*********************************************************************************
+All potential concepts based on thresholds
+	A1 A3 ~#~ A1 A4 ~#~ A1 A2 ~#~ A1 A2 A4 ~#~ A1 A2 A3 ~#~ 
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 1, minNoise=3 we remove groups of size 3. Tree SHAP num of expl. inst. 78 (fold 6). Explaining class: 1).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  6
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	A1: 78
+--------------
+Threshold: 0,20
+--------------
+	A1: 78
+--------------
+Threshold: 0,30
+--------------
+	A1: 78
+--------------
+Threshold: 0,40
+--------------
+	A1: 78
+--------------
+Threshold: 0,50
+--------------
+	A1: 68
+	A1 | A2: 10
+--------------
+Threshold: 0,60
+--------------
+	A1: 53
+	A1 | A2: 25
+--------------
+Threshold: 0,70
+--------------
+	A1 | A2: 65
+	A1: 13
+--------------
+Threshold: 0,80
+--------------
+	A1 | A2: 45
+	A1 | A2 | A4: 16
+	A1 | A2 | A3: 12
+	A1: 5
+*********************************************************************************
+All potential concepts based on thresholds
+	A1 A2 ~#~ A1 A2 A4 ~#~ A1 A2 A3 ~#~ 
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 1, minNoise=3 we remove groups of size 3. Tree SHAP num of expl. inst. 78 (fold 7). Explaining class: 1).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  7
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	A1: 75
+--------------
+Threshold: 0,20
+--------------
+	A1: 75
+--------------
+Threshold: 0,30
+--------------
+	A1: 75
+--------------
+Threshold: 0,40
+--------------
+	A1: 64
+	A1 | A3: 9
+	A1 | A4: 5
+--------------
+Threshold: 0,50
+--------------
+	A1: 61
+	A1 | A3: 9
+	A1 | A4: 8
+--------------
+Threshold: 0,60
+--------------
+	A1: 52
+	A1 | A2: 9
+	A1 | A3: 9
+	A1 | A4: 8
+--------------
+Threshold: 0,70
+--------------
+	A1 | A2: 36
+	A1: 25
+	A1 | A4: 6
+	A1 | A2 | A3: 6
+--------------
+Threshold: 0,80
+--------------
+	A1 | A2: 50
+	A1 | A2 | A3: 11
+	A1 | A2 | A4: 11
+	A1: 6
+*********************************************************************************
+All potential concepts based on thresholds
+	A1 A3 ~#~ A1 A4 ~#~ A1 A2 ~#~ A1 A2 A3 ~#~ A1 A2 A4 ~#~ 
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 1, minNoise=3 we remove groups of size 3. Tree SHAP num of expl. inst. 79 (fold 8). Explaining class: 1).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  8
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	A1: 79
+--------------
+Threshold: 0,20
+--------------
+	A1: 79
+--------------
+Threshold: 0,30
+--------------
+	A1: 79
+--------------
+Threshold: 0,40
+--------------
+	A1: 67
+	A1 | A2: 6
+	A1 | A3: 6
+--------------
+Threshold: 0,50
+--------------
+	A1: 61
+	A1 | A2: 6
+	A1 | A3: 6
+	A1 | A4: 6
+--------------
+Threshold: 0,60
+--------------
+	A1: 49
+	A1 | A2: 18
+	A1 | A3: 6
+	A1 | A4: 6
+--------------
+Threshold: 0,70
+--------------
+	A1 | A2: 48
+	A1: 13
+	A1 | A2 | A3: 9
+	A1 | A4: 6
+--------------
+Threshold: 0,80
+--------------
+	A1 | A2: 44
+	A1 | A2 | A4: 17
+	A1 | A2 | A3: 14
+	A1: 4
+*********************************************************************************
+All potential concepts based on thresholds
+	A1 A2 ~#~ A1 A3 ~#~ A1 A4 ~#~ A1 A2 A3 ~#~ A1 A2 A4 ~#~ 
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 1, minNoise=3 we remove groups of size 3. Tree SHAP num of expl. inst. 79 (fold 9). Explaining class: 1).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  9
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	A1: 70
+	A2: 6
+--------------
+Threshold: 0,20
+--------------
+	A1: 70
+	A2: 6
+--------------
+Threshold: 0,30
+--------------
+	A1: 70
+	A2: 6
+--------------
+Threshold: 0,40
+--------------
+	A1: 63
+	A2 | A3: 9
+	A1 | A2: 7
+--------------
+Threshold: 0,50
+--------------
+	A1: 63
+	A2 | A3: 9
+	A1 | A2: 7
+--------------
+Threshold: 0,60
+--------------
+	A1 | A2: 36
+	A1: 33
+	A2 | A3: 9
+--------------
+Threshold: 0,70
+--------------
+	A1 | A2: 52
+	A1: 11
+	A1 | A2 | A4: 7
+	A1 | A2 | A3: 6
+--------------
+Threshold: 0,80
+--------------
+	A1 | A2: 41
+	A1 | A2 | A3: 19
+	A1 | A2 | A4: 16
+*********************************************************************************
+All potential concepts based on thresholds
+	A2 A3 ~#~ A1 A2 ~#~ A1 A2 A4 ~#~ A1 A2 A3 ~#~ 
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 1, minNoise=3 we remove groups of size 3. Tree SHAP num of expl. inst. 79 (fold 10). Explaining class: 1).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold 10
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	A1: 79
+--------------
+Threshold: 0,20
+--------------
+	A1: 79
+--------------
+Threshold: 0,30
+--------------
+	A1: 79
+--------------
+Threshold: 0,40
+--------------
+	A1: 67
+	A1 | A3: 9
+--------------
+Threshold: 0,50
+--------------
+	A1: 62
+	A1 | A3: 9
+	A1 | A2: 5
+--------------
+Threshold: 0,60
+--------------
+	A1: 46
+	A1 | A2: 21
+	A1 | A3: 9
+--------------
+Threshold: 0,70
+--------------
+	A1 | A2: 51
+	A1: 13
+	A1 | A2 | A3: 9
+--------------
+Threshold: 0,80
+--------------
+	A1 | A2: 44
+	A1 | A2 | A4: 17
+	A1 | A2 | A3: 14
+	A1: 4
+*********************************************************************************
+All potential concepts based on thresholds
+	A1 A3 ~#~ A1 A2 ~#~ A1 A2 A3 ~#~ A1 A2 A4 ~#~ 
+*********************************************************************************
+dataset: cBinClassNumBinAttr.arff
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 3, minNoise=3 we remove groups of size 3. Tree SHAP num of expl. inst. 210 (fold 1). Explaining class: 1).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  1
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	A3: 137
+	A4: 73
+--------------
+Threshold: 0,20
+--------------
+	A3: 137
+	A4: 73
+--------------
+Threshold: 0,30
+--------------
+	A3: 137
+	A4: 73
+--------------
+Threshold: 0,40
+--------------
+	A3: 136
+	A4: 73
+--------------
+Threshold: 0,50
+--------------
+	A2 | A3: 125
+	A4: 73
+	A3: 12
+--------------
+Threshold: 0,60
+--------------
+	A2 | A3: 137
+	A4: 73
+--------------
+Threshold: 0,70
+--------------
+	A1 | A2 | A3: 125
+	A4: 37
+	A3 | A4: 36
+	A2 | A3: 12
+--------------
+Threshold: 0,80
+--------------
+	A1 | A2 | A3: 125
+	A3 | A4: 36
+	A1 | A4: 36
+	A2 | A3 | A4: 12
+*********************************************************************************
+All potential concepts based on thresholds
+	A2 A3 ~#~ A1 A2 A3 ~#~ A3 A4 ~#~ A1 A4 ~#~ A2 A3 A4 ~#~ 
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 3, minNoise=3 we remove groups of size 3. Tree SHAP num of expl. inst. 210 (fold 2). Explaining class: 1).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  2
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	A3: 138
+	A4: 72
+--------------
+Threshold: 0,20
+--------------
+	A3: 138
+	A4: 72
+--------------
+Threshold: 0,30
+--------------
+	A3: 138
+	A4: 72
+--------------
+Threshold: 0,40
+--------------
+	A3: 138
+	A4: 72
+--------------
+Threshold: 0,50
+--------------
+	A2 | A3: 138
+	A4: 72
+--------------
+Threshold: 0,60
+--------------
+	A2 | A3: 138
+	A4: 71
+--------------
+Threshold: 0,70
+--------------
+	A2 | A3: 137
+	A4: 36
+	A3 | A4: 36
+--------------
+Threshold: 0,80
+--------------
+	A1 | A2 | A3: 128
+	A3 | A4: 39
+	A1 | A4: 26
+	A2 | A3 | A4: 10
+	A4: 7
+*********************************************************************************
+All potential concepts based on thresholds
+	A2 A3 ~#~ A3 A4 ~#~ A1 A2 A3 ~#~ A1 A4 ~#~ A2 A3 A4 ~#~ 
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 3, minNoise=3 we remove groups of size 3. Tree SHAP num of expl. inst. 210 (fold 3). Explaining class: 1).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  3
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	A3: 136
+	A4: 74
+--------------
+Threshold: 0,20
+--------------
+	A3: 136
+	A4: 74
+--------------
+Threshold: 0,30
+--------------
+	A3: 136
+	A4: 74
+--------------
+Threshold: 0,40
+--------------
+	A3: 136
+	A4: 74
+--------------
+Threshold: 0,50
+--------------
+	A1 | A3: 128
+	A4: 74
+	A2 | A3: 8
+--------------
+Threshold: 0,60
+--------------
+	A1 | A3: 128
+	A4: 74
+	A2 | A3: 8
+--------------
+Threshold: 0,70
+--------------
+	A1 | A2 | A3: 128
+	A4: 37
+	A3 | A4: 37
+	A2 | A3: 8
+--------------
+Threshold: 0,80
+--------------
+	A1 | A2 | A3: 128
+	A3 | A4: 39
+	A1 | A4: 34
+	A2 | A3 | A4: 8
+*********************************************************************************
+All potential concepts based on thresholds
+	A1 A3 ~#~ A2 A3 ~#~ A1 A2 A3 ~#~ A3 A4 ~#~ A1 A4 ~#~ A2 A3 A4 ~#~ 
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 3, minNoise=3 we remove groups of size 3. Tree SHAP num of expl. inst. 210 (fold 4). Explaining class: 1).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  4
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	A3: 132
+	A4: 78
+--------------
+Threshold: 0,20
+--------------
+	A3: 132
+	A4: 78
+--------------
+Threshold: 0,30
+--------------
+	A3: 132
+	A4: 78
+--------------
+Threshold: 0,40
+--------------
+	A3: 132
+	A4: 78
+--------------
+Threshold: 0,50
+--------------
+	A2 | A3: 126
+	A4: 78
+	A3 | A4: 6
+--------------
+Threshold: 0,60
+--------------
+	A2 | A3: 126
+	A4: 78
+	A3 | A4: 6
+--------------
+Threshold: 0,70
+--------------
+	A1 | A2 | A3: 121
+	A3 | A4: 43
+	A4: 41
+	A2 | A3: 5
+--------------
+Threshold: 0,80
+--------------
+	A1 | A2 | A3: 121
+	A3 | A4: 35
+	A1 | A4: 32
+	A2 | A3 | A4: 17
+	A4: 5
+*********************************************************************************
+All potential concepts based on thresholds
+	A2 A3 ~#~ A3 A4 ~#~ A1 A2 A3 ~#~ A1 A4 ~#~ A2 A3 A4 ~#~ 
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 3, minNoise=3 we remove groups of size 3. Tree SHAP num of expl. inst. 210 (fold 5). Explaining class: 1).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  5
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	A3: 131
+	A4: 79
+--------------
+Threshold: 0,20
+--------------
+	A3: 131
+	A4: 79
+--------------
+Threshold: 0,30
+--------------
+	A3: 131
+	A4: 79
+--------------
+Threshold: 0,40
+--------------
+	A3: 131
+	A4: 79
+--------------
+Threshold: 0,50
+--------------
+	A2 | A3: 124
+	A4: 79
+	A3 | A4: 7
+--------------
+Threshold: 0,60
+--------------
+	A2 | A3: 124
+	A4: 79
+	A3 | A4: 7
+--------------
+Threshold: 0,70
+--------------
+	A1 | A2 | A3: 119
+	A3 | A4: 45
+	A4: 41
+	A2 | A3: 5
+--------------
+Threshold: 0,80
+--------------
+	A1 | A2 | A3: 119
+	A1 | A4: 40
+	A3 | A4: 34
+	A2 | A3 | A4: 17
+*********************************************************************************
+All potential concepts based on thresholds
+	A2 A3 ~#~ A3 A4 ~#~ A1 A2 A3 ~#~ A1 A4 ~#~ A2 A3 A4 ~#~ 
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 3, minNoise=3 we remove groups of size 3. Tree SHAP num of expl. inst. 210 (fold 6). Explaining class: 1).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  6
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	A3: 137
+	A4: 73
+--------------
+Threshold: 0,20
+--------------
+	A3: 137
+	A4: 73
+--------------
+Threshold: 0,30
+--------------
+	A3: 137
+	A4: 73
+--------------
+Threshold: 0,40
+--------------
+	A3: 137
+	A4: 73
+--------------
+Threshold: 0,50
+--------------
+	A2 | A3: 137
+	A4: 73
+--------------
+Threshold: 0,60
+--------------
+	A2 | A3: 137
+	A4: 73
+--------------
+Threshold: 0,70
+--------------
+	A1 | A2 | A3: 125
+	A3 | A4: 37
+	A4: 36
+	A2 | A3: 12
+--------------
+Threshold: 0,80
+--------------
+	A1 | A2 | A3: 125
+	A3 | A4: 35
+	A1 | A4: 33
+	A2 | A3 | A4: 17
+*********************************************************************************
+All potential concepts based on thresholds
+	A2 A3 ~#~ A1 A2 A3 ~#~ A3 A4 ~#~ A1 A4 ~#~ A2 A3 A4 ~#~ 
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 3, minNoise=3 we remove groups of size 3. Tree SHAP num of expl. inst. 210 (fold 7). Explaining class: 1).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  7
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	A3: 137
+	A4: 73
+--------------
+Threshold: 0,20
+--------------
+	A3: 137
+	A4: 73
+--------------
+Threshold: 0,30
+--------------
+	A3: 137
+	A4: 73
+--------------
+Threshold: 0,40
+--------------
+	A3: 137
+	A4: 73
+--------------
+Threshold: 0,50
+--------------
+	A2 | A3: 129
+	A4: 73
+	A3 | A4: 8
+--------------
+Threshold: 0,60
+--------------
+	A2 | A3: 129
+	A4: 73
+	A3 | A4: 8
+--------------
+Threshold: 0,70
+--------------
+	A1 | A2 | A3: 125
+	A3 | A4: 46
+	A4: 35
+	A2 | A3: 4
+--------------
+Threshold: 0,80
+--------------
+	A1 | A2 | A3: 125
+	A3 | A4: 35
+	A1 | A4: 34
+	A2 | A3 | A4: 16
+*********************************************************************************
+All potential concepts based on thresholds
+	A2 A3 ~#~ A3 A4 ~#~ A1 A2 A3 ~#~ A1 A4 ~#~ A2 A3 A4 ~#~ 
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 3, minNoise=3 we remove groups of size 3. Tree SHAP num of expl. inst. 209 (fold 8). Explaining class: 1).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  8
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	A3: 134
+	A4: 75
+--------------
+Threshold: 0,20
+--------------
+	A3: 134
+	A4: 75
+--------------
+Threshold: 0,30
+--------------
+	A3: 134
+	A4: 75
+--------------
+Threshold: 0,40
+--------------
+	A3: 134
+	A4: 75
+--------------
+Threshold: 0,50
+--------------
+	A2 | A3: 134
+	A4: 75
+--------------
+Threshold: 0,60
+--------------
+	A2 | A3: 134
+	A4: 75
+--------------
+Threshold: 0,70
+--------------
+	A1 | A2 | A3: 123
+	A4: 38
+	A3 | A4: 36
+	A2 | A3: 11
+--------------
+Threshold: 0,80
+--------------
+	A1 | A2 | A3: 123
+	A1 | A4: 37
+	A3 | A4: 35
+	A2 | A3 | A4: 14
+*********************************************************************************
+All potential concepts based on thresholds
+	A2 A3 ~#~ A1 A2 A3 ~#~ A3 A4 ~#~ A1 A4 ~#~ A2 A3 A4 ~#~ 
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 3, minNoise=3 we remove groups of size 3. Tree SHAP num of expl. inst. 209 (fold 9). Explaining class: 1).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  9
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	A3: 134
+	A4: 75
+--------------
+Threshold: 0,20
+--------------
+	A3: 134
+	A4: 75
+--------------
+Threshold: 0,30
+--------------
+	A3: 134
+	A4: 75
+--------------
+Threshold: 0,40
+--------------
+	A3: 134
+	A4: 75
+--------------
+Threshold: 0,50
+--------------
+	A2 | A3: 128
+	A4: 75
+	A3: 6
+--------------
+Threshold: 0,60
+--------------
+	A2 | A3: 134
+	A4: 75
+--------------
+Threshold: 0,70
+--------------
+	A1 | A2 | A3: 125
+	A4: 38
+	A3 | A4: 37
+	A2 | A3: 9
+--------------
+Threshold: 0,80
+--------------
+	A1 | A2 | A3: 125
+	A1 | A4: 35
+	A3 | A4: 34
+	A2 | A3 | A4: 14
+*********************************************************************************
+All potential concepts based on thresholds
+	A2 A3 ~#~ A1 A2 A3 ~#~ A3 A4 ~#~ A1 A4 ~#~ A2 A3 A4 ~#~ 
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 3, minNoise=3 we remove groups of size 3. Tree SHAP num of expl. inst. 209 (fold 10). Explaining class: 1).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold 10
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	A3: 134
+	A4: 75
+--------------
+Threshold: 0,20
+--------------
+	A3: 134
+	A4: 75
+--------------
+Threshold: 0,30
+--------------
+	A3: 134
+	A4: 75
+--------------
+Threshold: 0,40
+--------------
+	A3: 134
+	A4: 75
+--------------
+Threshold: 0,50
+--------------
+	A2 | A3: 134
+	A4: 75
+--------------
+Threshold: 0,60
+--------------
+	A2 | A3: 134
+	A4: 75
+--------------
+Threshold: 0,70
+--------------
+	A1 | A2 | A3: 102
+	A4: 39
+	A3 | A4: 36
+	A2 | A3: 32
+--------------
+Threshold: 0,80
+--------------
+	A1 | A2 | A3: 123
+	A3 | A4: 40
+	A1 | A4: 34
+	A2 | A3 | A4: 11
+*********************************************************************************
+All potential concepts based on thresholds
+	A2 A3 ~#~ A1 A2 A3 ~#~ A3 A4 ~#~ A1 A4 ~#~ A2 A3 A4 ~#~ 
+*********************************************************************************
+dataset: cBinClassNumDisAttr.arff
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 4, minNoise=3 we remove groups of size 4. Tree SHAP num of expl. inst. 338 (fold 1). Explaining class: 1).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  1
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	A1: 283
+	A4: 55
+--------------
+Threshold: 0,20
+--------------
+	A1: 283
+	A4: 55
+--------------
+Threshold: 0,30
+--------------
+	A1: 283
+	A4: 55
+--------------
+Threshold: 0,40
+--------------
+	A1: 189
+	A1 | A2: 94
+	A1 | A4: 31
+	A4: 24
+--------------
+Threshold: 0,50
+--------------
+	A1: 152
+	A1 | A2: 131
+	A1 | A4: 50
+	A4: 5
+--------------
+Threshold: 0,60
+--------------
+	A1 | A2: 283
+	A1 | A4: 55
+--------------
+Threshold: 0,70
+--------------
+	A1 | A2: 227
+	A1 | A2 | A3: 56
+	A1 | A3 | A4: 44
+	A1 | A4: 11
+--------------
+Threshold: 0,80
+--------------
+	A1 | A2: 164
+	A1 | A2 | A3: 103
+	A1 | A3 | A4: 50
+	A1 | A2 | A4: 21
+*********************************************************************************
+All potential concepts based on thresholds
+	A1 A2 ~#~ A1 A4 ~#~ A1 A2 A3 ~#~ A1 A3 A4 ~#~ A1 A2 A4 ~#~ 
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 4, minNoise=3 we remove groups of size 4. Tree SHAP num of expl. inst. 338 (fold 2). Explaining class: 1).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  2
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	A1: 195
+	A2: 85
+	A4: 58
+--------------
+Threshold: 0,20
+--------------
+	A1: 195
+	A2: 85
+	A4: 58
+--------------
+Threshold: 0,30
+--------------
+	A1: 195
+	A2: 84
+	A4: 58
+--------------
+Threshold: 0,40
+--------------
+	A1: 177
+	A1 | A2: 102
+	A4: 56
+--------------
+Threshold: 0,50
+--------------
+	A1 | A2: 275
+	A2 | A4: 29
+	A4: 28
+	A1: 5
+--------------
+Threshold: 0,60
+--------------
+	A1 | A2: 278
+	A2 | A4: 51
+	A4: 6
+--------------
+Threshold: 0,70
+--------------
+	A1 | A2: 236
+	A1 | A2 | A3: 44
+	A2 | A4: 36
+	A2 | A3 | A4: 20
+--------------
+Threshold: 0,80
+--------------
+	A1 | A2: 137
+	A1 | A2 | A3: 97
+	A1 | A2 | A4: 71
+	A2 | A3 | A4: 24
+	A2 | A4: 6
+*********************************************************************************
+All potential concepts based on thresholds
+	A1 A2 ~#~ A2 A4 ~#~ A1 A2 A3 ~#~ A2 A3 A4 ~#~ A1 A2 A4 ~#~ 
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 4, minNoise=3 we remove groups of size 4. Tree SHAP num of expl. inst. 338 (fold 3). Explaining class: 1).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  3
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	A1: 284
+	A4: 53
+--------------
+Threshold: 0,20
+--------------
+	A1: 284
+	A4: 53
+--------------
+Threshold: 0,30
+--------------
+	A1: 282
+	A4: 53
+--------------
+Threshold: 0,40
+--------------
+	A1: 199
+	A1 | A2: 71
+	A1 | A4: 31
+	A4: 18
+	A1 | A3: 15
+--------------
+Threshold: 0,50
+--------------
+	A1 | A2: 244
+	A1 | A4: 39
+	A1: 26
+	A1 | A3: 15
+	A4: 6
+--------------
+Threshold: 0,60
+--------------
+	A1 | A2: 264
+	A1 | A4: 25
+	A1 | A3 | A4: 16
+	A1 | A3: 13
+	A2 | A4: 10
+	A1 | A2 | A3: 8
+--------------
+Threshold: 0,70
+--------------
+	A1 | A2: 197
+	A1 | A2 | A3: 87
+	A1 | A3 | A4: 22
+	A1 | A2 | A4: 21
+	A2 | A4: 10
+--------------
+Threshold: 0,80
+--------------
+	A1 | A2: 148
+	A1 | A2 | A3: 98
+	A1 | A2 | A4: 62
+	A1 | A3 | A4: 22
+	A1 | A2 | A3 | A5: 6
+*********************************************************************************
+All potential concepts based on thresholds
+	A1 A2 ~#~ A1 A4 ~#~ A1 A3 ~#~ A1 A3 A4 ~#~ A2 A4 ~#~ A1 A2 A3 ~#~ A1 A2 A4 ~#~ A1 A2 A3 A5 ~#~ 
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 4, minNoise=3 we remove groups of size 4. Tree SHAP num of expl. inst. 338 (fold 4). Explaining class: 1).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  4
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	A1: 230
+	A3: 54
+	A4: 54
+--------------
+Threshold: 0,20
+--------------
+	A1: 230
+	A3: 54
+	A4: 54
+--------------
+Threshold: 0,30
+--------------
+	A1: 230
+	A3: 54
+	A4: 54
+--------------
+Threshold: 0,40
+--------------
+	A1: 179
+	A1 | A3: 105
+	A3 | A4: 52
+--------------
+Threshold: 0,50
+--------------
+	A1: 178
+	A1 | A3: 105
+	A3 | A4: 52
+--------------
+Threshold: 0,60
+--------------
+	A1 | A2: 177
+	A1 | A3: 104
+	A1 | A3 | A4: 44
+	A3 | A4: 8
+--------------
+Threshold: 0,70
+--------------
+	A1 | A2: 179
+	A1 | A3: 66
+	A1 | A3 | A4: 54
+	A1 | A2 | A3: 39
+--------------
+Threshold: 0,80
+--------------
+	A1 | A2: 179
+	A1 | A2 | A3: 105
+	A1 | A3 | A4: 43
+	A1 | A2 | A3 | A4: 11
+*********************************************************************************
+All potential concepts based on thresholds
+	A1 A3 ~#~ A3 A4 ~#~ A1 A2 ~#~ A1 A3 A4 ~#~ A1 A2 A3 ~#~ A1 A2 A3 A4 ~#~ 
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 4, minNoise=3 we remove groups of size 4. Tree SHAP num of expl. inst. 338 (fold 5). Explaining class: 1).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  5
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	A1: 176
+	A3: 105
+	A4: 57
+--------------
+Threshold: 0,20
+--------------
+	A1: 176
+	A3: 105
+	A4: 57
+--------------
+Threshold: 0,30
+--------------
+	A1: 176
+	A3: 105
+	A4: 57
+--------------
+Threshold: 0,40
+--------------
+	A1: 176
+	A1 | A3: 105
+	A3 | A4: 57
+--------------
+Threshold: 0,50
+--------------
+	A1 | A3: 105
+	A1: 92
+	A1 | A2: 84
+	A3 | A4: 57
+--------------
+Threshold: 0,60
+--------------
+	A1 | A2: 176
+	A1 | A3: 93
+	A3 | A4: 57
+	A1 | A2 | A3: 12
+--------------
+Threshold: 0,70
+--------------
+	A1 | A2: 176
+	A1 | A2 | A3: 69
+	A2 | A3 | A4: 56
+	A1 | A3: 36
+--------------
+Threshold: 0,80
+--------------
+	A1 | A2: 174
+	A1 | A2 | A3: 105
+	A2 | A3 | A4: 54
+*********************************************************************************
+All potential concepts based on thresholds
+	A1 A3 ~#~ A3 A4 ~#~ A1 A2 ~#~ A1 A2 A3 ~#~ A2 A3 A4 ~#~ 
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 4, minNoise=3 we remove groups of size 4. Tree SHAP num of expl. inst. 337 (fold 6). Explaining class: 1).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  6
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	A2: 158
+	A1: 116
+	A4: 56
+	A3: 7
+--------------
+Threshold: 0,20
+--------------
+	A2: 158
+	A1: 116
+	A4: 56
+	A3: 7
+--------------
+Threshold: 0,30
+--------------
+	A2: 158
+	A1: 116
+	A4: 56
+	A3: 7
+--------------
+Threshold: 0,40
+--------------
+	A2: 144
+	A1 | A3: 89
+	A3 | A4: 55
+	A1: 33
+	A1 | A2: 14
+--------------
+Threshold: 0,50
+--------------
+	A1 | A2: 189
+	A1 | A3: 89
+	A3 | A4: 57
+--------------
+Threshold: 0,60
+--------------
+	A1 | A2: 191
+	A1 | A3: 89
+	A2 | A3 | A4: 53
+--------------
+Threshold: 0,70
+--------------
+	A1 | A2: 177
+	A1 | A2 | A3: 103
+	A2 | A3 | A4: 56
+--------------
+Threshold: 0,80
+--------------
+	A1 | A2: 177
+	A1 | A2 | A3: 103
+	A1 | A2 | A3 | A4: 52
+	A2 | A3 | A4: 5
+*********************************************************************************
+All potential concepts based on thresholds
+	A1 A3 ~#~ A3 A4 ~#~ A1 A2 ~#~ A2 A3 A4 ~#~ A1 A2 A3 ~#~ A1 A2 A3 A4 ~#~ 
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 4, minNoise=3 we remove groups of size 4. Tree SHAP num of expl. inst. 337 (fold 7). Explaining class: 1).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  7
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	A2: 169
+	A1: 109
+	A4: 58
+--------------
+Threshold: 0,20
+--------------
+	A2: 169
+	A1: 109
+	A4: 58
+--------------
+Threshold: 0,30
+--------------
+	A2: 159
+	A1: 109
+	A4: 57
+	A2 | A3: 7
+--------------
+Threshold: 0,40
+--------------
+	A1: 109
+	A2 | A3: 75
+	A2: 67
+	A1 | A4: 55
+	A1 | A2: 28
+--------------
+Threshold: 0,50
+--------------
+	A1 | A2: 204
+	A2 | A3: 75
+	A1 | A4: 57
+--------------
+Threshold: 0,60
+--------------
+	A1 | A2: 198
+	A2 | A3: 68
+	A1 | A3 | A4: 44
+	A1 | A4: 14
+	A1 | A2 | A3: 13
+--------------
+Threshold: 0,70
+--------------
+	A1 | A2: 176
+	A1 | A2 | A3: 103
+	A1 | A3 | A4: 58
+--------------
+Threshold: 0,80
+--------------
+	A1 | A2: 172
+	A1 | A2 | A3: 102
+	A1 | A3 | A4: 54
+	A1 | A2 | A3 | A4: 5
+*********************************************************************************
+All potential concepts based on thresholds
+	A2 A3 ~#~ A1 A4 ~#~ A1 A2 ~#~ A1 A3 A4 ~#~ A1 A2 A3 ~#~ A1 A2 A3 A4 ~#~ 
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 4, minNoise=3 we remove groups of size 4. Tree SHAP num of expl. inst. 337 (fold 8). Explaining class: 1).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  8
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	A1: 286
+	A4: 51
+--------------
+Threshold: 0,20
+--------------
+	A1: 286
+	A4: 51
+--------------
+Threshold: 0,30
+--------------
+	A1: 286
+	A4: 51
+--------------
+Threshold: 0,40
+--------------
+	A1: 181
+	A1 | A2: 105
+	A3 | A4: 31
+	A4: 18
+--------------
+Threshold: 0,50
+--------------
+	A1 | A2: 247
+	A1: 39
+	A3 | A4: 31
+	A4: 10
+	A1 | A4: 10
+--------------
+Threshold: 0,60
+--------------
+	A1 | A2: 286
+	A3 | A4: 29
+	A1 | A4: 18
+--------------
+Threshold: 0,70
+--------------
+	A1 | A2: 197
+	A1 | A2 | A3: 89
+	A1 | A3 | A4: 41
+	A1 | A4: 10
+--------------
+Threshold: 0,80
+--------------
+	A1 | A2: 180
+	A1 | A2 | A3: 105
+	A1 | A3 | A4: 39
+	A1 | A2 | A4: 9
+*********************************************************************************
+All potential concepts based on thresholds
+	A1 A2 ~#~ A3 A4 ~#~ A1 A4 ~#~ A1 A2 A3 ~#~ A1 A3 A4 ~#~ A1 A2 A4 ~#~ 
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 4, minNoise=3 we remove groups of size 4. Tree SHAP num of expl. inst. 337 (fold 9). Explaining class: 1).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  9
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	A2: 172
+	A3: 90
+	A4: 58
+	A1: 17
+--------------
+Threshold: 0,20
+--------------
+	A2: 172
+	A3: 90
+	A4: 58
+	A1: 17
+--------------
+Threshold: 0,30
+--------------
+	A2: 172
+	A3: 90
+	A4: 57
+	A1: 17
+--------------
+Threshold: 0,40
+--------------
+	A2: 172
+	A1 | A3: 107
+	A3 | A4: 48
+	A1 | A4: 9
+--------------
+Threshold: 0,50
+--------------
+	A1 | A2: 162
+	A1 | A3: 107
+	A3 | A4: 48
+	A2: 10
+	A1 | A4: 9
+--------------
+Threshold: 0,60
+--------------
+	A1 | A2: 172
+	A1 | A3: 107
+	A2 | A3 | A4: 43
+	A1 | A3 | A4: 10
+--------------
+Threshold: 0,70
+--------------
+	A1 | A2: 172
+	A1 | A2 | A3: 103
+	A2 | A3 | A4: 43
+	A1 | A3 | A4: 10
+	A1 | A2 | A4: 5
+--------------
+Threshold: 0,80
+--------------
+	A1 | A2: 172
+	A1 | A2 | A3: 107
+	A1 | A2 | A3 | A4: 53
+*********************************************************************************
+All potential concepts based on thresholds
+	A1 A3 ~#~ A3 A4 ~#~ A1 A4 ~#~ A1 A2 ~#~ A2 A3 A4 ~#~ A1 A3 A4 ~#~ A1 A2 A3 ~#~ A1 A2 A4 ~#~ A1 A2 A3 A4 ~#~ 
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 4, minNoise=3 we remove groups of size 4. Tree SHAP num of expl. inst. 337 (fold 10). Explaining class: 1).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold 10
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	A1: 191
+	A2: 90
+	A4: 55
+--------------
+Threshold: 0,20
+--------------
+	A1: 191
+	A2: 90
+	A4: 55
+--------------
+Threshold: 0,30
+--------------
+	A1: 189
+	A2: 89
+	A4: 55
+--------------
+Threshold: 0,40
+--------------
+	A1: 181
+	A1 | A2: 100
+	A4: 32
+	A2 | A4: 21
+--------------
+Threshold: 0,50
+--------------
+	A1 | A2: 245
+	A2 | A4: 46
+	A1: 36
+	A4: 6
+--------------
+Threshold: 0,60
+--------------
+	A1 | A2: 275
+	A2 | A4: 48
+	A1 | A2 | A3: 6
+--------------
+Threshold: 0,70
+--------------
+	A1 | A2: 223
+	A1 | A2 | A3: 59
+	A1 | A2 | A4: 47
+--------------
+Threshold: 0,80
+--------------
+	A1 | A2: 168
+	A1 | A2 | A3: 99
+	A1 | A2 | A4: 64
+*********************************************************************************
+All potential concepts based on thresholds
+	A1 A2 ~#~ A2 A4 ~#~ A1 A2 A3 ~#~ A1 A2 A4 ~#~ 
+*********************************************************************************
+dataset: cConcepts-uniqueInst.arff
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 1, minNoise=1 we remove groups of size 1. Tree SHAP num of expl. inst. 12 (fold 1). Explaining class: 0).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  1
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	A1: 6
+	A2: 4
+	A3: 2
+--------------
+Threshold: 0,20
+--------------
+	A1: 6
+	A2: 4
+	A3: 2
+--------------
+Threshold: 0,30
+--------------
+	A1: 6
+	A2: 4
+	A3: 2
+--------------
+Threshold: 0,40
+--------------
+	A1: 6
+	A2: 2
+	A3: 2
+	A1 | A2: 2
+--------------
+Threshold: 0,50
+--------------
+	A1 | A2: 6
+	A1: 4
+	A1 | A3: 2
+--------------
+Threshold: 0,60
+--------------
+	A1 | A2: 10
+	A1 | A3: 2
+--------------
+Threshold: 0,70
+--------------
+	A1 | A2: 10
+	A1 | A3: 2
+--------------
+Threshold: 0,80
+--------------
+	A1 | A2: 6
+	A1 | A2 | A3: 4
+	A1 | A3 | A4: 2
+*********************************************************************************
+All potential concepts based on thresholds
+	A1 A2 ~#~ A1 A3 ~#~ A1 A2 A3 ~#~ A1 A3 A4 ~#~ 
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 1, minNoise=1 we remove groups of size 1. Tree SHAP num of expl. inst. 12 (fold 2). Explaining class: 0).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  2
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	A1: 10
+	A4: 2
+--------------
+Threshold: 0,20
+--------------
+	A1: 10
+	A4: 2
+--------------
+Threshold: 0,30
+--------------
+	A1: 10
+	A4: 2
+--------------
+Threshold: 0,40
+--------------
+	A1: 10
+	A4: 2
+--------------
+Threshold: 0,50
+--------------
+	A1: 4
+	A1 | A2: 4
+	A4: 2
+	A1 | A4: 2
+--------------
+Threshold: 0,60
+--------------
+	A1 | A2: 8
+	A1 | A4: 4
+--------------
+Threshold: 0,70
+--------------
+	A1 | A2: 8
+	A1 | A4: 4
+--------------
+Threshold: 0,80
+--------------
+	A1 | A2: 8
+	A1 | A4: 4
+*********************************************************************************
+All potential concepts based on thresholds
+	A1 A2 ~#~ A1 A4 ~#~ 
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 1, minNoise=1 we remove groups of size 1. Tree SHAP num of expl. inst. 12 (fold 3). Explaining class: 0).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  3
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	A2: 11
+--------------
+Threshold: 0,20
+--------------
+	A2: 11
+--------------
+Threshold: 0,30
+--------------
+	A2: 11
+--------------
+Threshold: 0,40
+--------------
+	A2: 9
+	A2 | A4: 2
+--------------
+Threshold: 0,50
+--------------
+	A2: 7
+	A1 | A2: 3
+	A2 | A4: 2
+--------------
+Threshold: 0,60
+--------------
+	A1 | A2: 10
+	A2 | A4: 2
+--------------
+Threshold: 0,70
+--------------
+	A1 | A2: 10
+	A1 | A2 | A4: 2
+--------------
+Threshold: 0,80
+--------------
+	A1 | A2: 10
+	A1 | A2 | A4: 2
+*********************************************************************************
+All potential concepts based on thresholds
+	A2 A4 ~#~ A1 A2 ~#~ A1 A2 A4 ~#~ 
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 1, minNoise=1 we remove groups of size 1. Tree SHAP num of expl. inst. 12 (fold 4). Explaining class: 0).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  4
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	A1: 11
+--------------
+Threshold: 0,20
+--------------
+	A1: 11
+--------------
+Threshold: 0,30
+--------------
+	A1: 9
+	A1 | A4: 2
+--------------
+Threshold: 0,40
+--------------
+	A1: 9
+	A1 | A4: 2
+--------------
+Threshold: 0,50
+--------------
+	A1: 7
+	A1 | A2: 3
+	A1 | A4: 2
+--------------
+Threshold: 0,60
+--------------
+	A1 | A2: 10
+	A1 | A3 | A4: 2
+--------------
+Threshold: 0,70
+--------------
+	A1 | A2: 10
+	A1 | A3 | A4: 2
+--------------
+Threshold: 0,80
+--------------
+	A1 | A2: 7
+	A1 | A2 | A3 | A4: 2
+	A1 | A2 | A4: 2
+*********************************************************************************
+All potential concepts based on thresholds
+	A1 A4 ~#~ A1 A2 ~#~ A1 A3 A4 ~#~ A1 A2 A3 A4 ~#~ A1 A2 A4 ~#~ 
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 1, minNoise=1 we remove groups of size 1. Tree SHAP num of expl. inst. 13 (fold 5). Explaining class: 0).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  5
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	A2: 11
+	A1: 2
+--------------
+Threshold: 0,20
+--------------
+	A2: 11
+	A1: 2
+--------------
+Threshold: 0,30
+--------------
+	A2: 11
+	A1: 2
+--------------
+Threshold: 0,40
+--------------
+	A2: 11
+	A1: 2
+--------------
+Threshold: 0,50
+--------------
+	A2: 10
+	A1 | A2: 3
+--------------
+Threshold: 0,60
+--------------
+	A1 | A2: 11
+	A2: 2
+--------------
+Threshold: 0,70
+--------------
+	A1 | A2: 12
+--------------
+Threshold: 0,80
+--------------
+	A1 | A2: 10
+	A1 | A2 | A3: 3
+*********************************************************************************
+All potential concepts based on thresholds
+	A1 A2 ~#~ A1 A2 A3 ~#~ 
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 1, minNoise=1 we remove groups of size 1. Tree SHAP num of expl. inst. 13 (fold 6). Explaining class: 0).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  6
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	A1: 9
+	A2: 2
+	A4: 2
+--------------
+Threshold: 0,20
+--------------
+	A1: 9
+	A2: 2
+	A4: 2
+--------------
+Threshold: 0,30
+--------------
+	A1: 9
+	A2: 2
+	A4: 2
+--------------
+Threshold: 0,40
+--------------
+	A1: 7
+	A2: 2
+	A1 | A2: 2
+	A3 | A4: 2
+--------------
+Threshold: 0,50
+--------------
+	A1: 5
+	A1 | A2: 4
+	A2: 2
+	A3 | A4: 2
+--------------
+Threshold: 0,60
+--------------
+	A1 | A2: 9
+	A1: 2
+	A3 | A4: 2
+--------------
+Threshold: 0,70
+--------------
+	A1 | A2: 11
+	A1 | A3 | A4: 2
+--------------
+Threshold: 0,80
+--------------
+	A1 | A2: 7
+	A1 | A2 | A3: 2
+	A1 | A3 | A4: 2
+	A1 | A2 | A4: 2
+*********************************************************************************
+All potential concepts based on thresholds
+	A1 A2 ~#~ A3 A4 ~#~ A1 A3 A4 ~#~ A1 A2 A3 ~#~ A1 A2 A4 ~#~ 
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 1, minNoise=1 we remove groups of size 1. Tree SHAP num of expl. inst. 13 (fold 7). Explaining class: 0).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  7
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	A1: 10
+	A4: 2
+--------------
+Threshold: 0,20
+--------------
+	A1: 10
+	A4: 2
+--------------
+Threshold: 0,30
+--------------
+	A1: 10
+	A4: 2
+--------------
+Threshold: 0,40
+--------------
+	A1: 10
+	A4: 2
+--------------
+Threshold: 0,50
+--------------
+	A1: 6
+	A1 | A2: 3
+	A1 | A4: 2
+	A2 | A4: 2
+--------------
+Threshold: 0,60
+--------------
+	A1 | A2: 9
+	A1 | A4: 2
+	A2 | A4: 2
+--------------
+Threshold: 0,70
+--------------
+	A1 | A2: 9
+	A1 | A2 | A4: 2
+	A1 | A4: 2
+--------------
+Threshold: 0,80
+--------------
+	A1 | A2: 9
+	A1 | A2 | A4: 4
+*********************************************************************************
+All potential concepts based on thresholds
+	A1 A2 ~#~ A1 A4 ~#~ A2 A4 ~#~ A1 A2 A4 ~#~ 
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 1, minNoise=1 we remove groups of size 1. Tree SHAP num of expl. inst. 13 (fold 8). Explaining class: 0).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  8
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	A2: 10
+	A3: 2
+--------------
+Threshold: 0,20
+--------------
+	A2: 10
+	A3: 2
+--------------
+Threshold: 0,30
+--------------
+	A2: 10
+	A3 | A4: 2
+--------------
+Threshold: 0,40
+--------------
+	A2: 10
+	A3 | A4: 2
+--------------
+Threshold: 0,50
+--------------
+	A2: 6
+	A1 | A2: 5
+	A3 | A4: 2
+--------------
+Threshold: 0,60
+--------------
+	A1 | A2: 11
+	A2 | A3 | A4: 2
+--------------
+Threshold: 0,70
+--------------
+	A1 | A2: 11
+	A2 | A3 | A4: 2
+--------------
+Threshold: 0,80
+--------------
+	A1 | A2: 8
+	A1 | A2 | A3: 2
+	A2 | A3 | A4: 2
+*********************************************************************************
+All potential concepts based on thresholds
+	A3 A4 ~#~ A1 A2 ~#~ A2 A3 A4 ~#~ A1 A2 A3 ~#~ 
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 1, minNoise=1 we remove groups of size 1. Tree SHAP num of expl. inst. 13 (fold 9). Explaining class: 0).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  9
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	A2: 6
+	A1: 5
+	A3: 2
+--------------
+Threshold: 0,20
+--------------
+	A2: 6
+	A1: 5
+	A3: 2
+--------------
+Threshold: 0,30
+--------------
+	A2: 6
+	A1: 5
+	A3: 2
+--------------
+Threshold: 0,40
+--------------
+	A2: 6
+	A1: 5
+	A3: 2
+--------------
+Threshold: 0,50
+--------------
+	A2: 4
+	A1 | A2: 3
+	A1: 2
+	A3: 2
+	A2 | A3: 2
+--------------
+Threshold: 0,60
+--------------
+	A1 | A2: 9
+	A3: 2
+	A2 | A3: 2
+--------------
+Threshold: 0,70
+--------------
+	A1 | A2: 9
+	A1 | A3: 2
+	A2 | A3: 2
+--------------
+Threshold: 0,80
+--------------
+	A1 | A2: 9
+	A1 | A3: 2
+	A2 | A3: 2
+*********************************************************************************
+All potential concepts based on thresholds
+	A1 A2 ~#~ A2 A3 ~#~ A1 A3 ~#~ 
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 1, minNoise=1 we remove groups of size 1. Tree SHAP num of expl. inst. 13 (fold 10). Explaining class: 0).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold 10
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	A2: 9
+	A1: 4
+--------------
+Threshold: 0,20
+--------------
+	A2: 9
+	A1: 4
+--------------
+Threshold: 0,30
+--------------
+	A2: 9
+	A1: 4
+--------------
+Threshold: 0,40
+--------------
+	A2: 8
+	A1: 4
+--------------
+Threshold: 0,50
+--------------
+	A2: 6
+	A1 | A2: 4
+	A1: 2
+--------------
+Threshold: 0,60
+--------------
+	A1 | A2: 12
+--------------
+Threshold: 0,70
+--------------
+	A1 | A2: 12
+--------------
+Threshold: 0,80
+--------------
+	A1 | A2: 12
+*********************************************************************************
+All potential concepts based on thresholds
+	A1 A2 ~#~ 
+*********************************************************************************
+dataset: cDisjunct.arff
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 4, minNoise=3 we remove groups of size 4. Tree SHAP num of expl. inst. 390 (fold 1). Explaining class: 0).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  1
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	A1: 390
+--------------
+Threshold: 0,20
+--------------
+	A1: 390
+--------------
+Threshold: 0,30
+--------------
+	A1: 390
+--------------
+Threshold: 0,40
+--------------
+	A1: 390
+--------------
+Threshold: 0,50
+--------------
+	A1 | A3: 390
+--------------
+Threshold: 0,60
+--------------
+	A1 | A3: 390
+--------------
+Threshold: 0,70
+--------------
+	A1 | A3: 390
+--------------
+Threshold: 0,80
+--------------
+	A1 | A2 | A3: 390
+*********************************************************************************
+All potential concepts based on thresholds
+	A1 A3 ~#~ A1 A2 A3 ~#~ 
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 4, minNoise=3 we remove groups of size 4. Tree SHAP num of expl. inst. 390 (fold 2). Explaining class: 0).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  2
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	A1: 390
+--------------
+Threshold: 0,20
+--------------
+	A1: 390
+--------------
+Threshold: 0,30
+--------------
+	A1: 390
+--------------
+Threshold: 0,40
+--------------
+	A1: 390
+--------------
+Threshold: 0,50
+--------------
+	A1 | A3: 390
+--------------
+Threshold: 0,60
+--------------
+	A1 | A3: 390
+--------------
+Threshold: 0,70
+--------------
+	A1 | A3: 390
+--------------
+Threshold: 0,80
+--------------
+	A1 | A2 | A3: 390
+*********************************************************************************
+All potential concepts based on thresholds
+	A1 A3 ~#~ A1 A2 A3 ~#~ 
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 4, minNoise=3 we remove groups of size 4. Tree SHAP num of expl. inst. 390 (fold 3). Explaining class: 0).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  3
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	A1: 390
+--------------
+Threshold: 0,20
+--------------
+	A1: 390
+--------------
+Threshold: 0,30
+--------------
+	A1: 390
+--------------
+Threshold: 0,40
+--------------
+	A1: 390
+--------------
+Threshold: 0,50
+--------------
+	A1 | A3: 390
+--------------
+Threshold: 0,60
+--------------
+	A1 | A3: 390
+--------------
+Threshold: 0,70
+--------------
+	A1 | A3: 390
+--------------
+Threshold: 0,80
+--------------
+	A1 | A2 | A3: 390
+*********************************************************************************
+All potential concepts based on thresholds
+	A1 A3 ~#~ A1 A2 A3 ~#~ 
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 4, minNoise=3 we remove groups of size 4. Tree SHAP num of expl. inst. 390 (fold 4). Explaining class: 0).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  4
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	A1: 390
+--------------
+Threshold: 0,20
+--------------
+	A1: 390
+--------------
+Threshold: 0,30
+--------------
+	A1: 390
+--------------
+Threshold: 0,40
+--------------
+	A1: 390
+--------------
+Threshold: 0,50
+--------------
+	A1 | A3: 390
+--------------
+Threshold: 0,60
+--------------
+	A1 | A3: 390
+--------------
+Threshold: 0,70
+--------------
+	A1 | A3: 390
+--------------
+Threshold: 0,80
+--------------
+	A1 | A2 | A3: 390
+*********************************************************************************
+All potential concepts based on thresholds
+	A1 A3 ~#~ A1 A2 A3 ~#~ 
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 4, minNoise=3 we remove groups of size 4. Tree SHAP num of expl. inst. 391 (fold 5). Explaining class: 0).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  5
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	A1: 391
+--------------
+Threshold: 0,20
+--------------
+	A1: 391
+--------------
+Threshold: 0,30
+--------------
+	A1: 391
+--------------
+Threshold: 0,40
+--------------
+	A1: 391
+--------------
+Threshold: 0,50
+--------------
+	A1 | A3: 391
+--------------
+Threshold: 0,60
+--------------
+	A1 | A3: 391
+--------------
+Threshold: 0,70
+--------------
+	A1 | A3: 391
+--------------
+Threshold: 0,80
+--------------
+	A1 | A2 | A3: 391
+*********************************************************************************
+All potential concepts based on thresholds
+	A1 A3 ~#~ A1 A2 A3 ~#~ 
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 4, minNoise=3 we remove groups of size 4. Tree SHAP num of expl. inst. 391 (fold 6). Explaining class: 0).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  6
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	A1: 391
+--------------
+Threshold: 0,20
+--------------
+	A1: 391
+--------------
+Threshold: 0,30
+--------------
+	A1: 391
+--------------
+Threshold: 0,40
+--------------
+	A1: 391
+--------------
+Threshold: 0,50
+--------------
+	A1 | A3: 391
+--------------
+Threshold: 0,60
+--------------
+	A1 | A3: 391
+--------------
+Threshold: 0,70
+--------------
+	A1 | A3: 391
+--------------
+Threshold: 0,80
+--------------
+	A1 | A2 | A3: 391
+*********************************************************************************
+All potential concepts based on thresholds
+	A1 A3 ~#~ A1 A2 A3 ~#~ 
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 4, minNoise=3 we remove groups of size 4. Tree SHAP num of expl. inst. 391 (fold 7). Explaining class: 0).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  7
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	A1: 391
+--------------
+Threshold: 0,20
+--------------
+	A1: 391
+--------------
+Threshold: 0,30
+--------------
+	A1: 391
+--------------
+Threshold: 0,40
+--------------
+	A1: 391
+--------------
+Threshold: 0,50
+--------------
+	A1 | A3: 391
+--------------
+Threshold: 0,60
+--------------
+	A1 | A3: 391
+--------------
+Threshold: 0,70
+--------------
+	A1 | A3: 391
+--------------
+Threshold: 0,80
+--------------
+	A1 | A2 | A3: 391
+*********************************************************************************
+All potential concepts based on thresholds
+	A1 A3 ~#~ A1 A2 A3 ~#~ 
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 4, minNoise=3 we remove groups of size 4. Tree SHAP num of expl. inst. 391 (fold 8). Explaining class: 0).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  8
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	A1: 391
+--------------
+Threshold: 0,20
+--------------
+	A1: 391
+--------------
+Threshold: 0,30
+--------------
+	A1: 391
+--------------
+Threshold: 0,40
+--------------
+	A1: 391
+--------------
+Threshold: 0,50
+--------------
+	A1 | A3: 391
+--------------
+Threshold: 0,60
+--------------
+	A1 | A3: 391
+--------------
+Threshold: 0,70
+--------------
+	A1 | A3: 391
+--------------
+Threshold: 0,80
+--------------
+	A1 | A2 | A3: 391
+*********************************************************************************
+All potential concepts based on thresholds
+	A1 A3 ~#~ A1 A2 A3 ~#~ 
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 4, minNoise=3 we remove groups of size 4. Tree SHAP num of expl. inst. 391 (fold 9). Explaining class: 0).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  9
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	A1: 391
+--------------
+Threshold: 0,20
+--------------
+	A1: 391
+--------------
+Threshold: 0,30
+--------------
+	A1: 391
+--------------
+Threshold: 0,40
+--------------
+	A1: 391
+--------------
+Threshold: 0,50
+--------------
+	A1 | A3: 391
+--------------
+Threshold: 0,60
+--------------
+	A1 | A3: 391
+--------------
+Threshold: 0,70
+--------------
+	A1 | A3: 391
+--------------
+Threshold: 0,80
+--------------
+	A1 | A2 | A3: 391
+*********************************************************************************
+All potential concepts based on thresholds
+	A1 A3 ~#~ A1 A2 A3 ~#~ 
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 4, minNoise=3 we remove groups of size 4. Tree SHAP num of expl. inst. 391 (fold 10). Explaining class: 0).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold 10
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	A1: 391
+--------------
+Threshold: 0,20
+--------------
+	A1: 391
+--------------
+Threshold: 0,30
+--------------
+	A1: 391
+--------------
+Threshold: 0,40
+--------------
+	A1: 391
+--------------
+Threshold: 0,50
+--------------
+	A1 | A3: 391
+--------------
+Threshold: 0,60
+--------------
+	A1 | A3: 391
+--------------
+Threshold: 0,70
+--------------
+	A1 | A3: 391
+--------------
+Threshold: 0,80
+--------------
+	A1 | A2 | A3: 391
+*********************************************************************************
+All potential concepts based on thresholds
+	A1 A3 ~#~ A1 A2 A3 ~#~ 
+*********************************************************************************
+dataset: cLogicalConcB-uniqueInst.arff
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 1, minNoise=3 we remove groups of size 3. Tree SHAP num of expl. inst. 50 (fold 1). Explaining class: 1).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  1
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	A2: 20
+	A6: 14
+	A1: 8
+	A3: 8
+--------------
+Threshold: 0,20
+--------------
+	A2: 20
+	A6: 14
+	A1: 8
+	A3: 8
+--------------
+Threshold: 0,30
+--------------
+	A2: 16
+	A6: 10
+	A1: 8
+	A3: 8
+	A2 | A6: 6
+--------------
+Threshold: 0,40
+--------------
+	A1 | A3: 16
+	A2: 13
+	A2 | A6: 13
+	A6: 6
+--------------
+Threshold: 0,50
+--------------
+	A2 | A6: 25
+	A1 | A3: 16
+--------------
+Threshold: 0,60
+--------------
+	A2 | A6: 24
+	A1 | A3: 16
+	A2 | A5 | A6: 4
+--------------
+Threshold: 0,70
+--------------
+	A2 | A6: 20
+	A1 | A3 | A6: 8
+	A1 | A2 | A6: 6
+	A2 | A4 | A5 | A6: 4
+	A1 | A3 | A4: 4
+--------------
+Threshold: 0,80
+--------------
+	A1 | A2 | A6: 11
+	A1 | A2 | A3 | A6: 8
+	A2 | A3 | A6: 6
+	A2 | A6: 5
+	A1 | A3 | A4: 4
+	A1 | A3 | A6: 4
+*********************************************************************************
+All potential concepts based on thresholds
+	A2 A6 ~#~ A1 A3 ~#~ A2 A5 A6 ~#~ A1 A3 A6 ~#~ A1 A2 A6 ~#~ A2 A4 A5 A6 ~#~ A1 A3 A4 ~#~ A1 A2 A3 A6 ~#~ A2 A3 A6 ~#~ 
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 1, minNoise=3 we remove groups of size 3. Tree SHAP num of expl. inst. 50 (fold 2). Explaining class: 1).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  2
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	A2: 18
+	A6: 18
+	A1: 14
+--------------
+Threshold: 0,20
+--------------
+	A2: 18
+	A6: 18
+	A1: 14
+--------------
+Threshold: 0,30
+--------------
+	A6: 16
+	A2: 13
+	A1: 8
+	A1 | A3: 6
+	A2 | A6: 5
+--------------
+Threshold: 0,40
+--------------
+	A1 | A3: 14
+	A2 | A6: 14
+	A2: 10
+	A6: 10
+--------------
+Threshold: 0,50
+--------------
+	A2 | A6: 30
+	A1 | A3: 14
+	A2 | A5 | A6: 4
+--------------
+Threshold: 0,60
+--------------
+	A2 | A6: 29
+	A1 | A3: 8
+	A2 | A5 | A6: 5
+	A1 | A2 | A3: 4
+--------------
+Threshold: 0,70
+--------------
+	A2 | A6: 24
+	A1 | A2 | A3: 6
+	A1 | A2 | A6: 5
+	A2 | A4 | A5 | A6: 4
+	A1 | A3 | A6: 4
+--------------
+Threshold: 0,80
+--------------
+	A2 | A3 | A6: 12
+	A1 | A2 | A3 | A6: 11
+	A1 | A2 | A6: 8
+	A2 | A4 | A5 | A6: 5
+*********************************************************************************
+All potential concepts based on thresholds
+	A1 A3 ~#~ A2 A6 ~#~ A2 A5 A6 ~#~ A1 A2 A3 ~#~ A1 A2 A6 ~#~ A2 A4 A5 A6 ~#~ A1 A3 A6 ~#~ A2 A3 A6 ~#~ A1 A2 A3 A6 ~#~ 
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 1, minNoise=3 we remove groups of size 3. Tree SHAP num of expl. inst. 50 (fold 3). Explaining class: 1).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  3
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	A2: 20
+	A6: 16
+	A3: 14
+--------------
+Threshold: 0,20
+--------------
+	A2: 20
+	A6: 16
+	A3: 14
+--------------
+Threshold: 0,30
+--------------
+	A2: 16
+	A3: 14
+	A6: 14
+	A2 | A6: 4
+--------------
+Threshold: 0,40
+--------------
+	A1 | A3: 14
+	A2 | A6: 14
+	A6: 11
+	A2: 9
+--------------
+Threshold: 0,50
+--------------
+	A2 | A6: 30
+	A1 | A3: 14
+	A2 | A4 | A6: 4
+--------------
+Threshold: 0,60
+--------------
+	A2 | A6: 29
+	A1 | A3: 9
+	A1 | A2 | A3: 5
+	A2 | A4 | A6: 5
+--------------
+Threshold: 0,70
+--------------
+	A2 | A6: 22
+	A1 | A2 | A3: 7
+	A2 | A3 | A6: 7
+	A2 | A4 | A5 | A6: 4
+--------------
+Threshold: 0,80
+--------------
+	A2 | A3 | A6: 15
+	A1 | A2 | A3 | A6: 10
+	A1 | A2 | A6: 8
+	A2 | A4 | A5 | A6: 5
+*********************************************************************************
+All potential concepts based on thresholds
+	A2 A6 ~#~ A1 A3 ~#~ A2 A4 A6 ~#~ A1 A2 A3 ~#~ A2 A3 A6 ~#~ A2 A4 A5 A6 ~#~ A1 A2 A3 A6 ~#~ A1 A2 A6 ~#~ 
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 1, minNoise=3 we remove groups of size 3. Tree SHAP num of expl. inst. 50 (fold 4). Explaining class: 1).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  4
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	A6: 18
+	A2: 17
+	A1: 15
+--------------
+Threshold: 0,20
+--------------
+	A6: 18
+	A2: 17
+	A1: 15
+--------------
+Threshold: 0,30
+--------------
+	A2: 17
+	A1: 15
+	A6: 13
+--------------
+Threshold: 0,40
+--------------
+	A1 | A3: 15
+	A2 | A6: 13
+	A2: 10
+	A6: 10
+--------------
+Threshold: 0,50
+--------------
+	A2 | A6: 28
+	A1 | A3: 15
+--------------
+Threshold: 0,60
+--------------
+	A2 | A6: 28
+	A1 | A3: 10
+	A2 | A5 | A6: 4
+--------------
+Threshold: 0,70
+--------------
+	A2 | A6: 20
+	A1 | A2 | A6: 8
+	A1 | A3 | A6: 5
+	A1 | A2 | A3: 4
+	A1 | A3 | A5: 4
+--------------
+Threshold: 0,80
+--------------
+	A1 | A2 | A6: 11
+	A1 | A2 | A3 | A6: 9
+	A2 | A6: 7
+	A2 | A3 | A6: 6
+	A2 | A4 | A5 | A6: 4
+*********************************************************************************
+All potential concepts based on thresholds
+	A1 A3 ~#~ A2 A6 ~#~ A2 A5 A6 ~#~ A1 A2 A6 ~#~ A1 A3 A6 ~#~ A1 A2 A3 ~#~ A1 A3 A5 ~#~ A1 A2 A3 A6 ~#~ A2 A3 A6 ~#~ A2 A4 A5 A6 ~#~ 
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 1, minNoise=3 we remove groups of size 3. Tree SHAP num of expl. inst. 50 (fold 5). Explaining class: 1).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  5
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	A6: 25
+	A2: 13
+	A1: 12
+--------------
+Threshold: 0,20
+--------------
+	A6: 25
+	A2: 13
+	A1: 12
+--------------
+Threshold: 0,30
+--------------
+	A6: 23
+	A1: 12
+	A2: 9
+	A2 | A6: 4
+--------------
+Threshold: 0,40
+--------------
+	A6: 17
+	A1 | A3: 12
+	A2 | A6: 12
+	A2: 7
+--------------
+Threshold: 0,50
+--------------
+	A2 | A6: 34
+	A1 | A3: 12
+--------------
+Threshold: 0,60
+--------------
+	A2 | A6: 30
+	A2 | A5 | A6: 6
+	A1 | A3: 6
+	A1 | A2 | A3: 4
+--------------
+Threshold: 0,70
+--------------
+	A2 | A6: 24
+	A1 | A3 | A6: 8
+	A1 | A2 | A3: 4
+	A2 | A4 | A5 | A6: 4
+	A1 | A2 | A6: 4
+--------------
+Threshold: 0,80
+--------------
+	A1 | A2 | A3 | A6: 13
+	A1 | A2 | A6: 8
+	A2 | A4 | A6: 7
+	A2 | A4 | A5 | A6: 6
+	A2 | A3 | A6: 4
+	A2 | A6: 4
+*********************************************************************************
+All potential concepts based on thresholds
+	A2 A6 ~#~ A1 A3 ~#~ A2 A5 A6 ~#~ A1 A2 A3 ~#~ A1 A3 A6 ~#~ A2 A4 A5 A6 ~#~ A1 A2 A6 ~#~ A1 A2 A3 A6 ~#~ A2 A4 A6 ~#~ A2 A3 A6 ~#~ 
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 1, minNoise=3 we remove groups of size 3. Tree SHAP num of expl. inst. 50 (fold 6). Explaining class: 1).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  6
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	A6: 19
+	A3: 16
+	A2: 15
+--------------
+Threshold: 0,20
+--------------
+	A6: 19
+	A3: 16
+	A2: 15
+--------------
+Threshold: 0,30
+--------------
+	A6: 17
+	A3: 16
+	A2: 12
+--------------
+Threshold: 0,40
+--------------
+	A1 | A3: 16
+	A6: 12
+	A2 | A6: 12
+	A2: 8
+--------------
+Threshold: 0,50
+--------------
+	A2 | A6: 27
+	A1 | A3: 16
+--------------
+Threshold: 0,60
+--------------
+	A2 | A6: 25
+	A1 | A3: 16
+	A2 | A4 | A6: 5
+--------------
+Threshold: 0,70
+--------------
+	A2 | A6: 19
+	A2 | A3 | A6: 8
+	A1 | A2 | A3: 6
+	A1 | A3 | A6: 6
+	A1 | A3 | A4: 4
+--------------
+Threshold: 0,80
+--------------
+	A1 | A2 | A3 | A6: 12
+	A2 | A3 | A6: 9
+	A2 | A4 | A5 | A6: 5
+	A1 | A2 | A6: 5
+	A2 | A4 | A6: 4
+*********************************************************************************
+All potential concepts based on thresholds
+	A1 A3 ~#~ A2 A6 ~#~ A2 A4 A6 ~#~ A2 A3 A6 ~#~ A1 A2 A3 ~#~ A1 A3 A6 ~#~ A1 A3 A4 ~#~ A1 A2 A3 A6 ~#~ A2 A4 A5 A6 ~#~ A1 A2 A6 ~#~ 
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 1, minNoise=3 we remove groups of size 3. Tree SHAP num of expl. inst. 51 (fold 7). Explaining class: 1).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  7
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	A2: 23
+	A1: 16
+	A6: 12
+--------------
+Threshold: 0,20
+--------------
+	A2: 23
+	A1: 16
+	A6: 12
+--------------
+Threshold: 0,30
+--------------
+	A2: 23
+	A1: 16
+	A6: 12
+--------------
+Threshold: 0,40
+--------------
+	A2: 17
+	A1 | A3: 16
+	A2 | A6: 12
+	A6: 6
+--------------
+Threshold: 0,50
+--------------
+	A2 | A6: 26
+	A1 | A3: 16
+	A2: 7
+--------------
+Threshold: 0,60
+--------------
+	A2 | A6: 33
+	A1 | A3: 14
+--------------
+Threshold: 0,70
+--------------
+	A2 | A6: 25
+	A1 | A2 | A3: 8
+	A1 | A2 | A6: 7
+	A1 | A3 | A6: 4
+--------------
+Threshold: 0,80
+--------------
+	A1 | A2 | A6: 14
+	A2 | A6: 9
+	A1 | A2 | A3 | A6: 8
+	A1 | A3 | A6: 6
+	A2 | A3 | A6: 6
+*********************************************************************************
+All potential concepts based on thresholds
+	A1 A3 ~#~ A2 A6 ~#~ A1 A2 A3 ~#~ A1 A2 A6 ~#~ A1 A3 A6 ~#~ A1 A2 A3 A6 ~#~ A2 A3 A6 ~#~ 
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 1, minNoise=3 we remove groups of size 3. Tree SHAP num of expl. inst. 51 (fold 8). Explaining class: 1).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  8
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	A2: 20
+	A3: 15
+	A6: 12
+	A4: 4
+--------------
+Threshold: 0,20
+--------------
+	A2: 20
+	A3: 15
+	A6: 12
+	A4: 4
+--------------
+Threshold: 0,30
+--------------
+	A2: 16
+	A3: 15
+	A6: 12
+--------------
+Threshold: 0,40
+--------------
+	A1 | A3: 15
+	A2: 12
+	A2 | A6: 10
+	A6: 8
+--------------
+Threshold: 0,50
+--------------
+	A2 | A6: 28
+	A1 | A3: 15
+	A2 | A4 | A6: 4
+	A4 | A5 | A6: 4
+--------------
+Threshold: 0,60
+--------------
+	A2 | A6: 27
+	A1 | A3: 10
+	A1 | A2 | A3: 4
+	A2 | A4 | A6: 4
+	A4 | A5 | A6: 4
+--------------
+Threshold: 0,70
+--------------
+	A2 | A6: 19
+	A1 | A2 | A3: 6
+	A2 | A4 | A5 | A6: 6
+	A2 | A3 | A6: 6
+	A1 | A3 | A4: 4
+--------------
+Threshold: 0,80
+--------------
+	A1 | A2 | A3 | A6: 10
+	A2 | A3 | A6: 8
+	A2 | A6: 8
+	A1 | A2 | A6: 5
+	A2 | A4 | A5 | A6: 4
+*********************************************************************************
+All potential concepts based on thresholds
+	A1 A3 ~#~ A2 A6 ~#~ A2 A4 A6 ~#~ A4 A5 A6 ~#~ A1 A2 A3 ~#~ A2 A4 A5 A6 ~#~ A2 A3 A6 ~#~ A1 A3 A4 ~#~ A1 A2 A3 A6 ~#~ A1 A2 A6 ~#~ 
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 1, minNoise=3 we remove groups of size 3. Tree SHAP num of expl. inst. 51 (fold 9). Explaining class: 1).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  9
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	A6: 26
+	A2: 13
+	A1: 9
+--------------
+Threshold: 0,20
+--------------
+	A6: 26
+	A2: 13
+	A1: 9
+--------------
+Threshold: 0,30
+--------------
+	A6: 22
+	A2: 9
+	A1 | A3: 6
+	A2 | A6: 6
+	A1: 5
+--------------
+Threshold: 0,40
+--------------
+	A6: 14
+	A2 | A6: 14
+	A1 | A3: 12
+	A2: 9
+--------------
+Threshold: 0,50
+--------------
+	A2 | A6: 31
+	A1 | A3: 12
+	A2 | A4 | A6: 4
+--------------
+Threshold: 0,60
+--------------
+	A2 | A6: 29
+	A2 | A4 | A6: 6
+	A1 | A2 | A3: 5
+	A1 | A3 | A5: 4
+--------------
+Threshold: 0,70
+--------------
+	A2 | A6: 25
+	A1 | A2 | A6: 6
+	A1 | A2 | A3: 5
+	A2 | A4 | A5 | A6: 4
+	A1 | A3 | A5: 4
+--------------
+Threshold: 0,80
+--------------
+	A1 | A2 | A6: 10
+	A1 | A2 | A3 | A6: 8
+	A2 | A4 | A5 | A6: 6
+	A2 | A4 | A6: 6
+	A2 | A3 | A6: 4
+	A2 | A6: 4
+*********************************************************************************
+All potential concepts based on thresholds
+	A1 A3 ~#~ A2 A6 ~#~ A2 A4 A6 ~#~ A1 A2 A3 ~#~ A1 A3 A5 ~#~ A1 A2 A6 ~#~ A2 A4 A5 A6 ~#~ A1 A2 A3 A6 ~#~ A2 A3 A6 ~#~ 
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 1, minNoise=3 we remove groups of size 3. Tree SHAP num of expl. inst. 51 (fold 10). Explaining class: 1).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold 10
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	A2: 20
+	A6: 17
+	A1: 14
+--------------
+Threshold: 0,20
+--------------
+	A2: 20
+	A6: 17
+	A1: 14
+--------------
+Threshold: 0,30
+--------------
+	A2: 16
+	A6: 15
+	A1: 10
+	A1 | A3: 4
+	A2 | A6: 4
+--------------
+Threshold: 0,40
+--------------
+	A2 | A6: 16
+	A1 | A3: 14
+	A2: 10
+	A6: 9
+--------------
+Threshold: 0,50
+--------------
+	A2 | A6: 30
+	A1 | A3: 14
+	A2 | A4 | A6: 4
+--------------
+Threshold: 0,60
+--------------
+	A2 | A6: 27
+	A1 | A2 | A3: 8
+	A2 | A4 | A6: 8
+	A1 | A3: 6
+--------------
+Threshold: 0,70
+--------------
+	A2 | A6: 19
+	A2 | A4 | A6: 12
+	A1 | A2 | A3: 9
+--------------
+Threshold: 0,80
+--------------
+	A1 | A2 | A3 | A6: 8
+	A2 | A4 | A6: 8
+	A1 | A2 | A4 | A6: 6
+	A2 | A4 | A5 | A6: 6
+	A2 | A5 | A6: 6
+*********************************************************************************
+All potential concepts based on thresholds
+	A1 A3 ~#~ A2 A6 ~#~ A2 A4 A6 ~#~ A1 A2 A3 ~#~ A1 A2 A3 A6 ~#~ A1 A2 A4 A6 ~#~ A2 A4 A5 A6 ~#~ A2 A5 A6 ~#~ 
+*********************************************************************************
+dataset: cLogicalConcBNoisy-uniqueInst.arff
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 1, minNoise=1 we remove groups of size 1. Tree SHAP num of expl. inst. 48 (fold 1). Explaining class: 1).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  1
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	A2: 20
+	A6: 16
+	A1: 12
+--------------
+Threshold: 0,20
+--------------
+	A2: 20
+	A6: 16
+	A1: 12
+--------------
+Threshold: 0,30
+--------------
+	A2: 18
+	A6: 13
+	A1 | A3: 7
+	A1: 4
+	A2 | A6: 3
+	A5 | A6: 2
+--------------
+Threshold: 0,40
+--------------
+	A2 | A6: 18
+	A1 | A3: 11
+	A2: 8
+	A6: 7
+	A5 | A6: 2
+--------------
+Threshold: 0,50
+--------------
+	A2 | A6: 32
+	A1 | A3: 11
+	A5 | A6: 2
+--------------
+Threshold: 0,60
+--------------
+	A2 | A6: 27
+	A1 | A2 | A3: 5
+	A2 | A5 | A6: 5
+	A1 | A3: 4
+	A1 | A3 | A6: 3
+	A4 | A5 | A6: 2
+--------------
+Threshold: 0,70
+--------------
+	A2 | A6: 20
+	A2 | A5 | A6: 9
+	A1 | A2 | A3: 7
+	A1 | A3 | A6: 6
+	A2 | A4 | A6: 3
+	A2 | A4 | A5 | A6: 2
+--------------
+Threshold: 0,80
+--------------
+	A2 | A4 | A5 | A6: 12
+	A1 | A2 | A3 | A6: 10
+	A2 | A5 | A6: 7
+	A2 | A4 | A6: 6
+	A1 | A2 | A5 | A6: 4
+	A1 | A2 | A6: 4
+	A1 | A3 | A5 | A6: 2
+*********************************************************************************
+All potential concepts based on thresholds
+	A1 A3 ~#~ A2 A6 ~#~ A5 A6 ~#~ A1 A2 A3 ~#~ A2 A5 A6 ~#~ A1 A3 A6 ~#~ A4 A5 A6 ~#~ A2 A4 A6 ~#~ A2 A4 A5 A6 ~#~ A1 A2 A3 A6 ~#~ A1 A2 A5 A6 ~#~ A1 A2 A6 ~#~ A1 A3 A5 A6 ~#~ 
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 1, minNoise=1 we remove groups of size 1. Tree SHAP num of expl. inst. 48 (fold 2). Explaining class: 1).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  2
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	A6: 24
+	A2: 13
+	A1: 11
+--------------
+Threshold: 0,20
+--------------
+	A6: 24
+	A2: 13
+	A1: 11
+--------------
+Threshold: 0,30
+--------------
+	A6: 20
+	A2: 10
+	A1: 9
+	A2 | A6: 4
+	A5 | A6: 2
+--------------
+Threshold: 0,40
+--------------
+	A2 | A6: 19
+	A6: 12
+	A1 | A3: 9
+	A2: 3
+	A1 | A2: 2
+	A5 | A6: 2
+--------------
+Threshold: 0,50
+--------------
+	A2 | A6: 29
+	A1 | A3: 9
+	A2 | A5 | A6: 3
+	A4 | A5 | A6: 2
+	A6: 2
+	A1 | A2: 2
+--------------
+Threshold: 0,60
+--------------
+	A2 | A6: 28
+	A1 | A2 | A3: 7
+	A2 | A5 | A6: 6
+	A1 | A3 | A6: 4
+	A4 | A5 | A6: 2
+--------------
+Threshold: 0,70
+--------------
+	A2 | A6: 17
+	A1 | A2 | A6: 9
+	A1 | A2 | A3: 5
+	A1 | A3 | A6: 5
+	A2 | A5 | A6: 4
+	A2 | A4 | A5 | A6: 3
+	A1 | A2 | A3 | A6: 2
+--------------
+Threshold: 0,80
+--------------
+	A1 | A2 | A3 | A6: 12
+	A1 | A2 | A6: 8
+	A1 | A2 | A4 | A6: 6
+	A2 | A4 | A5 | A6: 6
+	A1 | A2 | A5 | A6: 3
+	A2 | A5 | A6: 3
+	A1 | A3 | A4 | A6: 3
+	A2 | A4 | A6: 2
+	A2 | A3 | A6: 2
+*********************************************************************************
+All potential concepts based on thresholds
+	A2 A6 ~#~ A5 A6 ~#~ A1 A3 ~#~ A1 A2 ~#~ A2 A5 A6 ~#~ A4 A5 A6 ~#~ A1 A2 A3 ~#~ A1 A3 A6 ~#~ A1 A2 A6 ~#~ A2 A4 A5 A6 ~#~ A1 A2 A3 A6 ~#~ A1 A2 A4 A6 ~#~ A1 A2 A5 A6 ~#~ A1 A3 A4 A6 ~#~ A2 A4 A6 ~#~ A2 A3 A6 ~#~ 
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 1, minNoise=1 we remove groups of size 1. Tree SHAP num of expl. inst. 48 (fold 3). Explaining class: 1).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  3
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	A2: 24
+	A1: 12
+	A6: 11
+--------------
+Threshold: 0,20
+--------------
+	A2: 24
+	A1: 12
+	A6: 11
+--------------
+Threshold: 0,30
+--------------
+	A2: 22
+	A6: 7
+	A1 | A2: 6
+	A1: 4
+	A2 | A6: 4
+	A1 | A3: 2
+	A5 | A6: 2
+--------------
+Threshold: 0,40
+--------------
+	A2 | A6: 21
+	A2: 11
+	A1 | A2: 6
+	A1 | A3: 6
+	A5 | A6: 2
+--------------
+Threshold: 0,50
+--------------
+	A2 | A6: 29
+	A1 | A2: 6
+	A1 | A3: 6
+	A2 | A5 | A6: 4
+	A4 | A5 | A6: 2
+--------------
+Threshold: 0,60
+--------------
+	A2 | A6: 27
+	A1 | A2 | A3: 6
+	A2 | A5 | A6: 4
+	A1 | A3 | A4: 2
+	A1 | A3 | A5: 2
+	A1 | A2 | A6: 2
+	A4 | A5 | A6: 2
+	A1 | A3: 2
+--------------
+Threshold: 0,70
+--------------
+	A2 | A6: 18
+	A1 | A2 | A6: 9
+	A1 | A2 | A3: 6
+	A2 | A4 | A5 | A6: 4
+	A1 | A3 | A4: 2
+	A1 | A3 | A6: 2
+	A1 | A3 | A5: 2
+	A2 | A3 | A6: 2
+	A1 | A4 | A5 | A6: 2
+--------------
+Threshold: 0,80
+--------------
+	A1 | A2 | A6: 15
+	A1 | A2 | A3 | A6: 11
+	A2 | A3 | A6: 8
+	A1 | A3 | A6: 2
+	A1 | A3 | A5 | A6: 2
+	A1 | A2 | A4 | A5 | A6: 2
+	A2 | A3 | A4 | A5 | A6: 2
+	A1 | A3 | A4 | A5 | A6: 2
+*********************************************************************************
+All potential concepts based on thresholds
+	A1 A2 ~#~ A2 A6 ~#~ A1 A3 ~#~ A5 A6 ~#~ A2 A5 A6 ~#~ A4 A5 A6 ~#~ A1 A2 A3 ~#~ A1 A3 A4 ~#~ A1 A3 A5 ~#~ A1 A2 A6 ~#~ A2 A4 A5 A6 ~#~ A1 A3 A6 ~#~ A2 A3 A6 ~#~ A1 A4 A5 A6 ~#~ A1 A2 A3 A6 ~#~ A1 A3 A5 A6 ~#~ A1 A2 A4 A5 A6 ~#~ A2 A3 A4 A5 A6 ~#~ A1 A3 A4 A5 A6 ~#~ 
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 1, minNoise=1 we remove groups of size 1. Tree SHAP num of expl. inst. 48 (fold 4). Explaining class: 1).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  4
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	A6: 24
+	A1: 13
+	A2: 11
+--------------
+Threshold: 0,20
+--------------
+	A6: 24
+	A1: 13
+	A2: 11
+--------------
+Threshold: 0,30
+--------------
+	A6: 22
+	A1: 13
+	A2: 9
+	A2 | A6: 2
+--------------
+Threshold: 0,40
+--------------
+	A6: 17
+	A2 | A6: 11
+	A1 | A3: 8
+	A2: 4
+	A1 | A2: 3
+	A1 | A6: 2
+	A5 | A6: 2
+--------------
+Threshold: 0,50
+--------------
+	A2 | A6: 30
+	A1 | A3: 8
+	A1 | A2: 3
+	A6: 2
+	A1 | A6: 2
+	A5 | A6: 2
+--------------
+Threshold: 0,60
+--------------
+	A2 | A6: 26
+	A1 | A2 | A3: 6
+	A2 | A5 | A6: 6
+	A1 | A3 | A6: 4
+	A1 | A3: 4
+	A4 | A5 | A6: 2
+--------------
+Threshold: 0,70
+--------------
+	A2 | A6: 22
+	A2 | A5 | A6: 9
+	A1 | A3 | A6: 8
+	A1 | A2 | A3: 6
+--------------
+Threshold: 0,80
+--------------
+	A2 | A5 | A6: 13
+	A1 | A2 | A3 | A6: 11
+	A2 | A4 | A5 | A6: 6
+	A1 | A2 | A6: 6
+	A1 | A2 | A4 | A6: 2
+	A2 | A3 | A6: 2
+	A1 | A3 | A5 | A6: 2
+	A1 | A4 | A5 | A6: 2
+	A2 | A6: 2
+*********************************************************************************
+All potential concepts based on thresholds
+	A2 A6 ~#~ A1 A3 ~#~ A1 A2 ~#~ A1 A6 ~#~ A5 A6 ~#~ A1 A2 A3 ~#~ A2 A5 A6 ~#~ A1 A3 A6 ~#~ A4 A5 A6 ~#~ A1 A2 A3 A6 ~#~ A2 A4 A5 A6 ~#~ A1 A2 A6 ~#~ A1 A2 A4 A6 ~#~ A2 A3 A6 ~#~ A1 A3 A5 A6 ~#~ A1 A4 A5 A6 ~#~ 
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 1, minNoise=1 we remove groups of size 1. Tree SHAP num of expl. inst. 49 (fold 5). Explaining class: 1).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  5
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	A2: 22
+	A1: 13
+	A6: 13
+--------------
+Threshold: 0,20
+--------------
+	A2: 22
+	A1: 13
+	A6: 13
+--------------
+Threshold: 0,30
+--------------
+	A2: 17
+	A1: 13
+	A6: 11
+	A2 | A6: 5
+	A5 | A6: 2
+--------------
+Threshold: 0,40
+--------------
+	A2 | A6: 23
+	A1 | A3: 10
+	A2: 7
+	A6: 3
+	A1: 2
+	A5 | A6: 2
+--------------
+Threshold: 0,50
+--------------
+	A2 | A6: 30
+	A1 | A3: 12
+	A2 | A5 | A6: 3
+--------------
+Threshold: 0,60
+--------------
+	A2 | A6: 24
+	A1 | A3: 7
+	A1 | A2 | A3: 6
+	A2 | A5 | A6: 4
+	A1 | A2 | A6: 4
+--------------
+Threshold: 0,70
+--------------
+	A1 | A2 | A6: 14
+	A1 | A2 | A3: 9
+	A2 | A6: 8
+	A1 | A3 | A6: 5
+	A2 | A3 | A6: 4
+	A2 | A4 | A5 | A6: 3
+	A2 | A4 | A6: 2
+	A1 | A4 | A5 | A6: 2
+--------------
+Threshold: 0,80
+--------------
+	A1 | A2 | A3 | A6: 11
+	A1 | A2 | A5 | A6: 5
+	A2 | A4 | A5 | A6: 4
+	A1 | A2 | A6: 4
+	A1 | A2 | A4 | A6: 3
+	A1 | A2 | A3: 3
+	A1 | A2 | A3 | A4: 3
+	A1 | A3 | A4 | A6: 3
+	A1 | A2 | A4 | A5 | A6: 3
+	A1 | A3 | A5 | A6: 2
+	A2 | A3 | A4 | A6: 2
+*********************************************************************************
+All potential concepts based on thresholds
+	A2 A6 ~#~ A5 A6 ~#~ A1 A3 ~#~ A2 A5 A6 ~#~ A1 A2 A3 ~#~ A1 A2 A6 ~#~ A1 A3 A6 ~#~ A2 A3 A6 ~#~ A2 A4 A5 A6 ~#~ A2 A4 A6 ~#~ A1 A4 A5 A6 ~#~ A1 A2 A3 A6 ~#~ A1 A2 A5 A6 ~#~ A1 A2 A4 A6 ~#~ A1 A2 A3 A4 ~#~ A1 A3 A4 A6 ~#~ A1 A2 A4 A5 A6 ~#~ A1 A3 A5 A6 ~#~ A2 A3 A4 A6 ~#~ 
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 1, minNoise=1 we remove groups of size 1. Tree SHAP num of expl. inst. 49 (fold 6). Explaining class: 1).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  6
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	A2: 20
+	A6: 16
+	A1: 13
+--------------
+Threshold: 0,20
+--------------
+	A2: 20
+	A6: 16
+	A1: 13
+--------------
+Threshold: 0,30
+--------------
+	A2: 16
+	A6: 15
+	A1: 13
+	A2 | A6: 4
+--------------
+Threshold: 0,40
+--------------
+	A2 | A6: 24
+	A1 | A3: 13
+	A2: 5
+	A6: 4
+	A5 | A6: 2
+--------------
+Threshold: 0,50
+--------------
+	A2 | A6: 33
+	A1 | A3: 13
+--------------
+Threshold: 0,60
+--------------
+	A2 | A6: 24
+	A1 | A3: 13
+	A2 | A5 | A6: 5
+	A1 | A2 | A6: 4
+	A1 | A5 | A6: 2
+--------------
+Threshold: 0,70
+--------------
+	A1 | A2 | A6: 16
+	A1 | A3 | A6: 7
+	A1 | A2 | A3: 6
+	A2 | A5 | A6: 6
+	A2 | A3 | A6: 6
+	A2 | A6: 3
+	A1 | A2 | A5 | A6: 2
+	A1 | A4 | A5 | A6: 2
+--------------
+Threshold: 0,80
+--------------
+	A1 | A2 | A3 | A6: 18
+	A1 | A2 | A5 | A6: 9
+	A1 | A3 | A6: 5
+	A1 | A2 | A6: 4
+	A2 | A3 | A5 | A6: 4
+	A1 | A2 | A3: 3
+	A2 | A4 | A5 | A6: 3
+*********************************************************************************
+All potential concepts based on thresholds
+	A2 A6 ~#~ A1 A3 ~#~ A5 A6 ~#~ A2 A5 A6 ~#~ A1 A2 A6 ~#~ A1 A5 A6 ~#~ A1 A3 A6 ~#~ A1 A2 A3 ~#~ A2 A3 A6 ~#~ A1 A2 A5 A6 ~#~ A1 A4 A5 A6 ~#~ A1 A2 A3 A6 ~#~ A2 A3 A5 A6 ~#~ A2 A4 A5 A6 ~#~ 
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 1, minNoise=1 we remove groups of size 1. Tree SHAP num of expl. inst. 49 (fold 7). Explaining class: 1).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  7
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	A2: 18
+	A6: 16
+	A1: 14
+--------------
+Threshold: 0,20
+--------------
+	A2: 18
+	A6: 16
+	A1: 14
+--------------
+Threshold: 0,30
+--------------
+	A2: 17
+	A6: 14
+	A1: 12
+	A2 | A6: 3
+	A1 | A3: 2
+--------------
+Threshold: 0,40
+--------------
+	A2 | A6: 16
+	A1 | A3: 14
+	A2: 10
+	A6: 7
+--------------
+Threshold: 0,50
+--------------
+	A2 | A6: 32
+	A1 | A3: 14
+--------------
+Threshold: 0,60
+--------------
+	A2 | A6: 28
+	A1 | A3: 8
+	A1 | A2 | A3: 6
+	A2 | A5 | A6: 5
+--------------
+Threshold: 0,70
+--------------
+	A2 | A6: 18
+	A2 | A3 | A6: 9
+	A1 | A3 | A6: 8
+	A1 | A2 | A3: 7
+	A2 | A5 | A6: 3
+--------------
+Threshold: 0,80
+--------------
+	A1 | A2 | A3 | A6: 16
+	A1 | A2 | A6: 9
+	A2 | A3 | A6: 8
+	A2 | A4 | A5 | A6: 4
+	A2 | A5 | A6: 4
+	A1 | A3 | A6: 3
+	A2 | A3 | A5 | A6: 2
+*********************************************************************************
+All potential concepts based on thresholds
+	A2 A6 ~#~ A1 A3 ~#~ A1 A2 A3 ~#~ A2 A5 A6 ~#~ A2 A3 A6 ~#~ A1 A3 A6 ~#~ A1 A2 A3 A6 ~#~ A1 A2 A6 ~#~ A2 A4 A5 A6 ~#~ A2 A3 A5 A6 ~#~ 
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 1, minNoise=1 we remove groups of size 1. Tree SHAP num of expl. inst. 49 (fold 8). Explaining class: 1).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  8
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	A6: 19
+	A2: 17
+	A1: 7
+	A3: 6
+--------------
+Threshold: 0,20
+--------------
+	A6: 19
+	A2: 17
+	A1: 7
+	A3: 6
+--------------
+Threshold: 0,30
+--------------
+	A2: 17
+	A6: 16
+	A1: 7
+	A3: 3
+	A2 | A6: 3
+	A1 | A3: 2
+--------------
+Threshold: 0,40
+--------------
+	A2 | A6: 25
+	A1 | A3: 12
+	A2: 5
+	A6: 5
+--------------
+Threshold: 0,50
+--------------
+	A2 | A6: 35
+	A1 | A3: 12
+--------------
+Threshold: 0,60
+--------------
+	A2 | A6: 29
+	A1 | A3: 8
+	A1 | A2 | A3: 4
+	A2 | A5 | A6: 4
+--------------
+Threshold: 0,70
+--------------
+	A2 | A3 | A6: 13
+	A2 | A6: 13
+	A1 | A3 | A6: 7
+	A1 | A2 | A3: 5
+	A1 | A2 | A6: 4
+	A2 | A5 | A6: 3
+--------------
+Threshold: 0,80
+--------------
+	A1 | A2 | A3 | A6: 15
+	A1 | A2 | A6: 8
+	A2 | A4 | A5 | A6: 5
+	A2 | A3 | A6: 4
+	A1 | A3 | A4 | A6: 4
+	A2 | A3 | A4 | A6: 4
+	A1 | A2 | A5 | A6: 2
+	A1 | A2 | A4 | A6: 2
+*********************************************************************************
+All potential concepts based on thresholds
+	A2 A6 ~#~ A1 A3 ~#~ A1 A2 A3 ~#~ A2 A5 A6 ~#~ A2 A3 A6 ~#~ A1 A3 A6 ~#~ A1 A2 A6 ~#~ A1 A2 A3 A6 ~#~ A2 A4 A5 A6 ~#~ A1 A3 A4 A6 ~#~ A2 A3 A4 A6 ~#~ A1 A2 A5 A6 ~#~ A1 A2 A4 A6 ~#~ 
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 1, minNoise=1 we remove groups of size 1. Tree SHAP num of expl. inst. 49 (fold 9). Explaining class: 1).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  9
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	A2: 21
+	A6: 15
+	A1: 13
+--------------
+Threshold: 0,20
+--------------
+	A2: 21
+	A6: 15
+	A1: 13
+--------------
+Threshold: 0,30
+--------------
+	A2: 17
+	A1: 13
+	A6: 13
+	A2 | A6: 4
+	A5 | A6: 2
+--------------
+Threshold: 0,40
+--------------
+	A2 | A6: 20
+	A1 | A3: 12
+	A6: 7
+	A2: 6
+	A5 | A6: 2
+--------------
+Threshold: 0,50
+--------------
+	A2 | A6: 31
+	A1 | A3: 12
+	A2 | A5 | A6: 2
+	A4 | A5 | A6: 2
+--------------
+Threshold: 0,60
+--------------
+	A2 | A6: 26
+	A1 | A3: 7
+	A1 | A2 | A3: 6
+	A2 | A5 | A6: 5
+	A4 | A5 | A6: 2
+--------------
+Threshold: 0,70
+--------------
+	A2 | A6: 9
+	A1 | A2 | A3: 8
+	A2 | A5 | A6: 8
+	A1 | A2 | A6: 8
+	A1 | A3 | A6: 6
+	A2 | A4 | A5 | A6: 5
+	A2 | A3 | A6: 2
+--------------
+Threshold: 0,80
+--------------
+	A1 | A2 | A3 | A6: 12
+	A1 | A2 | A5 | A6: 9
+	A2 | A4 | A5 | A6: 8
+	A1 | A3 | A6: 5
+	A1 | A2 | A4 | A6: 3
+	A1 | A2 | A6: 3
+	A1 | A2 | A4 | A5 | A6: 2
+	A2 | A3 | A5 | A6: 2
+	A2 | A3 | A4 | A6: 2
+*********************************************************************************
+All potential concepts based on thresholds
+	A2 A6 ~#~ A5 A6 ~#~ A1 A3 ~#~ A2 A5 A6 ~#~ A4 A5 A6 ~#~ A1 A2 A3 ~#~ A1 A2 A6 ~#~ A1 A3 A6 ~#~ A2 A4 A5 A6 ~#~ A2 A3 A6 ~#~ A1 A2 A3 A6 ~#~ A1 A2 A5 A6 ~#~ A1 A2 A4 A6 ~#~ A1 A2 A4 A5 A6 ~#~ A2 A3 A5 A6 ~#~ A2 A3 A4 A6 ~#~ 
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 1, minNoise=1 we remove groups of size 1. Tree SHAP num of expl. inst. 49 (fold 10). Explaining class: 1).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold 10
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	A2: 22
+	A6: 14
+	A3: 13
+--------------
+Threshold: 0,20
+--------------
+	A2: 22
+	A6: 14
+	A3: 13
+--------------
+Threshold: 0,30
+--------------
+	A2: 20
+	A6: 12
+	A3: 7
+	A1 | A3: 5
+	A2 | A6: 2
+	A4 | A6: 2
+--------------
+Threshold: 0,40
+--------------
+	A2 | A6: 17
+	A1 | A3: 12
+	A6: 9
+	A2: 8
+	A4 | A6: 2
+--------------
+Threshold: 0,50
+--------------
+	A2 | A6: 32
+	A1 | A3: 12
+	A4 | A5 | A6: 2
+	A6: 2
+--------------
+Threshold: 0,60
+--------------
+	A2 | A6: 28
+	A1 | A3: 7
+	A1 | A2 | A3: 6
+	A2 | A4 | A6: 6
+	A4 | A5 | A6: 2
+--------------
+Threshold: 0,70
+--------------
+	A2 | A6: 18
+	A1 | A2 | A3: 8
+	A2 | A4 | A5 | A6: 5
+	A2 | A3 | A6: 5
+	A2 | A4 | A6: 4
+	A1 | A3: 3
+	A1 | A3 | A6: 2
+	A1 | A2 | A6: 2
+--------------
+Threshold: 0,80
+--------------
+	A1 | A2 | A3 | A6: 11
+	A2 | A4 | A5 | A6: 7
+	A2 | A5 | A6: 6
+	A1 | A2 | A4 | A6: 4
+	A1 | A2 | A6: 4
+	A2 | A4 | A6: 3
+	A1 | A3 | A6: 3
+	A2 | A3 | A6: 3
+	A2 | A3 | A4 | A6: 3
+	A2 | A3 | A5 | A6: 2
+*********************************************************************************
+All potential concepts based on thresholds
+	A1 A3 ~#~ A2 A6 ~#~ A4 A6 ~#~ A4 A5 A6 ~#~ A1 A2 A3 ~#~ A2 A4 A6 ~#~ A2 A4 A5 A6 ~#~ A2 A3 A6 ~#~ A1 A3 A6 ~#~ A1 A2 A6 ~#~ A1 A2 A3 A6 ~#~ A2 A5 A6 ~#~ A1 A2 A4 A6 ~#~ A2 A3 A4 A6 ~#~ A2 A3 A5 A6 ~#~ 
+*********************************************************************************
+dataset: cModGroups.arff
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 6, minNoise=3 we remove groups of size 6. Tree SHAP num of expl. inst. 583 (fold 1). Explaining class: 2).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  1
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	I2: 261
+	I1: 159
+	R2: 124
+	R1: 39
+--------------
+Threshold: 0,20
+--------------
+	I2: 261
+	I1: 159
+	R2: 124
+	R1: 39
+--------------
+Threshold: 0,30
+--------------
+	I2: 261
+	I1: 157
+	R2: 124
+	R1: 39
+--------------
+Threshold: 0,40
+--------------
+	I2: 250
+	I1: 126
+	R2: 118
+	R1: 28
+	I1 | R2: 27
+	I1 | R1: 17
+	I2 | R1: 7
+--------------
+Threshold: 0,50
+--------------
+	I1 | I2: 270
+	R2: 100
+	I1: 63
+	I1 | R2: 63
+	R1: 22
+	I1 | R1: 20
+	I2: 15
+	I2 | R2: 13
+	I2 | R1: 10
+	R1 | R2: 7
+--------------
+Threshold: 0,60
+--------------
+	I1 | I2: 340
+	I1 | R2: 101
+	R2: 58
+	R1: 17
+	I1 | R1: 17
+	I2 | R2: 15
+	R1 | R2: 13
+	I2 | R1: 12
+--------------
+Threshold: 0,70
+--------------
+	I1 | I2: 341
+	I1 | R2: 120
+	I1 | I2 | R2: 25
+	I1 | R1 | R2: 19
+	R1 | R2: 16
+	R2: 15
+	I2 | R2: 12
+	R1: 9
+	I1 | R1: 9
+	I1 | I2 | R1: 8
+--------------
+Threshold: 0,80
+--------------
+	I1 | I2: 298
+	I1 | I2 | R2: 80
+	I1 | R2: 64
+	I1 | R1 | R2: 60
+	I1 | I2 | R1: 38
+	R1 | R2: 13
+	I1 | R1: 8
+	R2: 7
+*********************************************************************************
+All potential concepts based on thresholds
+	I1 R2 ~#~ I1 R1 ~#~ I2 R1 ~#~ I1 I2 ~#~ I2 R2 ~#~ R1 R2 ~#~ I1 I2 R2 ~#~ I1 R1 R2 ~#~ I1 I2 R1 ~#~ 
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 6, minNoise=3 we remove groups of size 6. Tree SHAP num of expl. inst. 583 (fold 2). Explaining class: 2).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  2
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	I2: 315
+	I1: 246
+	R2: 12
+	R1: 10
+--------------
+Threshold: 0,20
+--------------
+	I2: 315
+	I1: 246
+	R2: 12
+	R1: 10
+--------------
+Threshold: 0,30
+--------------
+	I2: 315
+	I1: 245
+	R2: 12
+	R1: 10
+--------------
+Threshold: 0,40
+--------------
+	I2: 297
+	I1: 209
+	I1 | I2: 44
+	R2: 11
+--------------
+Threshold: 0,50
+--------------
+	I1 | I2: 380
+	I2: 95
+	I1: 58
+	I2 | R2: 17
+	I1 | R2: 10
+	I2 | R1: 7
+--------------
+Threshold: 0,60
+--------------
+	I1 | I2: 494
+	I2 | R2: 25
+	I1 | R2: 18
+	I2: 15
+	I1: 10
+	I2 | R1: 9
+--------------
+Threshold: 0,70
+--------------
+	I1 | I2: 483
+	I2 | R2: 25
+	I1 | I2 | R2: 23
+	I1 | R2: 20
+	I1 | I2 | R1: 10
+	I2 | R1: 7
+--------------
+Threshold: 0,80
+--------------
+	I1 | I2: 284
+	I1 | I2 | R2: 231
+	I1 | I2 | R1: 25
+	I2 | R2: 19
+	I1 | R2: 11
+*********************************************************************************
+All potential concepts based on thresholds
+	I1 I2 ~#~ I2 R2 ~#~ I1 R2 ~#~ I2 R1 ~#~ I1 I2 R2 ~#~ I1 I2 R1 ~#~ 
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 6, minNoise=3 we remove groups of size 6. Tree SHAP num of expl. inst. 583 (fold 3). Explaining class: 2).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  3
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	R2: 285
+	I1: 247
+	I2: 37
+	R1: 14
+--------------
+Threshold: 0,20
+--------------
+	R2: 285
+	I1: 247
+	I2: 37
+	R1: 14
+--------------
+Threshold: 0,30
+--------------
+	R2: 285
+	I1: 247
+	I2: 37
+	R1: 14
+--------------
+Threshold: 0,40
+--------------
+	I1: 237
+	R2: 224
+	I2 | R2: 45
+	I1 | R2: 37
+	I2: 20
+	R1: 12
+--------------
+Threshold: 0,50
+--------------
+	I2 | R2: 167
+	I1 | R2: 136
+	I1: 115
+	I1 | I2: 94
+	R2: 48
+	R1: 8
+--------------
+Threshold: 0,60
+--------------
+	I1 | I2: 201
+	I2 | R2: 177
+	I1 | R2: 151
+	R2: 29
+	I1 | R1: 8
+	I1: 7
+--------------
+Threshold: 0,70
+--------------
+	I1 | I2: 203
+	I2 | R2: 160
+	I1 | R2: 125
+	I1 | I2 | R2: 56
+	R2: 17
+	I1 | R1: 7
+--------------
+Threshold: 0,80
+--------------
+	I1 | I2 | R2: 319
+	I1 | I2: 164
+	I2 | R2: 40
+	I1 | R2: 32
+	I1 | I2 | R1: 14
+	I2 | R1 | R2: 7
+*********************************************************************************
+All potential concepts based on thresholds
+	I2 R2 ~#~ I1 R2 ~#~ I1 I2 ~#~ I1 R1 ~#~ I1 I2 R2 ~#~ I1 I2 R1 ~#~ I2 R1 R2 ~#~ 
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 6, minNoise=3 we remove groups of size 6. Tree SHAP num of expl. inst. 583 (fold 4). Explaining class: 2).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  4
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	R2: 241
+	I1: 190
+	I2: 142
+	R1: 10
+--------------
+Threshold: 0,20
+--------------
+	R2: 241
+	I1: 190
+	I2: 142
+	R1: 10
+--------------
+Threshold: 0,30
+--------------
+	R2: 241
+	I1: 190
+	I2: 142
+	R1: 10
+--------------
+Threshold: 0,40
+--------------
+	R2: 227
+	I1 | R2: 154
+	I2: 135
+	I1: 28
+	I1 | I2: 24
+	R1: 9
+--------------
+Threshold: 0,50
+--------------
+	I1 | R2: 241
+	R2: 146
+	I1 | I2: 135
+	I2: 24
+	I2 | R2: 23
+--------------
+Threshold: 0,60
+--------------
+	I1 | R2: 248
+	I1 | I2: 157
+	R2: 134
+	I2 | R2: 27
+	R1 | R2: 7
+--------------
+Threshold: 0,70
+--------------
+	I1 | R2: 160
+	I1 | I2: 146
+	R2: 116
+	I1 | I2 | R2: 109
+	I2 | R2: 32
+	R1 | R2: 11
+--------------
+Threshold: 0,80
+--------------
+	I1 | I2 | R2: 400
+	I2 | R2: 99
+	I1 | I2: 27
+	I1 | R2: 23
+	R2: 12
+	R1 | R2: 11
+*********************************************************************************
+All potential concepts based on thresholds
+	I1 R2 ~#~ I1 I2 ~#~ I2 R2 ~#~ R1 R2 ~#~ I1 I2 R2 ~#~ 
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 6, minNoise=3 we remove groups of size 6. Tree SHAP num of expl. inst. 583 (fold 5). Explaining class: 2).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  5
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	I1: 295
+	R2: 214
+	I2: 59
+	R1: 15
+--------------
+Threshold: 0,20
+--------------
+	I1: 295
+	R2: 214
+	I2: 59
+	R1: 15
+--------------
+Threshold: 0,30
+--------------
+	I1: 295
+	R2: 214
+	I2: 59
+	R1: 15
+--------------
+Threshold: 0,40
+--------------
+	I1: 221
+	R2: 208
+	I1 | I2: 52
+	I2: 41
+	I1 | R2: 35
+	R1: 12
+	I2 | R2: 10
+--------------
+Threshold: 0,50
+--------------
+	R2: 185
+	I1: 168
+	I1 | I2: 97
+	I1 | R2: 77
+	I2 | R2: 31
+	I2: 9
+--------------
+Threshold: 0,60
+--------------
+	I1 | I2: 246
+	I1 | R2: 182
+	R2: 78
+	I2 | R2: 43
+	I1: 15
+	R1 | R2: 7
+--------------
+Threshold: 0,70
+--------------
+	I1 | I2: 227
+	I1 | R2: 226
+	I1 | I2 | R2: 70
+	I2 | R2: 35
+	R1 | R2: 7
+--------------
+Threshold: 0,80
+--------------
+	I1 | R2: 182
+	I1 | I2 | R2: 169
+	I1 | I2: 167
+	I2 | R2: 22
+	I1 | R1 | R2: 19
+	I1 | I2 | R1: 12
+*********************************************************************************
+All potential concepts based on thresholds
+	I1 I2 ~#~ I1 R2 ~#~ I2 R2 ~#~ R1 R2 ~#~ I1 I2 R2 ~#~ I1 R1 R2 ~#~ I1 I2 R1 ~#~ 
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 6, minNoise=3 we remove groups of size 6. Tree SHAP num of expl. inst. 584 (fold 6). Explaining class: 2).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  6
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	I1: 299
+	R2: 162
+	I2: 112
+	R1: 11
+--------------
+Threshold: 0,20
+--------------
+	I1: 299
+	R2: 162
+	I2: 112
+	R1: 11
+--------------
+Threshold: 0,30
+--------------
+	I1: 299
+	R2: 162
+	I2: 112
+	R1: 11
+--------------
+Threshold: 0,40
+--------------
+	I1: 224
+	I1 | R2: 111
+	R2: 73
+	I1 | I2: 61
+	I2 | R2: 57
+	I2: 47
+	R1: 7
+--------------
+Threshold: 0,50
+--------------
+	I1 | I2: 253
+	I1 | R2: 171
+	I2 | R2: 76
+	R2: 32
+	I1: 24
+	I2: 16
+--------------
+Threshold: 0,60
+--------------
+	I1 | I2: 271
+	I1 | R2: 191
+	I2 | R2: 84
+	I2: 11
+	R2: 11
+--------------
+Threshold: 0,70
+--------------
+	I1 | I2: 225
+	I1 | R2: 146
+	I1 | I2 | R2: 130
+	I2 | R2: 61
+--------------
+Threshold: 0,80
+--------------
+	I1 | I2 | R2: 343
+	I1 | I2: 160
+	I1 | R2: 36
+	I2 | R2: 24
+	I1 | I2 | R1: 8
+*********************************************************************************
+All potential concepts based on thresholds
+	I1 R2 ~#~ I1 I2 ~#~ I2 R2 ~#~ I1 I2 R2 ~#~ I1 I2 R1 ~#~ 
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 6, minNoise=3 we remove groups of size 6. Tree SHAP num of expl. inst. 584 (fold 7). Explaining class: 2).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  7
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	I1: 307
+	I2: 220
+	R2: 43
+	R1: 14
+--------------
+Threshold: 0,20
+--------------
+	I1: 307
+	I2: 220
+	R2: 43
+	R1: 14
+--------------
+Threshold: 0,30
+--------------
+	I1: 306
+	I2: 219
+	R2: 43
+	R1: 14
+--------------
+Threshold: 0,40
+--------------
+	I1: 275
+	I2: 177
+	I1 | I2: 70
+	R2: 23
+	I2 | R2: 19
+	R1: 12
+--------------
+Threshold: 0,50
+--------------
+	I1 | I2: 327
+	I2: 126
+	I1: 58
+	I2 | R2: 29
+	I1 | R2: 11
+	R2: 10
+	R1: 8
+	I1 | R1: 7
+--------------
+Threshold: 0,60
+--------------
+	I1 | I2: 449
+	I2: 56
+	I2 | R2: 30
+	I1 | R1: 13
+	I1 | R2: 13
+--------------
+Threshold: 0,70
+--------------
+	I1 | I2: 475
+	I1 | I2 | R2: 50
+	I2 | R2: 15
+	I1 | R1: 13
+	I1 | R2: 10
+	I1 | I2 | R1: 8
+--------------
+Threshold: 0,80
+--------------
+	I1 | I2: 387
+	I1 | I2 | R2: 142
+	I1 | I2 | R1: 31
+*********************************************************************************
+All potential concepts based on thresholds
+	I1 I2 ~#~ I2 R2 ~#~ I1 R2 ~#~ I1 R1 ~#~ I1 I2 R2 ~#~ I1 I2 R1 ~#~ 
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 6, minNoise=3 we remove groups of size 6. Tree SHAP num of expl. inst. 583 (fold 8). Explaining class: 2).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  8
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	I1: 364
+	I2: 157
+	R2: 48
+	R1: 14
+--------------
+Threshold: 0,20
+--------------
+	I1: 364
+	I2: 157
+	R2: 48
+	R1: 14
+--------------
+Threshold: 0,30
+--------------
+	I1: 364
+	I2: 157
+	R2: 48
+	R1: 14
+--------------
+Threshold: 0,40
+--------------
+	I1: 295
+	I2: 147
+	I1 | R2: 86
+	R2: 22
+	I1 | I2: 12
+	R1: 9
+	I1 | R1: 7
+--------------
+Threshold: 0,50
+--------------
+	I1 | I2: 243
+	I1 | R2: 170
+	I1: 97
+	I2: 27
+	I2 | R2: 16
+	I1 | R1: 12
+	R2: 8
+--------------
+Threshold: 0,60
+--------------
+	I1 | I2: 352
+	I1 | R2: 169
+	I2 | R2: 20
+	I1 | R1: 12
+	I2: 9
+	R2: 8
+--------------
+Threshold: 0,70
+--------------
+	I1 | I2: 350
+	I1 | R2: 160
+	I2 | R2: 23
+	I1 | I2 | R2: 16
+	I1 | R1: 8
+	I1 | R1 | R2: 8
+--------------
+Threshold: 0,80
+--------------
+	I1 | I2 | R2: 282
+	I1 | I2: 235
+	I1 | I2 | R1: 19
+	I2 | R2: 16
+	I1 | R2: 11
+	I1 | R1 | R2: 9
+	I2 | R1 | R2: 8
+*********************************************************************************
+All potential concepts based on thresholds
+	I1 R2 ~#~ I1 I2 ~#~ I1 R1 ~#~ I2 R2 ~#~ I1 I2 R2 ~#~ I1 R1 R2 ~#~ I1 I2 R1 ~#~ I2 R1 R2 ~#~ 
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 6, minNoise=3 we remove groups of size 6. Tree SHAP num of expl. inst. 583 (fold 9). Explaining class: 2).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  9
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	I1: 295
+	I2: 256
+	R2: 17
+	R1: 15
+--------------
+Threshold: 0,20
+--------------
+	I1: 295
+	I2: 256
+	R2: 17
+	R1: 15
+--------------
+Threshold: 0,30
+--------------
+	I1: 295
+	I2: 256
+	R2: 17
+	R1: 15
+--------------
+Threshold: 0,40
+--------------
+	I1: 242
+	I2: 198
+	I1 | I2: 73
+	I2 | R2: 30
+	I1 | R2: 18
+	R2: 7
+--------------
+Threshold: 0,50
+--------------
+	I1 | I2: 321
+	I2 | R2: 101
+	I1: 78
+	I1 | R2: 36
+	I2: 26
+	I1 | R1: 7
+--------------
+Threshold: 0,60
+--------------
+	I1 | I2: 384
+	I2 | R2: 123
+	I1 | R2: 46
+	I2 | R1: 7
+	I1 | R1: 7
+--------------
+Threshold: 0,70
+--------------
+	I1 | I2: 341
+	I2 | R2: 104
+	I1 | I2 | R2: 84
+	I1 | R2: 34
+--------------
+Threshold: 0,80
+--------------
+	I1 | I2 | R2: 330
+	I1 | I2: 176
+	I2 | R2: 32
+	I1 | I2 | R1: 17
+	I1 | R2: 16
+*********************************************************************************
+All potential concepts based on thresholds
+	I1 I2 ~#~ I2 R2 ~#~ I1 R2 ~#~ I1 R1 ~#~ I2 R1 ~#~ I1 I2 R2 ~#~ I1 I2 R1 ~#~ 
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 6, minNoise=3 we remove groups of size 6. Tree SHAP num of expl. inst. 583 (fold 10). Explaining class: 2).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold 10
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	R2: 530
+	R1: 38
+	I1: 12
+--------------
+Threshold: 0,20
+--------------
+	R2: 530
+	R1: 38
+	I1: 12
+--------------
+Threshold: 0,30
+--------------
+	R2: 530
+	R1: 38
+	I1: 11
+--------------
+Threshold: 0,40
+--------------
+	R2: 505
+	R1: 36
+	I1 | R2: 18
+	R1 | R2: 8
+--------------
+Threshold: 0,50
+--------------
+	R2: 257
+	I1 | R2: 165
+	I2 | R2: 106
+	R1: 25
+	R1 | R2: 21
+--------------
+Threshold: 0,60
+--------------
+	I1 | R2: 213
+	R2: 174
+	I2 | R2: 133
+	R1 | R2: 32
+	R1: 13
+	I1 | R1: 7
+--------------
+Threshold: 0,70
+--------------
+	I1 | R2: 214
+	I2 | R2: 148
+	R2: 118
+	I1 | I2 | R2: 36
+	R1 | R2: 31
+	R1: 11
+	I1 | R1: 7
+	I1 | R1 | R2: 7
+--------------
+Threshold: 0,80
+--------------
+	I1 | I2 | R2: 327
+	R2: 94
+	I2 | R2: 49
+	I1 | R2: 39
+	R1 | R2: 33
+	I1 | R1 | R2: 23
+	R1: 8
+	I2 | R1 | R2: 7
+*********************************************************************************
+All potential concepts based on thresholds
+	I1 R2 ~#~ R1 R2 ~#~ I2 R2 ~#~ I1 R1 ~#~ I1 I2 R2 ~#~ I1 R1 R2 ~#~ I2 R1 R2 ~#~ 
+*********************************************************************************
+dataset: cMultiVClassDisAttr-uniqueInst.arff
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 1, minNoise=3 we remove groups of size 3. Tree SHAP num of expl. inst. 70 (fold 1). Explaining class: 2).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  1
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	A5: 61
+	A2: 9
+--------------
+Threshold: 0,20
+--------------
+	A5: 61
+	A2: 9
+--------------
+Threshold: 0,30
+--------------
+	A5: 61
+	A2: 9
+--------------
+Threshold: 0,40
+--------------
+	A5: 61
+	A2: 9
+--------------
+Threshold: 0,50
+--------------
+	A5: 42
+	A1 | A5: 19
+	A2 | A4: 9
+--------------
+Threshold: 0,60
+--------------
+	A1 | A5: 61
+	A2 | A4: 9
+--------------
+Threshold: 0,70
+--------------
+	A1 | A5: 61
+	A2 | A4: 6
+--------------
+Threshold: 0,80
+--------------
+	A1 | A5: 33
+	A1 | A2 | A5: 25
+	A2 | A4 | A5: 9
+*********************************************************************************
+All potential concepts based on thresholds
+	A1 A5 ~#~ A2 A4 ~#~ A1 A2 A5 ~#~ A2 A4 A5 ~#~ 
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 1, minNoise=3 we remove groups of size 3. Tree SHAP num of expl. inst. 70 (fold 2). Explaining class: 2).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  2
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	A5: 61
+	A2: 9
+--------------
+Threshold: 0,20
+--------------
+	A5: 61
+	A2: 9
+--------------
+Threshold: 0,30
+--------------
+	A5: 61
+	A2: 9
+--------------
+Threshold: 0,40
+--------------
+	A5: 61
+	A2: 9
+--------------
+Threshold: 0,50
+--------------
+	A5: 53
+	A2 | A4: 9
+	A1 | A5: 8
+--------------
+Threshold: 0,60
+--------------
+	A1 | A5: 61
+	A2 | A4: 9
+--------------
+Threshold: 0,70
+--------------
+	A1 | A5: 61
+	A2 | A4 | A5: 9
+--------------
+Threshold: 0,80
+--------------
+	A1 | A5: 34
+	A1 | A2 | A5: 25
+	A2 | A4 | A5: 9
+*********************************************************************************
+All potential concepts based on thresholds
+	A2 A4 ~#~ A1 A5 ~#~ A2 A4 A5 ~#~ A1 A2 A5 ~#~ 
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 1, minNoise=3 we remove groups of size 3. Tree SHAP num of expl. inst. 71 (fold 3). Explaining class: 2).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  3
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	A5: 63
+	A2: 8
+--------------
+Threshold: 0,20
+--------------
+	A5: 63
+	A2: 8
+--------------
+Threshold: 0,30
+--------------
+	A5: 63
+	A2: 8
+--------------
+Threshold: 0,40
+--------------
+	A5: 63
+	A2: 8
+--------------
+Threshold: 0,50
+--------------
+	A5: 60
+	A2 | A4: 8
+--------------
+Threshold: 0,60
+--------------
+	A1 | A5: 63
+	A2 | A4: 8
+--------------
+Threshold: 0,70
+--------------
+	A1 | A5: 63
+	A2 | A4 | A5: 8
+--------------
+Threshold: 0,80
+--------------
+	A1 | A5: 33
+	A1 | A2 | A5: 23
+	A2 | A4 | A5: 8
+	A1 | A4 | A5: 7
+*********************************************************************************
+All potential concepts based on thresholds
+	A2 A4 ~#~ A1 A5 ~#~ A2 A4 A5 ~#~ A1 A2 A5 ~#~ A1 A4 A5 ~#~ 
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 1, minNoise=3 we remove groups of size 3. Tree SHAP num of expl. inst. 71 (fold 4). Explaining class: 2).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  4
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	A5: 62
+	A2: 9
+--------------
+Threshold: 0,20
+--------------
+	A5: 62
+	A2: 9
+--------------
+Threshold: 0,30
+--------------
+	A5: 62
+	A2: 9
+--------------
+Threshold: 0,40
+--------------
+	A5: 62
+	A2: 9
+--------------
+Threshold: 0,50
+--------------
+	A5: 35
+	A1 | A5: 27
+	A2 | A4: 9
+--------------
+Threshold: 0,60
+--------------
+	A1 | A5: 62
+	A2 | A4: 9
+--------------
+Threshold: 0,70
+--------------
+	A1 | A5: 56
+	A1 | A2 | A5: 6
+	A2 | A4: 6
+--------------
+Threshold: 0,80
+--------------
+	A1 | A5: 32
+	A1 | A2 | A5: 22
+	A2 | A4 | A5: 9
+	A1 | A4 | A5: 8
+*********************************************************************************
+All potential concepts based on thresholds
+	A1 A5 ~#~ A2 A4 ~#~ A1 A2 A5 ~#~ A2 A4 A5 ~#~ A1 A4 A5 ~#~ 
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 1, minNoise=3 we remove groups of size 3. Tree SHAP num of expl. inst. 70 (fold 5). Explaining class: 2).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  5
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	A5: 62
+	A2: 8
+--------------
+Threshold: 0,20
+--------------
+	A5: 62
+	A2: 8
+--------------
+Threshold: 0,30
+--------------
+	A5: 62
+	A2: 8
+--------------
+Threshold: 0,40
+--------------
+	A5: 62
+	A2: 8
+--------------
+Threshold: 0,50
+--------------
+	A5: 42
+	A1 | A5: 20
+	A2 | A4: 8
+--------------
+Threshold: 0,60
+--------------
+	A1 | A5: 62
+	A2 | A4: 8
+--------------
+Threshold: 0,70
+--------------
+	A1 | A5: 56
+	A1 | A2 | A5: 6
+	A2 | A4 | A5: 5
+--------------
+Threshold: 0,80
+--------------
+	A1 | A5: 30
+	A1 | A2 | A5: 23
+	A1 | A4 | A5: 9
+	A2 | A4 | A5: 8
+*********************************************************************************
+All potential concepts based on thresholds
+	A1 A5 ~#~ A2 A4 ~#~ A1 A2 A5 ~#~ A2 A4 A5 ~#~ A1 A4 A5 ~#~ 
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 1, minNoise=3 we remove groups of size 3. Tree SHAP num of expl. inst. 70 (fold 6). Explaining class: 2).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  6
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	A5: 63
+	A2: 7
+--------------
+Threshold: 0,20
+--------------
+	A5: 63
+	A2: 7
+--------------
+Threshold: 0,30
+--------------
+	A5: 63
+	A2: 7
+--------------
+Threshold: 0,40
+--------------
+	A5: 63
+	A2: 4
+--------------
+Threshold: 0,50
+--------------
+	A5: 50
+	A1 | A5: 13
+	A2 | A4: 7
+--------------
+Threshold: 0,60
+--------------
+	A1 | A5: 63
+	A2 | A4: 7
+--------------
+Threshold: 0,70
+--------------
+	A1 | A5: 63
+	A2 | A4 | A5: 7
+--------------
+Threshold: 0,80
+--------------
+	A1 | A5: 33
+	A1 | A2 | A5: 21
+	A1 | A4 | A5: 9
+	A2 | A4 | A5: 7
+*********************************************************************************
+All potential concepts based on thresholds
+	A1 A5 ~#~ A2 A4 ~#~ A2 A4 A5 ~#~ A1 A2 A5 ~#~ A1 A4 A5 ~#~ 
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 1, minNoise=3 we remove groups of size 3. Tree SHAP num of expl. inst. 70 (fold 7). Explaining class: 2).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  7
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	A5: 62
+	A2: 8
+--------------
+Threshold: 0,20
+--------------
+	A5: 62
+	A2: 8
+--------------
+Threshold: 0,30
+--------------
+	A5: 62
+	A2: 8
+--------------
+Threshold: 0,40
+--------------
+	A5: 62
+	A2: 8
+--------------
+Threshold: 0,50
+--------------
+	A5: 37
+	A1 | A5: 25
+	A2 | A4: 8
+--------------
+Threshold: 0,60
+--------------
+	A1 | A5: 62
+	A2 | A4: 8
+--------------
+Threshold: 0,70
+--------------
+	A1 | A5: 59
+	A2 | A4 | A5: 6
+--------------
+Threshold: 0,80
+--------------
+	A1 | A5: 36
+	A1 | A2 | A5: 18
+	A1 | A4 | A5: 8
+	A2 | A4 | A5: 8
+*********************************************************************************
+All potential concepts based on thresholds
+	A1 A5 ~#~ A2 A4 ~#~ A2 A4 A5 ~#~ A1 A2 A5 ~#~ A1 A4 A5 ~#~ 
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 1, minNoise=3 we remove groups of size 3. Tree SHAP num of expl. inst. 70 (fold 8). Explaining class: 2).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  8
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	A5: 64
+	A2: 6
+--------------
+Threshold: 0,20
+--------------
+	A5: 64
+	A2: 6
+--------------
+Threshold: 0,30
+--------------
+	A5: 64
+	A2: 6
+--------------
+Threshold: 0,40
+--------------
+	A5: 64
+	A2 | A5: 5
+--------------
+Threshold: 0,50
+--------------
+	A5: 59
+	A1 | A5: 5
+	A2 | A5: 5
+--------------
+Threshold: 0,60
+--------------
+	A1 | A5: 64
+	A2 | A5: 5
+--------------
+Threshold: 0,70
+--------------
+	A1 | A5: 64
+	A2 | A4 | A5: 6
+--------------
+Threshold: 0,80
+--------------
+	A1 | A5: 39
+	A1 | A2 | A5: 25
+	A2 | A4 | A5: 6
+*********************************************************************************
+All potential concepts based on thresholds
+	A2 A5 ~#~ A1 A5 ~#~ A2 A4 A5 ~#~ A1 A2 A5 ~#~ 
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 1, minNoise=3 we remove groups of size 3. Tree SHAP num of expl. inst. 70 (fold 9). Explaining class: 2).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  9
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	A5: 61
+	A2: 9
+--------------
+Threshold: 0,20
+--------------
+	A5: 61
+	A2: 9
+--------------
+Threshold: 0,30
+--------------
+	A5: 61
+	A2: 9
+--------------
+Threshold: 0,40
+--------------
+	A5: 61
+	A2: 9
+--------------
+Threshold: 0,50
+--------------
+	A5: 41
+	A1 | A5: 20
+	A2 | A4: 9
+--------------
+Threshold: 0,60
+--------------
+	A1 | A5: 61
+	A2 | A4: 9
+--------------
+Threshold: 0,70
+--------------
+	A1 | A5: 54
+	A1 | A2 | A5: 7
+	A2 | A4: 6
+--------------
+Threshold: 0,80
+--------------
+	A1 | A5: 31
+	A1 | A2 | A5: 21
+	A1 | A4 | A5: 9
+	A2 | A4 | A5: 9
+*********************************************************************************
+All potential concepts based on thresholds
+	A1 A5 ~#~ A2 A4 ~#~ A1 A2 A5 ~#~ A1 A4 A5 ~#~ A2 A4 A5 ~#~ 
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 1, minNoise=3 we remove groups of size 3. Tree SHAP num of expl. inst. 70 (fold 10). Explaining class: 2).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold 10
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	A5: 62
+	A2: 8
+--------------
+Threshold: 0,20
+--------------
+	A5: 62
+	A2: 8
+--------------
+Threshold: 0,30
+--------------
+	A5: 62
+	A2: 8
+--------------
+Threshold: 0,40
+--------------
+	A5: 62
+	A2 | A4: 5
+--------------
+Threshold: 0,50
+--------------
+	A5: 54
+	A1 | A5: 8
+	A2 | A4: 8
+--------------
+Threshold: 0,60
+--------------
+	A1 | A5: 62
+	A2 | A4: 8
+--------------
+Threshold: 0,70
+--------------
+	A1 | A5: 62
+	A2 | A4 | A5: 8
+--------------
+Threshold: 0,80
+--------------
+	A1 | A5: 38
+	A1 | A2 | A5: 24
+	A2 | A4 | A5: 8
+*********************************************************************************
+All potential concepts based on thresholds
+	A2 A4 ~#~ A1 A5 ~#~ A2 A4 A5 ~#~ A1 A2 A5 ~#~ 
+*********************************************************************************
+dataset: condInd-uniqueInst.arff
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 2, minNoise=3 we remove groups of size 3. Tree SHAP num of expl. inst. 111 (fold 1). Explaining class: 0).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  1
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	I90: 109
+--------------
+Threshold: 0,20
+--------------
+	I90: 109
+--------------
+Threshold: 0,30
+--------------
+	I90: 101
+	I80 | I90: 7
+--------------
+Threshold: 0,40
+--------------
+	I80 | I90: 89
+	I70 | I90: 21
+--------------
+Threshold: 0,50
+--------------
+	I80 | I90: 90
+	I70 | I90: 21
+--------------
+Threshold: 0,60
+--------------
+	I70 | I80 | I90: 64
+	I80 | I90: 47
+--------------
+Threshold: 0,70
+--------------
+	I70 | I80 | I90: 111
+--------------
+Threshold: 0,80
+--------------
+	I70 | I80 | I90 | R3: 64
+	I70 | I80 | I90: 17
+	I70 | I80 | I90 | R1: 16
+	I60 | I70 | I80 | I90: 13
+*********************************************************************************
+All potential concepts based on thresholds
+	I80 I90 ~#~ I70 I90 ~#~ I70 I80 I90 ~#~ I70 I80 I90 R3 ~#~ I70 I80 I90 R1 ~#~ I60 I70 I80 I90 ~#~ 
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 2, minNoise=3 we remove groups of size 3. Tree SHAP num of expl. inst. 111 (fold 2). Explaining class: 0).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  2
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	I90: 108
+--------------
+Threshold: 0,20
+--------------
+	I90: 108
+--------------
+Threshold: 0,30
+--------------
+	I90: 108
+--------------
+Threshold: 0,40
+--------------
+	I80 | I90: 97
+	I90: 10
+	I70 | I90: 4
+--------------
+Threshold: 0,50
+--------------
+	I80 | I90: 107
+	I70 | I90: 4
+--------------
+Threshold: 0,60
+--------------
+	I80 | I90: 89
+	I70 | I80 | I90: 20
+--------------
+Threshold: 0,70
+--------------
+	I70 | I80 | I90: 91
+	I80 | I90: 20
+--------------
+Threshold: 0,80
+--------------
+	I70 | I80 | I90: 71
+	I70 | I80 | I90 | R3: 27
+	I70 | I80 | I90 | R1: 9
+	I60 | I70 | I80 | I90: 4
+*********************************************************************************
+All potential concepts based on thresholds
+	I80 I90 ~#~ I70 I90 ~#~ I70 I80 I90 ~#~ I70 I80 I90 R3 ~#~ I70 I80 I90 R1 ~#~ I60 I70 I80 I90 ~#~ 
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 2, minNoise=3 we remove groups of size 3. Tree SHAP num of expl. inst. 111 (fold 3). Explaining class: 0).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  3
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	I90: 111
+--------------
+Threshold: 0,20
+--------------
+	I90: 111
+--------------
+Threshold: 0,30
+--------------
+	I90: 111
+--------------
+Threshold: 0,40
+--------------
+	I80 | I90: 90
+	I90: 16
+	I70 | I90: 5
+--------------
+Threshold: 0,50
+--------------
+	I80 | I90: 106
+	I70 | I90: 5
+--------------
+Threshold: 0,60
+--------------
+	I80 | I90: 78
+	I70 | I80 | I90: 32
+--------------
+Threshold: 0,70
+--------------
+	I70 | I80 | I90: 101
+	I80 | I90: 10
+--------------
+Threshold: 0,80
+--------------
+	I70 | I80 | I90: 57
+	I70 | I80 | I90 | R3: 37
+	I70 | I80 | I90 | R1: 15
+*********************************************************************************
+All potential concepts based on thresholds
+	I80 I90 ~#~ I70 I90 ~#~ I70 I80 I90 ~#~ I70 I80 I90 R3 ~#~ I70 I80 I90 R1 ~#~ 
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 2, minNoise=3 we remove groups of size 3. Tree SHAP num of expl. inst. 111 (fold 4). Explaining class: 0).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  4
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	I90: 106
+	I80: 5
+--------------
+Threshold: 0,20
+--------------
+	I90: 106
+	I80: 5
+--------------
+Threshold: 0,30
+--------------
+	I90: 104
+	I80: 5
+--------------
+Threshold: 0,40
+--------------
+	I80 | I90: 98
+	I70 | I90: 8
+	I90: 5
+--------------
+Threshold: 0,50
+--------------
+	I80 | I90: 101
+	I70 | I90: 10
+--------------
+Threshold: 0,60
+--------------
+	I80 | I90: 81
+	I70 | I80 | I90: 28
+--------------
+Threshold: 0,70
+--------------
+	I70 | I80 | I90: 110
+--------------
+Threshold: 0,80
+--------------
+	I70 | I80 | I90: 57
+	I70 | I80 | I90 | R3: 46
+	I60 | I70 | I80 | I90: 6
+*********************************************************************************
+All potential concepts based on thresholds
+	I80 I90 ~#~ I70 I90 ~#~ I70 I80 I90 ~#~ I70 I80 I90 R3 ~#~ I60 I70 I80 I90 ~#~ 
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 2, minNoise=3 we remove groups of size 3. Tree SHAP num of expl. inst. 112 (fold 5). Explaining class: 0).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  5
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	I90: 112
+--------------
+Threshold: 0,20
+--------------
+	I90: 112
+--------------
+Threshold: 0,30
+--------------
+	I90: 112
+--------------
+Threshold: 0,40
+--------------
+	I80 | I90: 71
+	I90: 35
+	I70 | I90: 6
+--------------
+Threshold: 0,50
+--------------
+	I80 | I90: 102
+	I70 | I90: 10
+--------------
+Threshold: 0,60
+--------------
+	I80 | I90: 86
+	I70 | I80 | I90: 24
+--------------
+Threshold: 0,70
+--------------
+	I70 | I80 | I90: 104
+	I80 | I90: 8
+--------------
+Threshold: 0,80
+--------------
+	I70 | I80 | I90: 60
+	I70 | I80 | I90 | R3: 24
+	I70 | I80 | I90 | R1: 24
+	I70 | I80 | I90 | R2: 4
+*********************************************************************************
+All potential concepts based on thresholds
+	I80 I90 ~#~ I70 I90 ~#~ I70 I80 I90 ~#~ I70 I80 I90 R3 ~#~ I70 I80 I90 R1 ~#~ I70 I80 I90 R2 ~#~ 
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 2, minNoise=3 we remove groups of size 3. Tree SHAP num of expl. inst. 112 (fold 6). Explaining class: 0).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  6
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	I90: 111
+--------------
+Threshold: 0,20
+--------------
+	I90: 111
+--------------
+Threshold: 0,30
+--------------
+	I90: 110
+--------------
+Threshold: 0,40
+--------------
+	I80 | I90: 102
+	I90: 7
+--------------
+Threshold: 0,50
+--------------
+	I80 | I90: 108
+	I70 | I90: 4
+--------------
+Threshold: 0,60
+--------------
+	I80 | I90: 77
+	I70 | I80 | I90: 34
+--------------
+Threshold: 0,70
+--------------
+	I70 | I80 | I90: 111
+--------------
+Threshold: 0,80
+--------------
+	I70 | I80 | I90: 47
+	I70 | I80 | I90 | R2: 25
+	I70 | I80 | I90 | R1: 24
+	I70 | I80 | I90 | R3: 16
+*********************************************************************************
+All potential concepts based on thresholds
+	I80 I90 ~#~ I70 I90 ~#~ I70 I80 I90 ~#~ I70 I80 I90 R2 ~#~ I70 I80 I90 R1 ~#~ I70 I80 I90 R3 ~#~ 
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 2, minNoise=3 we remove groups of size 3. Tree SHAP num of expl. inst. 112 (fold 7). Explaining class: 0).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  7
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	I90: 99
+	I80: 13
+--------------
+Threshold: 0,20
+--------------
+	I90: 99
+	I80: 13
+--------------
+Threshold: 0,30
+--------------
+	I90: 92
+	I80: 12
+	I80 | I90: 8
+--------------
+Threshold: 0,40
+--------------
+	I80 | I90: 100
+	I70 | I90: 9
+--------------
+Threshold: 0,50
+--------------
+	I80 | I90: 103
+	I70 | I90: 9
+--------------
+Threshold: 0,60
+--------------
+	I80 | I90: 64
+	I70 | I80 | I90: 48
+--------------
+Threshold: 0,70
+--------------
+	I70 | I80 | I90: 108
+	I80 | I90: 4
+--------------
+Threshold: 0,80
+--------------
+	I70 | I80 | I90: 48
+	I70 | I80 | I90 | R3: 32
+	I70 | I80 | I90 | R1: 24
+	I60 | I70 | I80 | I90: 5
+*********************************************************************************
+All potential concepts based on thresholds
+	I80 I90 ~#~ I70 I90 ~#~ I70 I80 I90 ~#~ I70 I80 I90 R3 ~#~ I70 I80 I90 R1 ~#~ I60 I70 I80 I90 ~#~ 
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 2, minNoise=3 we remove groups of size 3. Tree SHAP num of expl. inst. 112 (fold 8). Explaining class: 0).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  8
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	I90: 106
+	I80: 6
+--------------
+Threshold: 0,20
+--------------
+	I90: 106
+	I80: 6
+--------------
+Threshold: 0,30
+--------------
+	I90: 88
+	I80 | I90: 15
+	I70 | I90: 5
+	I80: 4
+--------------
+Threshold: 0,40
+--------------
+	I80 | I90: 88
+	I70 | I90: 23
+--------------
+Threshold: 0,50
+--------------
+	I80 | I90: 87
+	I70 | I90: 24
+--------------
+Threshold: 0,60
+--------------
+	I70 | I80 | I90: 74
+	I80 | I90: 36
+--------------
+Threshold: 0,70
+--------------
+	I70 | I80 | I90: 111
+--------------
+Threshold: 0,80
+--------------
+	I70 | I80 | I90 | R3: 43
+	I70 | I80 | I90: 36
+	I70 | I80 | I90 | R1: 28
+*********************************************************************************
+All potential concepts based on thresholds
+	I80 I90 ~#~ I70 I90 ~#~ I70 I80 I90 ~#~ I70 I80 I90 R3 ~#~ I70 I80 I90 R1 ~#~ 
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 2, minNoise=3 we remove groups of size 3. Tree SHAP num of expl. inst. 112 (fold 9). Explaining class: 0).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  9
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	I90: 112
+--------------
+Threshold: 0,20
+--------------
+	I90: 112
+--------------
+Threshold: 0,30
+--------------
+	I90: 112
+--------------
+Threshold: 0,40
+--------------
+	I80 | I90: 97
+	I90: 9
+	I70 | I90: 6
+--------------
+Threshold: 0,50
+--------------
+	I80 | I90: 103
+	I70 | I90: 9
+--------------
+Threshold: 0,60
+--------------
+	I80 | I90: 72
+	I70 | I80 | I90: 33
+	I70 | I90: 7
+--------------
+Threshold: 0,70
+--------------
+	I70 | I80 | I90: 111
+--------------
+Threshold: 0,80
+--------------
+	I70 | I80 | I90: 55
+	I70 | I80 | I90 | R3: 46
+	I60 | I70 | I80 | I90: 6
+	I70 | I80 | I90 | R1: 5
+*********************************************************************************
+All potential concepts based on thresholds
+	I80 I90 ~#~ I70 I90 ~#~ I70 I80 I90 ~#~ I70 I80 I90 R3 ~#~ I60 I70 I80 I90 ~#~ I70 I80 I90 R1 ~#~ 
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 2, minNoise=3 we remove groups of size 3. Tree SHAP num of expl. inst. 112 (fold 10). Explaining class: 0).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold 10
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	I90: 112
+--------------
+Threshold: 0,20
+--------------
+	I90: 112
+--------------
+Threshold: 0,30
+--------------
+	I90: 112
+--------------
+Threshold: 0,40
+--------------
+	I80 | I90: 99
+	I90: 8
+	I70 | I90: 5
+--------------
+Threshold: 0,50
+--------------
+	I80 | I90: 107
+	I70 | I90: 5
+--------------
+Threshold: 0,60
+--------------
+	I80 | I90: 84
+	I70 | I80 | I90: 27
+--------------
+Threshold: 0,70
+--------------
+	I70 | I80 | I90: 111
+--------------
+Threshold: 0,80
+--------------
+	I70 | I80 | I90: 73
+	I70 | I80 | I90 | R3: 27
+	I70 | I80 | I90 | R1: 12
+*********************************************************************************
+All potential concepts based on thresholds
+	I80 I90 ~#~ I70 I90 ~#~ I70 I80 I90 ~#~ I70 I80 I90 R3 ~#~ I70 I80 I90 R1 ~#~ 
+*********************************************************************************

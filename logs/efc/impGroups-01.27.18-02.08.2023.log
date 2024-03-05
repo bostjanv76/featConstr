@@ -1,0 +1,962 @@
+dataset: Balance scale.arff
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 3, minNoise=3 we remove groups of size 3. Tree SHAP num of expl. inst. 284 (fold 1). Explaining class: L).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  1
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	right-weight: 100
+	right-distance: 82
+	left-weight: 54
+	left-distance: 48
+--------------
+Threshold: 0,20
+--------------
+	right-weight: 100
+	right-distance: 82
+	left-weight: 54
+	left-distance: 48
+--------------
+Threshold: 0,30
+--------------
+	right-weight: 97
+	right-distance: 81
+	left-weight: 53
+	left-distance: 46
+	right-weight | right-distance: 4
+--------------
+Threshold: 0,40
+--------------
+	right-weight: 64
+	right-distance: 57
+	right-weight | right-distance: 35
+	left-weight: 32
+	left-distance: 31
+	left-weight | left-distance: 17
+	left-weight | right-weight: 15
+	left-distance | right-weight: 13
+	left-weight | right-distance: 11
+	left-distance | right-distance: 9
+--------------
+Threshold: 0,50
+--------------
+	right-weight | right-distance: 58
+	left-weight | right-weight: 39
+	left-weight | right-distance: 37
+	left-weight | left-distance: 33
+	left-distance | right-weight: 27
+	right-weight: 26
+	left-distance | right-distance: 24
+	right-distance: 19
+	left-weight: 11
+	left-distance: 10
+--------------
+Threshold: 0,60
+--------------
+	right-weight | right-distance: 62
+	left-weight | right-weight: 42
+	left-weight | right-distance: 42
+	left-weight | left-distance: 34
+	left-distance | right-distance: 30
+	left-distance | right-weight: 25
+	left-weight | right-weight | right-distance: 11
+	left-distance | right-weight | right-distance: 10
+	right-weight: 9
+	right-distance: 5
+	left-weight | left-distance | right-distance: 5
+--------------
+Threshold: 0,70
+--------------
+	left-weight | right-weight | right-distance: 47
+	left-weight | right-weight: 32
+	right-weight | right-distance: 30
+	left-weight | right-distance: 30
+	left-distance | right-weight | right-distance: 29
+	left-weight | left-distance | right-distance: 28
+	left-weight | left-distance: 23
+	left-distance | right-distance: 22
+	left-distance | right-weight: 19
+	left-weight | left-distance | right-weight: 17
+--------------
+Threshold: 0,80
+--------------
+	left-weight | right-weight | right-distance: 67
+	left-weight | left-distance | right-distance: 57
+	left-distance | right-weight | right-distance: 45
+	left-weight | left-distance | right-weight: 41
+	left-weight | right-weight: 12
+	left-distance | right-weight: 11
+	left-distance | right-distance: 11
+	left-weight | left-distance | right-weight | right-distance: 11
+	right-weight | right-distance: 10
+	left-weight | right-distance: 10
+	left-weight | left-distance: 7
+*********************************************************************************
+All potential concepts based on thresholds
+	right-weight right-distance ~#~ left-weight left-distance ~#~ left-weight right-weight ~#~ left-distance right-weight ~#~ left-weight right-distance ~#~ left-distance right-distance ~#~ left-weight right-weight right-distance ~#~ left-distance right-weight right-distance ~#~ left-weight left-distance right-distance ~#~ left-weight left-distance right-weight ~#~ left-weight left-distance right-weight right-distance ~#~ 
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 3, minNoise=3 we remove groups of size 3. Tree SHAP num of expl. inst. 274 (fold 2). Explaining class: L).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  2
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	right-distance: 84
+	right-weight: 82
+	left-distance: 77
+	left-weight: 31
+--------------
+Threshold: 0,20
+--------------
+	right-distance: 84
+	right-weight: 82
+	left-distance: 77
+	left-weight: 31
+--------------
+Threshold: 0,30
+--------------
+	right-distance: 81
+	right-weight: 79
+	left-distance: 76
+	left-weight: 30
+--------------
+Threshold: 0,40
+--------------
+	right-distance: 58
+	right-weight: 53
+	left-distance: 46
+	left-distance | right-weight: 28
+	left-distance | right-distance: 24
+	right-weight | right-distance: 19
+	left-weight: 17
+	left-weight | left-distance: 17
+	left-weight | right-weight: 7
+	left-weight | right-distance: 5
+--------------
+Threshold: 0,50
+--------------
+	left-distance | right-weight: 54
+	left-distance | right-distance: 52
+	right-weight | right-distance: 36
+	left-weight | left-distance: 31
+	left-weight | right-distance: 22
+	right-distance: 21
+	left-weight | right-weight: 21
+	right-weight: 17
+	left-distance: 14
+	left-weight: 6
+--------------
+Threshold: 0,60
+--------------
+	left-distance | right-distance: 56
+	left-distance | right-weight: 53
+	right-weight | right-distance: 45
+	left-weight | left-distance: 33
+	left-weight | right-distance: 28
+	left-weight | right-weight: 27
+	left-distance | right-weight | right-distance: 11
+	left-distance: 4
+	left-weight | left-distance | right-weight: 4
+	left-weight | left-distance | right-distance: 4
+--------------
+Threshold: 0,70
+--------------
+	left-distance | right-weight | right-distance: 40
+	left-distance | right-distance: 37
+	left-distance | right-weight: 34
+	left-weight | right-weight | right-distance: 28
+	left-weight | left-distance | right-distance: 28
+	right-weight | right-distance: 27
+	left-weight | left-distance: 22
+	left-weight | left-distance | right-weight: 21
+	left-weight | right-weight: 18
+	left-weight | right-distance: 16
+--------------
+Threshold: 0,80
+--------------
+	left-distance | right-weight | right-distance: 70
+	left-weight | left-distance | right-distance: 59
+	left-weight | left-distance | right-weight: 47
+	left-weight | right-weight | right-distance: 39
+	left-distance | right-distance: 12
+	left-distance | right-weight: 11
+	left-weight | left-distance | right-weight | right-distance: 11
+	right-weight | right-distance: 8
+	left-weight | left-distance: 7
+	left-weight | right-weight: 6
+	left-weight | right-distance: 4
+*********************************************************************************
+All potential concepts based on thresholds
+	left-distance right-weight ~#~ left-distance right-distance ~#~ right-weight right-distance ~#~ left-weight left-distance ~#~ left-weight right-weight ~#~ left-weight right-distance ~#~ left-distance right-weight right-distance ~#~ left-weight left-distance right-weight ~#~ left-weight left-distance right-distance ~#~ left-weight right-weight right-distance ~#~ left-weight left-distance right-weight right-distance ~#~ 
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 3, minNoise=3 we remove groups of size 3. Tree SHAP num of expl. inst. 275 (fold 3). Explaining class: L).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  3
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	right-distance: 91
+	right-weight: 82
+	left-weight: 52
+	left-distance: 50
+--------------
+Threshold: 0,20
+--------------
+	right-distance: 91
+	right-weight: 82
+	left-weight: 52
+	left-distance: 50
+--------------
+Threshold: 0,30
+--------------
+	right-distance: 89
+	right-weight: 79
+	left-weight: 51
+	left-distance: 49
+--------------
+Threshold: 0,40
+--------------
+	right-distance: 65
+	right-weight: 56
+	left-weight: 28
+	left-distance: 27
+	right-weight | right-distance: 23
+	left-weight | right-weight: 20
+	left-weight | left-distance: 16
+	left-weight | right-distance: 14
+	left-distance | right-weight: 13
+	left-distance | right-distance: 13
+--------------
+Threshold: 0,50
+--------------
+	right-weight | right-distance: 50
+	left-weight | right-weight: 41
+	left-weight | right-distance: 37
+	left-distance | right-distance: 30
+	right-distance: 28
+	left-distance | right-weight: 27
+	left-weight | left-distance: 27
+	right-weight: 22
+	left-distance: 8
+	left-weight: 5
+--------------
+Threshold: 0,60
+--------------
+	right-weight | right-distance: 63
+	left-weight | right-distance: 38
+	left-weight | right-weight: 35
+	left-distance | right-distance: 33
+	left-distance | right-weight: 31
+	left-weight | left-distance: 25
+	left-weight | right-weight | right-distance: 11
+	right-distance: 9
+	left-weight | left-distance | right-weight: 8
+	right-weight: 6
+	left-weight | left-distance | right-distance: 6
+	left-distance | right-weight | right-distance: 5
+--------------
+Threshold: 0,70
+--------------
+	right-weight | right-distance: 45
+	left-weight | right-weight | right-distance: 41
+	left-distance | right-distance: 28
+	left-weight | left-distance | right-weight: 27
+	left-weight | right-distance: 26
+	left-weight | left-distance | right-distance: 23
+	left-distance | right-weight: 23
+	left-weight | right-weight: 22
+	left-weight | left-distance: 18
+	left-distance | right-weight | right-distance: 17
+--------------
+Threshold: 0,80
+--------------
+	left-distance | right-weight | right-distance: 55
+	left-weight | right-weight | right-distance: 53
+	left-weight | left-distance | right-weight: 48
+	left-weight | left-distance | right-distance: 40
+	right-weight | right-distance: 16
+	left-weight | left-distance | right-weight | right-distance: 14
+	left-distance | right-distance: 12
+	left-distance | right-weight: 10
+	left-weight | right-distance: 10
+	left-weight | right-weight: 8
+	left-weight | left-distance: 6
+*********************************************************************************
+All potential concepts based on thresholds
+	right-weight right-distance ~#~ left-weight right-weight ~#~ left-weight left-distance ~#~ left-weight right-distance ~#~ left-distance right-weight ~#~ left-distance right-distance ~#~ left-weight right-weight right-distance ~#~ left-weight left-distance right-weight ~#~ left-weight left-distance right-distance ~#~ left-distance right-weight right-distance ~#~ left-weight left-distance right-weight right-distance ~#~ 
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 3, minNoise=3 we remove groups of size 3. Tree SHAP num of expl. inst. 257 (fold 4). Explaining class: L).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  4
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	right-weight: 72
+	left-distance: 64
+	right-distance: 64
+	left-weight: 57
+--------------
+Threshold: 0,20
+--------------
+	right-weight: 72
+	left-distance: 64
+	right-distance: 64
+	left-weight: 57
+--------------
+Threshold: 0,30
+--------------
+	right-weight: 67
+	right-distance: 61
+	left-distance: 58
+	left-weight: 53
+	right-weight | right-distance: 4
+	left-distance | right-weight: 4
+	left-weight | left-distance: 4
+--------------
+Threshold: 0,40
+--------------
+	right-weight: 40
+	right-distance: 34
+	left-distance: 29
+	left-weight: 25
+	left-distance | right-distance: 24
+	left-weight | left-distance: 24
+	right-weight | right-distance: 22
+	left-distance | right-weight: 21
+	left-weight | right-distance: 20
+	left-weight | right-weight: 18
+--------------
+Threshold: 0,50
+--------------
+	left-distance | right-weight: 42
+	right-weight | right-distance: 40
+	left-weight | right-distance: 36
+	left-weight | left-distance: 35
+	left-distance | right-distance: 33
+	left-weight | right-weight: 32
+	right-weight: 12
+	right-distance: 11
+	left-weight: 8
+	left-distance: 8
+--------------
+Threshold: 0,60
+--------------
+	right-weight | right-distance: 42
+	left-distance | right-weight: 39
+	left-weight | right-weight: 36
+	left-weight | right-distance: 34
+	left-weight | left-distance: 31
+	left-distance | right-distance: 28
+	left-distance | right-weight | right-distance: 16
+	left-weight | left-distance | right-distance: 10
+	left-weight | right-weight | right-distance: 8
+	left-weight | left-distance | right-weight: 6
+--------------
+Threshold: 0,70
+--------------
+	left-weight | right-weight | right-distance: 41
+	left-distance | right-weight | right-distance: 41
+	left-weight | left-distance | right-weight: 26
+	left-distance | right-weight: 26
+	left-weight | left-distance | right-distance: 22
+	left-weight | right-distance: 22
+	left-weight | left-distance: 21
+	left-weight | right-weight: 20
+	right-weight | right-distance: 19
+	left-distance | right-distance: 19
+--------------
+Threshold: 0,80
+--------------
+	left-distance | right-weight | right-distance: 52
+	left-weight | left-distance | right-weight: 51
+	left-weight | right-weight | right-distance: 50
+	left-weight | left-distance | right-distance: 41
+	left-weight | left-distance | right-weight | right-distance: 18
+	left-distance | right-weight: 10
+	left-weight | right-distance: 9
+	left-distance | right-distance: 8
+	left-weight | right-weight: 7
+	left-weight | left-distance: 6
+	right-weight | right-distance: 5
+*********************************************************************************
+All potential concepts based on thresholds
+	right-weight right-distance ~#~ left-distance right-weight ~#~ left-weight left-distance ~#~ left-distance right-distance ~#~ left-weight right-distance ~#~ left-weight right-weight ~#~ left-distance right-weight right-distance ~#~ left-weight left-distance right-distance ~#~ left-weight right-weight right-distance ~#~ left-weight left-distance right-weight ~#~ left-weight left-distance right-weight right-distance ~#~ 
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 3, minNoise=3 we remove groups of size 3. Tree SHAP num of expl. inst. 266 (fold 5). Explaining class: L).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  5
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	right-distance: 87
+	right-weight: 69
+	left-weight: 66
+	left-distance: 44
+--------------
+Threshold: 0,20
+--------------
+	right-distance: 87
+	right-weight: 69
+	left-weight: 66
+	left-distance: 44
+--------------
+Threshold: 0,30
+--------------
+	right-distance: 85
+	right-weight: 69
+	left-weight: 63
+	left-distance: 43
+--------------
+Threshold: 0,40
+--------------
+	right-distance: 49
+	right-weight: 40
+	left-weight: 34
+	right-weight | right-distance: 26
+	left-weight | right-weight: 25
+	left-weight | right-distance: 24
+	left-weight | left-distance: 20
+	left-distance | right-distance: 17
+	left-distance: 16
+	left-distance | right-weight: 15
+--------------
+Threshold: 0,50
+--------------
+	right-weight | right-distance: 52
+	left-weight | right-distance: 46
+	left-weight | right-weight: 39
+	left-weight | left-distance: 33
+	left-distance | right-distance: 30
+	left-distance | right-weight: 24
+	left-weight: 13
+	right-weight: 13
+	right-distance: 13
+--------------
+Threshold: 0,60
+--------------
+	right-weight | right-distance: 53
+	left-weight | right-distance: 43
+	left-weight | right-weight: 41
+	left-weight | left-distance: 37
+	left-distance | right-distance: 30
+	left-distance | right-weight: 28
+	left-weight | right-weight | right-distance: 9
+	left-weight | left-distance | right-distance: 8
+	left-weight | left-distance | right-weight: 5
+	left-distance | right-weight | right-distance: 4
+--------------
+Threshold: 0,70
+--------------
+	left-weight | right-weight | right-distance: 44
+	left-distance | right-weight | right-distance: 34
+	left-weight | left-distance | right-weight: 29
+	left-weight | right-distance: 27
+	left-weight | left-distance | right-distance: 26
+	right-weight | right-distance: 24
+	left-weight | right-weight: 24
+	left-weight | left-distance: 23
+	left-distance | right-distance: 17
+	left-distance | right-weight: 15
+--------------
+Threshold: 0,80
+--------------
+	left-weight | right-weight | right-distance: 59
+	left-weight | left-distance | right-weight: 54
+	left-weight | left-distance | right-distance: 51
+	left-distance | right-weight | right-distance: 48
+	left-weight | right-weight: 11
+	left-weight | left-distance | right-weight | right-distance: 10
+	left-weight | right-distance: 9
+	right-weight | right-distance: 7
+	left-weight | left-distance: 7
+	left-distance | right-weight: 6
+	left-distance | right-distance: 4
+*********************************************************************************
+All potential concepts based on thresholds
+	right-weight right-distance ~#~ left-weight right-weight ~#~ left-weight right-distance ~#~ left-weight left-distance ~#~ left-distance right-distance ~#~ left-distance right-weight ~#~ left-weight right-weight right-distance ~#~ left-weight left-distance right-distance ~#~ left-weight left-distance right-weight ~#~ left-distance right-weight right-distance ~#~ left-weight left-distance right-weight right-distance ~#~ 
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 3, minNoise=3 we remove groups of size 3. Tree SHAP num of expl. inst. 247 (fold 6). Explaining class: L).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  6
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	right-weight: 68
+	right-distance: 67
+	left-weight: 64
+	left-distance: 48
+--------------
+Threshold: 0,20
+--------------
+	right-weight: 68
+	right-distance: 67
+	left-weight: 64
+	left-distance: 48
+--------------
+Threshold: 0,30
+--------------
+	right-weight: 65
+	right-distance: 65
+	left-weight: 62
+	left-distance: 46
+--------------
+Threshold: 0,40
+--------------
+	left-weight: 41
+	right-weight: 37
+	right-distance: 36
+	left-distance: 26
+	left-distance | right-weight: 23
+	left-weight | left-distance: 21
+	left-weight | right-distance: 21
+	left-distance | right-distance: 18
+	left-weight | right-weight: 13
+	right-weight | right-distance: 11
+--------------
+Threshold: 0,50
+--------------
+	left-weight | left-distance: 39
+	left-weight | right-distance: 39
+	left-distance | right-weight: 36
+	left-distance | right-distance: 30
+	left-weight | right-weight: 28
+	right-weight | right-distance: 26
+	left-weight: 15
+	right-weight: 14
+	right-distance: 13
+	left-distance: 7
+--------------
+Threshold: 0,60
+--------------
+	left-weight | left-distance: 43
+	left-weight | right-distance: 39
+	left-weight | right-weight: 34
+	right-weight | right-distance: 33
+	left-distance | right-weight: 32
+	left-distance | right-distance: 28
+	left-weight | left-distance | right-weight: 8
+	left-weight | left-distance | right-distance: 8
+	left-weight | right-weight | right-distance: 5
+	left-weight: 5
+	right-weight: 4
+	right-distance: 4
+--------------
+Threshold: 0,70
+--------------
+	left-weight | left-distance: 35
+	left-weight | left-distance | right-weight: 32
+	left-weight | right-weight: 27
+	left-weight | right-distance: 27
+	left-weight | left-distance | right-distance: 26
+	left-weight | right-weight | right-distance: 25
+	right-weight | right-distance: 19
+	left-distance | right-weight | right-distance: 19
+	left-distance | right-distance: 17
+	left-distance | right-weight: 16
+--------------
+Threshold: 0,80
+--------------
+	left-weight | left-distance | right-weight: 57
+	left-weight | right-weight | right-distance: 45
+	left-weight | left-distance | right-distance: 44
+	left-distance | right-weight | right-distance: 30
+	left-weight | left-distance: 24
+	left-weight | right-weight: 9
+	left-weight | right-distance: 9
+	left-weight | left-distance | right-weight | right-distance: 9
+	left-distance | right-weight: 8
+	right-weight | right-distance: 6
+	left-distance | right-distance: 6
+*********************************************************************************
+All potential concepts based on thresholds
+	left-distance right-weight ~#~ left-weight left-distance ~#~ left-weight right-distance ~#~ left-distance right-distance ~#~ left-weight right-weight ~#~ right-weight right-distance ~#~ left-weight left-distance right-weight ~#~ left-weight left-distance right-distance ~#~ left-weight right-weight right-distance ~#~ left-distance right-weight right-distance ~#~ left-weight left-distance right-weight right-distance ~#~ 
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 3, minNoise=3 we remove groups of size 3. Tree SHAP num of expl. inst. 260 (fold 7). Explaining class: L).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  7
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	left-weight: 87
+	right-distance: 83
+	right-weight: 61
+	left-distance: 29
+--------------
+Threshold: 0,20
+--------------
+	left-weight: 87
+	right-distance: 83
+	right-weight: 61
+	left-distance: 29
+--------------
+Threshold: 0,30
+--------------
+	left-weight: 82
+	right-distance: 80
+	right-weight: 61
+	left-distance: 29
+--------------
+Threshold: 0,40
+--------------
+	right-distance: 50
+	left-weight: 43
+	right-weight: 34
+	left-weight | right-weight: 33
+	left-weight | right-distance: 30
+	left-weight | left-distance: 21
+	left-distance: 17
+	right-weight | right-distance: 16
+	left-distance | right-weight: 8
+	left-distance | right-distance: 8
+--------------
+Threshold: 0,50
+--------------
+	left-weight | right-distance: 56
+	left-weight | right-weight: 44
+	left-weight | left-distance: 41
+	right-weight | right-distance: 30
+	left-distance | right-weight: 22
+	left-distance | right-distance: 22
+	right-distance: 19
+	right-weight: 12
+	left-weight: 11
+--------------
+Threshold: 0,60
+--------------
+	left-weight | right-distance: 53
+	right-weight | right-distance: 42
+	left-weight | left-distance: 40
+	left-weight | right-weight: 40
+	left-distance | right-distance: 28
+	left-distance | right-weight: 24
+	left-weight | right-weight | right-distance: 8
+	left-weight | left-distance | right-distance: 7
+	left-weight | left-distance | right-weight: 5
+	left-weight: 4
+	right-distance: 4
+--------------
+Threshold: 0,70
+--------------
+	left-weight | right-weight | right-distance: 37
+	right-weight | right-distance: 33
+	left-weight | right-distance: 32
+	left-weight | left-distance | right-weight: 31
+	left-weight | left-distance | right-distance: 31
+	left-weight | left-distance: 21
+	left-distance | right-weight | right-distance: 21
+	left-distance | right-distance: 19
+	left-weight | right-weight: 19
+	left-distance | right-weight: 14
+--------------
+Threshold: 0,80
+--------------
+	left-weight | right-weight | right-distance: 59
+	left-weight | left-distance | right-distance: 53
+	left-distance | right-weight | right-distance: 48
+	left-weight | left-distance | right-weight: 45
+	left-weight | right-distance: 12
+	left-weight | left-distance | right-weight | right-distance: 11
+	right-weight | right-distance: 10
+	left-distance | right-distance: 7
+	left-weight | left-distance: 7
+	left-distance | right-weight: 4
+	left-weight | right-weight: 4
+*********************************************************************************
+All potential concepts based on thresholds
+	left-weight right-weight ~#~ left-weight right-distance ~#~ left-weight left-distance ~#~ right-weight right-distance ~#~ left-distance right-weight ~#~ left-distance right-distance ~#~ left-weight right-weight right-distance ~#~ left-weight left-distance right-distance ~#~ left-weight left-distance right-weight ~#~ left-distance right-weight right-distance ~#~ left-weight left-distance right-weight right-distance ~#~ 
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 3, minNoise=3 we remove groups of size 3. Tree SHAP num of expl. inst. 240 (fold 8). Explaining class: L).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  8
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	right-distance: 71
+	right-weight: 64
+	left-distance: 53
+	left-weight: 52
+--------------
+Threshold: 0,20
+--------------
+	right-distance: 71
+	right-weight: 64
+	left-distance: 53
+	left-weight: 52
+--------------
+Threshold: 0,30
+--------------
+	right-distance: 67
+	right-weight: 63
+	left-distance: 52
+	left-weight: 51
+--------------
+Threshold: 0,40
+--------------
+	right-weight: 43
+	right-distance: 40
+	left-weight: 30
+	left-distance: 30
+	left-distance | right-weight: 18
+	left-distance | right-distance: 18
+	left-weight | right-distance: 17
+	left-weight | right-weight: 16
+	right-weight | right-distance: 14
+	left-weight | left-distance: 14
+--------------
+Threshold: 0,50
+--------------
+	left-weight | right-distance: 34
+	right-weight | right-distance: 33
+	left-distance | right-distance: 33
+	left-weight | right-weight: 32
+	left-distance | right-weight: 30
+	left-weight | left-distance: 25
+	right-weight: 18
+	right-distance: 16
+	left-weight: 10
+	left-distance: 9
+--------------
+Threshold: 0,60
+--------------
+	left-weight | right-weight: 41
+	left-weight | right-distance: 40
+	right-weight | right-distance: 39
+	left-distance | right-distance: 34
+	left-distance | right-weight: 32
+	left-weight | left-distance: 30
+	left-weight | left-distance | right-weight: 5
+	left-weight | left-distance | right-distance: 4
+--------------
+Threshold: 0,70
+--------------
+	left-weight | left-distance | right-weight: 29
+	left-weight | right-weight: 29
+	right-weight | right-distance: 27
+	left-weight | right-distance: 25
+	left-weight | left-distance: 24
+	left-weight | left-distance | right-distance: 22
+	left-distance | right-weight: 22
+	left-distance | right-weight | right-distance: 22
+	left-weight | right-weight | right-distance: 21
+	left-distance | right-distance: 19
+--------------
+Threshold: 0,80
+--------------
+	left-weight | left-distance | right-weight: 66
+	left-weight | left-distance | right-distance: 49
+	left-weight | right-weight | right-distance: 47
+	left-distance | right-weight | right-distance: 38
+	left-weight | left-distance: 10
+	left-distance | right-weight: 7
+	left-weight | right-weight: 7
+	left-distance | right-distance: 6
+	left-weight | right-distance: 5
+	left-weight | left-distance | right-weight | right-distance: 5
+*********************************************************************************
+All potential concepts based on thresholds
+	left-distance right-weight ~#~ left-distance right-distance ~#~ left-weight right-distance ~#~ left-weight right-weight ~#~ right-weight right-distance ~#~ left-weight left-distance ~#~ left-weight left-distance right-weight ~#~ left-weight left-distance right-distance ~#~ left-distance right-weight right-distance ~#~ left-weight right-weight right-distance ~#~ left-weight left-distance right-weight right-distance ~#~ 
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 3, minNoise=3 we remove groups of size 3. Tree SHAP num of expl. inst. 253 (fold 9). Explaining class: L).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  9
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	right-weight: 76
+	right-distance: 70
+	left-weight: 58
+	left-distance: 49
+--------------
+Threshold: 0,20
+--------------
+	right-weight: 76
+	right-distance: 70
+	left-weight: 58
+	left-distance: 49
+--------------
+Threshold: 0,30
+--------------
+	right-weight: 71
+	right-distance: 69
+	left-weight: 54
+	left-distance: 47
+	right-weight | right-distance: 5
+	left-weight | left-distance: 4
+--------------
+Threshold: 0,40
+--------------
+	right-distance: 47
+	right-weight: 46
+	left-weight: 25
+	left-distance: 24
+	right-weight | right-distance: 23
+	left-weight | left-distance: 23
+	left-weight | right-distance: 22
+	left-weight | right-weight: 21
+	left-distance | right-weight: 14
+	left-distance | right-distance: 8
+--------------
+Threshold: 0,50
+--------------
+	left-weight | right-distance: 43
+	right-weight | right-distance: 42
+	left-weight | left-distance: 40
+	left-weight | right-weight: 38
+	left-distance | right-weight: 32
+	left-distance | right-distance: 22
+	right-distance: 17
+	right-weight: 12
+	left-weight: 5
+--------------
+Threshold: 0,60
+--------------
+	left-weight | right-distance: 42
+	right-weight | right-distance: 41
+	left-weight | right-weight: 36
+	left-weight | left-distance: 35
+	left-distance | right-weight: 32
+	left-distance | right-distance: 26
+	left-weight | right-weight | right-distance: 13
+	left-distance | right-weight | right-distance: 8
+	left-weight | left-distance | right-weight: 7
+	left-weight | left-distance | right-distance: 5
+--------------
+Threshold: 0,70
+--------------
+	left-weight | right-weight | right-distance: 42
+	left-weight | right-distance: 31
+	left-distance | right-weight | right-distance: 28
+	left-weight | left-distance | right-weight: 27
+	left-weight | left-distance | right-distance: 25
+	right-weight | right-distance: 24
+	left-weight | left-distance: 22
+	left-weight | right-weight: 22
+	left-distance | right-weight: 17
+	left-distance | right-distance: 15
+--------------
+Threshold: 0,80
+--------------
+	left-weight | right-weight | right-distance: 61
+	left-weight | left-distance | right-distance: 55
+	left-weight | left-distance | right-weight: 51
+	left-distance | right-weight | right-distance: 38
+	left-weight | left-distance | right-weight | right-distance: 19
+	left-weight | right-weight: 7
+	left-weight | right-distance: 7
+	left-distance | right-distance: 5
+	left-weight | left-distance: 5
+*********************************************************************************
+All potential concepts based on thresholds
+	right-weight right-distance ~#~ left-weight left-distance ~#~ left-weight right-distance ~#~ left-weight right-weight ~#~ left-distance right-weight ~#~ left-distance right-distance ~#~ left-weight right-weight right-distance ~#~ left-distance right-weight right-distance ~#~ left-weight left-distance right-weight ~#~ left-weight left-distance right-distance ~#~ left-weight left-distance right-weight right-distance ~#~ 
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 3, minNoise=3 we remove groups of size 3. Tree SHAP num of expl. inst. 236 (fold 10). Explaining class: L).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold 10
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	right-weight: 82
+	right-distance: 57
+	left-distance: 50
+	left-weight: 47
+--------------
+Threshold: 0,20
+--------------
+	right-weight: 82
+	right-distance: 57
+	left-distance: 50
+	left-weight: 47
+--------------
+Threshold: 0,30
+--------------
+	right-weight: 79
+	right-distance: 57
+	left-distance: 50
+	left-weight: 45
+--------------
+Threshold: 0,40
+--------------
+	right-weight: 48
+	right-distance: 41
+	left-distance: 34
+	left-weight: 30
+	left-distance | right-weight: 22
+	right-weight | right-distance: 20
+	left-weight | right-weight: 14
+	left-weight | right-distance: 13
+	left-distance | right-distance: 10
+	left-weight | left-distance: 4
+--------------
+Threshold: 0,50
+--------------
+	right-weight | right-distance: 39
+	left-distance | right-weight: 35
+	left-weight | right-weight: 31
+	left-distance | right-distance: 28
+	left-weight | right-distance: 27
+	left-weight | left-distance: 23
+	right-weight: 19
+	right-distance: 14
+	left-distance: 11
+	left-weight: 9
+--------------
+Threshold: 0,60
+--------------
+	right-weight | right-distance: 44
+	left-distance | right-weight: 40
+	left-weight | right-weight: 34
+	left-distance | right-distance: 33
+	left-weight | left-distance: 33
+	left-weight | right-distance: 31
+	left-distance | right-weight | right-distance: 6
+	left-weight | left-distance | right-distance: 4
+--------------
+Threshold: 0,70
+--------------
+	left-distance | right-weight | right-distance: 37
+	left-weight | right-weight | right-distance: 32
+	left-weight | left-distance: 28
+	left-weight | left-distance | right-weight: 24
+	left-weight | left-distance | right-distance: 23
+	left-distance | right-weight: 23
+	left-distance | right-distance: 18
+	left-weight | right-weight: 18
+	left-weight | right-distance: 18
+	right-weight | right-distance: 15
+--------------
+Threshold: 0,80
+--------------
+	left-weight | left-distance | right-distance: 55
+	left-weight | left-distance | right-weight: 54
+	left-weight | right-weight | right-distance: 48
+	left-distance | right-weight | right-distance: 42
+	left-weight | left-distance: 9
+	left-distance | right-weight: 7
+	left-distance | right-distance: 6
+	left-weight | right-weight: 6
+	left-weight | right-distance: 5
+	left-weight | left-distance | right-weight | right-distance: 4
+*********************************************************************************
+All potential concepts based on thresholds
+	left-distance right-weight ~#~ right-weight right-distance ~#~ left-weight right-weight ~#~ left-weight right-distance ~#~ left-distance right-distance ~#~ left-weight left-distance ~#~ left-distance right-weight right-distance ~#~ left-weight left-distance right-distance ~#~ left-weight right-weight right-distance ~#~ left-weight left-distance right-weight ~#~ left-weight left-distance right-weight right-distance ~#~ 
+*********************************************************************************

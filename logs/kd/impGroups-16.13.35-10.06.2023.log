@@ -1,0 +1,32 @@
+dataset: cLogicalConcBEasy.arff
+Explaining class: 1 explaining whole dataset: NO
+Internal (during building) accuracy of explanation model: 100.0
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=10.0% -> 49, minNoise=3 we remove groups of size 49. Tree SHAP num of expl. inst. 489
+Lower threshold thrL: 0.6 upper threshold thrU: 0.8 with step: 0.1
+--------------
+Threshold: 0,60
+--------------
+	A2 | A3: 128
+	A1 | A4 | A5: 128
+	A1 | A2 | A3: 124
+	A4 | A5: 109
+--------------
+Threshold: 0,70
+--------------
+	A1 | A2 | A3: 187
+	A1 | A4 | A5: 180
+	A2 | A3: 65
+	A4 | A5: 57
+--------------
+Threshold: 0,80
+--------------
+	A1 | A2 | A3: 187
+	A1 | A4 | A5: 128
+	A2 | A3 | A5: 65
+	A2 | A4 | A5: 57
+	A1 | A2 | A4 | A5: 52
+*********************************************************************************
+All potential concepts, based on thresholds.
+	A2 A3 ~#~ A1 A4 A5 ~#~ A1 A2 A3 ~#~ A4 A5 ~#~ A2 A3 A5 ~#~ A2 A4 A5 ~#~ A1 A2 A4 A5 ~#~ 
+*********************************************************************************

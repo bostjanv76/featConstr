@@ -9,6 +9,7 @@
                 <root id="src.dir"/>
                 <root id="src.logs.dir"/>
                 <root id="src.Rdata.dir"/>
+                <root id="src.Lime.dir"/>
                 <root id="src.visualisation.dir"/>
             </source-roots>
             <test-roots/>

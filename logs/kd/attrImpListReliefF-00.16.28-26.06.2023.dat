@@ -1,0 +1,65 @@
+dataset: cLogicalConcB-uniqueInst.arff
+ReliefF - after CI
+Ranked attributes:
+ 0.43516    53 (A2 = 1) and (A6 = 1)
+ 0.38984    57 num-of-N((A2 = 1) and (A6 = 1))
+ 0.32109    20 A2 equ A6
+ 0.32109    35 A2 xor A6
+ 0.27578     2 A2
+ 0.25938    60 num-of-N((A1 = 1) and (A3 = 0) and (A2 = 0))
+ 0.25391    56 (A1 = 1) and (A3 = 0) and (A2 = 0)
+ 0.25156     9 A2 equ A3
+ 0.25156    24 A2 xor A3
+ 0.24766    43 A1 impl A3
+ 0.24766    55 (A1 = 1) and (A3 = 0)
+ 0.24297     8 A1 equ A2
+ 0.24297    23 A1 xor A2
+ 0.20938    50 A2 impl A6
+ 0.19219     6 A6
+ 0.18672    54 (A4 = 1) and (A5 = 1) and (A2 = 1)
+ 0.16484    38 A1 impl A2
+ 0.15781    59 num-of-N((A1 = 1) and (A3 = 0))
+ 0.15234    29 A2 xor A4
+ 0.15234    14 A2 equ A4
+ 0.14062    32 A2 xor A5
+ 0.14062    17 A2 equ A5
+ 0.13203    33 A3 xor A6
+ 0.13203    18 A3 equ A6
+ 0.12891    58 num-of-N((A4 = 1) and (A5 = 1) and (A2 = 1))
+ 0.12812    22 A1 equ A6
+ 0.12812    37 A1 xor A6
+ 0.12422    13 A1 equ A3
+ 0.12422    28 A1 xor A3
+ 0.11562    15 A4 equ A6
+ 0.11562    30 A4 xor A6
+ 0.11484    25 A5 xor A6
+ 0.11484    10 A5 equ A6
+ 0.10937    44 A2 impl A4
+ 0.10859    48 A3 impl A6
+ 0.08984    47 A2 impl A5
+ 0.08594    52 A1 impl A6
+ 0.08281     1 A1
+ 0.06484     3 A3
+ 0.03828    45 A4 impl A6
+ 0.03828    39 A2 impl A3
+ 0.03203    40 A5 impl A6
+ 0.02422    42 A3 impl A4
+ 0.02109    36 A1 xor A5
+ 0.02109    21 A1 equ A5
+ 0.01406    34 A1 xor A4
+ 0.01406    19 A1 equ A4
+ 0.01172    49 A1 impl A4
+ 0.01016    27 A3 xor A4
+ 0.01016    12 A3 equ A4
+ 0.01016    51 A1 impl A5
+ 0.00859    46 A3 impl A5
+-0.00781    31 A3 xor A5
+-0.00781    16 A3 equ A5
+-0.01172    26 A4 xor A5
+-0.01172    11 A4 equ A5
+-0.0125      4 A4
+-0.025      41 A4 impl A5
+-0.02734     5 A5
+-0.08359     7 A7
+
+

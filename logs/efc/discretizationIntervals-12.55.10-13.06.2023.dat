@@ -1,0 +1,283 @@
+dataset: credit_score.arff
+								--------------
+									Fold  1
+								--------------
+net_sales
+cost_of_goods_and_services
+cost_of_labor
+depreciation
+financial_expenses
+interest='(82468.5-inf)'
+EBIT='(-inf--116952.5]'
+EBIT='(-116952.5-119358.5]'
+EBIT='(119358.5-inf)'
+EBITDA='(213572-inf)'
+net_income='(77287.5-inf)'
+assets
+equity='(497055.5-inf)'
+debt='(566655-inf)'
+cash='(20519-inf)'
+lt_assets
+st_assets
+total_oper_liabilities
+st_oper_liabilities
+lt_liabilities
+st_liabilities
+inventories
+FFO='(165946.5-inf)'
+OCF='(140938.5-inf)'
+								--------------
+									Fold  2
+								--------------
+net_sales
+cost_of_goods_and_services
+cost_of_labor
+depreciation
+financial_expenses
+interest='(82468.5-inf)'
+EBIT='(-inf--117821]'
+EBIT='(-117821-119406]'
+EBIT='(119406-inf)'
+EBITDA='(216801-inf)'
+net_income='(77174.5-inf)'
+assets
+equity='(497055.5-inf)'
+debt='(1509606.5-inf)'
+cash='(20519-inf)'
+lt_assets
+st_assets
+total_oper_liabilities
+st_oper_liabilities
+lt_liabilities
+st_liabilities
+inventories
+FFO='(-inf-34331.5]'
+FFO='(34331.5-165946.5]'
+FFO='(165946.5-inf)'
+OCF='(140938.5-inf)'
+								--------------
+									Fold  3
+								--------------
+net_sales
+cost_of_goods_and_services
+cost_of_labor
+depreciation
+financial_expenses
+interest='(38286.5-inf)'
+EBIT='(-inf--116952.5]'
+EBIT='(-116952.5-119406]'
+EBIT='(119406-inf)'
+EBITDA='(213572-inf)'
+net_income='(77287.5-inf)'
+assets
+equity='(497055.5-inf)'
+debt='(566655-inf)'
+cash='(55087-inf)'
+lt_assets
+st_assets
+total_oper_liabilities
+st_oper_liabilities
+lt_liabilities
+st_liabilities
+inventories
+FFO='(165946.5-inf)'
+OCF='(161926-inf)'
+								--------------
+									Fold  4
+								--------------
+net_sales
+cost_of_goods_and_services
+cost_of_labor
+depreciation
+financial_expenses='(20468-inf)'
+interest='(20468-inf)'
+EBIT='(-inf--116952.5]'
+EBIT='(-116952.5-119406]'
+EBIT='(119406-inf)'
+EBITDA='(213572-inf)'
+net_income='(91984.5-inf)'
+assets
+equity='(497055.5-inf)'
+debt='(515767.5-inf)'
+cash='(36701-inf)'
+lt_assets
+st_assets
+total_oper_liabilities
+st_oper_liabilities
+lt_liabilities
+st_liabilities
+inventories
+FFO='(-inf-35050.5]'
+FFO='(35050.5-238467.5]'
+FFO='(238467.5-inf)'
+OCF='(361046.5-inf)'
+								--------------
+									Fold  5
+								--------------
+net_sales
+cost_of_goods_and_services
+cost_of_labor
+depreciation
+financial_expenses='(20603-inf)'
+interest='(82468.5-inf)'
+EBIT='(-inf--21518.5]'
+EBIT='(-21518.5-119406]'
+EBIT='(119406-inf)'
+EBITDA='(213572-inf)'
+net_income='(-inf--37918.5]'
+net_income='(-37918.5-77287.5]'
+net_income='(77287.5-inf)'
+assets
+equity='(493779-inf)'
+debt='(566655-inf)'
+cash='(35428-inf)'
+lt_assets
+st_assets
+total_oper_liabilities
+st_oper_liabilities
+lt_liabilities
+st_liabilities
+inventories
+FFO='(127896.5-inf)'
+OCF='(319517-inf)'
+								--------------
+									Fold  6
+								--------------
+net_sales
+cost_of_goods_and_services
+cost_of_labor
+depreciation
+financial_expenses
+interest
+EBIT='(-inf--116952.5]'
+EBIT='(-116952.5-119406]'
+EBIT='(119406-inf)'
+EBITDA='(213572-inf)'
+net_income='(77287.5-inf)'
+assets
+equity='(1175207-inf)'
+debt
+cash='(36701-inf)'
+lt_assets
+st_assets
+total_oper_liabilities
+st_oper_liabilities
+lt_liabilities
+st_liabilities
+inventories
+FFO='(-inf-35050.5]'
+FFO='(35050.5-238467.5]'
+FFO='(238467.5-inf)'
+OCF='(140938.5-inf)'
+								--------------
+									Fold  7
+								--------------
+net_sales
+cost_of_goods_and_services
+cost_of_labor
+depreciation
+financial_expenses
+interest='(38286.5-inf)'
+EBIT='(-inf--116952.5]'
+EBIT='(-116952.5-119406]'
+EBIT='(119406-inf)'
+EBITDA='(213572-inf)'
+net_income='(-inf-6323.5]'
+net_income='(6323.5-77287.5]'
+net_income='(77287.5-inf)'
+assets
+equity='(536288-inf)'
+debt
+cash='(20464.5-inf)'
+lt_assets
+st_assets
+total_oper_liabilities
+st_oper_liabilities
+lt_liabilities
+st_liabilities
+inventories
+FFO='(101041.5-inf)'
+OCF='(319517-inf)'
+								--------------
+									Fold  8
+								--------------
+net_sales
+cost_of_goods_and_services
+cost_of_labor
+depreciation
+financial_expenses='(21162.5-inf)'
+interest='(34604-inf)'
+EBIT='(-inf--116952.5]'
+EBIT='(-116952.5-119933]'
+EBIT='(119933-inf)'
+EBITDA='(213572-inf)'
+net_income='(91984.5-inf)'
+assets
+equity='(497055.5-inf)'
+debt='(515767.5-inf)'
+cash='(42583-inf)'
+lt_assets
+st_assets
+total_oper_liabilities
+st_oper_liabilities
+lt_liabilities
+st_liabilities
+inventories
+FFO='(-inf-35050.5]'
+FFO='(35050.5-307763]'
+FFO='(307763-inf)'
+OCF='(319517-inf)'
+								--------------
+									Fold  9
+								--------------
+net_sales
+cost_of_goods_and_services
+cost_of_labor
+depreciation
+financial_expenses
+interest='(82468.5-inf)'
+EBIT='(119406-inf)'
+EBITDA='(213572-inf)'
+net_income='(77287.5-inf)'
+assets
+equity='(497055.5-inf)'
+debt='(1509606.5-inf)'
+cash='(20519-inf)'
+lt_assets
+st_assets
+total_oper_liabilities
+st_oper_liabilities
+lt_liabilities
+st_liabilities
+inventories
+FFO='(101041.5-inf)'
+OCF='(161926-inf)'
+								--------------
+									Fold 10
+								--------------
+net_sales
+cost_of_goods_and_services
+cost_of_labor
+depreciation
+financial_expenses
+interest='(20603-inf)'
+EBIT='(-inf--116952.5]'
+EBIT='(-116952.5-119406]'
+EBIT='(119406-inf)'
+EBITDA='(213572-inf)'
+net_income='(77287.5-inf)'
+assets
+equity='(497055.5-inf)'
+debt='(566655-inf)'
+cash='(20519-inf)'
+lt_assets
+st_assets
+total_oper_liabilities
+st_oper_liabilities
+lt_liabilities
+st_liabilities
+inventories
+FFO='(-inf-35050.5]'
+FFO='(35050.5-165946.5]'
+FFO='(165946.5-inf)'
+OCF='(140938.5-inf)'

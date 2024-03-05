@@ -6,6 +6,8 @@ package featconstr;
  */
 public class ParamSearchEval{
     private double acc;
+    private double mae;
+    private double rmse;
     private int feat[]=new int[6];                  //0-logical, 1-threshold, 2-furia, 3-cartesian, 4-relational, 5-numerical
     private int tree[]=new int[3];                  //0-tree size, 1-number of leaves, 3-sum of constructs
     private int complexityFuria[]=new int[2];       //0-number of rules, 1-sum of constructs
@@ -19,16 +21,26 @@ public class ParamSearchEval{
     public ParamSearchEval(){   
     
     }
-    public ParamSearchEval(double acc, int feat[], int tree[], int complexityFuria[], int furiaThrInTree[]){   
+    public ParamSearchEval(double acc, int feat[], int tree[], int complexityFuria[], int furiaThrInTree[]){    //for classification problems   
         this.acc=acc;
         this.feat=feat;
         this.tree=tree;
         this.complexityFuria=complexityFuria;
         this.furiaThrInTree=furiaThrInTree;
     }
+    public ParamSearchEval(double mae, double rmse){    //for regression problems   
+        this.mae=mae;
+        this.rmse=rmse;
+    }
     //setter methods
     public void setAcc(double acc){
         this.acc=acc;
+    }
+    public void setMae(double mae){
+        this.mae=mae;
+    }
+    public void setRmse(double rmse){
+        this.rmse=rmse;
     }
     public void setFeat(int feat[]){
         this.feat=feat;
@@ -60,6 +72,12 @@ public class ParamSearchEval{
     //getter methods
     public double getAcc(){
         return acc;
+    }
+    public double getMae(){
+        return mae;
+    }
+    public double getRmse(){
+        return rmse;
     }
     public int[] getFeat(){
         return feat;

@@ -1,0 +1,68 @@
+dataset: cLogicalConcB-uniqueInst.arff
+IME (explanation), aproxErrSampling, N_SAMPLES: 100 - alg. for searching concepts: ScikitLearnClassifier
+Explaining class: 1, explaining all dataset: NO
+---------------------------------------------------------------------------------
+Sampling based on mi=(<1-alpha, e>), pctErr = 95 error = 0.01.
+---------------------------------------------------------------------------------
+We remove max(NOISE,minNoise) groups, NOISE=0.0% -> 0, minNoise=0 we remove groups of size 0. Number of instances from class (1) is 56
+Lower threshold thrL: 0.6 upper threshold thrU: 0.8 with step: 0.1
+--------------
+Threshold: 0,60
+--------------
+	A2 | A6: 26
+	A1 | A3: 11
+	A2: 3
+	A1 | A3 | A6: 2
+	A2 | A4 | A6: 2
+	A6: 2
+	A1 | A2 | A3: 1
+	A2 | A5 | A6: 1
+	A2 | A4 | A5: 1
+	A1 | A2 | A6: 1
+	A2 | A3 | A6: 1
+	A4 | A5 | A6: 1
+	A1 | A2: 1
+	A1 | A6: 1
+	A3 | A6: 1
+	A4 | A6: 1
+--------------
+Threshold: 0,70
+--------------
+	A2 | A6: 26
+	A1 | A2 | A3: 5
+	A1 | A3: 5
+	A1 | A3 | A6: 4
+	A1 | A6: 3
+	A2 | A5 | A6: 2
+	A2 | A4 | A6: 2
+	A2 | A3 | A6: 2
+	A4 | A5 | A6: 2
+	A1 | A2 | A4 | A6: 1
+	A2 | A4 | A5 | A6: 1
+	A1 | A2 | A6: 1
+	A1 | A3 | A5: 1
+	A1 | A3 | A4 | A6: 1
+--------------
+Threshold: 0,80
+--------------
+	A2 | A6: 23
+	A1 | A2 | A3: 4
+	A1 | A3 | A6: 4
+	A1 | A2 | A3 | A6: 3
+	A2 | A4 | A5 | A6: 2
+	A2 | A5 | A6: 2
+	A2 | A3 | A6: 2
+	A1 | A2 | A6: 2
+	A1 | A3 | A4 | A6: 2
+	A4 | A5 | A6: 2
+	A1 | A3: 2
+	A1 | A6: 2
+	A2 | A3 | A4 | A6: 2
+	A1 | A2 | A5 | A6: 1
+	A1 | A2 | A3 | A4: 1
+	A1 | A3 | A5: 1
+	A1 | A2 | A4 | A5 | A6: 1
+*********************************************************************************
+All potential concepts, based on thresholds.
+	A2 A6 ~#~ A1 A3 ~#~ A1 A3 A6 ~#~ A2 A4 A6 ~#~ A1 A2 A3 ~#~ A2 A5 A6 ~#~ A2 A4 A5 ~#~ A1 A2 A6 ~#~ A2 A3 A6 ~#~ A4 A5 A6 ~#~ A1 A2 ~#~ A1 A6 ~#~ A3 A6 ~#~ A4 A6 ~#~ A1 A2 A4 A6 ~#~ A2 A4 A5 A6 ~#~ A1 A3 A5 ~#~ A1 A3 A4 A6 ~#~ A1 A2 A3 A6 ~#~ A2 A3 A4 A6 ~#~ A1 A2 A5 A6 ~#~ A1 A2 A3 A4 ~#~ A1 A2 A4 A5 A6 ~#~ 
+*********************************************************************************

@@ -1,0 +1,81 @@
+NEW 	 OLD
+F1L1	A4 and A5
+F2L1	A2 and A3
+F3L1	A1 and A2
+F4L1	A3 and A4
+F5L1	A1 and A3
+F6L1	A3 and A5
+F7L1	A2 and A4
+F8L1	A1 and A4
+F9L1	A2 and A5
+F10L1	A1 and A5
+F11L1	A4 or A5
+F12L1	A2 or A3
+F13L1	A1 or A2
+F14L1	A3 or A4
+F15L1	A1 or A3
+F16L1	A3 or A5
+F17L1	A2 or A4
+F18L1	A1 or A4
+F19L1	A2 or A5
+F20L1	A1 or A5
+F21L1	A4 equ A5
+F22L1	A2 equ A3
+F23L1	A1 equ A2
+F24L1	A3 equ A4
+F25L1	A1 equ A3
+F26L1	A3 equ A5
+F27L1	A2 equ A4
+F28L1	A1 equ A4
+F29L1	A2 equ A5
+F30L1	A1 equ A5
+F31L1	A4 xor A5
+F32L1	A2 xor A3
+F33L1	A1 xor A2
+F34L1	A3 xor A4
+F35L1	A1 xor A3
+F36L1	A3 xor A5
+F37L1	A2 xor A4
+F38L1	A1 xor A4
+F39L1	A2 xor A5
+F40L1	A1 xor A5
+F41L1	A4 impl A5
+F42L1	A2 impl A3
+F43L1	A1 impl A2
+F44L1	A3 impl A4
+F45L1	A1 impl A3
+F46L1	A3 impl A5
+F47L1	A2 impl A4
+F48L1	A1 impl A4
+F49L1	A2 impl A5
+F50L1	A1 impl A5
+F51L1	A2 and A3 and A4
+F52L1	A1 and A2 and A3
+F53L1	A1 and A4 and A5
+F54L1	A3 and A4 and A5
+F55L1	A2 and A3 and A5
+F56L1	A2 or A3 or A4
+F57L1	A1 or A2 or A3
+F58L1	A1 or A4 or A5
+F59L1	A3 or A4 or A5
+F60L1	A2 or A3 or A5
+F61L1	(A2 = 1) and (A3 = 1)
+F62L1	(A2 = 1) and (A3 = 1) and (A1 = 0)
+F63L1	(A5 = 1) and (A4 = 1)
+F64L1	(A4 = 1) and (A5 = 1)
+F65L1	(A4 = 1) and (A5 = 1) and (A1 = 1)
+F66L1	num-of-N((A2 = 1) and (A3 = 1))
+F67L1	num-of-N((A2 = 1) and (A3 = 1) and (A1 = 0))
+F68L1	num-of-N((A5 = 1) and (A4 = 1))
+F69L1	num-of-N((A4 = 1) and (A5 = 1))
+F70L1	num-of-N((A4 = 1) and (A5 = 1) and (A1 = 1))
+F71L1	A4_x_A5
+F72L1	A2_x_A3
+F73L1	A1_x_A2
+F74L1	A3_x_A4
+F75L1	A1_x_A3
+F76L1	A3_x_A5
+F77L1	A2_x_A4
+F78L1	A1_x_A4
+F79L1	A2_x_A5
+F80L1	A1_x_A5

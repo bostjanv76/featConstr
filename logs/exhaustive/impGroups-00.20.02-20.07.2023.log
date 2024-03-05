@@ -1,0 +1,42 @@
+dataset: Autos.arff
+Exhaustive search
+*********************************************************************************
+All potential concepts based on thresholds
+	curb-weight bore stroke ~#~ wheel-base curb-weight engine-type ~#~ num-of-doors width engine-size ~#~ aspiration bore stroke ~#~ body-style engine-type stroke ~#~ aspiration curb-weight compression-ratio ~#~ curb-weight engine-type num-of-cylinders ~#~ wheel-base bore horsepower ~#~ fuel-type num-of-doors engine-type ~#~ 
+*********************************************************************************
+*********************************************************************************
+All potential concepts based on thresholds
+	fuel-type wheel-base engine-type ~#~ num-of-doors body-style num-of-cylinders ~#~ make wheel-base bore ~#~ make body-style engine-size ~#~ fuel-type height num-of-cylinders ~#~ aspiration wheel-base stroke ~#~ body-style bore stroke ~#~ normalized-losses body-style curb-weight ~#~ fuel-type wheel-base num-of-cylinders ~#~ 
+*********************************************************************************
+*********************************************************************************
+All potential concepts based on thresholds
+	engine-type stroke highway-mpg ~#~ normalized-losses drive-wheels stroke ~#~ aspiration highway-mpg price ~#~ height engine-type city-mpg ~#~ normalized-losses engine-location horsepower ~#~ normalized-losses stroke horsepower ~#~ num-of-doors engine-type num-of-cylinders ~#~ fuel-type aspiration drive-wheels ~#~ make fuel-type peak-rpm ~#~ 
+*********************************************************************************
+*********************************************************************************
+All potential concepts based on thresholds
+	num-of-doors drive-wheels city-mpg ~#~ num-of-doors width num-of-cylinders ~#~ width num-of-cylinders city-mpg ~#~ engine-type bore highway-mpg ~#~ fuel-type body-style fuel-system ~#~ aspiration highway-mpg price ~#~ length engine-size peak-rpm ~#~ drive-wheels height fuel-system ~#~ wheel-base engine-type city-mpg ~#~ 
+*********************************************************************************
+*********************************************************************************
+All potential concepts based on thresholds
+	wheel-base length engine-type ~#~ fuel-type num-of-doors fuel-system ~#~ length compression-ratio peak-rpm ~#~ fuel-type length highway-mpg ~#~ num-of-doors length city-mpg ~#~ aspiration curb-weight engine-type ~#~ width stroke city-mpg ~#~ drive-wheels width engine-type ~#~ num-of-doors compression-ratio horsepower ~#~ 
+*********************************************************************************
+*********************************************************************************
+All potential concepts based on thresholds
+	normalized-losses body-style wheel-base ~#~ wheel-base stroke city-mpg ~#~ drive-wheels width fuel-system ~#~ body-style curb-weight peak-rpm ~#~ fuel-type engine-type compression-ratio ~#~ num-of-doors height compression-ratio ~#~ normalized-losses height price ~#~ drive-wheels curb-weight city-mpg ~#~ normalized-losses wheel-base height ~#~ 
+*********************************************************************************
+*********************************************************************************
+All potential concepts based on thresholds
+	body-style bore horsepower ~#~ num-of-doors body-style height ~#~ curb-weight num-of-cylinders fuel-system ~#~ normalized-losses compression-ratio peak-rpm ~#~ height num-of-cylinders price ~#~ fuel-type width city-mpg ~#~ curb-weight engine-size compression-ratio ~#~ aspiration stroke price ~#~ num-of-doors num-of-cylinders highway-mpg ~#~ 
+*********************************************************************************
+*********************************************************************************
+All potential concepts based on thresholds
+	drive-wheels num-of-cylinders bore ~#~ wheel-base curb-weight peak-rpm ~#~ normalized-losses fuel-type num-of-doors ~#~ drive-wheels wheel-base price ~#~ engine-type peak-rpm price ~#~ fuel-type num-of-doors bore ~#~ drive-wheels num-of-cylinders compression-ratio ~#~ length width num-of-cylinders ~#~ drive-wheels stroke city-mpg ~#~ 
+*********************************************************************************
+*********************************************************************************
+All potential concepts based on thresholds
+	height curb-weight stroke ~#~ fuel-system compression-ratio price ~#~ normalized-losses aspiration city-mpg ~#~ fuel-type aspiration body-style ~#~ normalized-losses city-mpg price ~#~ make num-of-doors bore ~#~ normalized-losses engine-type fuel-system ~#~ aspiration wheel-base price ~#~ make engine-location peak-rpm ~#~ 
+*********************************************************************************
+*********************************************************************************
+All potential concepts based on thresholds
+	wheel-base engine-size city-mpg ~#~ normalized-losses length peak-rpm ~#~ normalized-losses drive-wheels engine-size ~#~ num-of-doors bore city-mpg ~#~ aspiration city-mpg price ~#~ make fuel-type engine-size ~#~ body-style fuel-system peak-rpm ~#~ aspiration height city-mpg ~#~ fuel-type curb-weight engine-type ~#~ 
+*********************************************************************************

@@ -1,0 +1,291 @@
+dataset: rDisjunctBin.arff
+								--------------
+									Fold  1
+								--------------
+Feature evaluation: MDL (All features dataset) - After CI
+ 0,5457 A1 or A2 or A3
+ 0,3016 A1 or A2
+ 0,2992 A1 or A3
+ 0,2927 A1_x_A2
+ 0,2903 A1_x_A3
+ 0,2837 A2 or A3
+ 0,2748 A2_x_A3
+ 0,1436 A1
+ 0,1373 A1 xor A3
+ 0,1373 A1 equ A3
+ 0,1354 A1 xor A2
+ 0,1354 A1 equ A2
+ 0,1352 A2
+ 0,1324 A2 xor A3
+ 0,1324 A2 equ A3
+ 0,1314 A3
+ 0,0569 A1 impl A3
+ 0,0551 A1 impl A2
+ 0,0549 A1 and A2
+ 0,0531 A1 and A3
+ 0,0527 A2 impl A3
+ 0,0521 A2 and A3
+ 0,0232 A1 and A2 and A3
+ -0,0001 A5
+ -0,0013 A4
+								--------------
+									Fold  2
+								--------------
+Feature evaluation: MDL (All features dataset) - After CI
+ 0,5564 A1 or A2 or A3
+ 0,3092 A1 or A3
+ 0,3038 A1 or A2
+ 0,3003 A1_x_A3
+ 0,2949 A1_x_A2
+ 0,2903 A2 or A3
+ 0,2814 A2_x_A3
+ 0,1489 A1
+ 0,1441 A1 xor A3
+ 0,1441 A1 equ A3
+ 0,1396 A2 xor A3
+ 0,1396 A2 equ A3
+ 0,1370 A2
+ 0,1356 A1 xor A2
+ 0,1356 A1 equ A2
+ 0,1330 A3
+ 0,0607 A1 impl A3
+ 0,0575 A1 and A2
+ 0,0566 A1 impl A2
+ 0,0555 A2 impl A3
+ 0,0535 A1 and A3
+ 0,0512 A2 and A3
+ 0,0232 A1 and A2 and A3
+ 0,0003 A5
+ -0,0018 A4
+								--------------
+									Fold  3
+								--------------
+Feature evaluation: MDL (All features dataset) - After CI
+ 0,5442 A1 or A2 or A3
+ 0,2988 A1 or A3
+ 0,2931 A1 or A2
+ 0,2899 A1_x_A3
+ 0,2842 A1_x_A2
+ 0,2806 A2 or A3
+ 0,2717 A2_x_A3
+ 0,1414 A1
+ 0,1387 A1 xor A3
+ 0,1387 A1 equ A3
+ 0,1338 A1 xor A2
+ 0,1338 A1 equ A2
+ 0,1333 A2 xor A3
+ 0,1333 A2 equ A3
+ 0,1312 A2
+ 0,1310 A3
+ 0,0568 A1 impl A3
+ 0,0551 A1 impl A2
+ 0,0535 A1 and A2
+ 0,0518 A2 impl A3
+ 0,0518 A1 and A3
+ 0,0504 A2 and A3
+ 0,0225 A1 and A2 and A3
+ 0,0003 A5
+ -0,0012 A4
+								--------------
+									Fold  4
+								--------------
+Feature evaluation: MDL (All features dataset) - After CI
+ 0,5638 A1 or A2 or A3
+ 0,3123 A1 or A3
+ 0,3093 A1 or A2
+ 0,3034 A1_x_A3
+ 0,3004 A1_x_A2
+ 0,2895 A2 or A3
+ 0,2807 A2_x_A3
+ 0,1507 A1
+ 0,1473 A1 xor A3
+ 0,1473 A1 equ A3
+ 0,1398 A2
+ 0,1391 A1 xor A2
+ 0,1391 A1 equ A2
+ 0,1381 A2 xor A3
+ 0,1381 A2 equ A3
+ 0,1343 A3
+ 0,0622 A1 impl A3
+ 0,0581 A1 and A2
+ 0,0577 A1 impl A2
+ 0,0558 A2 impl A3
+ 0,0537 A1 and A3
+ 0,0533 A2 and A3
+ 0,0245 A1 and A2 and A3
+ -0,0006 A5
+ -0,0015 A4
+								--------------
+									Fold  5
+								--------------
+Feature evaluation: MDL (All features dataset) - After CI
+ 0,5668 A1 or A2 or A3
+ 0,3186 A1 or A3
+ 0,3112 A1 or A2
+ 0,3097 A1_x_A3
+ 0,3023 A1_x_A2
+ 0,2951 A2 or A3
+ 0,2863 A2_x_A3
+ 0,1531 A1
+ 0,1472 A1 xor A3
+ 0,1472 A1 equ A3
+ 0,1409 A2
+ 0,1392 A2 xor A3
+ 0,1392 A2 equ A3
+ 0,1387 A1 xor A2
+ 0,1387 A1 equ A2
+ 0,1385 A3
+ 0,0616 A1 impl A3
+ 0,0595 A1 and A2
+ 0,0581 A1 impl A2
+ 0,0560 A1 and A3
+ 0,0552 A2 impl A3
+ 0,0547 A2 and A3
+ 0,0254 A1 and A2 and A3
+ -0,0002 A5
+ -0,0014 A4
+								--------------
+									Fold  6
+								--------------
+Feature evaluation: MDL (All features dataset) - After CI
+ 0,5608 A1 or A2 or A3
+ 0,3104 A1 or A3
+ 0,3091 A1 or A2
+ 0,3014 A1_x_A3
+ 0,3002 A1_x_A2
+ 0,2888 A2 or A3
+ 0,2799 A2_x_A3
+ 0,1490 A1
+ 0,1449 A1 xor A3
+ 0,1449 A1 equ A3
+ 0,1407 A1 xor A2
+ 0,1407 A1 equ A2
+ 0,1383 A2
+ 0,1368 A2 xor A3
+ 0,1368 A2 equ A3
+ 0,1351 A3
+ 0,0605 A1 impl A3
+ 0,0581 A1 impl A2
+ 0,0565 A1 and A2
+ 0,0545 A2 impl A3
+ 0,0541 A1 and A3
+ 0,0534 A2 and A3
+ 0,0240 A1 and A2 and A3
+ -0,0001 A5
+ -0,0018 A4
+								--------------
+									Fold  7
+								--------------
+Feature evaluation: MDL (All features dataset) - After CI
+ 0,5608 A1 or A2 or A3
+ 0,3086 A1 or A3
+ 0,3056 A1 or A2
+ 0,2996 A1_x_A3
+ 0,2967 A1_x_A2
+ 0,2920 A2 or A3
+ 0,2831 A2_x_A3
+ 0,1474 A1
+ 0,1462 A1 xor A3
+ 0,1462 A1 equ A3
+ 0,1402 A2 xor A3
+ 0,1402 A2 equ A3
+ 0,1390 A2
+ 0,1385 A1 xor A2
+ 0,1385 A1 equ A2
+ 0,1339 A3
+ 0,0608 A1 impl A3
+ 0,0570 A1 and A2
+ 0,0566 A1 impl A2
+ 0,0562 A2 impl A3
+ 0,0529 A1 and A3
+ 0,0521 A2 and A3
+ 0,0233 A1 and A2 and A3
+ -0,0001 A5
+ -0,0017 A4
+								--------------
+									Fold  8
+								--------------
+Feature evaluation: MDL (All features dataset) - After CI
+ 0,5608 A1 or A2 or A3
+ 0,3104 A1 or A3
+ 0,3080 A1 or A2
+ 0,3014 A1_x_A3
+ 0,2991 A1_x_A2
+ 0,2882 A2 or A3
+ 0,2794 A2_x_A3
+ 0,1503 A1
+ 0,1449 A1 xor A3
+ 0,1449 A1 equ A3
+ 0,1385 A2
+ 0,1383 A1 xor A2
+ 0,1383 A1 equ A2
+ 0,1373 A2 xor A3
+ 0,1373 A2 equ A3
+ 0,1339 A3
+ 0,0613 A1 impl A3
+ 0,0577 A1 and A2
+ 0,0576 A1 impl A2
+ 0,0551 A2 impl A3
+ 0,0541 A1 and A3
+ 0,0529 A2 and A3
+ 0,0245 A1 and A2 and A3
+ -0,0001 A5
+ -0,0013 A4
+								--------------
+									Fold  9
+								--------------
+Feature evaluation: MDL (All features dataset) - After CI
+ 0,5638 A1 or A2 or A3
+ 0,3141 A1 or A3
+ 0,3081 A1 or A2
+ 0,3052 A1_x_A3
+ 0,2992 A1_x_A2
+ 0,2917 A2 or A3
+ 0,2828 A2_x_A3
+ 0,1514 A1
+ 0,1461 A1 xor A3
+ 0,1461 A1 equ A3
+ 0,1403 A2 xor A3
+ 0,1403 A2 equ A3
+ 0,1396 A1 xor A2
+ 0,1396 A1 equ A2
+ 0,1376 A2
+ 0,1362 A3
+ 0,0614 A1 impl A3
+ 0,0588 A1 impl A2
+ 0,0575 A1 and A2
+ 0,0551 A2 impl A3
+ 0,0550 A1 and A3
+ 0,0525 A2 and A3
+ 0,0241 A1 and A2 and A3
+ -0,0002 A5
+ -0,0019 A4
+								--------------
+									Fold 10
+								--------------
+Feature evaluation: MDL (All features dataset) - After CI
+ 0,5608 A1 or A2 or A3
+ 0,3110 A1 or A3
+ 0,3050 A1 or A2
+ 0,3020 A1_x_A3
+ 0,2975 A2 or A3
+ 0,2961 A1_x_A2
+ 0,2887 A2_x_A3
+ 0,1490 A1
+ 0,1427 A1 xor A3
+ 0,1427 A1 equ A3
+ 0,1402 A2 xor A3
+ 0,1402 A2 equ A3
+ 0,1400 A2
+ 0,1378 A3
+ 0,1356 A1 xor A2
+ 0,1356 A1 equ A2
+ 0,0589 A1 impl A3
+ 0,0587 A1 and A2
+ 0,0559 A1 impl A2
+ 0,0557 A1 and A3
+ 0,0552 A2 impl A3
+ 0,0537 A2 and A3
+ 0,0250 A1 and A2 and A3
+ -0,0001 A5
+ -0,0018 A4

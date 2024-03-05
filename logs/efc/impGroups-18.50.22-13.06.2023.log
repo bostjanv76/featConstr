@@ -1,0 +1,206 @@
+dataset: credit_score.arff
+We remove max(NOISE,minNoise) groups, NOISE=0.0% -> 0, minNoise=3 we remove groups of size 3. Tree SHAP num of expl. inst. 200 (fold 1). Explaining class: E).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  1
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	net_income: 144
+	interest: 26
+	debt: 20
+	EBIT: 5
+	equity: 4
+--------------
+Threshold: 0,20
+--------------
+	net_income: 135
+	debt: 18
+	interest | net_income: 16
+	interest: 12
+	equity | debt: 4
+--------------
+Threshold: 0,30
+--------------
+	interest | net_income: 56
+	net_income: 42
+	EBIT | net_income: 27
+	net_income | debt: 21
+	net_income | equity: 17
+	interest | debt: 7
+	equity | debt: 5
+	net_income | FFO: 5
+--------------
+Threshold: 0,40
+--------------
+	interest | net_income: 35
+	EBIT | net_income: 29
+	interest | net_income | debt: 21
+	net_income | equity: 17
+	net_income | debt: 14
+	interest | EBIT | net_income: 11
+	EBIT | net_income | debt: 8
+	net_income | equity | debt: 6
+	net_income | debt | FFO: 6
+	interest | net_income | equity: 5
+	interest | equity | debt: 4
+	EBIT | net_income | equity: 4
+	interest | net_income | st_assets: 4
+--------------
+Threshold: 0,50
+--------------
+	interest | net_income | debt: 20
+	interest | net_income | equity | debt: 11
+	EBIT | net_income | equity: 10
+	EBIT | net_income | debt: 9
+	net_income | equity | debt: 9
+	EBIT | EBITDA | net_income: 9
+	interest | EBIT | net_income: 9
+	interest | EBIT | net_income | debt: 9
+	interest | net_income: 8
+	interest | net_income | equity: 7
+	interest | EBIT | net_income | equity: 7
+	net_income | equity: 5
+	interest | net_income | debt | inventories: 5
+	EBITDA | net_income | equity: 4
+	EBIT | net_income: 4
+	net_income | equity | st_liabilities: 4
+	net_income | debt | st_liabilities: 4
+--------------
+Threshold: 0,60
+--------------
+	interest | net_income | debt | st_liabilities: 9
+	interest | EBIT | net_income | equity | debt: 9
+	interest | net_income | equity | debt | st_liabilities: 5
+	interest | EBITDA | net_income | debt: 5
+	EBITDA | net_income | equity | FFO: 5
+	net_income | equity | debt | st_liabilities: 5
+	EBIT | EBITDA | net_income | equity: 5
+	EBIT | EBITDA | net_income | debt: 5
+	EBIT | EBITDA | net_income: 4
+	interest | EBITDA | net_income | equity | debt: 4
+	EBIT | net_income | equity | debt: 4
+	interest | EBIT | net_income | equity: 4
+	interest | EBIT | net_income | debt: 4
+--------------
+Threshold: 0,70
+--------------
+	interest | EBITDA | net_income | debt | st_liabilities: 7
+	EBIT | EBITDA | net_income | equity | FFO: 7
+	interest | EBIT | net_income | equity | debt | FFO: 5
+	interest | net_income | equity | debt | st_assets | st_liabilities | FFO: 4
+	EBITDA | net_income | equity | debt | FFO: 4
+--------------
+Threshold: 0,80
+--------------
+	interest | EBIT | EBITDA | net_income | equity | debt | FFO: 8
+	EBIT | EBITDA | net_income | equity | debt | FFO: 4
+	financial_expenses | interest | EBITDA | net_income | debt | total_oper_liabilities | st_liabilities: 4
+	financial_expenses | interest | EBITDA | net_income | equity | debt | total_oper_liabilities | st_liabilities: 4
+	interest | EBIT | EBITDA | net_income | equity | debt | inventories | FFO: 4
+	interest | EBIT | EBITDA | net_income | equity | debt | cash | st_liabilities: 4
+We remove max(NOISE,minNoise) groups, NOISE=0.0% -> 0, minNoise=3 we remove groups of size 3. Tree SHAP num of expl. inst. 200 (fold 1). Explaining class: A).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  1
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	net_income: 144
+	interest: 26
+	debt: 20
+	EBIT: 5
+	equity: 4
+--------------
+Threshold: 0,20
+--------------
+	net_income: 135
+	debt: 18
+	interest | net_income: 16
+	interest: 12
+	equity | debt: 4
+--------------
+Threshold: 0,30
+--------------
+	interest | net_income: 56
+	net_income: 42
+	EBIT | net_income: 27
+	net_income | debt: 21
+	net_income | equity: 17
+	interest | debt: 7
+	equity | debt: 5
+	net_income | FFO: 5
+--------------
+Threshold: 0,40
+--------------
+	interest | net_income: 35
+	EBIT | net_income: 29
+	interest | net_income | debt: 21
+	net_income | equity: 17
+	net_income | debt: 14
+	interest | EBIT | net_income: 11
+	EBIT | net_income | debt: 8
+	net_income | equity | debt: 6
+	net_income | debt | FFO: 6
+	interest | net_income | equity: 5
+	interest | equity | debt: 4
+	EBIT | net_income | equity: 4
+	interest | net_income | st_assets: 4
+--------------
+Threshold: 0,50
+--------------
+	interest | net_income | debt: 20
+	interest | net_income | equity | debt: 11
+	EBIT | net_income | equity: 10
+	EBIT | net_income | debt: 9
+	net_income | equity | debt: 9
+	EBIT | EBITDA | net_income: 9
+	interest | EBIT | net_income: 9
+	interest | EBIT | net_income | debt: 9
+	interest | net_income: 8
+	interest | net_income | equity: 7
+	interest | EBIT | net_income | equity: 7
+	net_income | equity: 5
+	interest | net_income | debt | inventories: 5
+	EBITDA | net_income | equity: 4
+	EBIT | net_income: 4
+	net_income | equity | st_liabilities: 4
+	net_income | debt | st_liabilities: 4
+--------------
+Threshold: 0,60
+--------------
+	interest | net_income | debt | st_liabilities: 9
+	interest | EBIT | net_income | equity | debt: 9
+	interest | net_income | equity | debt | st_liabilities: 5
+	interest | EBITDA | net_income | debt: 5
+	EBITDA | net_income | equity | FFO: 5
+	net_income | equity | debt | st_liabilities: 5
+	EBIT | EBITDA | net_income | equity: 5
+	EBIT | EBITDA | net_income | debt: 5
+	EBIT | EBITDA | net_income: 4
+	interest | EBITDA | net_income | equity | debt: 4
+	EBIT | net_income | equity | debt: 4
+	interest | EBIT | net_income | equity: 4
+	interest | EBIT | net_income | debt: 4
+--------------
+Threshold: 0,70
+--------------
+	interest | EBITDA | net_income | debt | st_liabilities: 7
+	EBIT | EBITDA | net_income | equity | FFO: 7
+	interest | EBIT | net_income | equity | debt | FFO: 5
+	interest | net_income | equity | debt | st_assets | st_liabilities | FFO: 4
+	EBITDA | net_income | equity | debt | FFO: 4
+--------------
+Threshold: 0,80
+--------------
+	interest | EBIT | EBITDA | net_income | equity | debt | FFO: 8
+	EBIT | EBITDA | net_income | equity | debt | FFO: 4
+	financial_expenses | interest | EBITDA | net_income | debt | total_oper_liabilities | st_liabilities: 4
+	financial_expenses | interest | EBITDA | net_income | equity | debt | total_oper_liabilities | st_liabilities: 4
+	interest | EBIT | EBITDA | net_income | equity | debt | inventories | FFO: 4
+	interest | EBIT | EBITDA | net_income | equity | debt | cash | st_liabilities: 4
+*********************************************************************************
+All potential concepts based on thresholds
+	interest net_income ~#~ equity debt ~#~ EBIT net_income ~#~ net_income debt ~#~ net_income equity ~#~ interest debt ~#~ net_income FFO ~#~ interest net_income debt ~#~ interest EBIT net_income ~#~ EBIT net_income debt ~#~ net_income equity debt ~#~ net_income debt FFO ~#~ interest net_income equity ~#~ interest equity debt ~#~ EBIT net_income equity ~#~ interest net_income st_assets ~#~ interest net_income equity debt ~#~ EBIT EBITDA net_income ~#~ interest EBIT net_income debt ~#~ interest EBIT net_income equity ~#~ interest net_income debt inventories ~#~ EBITDA net_income equity ~#~ net_income equity st_liabilities ~#~ net_income debt st_liabilities ~#~ interest net_income debt st_liabilities ~#~ interest EBIT net_income equity debt ~#~ interest net_income equity debt st_liabilities ~#~ interest EBITDA net_income debt ~#~ EBITDA net_income equity FFO ~#~ net_income equity debt st_liabilities ~#~ EBIT EBITDA net_income equity ~#~ EBIT EBITDA net_income debt ~#~ interest EBITDA net_income equity debt ~#~ EBIT net_income equity debt ~#~ interest EBITDA net_income debt st_liabilities ~#~ EBIT EBITDA net_income equity FFO ~#~ interest EBIT net_income equity debt FFO ~#~ interest net_income equity debt st_assets st_liabilities FFO ~#~ EBITDA net_incom

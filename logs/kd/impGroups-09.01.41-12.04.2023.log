@@ -1,0 +1,96 @@
+dataset: cLogicalConcBEasy.arff
+IME (explanation), equalSampling, N_SAMPLES: 1000 - alg. for searching concepts: MultilayerPerceptron
+Explaining class: 1, explaining all dataset: NO
+---------------------------------------------------------------------------------
+We remove max(NOISE,minNoise) groups, NOISE=0.0% -> 0, minNoise=0 we remove groups of size 0. Number of instances from class (1) is 489
+Lower threshold thrL: 0.6 upper threshold thrU: 0.8 with step: 0.1
+--------------
+Threshold: 0,60
+--------------
+	A2 | A3: 247
+	A4 | A5: 235
+	A1 | A3: 3
+	A1 | A5: 2
+	A1 | A2 | A3: 1
+	A1 | A2: 1
+--------------
+Threshold: 0,70
+--------------
+	A1 | A2 | A3: 187
+	A1 | A4 | A5: 180
+	A2 | A3: 65
+	A4 | A5: 57
+--------------
+Threshold: 0,80
+--------------
+	A1 | A2 | A3: 187
+	A1 | A4 | A5: 180
+	A2 | A3 | A5: 33
+	A2 | A3 | A4: 32
+	A2 | A4 | A5: 30
+	A3 | A4 | A5: 27
+*********************************************************************************
+All potential concepts, based on thresholds.
+	A2 A3 ~#~ A4 A5 ~#~ A1 A3 ~#~ A1 A5 ~#~ A1 A2 A3 ~#~ A1 A2 ~#~ A1 A4 A5 ~#~ A2 A3 A5 ~#~ A2 A3 A4 ~#~ A2 A4 A5 ~#~ A3 A4 A5 ~#~ 
+*********************************************************************************
+dataset: cLogicalConcBEasyNoisy.arff
+IME (explanation), equalSampling, N_SAMPLES: 1000 - alg. for searching concepts: MultilayerPerceptron
+Explaining class: 1, explaining all dataset: NO
+---------------------------------------------------------------------------------
+We take only 500 instances out of 557.
+We remove max(NOISE,minNoise) groups, NOISE=0.0% -> 0, minNoise=0 we remove groups of size 0. Number of instances from class (1) is 500
+Lower threshold thrL: 0.6 upper threshold thrU: 0.8 with step: 0.1
+--------------
+Threshold: 0,60
+--------------
+	A2 | A3: 226
+	A4 | A5: 200
+	A1 | A4 | A5: 28
+	A2 | A4 | A5: 8
+	A1 | A4: 6
+	A1 | A5: 5
+	A2 | A3 | A4: 5
+	A1 | A3: 4
+	A2 | A3 | A5: 4
+	A3 | A4 | A5: 3
+	A1 | A2 | A3: 3
+	A3 | A4: 2
+	A3 | A5: 2
+	A1 | A3 | A4: 1
+	A1 | A3 | A5: 1
+	A2 | A4: 1
+	A1 | A2: 1
+--------------
+Threshold: 0,70
+--------------
+	A1 | A4 | A5: 173
+	A1 | A2 | A3: 169
+	A4 | A5: 58
+	A2 | A3: 57
+	A2 | A4 | A5: 13
+	A2 | A3 | A4: 7
+	A3 | A4 | A5: 6
+	A1 | A3 | A5: 5
+	A2 | A3 | A5: 5
+	A1 | A3 | A4: 3
+	A3 | A5: 2
+	A2 | A3 | A4 | A5: 1
+	A3 | A4: 1
+--------------
+Threshold: 0,80
+--------------
+	A1 | A4 | A5: 173
+	A1 | A2 | A3: 170
+	A3 | A4 | A5: 50
+	A2 | A3 | A5: 37
+	A2 | A3 | A4: 21
+	A2 | A4 | A5: 18
+	A2 | A3 | A4 | A5: 15
+	A1 | A3 | A4 | A5: 7
+	A1 | A2 | A3 | A5: 6
+	A1 | A2 | A3 | A4: 2
+	A1 | A3 | A5: 1
+*********************************************************************************
+All potential concepts, based on thresholds.
+	A2 A3 ~#~ A4 A5 ~#~ A1 A4 A5 ~#~ A2 A4 A5 ~#~ A1 A4 ~#~ A1 A5 ~#~ A2 A3 A4 ~#~ A1 A3 ~#~ A2 A3 A5 ~#~ A3 A4 A5 ~#~ A1 A2 A3 ~#~ A3 A4 ~#~ A3 A5 ~#~ A1 A3 A4 ~#~ A1 A3 A5 ~#~ A2 A4 ~#~ A1 A2 ~#~ A2 A3 A4 A5 ~#~ A1 A3 A4 A5 ~#~ A1 A2 A3 A5 ~#~ A1 A2 A3 A4 ~#~ 
+*********************************************************************************

@@ -52,6 +52,8 @@ import org.ghost4j.renderer.SimpleRenderer;
 import org.paukov.combinatorics3.Generator;
 import com.github.rcaller.rstuff.RCaller;   //RCaller-3.0.2.jar ... for calling MDL for discrete and contionous features
 import com.github.rcaller.rstuff.RCode;
+import java.io.InputStreamReader;
+import java.math.BigInteger;
 import java.net.URL;
 import weka.attributeSelection.GainRatioAttributeEval;
 import weka.attributeSelection.InfoGainAttributeEval;
@@ -76,6 +78,15 @@ import weka.classifiers.functions.supportVector.PolyKernel;
 import weka.classifiers.functions.supportVector.RBFKernel;
 import weka.classifiers.lazy.IBk;
 import weka.filters.unsupervised.attribute.ReplaceMissingValues;
+import weka.classifiers.sklearn.ScikitLearnClassifier;
+import weka.core.SelectedTag;
+import static weka.classifiers.sklearn.ScikitLearnClassifier.Learner.XGBClassifier;
+import java.util.Locale;
+import java.util.TreeSet;
+import weka.classifiers.functions.LinearRegression;
+import weka.classifiers.functions.SMOreg;
+import weka.classifiers.rules.M5Rules;
+import weka.classifiers.trees.M5P;
 
 /**
  *
@@ -84,18 +95,23 @@ import weka.filters.unsupervised.attribute.ReplaceMissingValues;
 @SuppressWarnings({"rawtypes", "unchecked", "serial"})
 public class FeatConstr {
     /**************************** main EFC parameters *********************************/
+    public static boolean efc=false;
     public static boolean justExplain=false;    //just explain datasets, construct features and evaluate them
     public static boolean visualisation=false;  //visualisation of explanations using IME method
-    public static boolean exhaustive=false;     //try exhaustive search ... all combinations between attributes
-    public static boolean jakulin=false;        //try exhaustive search, calculate interaction information between all comb. of attributes; Jakulin, A. (2005). Machine learning based on attribute interactions [Doctoral dissertation, University of Ljubljana]. ePrints.FRI. https://bit.ly/3eiJ18x
+    public static boolean exhaustive=true;     //try exhaustive search ... all combinations between attributes
+    public static boolean jakulin=true;        //try exhaustive search, calculate interaction information between all comb. of attributes; Jakulin, A. (2005). Machine learning based on attribute interactions [Doctoral dissertation, University of Ljubljana]. ePrints.FRI. https://bit.ly/3eiJ18x
+    public static boolean othrBase=false;
+    public enum BaselineMeth{rndBase, globalEval};
+    public static BaselineMeth selectedBaseline=BaselineMeth.rndBase;
     /*****************************************************************************/
     public static boolean groupsByThrStat=true;        //print statistics about groups (identified by EFC) by thresholds
     public static boolean writeAccByFoldsInFile=true;  //for analysing results of statistical tests
     public static boolean saveConstructs=true; //save generated features with attributes into new dataset ("dataset name"-origPlusRen1stLFeat-"time-date".arff)
     public static boolean renameGenFeat=true;  //rename generated features (e.g., F1, F2 ...), available only if saveConstructs=true, for potential generation of 2nd level features; input dataset for generating 2nd level feat must contain "origPlusRen1stLFeat" string
     /**************************** explanation parameters *********************************/
-    public static boolean treeSHAP=true;        //if false then set predictionModel for explanations with IME method (default is RF; set different model in the 436 line) (default true)
-    public static boolean explAllData=false; 
+    public enum ExplMeth{SHAP,IME,LIME};       //implemented explanation methods
+    public static ExplMeth explM=ExplMeth.SHAP; //selected explanation method
+    public static boolean explAllData=true; 
     public static boolean explAllClasses=false;
     /**************************** IME parameters *********************************/
     public enum IMEver{equalSampling, adaptiveSamplingSS, adaptiveSamplingAE, aproxErrSampling};
@@ -104,19 +120,19 @@ public class FeatConstr {
     //adaptiveSamplingSS - stopping criteria is sum of samples
     //adaptiveSamplingAE - stopping criteria is approxamization error for all attributes
     //aproxErrSampling - we calculate samples for each attribute mi=(<1-alpha, e>) (article 2010) in Štrumbelj, Erik, and Igor Kononenko. "An efficient explanation of individual classifications using game theory." The Journal of Machine Learning Research 11 (2010): 1-18.
-    public static IMEver method=IMEver.equalSampling; //selected IME method
-    public static int N_SAMPLES=1000;   //if we use equalSampling ... number of samples, we choose random value from interval min-max N_SAMPLE times  
+    public static IMEver method=IMEver.aproxErrSampling; //selected IME method
+    public static int N_SAMPLES=100;   //if we use equalSampling ... number of samples, we choose random value from interval min-max N_SAMPLE times  
     public static int minS=10;          //min samples ... if we use sumOfSamples and diffSampling ... to obtain an approximate estimate of the variance
     public static int sumOfSmp=2000;    //sum of samples ... if we use adaptive sampling ... sumOfSmp >= n*minS ... n is number of attributes
     public static int pctErr=95;        //90, 95 or 99;
-    public static double error=0.01;
+    public static double error=0.1;
     /**************************** XGBoost parameters *********************************/
     public static int numOfRounds=100;          //XGBoost parameter - number of decision trees 
     public static int maxDepth=3;               //XGBoost parameter - size of decision trees
     public static double eta=0.3;               //XGBoost parameter - shrinkage
     public static double gamma=1;               //XGBoost parameter - gamma
     /**************************** visualisation parameters *********************************/
-    public static int visFrom=1, visTo=10;      //visualize instances from visFrom to visTo
+    public static int visFrom=38, visTo=43;      //visualize instances from visFrom to visTo
     public static int drawLimit=20;             //we draw (max.) 20 the most important attributes
     public static int topHigh=10;               //visualise features with highest contributions (instance explanation)
     public static int numOfImpt=6;              //visualise features with highest contributions ... 
@@ -124,6 +140,8 @@ public class FeatConstr {
     public static boolean pdfPng=true;          //besided eps, print also pdf and png
     public static Classifier visualModel;       //model for visualisation (set it in the 437 line)
     /**************************** additional EFC parameters *********************************/
+    public enum FeatEvalMeth{MDL, ReliefF};
+    public static FeatEvalMeth evalMeth=FeatEvalMeth.ReliefF;
     public static double attrImpThrs[]={0,0.25,0.5};    //evaluation thresholds, used only in feature selection setting
     public static boolean evalFeatDuringFC=false;        //enable feature evaluation during FC process
     public static double featThr=0.1;                   //evaluation threshold (use of MDL), useful only when evalFeatDuringFC is enabled (true)
@@ -134,53 +152,78 @@ public class FeatConstr {
     public static int minNoise=3;           //(default 3) minimum number of groups at noiseThr
     public static int minMinNoise=1;        //(default 1) if numInst<minExplInst then minNoise=minMinNoise
     public static int minExplInst=50;       //if numInst<minExplInst then minNoise=minMinNoise
-    public static int maxToExplain=500;     //(default 500) max instances to explain if we have more than 500 instances to explain from the class 
+    public static int maxToExplain=Integer.MAX_VALUE;     //(default 500) max instances to explain if we have more than 500 instances to explain from the class 
     public static int instThr=10;           //e.g. 10% ... we explain minority class, if minority class has at least percent of instThr instances
+    /**************************** parameters for baselines *********************************/
+    public static int groupSize=3;          //the size of the group
+    public static int numOfGroups=9;        //the number of groups
+    public static int nMostInfAttr=10;      //the number of most informative attributes
     /**************************** evaluation parameters *********************************/
     public static int folds=10;         //for generating models, folds=1 means no CV and using split in ratio listed below
     public static int splitTrain=4;     //5 ... 80%:20%, 4 ... 75%25%, 3 ... 66%:33%; useful only when folds are set to 1, meaning no CV and using split
     public static int splitTrainFS=4;   //5 ... 80%:20%, 4 ... 75%25%, 3 ... 66%:33%; used when feature selection is used on the validation dataset
     /**************************** FURIA parameters *********************************/
-    public static double cf=0.9;                    //confidence factor (FURIA) (default: 0.5)
+    public static double cf=0.5;                    //confidence factor (FURIA) (default: 0.5)
     public static double pci=0.9;                   //percentage of covered instances (FURIA)
-    public static boolean covering=true;            //covering=true -> if all instances are covered by features generated by FURIA we stop construction with FURIA
+    public static boolean covering=false;            //covering=true -> if all instances are covered by features generated by FURIA we stop construction with FURIA
     public static boolean featFromExplClass=true;   //for generate FURIA features ... for ablation study featFromExplClass=false this means that we take features from all classes
     /**************************** types of features and construction depth *************/
     //include/exclude specific types of features; at least one type must be selected
     public static boolean logFeat=true;            //generate logical operators features
     public static boolean decRuleFeat=true;         //generate decision rules features
     public static boolean thrFeat=true;             //generate threshold features
-    public static boolean relatFeat=false;           //generate relational features
-    public static boolean cartFeat=false;            //generate Cartesian product features
-    public static boolean numerFeat=false;           //generate numerical features   
+    public static boolean relatFeat=true;           //generate relational features
+    public static boolean cartFeat=true;            //generate Cartesian product features
+    public static boolean numerFeat=true;           //generate numerical features   
     //include/exclude specific features       
-    public static String [] operationLogUse={"EQU","XOR","IMPL"};           //logical operators  - for composing new features; full set is: "AND","OR","EQU","XOR","IMPL"
+    public static String [] operationLogUse={"AND","OR","EQU","XOR","IMPL"};           //logical operators  - for composing new features; full set is: "AND","OR","EQU","XOR","IMPL"
     public static String [] operationRelUse={"LESSTHAN","DIFF"};            //relational operators - for composing new features; full set is: "LESSTHAN","DIFF"
-    public static String [] operationNumUse={"ADD","SUBTRACT","DIVIDE"};    //numeric operators  - for composing new features; full set is:"ADD","SUBTRACT","DIVIDE","ABSDIFF"
-    public static int featDepth=2;      //3 means 2 and 3, 4 means 2, 3, and 4 ... if featDepth is less than 3 then the construction depth is 2; higher depth is used only for conjunction and disjunction
+    public static String [] operationNumUse={"ADD","SUBTRACT","DIVIDE","MULTIPLY"};    //numeric operators  - for composing new features; full set is: "ADD","SUBTRACT","DIVIDE","MULTIPLY","ABSDIFF"
+    public static int featDepth=3;      //3 means 2 and 3, 4 means 2, 3, and 4 ... if featDepth is less than 3 then the construction depth is 2; higher depth is used only for conjunction and disjunction
     /*****************************************************************************/
     public static int classToExplain=1;             //default is second class but this value is changed due to heuristic - explain minority class if class has at least instThr pct instances
     public static int timeLimit=10800000;           //10800000ms = 3h
+    public static int numOfBins=2;                  //number of bins for discretisation, when dealing with regression problems
+    public static int pctExplReg=50;                //percent of explained instances for regression
     public static int numInst;                      //number of instances in explained class; is set when classToExplain is defined
     public enum OperationLog{AND,OR,EQU,XOR,IMPL};  
     public enum OperationRel{LESSTHAN,DIFF};
-    public enum OperationNum{ADD,SUBTRACT,DIVIDE,ABSDIFF};
+    public enum OperationNum{ADD,SUBTRACT,DIVIDE,ABSDIFF,MULTIPLY};
     public static String datasetName;
     public static String tmpDir;
     public static List<String> listOfConcepts;
     public static String fileName;
     public static long modelBuildTime[];
     public static double accOrigModelByFolds[][];
+    public static double maeOrigModelByFolds[][];
+    public static double rmseOrigModelByFolds[][];
     public static double accExplAlgInt[];       //for internal evaluation of the explanation alg
     public static double accExplAlgTest[];      //for evaluation of the explanation alg
+    public static double maeV2OrigModelByFolds[][], rmseV2OrigModelByFolds[][], rSqTrOrigModelByFolds[][], rSqTeOrigModelByFolds[][];
+    public static double rSqTrSSEOrigModelByFolds[], rSqTrSSTOrigModelByFolds[], rSqTeSSEOrigModelByFolds[], rSqTeSSTOrigModelByFolds[];
+    public static double rmseExplAlgTest[];      //for evaluation of the explanation alg
     public static double oobRF[];               //for internal evaluation of the RF explanation alg - out of bag
     public static double accuracyByFolds[][];
+    public static double maeByFolds[][];
+    public static double rmseByFolds[][];
     public static double accuracyByFoldsPS[][];
+    public static double maeByFoldsPS[][];
+    public static double rmseByFoldsPS[][];
     public static double accuracyByFoldsFuriaThr[][];
+    public static double maeByFoldsFuriaThr[][];
+    public static double rmseByFoldsFuriaThr[][];
     public static double accByFoldsLF[][];              //for measuring accuracy for method Logical features
+    public static double maeByFoldsLF[][];              //for measuring MAE for method Logical features
+    public static double rmseByFoldsLF[][];              //for measuring RMSE for method Logical features
     public static double accByFoldsCP[][];              //for Cartesian product
+    public static double maeByFoldsCP[][];              //for Cartesian product
+    public static double rmseByFoldsCP[][];              //for Cartesian product
     public static double accByFoldsRE[][];              //for relational features
+    public static double maeByFoldsRE[][];              //for relational features
+    public static double rmseByFoldsRE[][];              //for relational features
     public static double accByFoldsNum[][];             //for numerical features
+    public static double maeByFoldsNum[][];             //for numerical features
+    public static double rmseByFoldsNum[][];             //for numerical features
     public static double featByFoldsPS[][][];
     public static double numberOfFeatByFolds[][];       //0-logical, 1-threshold, 2-FURIA ... 5-numerical
     public static double numOfFeatByFoldsLF[];          //number of logical features per folds (for Logical features method)
@@ -250,16 +293,20 @@ public class FeatConstr {
     public static ArrayList<Double>[] dotsB;
     public static String nThHigh;
     public static PrintWriter logFile, impGroups, impGroupsKD, discIntervalsKD, attrImpListMDL, attrImpListMDL_KD, attrImpListReliefF, attrImpListReliefF_KD, bestParamPerFold, discIntervals, accByFolds,groupsStat;
+    public static RCaller rCaller; //close it at the end of the program
+    public static RCode code;  
     
     public static void main(String[] args) throws Exception {
+        Locale.setDefault(Locale.GERMAN);   //to ommit problems with sign '−' instead of minus sign '-'
         URL myURL = new URL("https://github.com/bostjanv76/featConstr");
         /**************************** check the correct setting of EFC *********************************/
         if((justExplain==false && visualisation==false && exhaustive==false && jakulin==true)){
             System.out.println("\u001B[31mYou must set the correct values of the parameters from the following list of settings and run the program again!\u001B[0m");
                       
-            System.out.println("\t1) \u001B[34mEFC\033[0m \t\t\t\t\t(justExplain=false, visualisation=false, exhaustive=false, jakulin=false)");
-            System.out.println("\t2) \u001B[34mFC based on exhaustive search\033[0m \t(justExplain=false, visualisation=false, exhaustive=true, jakulin=false)");
-            System.out.println("\t3) \u001B[34mFC based on interaction information\033[0m \t(justExplain=false, visualisation=false, exhaustive=true, jakulin=true)");
+            System.out.println("\t1) \u001B[34mEFC\033[0m \t\t\t\t\t(efc=true, othrBase=false, exhaustive=true, justExplain=false, visualisation=false, exhaustive=false, jakulin=false)");
+            System.out.println("\t2) \u001B[34mFC based on exhaustive search\033[0m \t(efc=false, othrBase=false, exhaustive=true, justExplain=false, visualisation=false, jakulin=false)");
+            System.out.println("\t3) \u001B[34mFC based on interaction information\033[0m \t(efc=false, othrBase=false, exhaustive=true, justExplain=false, visualisation=false, jakulin=true)");
+            System.out.println("\t3) \u001B[34mTesting baseline methods\033[0m \t(efc=false, othrBase=true, exhaustive=false, justExplain=false, visualisation=false, jakulin=false)");
             System.out.println("\t4) \u001B[34mKnowledge discovery\033[0m \t\t\t(justExplain=true, visualisation=false)");
             System.out.println("\t5) \u001B[34mVisualisation\033[0m \t\t\t(justExplain=false, visualisation=true)");
             
@@ -321,29 +368,34 @@ public class FeatConstr {
         File folder;
         Timer t1;
         Timer tTotal=new Timer();
-        double [] classDistr;
-        
-        RCaller rCaller = RCaller.create(); //open RCaller only once and close it at the end of the program
-        RCode code = RCode.create();
-        
+        double [] classDistr=null;
+
         boolean isClassification=true;
         
         //classification datasets
 
         /*****demo datasets*****/
-        //folder = new File("datasets/demo");
+        folder = new File("datasets/demo");
     
         /*****toy datasets*****/       
-        folder = new File("datasets/toy");
+        //folder = new File("datasets/toy");
         
         /*****artificial datasets*****/ 
         //folder = new File("datasets/artificial");
-    
+        
+        /*****artificial datasets (only unique instances)*****/ 
+        //folder = new File("datasets/artificial/uniqueInst");
+
         /*****UCI datasets*****/
         //folder = new File("datasets/uci");
     
         /*****real dataset - credit score*****/       
         //folder = new File("datasets/real");
+        
+        //regression datasets
+        
+        /*****artificial datasets*****/       
+        //folder = new File("datasets/regr");
         
         File[] listOfFiles = folder.listFiles();
 
@@ -362,6 +414,7 @@ public class FeatConstr {
         for(File file : listOfFiles){
             loopExhaustiveTooLong:      
             if(file.isFile()){
+
                 tTotal.start();
                 fileName=file.getName();
                 System.out.println("dataset: "+fileName);
@@ -401,7 +454,7 @@ public class FeatConstr {
                 //wildcard values: 'a' = (attribs + classes) / 2, 'i' = attribs, 'o' = classes , 't' = attribs + classes (default: 'a')
                 //hiddenLayers=(attribs + classes) / 2 ... one hidden layer with (attribs + classes) / 2 units (neurons)
                 //mp.setHiddenLayers("10,5");   //e.g., two hidden layers, one with 10, the other with 5 units (neurons)
-
+mp.setSeed(1);
                 SMO svmLin=new SMO();               //SVM with Linear kernel (default kernel)
                 SMO svmPoly=new SMO();              //SVM with Polynomial kernel
                     PolyKernel p=new PolyKernel();
@@ -417,10 +470,36 @@ public class FeatConstr {
                 RandomForest rf=new RandomForest();
                     rf.setNumExecutionSlots(processors);    //The number of execution slots (threads) to use for constructing the ensemble.
                     rf.setCalcOutOfBag(true);
-
+        
+                ScikitLearnClassifier.Learner m_learner = ScikitLearnClassifier.Learner.XGBClassifier;
+                ScikitLearnClassifier xgb= new ScikitLearnClassifier();
+                xgb.setLearner(new SelectedTag(m_learner.ordinal(), ScikitLearnClassifier.TAGS_LEARNER));
+                String learnOpt="max_depth="+maxDepth+", "
+                        + "learning_rate="+eta+", "
+                        + "n_estimators="+numOfRounds+", "
+                        + "nthread="+processors+", "
+                        + "gamma="+gamma+", "
+                        + "silent=True, "
+                        + "objective='binary:logistic', "
+                        + "booster='gbtree', "
+                        + "n_jobs="+processors;
+                xgb.setLearnerOpts(learnOpt);     
+                
+                ScikitLearnClassifier.Learner m_learnerR = ScikitLearnClassifier.Learner.XGBRegressor;
+                ScikitLearnClassifier xgbR= new ScikitLearnClassifier();
+                xgbR.setLearner(new SelectedTag(m_learnerR.ordinal(), ScikitLearnClassifier.TAGS_LEARNER));
+                
+                SMOreg svmRegP=new SMOreg();
+                    svmRegP.setKernel(p);
+                SMOreg svmRegR=new SMOreg();
+                    svmRegR.setKernel(rbfKernel);                   
+                M5Rules m5R=new M5Rules();                                                                            
+                M5P regTrees=new M5P();
+                LinearRegression lr= new LinearRegression();                            
+                            
                 Instances data = new Instances(new BufferedReader(new FileReader(file)));        
                 data.setClassIndex(data.numAttributes()-1); 
-
+              
                 System.gc();
 
                 //just for any case
@@ -433,10 +512,12 @@ public class FeatConstr {
                     }
                 }
                 
-                Classifier predictionModel=rf;      //model for explanations when we use the IME method; list of included classifiers: nb, j48, furia, mp, svmLin, svmPoly, svmRBF, rf
-                visualModel=rf;                    //model for visualisations when we use the IME method; list of included classifiers: nb, j48, furia, mp, svmLin, svmPoly, svmRBF, rf    
+                Classifier predictionModel=rf;      //model for explanations when we use the IME method; list of included classifiers: nb, j48, furia, mp, svmLin, svmPoly, svmRBF, rf, xgb
+                visualModel=mp;                    //model for visualisations when we use the IME method; list of included classifiers: nb, j48, furia, mp, svmLin, svmPoly, svmRBF, rf    
                 
                 if(justExplain){
+                    rCaller = RCaller.create(); //open RCaller only once and close it at the end of the program
+                    code = RCode.create();
                     numberOfUnImpFeatByFolds=new double[8][folds]; 
 
                     ReplaceMissingValues rwm=new ReplaceMissingValues();
@@ -444,7 +525,10 @@ public class FeatConstr {
                     data=Filter.useFilter(data, rwm);
 
 //                    attrImpListMDL_KD.println("MDL - before CI");
+//                        rCaller = RCaller.create(); //open RCaller only once and close it at the end of the program
+//                        code = RCode.create();
 //                        mdlCORElearn(data, rCaller, code);
+//                        rCaller.stopRCallerOnline(); 
 //                    attrImpListReliefF_KD.println("ReliefF - before CI");
 //                        lowLevelReliefF(data);
                         
@@ -492,7 +576,8 @@ public class FeatConstr {
                             DataSink.write(folderName+origName+"-"+fName3+"-"+lg+".arff", dataWithNewFeat); //save the dataset with renamed features (F1L1, F2L1 ...) for the potential generating 2nd level features
                         }
                     }
-                    continue loopExplanationVisualisation;                                     
+                    rCaller.stopRCallerOnline();  
+                    continue loopExplanationVisualisation;                     
                 }
 
                 if(!visualisation){
@@ -505,16 +590,32 @@ public class FeatConstr {
                 if(data.classAttribute().isNumeric())
                     isClassification=false;
 
-                if(isClassification)
-                    clsTab=new Classifier[]{j48, nb, furia, rf};    //default {j48, nb, furia, rf}; additional: svmLin, svmRBF, knn       
+                if(isClassification)     
+                    clsTab=new Classifier[]{j48, nb, svmLin, svmRBF, knn, furia, rf}; 
+                else
+                    clsTab=new Classifier[]{regTrees, lr, m5R, rf}; 
 
                 accuracyByFolds=new double[clsTab.length][folds];
+                maeByFolds=new double[clsTab.length][folds];
+                rmseByFolds=new double[clsTab.length][folds];
                 accuracyByFoldsPS=new double[clsTab.length][folds];
+                maeByFoldsPS=new double[clsTab.length][folds];
+                rmseByFoldsPS=new double[clsTab.length][folds];
                 accuracyByFoldsFuriaThr=new double[clsTab.length][folds];
+                maeByFoldsFuriaThr=new double[clsTab.length][folds];
+                rmseByFoldsFuriaThr=new double[clsTab.length][folds];
                 accByFoldsLF=new double[clsTab.length][folds];
+                maeByFoldsLF=new double[clsTab.length][folds];
+                rmseByFoldsLF=new double[clsTab.length][folds];
                 accByFoldsCP=new double[clsTab.length][folds];
+                maeByFoldsCP=new double[clsTab.length][folds];
+                rmseByFoldsCP=new double[clsTab.length][folds];
                 accByFoldsRE=new double[clsTab.length][folds];
+                maeByFoldsRE=new double[clsTab.length][folds];
+                rmseByFoldsRE=new double[clsTab.length][folds];
                 accByFoldsNum=new double[clsTab.length][folds];
+                maeByFoldsNum=new double[clsTab.length][folds];
+                rmseByFoldsNum=new double[clsTab.length][folds];
 
                 numberOfFeatByFolds=new double[6][folds];
                 numOfFeatByFoldsLF=new double[folds];
@@ -556,7 +657,11 @@ public class FeatConstr {
                 numOfFuriaThrInTreeByFoldsP=new double[4][folds];
                 learnAllTime=new long[clsTab.length][folds];
                 accOrigModelByFolds=new double[clsTab.length][folds];
-                accExplAlgInt=new double[folds]; accExplAlgTest=new double[folds];
+                maeOrigModelByFolds=new double[clsTab.length][folds];
+                rmseOrigModelByFolds=new double[clsTab.length][folds];
+                accExplAlgInt=new double[folds]; accExplAlgTest=new double[folds]; rmseExplAlgTest=new double[folds];
+                maeV2OrigModelByFolds=new double[clsTab.length][folds]; rmseV2OrigModelByFolds=new double[clsTab.length][folds]; rSqTrOrigModelByFolds=new double[clsTab.length][folds]; rSqTeOrigModelByFolds=new double[clsTab.length][folds];               
+                rSqTrSSEOrigModelByFolds=new double[clsTab.length]; rSqTrSSTOrigModelByFolds=new double[clsTab.length]; rSqTeSSEOrigModelByFolds=new double[clsTab.length]; rSqTeSSTOrigModelByFolds=new double[clsTab.length]; //for testing R2 pooling approach
                 complexityOfFuria=new double[3][folds];
                 treeSize=new double[folds]; numOfLeaves=new double[folds]; sumOfTerms=new double[folds]; ratioTermsNodes=new double[folds]; numOfRules=new double[folds]; 
                 numOfTerms=new double[folds]; numConstructsPerRule=new double[folds]; numOfRatioByFoldsF=new double[folds];
@@ -591,14 +696,16 @@ public class FeatConstr {
                 }
                 data.setClassIndex(data.numAttributes()-1);
 
-                //HEURISTICS OF CLASS SELECTION FOR EXPLANATION
-                //array of frequencies for each class - how many instances occur in a particular class
-                classDistr=Arrays.stream(data.attributeStats(data.classIndex()).nominalCounts).asDoubleStream().toArray(); //we convert because we need in log2Multinomial as parameter double array
+                if(isClassification){
+                    //HEURISTICS OF CLASS SELECTION FOR EXPLANATION
+                    //array of frequencies for each class - how many instances occur in a particular class
+                    classDistr=Arrays.stream(data.attributeStats(data.classIndex()).nominalCounts).asDoubleStream().toArray(); //we convert because we need in log2Multinomial as parameter double array
 
-                for(int i=0;i<minIndexClassifiers(classDistr).length;i++){
-                    if(minIndexClassifiers(classDistr)[i].v>=Math.ceil(data.numInstances()*instThr/100.00)){ //we choose class to explain - class has to have at least instThr pct of whole instances
-                        classToExplain=minIndexClassifiers(classDistr)[i].i;
-                        break;
+                    for(int i=0;i<minIndexClassifiers(classDistr).length;i++){
+                        if(minIndexClassifiers(classDistr)[i].v>=Math.ceil(data.numInstances()*instThr/100.00)){ //we choose class to explain - class has to have at least instThr pct of whole instances
+                            classToExplain=minIndexClassifiers(classDistr)[i].i;
+                            break;
+                        }
                     }
                 }
 
@@ -613,8 +720,7 @@ public class FeatConstr {
                 Instances randData=new Instances(data);
                 Instances test;
                 randData.randomize(rand);
-                if(isClassification && folds>1)
-                    randData.stratify(folds); //for imbalanced datasets before splitting the dataset into train and test set - same as WEKA GUI
+                randData.stratify(folds); //for imbalanced datasets before splitting the dataset into train and test set - same as WEKA GUI
 
                 /******************* VISUALISATION *********************************/
                 if(visualisation){        
@@ -623,9 +729,13 @@ public class FeatConstr {
                     System.out.println("Drawing is finished!");
                     continue loopExplanationVisualisation;  
                 }     
-
+                
                 /*************************************  FOLDS  *********************************************************************/        
                 for (int f = 0; f < folds; f++){
+                    LocalDateTime timePoint = LocalDateTime.now(); //for info when generating data on larger datasets 
+                    System.out.println("Staring processing fold "+(f+1)+" date, time: "+timePoint.toString());
+                    rCaller = RCaller.create(); //open RCaller only once and close it at the end of the program
+                    code = RCode.create();
                     unInfFeatures.clear();      //clear set for each fold
                     int minN=minNoise;
                     if(!jakulin){
@@ -638,7 +748,7 @@ public class FeatConstr {
                         attrImpListReliefF.println("\t\t\t\t\t\t\t\t--------------");
                     }
 
-                    if(folds==1){
+                    if(folds==1){   //if we do not use CV; we use split e.g., 75 train, 25 test
                         StratifiedRemoveFolds fold;
                         fold = new StratifiedRemoveFolds();
                         fold.setInputFormat(randData);
@@ -669,8 +779,8 @@ public class FeatConstr {
                         discIntervals.println("\t\t\t\t\t\t\t\t--------------"); 
                         discIntervals.printf("\t\t\t\t\t\t\t\t\tFold %2d\n",(f+1));
                         discIntervals.println("\t\t\t\t\t\t\t\t--------------"); 
-                        namesOfDiscAttr(data);  //save discretization intervals
-             
+                        namesOfDiscAttr(data, isClassification, numOfBins);  //save discretization intervals
+          
                     ModelAndAcc ma; 
                     Classifier model;
                     
@@ -678,9 +788,25 @@ public class FeatConstr {
                             model=clsTab[m];
                             t1=new Timer();
                             t1.start();
-                                ma=evaluateModel(data, test, model);
+                                ma=evaluateModel(data, test, model, isClassification);
                             t1.stop();
-                            accOrigModelByFolds[m][f]=ma.getAcc();
+                            if(isClassification)
+                                accOrigModelByFolds[m][f]=ma.getAcc();
+                            else{
+                                maeOrigModelByFolds[m][f]=ma.getMae();
+                                rmseOrigModelByFolds[m][f]=ma.getRmse();
+                                double maseRmseR2[]=maeRmseRsquared(data, test, model);
+                                maeV2OrigModelByFolds[m][f]=maseRmseR2[0];
+                                rmseV2OrigModelByFolds[m][f]=maseRmseR2[1];
+                                rSqTrOrigModelByFolds[m][f]=maseRmseR2[2];
+                                rSqTeOrigModelByFolds[m][f]=maseRmseR2[3];
+                                rSqTrSSEOrigModelByFolds[m]+=maseRmseR2[4]; //R2 pooling approach
+                                rSqTrSSTOrigModelByFolds[m]+=maseRmseR2[5]; //R2 pooling approach
+                                rSqTeSSEOrigModelByFolds[m]+=maseRmseR2[6]; //R2 pooling approach
+                                rSqTeSSTOrigModelByFolds[m]+=maseRmseR2[7]; //R2 pooling approach//                                System.out.println("MAE: "+ma.getMae()+" RMSE: "+ma.getRmse());
+
+
+                            }
                             learnAllTime[m][f]=t1.diff();
 
                             model=ma.getClassifier();
@@ -689,7 +815,7 @@ public class FeatConstr {
                                 j48=(J48)(model);
                                 treeSize[f]=j48.measureTreeSize();
                                 numOfLeaves[f]=j48.measureNumLeaves();
-                                sumOfTerms[f]=sumOfTermsInConstrInTree(data,data.numAttributes()-1, j48);
+                                sumOfTerms[f]=sumOfTermsInConstrInTree(j48);
                                 ratioTermsNodes[f]=(treeSize[f]-numOfLeaves[f])==0 ? 0 : sumOfTerms[f]/(treeSize[f]-numOfLeaves[f]);
                             }
                             if(excludeUppers(model.getClass().getSimpleName()).equals("FURIA")){
@@ -701,7 +827,7 @@ public class FeatConstr {
                             }
                         } 
                          
-                    if(!exhaustive){
+                    if(efc){
                         double allExplanations[][]=null;
                         double allWeights[][]=null;
                         float allExplanationsSHAP[][];
@@ -709,183 +835,8 @@ public class FeatConstr {
 
                         List<String>impInter=null;
                         Set<String> attrGroups= new LinkedHashSet<>();  //we want to keep the insertion order, we don't want duplicates - use of LinkedHashSet
-
-                        int numClasses=1; //1 - just one iteration, we explain minority class, otherwise numClasses=classDistr.length; we explain all classes          
-
-                        if(explAllClasses)
-                            numClasses=classDistr.length;
-
-                        /*SHAP*/  
-                        if(treeSHAP){
-                        /*XGBOOST*/
-                            DMatrix trainMat = wekaInstancesToDMatrix(data);
-                            DMatrix testMat =wekaInstancesToDMatrix(test);
-                            float tmpContrib[][];
-                            int numOfClasses=data.numClasses();
-                            HashMap<String, Object> params = new HashMap<>();
-                                params.put("eta", eta); //"eta - learning_rate ("shrinkage" parameter)": [0.05, 0.10, 0.15, 0.20, 0.25, 0.30 ]  It is advised to have small values of eta in the range of 0.1 to 0.3 because of overfitting
-                                params.put("max_depth", maxDepth);
-                                params.put("silent", 1);    //print 
-                                params.put("nthread", processors);
-                                params.put("gamma", gamma);   //"gamma-min_split_loss": [ 0.0, 0.1, 0.2 , 0.3, 0.4 ], gamma works by regularising using "across trees" information
-
-                            if(numOfClasses==2){    //for binary examples
-                                params.put("objective", "binary:logistic");  //binary:logistic – logistic regression for binary classification, returns predicted probability (not class)
-                                params.put("eval_metric", "error");
-                            }
-                            else{                   //multi class problems
-                                params.put("objective", "multi:softmax");  //multi:softprob multi:softmax
-                                params.put("eval_metric", "merror");
-                                params.put("num_class", (numOfClasses));    
-                            }
-
-                            Map<String, DMatrix> watches = new HashMap<String, DMatrix>() {{
-                                put("train", trainMat);
-                                put("test", testMat);
-                            }
-                            };    
-
-                           //building model
-                           t1=new Timer();
-                           t1.start();                
-                                Booster booster = XGBoost.train(trainMat, params, numOfRounds, watches, null, null);
-                           t1.stop();
-                           modelBuildTime[f]=t1.diff();
-                           String evalNameTest[]={"test"};
-                           String evalNameTrain[]={"train"};
-                           DMatrix [] testMatArr={testMat};
-                           DMatrix [] trainMatArr={trainMat};
-
-                           String accTrain=booster.evalSet(trainMatArr, evalNameTrain,0); 
-                           String accTest=booster.evalSet(testMatArr, evalNameTest,0);
-                           testMatArr=null; 
-                           trainMatArr=null;
-                           
-                           accExplAlgInt[f]=(1-Double.parseDouble(accTrain.split(":")[1]))*100; //internal evaluation of the model
-                           accExplAlgTest[f]=(1-Double.parseDouble(accTest.split(":")[1]))*100; //evaluation on the test dataset
-
-                           //explaining model
-                           t1=new Timer();
-                           t1.start();            
-                           
-                           if(f==0 && explAllClasses){
-                                for(int d=0;d<numClasses;d++){
-                                    System.out.println("Alg. for searching concepts: TreeSHAP (XGBOOST) parameters: numOfRounds->"+numOfRounds+" maxDepth->"+maxDepth+" eta->"+eta+" gamma->"+gamma);
-                                        logFile.println("Alg. for searching concepts: TreeSHAP (XGBOOST) parameters: numOfRounds->"+numOfRounds+" maxDepth->"+maxDepth+" eta->"+eta+" gamma->"+gamma);
-                                    System.out.println("Explaining class: "+data.classAttribute().value(d)+" explaining whole dataset: "+(explAllData?"YES":"NO"));
-                                        logFile.println("Explaining class: "+data.classAttribute().value(d)+" explaining whole dataset: "+(explAllData?"YES":"NO"));
-                                    System.out.println("---------------------------------------------------------------------------------");
-                                        logFile.println("---------------------------------------------------------------------------------");
-                                    }
-                            }
-
-                            for(int c=0;c<numClasses;c++){//numClasses=1; (we explain minority class), numClasses=classDistr.length; (we explain all classes) 
-                                if(explAllClasses)
-                                    classToExplain=c;
-
-                                Instances explainData=new Instances(data);
-                                RemoveWithValues filter = new RemoveWithValues();
-                                filter.setAttributeIndex("last") ;  //class
-                                filter.setNominalIndices((classToExplain+1)+""); //what we remove ... +1 because indexes go from 0, we need indexes from 1 for method setNominalIndices
-                                filter.setInvertSelection(true); //if we invert selection than we keep selected data ... 
-                                filter.setInputFormat(explainData);
-                                explainData = Filter.useFilter(explainData, filter);
-                                
-                                if(f==0 && !explAllClasses){   //print this info only once        
-                                    System.out.println("Alg. for searching concepts: TreeSHAP (XGBOOST) parameters: numOfRounds->"+numOfRounds+" maxDepth->"+maxDepth+" eta->"+eta+" gamma->"+gamma);
-                                        logFile.println("Alg. for searching concepts: TreeSHAP (XGBOOST) parameters: numOfRounds->"+numOfRounds+" maxDepth->"+maxDepth+" eta->"+eta+" gamma->"+gamma);
-                                    System.out.println("Explaining class: "+data.classAttribute().value(classToExplain)+" explaining whole dataset: "+(explAllData?"YES":"NO"));
-                                        logFile.println("Explaining class: "+data.classAttribute().value(classToExplain)+" explaining whole dataset: "+(explAllData?"YES":"NO"));
-                                    System.out.println("---------------------------------------------------------------------------------");
-                                        logFile.println("---------------------------------------------------------------------------------");
-                                }
-
-                                numInst=data.attributeStats(data.classIndex()).nominalCounts[classToExplain]; //number of instances in explained class
-                                if(numInst==0)
-                                    continue;   //class has no instances e.g., class -3 in dataset autos
-
-                                //we are explaining just instances from the explained class and not also from other classes
-                                //if we have more than maxToExplain (e.g. 500) instances we take only maxToExplain instances
-                                if(!explAllData){
-                                    if(numInst>maxToExplain){
-                                        System.out.println("We take only "+maxToExplain+" instances out of "+numInst+" from the class "+data.classAttribute().value(classToExplain)+".");
-                                            impGroups.println("We take only "+maxToExplain+" instances out of "+numInst+" from the class "+data.classAttribute().value(classToExplain)+".");
-                                        explainData.randomize(rand);
-                                        explainData = new Instances(explainData, 0, maxToExplain);
-                                        numInst=explainData.attributeStats(explainData.classIndex()).nominalCounts[classToExplain]; //for correct print on output
-                                    }
-                                }
-
-                                DMatrix explainMat = wekaInstancesToDMatrix(explainData);
-                                if(explAllData)
-                                    tmpContrib=booster.predictContrib(trainMat, 0);   //Tree SHAP ... for each feature, and last for bias matrix of size (​nsample, nfeats + 1) ... feature contributions (SHAP​  xgboost predict)
-                                else
-                                    tmpContrib=booster.predictContrib(explainMat, 0); //tree limit - Limit number of trees in the prediction; defaults to 0 (use all trees).
-                                
-                                explainMat.dispose();
-                                testMat.dispose();
-                                trainMat.dispose();
-                                t1.stop();
-
-                                //Note that shap_values for the two classes are additive inverses for a binary classification problem!!!
-                                //The variant of SHAP which deals with trees (TreeSHAP) calculates exact Shapley values and does it fast.
-                                if(numOfClasses==2){
-                                    allExplanationsSHAP=removeCol(tmpContrib, tmpContrib[0].length-1);  //we remove last column, because we do not need column with bias
-                                }
-                                else{
-                                int idxQArr[]=new int[data.numAttributes()-1];
-
-                                    if(classToExplain==0)
-                                        for(int i=0;i<idxQArr.length;i++)
-                                            idxQArr[i]=i;
-                                    else{
-                                        int start=(classToExplain*data.numAttributes()-1)+1;
-                                        int j=0;
-                                        for(int i=start;i<=idxQArr.length*(classToExplain+1);i++){
-                                            idxQArr[j]=i;
-                                            j++;
-                                        }
-                                    }                
-                                    allExplanationsSHAP=someColumns(tmpContrib, idxQArr);  //we take just columns of attributes from the class that we explain
-                                }
-
-                                if(numInst<minExplInst)
-                                    minN=minMinNoise;
-
-                                double noiseThr=(numInst*NOISE)/100.0; //we take number of noise threshold from the number of explained instances
-                                int usedNoise=Math.max((int)Math.ceil(noiseThr),minN);  //makes sense only if NOISE=0
-
-                                System.out.println("We remove max(NOISE,minNoise) groups, NOISE="+NOISE+"% -> "+(int)Math.ceil(noiseThr)+ ", minNoise="+minN+" we remove groups of size "+usedNoise+". Tree SHAP num of expl. inst. "+(explAllData ? data.numInstances() : numInst)+" (fold "+(f+1)+"). "+"Explaining class: "+data.classAttribute().value(classToExplain)+".");
-                                    impGroups.println("We remove max(NOISE,minNoise) groups, NOISE="+NOISE+"% -> "+(int)Math.ceil(noiseThr)+ ", minNoise="+minN+" we remove groups of size "+usedNoise+". Tree SHAP num of expl. inst. "+(explAllData ? data.numInstances() : numInst)+" (fold "+(f+1)+"). "+"Explaining class: "+data.classAttribute().value(classToExplain)+").");
-                                    impGroups.println("Lower threshold thrL: "+thrL+" upper threshold thrU: "+thrU+" with step: "+step);
-
-                                impGroups.println("\t\t\t\t\t\t\t\t--------------"); 
-                                impGroups.printf("\t\t\t\t\t\t\t\t\tFold %2d\n",(f+1));
-                                impGroups.println("\t\t\t\t\t\t\t\t--------------"); 
-
-                                if(groupsByThrStat && !visualisation && !justExplain && !exhaustive && !jakulin && f==0){
-                                    DecimalFormat df = new DecimalFormat("0.0");
-                                    for(double q=thrL;q<=thrU;q=q+step)
-                                        groupsStat.write(df.format(q)+";");
-                                    groupsStat.println();
-                                }
-                                for(double q=thrL;q<=thrU;q=q+step){
-                                    impGroups.println("--------------"); 
-                                    impGroups.printf("Threshold: %2.2f\n",round(q,1));
-                                    impGroups.println("--------------"); 
-
-                                    allWeightsSHAP=setWeights(data,allExplanationsSHAP,round(q,1));
-                                    impInter=(getMostFqSubsets(allWeightsSHAP,data,usedNoise));
-                                    attrGroups.addAll(impInter);
-                                    if(groupsByThrStat && !visualisation && !justExplain && !exhaustive && !jakulin)
-                                        groupsStat.write(impInter.size()+";");
-                                }
-                                if(groupsByThrStat && !visualisation && !justExplain && !exhaustive && !jakulin)
-                                    groupsStat.println();
-                            }//loop explain (all) class(es)
-                        }
-                        else{
-                            //System.out.println("Building model ...");
+                        
+                        if(!isClassification){ //for regression, we will tjust just IME method
                             t1=new Timer();
                             t1.start();
                                 predictionModel.buildClassifier(data);                  
@@ -898,57 +849,402 @@ public class FeatConstr {
                                 oobRF[f]=(1-rf.measureOutOfBagError())*100;
                             }
 
-                            //evaluate prediction model on test data
-                            Evaluation eval = new Evaluation(data);
-                            eval.evaluateModel(predictionModel, test);
-
-                            accExplAlgTest[f]=(eval.correct())/(eval.incorrect()+eval.correct())*100.00;    //same as 1-eval.errorRate())*100.0
-
-                            /*IME*/
-                            if(f==0 && explAllClasses){
-                                for(int d=0;d<numClasses;d++){
-                                    System.out.println("IME (explanation), "+method.name()+", "+(method.name().equals("adaptiveSampling") ? "min samples: "+minS+", sum of samples: "+sumOfSmp : method.name().equals("diffSampling")?"min samples: "+minS:"N_SAMPLES: "+N_SAMPLES)+" - alg. for searching concepts: "+predictionModel.getClass().getSimpleName());
-                                        logFile.println("IME (explanation), "+method.name()+", "+(method.name().equals("adaptiveSampling") ? "min samples: "+minS+", sum of samples: "+sumOfSmp : method.name().equals("diffSampling")?"min samples: "+minS:"N_SAMPLES: "+N_SAMPLES)+" - alg. for searching concepts: "+predictionModel.getClass().getSimpleName());  
-                                    System.out.println("Explaining class: "+data.classAttribute().value(d)+", explaining whole dataset: "+(explAllData?"YES":"NO"));
-                                        logFile.println("Explaining class: "+data.classAttribute().value(d)+", explaining all dataset: "+(explAllData?"YES":"NO"));
-                                    System.out.println("---------------------------------------------------------------------------------");
-                                        logFile.println("---------------------------------------------------------------------------------");
-
-                                    switch(method){
-                                        case aproxErrSampling:
-                                            System.out.println("Sampling based on mi=(<1-alpha, e>), pctErr = "+pctErr+" error = "+error+".");
-                                                logFile.println("Sampling based on mi=(<1-alpha, e>), pctErr = "+pctErr+" error = "+error+".");
-                                            System.out.println("---------------------------------------------------------------------------------");
-                                                logFile.println("---------------------------------------------------------------------------------");                                    
-                                        break;
-                                    }  
-                               }
+                            if(f==0){
+                                System.out.println("IME (explanation), "+method.name()+", "+(method.name().equals("adaptiveSampling") ? "min samples: "+minS+", sum of samples: "+sumOfSmp : method.name().equals("diffSampling")?"min samples: "+minS:"N_SAMPLES: "+N_SAMPLES)+" - alg. for searching concepts: "+predictionModel.getClass().getSimpleName());
+                                    logFile.println("IME (explanation), "+method.name()+", "+(method.name().equals("adaptiveSampling") ? "min samples: "+minS+", sum of samples: "+sumOfSmp : method.name().equals("diffSampling")?"min samples: "+minS:"N_SAMPLES: "+N_SAMPLES)+" - alg. for searching concepts: "+predictionModel.getClass().getSimpleName());
+                                System.out.println("---------------------------------------------------------------------------------");
+                                    logFile.println("---------------------------------------------------------------------------------");
                             }
-                            for(int i=0;i<numClasses;i++){  //numClasses=1; (we explain minority class), numClasses=classDistr.length; (we explain all classes) 
-                                if(explAllClasses)
-                                    classToExplain=i;
-                                if(f==0 && !explAllClasses){   //print this info only once  
-                                    System.out.println("IME (explanation), "+method.name()+", "+(method.name().equals("adaptiveSampling") ? "min samples: "+minS+", sum of samples: "+sumOfSmp : method.name().equals("diffSampling")?"min samples: "+minS:"N_SAMPLES: "+N_SAMPLES)+" - alg. for searching concepts: "+predictionModel.getClass().getSimpleName());
-                                        logFile.println("IME (explanation), "+method.name()+", "+(method.name().equals("adaptiveSampling") ? "min samples: "+minS+", sum of samples: "+sumOfSmp : method.name().equals("diffSampling")?"min samples: "+minS:"N_SAMPLES: "+N_SAMPLES)+" - alg. for searching concepts: "+predictionModel.getClass().getSimpleName());  
-                                    System.out.println("Explaining class: "+data.classAttribute().value(classToExplain)+", explaining whole dataset: "+(explAllData?"YES":"NO"));
-                                        logFile.println("Explaining class: "+data.classAttribute().value(classToExplain)+", explaining all dataset: "+(explAllData?"YES":"NO"));
-                                    System.out.println("---------------------------------------------------------------------------------");
-                                        logFile.println("---------------------------------------------------------------------------------");
-
-                                    switch(method){
-                                        case aproxErrSampling:
-                                            System.out.println("Sampling based on mi=(<1-alpha, e>), pctErr = "+pctErr+" error = "+error+".");
-                                                logFile.println("Sampling based on mi=(<1-alpha, e>), pctErr = "+pctErr+" error = "+error+".");
-                                            System.out.println("---------------------------------------------------------------------------------");
-                                                logFile.println("---------------------------------------------------------------------------------");                                    
+                            
+                            //explain all data
+                            Instances explainData=new Instances(data);
+                            numInst=data.numInstances();
+                            if(!explAllData){//explain rand number of data
+                                double numExplInst=(pctExplReg*explainData.numInstances())/100.00;
+                                explainData.randomize(rand);
+                                explainData = new Instances(explainData, 0, (int)numExplInst);
+                                numInst=(int)numExplInst;
+                            }                           
+                            
+                            t1=new Timer();
+                            t1.start();
+                                switch (method){
+                                    case equalSampling: 
+                                        allExplanations=IME.explainAllDatasetES(data,explainData,predictionModel,N_SAMPLES, classToExplain);    //equal sampling
                                         break;
-                                    }                
+                                    case adaptiveSamplingSS:  
+                                        allExplanations=IME.explainAllDatasetAS(data,explainData,predictionModel, minS, sumOfSmp, classToExplain);     //we need sumOfSmp (sum of samples) for additive sampling
+                                        break;
+                                    case adaptiveSamplingAE: 
+                                        allExplanations=IME.explainAllDatasetAS(data,explainData,predictionModel, minS, classToExplain, error, pctErr);
+                                        break;
+                                    case aproxErrSampling:  
+                                        allExplanations=IME.explainAllDatasetAES(predictionModel, data, explainData,isClassification, classToExplain, minS, error, pctErr);                   
+                                        break;
+                                }
+                            t1.stop();
+                            exlpTime[f]=t1.diff();
+                            
+                            double noiseThr=(numInst*NOISE)/100.0;//we take number of noise threshold from the number of explained instances
+                            if(numInst<minExplInst)
+                                minN=minMinNoise;
+                            int usedNoise=Math.max((int)Math.ceil(noiseThr),minN);  //makes sense only if NOISE=0 or num of explained instances is very low               
+                                                                                    
+                            impGroups.println("\t\t\t\t\t\t\t\t--------------"); 
+                            impGroups.printf("\t\t\t\t\t\t\t\tFold %2d\n",(f+1));
+                            impGroups.println("\t\t\t\t\t\t\t\t--------------"); 
+                            
+                            System.out.println("We remove max(NOISE,minNoise) groups, NOISE="+NOISE+"% -> "+(int)Math.ceil(noiseThr)+ ", minNoise="+minN+" we remove groups of size "+usedNoise+". Explanation method: IME, num. of expl. inst. is "+(explAllData ? data.numInstances()+"(all data)" :  (numInst +", pct of expl. instances is "+pctExplReg))+", (fold "+(f+1)+"). Number of bins for discretisation (simple binning) is "+numOfBins+".");
+                                impGroups.println("We remove max(NOISE,minNoise) groups, NOISE="+NOISE+"% -> "+(int)Math.ceil(noiseThr)+ ", minNoise="+minN+" we remove groups of size "+usedNoise+". Explanation method: IME, num. of expl. inst. is "+(explAllData ? data.numInstances()+"(all data)" :  (numInst +", pct of expl. instances is "+pctExplReg))+", (fold "+(f+1)+"). Number of bins for discretisation (simple binning) is "+numOfBins+".");
+
+                                                                              
+                            for(double q=thrL;q<=thrU;q=q+step){
+                                impGroups.println("--------------"); 
+                                impGroups.printf("Threshold: %2.2f\n",round(q,1));
+                                impGroups.println("--------------"); 
+
+                                allWeights=setWeights(data,allExplanations,round(q,1));
+                                impInter=(getMostFqSubsets(allWeights,data,usedNoise));
+                                attrGroups.addAll(impInter);
+                            } 
+                        }
+                        else{
+
+                        int numClasses=1; //1 - just one iteration, we explain minority class, otherwise numClasses=classDistr.length; we explain all classes          
+
+                        if(explAllClasses)
+                            numClasses=classDistr.length;
+
+                        /*SHAP*/  
+                        t1=null;
+                        switch(explM){
+                            case SHAP:
+                                /*XGBOOST*/
+                                DMatrix trainMat = wekaInstancesToDMatrix(data);
+                                DMatrix testMat =wekaInstancesToDMatrix(test);
+                                float tmpContrib[][];
+                                int numOfClasses=data.numClasses();
+                                HashMap<String, Object> params = new HashMap<>();
+                                    params.put("eta", eta); //"eta - learning_rate ("shrinkage" parameter)": [0.05, 0.10, 0.15, 0.20, 0.25, 0.30 ]  It is advised to have small values of eta in the range of 0.1 to 0.3 because of overfitting
+                                    params.put("max_depth", maxDepth);
+                                    params.put("silent", 1);    //print 
+                                    params.put("nthread", processors);
+                                    params.put("gamma", gamma);   //"gamma-min_split_loss": [ 0.0, 0.1, 0.2 , 0.3, 0.4 ], gamma works by regularising using "across trees" information
+
+                                if(numOfClasses==2){    //for binary examples
+                                    params.put("objective", "binary:logistic");  //binary:logistic – logistic regression for binary classification, returns predicted probability (not class)
+                                    params.put("eval_metric", "error");
+                                }
+                                else{                   //multi class problems
+                                    params.put("objective", "multi:softmax");  //multi:softprob multi:softmax
+                                    params.put("eval_metric", "merror");
+                                    params.put("num_class", (numOfClasses));    
                                 }
 
-                                numInst=data.attributeStats(data.classIndex()).nominalCounts[classToExplain]; //number of instances in explained class
+                                Map<String, DMatrix> watches = new HashMap<String, DMatrix>() {{
+                                    put("train", trainMat);
+                                    put("test", testMat);
+                                }
+                                };    
+
+                               //building model
+                               t1=new Timer();
+                               t1.start();                
+                                    Booster booster = XGBoost.train(trainMat, params, numOfRounds, watches, null, null);
+                               t1.stop();
+                               modelBuildTime[f]=t1.diff();
+                               String evalNameTest[]={"test"};
+                               String evalNameTrain[]={"train"};
+                               DMatrix [] testMatArr={testMat};
+                               DMatrix [] trainMatArr={trainMat};
+
+                               String accTrain=booster.evalSet(trainMatArr, evalNameTrain,0); 
+                               String accTest=booster.evalSet(testMatArr, evalNameTest,0);
+                               testMatArr=null; 
+                               trainMatArr=null;
+
+                               accExplAlgInt[f]=(1-Double.parseDouble(accTrain.split(":")[1]))*100; //internal evaluation of the model
+                               accExplAlgTest[f]=(1-Double.parseDouble(accTest.split(":")[1]))*100; //evaluation on the test dataset
+
+                               //explaining model          
+                               if(f==0 && explAllClasses){
+                                    for(int d=0;d<numClasses;d++){
+                                        System.out.println("Alg. for searching concepts: TreeSHAP (XGBOOST) parameters: numOfRounds->"+numOfRounds+" maxDepth->"+maxDepth+" eta->"+eta+" gamma->"+gamma);
+                                            logFile.println("Alg. for searching concepts: TreeSHAP (XGBOOST) parameters: numOfRounds->"+numOfRounds+" maxDepth->"+maxDepth+" eta->"+eta+" gamma->"+gamma);
+                                        System.out.println("Explaining class: "+data.classAttribute().value(d)+" explaining whole dataset: "+(explAllData?"YES":"NO"));
+                                            logFile.println("Explaining class: "+data.classAttribute().value(d)+" explaining whole dataset: "+(explAllData?"YES":"NO"));
+                                        System.out.println("---------------------------------------------------------------------------------");
+                                            logFile.println("---------------------------------------------------------------------------------");
+                                        }
+                                }
+
+                                for(int c=0;c<numClasses;c++){//numClasses=1; (we explain minority class), numClasses=classDistr.length; (we explain all classes) 
+                                    if(explAllClasses)
+                                        classToExplain=c;
+
+                                    Instances explainData=new Instances(data);
+                                    RemoveWithValues filter = new RemoveWithValues();
+                                    filter.setAttributeIndex("last") ;  //class
+                                    filter.setNominalIndices((classToExplain+1)+""); //what we remove ... +1 because indexes go from 0, we need indexes from 1 for method setNominalIndices
+                                    filter.setInvertSelection(true); //if we invert selection than we keep selected data ... 
+                                    filter.setInputFormat(explainData);
+                                    explainData = Filter.useFilter(explainData, filter);
+
+                                    if(f==0 && !explAllClasses){   //print this info only once        
+                                        System.out.println("Alg. for searching concepts: TreeSHAP (XGBOOST) parameters: numOfRounds->"+numOfRounds+" maxDepth->"+maxDepth+" eta->"+eta+" gamma->"+gamma);
+                                            logFile.println("Alg. for searching concepts: TreeSHAP (XGBOOST) parameters: numOfRounds->"+numOfRounds+" maxDepth->"+maxDepth+" eta->"+eta+" gamma->"+gamma);
+                                        System.out.println("Explaining class: "+data.classAttribute().value(classToExplain)+" explaining whole dataset: "+(explAllData?"YES":"NO"));
+                                            logFile.println("Explaining class: "+data.classAttribute().value(classToExplain)+" explaining whole dataset: "+(explAllData?"YES":"NO"));
+                                        System.out.println("---------------------------------------------------------------------------------");
+                                            logFile.println("---------------------------------------------------------------------------------");
+                                    }
+                                    
+                                    if(explAllData)
+                                        numInst=data.numInstances();
+                                    else
+                                        numInst=data.attributeStats(data.classIndex()).nominalCounts[classToExplain]; //number of instances in explained class
+                                    if(numInst==0)
+                                        continue;   //class has no instances e.g., class -3 in dataset autos
+
+                                    //we are explaining just instances from the explained class and not also from other classes
+                                    //if we have more than maxToExplain (e.g. 500) instances we take only maxToExplain instances
+                                    if(!explAllData){
+                                        if(numInst>maxToExplain){
+                                            System.out.println("We take only "+maxToExplain+" instances out of "+numInst+" from the class "+data.classAttribute().value(classToExplain)+".");
+                                                impGroups.println("We take only "+maxToExplain+" instances out of "+numInst+" from the class "+data.classAttribute().value(classToExplain)+".");
+                                            explainData.randomize(rand);
+                                            explainData = new Instances(explainData, 0, maxToExplain);
+                                            numInst=explainData.attributeStats(explainData.classIndex()).nominalCounts[classToExplain]; //for correct print on output
+                                        }
+                                    }
+                                    
+                                    t1=new Timer();
+                                    t1.start();  
+                                    DMatrix explainMat = wekaInstancesToDMatrix(explainData);
+                                    if(explAllData)
+                                        tmpContrib=booster.predictContrib(trainMat, 0);   //Tree SHAP ... for each feature, and last for bias matrix of size (​nsample, nfeats + 1) ... feature contributions (SHAP​  xgboost predict)
+                                    else
+                                        tmpContrib=booster.predictContrib(explainMat, 0); //tree limit - Limit number of trees in the prediction; defaults to 0 (use all trees).
+
+                                    explainMat.dispose();
+                                    t1.stop();
+                                    exlpTime[f]=t1.diff();
+                                    //Note that shap_values for the two classes are additive inverses for a binary classification problem!!!
+                                    //The variant of SHAP which deals with trees (TreeSHAP) calculates exact Shapley values and does it fast.
+                                    if(numOfClasses==2){
+                                        allExplanationsSHAP=removeCol(tmpContrib, tmpContrib[0].length-1);  //we remove last column, because we do not need column with bias
+                                    }
+                                    else{
+                                    int idxQArr[]=new int[data.numAttributes()-1];
+
+                                        if(classToExplain==0)
+                                            for(int i=0;i<idxQArr.length;i++)
+                                                idxQArr[i]=i;
+                                        else{
+                                            int start=(classToExplain*data.numAttributes()-1)+1;
+                                            int j=0;
+                                            for(int i=start;i<=idxQArr.length*(classToExplain+1);i++){
+                                                idxQArr[j]=i;
+                                                j++;
+                                            }
+                                        }                
+                                        allExplanationsSHAP=someColumns(tmpContrib, idxQArr);  //we take just columns of attributes from the class that we explain
+                                    }
+
+                                    if(numInst<minExplInst)
+                                        minN=minMinNoise;
+
+                                    double noiseThr=(numInst*NOISE)/100.0; //we take number of noise threshold from the number of explained instances
+                                    int usedNoise=Math.max((int)Math.ceil(noiseThr),minN);  //makes sense only if NOISE=0
+
+                                    System.out.println("We remove max(NOISE,minNoise) groups, NOISE="+NOISE+"% -> "+(int)Math.ceil(noiseThr)+ ", minNoise="+minN+" we remove groups of size "+usedNoise+". Tree SHAP num of expl. inst. "+(explAllData ? data.numInstances() : numInst)+" (fold "+(f+1)+"). "+"Explaining class: "+data.classAttribute().value(classToExplain)+".");
+                                        impGroups.println("We remove max(NOISE,minNoise) groups, NOISE="+NOISE+"% -> "+(int)Math.ceil(noiseThr)+ ", minNoise="+minN+" we remove groups of size "+usedNoise+". Tree SHAP num of expl. inst. "+(explAllData ? data.numInstances() : numInst)+" (fold "+(f+1)+"). "+"Explaining class: "+data.classAttribute().value(classToExplain)+").");
+                                        impGroups.println("Lower threshold thrL: "+thrL+" upper threshold thrU: "+thrU+" with step: "+step);
+
+                                    impGroups.println("\t\t\t\t\t\t\t\t--------------"); 
+                                    impGroups.printf("\t\t\t\t\t\t\t\t\tFold %2d\n",(f+1));
+                                    impGroups.println("\t\t\t\t\t\t\t\t--------------"); 
+
+                                    if(groupsByThrStat && !visualisation && !justExplain && !exhaustive && !jakulin && f==0){
+                                        DecimalFormat df = new DecimalFormat("0.0");
+                                        for(double q=thrL;q<=thrU;q=q+step)
+                                            groupsStat.write(df.format(q)+";");
+                                        groupsStat.println();
+                                    }
+                                    for(double q=thrL;q<=thrU;q=q+step){
+                                        impGroups.println("--------------"); 
+                                        impGroups.printf("Threshold: %2.2f\n",round(q,1));
+                                        impGroups.println("--------------"); 
+
+                                        allWeightsSHAP=setWeights(data,allExplanationsSHAP,round(q,1));
+                                        impInter=(getMostFqSubsets(allWeightsSHAP,data,usedNoise));
+                                        attrGroups.addAll(impInter);
+                                        if(groupsByThrStat && !visualisation && !justExplain && !exhaustive && !jakulin)
+                                            groupsStat.write(impInter.size()+";");
+                                    }
+                                    if(groupsByThrStat && !visualisation && !justExplain && !exhaustive && !jakulin)
+                                        groupsStat.println();
+                                }//loop explain (all) class(es)
+                                break;
+                            case IME:
+                                t1=new Timer();
+                                t1.start();
+                                    predictionModel.buildClassifier(data);                  
+                                t1.stop();
+                                //System.out.println("Prediction model created.");
+                                modelBuildTime[f]=t1.diff();
+
+                                if(excludeUppers(predictionModel.getClass().getSimpleName()).equals("RF")){ //OOB
+                                    rf=(RandomForest)predictionModel;
+                                    oobRF[f]=(1-rf.measureOutOfBagError())*100;
+                                }
+
+                                //evaluate prediction model on test data
+                                Evaluation eval = new Evaluation(data);
+                                eval.evaluateModel(predictionModel, test);
+
+                                accExplAlgTest[f]=(eval.correct())/(eval.incorrect()+eval.correct())*100.00;    //same as 1-eval.errorRate())*100.0
+
+                                /*IME*/
+                                if(f==0 && explAllClasses){
+                                    for(int d=0;d<numClasses;d++){
+                                        System.out.println("IME (explanation), "+method.name()+", "+(method.name().equals("adaptiveSampling") ? "min samples: "+minS+", sum of samples: "+sumOfSmp : method.name().equals("diffSampling")?"min samples: "+minS:"N_SAMPLES: "+N_SAMPLES)+" - alg. for searching concepts: "+predictionModel.getClass().getSimpleName());
+                                            logFile.println("IME (explanation), "+method.name()+", "+(method.name().equals("adaptiveSampling") ? "min samples: "+minS+", sum of samples: "+sumOfSmp : method.name().equals("diffSampling")?"min samples: "+minS:"N_SAMPLES: "+N_SAMPLES)+" - alg. for searching concepts: "+predictionModel.getClass().getSimpleName());  
+                                        System.out.println("Explaining class: "+data.classAttribute().value(d)+", explaining whole dataset: "+(explAllData?"YES":"NO"));
+                                            logFile.println("Explaining class: "+data.classAttribute().value(d)+", explaining all dataset: "+(explAllData?"YES":"NO"));
+                                        System.out.println("---------------------------------------------------------------------------------");
+                                            logFile.println("---------------------------------------------------------------------------------");
+
+                                        switch(method){
+                                            case aproxErrSampling:
+                                                System.out.println("Sampling based on mi=(<1-alpha, e>), pctErr = "+pctErr+" error = "+error+".");
+                                                    logFile.println("Sampling based on mi=(<1-alpha, e>), pctErr = "+pctErr+" error = "+error+".");
+                                                System.out.println("---------------------------------------------------------------------------------");
+                                                    logFile.println("---------------------------------------------------------------------------------");                                    
+                                            break;
+                                        }  
+                                   }
+                                }
+                                for(int i=0;i<numClasses;i++){  //numClasses=1; (we explain minority class), numClasses=classDistr.length; (we explain all classes) 
+                                    if(explAllClasses)
+                                        classToExplain=i;
+                                    if(f==0 && !explAllClasses){   //print this info only once  
+                                        System.out.println("IME (explanation), "+method.name()+", "+(method.name().equals("adaptiveSampling") ? "min samples: "+minS+", sum of samples: "+sumOfSmp : method.name().equals("diffSampling")?"min samples: "+minS:"N_SAMPLES: "+N_SAMPLES)+" - alg. for searching concepts: "+predictionModel.getClass().getSimpleName());
+                                            logFile.println("IME (explanation), "+method.name()+", "+(method.name().equals("adaptiveSampling") ? "min samples: "+minS+", sum of samples: "+sumOfSmp : method.name().equals("diffSampling")?"min samples: "+minS:"N_SAMPLES: "+N_SAMPLES)+" - alg. for searching concepts: "+predictionModel.getClass().getSimpleName());  
+                                        System.out.println("Explaining class: "+data.classAttribute().value(classToExplain)+", explaining whole dataset: "+(explAllData?"YES":"NO"));
+                                            logFile.println("Explaining class: "+data.classAttribute().value(classToExplain)+", explaining all dataset: "+(explAllData?"YES":"NO"));
+                                        System.out.println("---------------------------------------------------------------------------------");
+                                            logFile.println("---------------------------------------------------------------------------------");
+
+                                        switch(method){
+                                            case aproxErrSampling:
+                                                System.out.println("Sampling based on mi=(<1-alpha, e>), pctErr = "+pctErr+" error = "+error+".");
+                                                    logFile.println("Sampling based on mi=(<1-alpha, e>), pctErr = "+pctErr+" error = "+error+".");
+                                                System.out.println("---------------------------------------------------------------------------------");
+                                                    logFile.println("---------------------------------------------------------------------------------");                                    
+                                            break;
+                                        }                
+                                    }
+                                    
+                                    if(explAllData)
+                                        numInst=data.numInstances();
+                                    else
+                                        numInst=data.attributeStats(data.classIndex()).nominalCounts[classToExplain]; //number of instances in explained class
+                                    if(numInst==0)
+                                        continue;   //class has no instances e.g., class -3 in dataset autos
+
+                                    Instances explainData=new Instances(data);
+                                    RemoveWithValues filter = new RemoveWithValues();
+                                    filter.setAttributeIndex("last") ;                  //class
+                                    filter.setNominalIndices((classToExplain+1)+"");    //what we remove ... +1 because indexes go from 0, we need indexes from 1 for method setNominalIndices
+                                    filter.setInvertSelection(true);                    //if we invert selection then we keep selected data ... 
+                                    filter.setInputFormat(explainData);
+                                    explainData = Filter.useFilter(explainData, filter);
+
+                                    //we are explaining just instances from the explained class and not also instances from other classes
+                                    //if we have more than maxToExplain (e.g. 500) instances we take only maxToExplain instances
+                                    if(!explAllData){
+                                        if(numInst>maxToExplain){
+                                            System.out.println("We take only "+maxToExplain+" instances out of "+numInst+" from the class "+data.classAttribute().value(classToExplain)+".");
+                                                impGroups.println("We take only "+maxToExplain+" instances out of "+numInst+" from the class "+data.classAttribute().value(classToExplain)+".");
+
+                                            explainData.randomize(rand);
+                                            explainData = new Instances(explainData, 0, maxToExplain);
+                                            numInst=explainData.attributeStats(explainData.classIndex()).nominalCounts[classToExplain]; //for correct print on output
+                                        }
+                                        t1=new Timer();
+                                        t1.start();
+                                            switch (method){
+                                                case equalSampling: 
+                                                    allExplanations=IME.explainAllDatasetES(data,explainData,predictionModel,N_SAMPLES, classToExplain);    //equal sampling
+                                                    break;
+                                                case adaptiveSamplingSS:  
+                                                    allExplanations=IME.explainAllDatasetAS(data,explainData,predictionModel, minS, sumOfSmp, classToExplain);     //we need sumOfSmp (sum of samples) for additive sampling
+                                                    break;
+                                                case adaptiveSamplingAE: 
+                                                    allExplanations=IME.explainAllDatasetAS(data,explainData,predictionModel, minS, classToExplain, error, pctErr);
+                                                    break;
+                                                case aproxErrSampling:  
+                                                    allExplanations=IME.explainAllDatasetAES(predictionModel, data, explainData,true, classToExplain, minS, error, pctErr);                   
+                                                    break;
+                                            }
+                                        t1.stop();
+                                    }
+                                    else{
+                                        t1=new Timer();
+                                        t1.start();
+                                            switch (method){
+                                                case equalSampling: 
+                                                    allExplanations=IME.explainAllDatasetES(data,data,predictionModel,N_SAMPLES, classToExplain); //equal sampling
+                                                    break;
+                                                case adaptiveSamplingSS: 
+                                                    allExplanations=IME.explainAllDatasetAS(data,data,predictionModel, minS, sumOfSmp, classToExplain);//we need sumOfSmp (sum of samples) for additive sampling
+                                                    break;
+                                                 case adaptiveSamplingAE:   
+                                                    allExplanations=IME.explainAllDatasetAS(data,data,predictionModel, minS, classToExplain, error, pctErr);
+                                                    break;                                            
+                                                case aproxErrSampling: 
+                                                    allExplanations=IME.explainAllDatasetAES(predictionModel, data, data, true, classToExplain, minS, error,pctErr);
+                                                    break;
+                                            }
+                                        t1.stop();
+                                    }   
+                                    exlpTime[f]=t1.diff();
+                                    if(numInst<minExplInst)
+                                        minN=minMinNoise;
+
+                                    double noiseThr=(numInst*NOISE)/100.0;//we take number of noise threshold from the number of explained instances
+                                    int usedNoise=Math.max((int)Math.ceil(noiseThr),minN);  //makes sense only if NOISE=0 or num of explained instances is very low
+
+                                    System.out.println("We remove max(NOISE,minNoise) groups, NOISE="+NOISE+"% -> "+(int)Math.ceil(noiseThr)+ ", minNoise="+minN+" we remove groups of size "+usedNoise+". Number of instances from class ("+explainData.classAttribute().value(classToExplain)+") is "+numInst+" (fold "+(f+1)+").");
+                                        impGroups.println("We remove max(NOISE,minNoise) groups, NOISE="+NOISE+"% -> "+(int)Math.ceil(noiseThr)+ ", minNoise="+minN+" we remove groups of size "+usedNoise+". Number of instances from class ("+explainData.classAttribute().value(classToExplain)+") is "+numInst+" (fold "+(f+1)+").");
+                                        impGroups.println("Lower threshold thrL: "+thrL+" upper threshold thrU: "+thrU+" with step: "+step);
+
+                                    impGroups.println("\t\t\t\t\t\t\t\t--------------"); 
+                                    impGroups.printf("\t\t\t\t\t\t\t\t\tFold %2d\n",(f+1));
+                                    impGroups.println("\t\t\t\t\t\t\t\t--------------"); 
+
+                                    for(double q=thrL;q<=thrU;q=q+step){
+                                        impGroups.println("--------------"); 
+                                        impGroups.printf("Threshold: %2.2f\n",round(q,1));
+                                        impGroups.println("--------------"); 
+
+                                        allWeights=setWeights(data,allExplanations,round(q,1));
+                                        impInter=(getMostFqSubsets(allWeights,data,usedNoise));
+                                        attrGroups.addAll(impInter);
+                                    }     
+                                    }   //loop explain (all) class(es)                
+                                break;
+                            case LIME: 
+                                 
+                                String modelAlg="xgb";
+                                if(explAllData)
+                                    numInst=data.numInstances();
+                                else
+                                    numInst=data.attributeStats(data.classIndex()).nominalCounts[classToExplain]; //number of instances in explained class
                                 if(numInst==0)
                                     continue;   //class has no instances e.g., class -3 in dataset autos
-
+                                                                          
                                 Instances explainData=new Instances(data);
                                 RemoveWithValues filter = new RemoveWithValues();
                                 filter.setAttributeIndex("last") ;                  //class
@@ -957,6 +1253,12 @@ public class FeatConstr {
                                 filter.setInputFormat(explainData);
                                 explainData = Filter.useFilter(explainData, filter);
 
+                                //save daatsets for python script
+                                DataSink.write("Lime/trainFold.csv", data);
+                                DataSink.write("Lime/explainData.csv", explainData);
+                      
+                                t1=new Timer();
+                                t1.start();
                                 //we are explaining just instances from the explained class and not also instances from other classes
                                 //if we have more than maxToExplain (e.g. 500) instances we take only maxToExplain instances
                                 if(!explAllData){
@@ -968,58 +1270,20 @@ public class FeatConstr {
                                         explainData = new Instances(explainData, 0, maxToExplain);
                                         numInst=explainData.attributeStats(explainData.classIndex()).nominalCounts[classToExplain]; //for correct print on output
                                     }
-                                    t1=new Timer();
-                                    t1.start();
-                                        switch (method){
-                                            case equalSampling: 
-                                                allExplanations=IME.explainAllDatasetES(data,explainData,predictionModel,N_SAMPLES, classToExplain);    //equal sampling
-                                                break;
-                                            case adaptiveSamplingSS:  
-                                                allExplanations=IME.explainAllDatasetAS(data,explainData,predictionModel, minS, sumOfSmp, classToExplain);     //we need sumOfSmp (sum of samples) for additive sampling
-                                                break;
-                                            case adaptiveSamplingAE: 
-                                                allExplanations=IME.explainAllDatasetAS(data,explainData,predictionModel, minS, classToExplain, error, pctErr);
-                                                break;
-                                            case aproxErrSampling:  
-                                                allExplanations=IME.explainAllDatasetAES(predictionModel, data, explainData,true, classToExplain, minS, error, pctErr);                   
-                                                break;
-                                        }
-                                    t1.stop();
+                                    allExplanations=explainWithLime(data, explainData, classToExplain, modelAlg, fileName);                                
                                 }
                                 else{
-                                    t1=new Timer();
-                                    t1.start();
-                                        switch (method){
-                                            case equalSampling: 
-                                                allExplanations=IME.explainAllDatasetES(data,data,predictionModel,N_SAMPLES, classToExplain); //equal sampling
-                                                break;
-                                            case adaptiveSamplingSS: 
-                                                allExplanations=IME.explainAllDatasetAS(data,data,predictionModel, minS, sumOfSmp, classToExplain);//we need sumOfSmp (sum of samples) for additive sampling
-                                                break;
-                                             case adaptiveSamplingAE:   
-                                                allExplanations=IME.explainAllDatasetAS(data,data,predictionModel, minS, classToExplain, error, pctErr);
-                                                break;                                            
-                                            case aproxErrSampling: 
-                                                allExplanations=IME.explainAllDatasetAES(predictionModel, data, data, true, classToExplain, minS, error,pctErr);
-                                                break;
-                                        }
-                                    t1.stop();
-                                }   
+                                    allExplanations=explainWithLime(data, data, classToExplain, modelAlg, fileName);
+                                }
+                                t1.stop(); //not real time, get time frmo python !!!
 
+                                exlpTime[f]=t1.diff(); //not real time, get time from python  - see Lime/execTimes.log
                                 if(numInst<minExplInst)
                                     minN=minMinNoise;
 
                                 double noiseThr=(numInst*NOISE)/100.0;//we take number of noise threshold from the number of explained instances
                                 int usedNoise=Math.max((int)Math.ceil(noiseThr),minN);  //makes sense only if NOISE=0 or num of explained instances is very low
-
-                                System.out.println("We remove max(NOISE,minNoise) groups, NOISE="+NOISE+"% -> "+(int)Math.ceil(noiseThr)+ ", minNoise="+minN+" we remove groups of size "+usedNoise+". Number of instances from class ("+explainData.classAttribute().value(classToExplain)+") is "+numInst+" (fold "+(f+1)+").");
-                                    impGroups.println("We remove max(NOISE,minNoise) groups, NOISE="+NOISE+"% -> "+(int)Math.ceil(noiseThr)+ ", minNoise="+minN+" we remove groups of size "+usedNoise+". Number of instances from class ("+explainData.classAttribute().value(classToExplain)+") is "+numInst+" (fold "+(f+1)+").");
-                                    impGroups.println("Lower threshold thrL: "+thrL+" upper threshold thrU: "+thrU+" with step: "+step);
-
-                                impGroups.println("\t\t\t\t\t\t\t\t--------------"); 
-                                impGroups.printf("\t\t\t\t\t\t\t\t\tFold %2d\n",(f+1));
-                                impGroups.println("\t\t\t\t\t\t\t\t--------------"); 
-
+                                
                                 for(double q=thrL;q<=thrU;q=q+step){
                                     impGroups.println("--------------"); 
                                     impGroups.printf("Threshold: %2.2f\n",round(q,1));
@@ -1028,39 +1292,60 @@ public class FeatConstr {
                                     allWeights=setWeights(data,allExplanations,round(q,1));
                                     impInter=(getMostFqSubsets(allWeights,data,usedNoise));
                                     attrGroups.addAll(impInter);
-                                }     
-                            }   //loop explain (all) class(es)                
-                        }   //condition SHAP or IME
-
-                        exlpTime[f]=t1.diff();
+                                } 
+                                break;
+                            }
+                        }
+                        
                         numOfExplainedInst[f]=numInst;
                         listOfConcepts = new ArrayList<>(attrGroups);
-                        
+                    
                         if(listOfConcepts.size()==0){//if we didn't find any concepts in this fold we take results from the fold that doesn't consist of CI
                             //take ACC and learning time from orig. dataset
                             for (int i=0;i<clsTab.length;i++){
+                                if(isClassification){
                                 //logical
                                 accByFoldsLF[i][f]=accOrigModelByFolds[i][f];
-                                learnAllFCTimeLF[i][f]=learnAllTime[i][f];
                                 //numerical
                                 accByFoldsNum[i][f]=accOrigModelByFolds[i][f];
-                                learnAllFCTimeNum[i][f]=learnAllTime[i][f]; 
                                 //Cartesian product    
                                 accByFoldsCP[i][f]=accOrigModelByFolds[i][f];
-                                learnAllFCTimeCP[i][f]=learnAllTime[i][f];    
                                 //relational
                                 accByFoldsRE[i][f]=accOrigModelByFolds[i][f];
-                                learnAllFCTimeRE[i][f]=learnAllTime[i][f]; 
                                 //FURIA and thr    
                                 accuracyByFoldsFuriaThr[i][f]=accOrigModelByFolds[i][f];
-                                learnFuriaThrTime[i][f]=learnAllTime[i][f];
                                 //All features
                                 accuracyByFolds[i][f]=accOrigModelByFolds[i][f];
-                                learnAllFCTime[i][f]=learnAllTime[i][f];  
                                 //FS on validation dataset    
                                 accuracyByFoldsPS[i][f]=accOrigModelByFolds[i][f];
+                                }
+                                else{
+                                    maeByFoldsLF[i][f]=maeOrigModelByFolds[i][f];
+                                    rmseByFoldsLF[i][f]=rmseOrigModelByFolds[i][f];
+                                    maeByFoldsNum[i][f]=maeOrigModelByFolds[i][f];
+                                    rmseByFoldsNum[i][f]=rmseOrigModelByFolds[i][f];
+                                    maeByFoldsCP[i][f]=maeOrigModelByFolds[i][f];
+                                    rmseByFoldsCP[i][f]=rmseOrigModelByFolds[i][f];
+                                    maeByFoldsRE[i][f]=maeOrigModelByFolds[i][f];
+                                    rmseByFoldsRE[i][f]=rmseOrigModelByFolds[i][f];
+                                    maeByFoldsFuriaThr[i][f]=maeOrigModelByFolds[i][f];
+                                    rmseByFoldsFuriaThr[i][f]=rmseOrigModelByFolds[i][f];
+                                    maeByFolds[i][f]=maeOrigModelByFolds[i][f];
+                                    rmseByFolds[i][f]=rmseOrigModelByFolds[i][f];
+                                    maeByFoldsPS[i][f]=maeOrigModelByFolds[i][f];
+                                    rmseByFoldsPS[i][f]=rmseOrigModelByFolds[i][f];
+
+                                }
+                                        
+                                learnAllFCTimeLF[i][f]=learnAllTime[i][f];
+                                learnAllFCTimeNum[i][f]=learnAllTime[i][f]; 
+                                learnAllFCTimeCP[i][f]=learnAllTime[i][f];    
+                                learnAllFCTimeRE[i][f]=learnAllTime[i][f]; 
+                                learnFuriaThrTime[i][f]=learnAllTime[i][f];
+                                learnAllFCTime[i][f]=learnAllTime[i][f];  
                                 paramSLearnT[i][f]=learnAllTime[i][f];
-                            }     
+                            }
+                            if(isClassification){
                             //take treeSize from orig. dataset
                             //logical
                             numOfTreeByFoldsLF[0][f]=treeSize[f];
@@ -1143,9 +1428,21 @@ public class FeatConstr {
                             complexityOfFuriaPS[0][f]=numOfRules[f];
                             complexityOfFuriaPS[1][f]=numOfTerms[f];   
                             complexityOfFuriaPS[2][f]=numConstructsPerRule[f];
+                            }
                         }
-                    }        
-                    else{
+                    }
+                    else if(othrBase){
+                            switch(selectedBaseline){
+                                case rndBase:
+                                    listOfConcepts=generateRandGroups(data.numAttributes()-1, groupSize, numOfGroups);
+                                break;
+
+                                case globalEval:
+                                    listOfConcepts=globalEval(data, FeatEvalMeth.MDL, nMostInfAttr, groupSize, numOfGroups);
+                                break;
+                            }
+                    }
+                    else if (exhaustive){
                         String idxOfAttr="";
                         for (int i=0;i<data.numAttributes()-1;i++)
                             if(i<data.numAttributes()-2)
@@ -1273,18 +1570,24 @@ public class FeatConstr {
                         for(int c=0;c<clsTab.length;c++){
                             model=clsTab[c];
                             t1.start();
-                            ma=evaluateModel(trainFoldCP,testFoldCP,model);
+                            ma=evaluateModel(trainFoldCP, testFoldCP, model, isClassification);
                             t1.stop();
-                            accByFoldsCP[c][f]=ma.getAcc();
+                            if(isClassification)
+                                accByFoldsCP[c][f]=ma.getAcc();
+                            else{
+                                maeByFoldsCP[c][f]=ma.getMae();
+                                rmseByFoldsCP[c][f]=ma.getRmse();
+                            }
                             learnAllFCTimeCP[c][f]=t1.diff();
+                            
                             model=ma.getClassifier();
                             if(excludeUppers(model.getClass().getSimpleName()).equals("J48")){
                                 j48=(J48)(model);
                                 numOfTreeByFoldsCP[0][f]=(int)j48.measureTreeSize(); //treeSize
                                 numOfTreeByFoldsCP[1][f]=(int)j48.measureNumLeaves(); //numOfLeave
-                                numOfTreeByFoldsCP[2][f]=sumOfTermsInConstrInTree(trainFoldCP, data.numAttributes()-1, j48); //sumOfTerms
+                                numOfTreeByFoldsCP[2][f]=sumOfTermsInConstrInTree(j48); //sumOfTerms
                                 numOfTreeByFoldsCP[3][f]=(numOfTreeByFoldsCP[0][f]-numOfTreeByFoldsCP[1][f])==0 ? 0 : numOfTreeByFoldsCP[2][f]/(numOfTreeByFoldsCP[0][f]-numOfTreeByFoldsCP[1][f]); //sum of terms of constr DIV num of nodes
-                                nC=numOfCartFeatInTree(trainFoldCP, data.numAttributes()-1, j48);
+                                nC=numOfCartFeatInTree(j48);
                                 numOfCartesian[f]=nC[0]; //number of Cartesian features in tree
                                 sumOfConstrCart[f]=nC[1]; //sum of constructs (Cartesian features) in tree
                             }
@@ -1310,8 +1613,8 @@ public class FeatConstr {
                         if(logFeat){
                             //depth 2
                             for(String op : operationLogUse){    
-                                trainFold= addLogFeatDepth(trainFold, allCombSecOrd,OperationLog.valueOf(op), false, f, N2);
-                                testFold= addLogFeatDepth(data, testFold, allCombSecOrd,OperationLog.valueOf(op), false, f, N2);
+                                trainFold= addLogFeatDepth(trainFold, allCombSecOrd,OperationLog.valueOf(op), false, isClassification, f, N2);
+                                testFold= addLogFeatDepth(data, testFold, allCombSecOrd,OperationLog.valueOf(op), false, isClassification, f, N2);
                             }
                             
                             unInfFeatures.clear();
@@ -1322,8 +1625,8 @@ public class FeatConstr {
                                     List allCombNthOrd=allCombOfOrderN(listOfConcepts,i);
                                     for(String op : operationLogUse)
                                         if(OperationLog.valueOf(op)==OperationLog.AND || OperationLog.valueOf(op)==OperationLog.OR){
-                                            trainFold= addLogFeatDepth(trainFold, allCombNthOrd,OperationLog.valueOf(op), false, f, i);        
-                                            testFold= addLogFeatDepth(data, testFold, allCombNthOrd,OperationLog.valueOf(op), false, f, i);
+                                            trainFold= addLogFeatDepth(trainFold, allCombNthOrd,OperationLog.valueOf(op), false, isClassification, f, i);        
+                                            testFold= addLogFeatDepth(data, testFold, allCombNthOrd,OperationLog.valueOf(op), false, isClassification, f, i);
                                         }
                                 }
                             }
@@ -1346,20 +1649,26 @@ public class FeatConstr {
                             for(int c=0;c<clsTab.length;c++){
                                 model=clsTab[c];
                                 t1.start(); 
-                                ma=evaluateModel(trainFold,testFold,model);
+                                ma=evaluateModel(trainFold, testFold, model, isClassification);
                                 t1.stop();
-                                accByFoldsLF[c][f]=ma.getAcc();
+                                if(isClassification)
+                                    accByFoldsLF[c][f]=ma.getAcc();
+                                else{
+                                    maeByFoldsLF[c][f]=ma.getMae();
+                                    rmseByFoldsLF[c][f]=ma.getRmse();
+                                }
                                 learnAllFCTimeLF[c][f]=t1.diff();
+                                
                                 model=ma.getClassifier();
                                 if(excludeUppers(model.getClass().getSimpleName()).equals("J48")){
                                     j48=(J48)(model);
                                     numOfTreeByFoldsLF[0][f]=(int)j48.measureTreeSize(); //treeSize
                                     numOfTreeByFoldsLF[1][f]=(int)j48.measureNumLeaves(); //numOfLeaves
-                                    numOfTreeByFoldsLF[2][f]=sumOfTermsInConstrInTree(trainFold, data.numAttributes()-1, j48); //sumOfTerms
+                                    numOfTreeByFoldsLF[2][f]=sumOfTermsInConstrInTree(j48); //sumOfTerms
                                     numOfTreeByFoldsLF[3][f]=(numOfTreeByFoldsLF[0][f]-numOfTreeByFoldsLF[1][f])==0 ? 0 : numOfTreeByFoldsLF[2][f]/(numOfTreeByFoldsLF[0][f]-numOfTreeByFoldsLF[1][f]); //sum of terms of constructs DIV num of nodes
 
-                                    numOfLogicalInTree[0][f]=numOfLogFeatInTree(trainFold, data.numAttributes()-1, j48);                            
-                                    numOfLogicalInTree[1][f]=sumOfLFTermsInConstrInTree(trainFold, data.numAttributes()-1, j48);
+                                    numOfLogicalInTree[0][f]=numOfLogFeatInTree(j48);                            
+                                    numOfLogicalInTree[1][f]=sumOfLFTermsInConstrInTree(j48);
                                 }
                                 if(excludeUppers(model.getClass().getSimpleName()).equals("FURIA")){
                                     FURIA fu=(FURIA)(model);
@@ -1390,18 +1699,24 @@ public class FeatConstr {
                             for(int c=0;c<clsTab.length;c++){
                                 model=clsTab[c];
                                 t1.start();
-                                ma=evaluateModel(trainFoldNum,testFoldNum,model);
+                                ma=evaluateModel(trainFoldNum, testFoldNum, model, isClassification);
                                 t1.stop();
-                                accByFoldsNum[c][f]=ma.getAcc();
+                                if(isClassification)
+                                    accByFoldsNum[c][f]=ma.getAcc();
+                                else{
+                                    maeByFoldsNum[c][f]=ma.getMae();
+                                    rmseByFoldsNum[c][f]=ma.getRmse();
+                                }
                                 learnAllFCTimeNum[c][f]=t1.diff();
+                                
                                 model=ma.getClassifier();
                                 if(excludeUppers(model.getClass().getSimpleName()).equals("J48")){
                                     j48=(J48)(model);
                                     numOfTreeByFoldsNum[0][f]=(int)j48.measureTreeSize(); //treeSize
                                     numOfTreeByFoldsNum[1][f]=(int)j48.measureNumLeaves(); //numOfLeave
-                                    numOfTreeByFoldsNum[2][f]=sumOfTermsInConstrInTree(trainFoldNum, data.numAttributes()-1, j48); //sumOfTerms
+                                    numOfTreeByFoldsNum[2][f]=sumOfTermsInConstrInTree(j48); //sumOfTerms
                                     numOfTreeByFoldsNum[3][f]=(numOfTreeByFoldsNum[0][f]-numOfTreeByFoldsNum[1][f])==0 ? 0 : numOfTreeByFoldsNum[2][f]/(numOfTreeByFoldsNum[0][f]-numOfTreeByFoldsNum[1][f]); //sum of terms of constructs DIV num of nodes
-                                    nC=numOfNumFeatInTree(trainFoldNum, data.numAttributes()-1, j48);
+                                    nC=numOfNumFeatInTree(j48);
                                     numOfNumerical[f]=nC[0]; //number of numerical features in tree
                                     sumOfConstrNum[f]=nC[1]; //sum of constructs (numerical features) in tree
                                 }
@@ -1432,18 +1747,24 @@ public class FeatConstr {
                             for(int c=0;c<clsTab.length;c++){
                                 model=clsTab[c];
                                 t1.start();
-                                ma=evaluateModel(trainFoldRE,testFoldRE,model);
+                                ma=evaluateModel(trainFoldRE, testFoldRE, model, isClassification);
                                 t1.stop();
-                                accByFoldsRE[c][f]=ma.getAcc();
+                                if(isClassification)
+                                    accByFoldsRE[c][f]=ma.getAcc();
+                                else{
+                                    maeByFoldsRE[c][f]=ma.getMae();
+                                    rmseByFoldsRE[c][f]=ma.getRmse();
+                                }
                                 learnAllFCTimeRE[c][f]=t1.diff();
+                                
                                 model=ma.getClassifier();
                                 if(excludeUppers(model.getClass().getSimpleName()).equals("J48")){
                                     j48=(J48)(model);
                                     numOfTreeByFoldsRE[0][f]=(int)j48.measureTreeSize(); //treeSize
                                     numOfTreeByFoldsRE[1][f]=(int)j48.measureNumLeaves(); //numOfLeave
-                                    numOfTreeByFoldsRE[2][f]=sumOfTermsInConstrInTree(trainFoldRE, data.numAttributes()-1, j48); //sumOfTerms
+                                    numOfTreeByFoldsRE[2][f]=sumOfTermsInConstrInTree(j48); //sumOfTerms
                                     numOfTreeByFoldsRE[3][f]=(numOfTreeByFoldsRE[0][f]-numOfTreeByFoldsRE[1][f])==0 ? 0 : numOfTreeByFoldsRE[2][f]/(numOfTreeByFoldsRE[0][f]-numOfTreeByFoldsRE[1][f]); //sum of terms of constr DIV num of nodes
-                                    nC=numOfRelFeatInTree(trainFoldRE, data.numAttributes()-1, j48);
+                                    nC=numOfRelFeatInTree(j48);
                                     numOfRelational[f]=nC[0]; //number of relational features in tree
                                     sumOfConstrRel[f]=nC[1]; //sum of constructs (relational features) in tree
                                 }
@@ -1462,25 +1783,36 @@ public class FeatConstr {
                             for(int i=0;i<trainFoldCP.numAttributes();i++)
                                 if(trainFoldCP.attribute(i).isNumeric()){    //check if attribute is numeric
                                     allDiscrete=false; 
-                                    System.out.println("We found continuous attribute!");
+                                    System.out.println("We found continuous attribute - constructing Cart feat!");
                                     break;
                                 }
 
                             t1.start();
                             if(!allDiscrete){
-                            //discretization    
-                                weka.filters.supervised.attribute.Discretize filter;    //because of same class name in different packages
-                                // setup filter
-                                filter = new weka.filters.supervised.attribute.Discretize();
-                                //Discretization is by Fayyad & Irani's MDL method (the default).
-                                //filter.
-                                trainFoldCP.setClassIndex(trainFoldCP.numAttributes()-1); //we need class index for Fayyad & Irani's MDL
-                                testFoldCP.setClassIndex(testFoldCP.numAttributes()-1);
-                                //filter.setUseBinNumbers(true); //eg BXofY ... B1of1
-                                filter.setInputFormat(trainFoldCP);
-                                //apply filter
-                                trainFoldCP = Filter.useFilter(trainFoldCP, filter);
-                                testFoldCP = Filter.useFilter(testFoldCP, filter); //we have to apply discretization on test dataset based on info from train dataset
+                                if(isClassification){
+                                    //discretization    
+                                    weka.filters.supervised.attribute.Discretize filterFI;    //because of same class name in different packages
+                                    // setup filter
+                                    filterFI = new weka.filters.supervised.attribute.Discretize();
+                                    //Discretization is by Fayyad & Irani's MDL method (the default).
+                                    //filter.
+                                    trainFoldCP.setClassIndex(trainFoldCP.numAttributes()-1); //we need class index for Fayyad & Irani's MDL
+                                    testFoldCP.setClassIndex(testFoldCP.numAttributes()-1);
+                                    //filter.setUseBinNumbers(true); //eg BXofY ... B1of1
+                                    filterFI.setInputFormat(trainFoldCP);
+                                    //apply filter
+                                    trainFoldCP = Filter.useFilter(trainFoldCP, filterFI);
+                                    testFoldCP = Filter.useFilter(testFoldCP, filterFI); //we have to apply discretization on test dataset based on info from train dataset
+                                }
+                                else{
+                                    weka.filters.unsupervised.attribute.Discretize filterSB;    //for regr. problems, Discretization is by simple binning.
+                                    filterSB = new weka.filters.unsupervised.attribute.Discretize();
+                                    filterSB.setBins(numOfBins);
+                                    filterSB.setInputFormat(trainFoldCP);
+                                    //apply filter
+                                    trainFoldCP = Filter.useFilter(trainFoldCP, filterSB); 
+                                    testFoldCP = Filter.useFilter(testFoldCP, filterSB); //we have to apply discretization on test dataset based on info from train dataset
+                                }
                             }
                             
                             unInfFeatures.clear();
@@ -1502,18 +1834,24 @@ public class FeatConstr {
                             for(int c=0;c<clsTab.length;c++){
                                 model=clsTab[c];
                                 t1.start();
-                                ma=evaluateModel(trainFoldCP,testFoldCP,model);
+                                ma=evaluateModel(trainFoldCP, testFoldCP, model, isClassification);
                                 t1.stop();
-                                accByFoldsCP[c][f]=ma.getAcc();
+                                if(isClassification)
+                                    accByFoldsCP[c][f]=ma.getAcc();
+                                else{
+                                    maeByFoldsCP[c][f]=ma.getMae();
+                                    rmseByFoldsCP[c][f]=ma.getRmse();
+                                }
                                 learnAllFCTimeCP[c][f]=t1.diff();
+                                
                                 model=ma.getClassifier();
                                 if(excludeUppers(model.getClass().getSimpleName()).equals("J48")){
                                     j48=(J48)(model);
                                     numOfTreeByFoldsCP[0][f]=(int)j48.measureTreeSize(); //treeSize
                                     numOfTreeByFoldsCP[1][f]=(int)j48.measureNumLeaves(); //numOfLeave
-                                    numOfTreeByFoldsCP[2][f]=sumOfTermsInConstrInTree(trainFoldCP, data.numAttributes()-1, j48); //sumOfTerms
+                                    numOfTreeByFoldsCP[2][f]=sumOfTermsInConstrInTree(j48); //sumOfTerms
                                     numOfTreeByFoldsCP[3][f]=(numOfTreeByFoldsCP[0][f]-numOfTreeByFoldsCP[1][f])==0 ? 0 : numOfTreeByFoldsCP[2][f]/(numOfTreeByFoldsCP[0][f]-numOfTreeByFoldsCP[1][f]); //sum of terms of constr DIV num of nodes
-                                    nC=numOfCartFeatInTree(trainFoldCP, data.numAttributes()-1, j48);
+                                    nC=numOfCartFeatInTree(j48);
                                     numOfCartesian[f]=nC[0]; //number of Cartesian features in tree
                                     sumOfConstrCart[f]=nC[1]; //sum of constructs (Cartesian features) in tree
                                 }
@@ -1527,7 +1865,7 @@ public class FeatConstr {
                         }
                         /****************************************************************/                   
                         /**************** FURIA AND THRESHOLD FEATURES ******************/
-                        if(decRuleFeat || thrFeat){
+                        if((decRuleFeat || thrFeat) && isClassification){   //it works only for classification problems
                             t1.start();
                             List<String> listOfFeat;
                             listOfFeat=genFeatFromFuria(trainFoldFU, (ArrayList<String>) listOfConcepts, classToExplain, cf, pci,covering, featFromExplClass);
@@ -1554,9 +1892,14 @@ public class FeatConstr {
                             for(int c=0;c<clsTab.length;c++){
                                 model=clsTab[c];
                                 t1.start();
-                                ma=evaluateModel(trainFoldFU,testFoldFU,model);
+                                ma=evaluateModel(trainFoldFU, testFoldFU, model, isClassification);
                                 t1.stop();
-                                accuracyByFoldsFuriaThr[c][f]=ma.getAcc();
+                                if(isClassification)
+                                    accuracyByFoldsFuriaThr[c][f]=ma.getAcc();
+                                else{
+                                    maeByFoldsFuriaThr[c][f]=ma.getMae();
+                                    rmseByFoldsFuriaThr[c][f]=ma.getRmse();
+                                }
                                 learnFuriaThrTime[c][f]=t1.diff(); 
 
                                 model=ma.getClassifier();
@@ -1564,10 +1907,10 @@ public class FeatConstr {
                                     j48=(J48)(model);
                                     numTreeByFoldsFuriaThr[0][f]=(int)j48.measureTreeSize(); //treeSize
                                     numTreeByFoldsFuriaThr[1][f]=(int)j48.measureNumLeaves(); //numOfLeaves
-                                    numTreeByFoldsFuriaThr[2][f]=sumOfTermsInConstrInTree(trainFoldFU, data.numAttributes()-1, j48); //sumOfTerms
+                                    numTreeByFoldsFuriaThr[2][f]=sumOfTermsInConstrInTree(j48); //sumOfTerms
                                     numTreeByFoldsFuriaThr[3][f]=(numTreeByFoldsFuriaThr[0][f]-numTreeByFoldsFuriaThr[1][f])==0 ? 0 : numTreeByFoldsFuriaThr[2][f]/(numTreeByFoldsFuriaThr[0][f]-numTreeByFoldsFuriaThr[1][f]);
 
-                                    int furiaThrC[]=numOfDrThrFeatInTree(trainFoldFU, data.numAttributes()-1, j48);
+                                    int furiaThrC[]=numOfDrThrFeatInTree(j48);
 
                                     numOfFuriaThrInTreeByFoldsF[0][f]=furiaThrC[0];
                                     numOfFuriaThrInTreeByFoldsF[1][f]=furiaThrC[1];
@@ -1581,6 +1924,17 @@ public class FeatConstr {
                                     complexityOfFuria[2][f]=complexityOfFuria[0][f]==0 ? 0 : (complexityOfFuria[1][f]/complexityOfFuria[0][f]);
                                 }
                             }
+                        }
+                        
+                        System.out.println("Total FC time: "+(allFCTimeLF[f]+numericalFCTime[f]+relationalFCTime[f]+cartesianFCTime[f]+furiaThrTime[f])); 
+                        if((allFCTimeLF[f]+numericalFCTime[f]+relationalFCTime[f]+cartesianFCTime[f]+furiaThrTime[f])>timeLimit){ //10800000ms = 3h
+                            System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+                                logFile.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"); 
+                            System.out.println("Time exceeds the limit ("+timeLimit +" [ms]) of FC for one fold!"); 
+                                logFile.println("Time exceeds the limit ("+timeLimit +" [ms]) of FC for one fold!");
+                            System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+                                logFile.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"); 
+                            break loopExhaustiveTooLong;
                         }
                         /****************************************************************/ 
                         /************************ ALL FEATURES **************************/
@@ -1650,7 +2004,7 @@ public class FeatConstr {
                         }
 
                         /*get all constructed decision rules and threshold features, without class*/
-                        if(decRuleFeat || thrFeat){
+                        if((decRuleFeat || thrFeat) && isClassification){
                             if(!(numOfOrigAttr==trainFoldFU.numAttributes()-1)){ //if we don't get any feature from FU then we skip merge with Cartesian
                                 remove.setAttributeIndices((numOfOrigAttr+1)+"-"+(trainFoldFU.numAttributes()-1));
                                 remove.setInvertSelection(true);
@@ -1683,7 +2037,7 @@ public class FeatConstr {
                         //set class index
                         trainFold.setClassIndex(trainFold.numAttributes()-1);
                         testFold.setClassIndex(testFold.numAttributes()-1);
-
+  
                         allFCTime[f]=numerFeat ? (allFCTimeLF[f]+numericalFCTime[f]+relationalFCTime[f]+cartesianFCTime[f]+furiaThrTime[f]) : (allFCTimeLF[f]+relationalFCTime[f]+cartesianFCTime[f]+furiaThrTime[f]);
                         if(exhaustive){
                             System.out.println("FC time (exhaustive search): "+allFCTime[f]+" All features method, fold: "+(f+1));
@@ -1691,9 +2045,8 @@ public class FeatConstr {
                         }
 
                         if(!jakulin){
-                            attrImpListMDL.println("Feature evaluation: MDL (All features dataset) - After CI");                
-                                mdlCORElearn(trainFold, rCaller, code);
-                            
+                            attrImpListMDL.println("Feature evaluation: MDL (All features dataset) - After CI");
+                                mdlCORElearn(trainFold);
                             attrImpListReliefF.println("Feature evaluation: ReliefF (All features dataset) - After CI");
                                 reliefFcalcDistanceOnAttributes(data, trainFold);
                         }
@@ -1709,34 +2062,39 @@ public class FeatConstr {
                         for(int c=0;c<clsTab.length;c++){
                             model=clsTab[c];
                             t1.start(); 
-                                ma=evaluateModel(trainFold,testFold,model);
+                                ma=evaluateModel(trainFold, testFold, model, isClassification);
                             t1.stop();
-
-                            accuracyByFolds[c][f]=ma.getAcc();
+                            if(isClassification)
+                                accuracyByFolds[c][f]=ma.getAcc();
+                            else{
+                                maeByFolds[c][f]=ma.getMae();
+                                rmseByFolds[c][f]=ma.getRmse();
+                            }                           
                             learnAllFCTime[c][f]=t1.diff();
+                            
                             model=ma.getClassifier();
                             if(excludeUppers(model.getClass().getSimpleName()).equals("J48")){
                                 j48=(J48)(model);
                                 numberOfTreeByFolds[0][f]=(int)j48.measureTreeSize(); //treeSize
                                 numberOfTreeByFolds[1][f]=(int)j48.measureNumLeaves(); //numOfLeaves
-                                numberOfTreeByFolds[2][f]=sumOfTermsInConstrInTree(trainFold, data.numAttributes()-1, j48); //sumOfTerms
+                                numberOfTreeByFolds[2][f]=sumOfTermsInConstrInTree(j48); //sumOfTerms
                                 numberOfTreeByFolds[3][f]=(numberOfTreeByFolds[0][f]-numberOfTreeByFolds[1][f])==0 ? 0 : numberOfTreeByFolds[2][f]/(numberOfTreeByFolds[0][f]-numberOfTreeByFolds[1][f]); //sum of terms of constr DIV num of nodes
-                                numOfLogInTreeAll[f]=numOfLogFeatInTree(trainFold, data.numAttributes()-1, j48);
-                                sumOfConstrLFAll[f]=sumOfLFTermsInConstrInTree(trainFold, data.numAttributes()-1, j48);
+                                numOfLogInTreeAll[f]=numOfLogFeatInTree(j48);
+                                sumOfConstrLFAll[f]=sumOfLFTermsInConstrInTree(j48);
 
-                                nC=numOfNumFeatInTree(trainFold, data.numAttributes()-1, j48);
+                                nC=numOfNumFeatInTree(j48);
                                 numOfNumInTreeAll[f]=nC[0];
                                 sumOfConstrNumAll[f]=nC[1];
 
-                                nC=numOfRelFeatInTree(trainFold, data.numAttributes()-1, j48);
+                                nC=numOfRelFeatInTree(j48);
                                 numOfRelInTreeAll[f]=nC[0]; //number of relational feat in tree
                                 sumOfConstrRelAll[f]=nC[1]; //sum of constructs (relational features) in tree
 
-                                nC=numOfCartFeatInTree(trainFold, data.numAttributes()-1, j48);
+                                nC=numOfCartFeatInTree(j48);
                                 numOfCartFAll[f]=nC[0]; //number of Cartesian features in tree
                                 sumOfConstrCartAll[f]=nC[1]; //sum of constructs (Cartesian features) in tree
 
-                                int furiaThrC[]=numOfDrThrFeatInTree(trainFold, data.numAttributes()-1, j48);
+                                int furiaThrC[]=numOfDrThrFeatInTree(j48);
                                 //if we don't get any constructs than we take 0 from originally initialized dataset - we don't take value from original dataset because there is no constructs
                                 numOfFuriaThrInTreeByFolds[0][f]=furiaThrC[0];
                                 numOfFuriaThrInTreeByFolds[1][f]=furiaThrC[1];
@@ -1752,7 +2110,7 @@ public class FeatConstr {
                             }
                         }
 
-                        if(!exhaustive){
+                        if(!exhaustive || othrBase){
                             if(f==0){
                                 String pctSplitT;
                                 switch(splitTrain){ //5 ... 80%:20%, 4 ... 75%25%, 3 ... 66%:33%
@@ -1777,8 +2135,15 @@ public class FeatConstr {
     
                             for(int i=0;i<clsTab.length;i++){
                                 ParamSearchEval pse;
-                                pse=paramSearch(trainFold, testFold, clsTab[i],data.numAttributes()-1,splitTrainFS, rCaller, code);
-                                accuracyByFoldsPS[i][f]=pse.getAcc();
+                                if(isClassification){
+                                    pse=paramSearchOpt(data, trainFold, testFold, clsTab[i], data.numAttributes()-1, splitTrainFS, evalMeth); //data - orig. dataset
+                                    accuracyByFoldsPS[i][f]=pse.getAcc();
+                                }
+                                else{
+                                    pse=paramSearchRegr(data, trainFold, testFold, clsTab[i], data.numAttributes()-1, splitTrainFS); //data - orig. dataset
+                                    maeByFoldsPS[i][f]=pse.getMae();
+                                    rmseByFoldsPS[i][f]=pse.getRmse();
+                                }
 
                                 //we need info for different classifiers
                                 featByFoldsPS[0][f][i]=pse.getFeat()[0];    //logical
@@ -1826,10 +2191,10 @@ public class FeatConstr {
                     }   //Jakulin's method or EFC
                 }   //end FOR loop for folds
 
-                DecimalFormat df = new DecimalFormat("0.00");
+                DecimalFormat df = new DecimalFormat("0.000");
 
                 /**************** Write ACC by folds into files ******************/
-                if(writeAccByFoldsInFile && (!visualisation && !justExplain && !exhaustive && !jakulin)){
+                if(writeAccByFoldsInFile && (!visualisation && !justExplain && !exhaustive && !jakulin) && isClassification){
                     for(int i=0;i<clsTab.length;i++){
                         accByFolds=new PrintWriter(new FileWriter(folderName+clsTab[i].getClass().getSimpleName()+"-byFolds-"+lg+".csv"));
                         if(numerFeat)
@@ -1848,65 +2213,94 @@ public class FeatConstr {
 
                 /****************************************************************/
                 if(!jakulin){
-                    if(!exhaustive){
+                    if(!exhaustive && isClassification){
                         System.out.println("---------------------------------------------------------------------------------");
                             logFile.println("---------------------------------------------------------------------------------");      
-                    
-                        System.out.println("Avg. explanation time: "+df.format(mean(exlpTime))+" [ms] (stdev "+ df.format(Math.sqrt(var(exlpTime,mean(exlpTime))))+")");  
-                            logFile.println("Avg. explanation time: "+df.format(mean(exlpTime))+" [ms] (stdev "+ df.format(Math.sqrt(var(exlpTime,mean(exlpTime))))+")");
+                        if(explM==ExplMeth.IME || explM==ExplMeth.SHAP){
+                            System.out.println("Avg. explanation time: "+df.format(mean(exlpTime))+" [ms] (stdev "+ df.format(Math.sqrt(var(exlpTime,mean(exlpTime))))+")");  
+                                logFile.println("Avg. explanation time: "+df.format(mean(exlpTime))+" [ms] (stdev "+ df.format(Math.sqrt(var(exlpTime,mean(exlpTime))))+")");
+                        }
                         System.out.println("Avg. number of instances that we explain: "+df.format(mean(numOfExplainedInst))+" (stdev "+df.format(Math.sqrt(var(numOfExplainedInst,mean(numOfExplainedInst))))+")");
                             logFile.println("Avg. number of instances that we explain: "+df.format(mean(numOfExplainedInst))+" (stdev "+df.format(Math.sqrt(var(numOfExplainedInst,mean(numOfExplainedInst))))+")");
-                    }
+                    
+                        System.out.println("---------------------------------------------------------------------------------");
+                            logFile.println("---------------------------------------------------------------------------------"); 
 
-                    System.out.println("---------------------------------------------------------------------------------");
-                        logFile.println("---------------------------------------------------------------------------------"); 
-                    if(!exhaustive){
-                        if(treeSHAP){
-                            System.out.println("Internal (during building) accuracy of explanation model: "+df.format(mean(accExplAlgInt))+" (stdev "+df.format(Math.sqrt(var(accExplAlgInt,mean(accExplAlgInt))))+") ACC on the test dataset: "+df.format(mean(accExplAlgTest))+" (stdev "+df.format(Math.sqrt(var(accExplAlgTest,mean(accExplAlgTest))))+")");
-                                logFile.println("Internal (during building) accuracy of explanation model: "+df.format(mean(accExplAlgInt))+" (stdev "+df.format(Math.sqrt(var(accExplAlgInt,mean(accExplAlgInt))))+") ACC on the test dataset: "+df.format(mean(accExplAlgTest))+" (stdev "+df.format(Math.sqrt(var(accExplAlgTest,mean(accExplAlgTest))))+")"); 
+                        switch(explM){
+                            case SHAP:
+                                System.out.println("Internal (during building) accuracy of explanation model: "+df.format(mean(accExplAlgInt))+" (stdev "+df.format(Math.sqrt(var(accExplAlgInt,mean(accExplAlgInt))))+") ACC on the test dataset: "+df.format(mean(accExplAlgTest))+" (stdev "+df.format(Math.sqrt(var(accExplAlgTest,mean(accExplAlgTest))))+")");
+                                    logFile.println("Internal (during building) accuracy of explanation model: "+df.format(mean(accExplAlgInt))+" (stdev "+df.format(Math.sqrt(var(accExplAlgInt,mean(accExplAlgInt))))+") ACC on the test dataset: "+df.format(mean(accExplAlgTest))+" (stdev "+df.format(Math.sqrt(var(accExplAlgTest,mean(accExplAlgTest))))+")");
+                                System.out.println("---------------------------------------------------------------------------------");
+                                    logFile.println("---------------------------------------------------------------------------------");
+                                System.out.println("Avg. model building time: "+df.format(mean(modelBuildTime))+" [ms] (stdev "+ df.format(Math.sqrt(var(modelBuildTime,mean(modelBuildTime))))+")");
+                                    logFile.println("Avg. model building time: "+df.format(mean(modelBuildTime))+" [ms] (stdev "+ df.format(Math.sqrt(var(modelBuildTime,mean(modelBuildTime))))+")");
+                                break;
+                            case IME:
+                                System.out.println("ACC on the test dataset: "+df.format(mean(accExplAlgTest))+" stdev "+df.format(Math.sqrt(var(accExplAlgTest,mean(accExplAlgTest))))+(excludeUppers(predictionModel.getClass().getSimpleName()).equals("RF")?" ACC RF OOB: "+df.format(mean(oobRF))+" stdev "+df.format(Math.sqrt(var(oobRF,mean(oobRF)))):""));
+                                    logFile.println("ACC on the test dataset: "+df.format(mean(accExplAlgTest))+" stdev "+df.format(Math.sqrt(var(accExplAlgTest,mean(accExplAlgTest))))+(excludeUppers(predictionModel.getClass().getSimpleName()).equals("RF")?" ACC RF OOB: "+df.format(mean(oobRF))+" stdev "+df.format(Math.sqrt(var(oobRF,mean(oobRF)))):""));
+                                System.out.println("---------------------------------------------------------------------------------");
+                                    logFile.println("---------------------------------------------------------------------------------");
+                                System.out.println("Avg. model building time: "+df.format(mean(modelBuildTime))+" [ms] (stdev "+ df.format(Math.sqrt(var(modelBuildTime,mean(modelBuildTime))))+")");
+                                    logFile.println("Avg. model building time: "+df.format(mean(modelBuildTime))+" [ms] (stdev "+ df.format(Math.sqrt(var(modelBuildTime,mean(modelBuildTime))))+")");
+                                    break;			
+                            case LIME:
+                                System.out.println("Explanation times are stored in Lime/execTimes.log");  
+                                    logFile.println("Explanation times are stored in Lime/execTimes.log");
+                                break;							
+                        }                                                                               
+                    }
+                    
+                        if(!jakulin){
+                            System.out.println("---------------------------------------------------------------------------------");
+                                logFile.println("---------------------------------------------------------------------------------");  
+                            System.out.println("Feature types included in construction: " + (logFeat ? "logical operators based, " : "") + (decRuleFeat ? "decision rule, " : "") + (thrFeat ? "threshold, " : "") + (relatFeat ? "relational, " : "") + (cartFeat ? "Cartesian product, " : "")+(numerFeat ? "numerical" : ""));
+                                logFile.println("Feature types included in construction: " + (logFeat ? "logical operators based, " : "") + (decRuleFeat ? "decision rule, " : "") + (thrFeat ? "threshold, " : "") + (relatFeat ? "relational, " : "") + (cartFeat ? "Cartesian product, " : "")+(numerFeat ? "numerical" : ""));
+                        }
+                        
+                        if(!isClassification){
+                            System.out.println("*********************************************************************************");
+                                logFile.println("*********************************************************************************");  
+                            System.out.println("IME (explanation), "+method.name()+", "+(method.name().equals("adaptiveSampling") ? "min samples: "+minS+", sum of samples: "+sumOfSmp : method.name().equals("diffSampling")?"min samples: "+minS:"N_SAMPLES: "+N_SAMPLES)+" - alg. for searching concepts: "+predictionModel.getClass().getSimpleName());
+                                logFile.println("IME (explanation), "+method.name()+", "+(method.name().equals("adaptiveSampling") ? "min samples: "+minS+", sum of samples: "+sumOfSmp : method.name().equals("diffSampling")?"min samples: "+minS:"N_SAMPLES: "+N_SAMPLES)+" - alg. for searching concepts: "+predictionModel.getClass().getSimpleName());    
+                            System.out.println("NOISE: "+NOISE+" numOfBins (discretisation): "+numOfBins+" pctExplReg: "+pctExplReg);  
+                                logFile.println("NOISE: "+NOISE+" numOfBins (discretisation): "+numOfBins+" pctExplReg: "+pctExplReg);
+                            System.out.println("Avg. explanation time: "+df.format(mean(exlpTime))+" [ms] (stdev "+ df.format(Math.sqrt(var(exlpTime,mean(exlpTime))))+")");  
+                                logFile.println("Avg. explanation time: "+df.format(mean(exlpTime))+" [ms] (stdev "+ df.format(Math.sqrt(var(exlpTime,mean(exlpTime))))+")");
+                        }
+                        System.out.println("*********************************************************************************");
+                            logFile.println("*********************************************************************************");      
+                        System.out.println("Original dataset");
+                            logFile.println("Original dataset");
+                        System.out.println("*********************************************************************************");
+                            logFile.println("*********************************************************************************");
+                        if(isClassification){
+                            System.out.println("Avg. tree size: "+df.format(mean(treeSize))+" (stdev "+df.format(Math.sqrt(var(treeSize,mean(treeSize))))+")"+" avg. number of leaves: "+df.format(mean(numOfLeaves))+" (stdev "+df.format(Math.sqrt(var(numOfLeaves,mean(numOfLeaves))))+")"+" avg. number of nodes: "+df.format(mean(sumOfTerms))+" (stdev "+df.format(Math.sqrt(var(sumOfTerms,mean(sumOfTerms))))+")");
+                                logFile.println("Avg. tree size: "+df.format(mean(treeSize))+" (stdev "+df.format(Math.sqrt(var(treeSize,mean(treeSize))))+")"+" avg. number of leaves: "+df.format(mean(numOfLeaves))+" (stdev "+df.format(Math.sqrt(var(numOfLeaves,mean(numOfLeaves))))+")"+" avg. number of nodes: "+df.format(mean(sumOfTerms))+" (stdev "+df.format(Math.sqrt(var(sumOfTerms,mean(sumOfTerms))))+")");      
+                            System.out.println("Avg. ruleset size: "+df.format(mean(numOfRules))+" (stdev "+df.format(Math.sqrt(var(numOfRules,mean(numOfRules))))+")"+" avg. number of attributes in rules: "+ df.format(mean(numOfTerms))+" (stdev "+df.format(Math.sqrt(var(numOfTerms,mean(numOfTerms))))+")"+" avg. number of attributes per rule: "+df.format(mean(numConstructsPerRule)) +" (stdev "+df.format(Math.sqrt(var(numConstructsPerRule,mean(numConstructsPerRule))))+")");
+                                logFile.println("Avg. ruleset size: "+df.format(mean(numOfRules))+" (stdev "+df.format(Math.sqrt(var(numOfRules,mean(numOfRules))))+")"+" avg. number of attributes in rules: "+ df.format(mean(numOfTerms))+" (stdev "+df.format(Math.sqrt(var(numOfTerms,mean(numOfTerms))))+") avg. number of attributes per rule: "+df.format(mean(numConstructsPerRule)) +" (stdev "+df.format(Math.sqrt(var(numConstructsPerRule,mean(numConstructsPerRule))))+")");
+                            System.out.println("-----ACC-----");
+                                logFile.println("-----ACC-----"); 
+                            for (int i=0;i<clsTab.length;i++){      
+                                System.out.println("Avg. class. ACC "+(excludeUppers(clsTab[i].getClass().getSimpleName()).equals("FURIA")?"FU":excludeUppers(clsTab[i].getClass().getSimpleName()))+" \t"+df.format(mean(accOrigModelByFolds[i]))+" (stdev "+ df.format(Math.sqrt(var(accOrigModelByFolds[i],mean(accOrigModelByFolds[i]))))+")");
+                                    logFile.println("Avg. class. ACC "+(excludeUppers(clsTab[i].getClass().getSimpleName()).equals("FURIA")?"FU":excludeUppers(clsTab[i].getClass().getSimpleName()))+" \t"+df.format(mean(accOrigModelByFolds[i]))+" (stdev "+ df.format(Math.sqrt(var(accOrigModelByFolds[i],mean(accOrigModelByFolds[i]))))+")");
+                             }   
+                            System.out.println("-----Learning and testing time-----");
+                                logFile.println("-----Learning and testing time-----");  
+                            for (int i=0;i<clsTab.length;i++){  
+                                System.out.println("Avg. learning time "+(excludeUppers(clsTab[i].getClass().getSimpleName()).equals("FURIA")?"FU":excludeUppers(clsTab[i].getClass().getSimpleName()))+" \t"+df.format(mean(learnAllTime[i]))+" [ms] (stdev "+df.format(Math.sqrt(var(learnAllTime[i],mean(learnAllTime[i]))))+" [ms])");
+                                    logFile.println("Avg. learning time "+(excludeUppers(clsTab[i].getClass().getSimpleName()).equals("FURIA")?"FU":excludeUppers(clsTab[i].getClass().getSimpleName()))+" \t"+df.format(mean(learnAllTime[i]))+" [ms] (stdev "+df.format(Math.sqrt(var(learnAllTime[i],mean(learnAllTime[i]))))+" [ms])");
+                            }
                         }
                         else{
-                            System.out.println("ACC on the test dataset: "+df.format(mean(accExplAlgTest))+" stdev "+df.format(Math.sqrt(var(accExplAlgTest,mean(accExplAlgTest))))+(excludeUppers(predictionModel.getClass().getSimpleName()).equals("RF")?" ACC RF OOB: "+df.format(mean(oobRF))+" stdev "+df.format(Math.sqrt(var(oobRF,mean(oobRF)))):""));
-                                logFile.println("ACC on the test dataset: "+df.format(mean(accExplAlgTest))+" stdev "+df.format(Math.sqrt(var(accExplAlgTest,mean(accExplAlgTest))))+(excludeUppers(predictionModel.getClass().getSimpleName()).equals("RF")?" ACC RF OOB: "+df.format(mean(oobRF))+" stdev "+df.format(Math.sqrt(var(oobRF,mean(oobRF)))):""));
+                            System.out.println("-----MAE and RMSE-----");
+                                logFile.println("-----MAE and RMSE-----"); 
+                            for (int i=0;i<clsTab.length;i++){      
+                                System.out.println("Avg. MAE "+excludeUppers(clsTab[i].getClass().getSimpleName())+" \t"+df.format(mean(maeOrigModelByFolds[i]))+" (stdev "+ df.format(Math.sqrt(var(maeOrigModelByFolds[i],mean(maeOrigModelByFolds[i]))))+")"+" \t"+
+                                                   "Avg. RMSE "+excludeUppers(clsTab[i].getClass().getSimpleName())+" \t"+df.format(mean(rmseOrigModelByFolds[i]))+" (stdev "+ df.format(Math.sqrt(var(rmseOrigModelByFolds[i],mean(rmseOrigModelByFolds[i]))))+")"+" \t");
+                                    logFile.println("Avg. MAE "+excludeUppers(clsTab[i].getClass().getSimpleName())+" \t"+df.format(mean(maeOrigModelByFolds[i]))+" (stdev "+ df.format(Math.sqrt(var(maeOrigModelByFolds[i],mean(maeOrigModelByFolds[i]))))+")"+" \t"+
+                                                   "Avg. RMSE "+excludeUppers(clsTab[i].getClass().getSimpleName())+" \t"+df.format(mean(rmseOrigModelByFolds[i]))+" (stdev "+ df.format(Math.sqrt(var(rmseOrigModelByFolds[i],mean(rmseOrigModelByFolds[i]))))+")");
+                            }
                         }
-                    }
-                    
-                    if(!exhaustive){
-                        System.out.println("---------------------------------------------------------------------------------");
-                            logFile.println("---------------------------------------------------------------------------------");
-                          
-                        System.out.println("Avg. model building time: "+df.format(mean(modelBuildTime))+" [ms] (stdev "+ df.format(Math.sqrt(var(modelBuildTime,mean(modelBuildTime))))+")");
-                            logFile.println("Avg. model building time: "+df.format(mean(modelBuildTime))+" [ms] (stdev "+ df.format(Math.sqrt(var(modelBuildTime,mean(modelBuildTime))))+")");
-                    }
-                    
-                    if(!jakulin){
-                        System.out.println("---------------------------------------------------------------------------------");
-                            logFile.println("---------------------------------------------------------------------------------");  
-                        System.out.println("Feature types included in construction: " + (logFeat ? "logical operators based, " : "") + (decRuleFeat ? "decision rule, " : "") + (thrFeat ? "threshold, " : "") + (relatFeat ? "relational, " : "") + (cartFeat ? "Cartesian product, " : "")+(numerFeat ? "numerical" : ""));
-                            logFile.println("Feature types included in construction: " + (logFeat ? "logical operators based, " : "") + (decRuleFeat ? "decision rule, " : "") + (thrFeat ? "threshold, " : "") + (relatFeat ? "relational, " : "") + (cartFeat ? "Cartesian product, " : "")+(numerFeat ? "numerical" : ""));
-                    }
-                    System.out.println("*********************************************************************************");
-                        logFile.println("*********************************************************************************");      
-                    System.out.println("Original dataset");
-                        logFile.println("Original dataset");
-                    System.out.println("*********************************************************************************");
-                        logFile.println("*********************************************************************************");    
-                    System.out.println("Avg. tree size: "+df.format(mean(treeSize))+" (stdev "+df.format(Math.sqrt(var(treeSize,mean(treeSize))))+")"+" avg. number of leaves: "+df.format(mean(numOfLeaves))+" (stdev "+df.format(Math.sqrt(var(numOfLeaves,mean(numOfLeaves))))+")"+" avg. number of nodes: "+df.format(mean(sumOfTerms))+" (stdev "+df.format(Math.sqrt(var(sumOfTerms,mean(sumOfTerms))))+")");
-                        logFile.println("Avg. tree size: "+df.format(mean(treeSize))+" (stdev "+df.format(Math.sqrt(var(treeSize,mean(treeSize))))+")"+" avg. number of leaves: "+df.format(mean(numOfLeaves))+" (stdev "+df.format(Math.sqrt(var(numOfLeaves,mean(numOfLeaves))))+")"+" avg. number of nodes: "+df.format(mean(sumOfTerms))+" (stdev "+df.format(Math.sqrt(var(sumOfTerms,mean(sumOfTerms))))+")");      
-                    System.out.println("Avg. ruleset size: "+df.format(mean(numOfRules))+" (stdev "+df.format(Math.sqrt(var(numOfRules,mean(numOfRules))))+")"+" avg. number of attributes in rules: "+ df.format(mean(numOfTerms))+" (stdev "+df.format(Math.sqrt(var(numOfTerms,mean(numOfTerms))))+")"+" avg. number of attributes per rule: "+df.format(mean(numConstructsPerRule)) +" (stdev "+df.format(Math.sqrt(var(numConstructsPerRule,mean(numConstructsPerRule))))+")");
-                        logFile.println("Avg. ruleset size: "+df.format(mean(numOfRules))+" (stdev "+df.format(Math.sqrt(var(numOfRules,mean(numOfRules))))+")"+" avg. number of attributes in rules: "+ df.format(mean(numOfTerms))+" (stdev "+df.format(Math.sqrt(var(numOfTerms,mean(numOfTerms))))+") avg. number of attributes per rule: "+df.format(mean(numConstructsPerRule)) +" (stdev "+df.format(Math.sqrt(var(numConstructsPerRule,mean(numConstructsPerRule))))+")");
-                    System.out.println("-----ACC-----");
-                        logFile.println("-----ACC-----"); 
-                    for (int i=0;i<clsTab.length;i++){      
-                        System.out.println("Avg. class. ACC "+(excludeUppers(clsTab[i].getClass().getSimpleName()).equals("FURIA")?"FU":excludeUppers(clsTab[i].getClass().getSimpleName()))+" \t"+df.format(mean(accOrigModelByFolds[i]))+" (stdev "+ df.format(Math.sqrt(var(accOrigModelByFolds[i],mean(accOrigModelByFolds[i]))))+")");
-                            logFile.println("Avg. class. ACC "+(excludeUppers(clsTab[i].getClass().getSimpleName()).equals("FURIA")?"FU":excludeUppers(clsTab[i].getClass().getSimpleName()))+" \t"+df.format(mean(accOrigModelByFolds[i]))+" (stdev "+ df.format(Math.sqrt(var(accOrigModelByFolds[i],mean(accOrigModelByFolds[i]))))+")");
-                     }   
-                    System.out.println("-----Learning and testing time-----");
-                        logFile.println("-----Learning and testing time-----");  
-                    for (int i=0;i<clsTab.length;i++){  
-                        System.out.println("Avg. learning time "+(excludeUppers(clsTab[i].getClass().getSimpleName()).equals("FURIA")?"FU":excludeUppers(clsTab[i].getClass().getSimpleName()))+" \t"+df.format(mean(learnAllTime[i]))+" [ms] (stdev "+df.format(Math.sqrt(var(learnAllTime[i],mean(learnAllTime[i]))))+" [ms])");
-                            logFile.println("Avg. learning time "+(excludeUppers(clsTab[i].getClass().getSimpleName()).equals("FURIA")?"FU":excludeUppers(clsTab[i].getClass().getSimpleName()))+" \t"+df.format(mean(learnAllTime[i]))+" [ms] (stdev "+df.format(Math.sqrt(var(learnAllTime[i],mean(learnAllTime[i]))))+" [ms])");
-                    }  
                 }      
 
                 if(!jakulin){
@@ -1919,18 +2313,30 @@ public class FeatConstr {
 
                     System.out.println("Number of logical feat: "+df.format(mean(numOfFeatByFoldsLF))+" (stdev "+ df.format(Math.sqrt(var(numOfFeatByFoldsLF,mean(numOfFeatByFoldsLF))))+")");
                         logFile.println("Number of logical feat: "+df.format(mean(numOfFeatByFoldsLF))+" (stdev "+ df.format(Math.sqrt(var(numOfFeatByFoldsLF,mean(numOfFeatByFoldsLF))))+")");
-                    System.out.println("Avg. tree size (nodes+leaves): "+df.format(mean(numOfTreeByFoldsLF[0]))+" (stdev "+ df.format(Math.sqrt(var(numOfTreeByFoldsLF[0],mean(numOfTreeByFoldsLF[0]))))+")"+" avg. number of leaves: "+ df.format(mean(numOfTreeByFoldsLF[1]))+" (stdev "+ df.format(Math.sqrt(var(numOfTreeByFoldsLF[1],mean(numOfTreeByFoldsLF[1]))))+")"+" avg. sum of constructs: "+ df.format(mean(numOfTreeByFoldsLF[2]))+" (stdev "+ df.format(Math.sqrt(var(numOfTreeByFoldsLF[2],mean(numOfTreeByFoldsLF[2]))))+")"+ " avg. sum of constructs / num of nodes: "+df.format(mean(numOfTreeByFoldsLF[3]))+" (stdev "+ df.format(Math.sqrt(var(numOfTreeByFoldsLF[3],mean(numOfTreeByFoldsLF[3]))))+")");           
-                        logFile.println("Avg. tree size (nodes+leaves): "+df.format(mean(numOfTreeByFoldsLF[0]))+" (stdev "+ df.format(Math.sqrt(var(numOfTreeByFoldsLF[0],mean(numOfTreeByFoldsLF[0]))))+")"+" avg. number of leaves: "+ df.format(mean(numOfTreeByFoldsLF[1]))+" (stdev "+ df.format(Math.sqrt(var(numOfTreeByFoldsLF[1],mean(numOfTreeByFoldsLF[1]))))+")"+" avg. sum of constructs: "+ df.format(mean(numOfTreeByFoldsLF[2]))+" (stdev "+ df.format(Math.sqrt(var(numOfTreeByFoldsLF[2],mean(numOfTreeByFoldsLF[2]))))+")"+ " avg. sum of constructs / num of nodes: "+df.format(mean(numOfTreeByFoldsLF[3]))+" (stdev "+ df.format(Math.sqrt(var(numOfTreeByFoldsLF[3],mean(numOfTreeByFoldsLF[3]))))+")");            
-                    System.out.println("Avg. num of logical feat in tree: "+df.format(mean(numOfLogicalInTree[0]))+" (stdev "+ df.format(Math.sqrt(var(numOfLogicalInTree[0],mean(numOfLogicalInTree[0]))))+")"+" avg. sum of (logical) constructs: "+df.format(mean(numOfLogicalInTree[1]))+" (stdev "+ df.format(Math.sqrt(var(numOfLogicalInTree[1],mean(numOfLogicalInTree[1]))))+")");
-                        logFile.println("Avg. num of logical feat in tree: "+df.format(mean(numOfLogicalInTree[0]))+" (stdev "+ df.format(Math.sqrt(var(numOfLogicalInTree[0],mean(numOfLogicalInTree[0]))))+")"+" avg. sum of (logical) constructs: "+df.format(mean(numOfLogicalInTree[1]))+" (stdev "+ df.format(Math.sqrt(var(numOfLogicalInTree[1],mean(numOfLogicalInTree[1]))))+")");
-                    System.out.println("Avg. ruleset size: "+df.format(mean(numOfRulesByFoldsLF))+" (stdev "+ df.format(Math.sqrt(var(numOfRulesByFoldsLF,mean(numOfRulesByFoldsLF))))+")"+" avg. number of terms of construct in Furia feat.: "+ df.format(mean(numOfTermsByFoldsLF))+" (stdev "+ df.format(Math.sqrt(var(numOfTermsByFoldsLF,mean(numOfTermsByFoldsLF))))+") avg. number of terms in constructs per ruleset: "+df.format(mean(numOfRatioByFoldsLF)) +" (stdev "+df.format(Math.sqrt(var(numOfRatioByFoldsLF,mean(numOfRatioByFoldsLF))))+")");  
-                        logFile.println("Avg. ruleset size: "+df.format(mean(numOfRulesByFoldsLF))+" (stdev "+ df.format(Math.sqrt(var(numOfRulesByFoldsLF,mean(numOfRulesByFoldsLF))))+")"+" avg. number of terms of construct in Furia feat.: "+ df.format(mean(numOfTermsByFoldsLF))+" (stdev "+ df.format(Math.sqrt(var(numOfTermsByFoldsLF,mean(numOfTermsByFoldsLF))))+") avg. number of terms in constructs per ruleset: "+df.format(mean(numOfRatioByFoldsLF)) +" (stdev "+df.format(Math.sqrt(var(numOfRatioByFoldsLF,mean(numOfRatioByFoldsLF))))+")");
+                    if(isClassification){
+                        System.out.println("Avg. tree size (nodes+leaves): "+df.format(mean(numOfTreeByFoldsLF[0]))+" (stdev "+ df.format(Math.sqrt(var(numOfTreeByFoldsLF[0],mean(numOfTreeByFoldsLF[0]))))+")"+" avg. number of leaves: "+ df.format(mean(numOfTreeByFoldsLF[1]))+" (stdev "+ df.format(Math.sqrt(var(numOfTreeByFoldsLF[1],mean(numOfTreeByFoldsLF[1]))))+")"+" avg. sum of constructs: "+ df.format(mean(numOfTreeByFoldsLF[2]))+" (stdev "+ df.format(Math.sqrt(var(numOfTreeByFoldsLF[2],mean(numOfTreeByFoldsLF[2]))))+")"+ " avg. sum of constructs / num of nodes: "+df.format(mean(numOfTreeByFoldsLF[3]))+" (stdev "+ df.format(Math.sqrt(var(numOfTreeByFoldsLF[3],mean(numOfTreeByFoldsLF[3]))))+")");           
+                            logFile.println("Avg. tree size (nodes+leaves): "+df.format(mean(numOfTreeByFoldsLF[0]))+" (stdev "+ df.format(Math.sqrt(var(numOfTreeByFoldsLF[0],mean(numOfTreeByFoldsLF[0]))))+")"+" avg. number of leaves: "+ df.format(mean(numOfTreeByFoldsLF[1]))+" (stdev "+ df.format(Math.sqrt(var(numOfTreeByFoldsLF[1],mean(numOfTreeByFoldsLF[1]))))+")"+" avg. sum of constructs: "+ df.format(mean(numOfTreeByFoldsLF[2]))+" (stdev "+ df.format(Math.sqrt(var(numOfTreeByFoldsLF[2],mean(numOfTreeByFoldsLF[2]))))+")"+ " avg. sum of constructs / num of nodes: "+df.format(mean(numOfTreeByFoldsLF[3]))+" (stdev "+ df.format(Math.sqrt(var(numOfTreeByFoldsLF[3],mean(numOfTreeByFoldsLF[3]))))+")");            
+                        System.out.println("Avg. num of logical feat in tree: "+df.format(mean(numOfLogicalInTree[0]))+" (stdev "+ df.format(Math.sqrt(var(numOfLogicalInTree[0],mean(numOfLogicalInTree[0]))))+")"+" avg. sum of (logical) constructs: "+df.format(mean(numOfLogicalInTree[1]))+" (stdev "+ df.format(Math.sqrt(var(numOfLogicalInTree[1],mean(numOfLogicalInTree[1]))))+")");
+                            logFile.println("Avg. num of logical feat in tree: "+df.format(mean(numOfLogicalInTree[0]))+" (stdev "+ df.format(Math.sqrt(var(numOfLogicalInTree[0],mean(numOfLogicalInTree[0]))))+")"+" avg. sum of (logical) constructs: "+df.format(mean(numOfLogicalInTree[1]))+" (stdev "+ df.format(Math.sqrt(var(numOfLogicalInTree[1],mean(numOfLogicalInTree[1]))))+")");
+                        System.out.println("Avg. ruleset size: "+df.format(mean(numOfRulesByFoldsLF))+" (stdev "+ df.format(Math.sqrt(var(numOfRulesByFoldsLF,mean(numOfRulesByFoldsLF))))+")"+" avg. number of terms of construct in Furia feat.: "+ df.format(mean(numOfTermsByFoldsLF))+" (stdev "+ df.format(Math.sqrt(var(numOfTermsByFoldsLF,mean(numOfTermsByFoldsLF))))+") avg. number of terms in constructs per ruleset: "+df.format(mean(numOfRatioByFoldsLF)) +" (stdev "+df.format(Math.sqrt(var(numOfRatioByFoldsLF,mean(numOfRatioByFoldsLF))))+")");  
+                            logFile.println("Avg. ruleset size: "+df.format(mean(numOfRulesByFoldsLF))+" (stdev "+ df.format(Math.sqrt(var(numOfRulesByFoldsLF,mean(numOfRulesByFoldsLF))))+")"+" avg. number of terms of construct in Furia feat.: "+ df.format(mean(numOfTermsByFoldsLF))+" (stdev "+ df.format(Math.sqrt(var(numOfTermsByFoldsLF,mean(numOfTermsByFoldsLF))))+") avg. number of terms in constructs per ruleset: "+df.format(mean(numOfRatioByFoldsLF)) +" (stdev "+df.format(Math.sqrt(var(numOfRatioByFoldsLF,mean(numOfRatioByFoldsLF))))+")");
 
-                    System.out.println("-----ACC-----");
-                        logFile.println("-----ACC-----");           
-                    for(int c=0;c<clsTab.length;c++){
-                        System.out.println("Avg. class. ACC "+(excludeUppers(clsTab[c].getClass().getSimpleName()).equals("FURIA")?"FU":excludeUppers(clsTab[c].getClass().getSimpleName()))+" \t"+df.format(mean(accByFoldsLF[c]))+" (stdev "+ df.format(Math.sqrt(var(accByFoldsLF[c],mean(accByFoldsLF[c]))))+")");
-                            logFile.println("Avg. class. ACC "+(excludeUppers(clsTab[c].getClass().getSimpleName()).equals("FURIA")?"FU":excludeUppers(clsTab[c].getClass().getSimpleName()))+" \t"+df.format(mean(accByFoldsLF[c]))+" (stdev "+ df.format(Math.sqrt(var(accByFoldsLF[c],mean(accByFoldsLF[c]))))+")");
+                        System.out.println("-----ACC-----");
+                            logFile.println("-----ACC-----");           
+                        for(int c=0;c<clsTab.length;c++){
+                            System.out.println("Avg. class. ACC "+(excludeUppers(clsTab[c].getClass().getSimpleName()).equals("FURIA")?"FU":excludeUppers(clsTab[c].getClass().getSimpleName()))+" \t"+df.format(mean(accByFoldsLF[c]))+" (stdev "+ df.format(Math.sqrt(var(accByFoldsLF[c],mean(accByFoldsLF[c]))))+")");
+                                logFile.println("Avg. class. ACC "+(excludeUppers(clsTab[c].getClass().getSimpleName()).equals("FURIA")?"FU":excludeUppers(clsTab[c].getClass().getSimpleName()))+" \t"+df.format(mean(accByFoldsLF[c]))+" (stdev "+ df.format(Math.sqrt(var(accByFoldsLF[c],mean(accByFoldsLF[c]))))+")");
+                        }
+                    }
+                    else{
+                        System.out.println("-----MAE and RMSE-----");
+                            logFile.println("-----MAE and RMSE-----"); 
+                        for (int i=0;i<clsTab.length;i++){      
+                            System.out.println("Avg. MAE "+excludeUppers(clsTab[i].getClass().getSimpleName())+" \t"+df.format(mean(maeByFoldsLF[i]))+" (stdev "+ df.format(Math.sqrt(var(maeByFoldsLF[i],mean(maeByFoldsLF[i]))))+")"+" \t"+
+                                               "Avg. RMSE "+excludeUppers(clsTab[i].getClass().getSimpleName())+" \t"+df.format(mean(rmseByFoldsLF[i]))+" (stdev "+ df.format(Math.sqrt(var(rmseByFoldsLF[i],mean(rmseByFoldsLF[i]))))+")");
+                                logFile.println("Avg. MAE "+excludeUppers(clsTab[i].getClass().getSimpleName())+" \t"+df.format(mean(maeByFoldsLF[i]))+" (stdev "+ df.format(Math.sqrt(var(maeByFoldsLF[i],mean(maeByFoldsLF[i]))))+")"+" \t"+
+                                               "Avg. RMSE "+excludeUppers(clsTab[i].getClass().getSimpleName())+" \t"+df.format(mean(rmseByFoldsLF[i]))+" (stdev "+ df.format(Math.sqrt(var(rmseByFoldsLF[i],mean(rmseByFoldsLF[i]))))+")");
+                        }
                     }
                     System.out.println("-----Learning and testing time-----");
                         logFile.println("-----Learning and testing time-----");  
@@ -1940,8 +2346,8 @@ public class FeatConstr {
                     }
                     System.out.println("-----Feature construction time-----");
                         logFile.println("-----Feature construction time-----");  
-                    System.out.println("Avg. FC time (all feat): "+df.format(mean(allFCTimeLF))+" [ms] stdev "+ df.format(Math.sqrt(var(allFCTimeLF,mean(allFCTimeLF)))));
-                        logFile.println("Avg. FC time (all feat): "+df.format(mean(allFCTimeLF))+" [ms] stdev "+ df.format(Math.sqrt(var(allFCTimeLF,mean(allFCTimeLF)))));    
+                    System.out.println("Avg. FC time (only Log feat): "+df.format(mean(allFCTimeLF))+" [ms] stdev "+ df.format(Math.sqrt(var(allFCTimeLF,mean(allFCTimeLF)))));
+                        logFile.println("Avg. FC time (only Log feat): "+df.format(mean(allFCTimeLF))+" [ms] stdev "+ df.format(Math.sqrt(var(allFCTimeLF,mean(allFCTimeLF)))));    
                 }
 
                 if(!jakulin && numerFeat){  
@@ -1953,19 +2359,31 @@ public class FeatConstr {
                         logFile.println("*********************************************************************************");   
 
                     System.out.println("Number of numerical feat: "+df.format(mean(numFeatByFoldsNum))+" (stdev "+ df.format(Math.sqrt(var(numFeatByFoldsNum,mean(numFeatByFoldsNum))))+")");
-                        logFile.println("Number of numerical feat: "+df.format(mean(numFeatByFoldsNum))+" (stdev "+ df.format(Math.sqrt(var(numFeatByFoldsNum,mean(numFeatByFoldsNum))))+")");        
-                    System.out.println("Avg. tree size (nodes+leaves): "+df.format(mean(numOfTreeByFoldsNum[0]))+" (stdev "+ df.format(Math.sqrt(var(numOfTreeByFoldsNum[0],mean(numOfTreeByFoldsNum[0]))))+")"+" avg. number of leaves: "+ df.format(mean(numOfTreeByFoldsNum[1]))+" (stdev "+ df.format(Math.sqrt(var(numOfTreeByFoldsNum[1],mean(numOfTreeByFoldsNum[1]))))+")"+" avg. sum of constructs: "+ df.format(mean(numOfTreeByFoldsNum[2]))+" (stdev "+ df.format(Math.sqrt(var(numOfTreeByFoldsNum[2],mean(numOfTreeByFoldsNum[2]))))+")"+ " avg. sum of constructs / num of nodes: "+df.format(mean(numOfTreeByFoldsNum[3]))+" (stdev "+ df.format(Math.sqrt(var(numOfTreeByFoldsNum[3],mean(numOfTreeByFoldsNum[3]))))+")");           
-                        logFile.println("Avg. tree size (nodes+leaves): "+df.format(mean(numOfTreeByFoldsNum[0]))+" (stdev "+ df.format(Math.sqrt(var(numOfTreeByFoldsNum[0],mean(numOfTreeByFoldsNum[0]))))+")"+" avg. number of leaves: "+ df.format(mean(numOfTreeByFoldsNum[1]))+" (stdev "+ df.format(Math.sqrt(var(numOfTreeByFoldsNum[1],mean(numOfTreeByFoldsNum[1]))))+")"+" avg. sum of constructs: "+ df.format(mean(numOfTreeByFoldsNum[2]))+" (stdev "+ df.format(Math.sqrt(var(numOfTreeByFoldsNum[2],mean(numOfTreeByFoldsNum[2]))))+")"+ " avg. sum of constructs / num of nodes: "+df.format(mean(numOfTreeByFoldsNum[3]))+" (stdev "+ df.format(Math.sqrt(var(numOfTreeByFoldsNum[3],mean(numOfTreeByFoldsNum[3]))))+")");        
-                    System.out.println("Avg. num of numerical feat in tree: "+df.format(mean(numOfNumerical))+" (stdev "+ df.format(Math.sqrt(var(numOfNumerical,mean(numOfNumerical))))+")"+" avg. sum of (only numerical) constructs (in tree): "+ df.format(mean(sumOfConstrNum))+" (stdev "+ df.format(Math.sqrt(var(sumOfConstrNum,mean(sumOfConstrNum))))+")");
-                        logFile.println("Avg. num of numerical feat in tree: "+df.format(mean(numOfNumerical))+" (stdev "+ df.format(Math.sqrt(var(numOfNumerical,mean(numOfNumerical))))+")"+" avg. sum of (only numerical) constructs (in tree): "+ df.format(mean(sumOfConstrNum))+" (stdev "+ df.format(Math.sqrt(var(sumOfConstrNum,mean(sumOfConstrNum))))+")");    
-                    System.out.println("Avg. ruleset size: "+df.format(mean(numOfRulesByFoldsNum))+" (stdev "+ df.format(Math.sqrt(var(numOfRulesByFoldsNum,mean(numOfRulesByFoldsNum))))+")"+" avg. number of terms of construct in Furia feat.: "+ df.format(mean(numOfTermsByFoldsNum))+" (stdev "+ df.format(Math.sqrt(var(numOfTermsByFoldsNum,mean(numOfTermsByFoldsNum))))+") avg. number of terms in constructs per ruleset: "+df.format(mean(numOfRatioByFoldsNum)) +" (stdev "+df.format(Math.sqrt(var(numOfRatioByFoldsNum,mean(numOfRatioByFoldsNum))))+")");  
-                        logFile.println("Avg. ruleset size: "+df.format(mean(numOfRulesByFoldsNum))+" (stdev "+ df.format(Math.sqrt(var(numOfRulesByFoldsNum,mean(numOfRulesByFoldsNum))))+")"+" avg. number of terms of construct in Furia feat.: "+ df.format(mean(numOfTermsByFoldsNum))+" (stdev "+ df.format(Math.sqrt(var(numOfTermsByFoldsNum,mean(numOfTermsByFoldsNum))))+") avg. number of terms in constructs per ruleset: "+df.format(mean(numOfRatioByFoldsNum)) +" (stdev "+df.format(Math.sqrt(var(numOfRatioByFoldsNum,mean(numOfRatioByFoldsNum))))+")"); 
+                        logFile.println("Number of numerical feat: "+df.format(mean(numFeatByFoldsNum))+" (stdev "+ df.format(Math.sqrt(var(numFeatByFoldsNum,mean(numFeatByFoldsNum))))+")");
+                    if(isClassification){
+                        System.out.println("Avg. tree size (nodes+leaves): "+df.format(mean(numOfTreeByFoldsNum[0]))+" (stdev "+ df.format(Math.sqrt(var(numOfTreeByFoldsNum[0],mean(numOfTreeByFoldsNum[0]))))+")"+" avg. number of leaves: "+ df.format(mean(numOfTreeByFoldsNum[1]))+" (stdev "+ df.format(Math.sqrt(var(numOfTreeByFoldsNum[1],mean(numOfTreeByFoldsNum[1]))))+")"+" avg. sum of constructs: "+ df.format(mean(numOfTreeByFoldsNum[2]))+" (stdev "+ df.format(Math.sqrt(var(numOfTreeByFoldsNum[2],mean(numOfTreeByFoldsNum[2]))))+")"+ " avg. sum of constructs / num of nodes: "+df.format(mean(numOfTreeByFoldsNum[3]))+" (stdev "+ df.format(Math.sqrt(var(numOfTreeByFoldsNum[3],mean(numOfTreeByFoldsNum[3]))))+")");           
+                            logFile.println("Avg. tree size (nodes+leaves): "+df.format(mean(numOfTreeByFoldsNum[0]))+" (stdev "+ df.format(Math.sqrt(var(numOfTreeByFoldsNum[0],mean(numOfTreeByFoldsNum[0]))))+")"+" avg. number of leaves: "+ df.format(mean(numOfTreeByFoldsNum[1]))+" (stdev "+ df.format(Math.sqrt(var(numOfTreeByFoldsNum[1],mean(numOfTreeByFoldsNum[1]))))+")"+" avg. sum of constructs: "+ df.format(mean(numOfTreeByFoldsNum[2]))+" (stdev "+ df.format(Math.sqrt(var(numOfTreeByFoldsNum[2],mean(numOfTreeByFoldsNum[2]))))+")"+ " avg. sum of constructs / num of nodes: "+df.format(mean(numOfTreeByFoldsNum[3]))+" (stdev "+ df.format(Math.sqrt(var(numOfTreeByFoldsNum[3],mean(numOfTreeByFoldsNum[3]))))+")");        
+                        System.out.println("Avg. num of numerical feat in tree: "+df.format(mean(numOfNumerical))+" (stdev "+ df.format(Math.sqrt(var(numOfNumerical,mean(numOfNumerical))))+")"+" avg. sum of (only numerical) constructs (in tree): "+ df.format(mean(sumOfConstrNum))+" (stdev "+ df.format(Math.sqrt(var(sumOfConstrNum,mean(sumOfConstrNum))))+")");
+                            logFile.println("Avg. num of numerical feat in tree: "+df.format(mean(numOfNumerical))+" (stdev "+ df.format(Math.sqrt(var(numOfNumerical,mean(numOfNumerical))))+")"+" avg. sum of (only numerical) constructs (in tree): "+ df.format(mean(sumOfConstrNum))+" (stdev "+ df.format(Math.sqrt(var(sumOfConstrNum,mean(sumOfConstrNum))))+")");    
+                        System.out.println("Avg. ruleset size: "+df.format(mean(numOfRulesByFoldsNum))+" (stdev "+ df.format(Math.sqrt(var(numOfRulesByFoldsNum,mean(numOfRulesByFoldsNum))))+")"+" avg. number of terms of construct in Furia feat.: "+ df.format(mean(numOfTermsByFoldsNum))+" (stdev "+ df.format(Math.sqrt(var(numOfTermsByFoldsNum,mean(numOfTermsByFoldsNum))))+") avg. number of terms in constructs per ruleset: "+df.format(mean(numOfRatioByFoldsNum)) +" (stdev "+df.format(Math.sqrt(var(numOfRatioByFoldsNum,mean(numOfRatioByFoldsNum))))+")");  
+                            logFile.println("Avg. ruleset size: "+df.format(mean(numOfRulesByFoldsNum))+" (stdev "+ df.format(Math.sqrt(var(numOfRulesByFoldsNum,mean(numOfRulesByFoldsNum))))+")"+" avg. number of terms of construct in Furia feat.: "+ df.format(mean(numOfTermsByFoldsNum))+" (stdev "+ df.format(Math.sqrt(var(numOfTermsByFoldsNum,mean(numOfTermsByFoldsNum))))+") avg. number of terms in constructs per ruleset: "+df.format(mean(numOfRatioByFoldsNum)) +" (stdev "+df.format(Math.sqrt(var(numOfRatioByFoldsNum,mean(numOfRatioByFoldsNum))))+")"); 
 
-                    System.out.println("-----ACC-----");
-                        logFile.println("-----ACC-----");           
-                    for(int c=0;c<clsTab.length;c++){            
-                        System.out.println("Avg. class. ACC "+(excludeUppers(clsTab[c].getClass().getSimpleName()).equals("FURIA")?"FU":excludeUppers(clsTab[c].getClass().getSimpleName()))+" \t"+df.format(mean(accByFoldsNum[c]))+" (stdev "+ df.format(Math.sqrt(var(accByFoldsNum[c],mean(accByFoldsNum[c]))))+")");
-                            logFile.println("Avg. class. ACC "+(excludeUppers(clsTab[c].getClass().getSimpleName()).equals("FURIA")?"FU":excludeUppers(clsTab[c].getClass().getSimpleName()))+" \t"+df.format(mean(accByFoldsNum[c]))+" (stdev "+ df.format(Math.sqrt(var(accByFoldsNum[c],mean(accByFoldsNum[c]))))+")");
+                        System.out.println("-----ACC-----");
+                            logFile.println("-----ACC-----");           
+                        for(int c=0;c<clsTab.length;c++){            
+                            System.out.println("Avg. class. ACC "+(excludeUppers(clsTab[c].getClass().getSimpleName()).equals("FURIA")?"FU":excludeUppers(clsTab[c].getClass().getSimpleName()))+" \t"+df.format(mean(accByFoldsNum[c]))+" (stdev "+ df.format(Math.sqrt(var(accByFoldsNum[c],mean(accByFoldsNum[c]))))+")");
+                                logFile.println("Avg. class. ACC "+(excludeUppers(clsTab[c].getClass().getSimpleName()).equals("FURIA")?"FU":excludeUppers(clsTab[c].getClass().getSimpleName()))+" \t"+df.format(mean(accByFoldsNum[c]))+" (stdev "+ df.format(Math.sqrt(var(accByFoldsNum[c],mean(accByFoldsNum[c]))))+")");
+                        }
+                    }
+                    else{
+                        System.out.println("-----MAE and RMSE-----");
+                            logFile.println("-----MAE and RMSE-----"); 
+                        for (int i=0;i<clsTab.length;i++){      
+                            System.out.println("Avg. MAE "+excludeUppers(clsTab[i].getClass().getSimpleName())+" \t"+df.format(mean(maeByFoldsNum[i]))+" (stdev "+ df.format(Math.sqrt(var(maeByFoldsNum[i],mean(maeByFoldsNum[i]))))+")"+" \t"+
+                                               "Avg. RMSE "+excludeUppers(clsTab[i].getClass().getSimpleName())+" \t"+df.format(mean(rmseByFoldsNum[i]))+" (stdev "+ df.format(Math.sqrt(var(rmseByFoldsNum[i],mean(rmseByFoldsNum[i]))))+")");
+                                logFile.println("Avg. MAE "+excludeUppers(clsTab[i].getClass().getSimpleName())+" \t"+df.format(mean(maeByFoldsNum[i]))+" (stdev "+ df.format(Math.sqrt(var(maeByFoldsNum[i],mean(maeByFoldsNum[i]))))+")"+" \t"+
+                                               "Avg. RMSE "+excludeUppers(clsTab[i].getClass().getSimpleName())+" \t"+df.format(mean(rmseByFoldsNum[i]))+" (stdev "+ df.format(Math.sqrt(var(rmseByFoldsNum[i],mean(rmseByFoldsNum[i]))))+")");
+                        }
                     }
                     System.out.println("-----Learning and testing time-----");
                         logFile.println("-----Learning and testing time-----");  
@@ -1975,8 +2393,8 @@ public class FeatConstr {
                     }
                     System.out.println("-----Feature construction time-----");
                         logFile.println("-----Feature construction time-----");  
-                    System.out.println("Avg. FC time (all feat): "+df.format(mean(numericalFCTime))+" [ms] stdev "+ df.format(Math.sqrt(var(numericalFCTime,mean(numericalFCTime)))));
-                        logFile.println("Avg. FC time (all feat): "+df.format(mean(numericalFCTime))+" [ms] stdev "+ df.format(Math.sqrt(var(numericalFCTime,mean(numericalFCTime)))));   
+                    System.out.println("Avg. FC time (only Num feat): "+df.format(mean(numericalFCTime))+" [ms] stdev "+ df.format(Math.sqrt(var(numericalFCTime,mean(numericalFCTime)))));
+                        logFile.println("Avg. FC time (only Num feat): "+df.format(mean(numericalFCTime))+" [ms] stdev "+ df.format(Math.sqrt(var(numericalFCTime,mean(numericalFCTime)))));   
                 }
 
                 if(!jakulin){  
@@ -1988,19 +2406,31 @@ public class FeatConstr {
                         logFile.println("*********************************************************************************");   
 
                     System.out.println("Number of relational feat: "+df.format(mean(numFeatByFoldsRE))+" (stdev "+ df.format(Math.sqrt(var(numFeatByFoldsRE,mean(numFeatByFoldsRE))))+")");
-                        logFile.println("Number of relational feat: "+df.format(mean(numFeatByFoldsRE))+" (stdev "+ df.format(Math.sqrt(var(numFeatByFoldsRE,mean(numFeatByFoldsRE))))+")");        
-                    System.out.println("Avg. tree size (nodes+leaves): "+df.format(mean(numOfTreeByFoldsRE[0]))+" (stdev "+ df.format(Math.sqrt(var(numOfTreeByFoldsRE[0],mean(numOfTreeByFoldsRE[0]))))+")"+" avg. number of leaves: "+ df.format(mean(numOfTreeByFoldsRE[1]))+" (stdev "+ df.format(Math.sqrt(var(numOfTreeByFoldsRE[1],mean(numOfTreeByFoldsRE[1]))))+")"+" avg. sum of constructs: "+ df.format(mean(numOfTreeByFoldsRE[2]))+" (stdev "+ df.format(Math.sqrt(var(numOfTreeByFoldsRE[2],mean(numOfTreeByFoldsRE[2]))))+")"+ " avg. sum of constructs / num of nodes: "+df.format(mean(numOfTreeByFoldsRE[3]))+" (stdev "+ df.format(Math.sqrt(var(numOfTreeByFoldsRE[3],mean(numOfTreeByFoldsRE[3]))))+")");           
-                        logFile.println("Avg. tree size (nodes+leaves): "+df.format(mean(numOfTreeByFoldsRE[0]))+" (stdev "+ df.format(Math.sqrt(var(numOfTreeByFoldsRE[0],mean(numOfTreeByFoldsRE[0]))))+")"+" avg. number of leaves: "+ df.format(mean(numOfTreeByFoldsRE[1]))+" (stdev "+ df.format(Math.sqrt(var(numOfTreeByFoldsRE[1],mean(numOfTreeByFoldsRE[1]))))+")"+" avg. sum of constructs: "+ df.format(mean(numOfTreeByFoldsRE[2]))+" (stdev "+ df.format(Math.sqrt(var(numOfTreeByFoldsRE[2],mean(numOfTreeByFoldsRE[2]))))+")"+ " avg. sum of constructs / num of nodes: "+df.format(mean(numOfTreeByFoldsRE[3]))+" (stdev "+ df.format(Math.sqrt(var(numOfTreeByFoldsRE[3],mean(numOfTreeByFoldsRE[3]))))+")");        
-                    System.out.println("Avg. num of relational feat in tree: "+df.format(mean(numOfRelational))+" (stdev "+ df.format(Math.sqrt(var(numOfRelational,mean(numOfRelational))))+")"+" avg. sum of (only Cartesian) constructs (in tree): "+ df.format(mean(sumOfConstrRel))+" (stdev "+ df.format(Math.sqrt(var(sumOfConstrRel,mean(sumOfConstrRel))))+")");
-                        logFile.println("Avg. num of relational feat in tree: "+df.format(mean(numOfRelational))+" (stdev "+ df.format(Math.sqrt(var(numOfRelational,mean(numOfRelational))))+")"+" avg. sum of (only Cartesian) constructs (in tree): "+ df.format(mean(sumOfConstrRel))+" (stdev "+ df.format(Math.sqrt(var(sumOfConstrRel,mean(sumOfConstrRel))))+")");    
-                    System.out.println("Avg. ruleset size: "+df.format(mean(numOfRulesByFoldsRE))+" (stdev "+ df.format(Math.sqrt(var(numOfRulesByFoldsRE,mean(numOfRulesByFoldsRE))))+")"+" avg. number of terms of construct in Furia feat.: "+ df.format(mean(numOfTermsByFoldsRE))+" (stdev "+ df.format(Math.sqrt(var(numOfTermsByFoldsRE,mean(numOfTermsByFoldsRE))))+") avg. number of terms in constructs per ruleset: "+df.format(mean(numOfRatioByFoldsRE)) +" (stdev "+df.format(Math.sqrt(var(numOfRatioByFoldsRE,mean(numOfRatioByFoldsRE))))+")");  
-                        logFile.println("Avg. ruleset size: "+df.format(mean(numOfRulesByFoldsRE))+" (stdev "+ df.format(Math.sqrt(var(numOfRulesByFoldsRE,mean(numOfRulesByFoldsRE))))+")"+" avg. number of terms of construct in Furia feat.: "+ df.format(mean(numOfTermsByFoldsRE))+" (stdev "+ df.format(Math.sqrt(var(numOfTermsByFoldsRE,mean(numOfTermsByFoldsRE))))+") avg. number of terms in constructs per ruleset: "+df.format(mean(numOfRatioByFoldsRE)) +" (stdev "+df.format(Math.sqrt(var(numOfRatioByFoldsRE,mean(numOfRatioByFoldsRE))))+")"); 
+                        logFile.println("Number of relational feat: "+df.format(mean(numFeatByFoldsRE))+" (stdev "+ df.format(Math.sqrt(var(numFeatByFoldsRE,mean(numFeatByFoldsRE))))+")");
+                    if(isClassification){
+                        System.out.println("Avg. tree size (nodes+leaves): "+df.format(mean(numOfTreeByFoldsRE[0]))+" (stdev "+ df.format(Math.sqrt(var(numOfTreeByFoldsRE[0],mean(numOfTreeByFoldsRE[0]))))+")"+" avg. number of leaves: "+ df.format(mean(numOfTreeByFoldsRE[1]))+" (stdev "+ df.format(Math.sqrt(var(numOfTreeByFoldsRE[1],mean(numOfTreeByFoldsRE[1]))))+")"+" avg. sum of constructs: "+ df.format(mean(numOfTreeByFoldsRE[2]))+" (stdev "+ df.format(Math.sqrt(var(numOfTreeByFoldsRE[2],mean(numOfTreeByFoldsRE[2]))))+")"+ " avg. sum of constructs / num of nodes: "+df.format(mean(numOfTreeByFoldsRE[3]))+" (stdev "+ df.format(Math.sqrt(var(numOfTreeByFoldsRE[3],mean(numOfTreeByFoldsRE[3]))))+")");           
+                            logFile.println("Avg. tree size (nodes+leaves): "+df.format(mean(numOfTreeByFoldsRE[0]))+" (stdev "+ df.format(Math.sqrt(var(numOfTreeByFoldsRE[0],mean(numOfTreeByFoldsRE[0]))))+")"+" avg. number of leaves: "+ df.format(mean(numOfTreeByFoldsRE[1]))+" (stdev "+ df.format(Math.sqrt(var(numOfTreeByFoldsRE[1],mean(numOfTreeByFoldsRE[1]))))+")"+" avg. sum of constructs: "+ df.format(mean(numOfTreeByFoldsRE[2]))+" (stdev "+ df.format(Math.sqrt(var(numOfTreeByFoldsRE[2],mean(numOfTreeByFoldsRE[2]))))+")"+ " avg. sum of constructs / num of nodes: "+df.format(mean(numOfTreeByFoldsRE[3]))+" (stdev "+ df.format(Math.sqrt(var(numOfTreeByFoldsRE[3],mean(numOfTreeByFoldsRE[3]))))+")");        
+                        System.out.println("Avg. num of relational feat in tree: "+df.format(mean(numOfRelational))+" (stdev "+ df.format(Math.sqrt(var(numOfRelational,mean(numOfRelational))))+")"+" avg. sum of (only Cartesian) constructs (in tree): "+ df.format(mean(sumOfConstrRel))+" (stdev "+ df.format(Math.sqrt(var(sumOfConstrRel,mean(sumOfConstrRel))))+")");
+                            logFile.println("Avg. num of relational feat in tree: "+df.format(mean(numOfRelational))+" (stdev "+ df.format(Math.sqrt(var(numOfRelational,mean(numOfRelational))))+")"+" avg. sum of (only Cartesian) constructs (in tree): "+ df.format(mean(sumOfConstrRel))+" (stdev "+ df.format(Math.sqrt(var(sumOfConstrRel,mean(sumOfConstrRel))))+")");    
+                        System.out.println("Avg. ruleset size: "+df.format(mean(numOfRulesByFoldsRE))+" (stdev "+ df.format(Math.sqrt(var(numOfRulesByFoldsRE,mean(numOfRulesByFoldsRE))))+")"+" avg. number of terms of construct in Furia feat.: "+ df.format(mean(numOfTermsByFoldsRE))+" (stdev "+ df.format(Math.sqrt(var(numOfTermsByFoldsRE,mean(numOfTermsByFoldsRE))))+") avg. number of terms in constructs per ruleset: "+df.format(mean(numOfRatioByFoldsRE)) +" (stdev "+df.format(Math.sqrt(var(numOfRatioByFoldsRE,mean(numOfRatioByFoldsRE))))+")");  
+                            logFile.println("Avg. ruleset size: "+df.format(mean(numOfRulesByFoldsRE))+" (stdev "+ df.format(Math.sqrt(var(numOfRulesByFoldsRE,mean(numOfRulesByFoldsRE))))+")"+" avg. number of terms of construct in Furia feat.: "+ df.format(mean(numOfTermsByFoldsRE))+" (stdev "+ df.format(Math.sqrt(var(numOfTermsByFoldsRE,mean(numOfTermsByFoldsRE))))+") avg. number of terms in constructs per ruleset: "+df.format(mean(numOfRatioByFoldsRE)) +" (stdev "+df.format(Math.sqrt(var(numOfRatioByFoldsRE,mean(numOfRatioByFoldsRE))))+")"); 
 
-                    System.out.println("-----ACC-----");
-                        logFile.println("-----ACC-----");           
-                    for(int c=0;c<clsTab.length;c++){            
-                        System.out.println("Avg. class. ACC "+(excludeUppers(clsTab[c].getClass().getSimpleName()).equals("FURIA")?"FU":excludeUppers(clsTab[c].getClass().getSimpleName()))+" \t"+df.format(mean(accByFoldsRE[c]))+" (stdev "+ df.format(Math.sqrt(var(accByFoldsRE[c],mean(accByFoldsRE[c]))))+")");
-                            logFile.println("Avg. class. ACC "+(excludeUppers(clsTab[c].getClass().getSimpleName()).equals("FURIA")?"FU":excludeUppers(clsTab[c].getClass().getSimpleName()))+" \t"+df.format(mean(accByFoldsRE[c]))+" (stdev "+ df.format(Math.sqrt(var(accByFoldsRE[c],mean(accByFoldsRE[c]))))+")");
+                        System.out.println("-----ACC-----");
+                            logFile.println("-----ACC-----");           
+                        for(int c=0;c<clsTab.length;c++){            
+                            System.out.println("Avg. class. ACC "+(excludeUppers(clsTab[c].getClass().getSimpleName()).equals("FURIA")?"FU":excludeUppers(clsTab[c].getClass().getSimpleName()))+" \t"+df.format(mean(accByFoldsRE[c]))+" (stdev "+ df.format(Math.sqrt(var(accByFoldsRE[c],mean(accByFoldsRE[c]))))+")");
+                                logFile.println("Avg. class. ACC "+(excludeUppers(clsTab[c].getClass().getSimpleName()).equals("FURIA")?"FU":excludeUppers(clsTab[c].getClass().getSimpleName()))+" \t"+df.format(mean(accByFoldsRE[c]))+" (stdev "+ df.format(Math.sqrt(var(accByFoldsRE[c],mean(accByFoldsRE[c]))))+")");
+                        }
+                        }
+                    else{
+                        System.out.println("-----MAE and RMSE-----");
+                            logFile.println("-----MAE and RMSE-----"); 
+                        for (int i=0;i<clsTab.length;i++){      
+                            System.out.println("Avg. MAE "+excludeUppers(clsTab[i].getClass().getSimpleName())+" \t"+df.format(mean(maeByFoldsRE[i]))+" (stdev "+ df.format(Math.sqrt(var(maeByFoldsRE[i],mean(maeByFoldsRE[i]))))+")"+" \t"+
+                                               "Avg. RMSE "+excludeUppers(clsTab[i].getClass().getSimpleName())+" \t"+df.format(mean(rmseByFoldsRE[i]))+" (stdev "+ df.format(Math.sqrt(var(rmseByFoldsRE[i],mean(rmseByFoldsRE[i]))))+")");
+                                logFile.println("Avg. MAE "+excludeUppers(clsTab[i].getClass().getSimpleName())+" \t"+df.format(mean(maeByFoldsRE[i]))+" (stdev "+ df.format(Math.sqrt(var(maeByFoldsRE[i],mean(maeByFoldsRE[i]))))+")"+" \t"+
+                                               "Avg. RMSE "+excludeUppers(clsTab[i].getClass().getSimpleName())+" \t"+df.format(mean(rmseByFoldsRE[i]))+" (stdev "+ df.format(Math.sqrt(var(rmseByFoldsRE[i],mean(rmseByFoldsRE[i]))))+")");
+                        }                    
                     }
                     System.out.println("-----Learning and testing time-----");
                         logFile.println("-----Learning and testing time-----");  
@@ -2010,8 +2440,8 @@ public class FeatConstr {
                     }
                     System.out.println("-----Feature construction time-----");
                         logFile.println("-----Feature construction time-----");  
-                    System.out.println("Avg. FC time (all feat): "+df.format(mean(relationalFCTime))+" [ms] stdev "+ df.format(Math.sqrt(var(relationalFCTime,mean(relationalFCTime)))));
-                        logFile.println("Avg. FC time (all feat): "+df.format(mean(relationalFCTime))+" [ms] stdev "+ df.format(Math.sqrt(var(relationalFCTime,mean(relationalFCTime)))));   
+                    System.out.println("Avg. FC time (only Rel feat): "+df.format(mean(relationalFCTime))+" [ms] stdev "+ df.format(Math.sqrt(var(relationalFCTime,mean(relationalFCTime)))));
+                        logFile.println("Avg. FC time (only Rel feat): "+df.format(mean(relationalFCTime))+" [ms] stdev "+ df.format(Math.sqrt(var(relationalFCTime,mean(relationalFCTime)))));   
                 }        
 
                 System.out.println("*********************************************************************************");
@@ -2031,19 +2461,31 @@ public class FeatConstr {
                 }
 
                 System.out.println("Number of \"Cartesian\" feat: "+df.format(mean(numFeatByFoldsCP))+" (stdev "+ df.format(Math.sqrt(var(numFeatByFoldsCP,mean(numFeatByFoldsCP))))+")");
-                    logFile.println("Number of \"Cartesian\" feat: "+df.format(mean(numFeatByFoldsCP))+" (stdev "+ df.format(Math.sqrt(var(numFeatByFoldsCP,mean(numFeatByFoldsCP))))+")");        
-                System.out.println("Avg. tree size (nodes+leaves): "+df.format(mean(numOfTreeByFoldsCP[0]))+" (stdev "+ df.format(Math.sqrt(var(numOfTreeByFoldsCP[0],mean(numOfTreeByFoldsCP[0]))))+")"+" avg. number of leaves: "+ df.format(mean(numOfTreeByFoldsCP[1]))+" (stdev "+ df.format(Math.sqrt(var(numOfTreeByFoldsCP[1],mean(numOfTreeByFoldsCP[1]))))+")"+" avg. sum of constructs: "+ df.format(mean(numOfTreeByFoldsCP[2]))+" (stdev "+ df.format(Math.sqrt(var(numOfTreeByFoldsCP[2],mean(numOfTreeByFoldsCP[2]))))+")"+ " avg. sum of constructs / num of nodes: "+df.format(mean(numOfTreeByFoldsCP[3]))+" (stdev "+ df.format(Math.sqrt(var(numOfTreeByFoldsCP[3],mean(numOfTreeByFoldsCP[3]))))+")");           
-                    logFile.println("Avg. tree size (nodes+leaves): "+df.format(mean(numOfTreeByFoldsCP[0]))+" (stdev "+ df.format(Math.sqrt(var(numOfTreeByFoldsCP[0],mean(numOfTreeByFoldsCP[0]))))+")"+" avg. number of leaves: "+ df.format(mean(numOfTreeByFoldsCP[1]))+" (stdev "+ df.format(Math.sqrt(var(numOfTreeByFoldsCP[1],mean(numOfTreeByFoldsCP[1]))))+")"+" avg. sum of constructs: "+ df.format(mean(numOfTreeByFoldsCP[2]))+" (stdev "+ df.format(Math.sqrt(var(numOfTreeByFoldsCP[2],mean(numOfTreeByFoldsCP[2]))))+")"+ " avg. sum of constructs / num of nodes: "+df.format(mean(numOfTreeByFoldsCP[3]))+" (stdev "+ df.format(Math.sqrt(var(numOfTreeByFoldsCP[3],mean(numOfTreeByFoldsCP[3]))))+")");        
-                System.out.println("Avg. num of \"Cartesian\" feat in tree: "+df.format(mean(numOfCartesian))+" (stdev "+ df.format(Math.sqrt(var(numOfCartesian,mean(numOfCartesian))))+")"+" avg. sum of (only Cartesian) constructs (in tree): "+ df.format(mean(sumOfConstrCart))+" (stdev "+ df.format(Math.sqrt(var(sumOfConstrCart,mean(sumOfConstrCart))))+")");
-                    logFile.println("Avg. num of \"Cartesian\" feat in tree: "+df.format(mean(numOfCartesian))+" (stdev "+ df.format(Math.sqrt(var(numOfCartesian,mean(numOfCartesian))))+")"+" avg. sum of (only Cartesian) constructs (in tree): "+ df.format(mean(sumOfConstrCart))+" (stdev "+ df.format(Math.sqrt(var(sumOfConstrCart,mean(sumOfConstrCart))))+")");    
-                System.out.println("Avg. ruleset size: "+df.format(mean(numOfRulesByFoldsCP))+" (stdev "+ df.format(Math.sqrt(var(numOfRulesByFoldsCP,mean(numOfRulesByFoldsCP))))+")"+" avg. number of terms of construct in Furia feat.: "+ df.format(mean(numOfTermsByFoldsCP))+" (stdev "+ df.format(Math.sqrt(var(numOfTermsByFoldsCP,mean(numOfTermsByFoldsCP))))+") avg. number of terms in constructs per ruleset: "+df.format(mean(numOfRatioByFoldsCP)) +" (stdev "+df.format(Math.sqrt(var(numOfRatioByFoldsCP,mean(numOfRatioByFoldsCP))))+")");  
-                    logFile.println("Avg. ruleset size: "+df.format(mean(numOfRulesByFoldsCP))+" (stdev "+ df.format(Math.sqrt(var(numOfRulesByFoldsCP,mean(numOfRulesByFoldsCP))))+")"+" avg. number of terms of construct in Furia feat.: "+ df.format(mean(numOfTermsByFoldsCP))+" (stdev "+ df.format(Math.sqrt(var(numOfTermsByFoldsCP,mean(numOfTermsByFoldsCP))))+") avg. number of terms in constructs per ruleset: "+df.format(mean(numOfRatioByFoldsCP)) +" (stdev "+df.format(Math.sqrt(var(numOfRatioByFoldsCP,mean(numOfRatioByFoldsCP))))+")"); 
+                    logFile.println("Number of \"Cartesian\" feat: "+df.format(mean(numFeatByFoldsCP))+" (stdev "+ df.format(Math.sqrt(var(numFeatByFoldsCP,mean(numFeatByFoldsCP))))+")"); 
+                if(isClassification){
+                    System.out.println("Avg. tree size (nodes+leaves): "+df.format(mean(numOfTreeByFoldsCP[0]))+" (stdev "+ df.format(Math.sqrt(var(numOfTreeByFoldsCP[0],mean(numOfTreeByFoldsCP[0]))))+")"+" avg. number of leaves: "+ df.format(mean(numOfTreeByFoldsCP[1]))+" (stdev "+ df.format(Math.sqrt(var(numOfTreeByFoldsCP[1],mean(numOfTreeByFoldsCP[1]))))+")"+" avg. sum of constructs: "+ df.format(mean(numOfTreeByFoldsCP[2]))+" (stdev "+ df.format(Math.sqrt(var(numOfTreeByFoldsCP[2],mean(numOfTreeByFoldsCP[2]))))+")"+ " avg. sum of constructs / num of nodes: "+df.format(mean(numOfTreeByFoldsCP[3]))+" (stdev "+ df.format(Math.sqrt(var(numOfTreeByFoldsCP[3],mean(numOfTreeByFoldsCP[3]))))+")");           
+                        logFile.println("Avg. tree size (nodes+leaves): "+df.format(mean(numOfTreeByFoldsCP[0]))+" (stdev "+ df.format(Math.sqrt(var(numOfTreeByFoldsCP[0],mean(numOfTreeByFoldsCP[0]))))+")"+" avg. number of leaves: "+ df.format(mean(numOfTreeByFoldsCP[1]))+" (stdev "+ df.format(Math.sqrt(var(numOfTreeByFoldsCP[1],mean(numOfTreeByFoldsCP[1]))))+")"+" avg. sum of constructs: "+ df.format(mean(numOfTreeByFoldsCP[2]))+" (stdev "+ df.format(Math.sqrt(var(numOfTreeByFoldsCP[2],mean(numOfTreeByFoldsCP[2]))))+")"+ " avg. sum of constructs / num of nodes: "+df.format(mean(numOfTreeByFoldsCP[3]))+" (stdev "+ df.format(Math.sqrt(var(numOfTreeByFoldsCP[3],mean(numOfTreeByFoldsCP[3]))))+")");        
+                    System.out.println("Avg. num of \"Cartesian\" feat in tree: "+df.format(mean(numOfCartesian))+" (stdev "+ df.format(Math.sqrt(var(numOfCartesian,mean(numOfCartesian))))+")"+" avg. sum of (only Cartesian) constructs (in tree): "+ df.format(mean(sumOfConstrCart))+" (stdev "+ df.format(Math.sqrt(var(sumOfConstrCart,mean(sumOfConstrCart))))+")");
+                        logFile.println("Avg. num of \"Cartesian\" feat in tree: "+df.format(mean(numOfCartesian))+" (stdev "+ df.format(Math.sqrt(var(numOfCartesian,mean(numOfCartesian))))+")"+" avg. sum of (only Cartesian) constructs (in tree): "+ df.format(mean(sumOfConstrCart))+" (stdev "+ df.format(Math.sqrt(var(sumOfConstrCart,mean(sumOfConstrCart))))+")");    
+                    System.out.println("Avg. ruleset size: "+df.format(mean(numOfRulesByFoldsCP))+" (stdev "+ df.format(Math.sqrt(var(numOfRulesByFoldsCP,mean(numOfRulesByFoldsCP))))+")"+" avg. number of terms of construct in Furia feat.: "+ df.format(mean(numOfTermsByFoldsCP))+" (stdev "+ df.format(Math.sqrt(var(numOfTermsByFoldsCP,mean(numOfTermsByFoldsCP))))+") avg. number of terms in constructs per ruleset: "+df.format(mean(numOfRatioByFoldsCP)) +" (stdev "+df.format(Math.sqrt(var(numOfRatioByFoldsCP,mean(numOfRatioByFoldsCP))))+")");  
+                        logFile.println("Avg. ruleset size: "+df.format(mean(numOfRulesByFoldsCP))+" (stdev "+ df.format(Math.sqrt(var(numOfRulesByFoldsCP,mean(numOfRulesByFoldsCP))))+")"+" avg. number of terms of construct in Furia feat.: "+ df.format(mean(numOfTermsByFoldsCP))+" (stdev "+ df.format(Math.sqrt(var(numOfTermsByFoldsCP,mean(numOfTermsByFoldsCP))))+") avg. number of terms in constructs per ruleset: "+df.format(mean(numOfRatioByFoldsCP)) +" (stdev "+df.format(Math.sqrt(var(numOfRatioByFoldsCP,mean(numOfRatioByFoldsCP))))+")"); 
 
-                System.out.println("-----ACC-----");
-                    logFile.println("-----ACC-----");           
-                for(int c=0;c<clsTab.length;c++){            
-                    System.out.println("Avg. class. ACC "+(excludeUppers(clsTab[c].getClass().getSimpleName()).equals("FURIA")?"FU":excludeUppers(clsTab[c].getClass().getSimpleName()))+" \t"+df.format(mean(accByFoldsCP[c]))+" (stdev "+ df.format(Math.sqrt(var(accByFoldsCP[c],mean(accByFoldsCP[c]))))+")");
-                        logFile.println("Avg. class. ACC "+(excludeUppers(clsTab[c].getClass().getSimpleName()).equals("FURIA")?"FU":excludeUppers(clsTab[c].getClass().getSimpleName()))+" \t"+df.format(mean(accByFoldsCP[c]))+" (stdev "+ df.format(Math.sqrt(var(accByFoldsCP[c],mean(accByFoldsCP[c]))))+")");
+                    System.out.println("-----ACC-----");
+                        logFile.println("-----ACC-----");           
+                    for(int c=0;c<clsTab.length;c++){            
+                        System.out.println("Avg. class. ACC "+(excludeUppers(clsTab[c].getClass().getSimpleName()).equals("FURIA")?"FU":excludeUppers(clsTab[c].getClass().getSimpleName()))+" \t"+df.format(mean(accByFoldsCP[c]))+" (stdev "+ df.format(Math.sqrt(var(accByFoldsCP[c],mean(accByFoldsCP[c]))))+")");
+                            logFile.println("Avg. class. ACC "+(excludeUppers(clsTab[c].getClass().getSimpleName()).equals("FURIA")?"FU":excludeUppers(clsTab[c].getClass().getSimpleName()))+" \t"+df.format(mean(accByFoldsCP[c]))+" (stdev "+ df.format(Math.sqrt(var(accByFoldsCP[c],mean(accByFoldsCP[c]))))+")");
+                    }
+                }
+                else{
+                    System.out.println("-----MAE and RMSE-----");
+                        logFile.println("-----MAE and RMSE-----"); 
+                    for (int i=0;i<clsTab.length;i++){      
+                        System.out.println("Avg. MAE "+excludeUppers(clsTab[i].getClass().getSimpleName())+" \t"+df.format(mean(maeByFoldsCP[i]))+" (stdev "+ df.format(Math.sqrt(var(maeByFoldsCP[i],mean(maeByFoldsCP[i]))))+")"+" \t"+
+                                           "Avg. RMSE "+excludeUppers(clsTab[i].getClass().getSimpleName())+" \t"+df.format(mean(rmseByFoldsCP[i]))+" (stdev "+ df.format(Math.sqrt(var(rmseByFoldsCP[i],mean(rmseByFoldsCP[i]))))+")");
+                            logFile.println("Avg. MAE "+excludeUppers(clsTab[i].getClass().getSimpleName())+" \t"+df.format(mean(maeByFoldsCP[i]))+" (stdev "+ df.format(Math.sqrt(var(maeByFoldsCP[i],mean(maeByFoldsCP[i]))))+")"+" \t"+
+                                            "Avg. RMSE "+excludeUppers(clsTab[i].getClass().getSimpleName())+" \t"+df.format(mean(rmseByFoldsCP[i]))+" (stdev "+ df.format(Math.sqrt(var(rmseByFoldsCP[i],mean(rmseByFoldsCP[i]))))+")");
+                    } 
                 }
                 System.out.println("-----Learning and testing time-----");
                     logFile.println("-----Learning and testing time-----");  
@@ -2053,42 +2495,44 @@ public class FeatConstr {
                 }
                 System.out.println("-----Feature construction time-----");
                     logFile.println("-----Feature construction time-----");  
-                System.out.println("Avg. FC time (all feat): "+df.format(mean(cartesianFCTime))+" [ms] stdev "+ df.format(Math.sqrt(var(cartesianFCTime,mean(cartesianFCTime)))));
-                    logFile.println("Avg. FC time (all feat): "+df.format(mean(cartesianFCTime))+" [ms] stdev "+ df.format(Math.sqrt(var(cartesianFCTime,mean(cartesianFCTime)))));   
+                System.out.println("Avg. FC time (only Cart feat): "+df.format(mean(cartesianFCTime))+" [ms] stdev "+ df.format(Math.sqrt(var(cartesianFCTime,mean(cartesianFCTime)))));
+                    logFile.println("Avg. FC time (only Cart feat): "+df.format(mean(cartesianFCTime))+" [ms] stdev "+ df.format(Math.sqrt(var(cartesianFCTime,mean(cartesianFCTime)))));   
 
-                if(!jakulin){      
-                    System.out.println("*********************************************************************************");
-                        logFile.println("*********************************************************************************");        
-                    System.out.println("Only Furia and THR feat");
-                        logFile.println("Only Furia and THR feat");
-                    System.out.println("*********************************************************************************");
-                        logFile.println("*********************************************************************************");   
-                    System.out.println("Number of FURIA feat: "+ df.format(mean(numFeatByFoldsFuriaThr[1]))+" (stdev "+ df.format(Math.sqrt(var(numFeatByFoldsFuriaThr[1],mean(numFeatByFoldsFuriaThr[1]))))+")"+" number of thr. feat: "+ df.format(mean(numFeatByFoldsFuriaThr[0]))+" (stdev "+ df.format(Math.sqrt(var(numFeatByFoldsFuriaThr[0],mean(numFeatByFoldsFuriaThr[0]))))+")");
-                        logFile.println("Number of FURIA feat: "+ df.format(mean(numFeatByFoldsFuriaThr[1]))+" (stdev "+ df.format(Math.sqrt(var(numFeatByFoldsFuriaThr[1],mean(numFeatByFoldsFuriaThr[1]))))+")"+" number of thr. feat: "+ df.format(mean(numFeatByFoldsFuriaThr[0]))+" (stdev "+ df.format(Math.sqrt(var(numFeatByFoldsFuriaThr[0],mean(numFeatByFoldsFuriaThr[0]))))+")");
-                    System.out.println("Avg. tree size (nodes+leaves): "+df.format(mean(numTreeByFoldsFuriaThr[0]))+" (stdev "+ df.format(Math.sqrt(var(numTreeByFoldsFuriaThr[0],mean(numTreeByFoldsFuriaThr[0]))))+")"+" avg. number of leaves: "+ df.format(mean(numTreeByFoldsFuriaThr[1]))+" (stdev "+ df.format(Math.sqrt(var(numTreeByFoldsFuriaThr[1],mean(numTreeByFoldsFuriaThr[1]))))+")"+" avg. sum of constructs: "+ df.format(mean(numTreeByFoldsFuriaThr[2]))+" (stdev "+ df.format(Math.sqrt(var(numTreeByFoldsFuriaThr[2],mean(numTreeByFoldsFuriaThr[2]))))+") avg. sum of constructs / num of nodes: "+df.format(mean(numTreeByFoldsFuriaThr[3]))+" (stdev "+ df.format(Math.sqrt(var(numTreeByFoldsFuriaThr[3],mean(numTreeByFoldsFuriaThr[3]))))+")");
-                        logFile.println("Avg. tree size (nodes+leaves): "+df.format(mean(numTreeByFoldsFuriaThr[0]))+" (stdev "+ df.format(Math.sqrt(var(numTreeByFoldsFuriaThr[0],mean(numTreeByFoldsFuriaThr[0]))))+")"+" avg. number of leaves: "+ df.format(mean(numTreeByFoldsFuriaThr[1]))+" (stdev "+ df.format(Math.sqrt(var(numTreeByFoldsFuriaThr[1],mean(numTreeByFoldsFuriaThr[1]))))+")"+" avg. sum of constructs: "+ df.format(mean(numTreeByFoldsFuriaThr[2]))+" (stdev "+ df.format(Math.sqrt(var(numTreeByFoldsFuriaThr[2],mean(numTreeByFoldsFuriaThr[2]))))+") avg. sum of constructs / num of nodes: "+df.format(mean(numTreeByFoldsFuriaThr[3]))+" (stdev "+ df.format(Math.sqrt(var(numTreeByFoldsFuriaThr[3],mean(numTreeByFoldsFuriaThr[3]))))+")");
-                    System.out.println("Avg. num of FURIA feat. in tree: "+df.format(mean(numOfFuriaThrInTreeByFoldsF[0]))+" (stdev "+ df.format(Math.sqrt(var(numOfFuriaThrInTreeByFoldsF[0],mean(numOfFuriaThrInTreeByFoldsF[0]))))+")"+" avg. sum of terms in constructs (Furia feat) in tree: "+ df.format(mean(numOfFuriaThrInTreeByFoldsF[1]))+" (stdev "+ df.format(Math.sqrt(var(numOfFuriaThrInTreeByFoldsF[1],mean(numOfFuriaThrInTreeByFoldsF[1]))))+")"+" avg. num of THR feat. in tree: "+ df.format(mean(numOfFuriaThrInTreeByFoldsF[2]))+" (stdev "+ df.format(Math.sqrt(var(numOfFuriaThrInTreeByFoldsF[2],mean(numOfFuriaThrInTreeByFoldsF[2]))))+")"+" avg. sum of terms in constructs (THR feat) in tree: "+df.format(mean(numOfFuriaThrInTreeByFoldsF[3]))+" (stdev "+ df.format(Math.sqrt(var(numOfFuriaThrInTreeByFoldsF[3],mean(numOfFuriaThrInTreeByFoldsF[3]))))+")");
-                        logFile.println("Avg. num of FURIA feat. in tree: "+df.format(mean(numOfFuriaThrInTreeByFoldsF[0]))+" (stdev "+ df.format(Math.sqrt(var(numOfFuriaThrInTreeByFoldsF[0],mean(numOfFuriaThrInTreeByFoldsF[0]))))+")"+" avg. sum of terms in constructs (Furia feat) in tree: "+ df.format(mean(numOfFuriaThrInTreeByFoldsF[1]))+" (stdev "+ df.format(Math.sqrt(var(numOfFuriaThrInTreeByFoldsF[1],mean(numOfFuriaThrInTreeByFoldsF[1]))))+")"+" avg. num of THR feat. in tree: "+ df.format(mean(numOfFuriaThrInTreeByFoldsF[2]))+" (stdev "+ df.format(Math.sqrt(var(numOfFuriaThrInTreeByFoldsF[2],mean(numOfFuriaThrInTreeByFoldsF[2]))))+")"+" avg. sum of terms in constructs (THR feat) in tree: "+df.format(mean(numOfFuriaThrInTreeByFoldsF[3]))+" (stdev "+ df.format(Math.sqrt(var(numOfFuriaThrInTreeByFoldsF[3],mean(numOfFuriaThrInTreeByFoldsF[3]))))+")");
-                    System.out.println("Avg. ruleset size: "+df.format(mean(complexityOfFuria[0]))+" (stdev "+ df.format(Math.sqrt(var(complexityOfFuria[0],mean(complexityOfFuria[0]))))+")"+" avg. number of terms of construct in Furia feat.: "+ df.format(mean(complexityOfFuria[1]))+" (stdev "+ df.format(Math.sqrt(var(complexityOfFuria[1],mean(complexityOfFuria[1]))))+") avg. number of terms in constructs per ruleset: "+df.format(mean(complexityOfFuria[2])) +" (stdev "+df.format(Math.sqrt(var(complexityOfFuria[2],mean(complexityOfFuria[2]))))+")");
-                        logFile.println("Avg. ruleset size: "+df.format(mean(complexityOfFuria[0]))+" (stdev "+ df.format(Math.sqrt(var(complexityOfFuria[0],mean(complexityOfFuria[0]))))+")"+" avg. number of terms of construct in Furia feat.: "+ df.format(mean(complexityOfFuria[1]))+" (stdev "+ df.format(Math.sqrt(var(complexityOfFuria[1],mean(complexityOfFuria[1]))))+") avg. number of terms in constructs per ruleset: "+df.format(mean(complexityOfFuria[2])) +" (stdev "+df.format(Math.sqrt(var(complexityOfFuria[2],mean(complexityOfFuria[2]))))+")");    
+                if(!jakulin){
+                    if(isClassification){
+                        System.out.println("*********************************************************************************");
+                            logFile.println("*********************************************************************************");        
+                        System.out.println("Only Furia and THR feat");
+                            logFile.println("Only Furia and THR feat");
+                        System.out.println("*********************************************************************************");
+                            logFile.println("*********************************************************************************");   
+                        System.out.println("Number of FURIA feat: "+ df.format(mean(numFeatByFoldsFuriaThr[1]))+" (stdev "+ df.format(Math.sqrt(var(numFeatByFoldsFuriaThr[1],mean(numFeatByFoldsFuriaThr[1]))))+")"+" number of thr. feat: "+ df.format(mean(numFeatByFoldsFuriaThr[0]))+" (stdev "+ df.format(Math.sqrt(var(numFeatByFoldsFuriaThr[0],mean(numFeatByFoldsFuriaThr[0]))))+")");
+                            logFile.println("Number of FURIA feat: "+ df.format(mean(numFeatByFoldsFuriaThr[1]))+" (stdev "+ df.format(Math.sqrt(var(numFeatByFoldsFuriaThr[1],mean(numFeatByFoldsFuriaThr[1]))))+")"+" number of thr. feat: "+ df.format(mean(numFeatByFoldsFuriaThr[0]))+" (stdev "+ df.format(Math.sqrt(var(numFeatByFoldsFuriaThr[0],mean(numFeatByFoldsFuriaThr[0]))))+")");
+                        System.out.println("Avg. tree size (nodes+leaves): "+df.format(mean(numTreeByFoldsFuriaThr[0]))+" (stdev "+ df.format(Math.sqrt(var(numTreeByFoldsFuriaThr[0],mean(numTreeByFoldsFuriaThr[0]))))+")"+" avg. number of leaves: "+ df.format(mean(numTreeByFoldsFuriaThr[1]))+" (stdev "+ df.format(Math.sqrt(var(numTreeByFoldsFuriaThr[1],mean(numTreeByFoldsFuriaThr[1]))))+")"+" avg. sum of constructs: "+ df.format(mean(numTreeByFoldsFuriaThr[2]))+" (stdev "+ df.format(Math.sqrt(var(numTreeByFoldsFuriaThr[2],mean(numTreeByFoldsFuriaThr[2]))))+") avg. sum of constructs / num of nodes: "+df.format(mean(numTreeByFoldsFuriaThr[3]))+" (stdev "+ df.format(Math.sqrt(var(numTreeByFoldsFuriaThr[3],mean(numTreeByFoldsFuriaThr[3]))))+")");
+                            logFile.println("Avg. tree size (nodes+leaves): "+df.format(mean(numTreeByFoldsFuriaThr[0]))+" (stdev "+ df.format(Math.sqrt(var(numTreeByFoldsFuriaThr[0],mean(numTreeByFoldsFuriaThr[0]))))+")"+" avg. number of leaves: "+ df.format(mean(numTreeByFoldsFuriaThr[1]))+" (stdev "+ df.format(Math.sqrt(var(numTreeByFoldsFuriaThr[1],mean(numTreeByFoldsFuriaThr[1]))))+")"+" avg. sum of constructs: "+ df.format(mean(numTreeByFoldsFuriaThr[2]))+" (stdev "+ df.format(Math.sqrt(var(numTreeByFoldsFuriaThr[2],mean(numTreeByFoldsFuriaThr[2]))))+") avg. sum of constructs / num of nodes: "+df.format(mean(numTreeByFoldsFuriaThr[3]))+" (stdev "+ df.format(Math.sqrt(var(numTreeByFoldsFuriaThr[3],mean(numTreeByFoldsFuriaThr[3]))))+")");
+                        System.out.println("Avg. num of FURIA feat. in tree: "+df.format(mean(numOfFuriaThrInTreeByFoldsF[0]))+" (stdev "+ df.format(Math.sqrt(var(numOfFuriaThrInTreeByFoldsF[0],mean(numOfFuriaThrInTreeByFoldsF[0]))))+")"+" avg. sum of terms in constructs (Furia feat) in tree: "+ df.format(mean(numOfFuriaThrInTreeByFoldsF[1]))+" (stdev "+ df.format(Math.sqrt(var(numOfFuriaThrInTreeByFoldsF[1],mean(numOfFuriaThrInTreeByFoldsF[1]))))+")"+" avg. num of THR feat. in tree: "+ df.format(mean(numOfFuriaThrInTreeByFoldsF[2]))+" (stdev "+ df.format(Math.sqrt(var(numOfFuriaThrInTreeByFoldsF[2],mean(numOfFuriaThrInTreeByFoldsF[2]))))+")"+" avg. sum of terms in constructs (THR feat) in tree: "+df.format(mean(numOfFuriaThrInTreeByFoldsF[3]))+" (stdev "+ df.format(Math.sqrt(var(numOfFuriaThrInTreeByFoldsF[3],mean(numOfFuriaThrInTreeByFoldsF[3]))))+")");
+                            logFile.println("Avg. num of FURIA feat. in tree: "+df.format(mean(numOfFuriaThrInTreeByFoldsF[0]))+" (stdev "+ df.format(Math.sqrt(var(numOfFuriaThrInTreeByFoldsF[0],mean(numOfFuriaThrInTreeByFoldsF[0]))))+")"+" avg. sum of terms in constructs (Furia feat) in tree: "+ df.format(mean(numOfFuriaThrInTreeByFoldsF[1]))+" (stdev "+ df.format(Math.sqrt(var(numOfFuriaThrInTreeByFoldsF[1],mean(numOfFuriaThrInTreeByFoldsF[1]))))+")"+" avg. num of THR feat. in tree: "+ df.format(mean(numOfFuriaThrInTreeByFoldsF[2]))+" (stdev "+ df.format(Math.sqrt(var(numOfFuriaThrInTreeByFoldsF[2],mean(numOfFuriaThrInTreeByFoldsF[2]))))+")"+" avg. sum of terms in constructs (THR feat) in tree: "+df.format(mean(numOfFuriaThrInTreeByFoldsF[3]))+" (stdev "+ df.format(Math.sqrt(var(numOfFuriaThrInTreeByFoldsF[3],mean(numOfFuriaThrInTreeByFoldsF[3]))))+")");
+                        System.out.println("Avg. ruleset size: "+df.format(mean(complexityOfFuria[0]))+" (stdev "+ df.format(Math.sqrt(var(complexityOfFuria[0],mean(complexityOfFuria[0]))))+")"+" avg. number of terms of construct in Furia feat.: "+ df.format(mean(complexityOfFuria[1]))+" (stdev "+ df.format(Math.sqrt(var(complexityOfFuria[1],mean(complexityOfFuria[1]))))+") avg. number of terms in constructs per ruleset: "+df.format(mean(complexityOfFuria[2])) +" (stdev "+df.format(Math.sqrt(var(complexityOfFuria[2],mean(complexityOfFuria[2]))))+")");
+                            logFile.println("Avg. ruleset size: "+df.format(mean(complexityOfFuria[0]))+" (stdev "+ df.format(Math.sqrt(var(complexityOfFuria[0],mean(complexityOfFuria[0]))))+")"+" avg. number of terms of construct in Furia feat.: "+ df.format(mean(complexityOfFuria[1]))+" (stdev "+ df.format(Math.sqrt(var(complexityOfFuria[1],mean(complexityOfFuria[1]))))+") avg. number of terms in constructs per ruleset: "+df.format(mean(complexityOfFuria[2])) +" (stdev "+df.format(Math.sqrt(var(complexityOfFuria[2],mean(complexityOfFuria[2]))))+")");    
 
-                    System.out.println("-----ACC-----");
-                        logFile.println("-----ACC-----"); 
-                    for(int c=0;c<clsTab.length;c++){     
-                        System.out.println("Avg. class. ACC "+(excludeUppers(clsTab[c].getClass().getSimpleName()).equals("FURIA")?"FU":excludeUppers(clsTab[c].getClass().getSimpleName()))+" \t"+df.format(mean(accuracyByFoldsFuriaThr[c]))+" (stdev "+ df.format(Math.sqrt(var(accuracyByFoldsFuriaThr[c],mean(accuracyByFoldsFuriaThr[c]))))+")");
-                            logFile.println("Avg. class. ACC "+(excludeUppers(clsTab[c].getClass().getSimpleName()).equals("FURIA")?"FU":excludeUppers(clsTab[c].getClass().getSimpleName()))+" \t"+df.format(mean(accuracyByFoldsFuriaThr[c]))+" (stdev "+ df.format(Math.sqrt(var(accuracyByFoldsFuriaThr[c],mean(accuracyByFoldsFuriaThr[c]))))+")");
-                    }    		    
-                    System.out.println("-----Learning and testing time-----");
-                        logFile.println("-----Learning and testing time-----"); 
-                    for(int c=0;c<clsTab.length;c++){
-                        System.out.println("Avg. learning time from FC(only Furia and THR feat) "+(excludeUppers(clsTab[c].getClass().getSimpleName()).equals("FURIA")?"FU":excludeUppers(clsTab[c].getClass().getSimpleName()))+" "+df.format(mean(learnFuriaThrTime[c]))+" [ms] (stdev "+ df.format(Math.sqrt(var(learnFuriaThrTime[c],mean(learnFuriaThrTime[c]))))+")");
-                            logFile.println("Avg. learning time from FC(only Furia and THR feat) "+(excludeUppers(clsTab[c].getClass().getSimpleName()).equals("FURIA")?"FU":excludeUppers(clsTab[c].getClass().getSimpleName()))+" "+df.format(mean(learnFuriaThrTime[c]))+" [ms] (stdev "+ df.format(Math.sqrt(var(learnFuriaThrTime[c],mean(learnFuriaThrTime[c]))))+")");
+                        System.out.println("-----ACC-----");
+                            logFile.println("-----ACC-----"); 
+                        for(int c=0;c<clsTab.length;c++){     
+                            System.out.println("Avg. class. ACC "+(excludeUppers(clsTab[c].getClass().getSimpleName()).equals("FURIA")?"FU":excludeUppers(clsTab[c].getClass().getSimpleName()))+" \t"+df.format(mean(accuracyByFoldsFuriaThr[c]))+" (stdev "+ df.format(Math.sqrt(var(accuracyByFoldsFuriaThr[c],mean(accuracyByFoldsFuriaThr[c]))))+")");
+                                logFile.println("Avg. class. ACC "+(excludeUppers(clsTab[c].getClass().getSimpleName()).equals("FURIA")?"FU":excludeUppers(clsTab[c].getClass().getSimpleName()))+" \t"+df.format(mean(accuracyByFoldsFuriaThr[c]))+" (stdev "+ df.format(Math.sqrt(var(accuracyByFoldsFuriaThr[c],mean(accuracyByFoldsFuriaThr[c]))))+")");
+                        }    		    
+                        System.out.println("-----Learning and testing time-----");
+                            logFile.println("-----Learning and testing time-----"); 
+                        for(int c=0;c<clsTab.length;c++){
+                            System.out.println("Avg. learning time from FC(only Furia and THR feat) "+(excludeUppers(clsTab[c].getClass().getSimpleName()).equals("FURIA")?"FU":excludeUppers(clsTab[c].getClass().getSimpleName()))+" "+df.format(mean(learnFuriaThrTime[c]))+" [ms] (stdev "+ df.format(Math.sqrt(var(learnFuriaThrTime[c],mean(learnFuriaThrTime[c]))))+")");
+                                logFile.println("Avg. learning time from FC(only Furia and THR feat) "+(excludeUppers(clsTab[c].getClass().getSimpleName()).equals("FURIA")?"FU":excludeUppers(clsTab[c].getClass().getSimpleName()))+" "+df.format(mean(learnFuriaThrTime[c]))+" [ms] (stdev "+ df.format(Math.sqrt(var(learnFuriaThrTime[c],mean(learnFuriaThrTime[c]))))+")");
+                        }
+                        System.out.println("-----Feature construction time-----");
+                            logFile.println("-----Feature construction time-----");  
+                        System.out.println("Avg. FC time (only Furia and THR feat): "+df.format(mean(furiaThrTime))+" [ms] stdev "+ df.format(Math.sqrt(var(furiaThrTime,mean(furiaThrTime)))));
+                            logFile.println("Avg. FC time (only Furia and THR feat): "+df.format(mean(furiaThrTime))+" [ms] stdev "+ df.format(Math.sqrt(var(furiaThrTime,mean(furiaThrTime)))));
                     }
-                    System.out.println("-----Feature construction time-----");
-                        logFile.println("-----Feature construction time-----");  
-                    System.out.println("Avg. FC time (only Furia and THR feat): "+df.format(mean(furiaThrTime))+" [ms] stdev "+ df.format(Math.sqrt(var(furiaThrTime,mean(furiaThrTime)))));
-                        logFile.println("Avg. FC time (only Furia and THR feat): "+df.format(mean(furiaThrTime))+" [ms] stdev "+ df.format(Math.sqrt(var(furiaThrTime,mean(furiaThrTime)))));
-
+                                       
                     System.out.println("*********************************************************************************");
                         logFile.println("*********************************************************************************");       
                     System.out.println("All features dataset");
@@ -2098,8 +2542,8 @@ public class FeatConstr {
                     System.out.println("Avg. number of groups for feature construction: "+df.format(mean(numOfGroupsOfFeatConstr))+" (stdev "+ df.format(Math.sqrt(var(numOfGroupsOfFeatConstr,mean(numOfGroupsOfFeatConstr))))+")");
                         logFile.println("Avg. number of groups for feature construction: "+df.format(mean(numOfGroupsOfFeatConstr))+" (stdev "+ df.format(Math.sqrt(var(numOfGroupsOfFeatConstr,mean(numOfGroupsOfFeatConstr))))+")");
 
-                    System.out.println("Avg. size of groups (num. of candidate attr.) per folds (unm of attr. in all groups): "+df.format(mean(avgTermsPerFold))+" (stdev "+ df.format(Math.sqrt(var(avgTermsPerFold,mean(avgTermsPerFold))))+")");
-                        logFile.println("Avg. size of groups (num. of candidate attr.) per folds (unm of attr. in all groups):: "+df.format(mean(avgTermsPerFold))+" (stdev "+ df.format(Math.sqrt(var(avgTermsPerFold,mean(avgTermsPerFold))))+")");      
+                    System.out.println("Avg. size of groups (num. of candidate attr.) per folds (num of attr. in all groups): "+df.format(mean(avgTermsPerFold))+" (stdev "+ df.format(Math.sqrt(var(avgTermsPerFold,mean(avgTermsPerFold))))+")");
+                        logFile.println("Avg. size of groups (num. of candidate attr.) per folds (num of attr. in all groups):: "+df.format(mean(avgTermsPerFold))+" (stdev "+ df.format(Math.sqrt(var(avgTermsPerFold,mean(avgTermsPerFold))))+")");      
                     System.out.println("Avg. size of groups (num. of candidate attr.) per groups per folds (avg. of avg.): "+df.format(mean(avgTermsPerGroup))+" (stdev "+ df.format(Math.sqrt(var(avgTermsPerGroup,mean(avgTermsPerGroup))))+")");
                         logFile.println("Avg. size of groups (num. of candidate attr.) per groups per folds (avg. of avg.): "+df.format(mean(avgTermsPerGroup))+" (stdev "+ df.format(Math.sqrt(var(avgTermsPerGroup,mean(avgTermsPerGroup))))+")");    
                     System.out.println("Max avg. group (length) of constructs (num of attr.): "+df.format(mean(maxGroupOfConstructs))+" (stdev "+ df.format(Math.sqrt(var(maxGroupOfConstructs,mean(maxGroupOfConstructs))))+")");
@@ -2107,24 +2551,35 @@ public class FeatConstr {
 
                     System.out.println("Number of logical feat: "+df.format(mean(numberOfFeatByFolds[0]))+" (stdev "+ df.format(Math.sqrt(var(numberOfFeatByFolds[0],mean(numberOfFeatByFolds[0]))))+")"+(numerFeat ?(" number of numerical feat: "+df.format(mean(numberOfFeatByFolds[5]))+" (stdev "+ df.format(Math.sqrt(var(numberOfFeatByFolds[5],mean(numberOfFeatByFolds[5]))))+")"):"")+" number of relational feat: "+df.format(mean(numberOfFeatByFolds[4]))+" (stdev "+ df.format(Math.sqrt(var(numberOfFeatByFolds[4],mean(numberOfFeatByFolds[4]))))+")"+" number of \"Cartesian\" feat: "+df.format(mean(numberOfFeatByFolds[3]))+" (stdev "+ df.format(Math.sqrt(var(numberOfFeatByFolds[3],mean(numberOfFeatByFolds[3]))))+")"+" number of FURIA feat: "+ df.format(mean(numberOfFeatByFolds[2]))+" (stdev "+ df.format(Math.sqrt(var(numberOfFeatByFolds[2],mean(numberOfFeatByFolds[2]))))+")"+" number of thr. feat: "+ df.format(mean(numberOfFeatByFolds[1]))+" (stdev "+ df.format(Math.sqrt(var(numberOfFeatByFolds[1],mean(numberOfFeatByFolds[1]))))+")");            
                         logFile.println("Number of logical feat: "+df.format(mean(numberOfFeatByFolds[0]))+" (stdev "+ df.format(Math.sqrt(var(numberOfFeatByFolds[0],mean(numberOfFeatByFolds[0]))))+")"+(numerFeat ?(" number of numerical feat: "+df.format(mean(numberOfFeatByFolds[5]))+" (stdev "+ df.format(Math.sqrt(var(numberOfFeatByFolds[5],mean(numberOfFeatByFolds[5]))))+")"):"")+" number of relational feat: "+df.format(mean(numberOfFeatByFolds[4]))+" (stdev "+ df.format(Math.sqrt(var(numberOfFeatByFolds[4],mean(numberOfFeatByFolds[4]))))+")"+" number of \"Cartesian\" feat: "+df.format(mean(numberOfFeatByFolds[3]))+" (stdev "+ df.format(Math.sqrt(var(numberOfFeatByFolds[3],mean(numberOfFeatByFolds[3]))))+")"+" number of FURIA feat: "+ df.format(mean(numberOfFeatByFolds[2]))+" (stdev "+ df.format(Math.sqrt(var(numberOfFeatByFolds[2],mean(numberOfFeatByFolds[2]))))+")"+" number of thr. feat: "+ df.format(mean(numberOfFeatByFolds[1]))+" (stdev "+ df.format(Math.sqrt(var(numberOfFeatByFolds[1],mean(numberOfFeatByFolds[1]))))+")");
+                    if(isClassification){
+                        System.out.println("Avg. tree size (nodes+leaves): "+df.format(mean(numberOfTreeByFolds[0]))+" (stdev "+ df.format(Math.sqrt(var(numberOfTreeByFolds[0],mean(numberOfTreeByFolds[0]))))+")"+" avg. number of leaves: "+ df.format(mean(numberOfTreeByFolds[1]))+" (stdev "+ df.format(Math.sqrt(var(numberOfTreeByFolds[1],mean(numberOfTreeByFolds[1]))))+")"+" avg. sum of constructs: "+ df.format(mean(numberOfTreeByFolds[2]))+" (stdev "+ df.format(Math.sqrt(var(numberOfTreeByFolds[2],mean(numberOfTreeByFolds[2]))))+")"+ " avg. sum of constructs / num of nodes: "+df.format(mean(numberOfTreeByFolds[3]))+" (stdev "+ df.format(Math.sqrt(var(numberOfTreeByFolds[3],mean(numberOfTreeByFolds[3]))))+")");
+                            logFile.println("Avg. tree size (nodes+leaves): "+df.format(mean(numberOfTreeByFolds[0]))+" (stdev "+ df.format(Math.sqrt(var(numberOfTreeByFolds[0],mean(numberOfTreeByFolds[0]))))+")"+" avg. number of leaves: "+ df.format(mean(numberOfTreeByFolds[1]))+" (stdev "+ df.format(Math.sqrt(var(numberOfTreeByFolds[1],mean(numberOfTreeByFolds[1]))))+")"+" avg. sum of constructs: "+ df.format(mean(numberOfTreeByFolds[2]))+" (stdev "+ df.format(Math.sqrt(var(numberOfTreeByFolds[2],mean(numberOfTreeByFolds[2]))))+")"+ " avg. sum of constructs / num of nodes: "+df.format(mean(numberOfTreeByFolds[3]))+" (stdev "+ df.format(Math.sqrt(var(numberOfTreeByFolds[3],mean(numberOfTreeByFolds[3]))))+")");
 
-                    System.out.println("Avg. tree size (nodes+leaves): "+df.format(mean(numberOfTreeByFolds[0]))+" (stdev "+ df.format(Math.sqrt(var(numberOfTreeByFolds[0],mean(numberOfTreeByFolds[0]))))+")"+" avg. number of leaves: "+ df.format(mean(numberOfTreeByFolds[1]))+" (stdev "+ df.format(Math.sqrt(var(numberOfTreeByFolds[1],mean(numberOfTreeByFolds[1]))))+")"+" avg. sum of constructs: "+ df.format(mean(numberOfTreeByFolds[2]))+" (stdev "+ df.format(Math.sqrt(var(numberOfTreeByFolds[2],mean(numberOfTreeByFolds[2]))))+")"+ " avg. sum of constructs / num of nodes: "+df.format(mean(numberOfTreeByFolds[3]))+" (stdev "+ df.format(Math.sqrt(var(numberOfTreeByFolds[3],mean(numberOfTreeByFolds[3]))))+")");
-                        logFile.println("Avg. tree size (nodes+leaves): "+df.format(mean(numberOfTreeByFolds[0]))+" (stdev "+ df.format(Math.sqrt(var(numberOfTreeByFolds[0],mean(numberOfTreeByFolds[0]))))+")"+" avg. number of leaves: "+ df.format(mean(numberOfTreeByFolds[1]))+" (stdev "+ df.format(Math.sqrt(var(numberOfTreeByFolds[1],mean(numberOfTreeByFolds[1]))))+")"+" avg. sum of constructs: "+ df.format(mean(numberOfTreeByFolds[2]))+" (stdev "+ df.format(Math.sqrt(var(numberOfTreeByFolds[2],mean(numberOfTreeByFolds[2]))))+")"+ " avg. sum of constructs / num of nodes: "+df.format(mean(numberOfTreeByFolds[3]))+" (stdev "+ df.format(Math.sqrt(var(numberOfTreeByFolds[3],mean(numberOfTreeByFolds[3]))))+")");
+                        System.out.println("Avg. num of logical feat in tree: "+df.format(mean(numOfLogInTreeAll))+" (stdev "+ df.format(Math.sqrt(var(numOfLogInTreeAll,mean(numOfLogInTreeAll))))+")"+" avg. sum of (only logical) constructs: "+df.format(mean(sumOfConstrLFAll))+" (stdev "+ df.format(Math.sqrt(var(sumOfConstrLFAll,mean(sumOfConstrLFAll))))+")"+(numerFeat ? " avg. num of numerical feat in tree: "+df.format(mean(numOfNumInTreeAll))+" (stdev "+ df.format(Math.sqrt(var(numOfNumInTreeAll,mean(numOfNumInTreeAll))))+")"+" avg. sum of (only numerical) constructs: "+df.format(mean(sumOfConstrNumAll))+" (stdev "+ df.format(Math.sqrt(var(sumOfConstrNumAll,mean(sumOfConstrNumAll))))+")" :"")+" avg. num of relational feat in tree: "+df.format(mean(numOfRelInTreeAll))+" (stdev "+ df.format(Math.sqrt(var(numOfRelInTreeAll,mean(numOfRelInTreeAll))))+")"+" avg. sum of (only relational) constructs: "+df.format(mean(sumOfConstrRelAll))+" (stdev "+ df.format(Math.sqrt(var(sumOfConstrRelAll,mean(sumOfConstrRelAll))))+")"+" avg. num of \"Cartesian\" feat in tree: "+df.format(mean(numOfCartFAll))+" (stdev "+ df.format(Math.sqrt(var(numOfCartFAll,mean(numOfCartFAll))))+")"+" avg. sum of (Cartesian) constructs (in tree): "+df.format(mean(sumOfConstrCartAll))+" (stdev "+ df.format(Math.sqrt(var(sumOfConstrCartAll,mean(sumOfConstrCartAll))))+")"+" avg. num of FURIA feat. in tree: "+df.format(mean(numOfFuriaThrInTreeByFolds[0]))+" (stdev "+ df.format(Math.sqrt(var(numOfFuriaThrInTreeByFolds[0],mean(numOfFuriaThrInTreeByFolds[0]))))+")"+" avg. sum of terms in constructs (Furia feat) in tree: "+ df.format(mean(numOfFuriaThrInTreeByFolds[1]))+" (stdev "+ df.format(Math.sqrt(var(numOfFuriaThrInTreeByFolds[1],mean(numOfFuriaThrInTreeByFolds[1]))))+")"+" avg. num of THR feat. in tree: "+ df.format(mean(numOfFuriaThrInTreeByFolds[2]))+" (stdev "+ df.format(Math.sqrt(var(numOfFuriaThrInTreeByFolds[2],mean(numOfFuriaThrInTreeByFolds[2]))))+")"+" avg. sum of terms in constructs (THR feat) in tree: "+df.format(mean(numOfFuriaThrInTreeByFolds[3]))+" (stdev "+ df.format(Math.sqrt(var(numOfFuriaThrInTreeByFolds[3],mean(numOfFuriaThrInTreeByFolds[3]))))+")");        
+                            logFile.println("Avg. num of logical feat in tree: "+df.format(mean(numOfLogInTreeAll))+" (stdev "+ df.format(Math.sqrt(var(numOfLogInTreeAll,mean(numOfLogInTreeAll))))+")"+" avg. sum of (only logical) constructs: "+df.format(mean(sumOfConstrLFAll))+" (stdev "+ df.format(Math.sqrt(var(sumOfConstrLFAll,mean(sumOfConstrLFAll))))+")"+(numerFeat ? " avg. num of numerical feat in tree: "+df.format(mean(numOfNumInTreeAll))+" (stdev "+ df.format(Math.sqrt(var(numOfNumInTreeAll,mean(numOfNumInTreeAll))))+")"+" avg. sum of (only numerical) constructs: "+df.format(mean(sumOfConstrNumAll))+" (stdev "+ df.format(Math.sqrt(var(sumOfConstrNumAll,mean(sumOfConstrNumAll))))+")" :"")+" avg. num of relational feat in tree: "+df.format(mean(numOfRelInTreeAll))+" (stdev "+ df.format(Math.sqrt(var(numOfRelInTreeAll,mean(numOfRelInTreeAll))))+")"+" avg. sum of (only relational) constructs: "+df.format(mean(sumOfConstrRelAll))+" (stdev "+ df.format(Math.sqrt(var(sumOfConstrRelAll,mean(sumOfConstrRelAll))))+")"+" avg. num of \"Cartesian\" feat in tree: "+df.format(mean(numOfCartFAll))+" (stdev "+ df.format(Math.sqrt(var(numOfCartFAll,mean(numOfCartFAll))))+")"+" avg. sum of (Cartesian) constructs (in tree): "+df.format(mean(sumOfConstrCartAll))+" (stdev "+ df.format(Math.sqrt(var(sumOfConstrCartAll,mean(sumOfConstrCartAll))))+")"+" avg. num of FURIA feat. in tree: "+df.format(mean(numOfFuriaThrInTreeByFolds[0]))+" (stdev "+ df.format(Math.sqrt(var(numOfFuriaThrInTreeByFolds[0],mean(numOfFuriaThrInTreeByFolds[0]))))+")"+" avg. sum of terms in constructs (Furia feat) in tree: "+ df.format(mean(numOfFuriaThrInTreeByFolds[1]))+" (stdev "+ df.format(Math.sqrt(var(numOfFuriaThrInTreeByFolds[1],mean(numOfFuriaThrInTreeByFolds[1]))))+")"+" avg. num of THR feat. in tree: "+ df.format(mean(numOfFuriaThrInTreeByFolds[2]))+" (stdev "+ df.format(Math.sqrt(var(numOfFuriaThrInTreeByFolds[2],mean(numOfFuriaThrInTreeByFolds[2]))))+")"+" avg. sum of terms in constructs (THR feat) in tree: "+df.format(mean(numOfFuriaThrInTreeByFolds[3]))+" (stdev "+ df.format(Math.sqrt(var(numOfFuriaThrInTreeByFolds[3],mean(numOfFuriaThrInTreeByFolds[3]))))+")");
 
-                    System.out.println("Avg. num of logical feat in tree: "+df.format(mean(numOfLogInTreeAll))+" (stdev "+ df.format(Math.sqrt(var(numOfLogInTreeAll,mean(numOfLogInTreeAll))))+")"+" avg. sum of (only logical) constructs: "+df.format(mean(sumOfConstrLFAll))+" (stdev "+ df.format(Math.sqrt(var(sumOfConstrLFAll,mean(sumOfConstrLFAll))))+")"+(numerFeat ? " avg. num of numerical feat in tree: "+df.format(mean(numOfNumInTreeAll))+" (stdev "+ df.format(Math.sqrt(var(numOfNumInTreeAll,mean(numOfNumInTreeAll))))+")"+" avg. sum of (only numerical) constructs: "+df.format(mean(sumOfConstrNumAll))+" (stdev "+ df.format(Math.sqrt(var(sumOfConstrNumAll,mean(sumOfConstrNumAll))))+")" :"")+" avg. num of relational feat in tree: "+df.format(mean(numOfRelInTreeAll))+" (stdev "+ df.format(Math.sqrt(var(numOfRelInTreeAll,mean(numOfRelInTreeAll))))+")"+" avg. sum of (only relational) constructs: "+df.format(mean(sumOfConstrRelAll))+" (stdev "+ df.format(Math.sqrt(var(sumOfConstrRelAll,mean(sumOfConstrRelAll))))+")"+" avg. num of \"Cartesian\" feat in tree: "+df.format(mean(numOfCartFAll))+" (stdev "+ df.format(Math.sqrt(var(numOfCartFAll,mean(numOfCartFAll))))+")"+" avg. sum of (Cartesian) constructs (in tree): "+df.format(mean(sumOfConstrCartAll))+" (stdev "+ df.format(Math.sqrt(var(sumOfConstrCartAll,mean(sumOfConstrCartAll))))+")"+" avg. num of FURIA feat. in tree: "+df.format(mean(numOfFuriaThrInTreeByFolds[0]))+" (stdev "+ df.format(Math.sqrt(var(numOfFuriaThrInTreeByFolds[0],mean(numOfFuriaThrInTreeByFolds[0]))))+")"+" avg. sum of terms in constructs (Furia feat) in tree: "+ df.format(mean(numOfFuriaThrInTreeByFolds[1]))+" (stdev "+ df.format(Math.sqrt(var(numOfFuriaThrInTreeByFolds[1],mean(numOfFuriaThrInTreeByFolds[1]))))+")"+" avg. num of THR feat. in tree: "+ df.format(mean(numOfFuriaThrInTreeByFolds[2]))+" (stdev "+ df.format(Math.sqrt(var(numOfFuriaThrInTreeByFolds[2],mean(numOfFuriaThrInTreeByFolds[2]))))+")"+" avg. sum of terms in constructs (THR feat) in tree: "+df.format(mean(numOfFuriaThrInTreeByFolds[3]))+" (stdev "+ df.format(Math.sqrt(var(numOfFuriaThrInTreeByFolds[3],mean(numOfFuriaThrInTreeByFolds[3]))))+")");        
-                        logFile.println("Avg. num of logical feat in tree: "+df.format(mean(numOfLogInTreeAll))+" (stdev "+ df.format(Math.sqrt(var(numOfLogInTreeAll,mean(numOfLogInTreeAll))))+")"+" avg. sum of (only logical) constructs: "+df.format(mean(sumOfConstrLFAll))+" (stdev "+ df.format(Math.sqrt(var(sumOfConstrLFAll,mean(sumOfConstrLFAll))))+")"+(numerFeat ? " avg. num of numerical feat in tree: "+df.format(mean(numOfNumInTreeAll))+" (stdev "+ df.format(Math.sqrt(var(numOfNumInTreeAll,mean(numOfNumInTreeAll))))+")"+" avg. sum of (only numerical) constructs: "+df.format(mean(sumOfConstrNumAll))+" (stdev "+ df.format(Math.sqrt(var(sumOfConstrNumAll,mean(sumOfConstrNumAll))))+")" :"")+" avg. num of relational feat in tree: "+df.format(mean(numOfRelInTreeAll))+" (stdev "+ df.format(Math.sqrt(var(numOfRelInTreeAll,mean(numOfRelInTreeAll))))+")"+" avg. sum of (only relational) constructs: "+df.format(mean(sumOfConstrRelAll))+" (stdev "+ df.format(Math.sqrt(var(sumOfConstrRelAll,mean(sumOfConstrRelAll))))+")"+" avg. num of \"Cartesian\" feat in tree: "+df.format(mean(numOfCartFAll))+" (stdev "+ df.format(Math.sqrt(var(numOfCartFAll,mean(numOfCartFAll))))+")"+" avg. sum of (Cartesian) constructs (in tree): "+df.format(mean(sumOfConstrCartAll))+" (stdev "+ df.format(Math.sqrt(var(sumOfConstrCartAll,mean(sumOfConstrCartAll))))+")"+" avg. num of FURIA feat. in tree: "+df.format(mean(numOfFuriaThrInTreeByFolds[0]))+" (stdev "+ df.format(Math.sqrt(var(numOfFuriaThrInTreeByFolds[0],mean(numOfFuriaThrInTreeByFolds[0]))))+")"+" avg. sum of terms in constructs (Furia feat) in tree: "+ df.format(mean(numOfFuriaThrInTreeByFolds[1]))+" (stdev "+ df.format(Math.sqrt(var(numOfFuriaThrInTreeByFolds[1],mean(numOfFuriaThrInTreeByFolds[1]))))+")"+" avg. num of THR feat. in tree: "+ df.format(mean(numOfFuriaThrInTreeByFolds[2]))+" (stdev "+ df.format(Math.sqrt(var(numOfFuriaThrInTreeByFolds[2],mean(numOfFuriaThrInTreeByFolds[2]))))+")"+" avg. sum of terms in constructs (THR feat) in tree: "+df.format(mean(numOfFuriaThrInTreeByFolds[3]))+" (stdev "+ df.format(Math.sqrt(var(numOfFuriaThrInTreeByFolds[3],mean(numOfFuriaThrInTreeByFolds[3]))))+")");
+                        System.out.println("Avg. ruleset size: "+df.format(mean(numOfRulesByFolds))+" (stdev "+ df.format(Math.sqrt(var(numOfRulesByFolds,mean(numOfRulesByFolds))))+")"+" avg. number of terms of construct in Furia feat.: "+ df.format(mean(numOfTermsByFoldsF))+" (stdev "+ df.format(Math.sqrt(var(numOfTermsByFoldsF,mean(numOfTermsByFoldsF))))+") avg. number of terms in constructs per ruleset: "+df.format(mean(numOfRatioByFoldsF)) +" (stdev "+df.format(Math.sqrt(var(numOfRatioByFoldsF,mean(numOfRatioByFoldsF))))+")"); 
+                            logFile.println("Avg. ruleset size: "+df.format(mean(numOfRulesByFolds))+" (stdev "+ df.format(Math.sqrt(var(numOfRulesByFolds,mean(numOfRulesByFolds))))+")"+" avg. number of terms of construct in Furia feat.: "+ df.format(mean(numOfTermsByFoldsF))+" (stdev "+ df.format(Math.sqrt(var(numOfTermsByFoldsF,mean(numOfTermsByFoldsF))))+") avg. number of terms in constructs per ruleset: "+df.format(mean(numOfRatioByFoldsF)) +" (stdev "+df.format(Math.sqrt(var(numOfRatioByFoldsF,mean(numOfRatioByFoldsF))))+")");  
 
-                    System.out.println("Avg. ruleset size: "+df.format(mean(numOfRulesByFolds))+" (stdev "+ df.format(Math.sqrt(var(numOfRulesByFolds,mean(numOfRulesByFolds))))+")"+" avg. number of terms of construct in Furia feat.: "+ df.format(mean(numOfTermsByFoldsF))+" (stdev "+ df.format(Math.sqrt(var(numOfTermsByFoldsF,mean(numOfTermsByFoldsF))))+") avg. number of terms in constructs per ruleset: "+df.format(mean(numOfRatioByFoldsF)) +" (stdev "+df.format(Math.sqrt(var(numOfRatioByFoldsF,mean(numOfRatioByFoldsF))))+")"); 
-                        logFile.println("Avg. ruleset size: "+df.format(mean(numOfRulesByFolds))+" (stdev "+ df.format(Math.sqrt(var(numOfRulesByFolds,mean(numOfRulesByFolds))))+")"+" avg. number of terms of construct in Furia feat.: "+ df.format(mean(numOfTermsByFoldsF))+" (stdev "+ df.format(Math.sqrt(var(numOfTermsByFoldsF,mean(numOfTermsByFoldsF))))+") avg. number of terms in constructs per ruleset: "+df.format(mean(numOfRatioByFoldsF)) +" (stdev "+df.format(Math.sqrt(var(numOfRatioByFoldsF,mean(numOfRatioByFoldsF))))+")");  
+                        System.out.println("Mean unimp. OR feat.: "+df.format(mean(numberOfUnImpFeatByFolds[0]))+" (stdev "+ df.format(Math.sqrt(var(numberOfUnImpFeatByFolds[0],mean(numberOfUnImpFeatByFolds[0]))))+")"+" mean unimp. EQU feat.: "+ df.format(mean(numberOfUnImpFeatByFolds[1]))+" (stdev "+ df.format(Math.sqrt(var(numberOfUnImpFeatByFolds[1],mean(numberOfUnImpFeatByFolds[1]))))+")"+" mean unimp. XOR feat.: "+ df.format(mean(numberOfUnImpFeatByFolds[2]))+" (stdev "+ df.format(Math.sqrt(var(numberOfUnImpFeatByFolds[2],mean(numberOfUnImpFeatByFolds[2]))))+")"+" mean unimp. IMPL feat.: "+ df.format(mean(numberOfUnImpFeatByFolds[3]))+" (stdev "+ df.format(Math.sqrt(var(numberOfUnImpFeatByFolds[3],mean(numberOfUnImpFeatByFolds[3]))))+")"+" mean unimp. AND feat.: "+ df.format(mean(numberOfUnImpFeatByFolds[4]))+" (stdev "+ df.format(Math.sqrt(var(numberOfUnImpFeatByFolds[4],mean(numberOfUnImpFeatByFolds[4]))))+")"+" mean unimp. LESSTHAN feat.: "+ df.format(mean(numberOfUnImpFeatByFolds[5]))+" (stdev "+ df.format(Math.sqrt(var(numberOfUnImpFeatByFolds[5],mean(numberOfUnImpFeatByFolds[5]))))+")"+" mean unimp. DIFF feat.: "+df.format(mean(numberOfUnImpFeatByFolds[6]))+" (stdev "+ df.format(Math.sqrt(var(numberOfUnImpFeatByFolds[6],mean(numberOfUnImpFeatByFolds[6]))))+")"+" mean unimp. \"Cartesian\" feat.: "+ df.format(mean(numberOfUnImpFeatByFolds[7]))+" (stdev "+ df.format(Math.sqrt(var(numberOfUnImpFeatByFolds[7],mean(numberOfUnImpFeatByFolds[7]))))+")");
+                            logFile.println("Mean unimp. OR feat.: "+df.format(mean(numberOfUnImpFeatByFolds[0]))+" (stdev "+ df.format(Math.sqrt(var(numberOfUnImpFeatByFolds[0],mean(numberOfUnImpFeatByFolds[0]))))+")"+" mean unimp. EQU feat.: "+ df.format(mean(numberOfUnImpFeatByFolds[1]))+" (stdev "+ df.format(Math.sqrt(var(numberOfUnImpFeatByFolds[1],mean(numberOfUnImpFeatByFolds[1]))))+")"+" mean unimp. XOR feat.: "+ df.format(mean(numberOfUnImpFeatByFolds[2]))+" (stdev "+ df.format(Math.sqrt(var(numberOfUnImpFeatByFolds[2],mean(numberOfUnImpFeatByFolds[2]))))+")"+" mean unimp. IMPL feat.: "+ df.format(mean(numberOfUnImpFeatByFolds[3]))+" (stdev "+ df.format(Math.sqrt(var(numberOfUnImpFeatByFolds[3],mean(numberOfUnImpFeatByFolds[3]))))+")"+" mean unimp. AND feat.: "+ df.format(mean(numberOfUnImpFeatByFolds[4]))+" (stdev "+ df.format(Math.sqrt(var(numberOfUnImpFeatByFolds[4],mean(numberOfUnImpFeatByFolds[4]))))+")"+" mean unimp. LESSTHAN feat.: "+ df.format(mean(numberOfUnImpFeatByFolds[5]))+" (stdev "+ df.format(Math.sqrt(var(numberOfUnImpFeatByFolds[5],mean(numberOfUnImpFeatByFolds[5]))))+")"+" mean unimp. DIFF feat.: "+df.format(mean(numberOfUnImpFeatByFolds[6]))+" (stdev "+ df.format(Math.sqrt(var(numberOfUnImpFeatByFolds[6],mean(numberOfUnImpFeatByFolds[6]))))+")"+" mean unimp. \"Cartesian\" feat.: "+ df.format(mean(numberOfUnImpFeatByFolds[7]))+" (stdev "+ df.format(Math.sqrt(var(numberOfUnImpFeatByFolds[7],mean(numberOfUnImpFeatByFolds[7]))))+")");
 
-                    System.out.println("Mean unimp. OR feat.: "+df.format(mean(numberOfUnImpFeatByFolds[0]))+" (stdev "+ df.format(Math.sqrt(var(numberOfUnImpFeatByFolds[0],mean(numberOfUnImpFeatByFolds[0]))))+")"+" mean unimp. EQU feat.: "+ df.format(mean(numberOfUnImpFeatByFolds[1]))+" (stdev "+ df.format(Math.sqrt(var(numberOfUnImpFeatByFolds[1],mean(numberOfUnImpFeatByFolds[1]))))+")"+" mean unimp. XOR feat.: "+ df.format(mean(numberOfUnImpFeatByFolds[2]))+" (stdev "+ df.format(Math.sqrt(var(numberOfUnImpFeatByFolds[2],mean(numberOfUnImpFeatByFolds[2]))))+")"+" mean unimp. IMPL feat.: "+ df.format(mean(numberOfUnImpFeatByFolds[3]))+" (stdev "+ df.format(Math.sqrt(var(numberOfUnImpFeatByFolds[3],mean(numberOfUnImpFeatByFolds[3]))))+")"+" mean unimp. AND feat.: "+ df.format(mean(numberOfUnImpFeatByFolds[4]))+" (stdev "+ df.format(Math.sqrt(var(numberOfUnImpFeatByFolds[4],mean(numberOfUnImpFeatByFolds[4]))))+")"+" mean unimp. LESSTHAN feat.: "+ df.format(mean(numberOfUnImpFeatByFolds[5]))+" (stdev "+ df.format(Math.sqrt(var(numberOfUnImpFeatByFolds[5],mean(numberOfUnImpFeatByFolds[5]))))+")"+" mean unimp. DIFF feat.: "+df.format(mean(numberOfUnImpFeatByFolds[6]))+" (stdev "+ df.format(Math.sqrt(var(numberOfUnImpFeatByFolds[6],mean(numberOfUnImpFeatByFolds[6]))))+")"+" mean unimp. \"Cartesian\" feat.: "+ df.format(mean(numberOfUnImpFeatByFolds[7]))+" (stdev "+ df.format(Math.sqrt(var(numberOfUnImpFeatByFolds[7],mean(numberOfUnImpFeatByFolds[7]))))+")");
-                        logFile.println("Mean unimp. OR feat.: "+df.format(mean(numberOfUnImpFeatByFolds[0]))+" (stdev "+ df.format(Math.sqrt(var(numberOfUnImpFeatByFolds[0],mean(numberOfUnImpFeatByFolds[0]))))+")"+" mean unimp. EQU feat.: "+ df.format(mean(numberOfUnImpFeatByFolds[1]))+" (stdev "+ df.format(Math.sqrt(var(numberOfUnImpFeatByFolds[1],mean(numberOfUnImpFeatByFolds[1]))))+")"+" mean unimp. XOR feat.: "+ df.format(mean(numberOfUnImpFeatByFolds[2]))+" (stdev "+ df.format(Math.sqrt(var(numberOfUnImpFeatByFolds[2],mean(numberOfUnImpFeatByFolds[2]))))+")"+" mean unimp. IMPL feat.: "+ df.format(mean(numberOfUnImpFeatByFolds[3]))+" (stdev "+ df.format(Math.sqrt(var(numberOfUnImpFeatByFolds[3],mean(numberOfUnImpFeatByFolds[3]))))+")"+" mean unimp. AND feat.: "+ df.format(mean(numberOfUnImpFeatByFolds[4]))+" (stdev "+ df.format(Math.sqrt(var(numberOfUnImpFeatByFolds[4],mean(numberOfUnImpFeatByFolds[4]))))+")"+" mean unimp. LESSTHAN feat.: "+ df.format(mean(numberOfUnImpFeatByFolds[5]))+" (stdev "+ df.format(Math.sqrt(var(numberOfUnImpFeatByFolds[5],mean(numberOfUnImpFeatByFolds[5]))))+")"+" mean unimp. DIFF feat.: "+df.format(mean(numberOfUnImpFeatByFolds[6]))+" (stdev "+ df.format(Math.sqrt(var(numberOfUnImpFeatByFolds[6],mean(numberOfUnImpFeatByFolds[6]))))+")"+" mean unimp. \"Cartesian\" feat.: "+ df.format(mean(numberOfUnImpFeatByFolds[7]))+" (stdev "+ df.format(Math.sqrt(var(numberOfUnImpFeatByFolds[7],mean(numberOfUnImpFeatByFolds[7]))))+")");
-
-                    System.out.println("-----ACC-----");
-                        logFile.println("-----ACC-----");    
-                    for(int c=0;c<clsTab.length;c++){        
-                        System.out.println("Avg. class. ACC "+(excludeUppers(clsTab[c].getClass().getSimpleName()).equals("FURIA")?"FU":excludeUppers(clsTab[c].getClass().getSimpleName()))+" \t"+df.format(mean(accuracyByFolds[c]))+" (stdev "+ df.format(Math.sqrt(var(accuracyByFolds[c],mean(accuracyByFolds[c]))))+")");
-                            logFile.println("Avg. class. ACC "+(excludeUppers(clsTab[c].getClass().getSimpleName()).equals("FURIA")?"FU":excludeUppers(clsTab[c].getClass().getSimpleName()))+" \t"+df.format(mean(accuracyByFolds[c]))+" (stdev "+ df.format(Math.sqrt(var(accuracyByFolds[c],mean(accuracyByFolds[c]))))+")");
+                        System.out.println("-----ACC-----");
+                            logFile.println("-----ACC-----");    
+                        for(int c=0;c<clsTab.length;c++){        
+                            System.out.println("Avg. class. ACC "+(excludeUppers(clsTab[c].getClass().getSimpleName()).equals("FURIA")?"FU":excludeUppers(clsTab[c].getClass().getSimpleName()))+" \t"+df.format(mean(accuracyByFolds[c]))+" (stdev "+ df.format(Math.sqrt(var(accuracyByFolds[c],mean(accuracyByFolds[c]))))+")");
+                                logFile.println("Avg. class. ACC "+(excludeUppers(clsTab[c].getClass().getSimpleName()).equals("FURIA")?"FU":excludeUppers(clsTab[c].getClass().getSimpleName()))+" \t"+df.format(mean(accuracyByFolds[c]))+" (stdev "+ df.format(Math.sqrt(var(accuracyByFolds[c],mean(accuracyByFolds[c]))))+")");
+                        }
+                    }
+                    else{
+                        System.out.println("-----MAE and RMSE-----");
+                            logFile.println("-----MAE and RMSE-----"); 
+                        for (int i=0;i<clsTab.length;i++){      
+                            System.out.println("Avg. MAE "+excludeUppers(clsTab[i].getClass().getSimpleName())+" \t"+df.format(mean(maeByFolds[i]))+" (stdev "+ df.format(Math.sqrt(var(maeByFolds[i],mean(maeByFolds[i]))))+")"+" \t"+
+                                               "Avg. RMSE "+excludeUppers(clsTab[i].getClass().getSimpleName())+" \t"+df.format(mean(rmseByFolds[i]))+" (stdev "+ df.format(Math.sqrt(var(rmseByFolds[i],mean(rmseByFolds[i]))))+")");
+                                logFile.println("Avg. MAE "+excludeUppers(clsTab[i].getClass().getSimpleName())+" \t"+df.format(mean(maeByFolds[i]))+" (stdev "+ df.format(Math.sqrt(var(maeByFolds[i],mean(maeByFolds[i]))))+")"+" \t"+
+                                                 "Avg. RMSE "+excludeUppers(clsTab[i].getClass().getSimpleName())+" \t"+df.format(mean(rmseByFolds[i]))+" (stdev "+ df.format(Math.sqrt(var(rmseByFolds[i],mean(rmseByFolds[i]))))+")");
+                        }                                         
                     }
                     System.out.println("-----Learning and testing time-----");
                         logFile.println("-----Learning and testing time-----");  
@@ -2146,28 +2601,39 @@ public class FeatConstr {
                             logFile.println("FS on validation dataset - results");
                         System.out.println("*********************************************************************************");
                             logFile.println("*********************************************************************************"); 
+                        if(isClassification){    
+                            for(int i=0;i<clsTab.length;i++){
+                                System.out.println("When using "+(excludeUppers(clsTab[i].getClass().getSimpleName()))+", number of logical feat: "+df.format(mean(threeDtoTwoD(featByFoldsPS,i)[0]))+" (stdev "+ df.format(Math.sqrt(var(threeDtoTwoD(featByFoldsPS,i)[0],mean(threeDtoTwoD(featByFoldsPS,i)[0]))))+")"+(numerFeat ? (" number of numerical feat: "+df.format(mean(threeDtoTwoD(featByFoldsPS,i)[5]))+" (stdev "+ df.format(Math.sqrt(var(threeDtoTwoD(featByFoldsPS,i)[5],mean(threeDtoTwoD(featByFoldsPS,i)[5]))))+")"): "")+" number of relational feat: "+ df.format(mean(threeDtoTwoD(featByFoldsPS,i)[4]))+" (stdev "+ df.format(Math.sqrt(var(threeDtoTwoD(featByFoldsPS,i)[4],mean(threeDtoTwoD(featByFoldsPS,i)[4]))))+")"+" number of \"Cartesian\" feat: "+ df.format(mean(threeDtoTwoD(featByFoldsPS,i)[3]))+" (stdev "+ df.format(Math.sqrt(var(threeDtoTwoD(featByFoldsPS,i)[3],mean(threeDtoTwoD(featByFoldsPS,i)[3]))))+")"+" number of FURIA feat: "+ df.format(mean(threeDtoTwoD(featByFoldsPS,i)[2]))+" (stdev "+ df.format(Math.sqrt(var(threeDtoTwoD(featByFoldsPS,i)[2],mean(threeDtoTwoD(featByFoldsPS,i)[2]))))+")"+" number of thr. feat: "+ df.format(mean(threeDtoTwoD(featByFoldsPS,i)[1]))+" (stdev "+ df.format(Math.sqrt(var(threeDtoTwoD(featByFoldsPS,i)[1],mean(threeDtoTwoD(featByFoldsPS,i)[1]))))+")");
+                                    logFile.println("When using "+(excludeUppers(clsTab[i].getClass().getSimpleName()))+", number of logical feat: "+df.format(mean(threeDtoTwoD(featByFoldsPS,i)[0]))+" (stdev "+ df.format(Math.sqrt(var(threeDtoTwoD(featByFoldsPS,i)[0],mean(threeDtoTwoD(featByFoldsPS,i)[0]))))+")"+(numerFeat ? (" number of numerical feat: "+df.format(mean(threeDtoTwoD(featByFoldsPS,i)[5]))+" (stdev "+ df.format(Math.sqrt(var(threeDtoTwoD(featByFoldsPS,i)[5],mean(threeDtoTwoD(featByFoldsPS,i)[5]))))+")"): "")+" number of relational feat: "+ df.format(mean(threeDtoTwoD(featByFoldsPS,i)[4]))+" (stdev "+ df.format(Math.sqrt(var(threeDtoTwoD(featByFoldsPS,i)[4],mean(threeDtoTwoD(featByFoldsPS,i)[4]))))+")"+" number of \"Cartesian\" feat: "+ df.format(mean(threeDtoTwoD(featByFoldsPS,i)[3]))+" (stdev "+ df.format(Math.sqrt(var(threeDtoTwoD(featByFoldsPS,i)[3],mean(threeDtoTwoD(featByFoldsPS,i)[3]))))+")"+" number of FURIA feat: "+ df.format(mean(threeDtoTwoD(featByFoldsPS,i)[2]))+" (stdev "+ df.format(Math.sqrt(var(threeDtoTwoD(featByFoldsPS,i)[2],mean(threeDtoTwoD(featByFoldsPS,i)[2]))))+")"+" number of thr. feat: "+ df.format(mean(threeDtoTwoD(featByFoldsPS,i)[1]))+" (stdev "+ df.format(Math.sqrt(var(threeDtoTwoD(featByFoldsPS,i)[1],mean(threeDtoTwoD(featByFoldsPS,i)[1]))))+")");
+                            }
 
-                        for(int i=0;i<clsTab.length;i++){
-                            System.out.println("When using "+(excludeUppers(clsTab[i].getClass().getSimpleName()))+", number of logical feat: "+df.format(mean(threeDtoTwoD(featByFoldsPS,i)[0]))+" (stdev "+ df.format(Math.sqrt(var(threeDtoTwoD(featByFoldsPS,i)[0],mean(threeDtoTwoD(featByFoldsPS,i)[0]))))+")"+(numerFeat ? (" number of numerical feat: "+df.format(mean(threeDtoTwoD(featByFoldsPS,i)[5]))+" (stdev "+ df.format(Math.sqrt(var(threeDtoTwoD(featByFoldsPS,i)[5],mean(threeDtoTwoD(featByFoldsPS,i)[5]))))+")"): "")+" number of relational feat: "+ df.format(mean(threeDtoTwoD(featByFoldsPS,i)[4]))+" (stdev "+ df.format(Math.sqrt(var(threeDtoTwoD(featByFoldsPS,i)[4],mean(threeDtoTwoD(featByFoldsPS,i)[4]))))+")"+" number of \"Cartesian\" feat: "+ df.format(mean(threeDtoTwoD(featByFoldsPS,i)[3]))+" (stdev "+ df.format(Math.sqrt(var(threeDtoTwoD(featByFoldsPS,i)[3],mean(threeDtoTwoD(featByFoldsPS,i)[3]))))+")"+" number of FURIA feat: "+ df.format(mean(threeDtoTwoD(featByFoldsPS,i)[2]))+" (stdev "+ df.format(Math.sqrt(var(threeDtoTwoD(featByFoldsPS,i)[2],mean(threeDtoTwoD(featByFoldsPS,i)[2]))))+")"+" number of thr. feat: "+ df.format(mean(threeDtoTwoD(featByFoldsPS,i)[1]))+" (stdev "+ df.format(Math.sqrt(var(threeDtoTwoD(featByFoldsPS,i)[1],mean(threeDtoTwoD(featByFoldsPS,i)[1]))))+")");
-                                logFile.println("When using "+(excludeUppers(clsTab[i].getClass().getSimpleName()))+", number of logical feat: "+df.format(mean(threeDtoTwoD(featByFoldsPS,i)[0]))+" (stdev "+ df.format(Math.sqrt(var(threeDtoTwoD(featByFoldsPS,i)[0],mean(threeDtoTwoD(featByFoldsPS,i)[0]))))+")"+(numerFeat ? (" number of numerical feat: "+df.format(mean(threeDtoTwoD(featByFoldsPS,i)[5]))+" (stdev "+ df.format(Math.sqrt(var(threeDtoTwoD(featByFoldsPS,i)[5],mean(threeDtoTwoD(featByFoldsPS,i)[5]))))+")"): "")+" number of relational feat: "+ df.format(mean(threeDtoTwoD(featByFoldsPS,i)[4]))+" (stdev "+ df.format(Math.sqrt(var(threeDtoTwoD(featByFoldsPS,i)[4],mean(threeDtoTwoD(featByFoldsPS,i)[4]))))+")"+" number of \"Cartesian\" feat: "+ df.format(mean(threeDtoTwoD(featByFoldsPS,i)[3]))+" (stdev "+ df.format(Math.sqrt(var(threeDtoTwoD(featByFoldsPS,i)[3],mean(threeDtoTwoD(featByFoldsPS,i)[3]))))+")"+" number of FURIA feat: "+ df.format(mean(threeDtoTwoD(featByFoldsPS,i)[2]))+" (stdev "+ df.format(Math.sqrt(var(threeDtoTwoD(featByFoldsPS,i)[2],mean(threeDtoTwoD(featByFoldsPS,i)[2]))))+")"+" number of thr. feat: "+ df.format(mean(threeDtoTwoD(featByFoldsPS,i)[1]))+" (stdev "+ df.format(Math.sqrt(var(threeDtoTwoD(featByFoldsPS,i)[1],mean(threeDtoTwoD(featByFoldsPS,i)[1]))))+")");
+                            System.out.println("Avg. tree size (nodes+leaves): "+df.format(mean(numberOfTreeByFoldsPS[0]))+" (stdev "+ df.format(Math.sqrt(var(numberOfTreeByFoldsPS[0],mean(numberOfTreeByFoldsPS[0]))))+")"+" avg. number of leaves: "+ df.format(mean(numberOfTreeByFoldsPS[1]))+" (stdev "+ df.format(Math.sqrt(var(numberOfTreeByFoldsPS[1],mean(numberOfTreeByFoldsPS[1]))))+")"+" avg. sum of constructs: "+ df.format(mean(numberOfTreeByFoldsPS[2]))+" (stdev "+ df.format(Math.sqrt(var(numberOfTreeByFoldsPS[2],mean(numberOfTreeByFoldsPS[2]))))+") avg. sum of constructs / num of nodes: "+df.format(mean(numberOfTreeByFoldsPS[3]))+" (stdev "+ df.format(Math.sqrt(var(numberOfTreeByFoldsPS[3],mean(numberOfTreeByFoldsPS[3]))))+")");
+                                logFile.println("Avg. tree size (nodes+leaves): "+df.format(mean(numberOfTreeByFoldsPS[0]))+" (stdev "+ df.format(Math.sqrt(var(numberOfTreeByFoldsPS[0],mean(numberOfTreeByFoldsPS[0]))))+")"+" avg. number of leaves: "+ df.format(mean(numberOfTreeByFoldsPS[1]))+" (stdev "+ df.format(Math.sqrt(var(numberOfTreeByFoldsPS[1],mean(numberOfTreeByFoldsPS[1]))))+")"+" avg. sum of constructs: "+ df.format(mean(numberOfTreeByFoldsPS[2]))+" (stdev "+ df.format(Math.sqrt(var(numberOfTreeByFoldsPS[2],mean(numberOfTreeByFoldsPS[2]))))+") avg. sum of constructs / num of nodes: "+df.format(mean(numberOfTreeByFoldsPS[3]))+" (stdev "+ df.format(Math.sqrt(var(numberOfTreeByFoldsPS[3],mean(numberOfTreeByFoldsPS[3]))))+")");        
+
+                            System.out.println("Avg. num of logical feat. in tree: "+df.format(mean(numLogFeatInTreeFS[0]))+" (stdev "+ df.format(Math.sqrt(var(numLogFeatInTreeFS[0],mean(numLogFeatInTreeFS[0]))))+")"+" avg. sum of (only logical) constructs in tree: "+df.format(mean(numLogFeatInTreeFS[1]))+" (stdev "+ df.format(Math.sqrt(var(numLogFeatInTreeFS[1],mean(numLogFeatInTreeFS[1]))))+")"+(numerFeat ? (" avg. num of numerical feat. in tree: "+df.format(mean(numNumFeatInTreeFS[0]))+" (stdev "+ df.format(Math.sqrt(var(numNumFeatInTreeFS[0],mean(numNumFeatInTreeFS[0]))))+")"+" avg. sum of (only numerical) constructs in tree: "+df.format(mean(numNumFeatInTreeFS[1]))+" (stdev "+ df.format(Math.sqrt(var(numNumFeatInTreeFS[1],mean(numNumFeatInTreeFS[1]))))+")") :"")+" avg. num of relational feat. in tree: "+df.format(mean(numRelFeatInTreeFS[0]))+" (stdev "+ df.format(Math.sqrt(var(numRelFeatInTreeFS[0],mean(numRelFeatInTreeFS[0]))))+")"+" avg. sum of (only relational) constructs in tree: "+df.format(mean(numRelFeatInTreeFS[1]))+" (stdev "+ df.format(Math.sqrt(var(numRelFeatInTreeFS[1],mean(numRelFeatInTreeFS[1]))))+")"+" avg. num of Cartesian feat. in tree: "+df.format(mean(numCartFeatInTreeFS[0]))+" (stdev "+ df.format(Math.sqrt(var(numCartFeatInTreeFS[0],mean(numCartFeatInTreeFS[0]))))+")"+" avg. sum of constructs (of Cartesian feat) in tree: "+df.format(mean(numCartFeatInTreeFS[1]))+" (stdev "+ df.format(Math.sqrt(var(numCartFeatInTreeFS[1],mean(numCartFeatInTreeFS[1]))))+")"+" avg. num of FURIA feat. in tree: "+df.format(mean(numOfFuriaThrInTreeByFoldsP[0]))+" (stdev "+ df.format(Math.sqrt(var(numOfFuriaThrInTreeByFoldsP[0],mean(numOfFuriaThrInTreeByFoldsP[0]))))+")"+" avg. sum of terms in constructs (Furia feat) in tree: "+ df.format(mean(numOfFuriaThrInTreeByFoldsP[1]))+" (stdev "+ df.format(Math.sqrt(var(numOfFuriaThrInTreeByFoldsP[1],mean(numOfFuriaThrInTreeByFoldsP[1]))))+")"+" avg. num of THR feat. in tree: "+ df.format(mean(numOfFuriaThrInTreeByFoldsP[2]))+" (stdev "+ df.format(Math.sqrt(var(numOfFuriaThrInTreeByFoldsP[2],mean(numOfFuriaThrInTreeByFoldsP[2]))))+")"+" avg. sum of terms in constructs (THR feat) in tree: "+df.format(mean(numOfFuriaThrInTreeByFoldsP[3]))+" (stdev "+ df.format(Math.sqrt(var(numOfFuriaThrInTreeByFoldsP[3],mean(numOfFuriaThrInTreeByFoldsP[3]))))+")");  
+                                logFile.println("Avg. num of logical feat. in tree: "+df.format(mean(numLogFeatInTreeFS[0]))+" (stdev "+ df.format(Math.sqrt(var(numLogFeatInTreeFS[0],mean(numLogFeatInTreeFS[0]))))+")"+" avg. sum of (only logical) constructs in tree: "+df.format(mean(numLogFeatInTreeFS[1]))+" (stdev "+ df.format(Math.sqrt(var(numLogFeatInTreeFS[1],mean(numLogFeatInTreeFS[1]))))+")"+(numerFeat ? (" avg. num of numerical feat. in tree: "+df.format(mean(numNumFeatInTreeFS[0]))+" (stdev "+ df.format(Math.sqrt(var(numNumFeatInTreeFS[0],mean(numNumFeatInTreeFS[0]))))+")"+" avg. sum of (only numerical) constructs in tree: "+df.format(mean(numNumFeatInTreeFS[1]))+" (stdev "+ df.format(Math.sqrt(var(numNumFeatInTreeFS[1],mean(numNumFeatInTreeFS[1]))))+")") :"")+" avg. num of relational feat. in tree: "+df.format(mean(numRelFeatInTreeFS[0]))+" (stdev "+ df.format(Math.sqrt(var(numRelFeatInTreeFS[0],mean(numRelFeatInTreeFS[0]))))+")"+" avg. sum of (only relational) constructs in tree: "+df.format(mean(numRelFeatInTreeFS[1]))+" (stdev "+ df.format(Math.sqrt(var(numRelFeatInTreeFS[1],mean(numRelFeatInTreeFS[1]))))+")"+" avg. num of Cartesian feat. in tree: "+df.format(mean(numCartFeatInTreeFS[0]))+" (stdev "+ df.format(Math.sqrt(var(numCartFeatInTreeFS[0],mean(numCartFeatInTreeFS[0]))))+")"+" avg. sum of constructs (of Cartesian feat) in tree: "+df.format(mean(numCartFeatInTreeFS[1]))+" (stdev "+ df.format(Math.sqrt(var(numCartFeatInTreeFS[1],mean(numCartFeatInTreeFS[1]))))+")"+" avg. num of FURIA feat. in tree: "+df.format(mean(numOfFuriaThrInTreeByFoldsP[0]))+" (stdev "+ df.format(Math.sqrt(var(numOfFuriaThrInTreeByFoldsP[0],mean(numOfFuriaThrInTreeByFoldsP[0]))))+")"+" avg. sum of terms in constructs (Furia feat) in tree: "+ df.format(mean(numOfFuriaThrInTreeByFoldsP[1]))+" (stdev "+ df.format(Math.sqrt(var(numOfFuriaThrInTreeByFoldsP[1],mean(numOfFuriaThrInTreeByFoldsP[1]))))+")"+" avg. num of THR feat. in tree: "+ df.format(mean(numOfFuriaThrInTreeByFoldsP[2]))+" (stdev "+ df.format(Math.sqrt(var(numOfFuriaThrInTreeByFoldsP[2],mean(numOfFuriaThrInTreeByFoldsP[2]))))+")"+" avg. sum of terms in constructs (THR feat) in tree: "+df.format(mean(numOfFuriaThrInTreeByFoldsP[3]))+" (stdev "+ df.format(Math.sqrt(var(numOfFuriaThrInTreeByFoldsP[3],mean(numOfFuriaThrInTreeByFoldsP[3]))))+")");
+
+                            System.out.println("Avg. ruleset size: "+df.format(mean(complexityOfFuriaPS[0]))+" (stdev "+ df.format(Math.sqrt(var(complexityOfFuriaPS[0],mean(complexityOfFuriaPS[0]))))+")"+" avg. number of terms of construct in Furia feat.: "+ df.format(mean(complexityOfFuriaPS[1]))+" (stdev "+ df.format(Math.sqrt(var(complexityOfFuriaPS[1],mean(complexityOfFuriaPS[1]))))+") avg. number of terms in constructs per ruleset: "+df.format(mean(complexityOfFuriaPS[2])) +" (stdev "+df.format(Math.sqrt(var(complexityOfFuriaPS[2],mean(complexityOfFuriaPS[2]))))+")");
+                                logFile.println("Avg. ruleset size: "+df.format(mean(complexityOfFuriaPS[0]))+" (stdev "+ df.format(Math.sqrt(var(complexityOfFuriaPS[0],mean(complexityOfFuriaPS[0]))))+")"+" avg. number of terms of construct in Furia feat.: "+ df.format(mean(complexityOfFuriaPS[1]))+" (stdev "+ df.format(Math.sqrt(var(complexityOfFuriaPS[1],mean(complexityOfFuriaPS[1]))))+") avg. number of terms in constructs per ruleset: "+df.format(mean(complexityOfFuriaPS[2])) +" (stdev "+df.format(Math.sqrt(var(complexityOfFuriaPS[2],mean(complexityOfFuriaPS[2]))))+")");   
+
+                            System.out.println("-----ACC-----");
+                                logFile.println("-----ACC-----"); 
+                            for(int c=0;c<clsTab.length;c++){
+                                System.out.println("Avg. class. ACC "+(excludeUppers(clsTab[c].getClass().getSimpleName()).equals("FURIA")?"FU":excludeUppers(clsTab[c].getClass().getSimpleName()))+" \t"+df.format(mean(accuracyByFoldsPS[c]))+" (stdev "+ df.format(Math.sqrt(var(accuracyByFoldsPS[c],mean(accuracyByFoldsPS[c]))))+")");
+                                    logFile.println("Avg. class. ACC "+(excludeUppers(clsTab[c].getClass().getSimpleName()).equals("FURIA")?"FU":excludeUppers(clsTab[c].getClass().getSimpleName()))+" \t"+df.format(mean(accuracyByFoldsPS[c]))+" (stdev "+ df.format(Math.sqrt(var(accuracyByFoldsPS[c],mean(accuracyByFoldsPS[c]))))+")");
+                            }
                         }
-
-                        System.out.println("Avg. tree size (nodes+leaves): "+df.format(mean(numberOfTreeByFoldsPS[0]))+" (stdev "+ df.format(Math.sqrt(var(numberOfTreeByFoldsPS[0],mean(numberOfTreeByFoldsPS[0]))))+")"+" avg. number of leaves: "+ df.format(mean(numberOfTreeByFoldsPS[1]))+" (stdev "+ df.format(Math.sqrt(var(numberOfTreeByFoldsPS[1],mean(numberOfTreeByFoldsPS[1]))))+")"+" avg. sum of constructs: "+ df.format(mean(numberOfTreeByFoldsPS[2]))+" (stdev "+ df.format(Math.sqrt(var(numberOfTreeByFoldsPS[2],mean(numberOfTreeByFoldsPS[2]))))+") avg. sum of constructs / num of nodes: "+df.format(mean(numberOfTreeByFoldsPS[3]))+" (stdev "+ df.format(Math.sqrt(var(numberOfTreeByFoldsPS[3],mean(numberOfTreeByFoldsPS[3]))))+")");
-                            logFile.println("Avg. tree size (nodes+leaves): "+df.format(mean(numberOfTreeByFoldsPS[0]))+" (stdev "+ df.format(Math.sqrt(var(numberOfTreeByFoldsPS[0],mean(numberOfTreeByFoldsPS[0]))))+")"+" avg. number of leaves: "+ df.format(mean(numberOfTreeByFoldsPS[1]))+" (stdev "+ df.format(Math.sqrt(var(numberOfTreeByFoldsPS[1],mean(numberOfTreeByFoldsPS[1]))))+")"+" avg. sum of constructs: "+ df.format(mean(numberOfTreeByFoldsPS[2]))+" (stdev "+ df.format(Math.sqrt(var(numberOfTreeByFoldsPS[2],mean(numberOfTreeByFoldsPS[2]))))+") avg. sum of constructs / num of nodes: "+df.format(mean(numberOfTreeByFoldsPS[3]))+" (stdev "+ df.format(Math.sqrt(var(numberOfTreeByFoldsPS[3],mean(numberOfTreeByFoldsPS[3]))))+")");        
-
-                        System.out.println("Avg. num of logical feat. in tree: "+df.format(mean(numLogFeatInTreeFS[0]))+" (stdev "+ df.format(Math.sqrt(var(numLogFeatInTreeFS[0],mean(numLogFeatInTreeFS[0]))))+")"+" avg. sum of (only logical) constructs in tree: "+df.format(mean(numLogFeatInTreeFS[1]))+" (stdev "+ df.format(Math.sqrt(var(numLogFeatInTreeFS[1],mean(numLogFeatInTreeFS[1]))))+")"+(numerFeat ? (" avg. num of numerical feat. in tree: "+df.format(mean(numNumFeatInTreeFS[0]))+" (stdev "+ df.format(Math.sqrt(var(numNumFeatInTreeFS[0],mean(numNumFeatInTreeFS[0]))))+")"+" avg. sum of (only numerical) constructs in tree: "+df.format(mean(numNumFeatInTreeFS[1]))+" (stdev "+ df.format(Math.sqrt(var(numNumFeatInTreeFS[1],mean(numNumFeatInTreeFS[1]))))+")") :"")+" avg. num of relational feat. in tree: "+df.format(mean(numRelFeatInTreeFS[0]))+" (stdev "+ df.format(Math.sqrt(var(numRelFeatInTreeFS[0],mean(numRelFeatInTreeFS[0]))))+")"+" avg. sum of (only relational) constructs in tree: "+df.format(mean(numRelFeatInTreeFS[1]))+" (stdev "+ df.format(Math.sqrt(var(numRelFeatInTreeFS[1],mean(numRelFeatInTreeFS[1]))))+")"+" avg. num of Cartesian feat. in tree: "+df.format(mean(numCartFeatInTreeFS[0]))+" (stdev "+ df.format(Math.sqrt(var(numCartFeatInTreeFS[0],mean(numCartFeatInTreeFS[0]))))+")"+" avg. sum of constructs (of Cartesian feat) in tree: "+df.format(mean(numCartFeatInTreeFS[1]))+" (stdev "+ df.format(Math.sqrt(var(numCartFeatInTreeFS[1],mean(numCartFeatInTreeFS[1]))))+")"+" avg. num of FURIA feat. in tree: "+df.format(mean(numOfFuriaThrInTreeByFoldsP[0]))+" (stdev "+ df.format(Math.sqrt(var(numOfFuriaThrInTreeByFoldsP[0],mean(numOfFuriaThrInTreeByFoldsP[0]))))+")"+" avg. sum of terms in constructs (Furia feat) in tree: "+ df.format(mean(numOfFuriaThrInTreeByFoldsP[1]))+" (stdev "+ df.format(Math.sqrt(var(numOfFuriaThrInTreeByFoldsP[1],mean(numOfFuriaThrInTreeByFoldsP[1]))))+")"+" avg. num of THR feat. in tree: "+ df.format(mean(numOfFuriaThrInTreeByFoldsP[2]))+" (stdev "+ df.format(Math.sqrt(var(numOfFuriaThrInTreeByFoldsP[2],mean(numOfFuriaThrInTreeByFoldsP[2]))))+")"+" avg. sum of terms in constructs (THR feat) in tree: "+df.format(mean(numOfFuriaThrInTreeByFoldsP[3]))+" (stdev "+ df.format(Math.sqrt(var(numOfFuriaThrInTreeByFoldsP[3],mean(numOfFuriaThrInTreeByFoldsP[3]))))+")");  
-                            logFile.println("Avg. num of logical feat. in tree: "+df.format(mean(numLogFeatInTreeFS[0]))+" (stdev "+ df.format(Math.sqrt(var(numLogFeatInTreeFS[0],mean(numLogFeatInTreeFS[0]))))+")"+" avg. sum of (only logical) constructs in tree: "+df.format(mean(numLogFeatInTreeFS[1]))+" (stdev "+ df.format(Math.sqrt(var(numLogFeatInTreeFS[1],mean(numLogFeatInTreeFS[1]))))+")"+(numerFeat ? (" avg. num of numerical feat. in tree: "+df.format(mean(numNumFeatInTreeFS[0]))+" (stdev "+ df.format(Math.sqrt(var(numNumFeatInTreeFS[0],mean(numNumFeatInTreeFS[0]))))+")"+" avg. sum of (only numerical) constructs in tree: "+df.format(mean(numNumFeatInTreeFS[1]))+" (stdev "+ df.format(Math.sqrt(var(numNumFeatInTreeFS[1],mean(numNumFeatInTreeFS[1]))))+")") :"")+" avg. num of relational feat. in tree: "+df.format(mean(numRelFeatInTreeFS[0]))+" (stdev "+ df.format(Math.sqrt(var(numRelFeatInTreeFS[0],mean(numRelFeatInTreeFS[0]))))+")"+" avg. sum of (only relational) constructs in tree: "+df.format(mean(numRelFeatInTreeFS[1]))+" (stdev "+ df.format(Math.sqrt(var(numRelFeatInTreeFS[1],mean(numRelFeatInTreeFS[1]))))+")"+" avg. num of Cartesian feat. in tree: "+df.format(mean(numCartFeatInTreeFS[0]))+" (stdev "+ df.format(Math.sqrt(var(numCartFeatInTreeFS[0],mean(numCartFeatInTreeFS[0]))))+")"+" avg. sum of constructs (of Cartesian feat) in tree: "+df.format(mean(numCartFeatInTreeFS[1]))+" (stdev "+ df.format(Math.sqrt(var(numCartFeatInTreeFS[1],mean(numCartFeatInTreeFS[1]))))+")"+" avg. num of FURIA feat. in tree: "+df.format(mean(numOfFuriaThrInTreeByFoldsP[0]))+" (stdev "+ df.format(Math.sqrt(var(numOfFuriaThrInTreeByFoldsP[0],mean(numOfFuriaThrInTreeByFoldsP[0]))))+")"+" avg. sum of terms in constructs (Furia feat) in tree: "+ df.format(mean(numOfFuriaThrInTreeByFoldsP[1]))+" (stdev "+ df.format(Math.sqrt(var(numOfFuriaThrInTreeByFoldsP[1],mean(numOfFuriaThrInTreeByFoldsP[1]))))+")"+" avg. num of THR feat. in tree: "+ df.format(mean(numOfFuriaThrInTreeByFoldsP[2]))+" (stdev "+ df.format(Math.sqrt(var(numOfFuriaThrInTreeByFoldsP[2],mean(numOfFuriaThrInTreeByFoldsP[2]))))+")"+" avg. sum of terms in constructs (THR feat) in tree: "+df.format(mean(numOfFuriaThrInTreeByFoldsP[3]))+" (stdev "+ df.format(Math.sqrt(var(numOfFuriaThrInTreeByFoldsP[3],mean(numOfFuriaThrInTreeByFoldsP[3]))))+")");
-
-                        System.out.println("Avg. ruleset size: "+df.format(mean(complexityOfFuriaPS[0]))+" (stdev "+ df.format(Math.sqrt(var(complexityOfFuriaPS[0],mean(complexityOfFuriaPS[0]))))+")"+" avg. number of terms of construct in Furia feat.: "+ df.format(mean(complexityOfFuriaPS[1]))+" (stdev "+ df.format(Math.sqrt(var(complexityOfFuriaPS[1],mean(complexityOfFuriaPS[1]))))+") avg. number of terms in constructs per ruleset: "+df.format(mean(complexityOfFuriaPS[2])) +" (stdev "+df.format(Math.sqrt(var(complexityOfFuriaPS[2],mean(complexityOfFuriaPS[2]))))+")");
-                            logFile.println("Avg. ruleset size: "+df.format(mean(complexityOfFuriaPS[0]))+" (stdev "+ df.format(Math.sqrt(var(complexityOfFuriaPS[0],mean(complexityOfFuriaPS[0]))))+")"+" avg. number of terms of construct in Furia feat.: "+ df.format(mean(complexityOfFuriaPS[1]))+" (stdev "+ df.format(Math.sqrt(var(complexityOfFuriaPS[1],mean(complexityOfFuriaPS[1]))))+") avg. number of terms in constructs per ruleset: "+df.format(mean(complexityOfFuriaPS[2])) +" (stdev "+df.format(Math.sqrt(var(complexityOfFuriaPS[2],mean(complexityOfFuriaPS[2]))))+")");   
-
-                        System.out.println("-----ACC-----");
-                            logFile.println("-----ACC-----"); 
-                        for(int c=0;c<clsTab.length;c++){
-                            System.out.println("Avg. class. ACC "+(excludeUppers(clsTab[c].getClass().getSimpleName()).equals("FURIA")?"FU":excludeUppers(clsTab[c].getClass().getSimpleName()))+" \t"+df.format(mean(accuracyByFoldsPS[c]))+" (stdev "+ df.format(Math.sqrt(var(accuracyByFoldsPS[c],mean(accuracyByFoldsPS[c]))))+")");
-                                logFile.println("Avg. class. ACC "+(excludeUppers(clsTab[c].getClass().getSimpleName()).equals("FURIA")?"FU":excludeUppers(clsTab[c].getClass().getSimpleName()))+" \t"+df.format(mean(accuracyByFoldsPS[c]))+" (stdev "+ df.format(Math.sqrt(var(accuracyByFoldsPS[c],mean(accuracyByFoldsPS[c]))))+")");
+                        else{
+                                                  System.out.println("-----MAE and RMSE-----");
+                            logFile.println("-----MAE and RMSE-----"); 
+                        for (int i=0;i<clsTab.length;i++){      
+                            System.out.println("Avg. MAE "+excludeUppers(clsTab[i].getClass().getSimpleName())+" \t"+df.format(mean(maeByFoldsPS[i]))+" (stdev "+ df.format(Math.sqrt(var(maeByFoldsPS[i],mean(maeByFoldsPS[i]))))+")"+" \t"+
+                                               "Avg. RMSE "+excludeUppers(clsTab[i].getClass().getSimpleName())+" \t"+df.format(mean(rmseByFoldsPS[i]))+" (stdev "+ df.format(Math.sqrt(var(rmseByFoldsPS[i],mean(rmseByFoldsPS[i]))))+")");
+                                logFile.println("Avg. MAE "+excludeUppers(clsTab[i].getClass().getSimpleName())+" \t"+df.format(mean(maeByFoldsPS[i]))+" (stdev "+ df.format(Math.sqrt(var(maeByFoldsPS[i],mean(maeByFoldsPS[i]))))+")"+" \t"+
+                                               "Avg. RMSE "+excludeUppers(clsTab[i].getClass().getSimpleName())+" \t"+df.format(mean(rmseByFoldsPS[i]))+" (stdev "+ df.format(Math.sqrt(var(rmseByFoldsPS[i],mean(rmseByFoldsPS[i]))))+")");
+                        }   
+                        
                         }
-
                         System.out.println("-----Search time-----");
                             logFile.println("-----Search time-----");  
                         for(int c=0;c<clsTab.length;c++){
@@ -2193,6 +2659,7 @@ public class FeatConstr {
                     System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
                         logFile.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"); 
                 }
+                rCaller.stopRCallerOnline();   
             }
         }
         
@@ -2216,12 +2683,47 @@ public class FeatConstr {
         }
         if(groupsByThrStat && !visualisation && !justExplain &&!exhaustive && !jakulin)
             groupsStat.close();
-        
-        rCaller.stopRCallerOnline();        
+             
     }
+    
+            
+    public static double[][] explainWithLime(Instances trainFold, Instances explainData, int classToExplain, String classifier, String datasetName) throws Exception{
+        int numClasses=1; //1 - just one iteration, we explain minority class, otherwise numClasses=classDistr.length;          
+        double [] classDistr;
+        double[][] explData=new double[explainData.numInstances()][explainData.numAttributes()-1];
+        String[] explDataS;
+        classDistr=Arrays.stream(trainFold.attributeStats(trainFold.classIndex()).nominalCounts).asDoubleStream().toArray();
+        numClasses=classDistr.length;
+                
+        //class attribute values
+        String classValues="";
+        Enumeration<Object>  atrValues= trainFold.attribute(trainFold.numAttributes()-1).enumerateValues();
+
+        while (atrValues.hasMoreElements())
+            classValues+=(String) atrValues.nextElement()+",";
+ 
+        if(!classValues.equals(""))  //all features are important
+            classValues=classValues.substring(0, classValues.lastIndexOf(",")); 
+                          
+        Process p = Runtime.getRuntime().exec("python " + "limeEks.py" + " " + classToExplain + " "+classifier+" "+datasetName+" "+classValues);        
+
+        BufferedReader br = new BufferedReader(new InputStreamReader(p.getInputStream()));
+                
+        String line = "";
+        int i=0;
+        while ((line=br.readLine())!=null) {        
+            explDataS=line.split(",");
+            for (int j=0; j < explDataS.length; j++)
+                explData[i][j] = Double.parseDouble(explDataS[j]);
+            i++;
+        }
+        return explData;
+    }
+		
+    
 
     //for constructing TRAIN dataset of depth N
-    public static Instances addLogFeatDepth(Instances data, List newTmpComb,OperationLog ol, boolean kononenko, int folds, int N) throws Exception{ //Discretization is by Fayyad & Irani's MDL method (the default).
+    public static Instances addLogFeatDepth(Instances data, List newTmpComb,OperationLog ol, boolean kononenko, boolean isClassification, int folds, int N) throws Exception{ //Discretization is by Fayyad & Irani's MDL method (the default).
         String attName="";
         Remove remove;
         Add filter;
@@ -2247,7 +2749,7 @@ public class FeatConstr {
                     while (atrValues.hasMoreElements())
                         attr1Val+=(String) atrValues.nextElement();
                     if(!((attr1Val.equals("01") || attr1Val.equals("10")) && newData.attributeStats(newData.attribute(Integer.parseInt(tmpArr[j].trim())).index()).distinctCount<=2)) 
-                        newBinAttr=discretizeFI(data, Integer.parseInt(tmpArr[j].trim()),kononenko);
+                        newBinAttr=discretize(data, Integer.parseInt(tmpArr[j].trim()),kononenko, isClassification);
                     else{
                         remove= new Remove();
                         remove.setAttributeIndices((newData.attribute(Integer.parseInt(tmpArr[j].trim())).index()+1)+"");//rangeList - a string representing the list of attributes. Since the string will typically come from a user, attributes are indexed from 1. e.g., first-3,5,6-last
@@ -2257,7 +2759,7 @@ public class FeatConstr {
                     }
                 }
                 else if(newData.attribute(Integer.parseInt(tmpArr[j].trim())).isNumeric())
-                    newBinAttr=discretizeFI(data, Integer.parseInt(tmpArr[j].trim()),kononenko); 
+                    newBinAttr=discretize(data, Integer.parseInt(tmpArr[j].trim()),kononenko, isClassification); 
                 if(j==0)
                     allDiscrete=new Instances(newBinAttr); //trick to initialize allDiscrete object
                 else
@@ -2331,7 +2833,7 @@ public class FeatConstr {
     }
 
     //for constructing TEST dataset of depth N
-    public static Instances addLogFeatDepth(Instances train, Instances test, List newTmpComb,OperationLog ol, boolean kononenko, int folds, int N) throws Exception{ //Discretization is by Fayyad & Irani's MDL method (the default).
+    public static Instances addLogFeatDepth(Instances train, Instances test, List newTmpComb,OperationLog ol, boolean kononenko, boolean isClassification, int folds, int N) throws Exception{ //Discretization is by Fayyad & Irani's MDL method (the default).
         String attName="";
         Remove remove;
         Add filter;
@@ -2355,7 +2857,7 @@ public class FeatConstr {
                     while (atrValues.hasMoreElements())
                         attr1Val+=(String) atrValues.nextElement();
                     if(!((attr1Val.equals("01") || attr1Val.equals("10")) && newData.attributeStats(newData.attribute(Integer.parseInt(tmpArr[j].trim())).index()).distinctCount<=2)) 
-                        newBinAttr=discretizeFITestBasedOnTrain(train, test,Integer.parseInt(tmpArr[j].trim()),kononenko); 
+                        newBinAttr=discretizeTestBasedOnTrain(train, test, Integer.parseInt(tmpArr[j].trim()), kononenko, isClassification); 
                     else{
                         remove= new Remove();
                         remove.setAttributeIndices((newData.attribute(Integer.parseInt(tmpArr[j].trim())).index()+1)+"");//rangeList - a string representing the list of attributes. Since the string will typically come from a user, attributes are indexed from 1. e.g., first-3,5,6-last
@@ -2365,7 +2867,7 @@ public class FeatConstr {
                     }
                 }
                 else if(newData.attribute(Integer.parseInt(tmpArr[j].trim())).isNumeric())
-                        newBinAttr=discretizeFITestBasedOnTrain(train, test,Integer.parseInt(tmpArr[j].trim()),kononenko); 
+                        newBinAttr=discretizeTestBasedOnTrain(train, test, Integer.parseInt(tmpArr[j].trim()), kononenko, isClassification); 
                 if(j==0)
                     allDiscrete=new Instances(newBinAttr); //trick to initialize allDiscrete object
                 else
@@ -2762,7 +3264,7 @@ public class FeatConstr {
                     tmp=0;
 
                     for(int k=0;k<attrTmpRule.length;k++){  //parsing e.g., (A3 = 1) and (A2 = 1) and (A1 = 0) we parse attribute name and value
-                            //AND
+                        //AND
                         if(attrTmpRule[k].contains(" = ")){
                             attrNameRule=attrTmpRule[k].trim().replace("(", "").replace(")", "").split(" = ")[0].trim();
                             if(newData.attribute(attrNameRule).isNominal()){
@@ -3043,7 +3545,7 @@ public class FeatConstr {
             idxAttr1=Integer.parseInt(newTmpComb.get(j).toString().replace("[","").replace("]", "").trim().split(",")[0].trim());
             idxAttr2=Integer.parseInt(newTmpComb.get(j).toString().replace("[","").replace("]", "").trim().split(",")[1].trim());
 
-            if(!(op==OperationNum.ADD) && !(op==OperationNum.ABSDIFF) && !(op==OperationNum.SUBTRACT)){
+            if(!(op==OperationNum.ADD) && !(op==OperationNum.ABSDIFF) && !(op==OperationNum.SUBTRACT) && !(op==OperationNum.MULTIPLY)){
                 for(int k=0;k<2; k++){  //we try all combinations A1/A2 and A2/A1
                     if(k==1){
                         tmpIdx=idxAttr1;
@@ -3161,7 +3663,7 @@ public class FeatConstr {
                 numCartesian++;
             if(dataset.attribute(i).name().contains(" LESSTHAN ") || dataset.attribute(i).name().contains(" EQUAL ") || dataset.attribute(i).name().contains(" DIFF "))
                 numRelational++;
-            if(dataset.attribute(i).name().contains(" DIVIDE ") || dataset.attribute(i).name().contains(" SUBTRACT ") || dataset.attribute(i).name().contains(" ADD "))
+            if(dataset.attribute(i).name().contains(" DIVIDE ") || dataset.attribute(i).name().contains(" SUBTRACT ") || dataset.attribute(i).name().contains(" ADD ") || dataset.attribute(i).name().contains(" ABSDIFF ") || dataset.attribute(i).name().contains(" MULTIPLY "))
                 numNumerical++;
         }
         features[0]=numLogical;
@@ -3174,7 +3676,7 @@ public class FeatConstr {
         return features;
     }
 
-    public static int numOfLogFeatInTree(Instances data, int numOfOrigAttr, J48 dt) throws Exception{
+    public static int numOfLogFeatInTree(J48 dt) throws Exception{
         int numLogical=0;
         String notEscaped=dt.graph();
         String tmpParse[]=notEscaped.split("\\r?\\n"); //split by new line
@@ -3190,7 +3692,7 @@ public class FeatConstr {
         return numLogical;
     }
 
-    public static int[] numOfRelFeatInTree(Instances data, int numOfOrigAttr, J48 dt) throws Exception{  //number of relational features and sum of terms in constructs
+    public static int[] numOfRelFeatInTree(J48 dt) throws Exception{  //number of relational features and sum of terms in constructs
         int numRelational[]=new int[2];   //0-num of features, 1-sum of terms in constructs
         String notEscaped=dt.graph();
         String tmpParse[]=notEscaped.split("\\r?\\n"); //split by new line
@@ -3208,7 +3710,7 @@ public class FeatConstr {
         return numRelational;
     }
     
-    public static int[] numOfCartFeatInTree(Instances data, int numOfOrigAttr, J48 dt) throws Exception{  //number of Cartesian features and sum of terms in constructs
+    public static int[] numOfCartFeatInTree(J48 dt) throws Exception{  //number of Cartesian features and sum of terms in constructs
         int num[]=new int[2];   //0-num of features, 1-sum of terms in constructs
         String notEscaped=dt.graph();
         String tmpParse[]=notEscaped.split("\\r?\\n"); //split by new line
@@ -3226,9 +3728,10 @@ public class FeatConstr {
         return num;
     }
 
-    public static int[] numOfDrThrFeatInTree(Instances data, int numOfOrigAttr, J48 dt) throws Exception{  //number of decision rule and threshold features and sum of terms in constructs in tree
+    public static int[] numOfDrThrFeatInTree(J48 dt) throws Exception{  //number of decision rule and threshold features and sum of terms in constructs in tree
         int num[]=new int[4]; //0-num of feat, 1-sum of terms in constructs of decision rule (FURIA) feat, 2-num of thr feat, 3-sum of construct of thr feat
         String notEscaped=dt.graph();
+
         String tmpParse[]=notEscaped.split("\\r?\\n"); //split by new line
         String attName;
         for(int o=1;o<tmpParse.length-1;o++){    //first and last field are digraph J48Tree { and }
@@ -3255,7 +3758,7 @@ public class FeatConstr {
         return num;
     }
 
-    public static int[] numOfNumFeatInTree(Instances data, int numOfOrigAttr, J48 dt) throws Exception{  //number of numerical features and sum of terms in constructs in tree
+    public static int[] numOfNumFeatInTree(J48 dt) throws Exception{  //number of numerical features and sum of terms in constructs in tree
         int numNumerical[]=new int[2];   //0-num of feat, 1-sum of terms in constructs of numerical feat
         String notEscaped=dt.graph();
         String tmpParse[]=notEscaped.split("\\r?\\n"); //split by new line
@@ -3264,9 +3767,9 @@ public class FeatConstr {
             if(tmpParse[o].contains("->") || tmpParse[o].contains("shape=box")) //skip leaves or binary marks (left(0) an right(1))
                 continue;
             attName=tmpParse[o].substring(tmpParse[o].indexOf("\"")+1,tmpParse[o].lastIndexOf("\""));   // we don't need " "        
-            if(attName.contains(" DIVIDE ") || attName.contains(" ADD ") || attName.contains(" SUBTRACT ")){
+            if(attName.contains(" DIVIDE ") || attName.contains(" ADD ") || attName.contains(" SUBTRACT ") || attName.contains(" ABSDIFF ") || attName.contains(" MULTIPLY ")){
                 numNumerical[0]++;
-                numNumerical[1]+=2; //DIVIDE, ADD and SUBTRACT are features of order 2 e.g., A1 DIVIDE A2
+                numNumerical[1]+=2; //DIVIDE, ADD, SUBTRACT, ABSDIFF, and MULTIPLY are features of order 2 e.g., A1 DIVIDE A2
             }
         }
         
@@ -3274,7 +3777,7 @@ public class FeatConstr {
     }    
         
     //for original model origDataset and enrichedDataset are the same    
-    public static int sumOfTermsInConstrInTree(Instances data, int numOfOrigAttr, J48 dt) throws Exception{  //sum of terms in constructs in tree
+    public static int sumOfTermsInConstrInTree(J48 dt) throws Exception{  //sum of terms in constructs in tree
         String notEscaped=dt.graph();
         String tmpParse[]=notEscaped.split("\\r?\\n"); //split by new line
         String tmpSize[];
@@ -3332,6 +3835,14 @@ public class FeatConstr {
                 tmpSize=attName.split(" SUBTRACT ");
                 sumOfConstructs+=tmpSize.length;
             }
+            else if(attName.contains(" ABSDIFF ")){
+                tmpSize=attName.split(" ABSDIFF ");
+                sumOfConstructs+=tmpSize.length;
+            }
+            else if(attName.contains(" MULTIPLY ")){
+                tmpSize=attName.split(" MULTIPLY ");
+                sumOfConstructs+=tmpSize.length;
+            }
             else
                 sumOfConstructs++; //if there is no construct in node there is only one attribute
         }
@@ -3339,7 +3850,7 @@ public class FeatConstr {
         return sumOfConstructs;
     }
 
-    public static int sumOfLFTermsInConstrInTree(Instances data, int numOfOrigAttr, J48 dt) throws Exception{  //sum of terms in constructs of logical operator features in tree
+    public static int sumOfLFTermsInConstrInTree(J48 dt) throws Exception{  //sum of terms in constructs of logical operator features in tree
         String notEscaped=dt.graph();
         String tmpParse[]=notEscaped.split("\\r?\\n");  //split by new line
         String tmpSize[];
@@ -3405,7 +3916,11 @@ public class FeatConstr {
                     else if(tmpOuter[i].contains(" ADD "))
                         count++;                   
                     else if(tmpOuter[i].contains(" SUBTRACT "))
-                        count++;                    
+                        count++;
+                    else if(tmpOuter[i].contains(" ABSDIFF "))
+                        count++;
+                    else if(tmpOuter[i].contains(" MULTIPLY "))
+                        count++;   
                 }
             }
             else if(rule.contains(" or ")){ //our construction of or in decision rules features
@@ -3452,6 +3967,14 @@ public class FeatConstr {
                 tmpOuter=rule.split(" SUBTRACT ");
                 count+=tmpOuter.length;
             }
+            else if(rule.contains(" ABSDIFF ")){ 
+                tmpOuter=rule.split(" ABSDIFF ");
+                count+=tmpOuter.length;
+            }
+            else if(rule.contains(" MULTIPLY ")){ 
+                tmpOuter=rule.split(" MULTIPLY ");
+                count+=tmpOuter.length;
+            }
             else
                 count++;
 	}
@@ -3460,7 +3983,7 @@ public class FeatConstr {
     }
     
     //Fayyad & Irani's MDL
-    public static Instances discretizeFI(Instances newData, int attrIdx, boolean kononenko) throws Exception{ //we have to prepare data without class variable
+    public static Instances discretize(Instances newData, int attrIdx, boolean kononenko, boolean isClassification) throws Exception{ //we have to prepare data without class variable
         NominalToBinary nominalToBinary=null;
         Remove remove= new Remove();
         remove.setAttributeIndices((newData.attribute(attrIdx).index()+1)+",last");//rangeList - a string representing the list of attributes. Since the string will typically come from a user, attributes are indexed from 1. e.g., first-3,5,6-last
@@ -3474,19 +3997,29 @@ public class FeatConstr {
             nominalToBinary.setInputFormat(newData);
         }
     
-        if(newData.attribute(0).isNumeric()){ 
-            //discretization    
-            weka.filters.supervised.attribute.Discretize filter;    //because of the same class name in different packages
-            //setup filter
-            filter = new weka.filters.supervised.attribute.Discretize();
-            //Discretization is by Fayyad & Irani's MDL method (the default). Continuous attributes are discretized and binarized.
-            //filter.
-            newData.setClassIndex(newData.numAttributes()-1); //we need class index for Fayyad & Irani's MDL
-            filter.setUseBinNumbers(true); //e.g. BXofY ... B1of1
-            filter.setUseKononenko(kononenko);
-            filter.setInputFormat(newData);
-            //apply filter
-            newData = Filter.useFilter(newData, filter);
+        if(newData.attribute(0).isNumeric()){
+            if(isClassification){
+                //discretization    
+                weka.filters.supervised.attribute.Discretize filterFI;    //because of the same class name in different packages
+                //setup filter
+                filterFI = new weka.filters.supervised.attribute.Discretize();
+                //Discretization is by Fayyad & Irani's MDL method (the default). Continuous attributes are discretized and binarized.
+                //filter.
+                newData.setClassIndex(newData.numAttributes()-1); //we need class index for Fayyad & Irani's MDL
+                filterFI.setUseBinNumbers(true); //e.g. BXofY ... B1of1
+                filterFI.setUseKononenko(kononenko);
+                filterFI.setInputFormat(newData);
+                //apply filter
+                newData = Filter.useFilter(newData, filterFI);
+            }
+            else{
+                weka.filters.unsupervised.attribute.Discretize filterSB;    //for regr. problems, Discretization is by simple binning.
+                filterSB = new weka.filters.unsupervised.attribute.Discretize();
+                filterSB.setBins(numOfBins);
+                filterSB.setInputFormat(newData);
+                //apply filter
+                newData=Filter.useFilter(newData, filterSB);
+            }            
             //nominal to binary  
             nominalToBinary = new NominalToBinary();
             nominalToBinary.setAttributeIndices("first");
@@ -3513,7 +4046,7 @@ public class FeatConstr {
     } 
 
     //Fayyad & Irani's MDL
-    public static Instances discretizeFITestBasedOnTrain(Instances trainData, Instances testData, int attrIdx, boolean kononenko) throws Exception{ //we have to prepare data without class variable
+    public static Instances discretizeTestBasedOnTrain(Instances trainData, Instances testData, int attrIdx, boolean kononenko, boolean isClassification) throws Exception{ //we have to prepare data without class variable
         Instances train=new Instances(trainData);
         Instances test=new Instances(testData);
         NominalToBinary nominalToBinary=null;
@@ -3536,21 +4069,32 @@ public class FeatConstr {
         }
     
         if(test.attribute(0).isNumeric()){ 
-            //discretization    
-            weka.filters.supervised.attribute.Discretize filter;    //because of the same class name in different packages
-            //setup filter
-            filter = new weka.filters.supervised.attribute.Discretize();
-            //Discretization is by Fayyad & Irani's MDL method (the default). Continuous attributes are discretized and binarized.
-            //filter.
-            train.setClassIndex(train.numAttributes()-1); //we need class index for Fayyad & Irani's MDL
-            test.setClassIndex(test.numAttributes()-1);
-        
-            filter.setUseBinNumbers(true); //e.g. BXofY ... B1of1
-            filter.setUseKononenko(kononenko);
-            filter.setInputFormat(train);   
-            //apply filter
-            train = Filter.useFilter(train, filter); 
-            test = Filter.useFilter(test, filter); //we have to apply discretization on test dataset based on info from train dataset
+            if(isClassification){   //for classification problems
+                //discretization    
+                weka.filters.supervised.attribute.Discretize filterFI;    //because of the same class name in different packages
+                //setup filter
+                filterFI = new weka.filters.supervised.attribute.Discretize();
+                //Discretization is by Fayyad & Irani's MDL method (the default). Continuous attributes are discretized and binarized.
+                //filter.
+                train.setClassIndex(train.numAttributes()-1); //we need class index for Fayyad & Irani's MDL
+                test.setClassIndex(test.numAttributes()-1);
+
+                filterFI.setUseBinNumbers(true); //e.g. BXofY ... B1of1
+                filterFI.setUseKononenko(kononenko);
+                filterFI.setInputFormat(train);   
+                //apply filter
+                train = Filter.useFilter(train, filterFI); 
+                test = Filter.useFilter(test, filterFI); //we have to apply discretization on test dataset based on info from train dataset
+            }
+            else{                   //for regression problems
+                weka.filters.unsupervised.attribute.Discretize filterSB;    //for regr. problems, Discretization is by simple binning.
+                filterSB = new weka.filters.unsupervised.attribute.Discretize();
+                filterSB.setBins(numOfBins);
+                filterSB.setInputFormat(train);
+                //apply filter
+                train = Filter.useFilter(train, filterSB); 
+                test = Filter.useFilter(test, filterSB); //we have to apply discretization on test dataset based on info from train dataset
+            }
             //nominal to binary  
             nominalToBinary = new NominalToBinary();
             nominalToBinary.setAttributeIndices("first");
@@ -3591,7 +4135,8 @@ public class FeatConstr {
             System.out.printf(" %4.4f %s\n",me.getValue(), me.getKey()); 
     }
 
-    public static void mdlCORElearn(Instances data, RCaller rCaller, RCode code){  //evaluation of the whole dataset
+    //public static void mdlCORElearn(Instances data, RCaller rCaller, RCode code){  //evaluation of the whole dataset
+    public static void mdlCORElearn(Instances data){  //evaluation of the whole dataset
         try{
         File output = new File("Rdata/dataForR.arff");  // <--- This is the result file 
         OutputStream out = new FileOutputStream(output);        
@@ -3621,7 +4166,7 @@ public class FeatConstr {
             else
                 attrImpListMDL.printf(" %4.4f %s\n",me.getValue(), me.getKey());
 
-        deleteTempRFiles(); //better than rCaller.deleteTempFiles(); deleteTempFiles() sometimes does not delete all tmp files
+        deleteTempRFiles(); //better than rCaller.deleteTempFiles();
         output.delete();
         }
         catch (Exception ex){
@@ -3712,6 +4257,36 @@ public class FeatConstr {
         return out;
     }
     
+    
+    public static String lowLevelReliefFcalcDistOnOrigAttr(Instances dataOrig, Instances dataAfterCI, double attrImpThrs) throws Exception { //ReliefFcalcDistOnOrigAttr
+        String listOfUnInFeat="";
+        ReliefFcalcDistOnOrigAttr evals=new ReliefFcalcDistOnOrigAttr(dataOrig, dataAfterCI); //we set original and enriched dataset with constructor, we don't need 
+        AttributeSelection attSel = new AttributeSelection();
+        Ranker search = new Ranker();     
+        attSel.setRanking(true);
+        attSel.setEvaluator(evals);
+        attSel.setSearch(search);
+        attSel.SelectAttributes(dataAfterCI);
+                      
+        double out[][]=attSel.rankedAttributes();
+        
+        Arrays.sort(out, new Comparator<double[]>() {   //sort by first column (indexes of attributes/features)
+            @Override
+            public int compare(double[] o1, double[] o2) {
+                return Double.compare(o1[0], o2[0]);
+            }
+        });
+           
+        for(int i=dataOrig.numAttributes()-1; i<dataAfterCI.numAttributes()-1;i++) //evaluate just features
+            if(out[i][1]<attrImpThrs)
+                listOfUnInFeat+=((int)out[i][0]+1)+",";  //i+1 because method setAttributeIndices starts indexes from 1
+        
+        if(!listOfUnInFeat.equals(""))  //all features are important
+            listOfUnInFeat=listOfUnInFeat.substring(0, listOfUnInFeat.lastIndexOf(",")); 
+            
+        return listOfUnInFeat;
+    }
+    
     public static double [][] lowLevelInfoGainAttrSel(Instances data) throws Exception {
         AttributeSelection attSel = new AttributeSelection();
         Ranker search = new Ranker();
@@ -3745,13 +4320,88 @@ public class FeatConstr {
         trainFold.setClassIndex(trainFold.numAttributes()-1);
         Random rnd = new Random(1);
         int minN=minNoise;
+        Timer t1=new Timer();
+        long exlpTimeKD=0;
         
         if(trainFold.classAttribute().isNumeric())
             isClassification=false;
         
         trainFold.setClassIndex(trainFold.numAttributes()-1);
-         
-        namesOfDiscAttr(trainFold);     //save discretization intervals
+          
+        namesOfDiscAttr(trainFold, isClassification, numOfBins);  //save discretisation intervals
+                     
+        double allExplanations[][]=null, allWeights[][]=null;
+        float allExplanationsSHAP[][], allWeightsSHAP[][]=null;
+        List<String>impInter=null;
+        Set<String> attrGroups= new LinkedHashSet<>();  //we want to keep the order of insertion and we don't want duplicates so LinkedHashSet
+                
+        if(!isClassification){
+            predictionModel.buildClassifier(trainFold);
+            if(excludeUppers(predictionModel.getClass().getSimpleName()).equals("RF")){ //OOB ia also calculated
+                RandomForest rf=(RandomForest)predictionModel;
+                System.out.print("Internal evaluation of the model (OOB): "+(1-rf.measureOutOfBagError())*100+" ");
+                    impGroupsKD.print("Internal evaluation of the model (OOB): "+(1-rf.measureOutOfBagError())*100+" ");
+            }
+
+            if(excludeUppers(predictionModel.getClass().getSimpleName()).equals("SMO")){
+                SMO svm=(SMO)predictionModel;
+                System.out.print("Kernel in SMO: "+svm.getKernel()+" ");
+                    impGroupsKD.print("Kernel in SMO: "+svm.getKernel()+" ");
+            }
+            
+            //explain all data
+            Instances explainData=new Instances(trainFold);
+            numInst=trainFold.numInstances();
+            Random rand = new Random(1);
+            if(!explAllData){//explain rand number of data
+                double numExplInst=(pctExplReg*explainData.numInstances())/100.00;
+                explainData.randomize(rand);
+                explainData = new Instances(explainData, 0, (int)numExplInst);
+                numInst=(int)numExplInst;
+            }
+            
+            System.out.println("IME (explanation), "+method.name()+", "+(method.name().equals("adaptiveSampling") ? "min samples: "+minS+", sum of samples: "+sumOfSmp : method.name().equals("diffSampling")?"min samples: "+minS:"N_SAMPLES: "+N_SAMPLES)+" - alg. for searching concepts: "+predictionModel.getClass().getSimpleName()+", explaining all dataset: "+(explAllData?"YES":"NO"));
+                impGroupsKD.println("IME (explanation), "+method.name()+", "+(method.name().equals("adaptiveSampling") ? "min samples: "+minS+", sum of samples: "+sumOfSmp : method.name().equals("diffSampling")?"min samples: "+minS:"N_SAMPLES: "+N_SAMPLES)+" - alg. for searching concepts: "+predictionModel.getClass().getSimpleName()+", explaining all dataset: "+(explAllData?"YES":"NO")); 
+            System.out.println("---------------------------------------------------------------------------------");
+                impGroupsKD.println("---------------------------------------------------------------------------------");
+                            
+            switch (method){
+                    case equalSampling: 
+                        allExplanations=IME.explainAllDatasetES(trainFold,explainData,predictionModel,N_SAMPLES, classToExplain);    //equal sampling
+                        break;
+                    case adaptiveSamplingSS:  
+                        allExplanations=IME.explainAllDatasetAS(trainFold,explainData,predictionModel, minS, sumOfSmp, classToExplain);     //we need sumOfSmp (sum of samples) for additive sampling
+                        break;
+                    case adaptiveSamplingAE: 
+                        allExplanations=IME.explainAllDatasetAS(trainFold,explainData,predictionModel, minS, classToExplain, error, pctErr);
+                        break;
+                    case aproxErrSampling:  
+                        allExplanations=IME.explainAllDatasetAES(predictionModel, trainFold, explainData,isClassification, classToExplain, minS, error, pctErr);                   
+                        break;
+                }
+            double noiseThr=(numInst*NOISE)/100.0;//we take number of noise threshold from the number of explained instances
+            if(numInst<minExplInst)
+                minN=minMinNoise;
+            int usedNoise=Math.max((int)Math.ceil(noiseThr),minN);  //makes sense only if NOISE=0 or num of explained instances is very low  
+            
+            System.out.println("We remove max(NOISE,minNoise) groups, NOISE="+NOISE+"% -> "+(int)Math.ceil(noiseThr)+ ", minNoise="+minN+" we remove groups of size "+usedNoise+". Explanation method: IME, num. of expl. inst. is "+(explAllData ? explainData.numInstances()+" (all data)" :  (numInst +", pct of expl. instances is "+pctExplReg))+". Number of bins for discretisation (simple binning) is "+numOfBins+".");
+                impGroupsKD.println("We remove max(NOISE,minNoise) groups, NOISE="+NOISE+"% -> "+(int)Math.ceil(noiseThr)+ ", minNoise="+minN+" we remove groups of size "+usedNoise+". Explanation method: IME, num. of expl. inst. is "+(explAllData ? explainData.numInstances()+" (all data)" :  (numInst +", pct of expl. instances is "+pctExplReg))+". Number of bins for discretisation (simple binning) is "+numOfBins+".");
+                impGroupsKD.println("Lower threshold thrL: "+thrL+" upper threshold thrU: "+thrU+" with step: "+step);
+                impGroupsKD.println("Explanation time: "+exlpTimeKD+" [ms]");
+            
+            
+                    for(double q=thrL;q<=thrU;q=q+step){
+                        impGroupsKD.println("--------------"); 
+                        impGroupsKD.printf("Threshold: %2.2f\n",round(q,1));
+                        impGroupsKD.println("--------------"); 
+
+                        allWeights=setWeights(trainFold,allExplanations,round(q,1));
+                        impInter=(getMostFqSubsets(allWeights,trainFold,usedNoise));
+                        attrGroups.addAll(impInter);
+                    } 
+        }
+        else{
+            
         //heuristics for class selection for explanations
         //table with frequencies for each class - how many instances occur in a particular class
         double [] classDistr=Arrays.stream(trainFold.attributeStats(trainFold.classIndex()).nominalCounts).asDoubleStream().toArray(); //we convert because we need in log2Multinomial as parameter double array
@@ -3762,20 +4412,14 @@ public class FeatConstr {
                 break;
             }
         }
-                     
-        double allExplanations[][]=null, allWeights[][]=null;
-        float allExplanationsSHAP[][], allWeightsSHAP[][]=null;
-            
-        List<String>impInter=null;
-        Set<String> attrGroups= new LinkedHashSet<>();  //we want to keep the order of insertion and we don't want duplicates so LinkedHashSet
-        
         int numClasses=1; //1 - just one iteration, we explain minority class, otherwise numClasses=classDistr.length;          
             
         if(explAllClasses)
             numClasses=classDistr.length;
-  
+        
         /*SHAP*/  
-        if(treeSHAP){
+        switch(explM){
+            case SHAP:
         /*XGBOOST*/
             for(int c=0;c<numClasses;c++){  //we explain all classes    
                 if(explAllClasses)
@@ -3790,8 +4434,11 @@ public class FeatConstr {
 
                 filter.setInputFormat(explainData);
                 explainData = Filter.useFilter(explainData, filter);
-                    
-                numInst=trainFold.attributeStats(trainFold.classIndex()).nominalCounts[classToExplain]; //number of instances (from the specified class) to explain //classToExplain instead of i if we explain just one class
+                                
+                if(explAllData)
+                    numInst=trainFold.numInstances();
+                else
+                    numInst=trainFold.attributeStats(trainFold.classIndex()).nominalCounts[classToExplain]; //number of instances (from the specified class) to explain //classToExplain instead of i if we explain just one class
                 if(numInst==0)
                     continue;   //even this is possible, class has no instances e.g., class autos
                 
@@ -3821,6 +4468,7 @@ public class FeatConstr {
                 
                 Map<String, DMatrix> watches = new HashMap<>();
                     watches.put("train", trainMat);
+                t1.start();
                 Booster booster = XGBoost.train(trainMat, params, numOfRounds, watches, null, null);
                 String evalNameTrain[]={"train"};
                 DMatrix [] trainMatArr={trainMat};
@@ -3829,11 +4477,14 @@ public class FeatConstr {
                 System.out.println("Internal (during building) accuracy of explanation model: "+(1-Double.parseDouble(accTrain.split(":")[1]))*100); //internal evaluation of the model
                     impGroupsKD.println("Internal (during building) accuracy of explanation model: "+(1-Double.parseDouble(accTrain.split(":")[1]))*100);
                     impGroupsKD.println("*********************************************************************************"); 
-
+                
+                
                 if(explAllData)
                     tmpContrib=booster.predictContrib(trainMat, 0);   //Tree SHAP ... for each feature, and last for bias matrix of size (?nsample, nfeats + 1) ... feature contributions (SHAP?  xgboost predict)
                 else
                     tmpContrib=booster.predictContrib(explainMat, 0);
+                t1.stop();
+                exlpTimeKD=t1.diff();
                 
                 trainMatArr=null;
                 booster.dispose();
@@ -3868,7 +4519,8 @@ public class FeatConstr {
                     System.out.println("We remove max(NOISE,minNoise) groups, NOISE="+NOISE+"% -> "+(int)Math.ceil(noiseThr)+ ", minNoise="+minN+" we remove groups of size "+usedNoise+". Tree SHAP num of expl. inst. "+(explAllData ? trainFold.numInstances() : numInst));
                         impGroupsKD.println("We remove max(NOISE,minNoise) groups, NOISE="+NOISE+"% -> "+(int)Math.ceil(noiseThr)+ ", minNoise="+minN+" we remove groups of size "+usedNoise+". Tree SHAP num of expl. inst. "+(explAllData ? trainFold.numInstances() : numInst));
                         impGroupsKD.println("Lower threshold thrL: "+thrL+" upper threshold thrU: "+thrU+" with step: "+step);
-            }    
+                        impGroupsKD.println("Explanation time: "+exlpTimeKD+" [ms]");
+                }    
                 
                 for(double q=thrL;q<=thrU;q=q+step){
                     if(!fileName.contains("justForAccurateTime")){  //because of benchmarking ... java optimization etc.
@@ -3882,116 +4534,189 @@ public class FeatConstr {
                     attrGroups.addAll(impInter);
                 }
             }//loop explain all classes SHAP
-        }
-        else{
-            predictionModel.buildClassifier(trainFold);  
-            if(excludeUppers(predictionModel.getClass().getSimpleName()).equals("RF")){ //OOB ia also calculated
-                RandomForest rf=(RandomForest)predictionModel;
-                System.out.print("Internal evaluation of the model (OOB): "+(1-rf.measureOutOfBagError())*100+" ");
-                    impGroupsKD.print("Internal evaluation of the model (OOB): "+(1-rf.measureOutOfBagError())*100+" ");
-            }
-            
-            if(excludeUppers(predictionModel.getClass().getSimpleName()).equals("SMO")){
-                SMO svm=(SMO)predictionModel;
-                System.out.print("Kernel in SMO: "+svm.getKernel()+" ");
-                    impGroupsKD.print("Kernel in SMO: "+svm.getKernel()+" ");
-            }
-            /*IME*/            
-            for(int i=0;i<numClasses;i++){//we explain all classes    
-                if(explAllClasses)
-                    classToExplain=i;
-                
-                Instances explainData=new Instances(trainFold);
-                RemoveWithValues filter = new RemoveWithValues();
-                filter.setAttributeIndex("last") ;  //class
-                filter.setNominalIndices((classToExplain+1)+""); //what we remove ... if we invert selection than we keep ... +1 indexes go from 0, we need indexes from 1 for method setNominalIndices
+            break;
+            case IME:
+                predictionModel.buildClassifier(trainFold);  
+                if(excludeUppers(predictionModel.getClass().getSimpleName()).equals("RF")){ //OOB ia also calculated
+                    RandomForest rf=(RandomForest)predictionModel;
+                    System.out.print("Internal evaluation of the model (OOB): "+(1-rf.measureOutOfBagError())*100+" ");
+                        impGroupsKD.print("Internal evaluation of the model (OOB): "+(1-rf.measureOutOfBagError())*100+" ");
+                }
 
-                filter.setInvertSelection(true);
+                if(excludeUppers(predictionModel.getClass().getSimpleName()).equals("SMO")){
+                    SMO svm=(SMO)predictionModel;
+                    System.out.print("Kernel in SMO: "+svm.getKernel()+" ");
+                        impGroupsKD.print("Kernel in SMO: "+svm.getKernel()+" ");
+                }
+                /*IME*/            
+                for(int i=0;i<numClasses;i++){//we explain all classes    
+                    if(explAllClasses)
+                        classToExplain=i;
 
-                filter.setInputFormat(explainData);
-                explainData = Filter.useFilter(explainData, filter);
-                
-                System.out.println("IME (explanation), "+method.name()+", "+(method.name().equals("adaptiveSampling") ? "min samples: "+minS+", sum of samples: "+sumOfSmp : method.name().equals("diffSampling")?"min samples: "+minS:"N_SAMPLES: "+N_SAMPLES)+" - alg. for searching concepts: "+predictionModel.getClass().getSimpleName());
-                     impGroupsKD.println("IME (explanation), "+method.name()+", "+(method.name().equals("adaptiveSampling") ? "min samples: "+minS+", sum of samples: "+sumOfSmp : method.name().equals("diffSampling")?"min samples: "+minS:"N_SAMPLES: "+N_SAMPLES)+" - alg. for searching concepts: "+predictionModel.getClass().getSimpleName()); 
-                System.out.println("Explaining class: "+trainFold.classAttribute().value(classToExplain)+", explaining whole dataset: "+(explAllData?"YES":"NO"));    //classToExplain instead of i if we explain just one class
-                    impGroupsKD.println("Explaining class: "+trainFold.classAttribute().value(classToExplain)+", explaining all dataset: "+(explAllData?"YES":"NO"));
-                System.out.println("---------------------------------------------------------------------------------");
-                    impGroupsKD.println("---------------------------------------------------------------------------------");
-                switch (method){
-                    case aproxErrSampling:
-                                    System.out.println("Sampling based on mi=(<1-alpha, e>), pctErr = "+pctErr+" error = "+error+".");
-                                        impGroupsKD.println("Sampling based on mi=(<1-alpha, e>), pctErr = "+pctErr+" error = "+error+".");
-                                    System.out.println("---------------------------------------------------------------------------------");
-                                        impGroupsKD.println("---------------------------------------------------------------------------------");
-                    break;
-                }                
-                               
-                numInst=trainFold.attributeStats(trainFold.classIndex()).nominalCounts[classToExplain]; //number of explained instances; instances from the explained class //classToExplain instead of i if we explain just one class
-                if(numInst==0)
-                    continue;   //even this is possible, class has no instances e.g., class autos
+                    Instances explainData=new Instances(trainFold);
+                    RemoveWithValues filter = new RemoveWithValues();
+                    filter.setAttributeIndex("last") ;  //class
+                    filter.setNominalIndices((classToExplain+1)+""); //what we remove ... if we invert selection than we keep ... +1 indexes go from 0, we need indexes from 1 for method setNominalIndices
 
-                if(!explAllData){
-                    if(numInst>maxToExplain){
-                        System.out.println("We take only "+maxToExplain+" instances out of "+numInst+".");
-                            impGroupsKD.println("We take only "+maxToExplain+" instances out of "+numInst+".");
+                    filter.setInvertSelection(true);
+
+                    filter.setInputFormat(explainData);
+                    explainData = Filter.useFilter(explainData, filter);
+
+                    System.out.println("IME (explanation), "+method.name()+", "+(method.name().equals("adaptiveSampling") ? "min samples: "+minS+", sum of samples: "+sumOfSmp : method.name().equals("diffSampling")?"min samples: "+minS:"N_SAMPLES: "+N_SAMPLES)+" - alg. for searching concepts: "+predictionModel.getClass().getSimpleName());
+                         impGroupsKD.println("IME (explanation), "+method.name()+", "+(method.name().equals("adaptiveSampling") ? "min samples: "+minS+", sum of samples: "+sumOfSmp : method.name().equals("diffSampling")?"min samples: "+minS:"N_SAMPLES: "+N_SAMPLES)+" - alg. for searching concepts: "+predictionModel.getClass().getSimpleName()); 
+                    System.out.println("Explaining class: "+trainFold.classAttribute().value(classToExplain)+", explaining whole dataset: "+(explAllData?"YES":"NO"));    //classToExplain instead of i if we explain just one class
+                        impGroupsKD.println("Explaining class: "+trainFold.classAttribute().value(classToExplain)+", explaining all dataset: "+(explAllData?"YES":"NO"));
+                    System.out.println("---------------------------------------------------------------------------------");
+                        impGroupsKD.println("---------------------------------------------------------------------------------");
+                    switch (method){
+                        case aproxErrSampling:
+                                        System.out.println("Sampling based on mi=(<1-alpha, e>), pctErr = "+pctErr+" error = "+error+".");
+                                            impGroupsKD.println("Sampling based on mi=(<1-alpha, e>), pctErr = "+pctErr+" error = "+error+".");
+                                        System.out.println("---------------------------------------------------------------------------------");
+                                            impGroupsKD.println("---------------------------------------------------------------------------------");
+                        break;
+                    }                
+
+                    if(explAllData)
+                        numInst=trainFold.numInstances();
+                    else
+                        numInst=trainFold.attributeStats(trainFold.classIndex()).nominalCounts[classToExplain]; //number of explained instances; instances from the explained class //classToExplain instead of i if we explain just one class
+                    if(numInst==0)
+                        continue;   //even this is possible, class has no instances e.g., class autos
+
+                    if(!explAllData){
+                        if(numInst>maxToExplain){
+                            System.out.println("We take only "+maxToExplain+" instances out of "+numInst+".");
+                                impGroupsKD.println("We take only "+maxToExplain+" instances out of "+numInst+".");
+
+                            explainData.randomize(rnd);
+                            explainData = new Instances(explainData, 0, maxToExplain);
+
+                            numInst=explainData.attributeStats(explainData.classIndex()).nominalCounts[classToExplain]; //for correct print on output
+                        }
+                        t1.start();
+                        switch (method){
+                            case equalSampling: 
+                                allExplanations=IME.explainAllDatasetES(trainFold, explainData, predictionModel, N_SAMPLES, classToExplain);//equal sampling
+                                break;
+                            case adaptiveSamplingSS:  
+                                allExplanations=IME.explainAllDatasetAS(trainFold, explainData, predictionModel, minS, sumOfSmp, classToExplain);//we need sumOfSmp (sum of samples) for additive sampling
+                                break;
+                            case adaptiveSamplingAE:    
+                                allExplanations=IME.explainAllDatasetAS(trainFold, explainData, predictionModel, minS, classToExplain, error, pctErr);
+                                break;                                              
+                            case aproxErrSampling:  
+                                allExplanations=IME.explainAllDatasetAES(predictionModel, trainFold, explainData, true, classToExplain, minS, error, pctErr);
+                                break;                                           
+                            }
+                        t1.stop();
+                        exlpTimeKD=t1.diff();
+                    }
+                    else{
+                        t1.start();
+                        switch (method){
+                            case equalSampling: 
+                                allExplanations=IME.explainAllDatasetES(trainFold, trainFold, predictionModel, N_SAMPLES, classToExplain);//equal sampling
+                                break;
+                            case adaptiveSamplingSS:  
+                                allExplanations=IME.explainAllDatasetAS(trainFold, trainFold, predictionModel, minS, sumOfSmp, classToExplain);//we need sumOfSmp (sum of samples) for additive sampling
+                                break;
+                            case adaptiveSamplingAE:    
+                                allExplanations=IME.explainAllDatasetAS(trainFold, trainFold, predictionModel, minS, classToExplain, error, pctErr);
+                                break;                         
+                            case aproxErrSampling:  
+                                allExplanations=IME.explainAllDatasetAES(predictionModel, trainFold, trainFold, true, classToExplain, minS, error, pctErr);
+                                break;
+                            }
+                        t1.stop();
+                        exlpTimeKD=t1.diff();
+                    }   
+
+                    if(numInst<minExplInst)
+                        minN=minMinNoise;
+
+                    double noiseThr=(numInst*NOISE)/100.0;//we take number of noise threshold from the number of explained instances
+                    int usedNoise=Math.max((int)Math.ceil(noiseThr),minN);  //makes sense only if NOISE=0 or num of explained instances is very low
+
+                    System.out.println("We remove max(NOISE,minNoise) groups, NOISE="+NOISE+"% -> "+(int)Math.ceil(noiseThr)+ ", minNoise="+minN+" we remove groups of size "+usedNoise+". Number of instances from class ("+explainData.classAttribute().value(classToExplain)+") is "+numInst);
+                        impGroupsKD.println("We remove max(NOISE,minNoise) groups, NOISE="+NOISE+"% -> "+(int)Math.ceil(noiseThr)+ ", minNoise="+minN+" we remove groups of size "+usedNoise+". Number of instances from class ("+explainData.classAttribute().value(classToExplain)+") is "+numInst);
+                        impGroupsKD.println("Lower threshold thrL: "+thrL+" upper threshold thrU: "+thrU+" with step: "+step);
+                        impGroupsKD.println("Explanation time: "+exlpTimeKD+" [ms]");
+
+                    for(double q=thrL;q<=thrU;q=q+step){
+                        impGroupsKD.println("--------------"); 
+                        impGroupsKD.printf("Threshold: %2.2f\n",round(q,1));
+                        impGroupsKD.println("--------------"); 
+
+                        allWeights=setWeights(trainFold,allExplanations,round(q,1));
+                        impInter=(getMostFqSubsets(allWeights,trainFold,usedNoise));
+                        attrGroups.addAll(impInter);
+                    }     
+                } //explain both (all) classes IME
+            break;
+            case LIME:
+                for(int i=0;i<numClasses;i++){//we explain all classes    
+                    if(explAllClasses)
+                        classToExplain=i;
+                    if(explAllData)
+                        numInst=trainFold.numInstances();
+                    else
+                        numInst=trainFold.attributeStats(trainFold.classIndex()).nominalCounts[classToExplain]; //number of instances in explained class
+                    if(numInst==0)
+                        continue;   //class has no instances e.g., class -3 in dataset autos
+                    Instances explainData=new Instances(trainFold);
+                    RemoveWithValues filter = new RemoveWithValues();
+                    filter.setAttributeIndex("last") ;                  //class
+                    filter.setNominalIndices((classToExplain+1)+"");    //what we remove ... +1 because indexes go from 0, we need indexes from 1 for method setNominalIndices
+                    filter.setInvertSelection(true);                    //if we invert selection then we keep selected data ... 
+                    filter.setInputFormat(explainData);
+                    explainData = Filter.useFilter(explainData, filter);
+                    
+                    String modelAlg="xgb";
+                    
+                    System.out.println("LIME (explanation), alg. for searching concepts: "+ (modelAlg.equals("xgb") ? "XGBoost" : "RF"));
+                        impGroupsKD.println("LIME (explanation), alg. for searching concepts: "+ (modelAlg.equals("xgb") ? "XGBoost" : "RF")); 
+                    System.out.println("Explaining class: "+trainFold.classAttribute().value(classToExplain)+", explaining whole dataset: "+(explAllData?"YES":"NO"));    //classToExplain instead of i if we explain just one class
+                        impGroupsKD.println("Explaining class: "+trainFold.classAttribute().value(classToExplain)+", explaining all dataset: "+(explAllData?"YES":"NO"));
+                    System.out.println("---------------------------------------------------------------------------------");
+                        impGroupsKD.println("---------------------------------------------------------------------------------");
+
+                    DataSink.write("Lime/trainFold.csv", trainFold);
+                    DataSink.write("Lime/explainData.csv", explainData);
+
+                    if(!explAllData){
+                        if(numInst>maxToExplain){
+                            System.out.println("We take only "+maxToExplain+" instances out of "+numInst+" from the class "+trainFold.classAttribute().value(classToExplain)+".");
+                                impGroups.println("We take only "+maxToExplain+" instances out of "+numInst+" from the class "+trainFold.classAttribute().value(classToExplain)+".");
 
                         explainData.randomize(rnd);
                         explainData = new Instances(explainData, 0, maxToExplain);
-
                         numInst=explainData.attributeStats(explainData.classIndex()).nominalCounts[classToExplain]; //for correct print on output
+                        }
+                        allExplanations=explainWithLime(trainFold, explainData, classToExplain, modelAlg, fileName);                                
                     }
-                    switch (method){
-                        case equalSampling: 
-                            allExplanations=IME.explainAllDatasetES(trainFold, explainData, predictionModel, N_SAMPLES, classToExplain);//equal sampling
-                            break;
-                        case adaptiveSamplingSS:  
-                            allExplanations=IME.explainAllDatasetAS(trainFold, explainData, predictionModel, minS, sumOfSmp, classToExplain);//we need sumOfSmp (sum of samples) for additive sampling
-                            break;
-                        case adaptiveSamplingAE:    
-                            allExplanations=IME.explainAllDatasetAS(trainFold, explainData, predictionModel, minS, classToExplain, error, pctErr);
-                            break;                                              
-                        case aproxErrSampling:  
-                            allExplanations=IME.explainAllDatasetAES(predictionModel, trainFold, explainData, true, classToExplain, minS, error, pctErr);
-                            break;                                           
-                        }
+                    else{
+                        allExplanations=explainWithLime(trainFold, trainFold, classToExplain, modelAlg, fileName);
+                    }
+                    if(numInst<minExplInst)
+                        minN=minMinNoise;
+
+                    double noiseThr=(numInst*NOISE)/100.0;//we take number of noise threshold from the number of explained instances
+                    int usedNoise=Math.max((int)Math.ceil(noiseThr),minN);  //makes sense only if NOISE=0 or num of explained instances is very low
+
+                    for(double q=thrL;q<=thrU;q=q+step){
+                        impGroupsKD.println("--------------"); 
+                        impGroupsKD.printf("Threshold: %2.2f\n",round(q,1));
+                        impGroupsKD.println("--------------"); 
+
+                        allWeights=setWeights(trainFold,allExplanations,round(q,1));
+                        impInter=(getMostFqSubsets(allWeights,trainFold,usedNoise));
+                        attrGroups.addAll(impInter);
+                    }  
                 }
-                else{
-                    switch (method){
-                        case equalSampling: 
-                            allExplanations=IME.explainAllDatasetES(trainFold, trainFold, predictionModel, N_SAMPLES, classToExplain);//equal sampling
-                            break;
-                        case adaptiveSamplingSS:  
-                            allExplanations=IME.explainAllDatasetAS(trainFold, trainFold, predictionModel, minS, sumOfSmp, classToExplain);//we need sumOfSmp (sum of samples) for additive sampling
-                            break;
-                        case adaptiveSamplingAE:    
-                            allExplanations=IME.explainAllDatasetAS(trainFold, trainFold, predictionModel, minS, classToExplain, error, pctErr);
-                            break;                         
-                        case aproxErrSampling:  
-                            allExplanations=IME.explainAllDatasetAES(predictionModel, trainFold, trainFold, true, classToExplain, minS, error, pctErr);
-                            break;
-                        }
-                }   
-                
-                if(numInst<minExplInst)
-                    minN=minMinNoise;
-
-                double noiseThr=(numInst*NOISE)/100.0;//we take number of noise threshold from the number of explained instances
-                int usedNoise=Math.max((int)Math.ceil(noiseThr),minN);  //makes sense only if NOISE=0 or num of explained instances is very low
-
-                System.out.println("We remove max(NOISE,minNoise) groups, NOISE="+NOISE+"% -> "+(int)Math.ceil(noiseThr)+ ", minNoise="+minN+" we remove groups of size "+usedNoise+". Number of instances from class ("+explainData.classAttribute().value(classToExplain)+") is "+numInst);
-                    impGroupsKD.println("We remove max(NOISE,minNoise) groups, NOISE="+NOISE+"% -> "+(int)Math.ceil(noiseThr)+ ", minNoise="+minN+" we remove groups of size "+usedNoise+". Number of instances from class ("+explainData.classAttribute().value(classToExplain)+") is "+numInst);
-                    impGroupsKD.println("Lower threshold thrL: "+thrL+" upper threshold thrU: "+thrU+" with step: "+step);
-                
-                for(double q=thrL;q<=thrU;q=q+step){
-                    impGroupsKD.println("--------------"); 
-                    impGroupsKD.printf("Threshold: %2.2f\n",round(q,1));
-                    impGroupsKD.println("--------------"); 
-
-                    allWeights=setWeights(trainFold,allExplanations,round(q,1));
-                    impInter=(getMostFqSubsets(allWeights,trainFold,usedNoise));
-                    attrGroups.addAll(impInter);
-                }     
-            } //explain both (all) classes IME
+            break;
+        }
         }
         listOfConcepts = new ArrayList<>(attrGroups);
             impGroupsKD.println("*********************************************************************************"); 
@@ -4005,7 +4730,7 @@ public class FeatConstr {
         if(logFeat){
             //depth 2
             for(String op : operationLogUse)    
-                trainFold= addLogFeatDepth(trainFold, allCombSecOrd,OperationLog.valueOf(op), false, 0, N2); //0 - we don't count unInf features
+                trainFold= addLogFeatDepth(trainFold, allCombSecOrd,OperationLog.valueOf(op), false, isClassification, 0, N2); //0 - we don't count unInf features
   
             //construction depth higher than 2
             if(featDepth>2){
@@ -4013,13 +4738,13 @@ public class FeatConstr {
                     List allCombNthOrd=allCombOfOrderN(listOfConcepts,i);
                     for(String op : operationLogUse)
                         if(OperationLog.valueOf(op)==OperationLog.AND || OperationLog.valueOf(op)==OperationLog.OR)
-                            trainFold= addLogFeatDepth(trainFold, allCombNthOrd,OperationLog.valueOf(op), false, 0, i); //0 - we don't count unInf features
+                            trainFold= addLogFeatDepth(trainFold, allCombNthOrd,OperationLog.valueOf(op), false, isClassification, 0, i); //0 - we don't count unInf features
                 }
             }
         }
         
         //decision rule and threshold features
-        if(decRuleFeat || thrFeat){
+        if((decRuleFeat || thrFeat) && (isClassification)){
             List<String> listOfFeat;
             listOfFeat=genFeatFromFuria(dataset, (ArrayList<String>) listOfConcepts, classToExplain, cf, pci,covering, featFromExplClass);   //generate features from Furia, parameter of FURIA cfF=0.7, cfI=0.9 stopping criteria 
             if(decRuleFeat)
@@ -4049,31 +4774,44 @@ public class FeatConstr {
             for(int i=0;i<dataset.numAttributes();i++)
                 if(dataset.attribute(i).isNumeric()){    //check if problem is numeric
                     allDiscrete=false; 
-                    System.out.println("We found continuous attribute!");
+                    System.out.println("We found continuous attribute - constructing Cart feat!");
                     break;
                 }
 
             origData = new Instances(dataset);   //For the ReliefF evaluation we need original data. The dataset "dataset" is changed below.
 
             if(!allDiscrete){
-                //discretization    
-                weka.filters.supervised.attribute.Discretize filterDis;    //because of same class name in different packages
-                // setup filter
-                filterDis = new weka.filters.supervised.attribute.Discretize();
-                //filter.
-                dataset.setClassIndex(dataset.numAttributes()-1); //we need class index for Fayyad & Irani's MDL
-                filterDis.setInputFormat(dataset);
-                // apply filter
-                dataset = Filter.useFilter(dataset, filterDis);
+                if(isClassification){
+                    //discretization    
+                    weka.filters.supervised.attribute.Discretize filterFI;    //because of same class name in different packages
+                    // setup filter
+                    filterFI = new weka.filters.supervised.attribute.Discretize();
+                    //filter.
+                    dataset.setClassIndex(dataset.numAttributes()-1); //we need class index for Fayyad & Irani's MDL
+                    filterFI.setInputFormat(dataset);
+                    // apply filter
+                    dataset = Filter.useFilter(dataset, filterFI);
+                }
+                else{
+                    weka.filters.unsupervised.attribute.Discretize filterSB;    //for regr. problems, Discretization is by simple binning.
+                    filterSB = new weka.filters.unsupervised.attribute.Discretize();
+                    filterSB.setBins(numOfBins);
+                    filterSB.setInputFormat(dataset);
+                    dataset = Filter.useFilter(dataset, filterSB);
+                }
             }
 
             trainFold=addCartFeat(trainFold, dataset,allCombSecOrd,false,0,N2,true);
         }
         
         //evaluation
-        attrImpListMDL_KD.println("MDL - after CI");
-            mdlCORElearn(trainFold, rCaller, code);
-        attrImpListReliefF_KD.println("ReliefF - after CI");
+        if(isClassification){
+            attrImpListMDL_KD.println("MDL - after CI");
+            mdlCORElearn(trainFold);
+        }
+        else{
+            attrImpListReliefF_KD.println("ReliefF - after CI");
+        }
         if(cartFeat)
             reliefFcalcDistanceOnAttributes(origData, trainFold);
         else
@@ -4092,7 +4830,7 @@ public class FeatConstr {
     }      
     
     //for original model origDataset and enrichedDataset are the same    
-    public static ModelAndAcc evaluateModel(Instances train, Instances test, Classifier model) throws Exception{  //the sum of all terms in constructs
+    public static ModelAndAcc evaluateModel(Instances train, Instances test, Classifier model, boolean isClassification) throws Exception{  //the sum of all terms in constructs
         ModelAndAcc ma=new ModelAndAcc();
         Instances trainFold=new Instances(train);        
         
@@ -4101,8 +4839,12 @@ public class FeatConstr {
     
         eval.evaluateModel(model, test);
         ma.setClassifier(model);
-        ma.setAcc((eval.correct())/(eval.incorrect()+eval.correct())*100.00); // the same ma.setAcc((1.0-eval.errorRate())*100.0);
-   
+        if(isClassification)
+            ma.setAcc((eval.correct())/(eval.incorrect()+eval.correct())*100.00); // the same ma.setAcc((1.0-eval.errorRate())*100.0);
+        else{
+            ma.setMae(eval.meanAbsoluteError());
+            ma.setRmse(eval.rootMeanSquaredError());
+        }
         return ma;
     }    
     
@@ -4116,7 +4858,7 @@ public class FeatConstr {
         ArrayList <Parameters> bestRndParam;
         String listOfUnInFeat;
         Remove remove;
-        String bestParam, attName;
+        String bestParam;
         int feat[]=new int[6];  //for counting logical, thr, FURIA, Cartesian, relational and numerical features
         int tree[]=new int[3];  //for counting tree size, number of leaves and number of constructs
         int numLogInTree[]=new int[2];  //number of logical features and constructs in tree
@@ -4157,9 +4899,9 @@ public class FeatConstr {
             for(int j=numOfAttr;j<tmpSubTrain.numAttributes()-1;j++){
                 if(!tmpSubTrain.attribute(j).isNumeric())
                     attrImp=calculateAttrImportance(tmpSubTrain, tmpSubTrain.attribute(j).name(), "MDL");   //faster implementation of MDL only for discrete data
-                else
+                else{
                     attrImp=calcFeatImpMDL(tmpSubTrain, j, rCaller, code);
-                
+                }
                 if(attrImp<=attrImpThrs[g])
                     listOfUnInFeat+=(j+1)+",";                           
             }    
@@ -4208,9 +4950,9 @@ public class FeatConstr {
         for(int j=numOfAttr;j<train.numAttributes()-1;j++){
             if(!train.attribute(j).isNumeric()) //we skip evaluation of numerical features
                 attrImp=calculateAttrImportance(train, train.attribute(j).name(), bestParam.split("@")[0]); //old version attribute(j) ... indexes start from 0!!!
-            else
+            else{
                 attrImp=calcFeatImpMDL(train, j, rCaller, code);
-            
+            }
             if(attrImp<=Double.parseDouble(bestParam.split("@")[1]))
                 listOfUnInFeat+=(j+1)+",";                        
         }
@@ -4246,17 +4988,17 @@ public class FeatConstr {
             j48=(J48)(predictionModel);
             tree[0]=(int)j48.measureTreeSize();     //treeSize
             tree[1]=(int)j48.measureNumLeaves();    //numOfLeaves
-            tree[2]=sumOfTermsInConstrInTree(train, numOfAttr, j48);    //sumOfTerms
+            tree[2]=sumOfTermsInConstrInTree(j48);    //sumOfTerms
                     
-            numLogInTree[0]=numOfLogFeatInTree(train, numOfAttr, j48);
-            numLogInTree[1]=sumOfLFTermsInConstrInTree(train, numOfAttr, j48);
+            numLogInTree[0]=numOfLogFeatInTree(j48);
+            numLogInTree[1]=sumOfLFTermsInConstrInTree(j48);
 
             if(numerFeat)
-                nN=numOfNumFeatInTree(train,numOfAttr, j48);
+                nN=numOfNumFeatInTree(j48);
             
-            nR=numOfRelFeatInTree(train,numOfAttr, j48);
-            nC=numOfCartFeatInTree(train,numOfAttr, j48);
-            furiaThrC=numOfDrThrFeatInTree(train, numOfAttr, j48);                    
+            nR=numOfRelFeatInTree(j48);
+            nC=numOfCartFeatInTree(j48);
+            furiaThrC=numOfDrThrFeatInTree(j48);                    
         }
                 
         if(excludeUppers(predictionModel.getClass().getSimpleName()).equals("FURIA")){
@@ -4268,7 +5010,6 @@ public class FeatConstr {
                 
         attrImpListMDL.println("MDL (param. search)");
         attrImpListMDL.println("The best parameter when using "+predictionModel.getClass().getSimpleName()+": "+bestParam); //use only features above the bestParam MDL score and all attributes
-        //mdlCORElearn(train, rCaller, code);
                                  
         pse.setAcc((eval.correct())/(eval.incorrect()+eval.correct())*100.00);
         pse.setFeat(feat);
@@ -4284,6 +5025,302 @@ public class FeatConstr {
         
         return pse;
     }  
+    
+    public static ParamSearchEval paramSearchOpt(Instances data, Instances train, Instances test, Classifier predictionModel, int numOfAttr, int split, FeatEvalMeth evalMeth) throws Exception{
+        Instances validation, subTrain, tmpValidation, tmpSubTrain;
+        ParamSearchEval pse=new ParamSearchEval();
+        StratifiedRemoveFolds fold;
+        double attrImp;
+        double intClassAcc=0;   //internal class accuracy  - class acc of paramSearch loop
+        double maxIntAcc;   //maksimal internal acc
+        ArrayList <Parameters> bestRndParam;
+        String listOfUnInFeat;
+        Remove remove;
+        String bestParam;
+        int feat[]=new int[6];  //for counting logical, thr, FURIA, Cartesian, relational and numerical features
+        int tree[]=new int[3];  //for counting tree size, number of leaves and number of constructs
+        int numLogInTree[]=new int[2];  //number of logical features and constructs in tree
+        int nC[]=new int[2];    //for counting Cartesian features in tree
+        int nR[]=new int[2];    //for counting relational features in tree
+        int nN[]=new int[2];    //for counting numerical features in tree
+        int complexityF[]=new int[2];   //for counting complexity parameters of Furia
+        int furiaThrC[]=new int[4]; //for Furia and Thr feat complexity
+        int tmp[];
+        long time[]=new long[2];    //0-feature construction time, 1-learning time
+        Timer t1=new Timer();    
+    
+        bestRndParam =new ArrayList<>();
+        maxIntAcc=0;
+
+        fold = new StratifiedRemoveFolds();
+        fold.setInputFormat(train);
+        fold.setSeed(1);
+        fold.setNumFolds(split);
+        fold.setFold(split);
+        fold.setInvertSelection(true);  //because we invert selection we take all folds except the "split" one
+        subTrain = Filter.useFilter(train,fold); 
+
+        fold = new StratifiedRemoveFolds();
+        fold.setInputFormat(train);
+        fold.setSeed(1);
+        fold.setNumFolds(split);
+        fold.setFold(split);
+        fold.setInvertSelection(false);
+        validation = Filter.useFilter(train,fold); 
+     
+        /*FS on validation dataset loop!!!*/  
+        t1.start();
+        for(int g=0;g<attrImpThrs.length;g++){
+            listOfUnInFeat="";
+            tmpSubTrain=new Instances(subTrain);
+            tmpValidation=new Instances(validation); 
+            
+            switch(evalMeth){
+                case MDL:
+                    listOfUnInFeat=evalFeatMDL(tmpSubTrain,numOfAttr, attrImpThrs[g]);
+                    break;
+                case ReliefF:                            
+                    listOfUnInFeat=lowLevelReliefFcalcDistOnOrigAttr(data, tmpSubTrain, attrImpThrs[g]);
+                    break;
+            }
+            
+            if(!listOfUnInFeat.equals("")){        
+                remove= new Remove();
+                remove.setAttributeIndices(listOfUnInFeat); //rangeList - a string representing the list of attributes. Since the string will typically come from a user, attributes are indexed from 1. e.g.: first-3,5,6-last
+                remove.setInputFormat(tmpSubTrain);
+                tmpSubTrain = Filter.useFilter(tmpSubTrain, remove);
+                        
+                remove.setAttributeIndices(listOfUnInFeat);
+                remove.setInputFormat(tmpValidation);
+                tmpValidation = Filter.useFilter(tmpValidation, remove);
+            }
+           
+            predictionModel.buildClassifier(tmpSubTrain);
+            Evaluation eval = new Evaluation(tmpSubTrain);
+            eval.evaluateModel(predictionModel, tmpValidation);
+            
+            intClassAcc=(eval.correct())/(eval.incorrect()+eval.correct())*100.00;
+            bestRndParam.add(new Parameters(intClassAcc,"MDL"+"@"+attrImpThrs[g], tmpSubTrain.numAttributes()-1 )); //new version only MDL method
+            if(intClassAcc>maxIntAcc)
+                maxIntAcc=intClassAcc;                        
+        }
+        
+        t1.stop();
+        time[0]=t1.diff();
+        bestParamPerFold.print("Num. of all parameters "+bestRndParam.size()+". ");
+                
+        for(int j=0;j<bestRndParam.size();){
+            if(bestRndParam.get(j).getAcc()<maxIntAcc)
+                bestRndParam.remove(j);
+            else
+                j++;
+        }
+                
+        bestParamPerFold.println("Num. of max ACC "+bestRndParam.size()+".");                
+        if(bestRndParam.size()>1)
+            bestParam=bestRndParam.get((int)(Math.random()*bestRndParam.size())).getEvalMeth(); //we take random parameter out of the parameters that have same ACC
+        else
+            bestParam=bestRndParam.get(0).getEvalMeth();
+                
+        listOfUnInFeat="";
+        
+        switch(evalMeth){
+            case MDL:
+                listOfUnInFeat=evalFeatMDL(train,numOfAttr, Double.parseDouble(bestParam.split("@")[1]));
+            break;
+            case ReliefF:                            
+                listOfUnInFeat=lowLevelReliefFcalcDistOnOrigAttr(data, train, Double.parseDouble(bestParam.split("@")[1]));
+            break;
+        }
+                      
+        remove= new Remove();
+        remove.setAttributeIndices(listOfUnInFeat);
+        remove.setInputFormat(train);
+        train = Filter.useFilter(train, remove);                          
+
+        tmp=numOfFeat(train,numOfAttr);
+        feat[0]+=tmp[0];    //logical feat
+        feat[1]+=tmp[1];    //threshold feat
+        feat[2]+=tmp[2];    //decision rule feat (FURIA)
+        feat[3]+=tmp[3];    //Cartesian feat
+        feat[4]+=tmp[4];    //relational feat
+        
+        if(numerFeat)
+            feat[5]+=tmp[5];    //numerical feat
+                
+        remove.setInputFormat(test);
+        test = Filter.useFilter(test, remove);
+        
+        t1.start();
+        predictionModel.buildClassifier(train);
+        Evaluation eval = new Evaluation(train);
+        eval.evaluateModel(predictionModel, test);
+        t1.stop();
+        time[1]=t1.diff();
+                
+        if(excludeUppers(predictionModel.getClass().getSimpleName()).equals("J48")){
+            J48 j48=new J48(); 
+            j48=(J48)(predictionModel);
+            tree[0]=(int)j48.measureTreeSize();     //treeSize
+            tree[1]=(int)j48.measureNumLeaves();    //numOfLeaves
+            tree[2]=sumOfTermsInConstrInTree(j48);    //sumOfTerms
+                    
+            numLogInTree[0]=numOfLogFeatInTree(j48);
+            numLogInTree[1]=sumOfLFTermsInConstrInTree(j48);
+
+            if(numerFeat)
+                nN=numOfNumFeatInTree(j48);
+            
+            nR=numOfRelFeatInTree(j48);
+            nC=numOfCartFeatInTree(j48);
+            furiaThrC=numOfDrThrFeatInTree(j48);                    
+        }
+                
+        if(excludeUppers(predictionModel.getClass().getSimpleName()).equals("FURIA")){
+            FURIA fu=new FURIA();
+            fu=(FURIA)(predictionModel);
+            complexityF[0]=fu.getRuleset().size();
+            complexityF[1]=sumOfTermsInConstrInRule(fu.getRuleset(),train);
+        }
+                
+        attrImpListMDL.println("MDL (param. search)");
+        attrImpListMDL.println("The best parameter when using "+predictionModel.getClass().getSimpleName()+": "+bestParam); //use only features above the bestParam MDL score and all attributes
+                                 
+        pse.setAcc((eval.correct())/(eval.incorrect()+eval.correct())*100.00);
+        pse.setFeat(feat);
+        pse.setTree(tree);
+        pse.setComplexityFuria(complexityF);
+        pse.setNumLogFeatInTree(numLogInTree);
+        if(numerFeat)
+            pse.setNumFeatInTree(nN);
+        pse.setRelFeatInTree(nR);
+        pse.setCartFeatInTree(nC);
+        pse.setFuriaThrComplx(furiaThrC);
+        pse.setTime(time);
+        
+        return pse;
+    }
+    
+    public static ParamSearchEval paramSearchRegr(Instances data, Instances train, Instances test, Classifier predictionModel, int numOfAttr, int split) throws Exception{
+        Instances validation, subTrain, tmpValidation, tmpSubTrain;
+        ParamSearchEval pse=new ParamSearchEval();
+        StratifiedRemoveFolds fold;
+        double intRmse=0;   //internal RMSE  - RMSE of paramSearch loop
+        double intMae=0;   //internal RMSE  - RMSE of paramSearch loop
+        double minRmse;   //minimal internal rmse
+        ArrayList <Parameters> bestRndParam;
+        String listOfUnInFeat;
+        Remove remove;
+        String bestParam;
+        int feat[]=new int[6];  //for counting logical, thr, FURIA, Cartesian, relational and numerical features
+        int tmp[];
+        long time[]=new long[2];    //0-feature construction time, 1-learning time
+        Timer t1=new Timer();    
+
+        bestRndParam =new ArrayList<>();
+        minRmse=Integer.MAX_VALUE;
+        fold = new StratifiedRemoveFolds();
+        fold.setInputFormat(train);
+        fold.setSeed(1);
+        fold.setNumFolds(split);
+        fold.setFold(split);
+        fold.setInvertSelection(true);  //because we invert selection we take all folds except the "split" one
+        subTrain = Filter.useFilter(train,fold); 
+
+        fold = new StratifiedRemoveFolds();
+        fold.setInputFormat(train);
+        fold.setSeed(1);
+        fold.setNumFolds(split);
+        fold.setFold(split);
+        fold.setInvertSelection(false);
+        validation = Filter.useFilter(train,fold); 
+     
+        /*FS on validation dataset loop!!!*/  
+        t1.start();
+        for(int g=0;g<attrImpThrs.length;g++){
+            tmpSubTrain=new Instances(subTrain);
+            tmpValidation=new Instances(validation); 
+            
+            //for feature evaluation is used ReliefF
+            listOfUnInFeat=lowLevelReliefFcalcDistOnOrigAttr(data, tmpSubTrain, attrImpThrs[g]);
+              
+            if(!listOfUnInFeat.equals("")){        
+                remove= new Remove();
+                remove.setAttributeIndices(listOfUnInFeat); //rangeList - a string representing the list of attributes. Since the string will typically come from a user, attributes are indexed from 1. e.g.: first-3,5,6-last
+                remove.setInputFormat(tmpSubTrain);
+                tmpSubTrain = Filter.useFilter(tmpSubTrain, remove);
+                        
+                remove.setAttributeIndices(listOfUnInFeat);
+                remove.setInputFormat(tmpValidation);
+                tmpValidation = Filter.useFilter(tmpValidation, remove);
+            }
+           
+            predictionModel.buildClassifier(tmpSubTrain);
+            Evaluation eval = new Evaluation(tmpSubTrain);
+            eval.evaluateModel(predictionModel, tmpValidation);
+            
+            intRmse=eval.rootMeanSquaredError();
+            intMae=eval.meanAbsoluteError();
+            bestRndParam.add(new Parameters(intMae,intRmse,"ReliefF"+"@"+attrImpThrs[g], tmpSubTrain.numAttributes()-1 )); //new version only MDL method
+            if(intRmse<minRmse)
+                minRmse=intRmse;                        
+        }
+        
+        t1.stop();
+        time[0]=t1.diff();
+        bestParamPerFold.print("Num. of all parameters "+bestRndParam.size()+". ");
+                        
+        for(int j=0;j<bestRndParam.size();){
+            if(bestRndParam.get(j).getRmse()>minRmse)
+                bestRndParam.remove(j);
+            else
+                j++;
+        }
+                
+        bestParamPerFold.println("Num. of min RMSE "+bestRndParam.size()+".");                
+        if(bestRndParam.size()>1)
+            bestParam=bestRndParam.get((int)(Math.random()*bestRndParam.size())).getEvalMeth(); //we take random parameter out of the parameters that have same RMSE
+        else
+            bestParam=bestRndParam.get(0).getEvalMeth();
+                
+        //for feature evaluation is used ReliefF
+        listOfUnInFeat=lowLevelReliefFcalcDistOnOrigAttr(data, train, Double.parseDouble(bestParam.split("@")[1]));
+             
+        remove= new Remove();
+        remove.setAttributeIndices(listOfUnInFeat);
+        remove.setInputFormat(train);
+        train = Filter.useFilter(train, remove);                          
+
+        tmp=numOfFeat(train,numOfAttr);
+        feat[0]+=tmp[0];    //logical feat
+        feat[1]+=tmp[1];    //threshold feat
+        feat[2]+=tmp[2];    //decision rule feat (FURIA)
+        feat[3]+=tmp[3];    //Cartesian feat
+        feat[4]+=tmp[4];    //relational feat
+        
+        if(numerFeat)
+            feat[5]+=tmp[5];    //numerical feat
+                
+        remove.setInputFormat(test);
+        test = Filter.useFilter(test, remove);
+        
+        t1.start();
+        predictionModel.buildClassifier(train);
+        Evaluation eval = new Evaluation(train);
+        eval.evaluateModel(predictionModel, test);
+        t1.stop();
+        time[1]=t1.diff();
+               
+        attrImpListReliefF.println("ReliefF (param. search)");
+        attrImpListReliefF.println("The best parameter when using "+predictionModel.getClass().getSimpleName()+": "+bestParam); //use only features above the bestParam ReliefF score and all attributes
+                                 
+        pse.setMae(eval.meanAbsoluteError());
+        pse.setRmse(eval.rootMeanSquaredError());
+        pse.setFeat(feat);
+        pse.setTime(time);
+        
+        return pse;
+    }
     
     public static double[][] minMaxNumAttr(Instances data) throws Exception{    //classIndex - 0,1 ... e.g.: {no-recurrence-events,recurrence-events}, we have two indexes no-recurrence-events ... 0, recurrence-events ... 1
         //explain attributes' values
@@ -4410,6 +5447,8 @@ public class FeatConstr {
                 return leftOperand + rightOperand;
             case SUBTRACT:
                 return leftOperand - rightOperand;
+            case MULTIPLY:
+                return leftOperand * rightOperand;
             case DIVIDE:
                 if(rightOperand!=0)
                     return leftOperand / rightOperand;
@@ -4535,7 +5574,7 @@ public class FeatConstr {
         return sortedMap;
     }
     
-    public static ArrayList<String> getMostFqSubsets(double allWeights[][], Instances data,int pctVal) { //delete all those subsets that are represented less than n%
+    public static ArrayList<String> getMostFqSubsets(double allWeights[][], Instances data, int pctVal) { //delete all those subsets that are represented less than n%
         String attrSets []=new String[allWeights.length];
         String tmpSet="";
         int x=0,count=0;
@@ -4725,11 +5764,10 @@ public class FeatConstr {
             String tmpRcall[]=rCaller.getParser().getAsStringArray("attrEval"); //name in R "attrEval", get data from R, evaluated attributes
             featEval=Double.parseDouble(tmpRcall[0]);
 
-            //deleteTempRFiles(); is performed after FS on validation set and after taking features for training set
             output.delete();    //delete temp file
         }
         catch(Exception ex){
-            System.out.println("Error in the method mdlCORElearn");
+            System.out.println("Error in the method calcFeatImpMDL");
                 Logger.getLogger(FeatConstr.class.getName()).log(Level.SEVERE, null, ex);
         }
                 
@@ -4783,12 +5821,16 @@ public class FeatConstr {
         return newArray;
     }
 
-    public static void namesOfDiscAttr(Instances trainData){      
+    public static void namesOfDiscAttr(Instances trainData, boolean isClassification, int numOfBins){   //numOfBins for regression prblems only;  Discretization is by simple binning. Skips the class attribute if set.      
         Instances newData;
         NominalToBinary nominalToBinary = new NominalToBinary();
-
-        weka.filters.supervised.attribute.Discretize discFilter;    //because of the same class name in different packages
-        discFilter = new weka.filters.supervised.attribute.Discretize();
+        
+        //because of the same class name in different packages; 
+        weka.filters.supervised.attribute.Discretize discFilterFI;      //for class. problems, Fayyad & Irani's MDL
+        discFilterFI = new weka.filters.supervised.attribute.Discretize();
+        weka.filters.unsupervised.attribute.Discretize discFilterSB;    //for regr. problems, Discretization is by simple binning.
+        discFilterSB = new weka.filters.unsupervised.attribute.Discretize();
+        
         Remove remove= new Remove();
         String indices="";
         boolean allDiscrete=true;
@@ -4801,27 +5843,34 @@ public class FeatConstr {
                 }
             
             if(!allDiscrete){
-            //get indices of numeric attributes, we will discretize only numeric attributes
-            for(int i=0;i<trainData.numAttributes()-1;i++)
-                if(trainData.attribute(i).isNumeric())
-                    indices+=(i+1)+","; 
+                //get indices of numeric attributes, we will discretize only numeric attributes
+                for(int i=0;i<trainData.numAttributes()-1;i++)
+                    if(trainData.attribute(i).isNumeric())
+                        indices+=(i+1)+","; 
 
-            remove.setAttributeIndices(indices+",last");
-            remove.setInvertSelection(true);
-            remove.setInputFormat(trainData);
-            trainData = Filter.useFilter(trainData, remove); 
+                remove.setAttributeIndices(indices+",last");
+                remove.setInvertSelection(true);
+                remove.setInputFormat(trainData);
+                trainData = Filter.useFilter(trainData, remove); 
 
-            trainData.setClassIndex(trainData.numAttributes()-1); //we need class index for Fayyad & Irani's MDL
-            discFilter.setInputFormat(trainData);
-            newData=Filter.useFilter(trainData, discFilter);
+                if(isClassification){
+                    trainData.setClassIndex(trainData.numAttributes()-1); //we need class index for Fayyad & Irani's MDL
+                    discFilterFI.setInputFormat(trainData);
+                    newData=Filter.useFilter(trainData, discFilterFI);
+                }
+                else{
+                    discFilterSB.setBins(numOfBins);
+                    discFilterSB.setInputFormat(trainData);
+                    newData=Filter.useFilter(trainData, discFilterSB);
+                }
 
-            nominalToBinary.setInputFormat(newData); 
-            newData = Filter.useFilter(newData, nominalToBinary);
-            for(int i=0;i<newData.numAttributes()-1;i++)
-                if(justExplain)
-                    discIntervalsKD.println(newData.attribute(i).name());
-                else
-                    discIntervals.println(newData.attribute(i).name());
+                nominalToBinary.setInputFormat(newData); 
+                newData = Filter.useFilter(newData, nominalToBinary);
+                for(int i=0;i<newData.numAttributes()-1;i++)
+                    if(justExplain)
+                        discIntervalsKD.println(newData.attribute(i).name());
+                    else
+                        discIntervals.println(newData.attribute(i).name());
             }
             else
                 if(justExplain)
@@ -4830,7 +5879,7 @@ public class FeatConstr {
                     discIntervals.println("No numeric attributes.");
         } 
         catch(Exception e) {
-            System.out.println("ERROR in method namesOfDiscAttr"+e.toString());
+            System.out.println("ERROR in method namesOfDiscAttr: "+e.toString());
         }
     }
 
@@ -5139,7 +6188,6 @@ public class FeatConstr {
             Collections.sort(list, comparator.reversed()); //if we want reversed order ... descending order
             for(Map.Entry<String, Double> me : list){ 
                 System.out.printf(" %4.4f %s\n",me.getValue(), me.getKey()); 
-//                    logFile.printf(" %4.4f %s\n",me.getValue(), me.getKey());
             }
 
             //get attribute importance
@@ -5580,5 +6628,283 @@ public class FeatConstr {
                     fileTmp.delete();                
                 }
             }
+    }
+    
+    public static ArrayList<String> listToArrayList(List<String> originalList) {
+        if (originalList == null) {
+            throw new IllegalArgumentException("Original list cannot be null.");
+        }
+
+        ArrayList<String> newList = new ArrayList<>(originalList.size());
+        newList.addAll(originalList);
+        
+        return newList;
+    }
+    
+    public static List<String> rndBaseline(Instances data, int groupSize, int numOfGroups){
+        String idxOfAttr="";
+        for (int i=0;i<data.numAttributes()-1;i++)
+            if(i<data.numAttributes()-2)
+                idxOfAttr+=i+",";
+            else
+                idxOfAttr+=i;        
+        
+        List<String>listOfAttrGroups= new ArrayList<>();
+        listOfAttrGroups.add(idxOfAttr);
+        ArrayList<String> allCombSecOrd3=(ArrayList<String>) allCombOfOrderN(listOfAttrGroups,groupSize);
+        
+        Collections.shuffle(allCombSecOrd3);
+
+        List <String> firstNElementsList = allCombSecOrd3.stream().limit(allCombSecOrd3.size()< numOfGroups ? allCombSecOrd3.size() : numOfGroups).collect(Collectors.toList());
+        ArrayList myArr=listToArrayList(firstNElementsList);       
+        ArrayList<String> newArr=new ArrayList<>(myArr.size());
+        for(int i=0;i<myArr.size();i++)
+            newArr.add(myArr.get(i).toString().replace('[', ' ').replace(']', ' ').replace(" ", "").trim()); 
+
+        listOfAttrGroups.clear();
+        listOfAttrGroups.addAll(newArr);
+  
+        return listOfAttrGroups; 
+    }
+    
+    public static List<String> globalEval(Instances data, FeatEvalMeth fem, int nMostInfAttr, int groupSize, int numOfGroups){ //get N most informative attributes by ReliefF, generate all combinations of the size of "groupSize" and take numOfGroups of them
+        String featIdx="";
+        List<String>listOfAttrGroups=null;
+        try{
+        switch(fem){
+            case MDL:
+                featIdx=idxOfNInfAttrMDL(data, nMostInfAttr);
+            break;
+            case ReliefF:
+                double[][] featEval=lowLevelReliefFAttrSel(data);
+                print2d(featEval);
+                for(int i=0;i<nMostInfAttr;i++)
+                    featIdx+=(int)featEval[i][0]+",";
+                featIdx=featIdx.substring(0, featIdx.lastIndexOf(","));
+            break;
+        }
+        
+        listOfAttrGroups= new ArrayList<>();
+        listOfAttrGroups.add(featIdx);
+        ArrayList<String> allCombSecOrd3=(ArrayList<String>) allCombOfOrderN(listOfAttrGroups,groupSize);
+        
+        Collections.shuffle(allCombSecOrd3);
+
+        List <String> firstNElementsList = allCombSecOrd3.stream().limit(allCombSecOrd3.size()< numOfGroups ? allCombSecOrd3.size() : numOfGroups).collect(Collectors.toList());
+
+        ArrayList myArr=listToArrayList(firstNElementsList);       
+        ArrayList<String> newArr=new ArrayList<>(myArr.size());
+        for(int i=0;i<myArr.size();i++)
+            newArr.add(myArr.get(i).toString().replace('[', ' ').replace(']', ' ').replace(" ", "").trim()); 
+
+        listOfAttrGroups.clear();
+        listOfAttrGroups.addAll(newArr);
+  
+        
+        }
+        catch (Exception ex){
+            System.out.println("Error in the method globalEval");
+                Logger.getLogger(FeatConstr.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return listOfAttrGroups; 
+    }
+    
+    public static String idxOfNInfAttrMDL(Instances data, int numOfInfFeat){  //evaluation of the whole dataset
+        String featIdx="";
+        try{
+        File output = new File("Rdata/dataForR.arff");  // <--- This is the result file 
+        OutputStream out = new FileOutputStream(output);        
+        DataSink.write(out, data);
+        out.close();
+
+        code.clear();
+        code.addRCode("library(CORElearn)");
+        code.addRCode("library(RWeka)");
+        code.addRCode("dataset <- read.arff(\"Rdata/dataForR.arff\")");
+        code.addRCode("estMDL <- attrEval(which(names(dataset) == names(dataset)[length(names(dataset))]), dataset, estimator=\"MDL\",outputNumericSplits=TRUE)");   //last attribute is class attribute
+        
+        rCaller.setRCode(code);
+        rCaller.runAndReturnResultOnline("estMDL");
+        String tmpRcall[]=rCaller.getParser().getAsStringArray("attrEval");   //name in R "attrEval", get data from R, evaluated attributes
+        code.clear();
+        
+        Map<String, Double> mapMDL=new TreeMap<>(Collections.reverseOrder());
+        for(int i=0;i<data.numAttributes()-1;i++)
+            mapMDL.put(data.attribute(i).name(),Double.parseDouble(tmpRcall[i]));   //we get attribute names from Java (Instances data) and evaluation from R
+        
+        LinkedList<Map.Entry<String, Double>> listMDL = new LinkedList<>(mapMDL.entrySet());
+        Comparator<Map.Entry<String, Double>> comparator2 = Comparator.comparing(Map.Entry::getValue);
+        Collections.sort(listMDL, comparator2.reversed()); //if we want reversed order ... descending order
+        
+        if(listMDL.size()<=numOfInfFeat){
+            if(listMDL.size()<numOfInfFeat)
+                System.out.println("Number of evaluated attributes is less than numOfInfFeat!");
+            else
+                System.out.println("Number of evaluated attributes is equal to numOfInfFeat!");
+            System.out.println("We take all attributes ("+listMDL.size()+")!");
+            for(int i=0;i<listMDL.size();i++)
+                featIdx+=data.attribute(listMDL.get(i).getKey()).index()+",";              
+            
+            if(!featIdx.equals(""))  //all features are important
+                featIdx=featIdx.substring(0, featIdx.lastIndexOf(","));  
+        }
+        else{
+            for(int i=0;i<numOfInfFeat;i++)
+                featIdx+=data.attribute(listMDL.get(i).getKey()).index()+",";              
+            
+            if(!featIdx.equals(""))  //all features are important
+                featIdx=featIdx.substring(0, featIdx.lastIndexOf(","));        
+        }
+
+        deleteTempRFiles(); //better than rCaller.deleteTempFiles();
+        output.delete();
+        }
+        catch (Exception ex){
+            System.out.println("Error in the method idxOfNInfAttrMDL");
+                Logger.getLogger(FeatConstr.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return featIdx;
+    }
+    
+        public static String evalFeatMDL(Instances data, int numOfAttr, double attrImpThrs){  //evaluation of the whole dataset
+            String listOfUnInFeat="";
+            try{
+            File output = new File("Rdata/dataForR.arff");  // <--- This is the result file 
+            OutputStream out = new FileOutputStream(output);        
+            DataSink.write(out, data);
+            out.close();
+
+            code.clear();
+            code.addRCode("library(CORElearn)");
+            code.addRCode("library(RWeka)");
+            code.addRCode("dataset <- read.arff(\"Rdata/dataForR.arff\")");
+            code.addRCode("estMDL <- attrEval(which(names(dataset) == names(dataset)[length(names(dataset))]), dataset, estimator=\"MDL\",outputNumericSplits=TRUE)");   //last attribute is class attribute
+
+            rCaller.setRCode(code);
+            rCaller.runAndReturnResultOnline("estMDL");
+            String tmpRcall[]=rCaller.getParser().getAsStringArray("attrEval");   //name in R "attrEval", get data from R, evaluated attributes
+
+            for(int i=numOfAttr; i<tmpRcall.length;i++)		        
+                if(Double.parseDouble(tmpRcall[i])<=attrImpThrs)
+                    listOfUnInFeat+=(i+1)+",";  //i+1 because method setAttributeIndices starts indexes from 1
+            
+            if(!listOfUnInFeat.equals(""))  //all features are important
+                listOfUnInFeat=listOfUnInFeat.substring(0, listOfUnInFeat.lastIndexOf(",")); 
+            
+            
+            deleteTempRFiles(); //better than rCaller.deleteTempFiles(); deleteTempFiles() sometimes does not delete all tmp files
+            output.delete();
+            }
+            catch (Exception ex){
+                System.out.println("Error in the method evalFeatMDL");
+                    Logger.getLogger(FeatConstr.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            return listOfUnInFeat;
+	}
+        
+        public static double [] maeRmseRsquared(Instances trainData, Instances testData, Classifier predictionModel)throws Exception{
+            double classValue;
+            double maeRmseRsq[]=new double[8];//mae, rmse, rSquarednTrain, rSquaredOnTest 
+            double sseTr=0;   //for R squared
+            double sstTr=0;   //for R squared
+            double sseTe=0;   //for R squared
+            double sstTe=0;   //for R squared
+            double prediction;
+            double error = 0, abserror=0;
+            double count = 0;
+
+//R squred on train
+//Train R-squared = 1 - (sum((y_train - y_pred_train)^2) / sum((y_train - mean(y_train))^2))
+//R squred on train
+//Test R-squared = 1 - (sum((y_test - y_pred_test)^2) / sum((y_test - mean(y_test))^2))
+
+            //index starts at zero, data.numAttributes() - 1 represents the last attribute of the testdata set
+            double classValues[]=testData.attributeToDoubleArray(testData.numAttributes()-1);
+            double avgClassValues=mean(classValues);
+
+//Rsquared on test data, mae, rmse
+                predictionModel.buildClassifier(trainData); //warnings !!!
+                for (int j = 0; j < testData.numInstances(); j++){
+                    classValue = testData.instance(j).classValue();
+                    prediction = predictionModel.classifyInstance(testData.instance(j));
+
+                    //for Rsquared
+                    sseTe +=Math.pow((classValue-prediction),2);
+                    sstTe +=Math.pow((classValue-avgClassValues),2);
+
+                    error +=  (classValue - prediction) * (classValue - prediction); // mean squared error
+                    abserror += Math.abs(classValue - prediction);
+                    
+                    count++;
+                }
+                
+//Rsquared on train data
+                classValues=trainData.attributeToDoubleArray(trainData.numAttributes()-1);
+                avgClassValues=mean(classValues);
+                for (int j = 0; j < trainData.numInstances(); j++){
+                    classValue = trainData.instance(j).classValue();
+                    prediction = predictionModel.classifyInstance(trainData.instance(j));
+
+                    //for Rsquared
+                    sseTr +=Math.pow((classValue-prediction),2);
+                    sstTr +=Math.pow((classValue-avgClassValues),2);
+
+                }
+                
+            maeRmseRsq[0]=(abserror / count);
+            maeRmseRsq[1]=Math.sqrt(error / count);
+            maeRmseRsq[2]=1-(sseTr/sstTr);
+            maeRmseRsq[3]=1-(sseTe/sstTe);
+            maeRmseRsq[4]=sseTr;    //for pooling approach
+            maeRmseRsq[5]=sstTr;    //for pooling approach
+            maeRmseRsq[6]=sseTe;    //for pooling approach
+            maeRmseRsq[7]=sstTe;    //for pooling approach
+
+            return maeRmseRsq;
+    
+    }
+    
+    public static List<String> generateRandGroups(int numOfAttr, int sizeOfGroups, long numOfGroups) {
+        Set<Integer> groupEl = new TreeSet<>();
+        Set<String> listOfGroups = new TreeSet<>();
+        Iterator<Integer> itr;// = groupEl.iterator();
+        
+        int x;
+        String group;
+        System.out.println("All combinations of N="+numOfAttr+" and R="+sizeOfGroups+" is "+binomial(numOfAttr, sizeOfGroups).intValue());
+// java.math.BigInteger.intValue()        
+//If the value returned by this function is too big to fit into integer value, then it will return only the low-order 32 bits.
+//we need this (BigInteger) only for small values, so the upper statement never happens.
+        if(numOfGroups > binomial(numOfAttr, sizeOfGroups).intValue())
+            numOfGroups=binomial(numOfAttr, sizeOfGroups).intValue();
+        while(listOfGroups.size() < numOfGroups){
+            group="";
+            while(groupEl.size() < sizeOfGroups){
+                x=(int)(Math.random()*numOfAttr);
+                groupEl.add(x);
+            }
+            itr = groupEl.iterator();
+
+            while (itr.hasNext()) {
+                group+=itr.next()+",";
+            }
+            group=group.substring(0, group.lastIndexOf(",")); 
+            
+            groupEl.clear();
+            listOfGroups.add(group);
+        }
+  
+        List<String>finalList= new ArrayList<>();
+        finalList.addAll(listOfGroups);
+                
+        return finalList; 
+    }
+    
+    static BigInteger binomial(final int N, final int K) {//calculates combinations of number of objects N and sample size K
+        BigInteger ret = BigInteger.ONE;
+        for (int k = 0; k < K; k++) {
+            ret = ret.multiply(BigInteger.valueOf(N-k)).divide(BigInteger.valueOf(k+1));
+        }
+        return ret;
     }
 }

@@ -1,0 +1,72 @@
+dataset: rDisjunctBin.arff
+Internal evaluation of the model (OOB): 99.93845876564997 IME (explanation), equalSampling, N_SAMPLES: 100 - alg. for searching concepts: RandomForest, explaining all dataset: NO
+---------------------------------------------------------------------------------
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 2, minNoise=3 we remove groups of size 3. Explanation method: IME, num. of expl. inst. 200, pct of expl. instances is 10. Number of bins for discretisation (simple binning) is 5.
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+Explanation time: 0 [ms]
+--------------
+Threshold: 0,10
+--------------
+	A1: 72
+	A2: 68
+	A3: 60
+--------------
+Threshold: 0,20
+--------------
+	A1: 72
+	A2: 68
+	A3: 60
+--------------
+Threshold: 0,30
+--------------
+	A1: 72
+	A2: 68
+	A3: 60
+--------------
+Threshold: 0,40
+--------------
+	A1: 60
+	A2: 55
+	A3: 51
+	A1 | A2: 14
+	A1 | A3: 11
+	A2 | A3: 9
+--------------
+Threshold: 0,50
+--------------
+	A1 | A2: 43
+	A1: 35
+	A2: 35
+	A3: 30
+	A1 | A3: 29
+	A2 | A3: 28
+--------------
+Threshold: 0,60
+--------------
+	A1 | A2: 59
+	A1 | A3: 43
+	A2 | A3: 38
+	A2: 23
+	A1: 19
+	A3: 18
+--------------
+Threshold: 0,70
+--------------
+	A1 | A2: 75
+	A1 | A3: 52
+	A2 | A3: 47
+	A1 | A2 | A3: 11
+	A2: 6
+	A1: 5
+	A3: 4
+--------------
+Threshold: 0,80
+--------------
+	A1 | A2 | A3: 76
+	A1 | A2: 54
+	A1 | A3: 39
+	A2 | A3: 30
+*********************************************************************************
+All potential concepts, based on thresholds.
+	A1 A2 ~#~ A1 A3 ~#~ A2 A3 ~#~ A1 A2 A3 ~#~ 
+*********************************************************************************

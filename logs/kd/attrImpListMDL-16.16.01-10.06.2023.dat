@@ -1,0 +1,98 @@
+dataset: cLogicalConcBEasy.arff
+MDL - after CI
+ 0,3156 num-of-N((A3 = 1) and (A2 = 1) and (A1 = 0))
+ 0,3156 num-of-N((A2 = 1) and (A3 = 1) and (A1 = 0))
+ 0,2979 (A3 = 1) and (A2 = 1) and (A1 = 0)
+ 0,2979 (A2 = 1) and (A3 = 1) and (A1 = 0)
+ 0,2918 num-of-N((A4 = 1) and (A5 = 1) and (A1 = 1))
+ 0,2766 A1 and A4 and A5
+ 0,2766 (A4 = 1) and (A5 = 1) and (A1 = 1)
+ 0,1604 A2 and A3
+ 0,1604 (A2 = 1) and (A3 = 1)
+ 0,1588 num-of-N((A2 = 1) and (A3 = 1))
+ 0,1568 A2_x_A3
+ 0,1561 A1_x_A3
+ 0,1540 A4 and A5
+ 0,1540 (A4 = 1) and (A5 = 1)
+ 0,1524 num-of-N((A4 = 1) and (A5 = 1))
+ 0,1509 A4_x_A5
+ 0,1468 A1_x_A5
+ 0,1447 A3_x_A4
+ 0,1423 A2_x_A4
+ 0,1387 A1_x_A4
+ 0,1379 A1_x_A2
+ 0,1363 A3_x_A5
+ 0,1357 A2_x_A5
+ 0,1199 A1 impl A5
+ 0,1187 A1 or A3
+ 0,1162 A2 or A4
+ 0,1153 A3 or A5
+ 0,1153 A1 impl A4
+ 0,1150 A3 and A4 and A5
+ 0,1134 A2 and A3 and A4
+ 0,1125 A3 or A4
+ 0,1125 A2 or A5
+ 0,1089 A1 or A2
+ 0,1083 A2 and A3 and A5
+ 0,1036 A2 and A4 and A5
+ 0,0772 A1 xor A3
+ 0,0772 A1 equ A3
+ 0,0724 A3 and A4
+ 0,0694 A2 xor A3
+ 0,0694 A2 equ A3
+ 0,0693 A1 xor A5
+ 0,0693 A1 equ A5
+ 0,0676 A1 and A5
+ 0,0676 A2 and A4
+ 0,0620 A1 and A4
+ 0,0611 A4 xor A5
+ 0,0611 A4 equ A5
+ 0,0603 A2 and A5
+ 0,0602 A4
+ 0,0570 A3 and A5
+ 0,0569 A1 xor A2
+ 0,0569 A1 equ A2
+ 0,0564 A2
+ 0,0540 A3
+ 0,0530 A1 or A3 or A4
+ 0,0519 A3 or A4 or A5
+ 0,0514 A2 or A4 or A5
+ 0,0514 A1 or A2 or A4
+ 0,0509 A1 or A3 or A5
+ 0,0498 A1 xor A4
+ 0,0498 A1 equ A4
+ 0,0493 A2 or A3 or A5
+ 0,0489 A5
+ 0,0486 A1 or A2 or A3
+ 0,0479 A1 or A2 or A5
+ 0,0467 A2 or A3 or A4
+ 0,0288 A1 and A2 and A5
+ 0,0244 A1 and A2 and A4
+ 0,0220 A2 impl A3
+ 0,0207 A1 and A3 and A4
+ 0,0199 A1 and A3 and A5
+ 0,0164 A4 impl A5
+ 0,0150 A4 or A5
+ 0,0139 A2 or A3
+ -0,0010 A1 and A3
+ -0,0012 A1 or A5
+ -0,0015 A3 xor A5
+ -0,0015 A3 equ A5
+ -0,0016 A1 or A4 or A5
+ -0,0016 A3 impl A5
+ -0,0017 A1 and A2 and A3
+ -0,0018 A1 impl A3
+ -0,0019 A2 impl A5
+ -0,0019 A6
+ -0,0020 A1
+ -0,0020 A2 xor A5
+ -0,0020 A2 equ A5
+ -0,0020 A3 impl A4
+ -0,0020 A1 and A2
+ -0,0020 A1 impl A2
+ -0,0021 A1 or A4
+ -0,0021 A2 impl A4
+ -0,0022 A3 xor A4
+ -0,0022 A3 equ A4
+ -0,0022 A2 xor A4
+ -0,0022 A2 equ A4

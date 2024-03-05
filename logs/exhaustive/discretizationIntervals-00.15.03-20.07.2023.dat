@@ -1,0 +1,39 @@
+dataset: Autos.arff
+								--------------
+									Fold  1
+								--------------
+normalized-losses='(-inf-76]'
+normalized-losses='(76-92]'
+normalized-losses='(92-96.5]'
+normalized-losses='(96.5-inf)'
+wheel-base='(-inf-88.5]'
+wheel-base='(88.5-92.15]'
+wheel-base='(92.15-94.8]'
+wheel-base='(94.8-97.25]'
+wheel-base='(97.25-100.1]'
+wheel-base='(100.1-inf)'
+length='(-inf-168.75]'
+length='(168.75-173.3]'
+length='(173.3-175.5]'
+length='(175.5-175.65]'
+length='(175.65-176.7]'
+length='(176.7-187.65]'
+length='(187.65-188.9]'
+length='(188.9-inf)'
+width='(64.3-inf)'
+height='(-inf-50.35]'
+height='(50.35-52.7]'
+height='(52.7-55.55]'
+height='(55.55-56.15]'
+height='(56.15-56.25]'
+height='(56.25-inf)'
+curb-weight='(2216.5-inf)'
+engine-size='(105.5-inf)'
+bore='(3.255-inf)'
+stroke
+compression-ratio
+horsepower='(87-inf)'
+peak-rpm
+city-mpg='(30.5-inf)'
+highway-mpg='(29.5-inf)'
+price='(8497-inf)'

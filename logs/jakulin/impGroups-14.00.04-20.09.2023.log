@@ -1,0 +1,52 @@
+dataset: Australian credit.arff
+*********************************** Fold 1 - list of combinations in DESC order ***********************************
+A5 - A13
+A2 - A5
+A6 - A13
+A1 - A5
+*********************************** Fold 2 - list of combinations in DESC order ***********************************
+A5 - A13
+A2 - A5
+A6 - A13
+A8 - A12
+*********************************** Fold 3 - list of combinations in DESC order ***********************************
+A5 - A13
+A4 - A5
+A6 - A13
+A8 - A12
+*********************************** Fold 4 - list of combinations in DESC order ***********************************
+A5 - A13
+A8 - A12
+A2 - A5
+A6 - A13
+*********************************** Fold 5 - list of combinations in DESC order ***********************************
+A5 - A13
+A6 - A13
+A2 - A5
+A8 - A12
+*********************************** Fold 6 - list of combinations in DESC order ***********************************
+A5 - A13
+A8 - A12
+A6 - A13
+A2 - A5
+*********************************** Fold 7 - list of combinations in DESC order ***********************************
+A5 - A13
+A2 - A5
+A8 - A12
+A5 - A11
+*********************************** Fold 8 - list of combinations in DESC order ***********************************
+A5 - A13
+A2 - A5
+A6 - A13
+A4 - A5
+*********************************** Fold 9 - list of combinations in DESC order ***********************************
+A5 - A13
+A1 - A5
+A8 - A12
+A6 - A13
+*********************************** Fold 10 - list of combinations in DESC order ***********************************
+A5 - A13
+A6 - A13
+A8 - A12
+A4 - A5
+---------------------------------------------------------------------------------

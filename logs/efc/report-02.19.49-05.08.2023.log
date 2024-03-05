@@ -1,0 +1,127 @@
+dataset: rConcept.arff
+Number of folds for testing (CV): 10
+*********************************************************************************
+number of instances: 2000
+number of attributes: 6
+number of classes: 1
+---------------------------------------------------------------------------------
+IME (explanation), equalSampling, N_SAMPLES: 100 - alg. for searching concepts: RandomForest
+---------------------------------------------------------------------------------
+Testing method: CV, number of folds: 10
+Feature selection on validation dataset. Percentage of split (subTrain:validation) 75%:25%
+---------------------------------------------------------------------------------
+Feature types included in construction: logical operators based, decision rule, threshold, relational, Cartesian product, numerical
+*********************************************************************************
+Original dataset
+*********************************************************************************
+Avg. explanation time: 7956,800 [ms] (stdev 1547,805)
+-----MAE and RMSE-----
+Avg. MAE M5P 	0,013 (stdev 0,004) 	Avg. RMSE M5P 	0,044 (stdev 0,047)
+Avg. MAE LR 	0,648 (stdev 0,029) 	Avg. RMSE LR 	0,802 (stdev 0,033)
+Avg. MAE M5R 	0,009 (stdev 0,005) 	Avg. RMSE M5R 	0,042 (stdev 0,049)
+Avg. MAE RF 	0,072 (stdev 0,004) 	Avg. RMSE RF 	0,113 (stdev 0,018)
+*********************************************************************************
+Only Logical features
+*********************************************************************************
+Number of logical feat: 15,300 (stdev 0,900)
+-----MAE and RMSE-----
+Avg. MAE M5P 	0,034 (stdev 0,006) 	Avg. RMSE M5P 	0,065 (stdev 0,020)
+Avg. MAE LR 	0,298 (stdev 0,014) 	Avg. RMSE LR 	0,366 (stdev 0,017)
+Avg. MAE M5R 	0,030 (stdev 0,008) 	Avg. RMSE M5R 	0,066 (stdev 0,027)
+Avg. MAE RF 	0,160 (stdev 0,005) 	Avg. RMSE RF 	0,210 (stdev 0,010)
+-----Learning and testing time-----
+Avg. learning time from FC (all feat), for M5P 	163,500 [ms] (stdev 16,645)
+Avg. learning time from FC (all feat), for LR 	27,100 [ms] (stdev 5,205)
+Avg. learning time from FC (all feat), for M5R 	595,100 [ms] (stdev 91,277)
+Avg. learning time from FC (all feat), for RF 	204,600 [ms] (stdev 78,136)
+-----Feature construction time-----
+Avg. FC time (only Log feat): 371,300 [ms] stdev 23,422
+*********************************************************************************
+Numerical features
+*********************************************************************************
+Number of numerical feat: 25,500 (stdev 1,500)
+-----MAE and RMSE-----
+Avg. MAE M5P 	0,012 (stdev 0,005) 	Avg. RMSE M5P 	0,043 (stdev 0,048)
+Avg. MAE LR 	0,383 (stdev 0,025) 	Avg. RMSE LR 	0,540 (stdev 0,035)
+Avg. MAE M5R 	0,008 (stdev 0,006) 	Avg. RMSE M5R 	0,041 (stdev 0,050)
+Avg. MAE RF 	0,115 (stdev 0,009) 	Avg. RMSE RF 	0,191 (stdev 0,025)
+-----Learning and testing time-----
+Avg. learning time from FC (all feat), for M5P 	126,900 [ms] (stdev 7,867)
+Avg. learning time from FC (all feat), for LR 	12,100 [ms] (stdev 3,300)
+Avg. learning time from FC (all feat), for M5R 	252,200 [ms] (stdev 76,315)
+Avg. learning time from FC (all feat), for RF 	197,600 [ms] (stdev 16,966)
+-----Feature construction time-----
+Avg. FC time (only Num feat): 9,000 [ms] stdev 4,336
+*********************************************************************************
+Relational features
+*********************************************************************************
+Number of relational feat: 5,100 (stdev 0,300)
+-----MAE and RMSE-----
+Avg. MAE M5P 	0,013 (stdev 0,004) 	Avg. RMSE M5P 	0,044 (stdev 0,047)
+Avg. MAE LR 	0,648 (stdev 0,029) 	Avg. RMSE LR 	0,802 (stdev 0,033)
+Avg. MAE M5R 	0,009 (stdev 0,005) 	Avg. RMSE M5R 	0,042 (stdev 0,049)
+Avg. MAE RF 	0,100 (stdev 0,005) 	Avg. RMSE RF 	0,144 (stdev 0,014)
+-----Learning and testing time-----
+Avg. learning time from FC (all feat), for M5P 	68,700 [ms] (stdev 5,866)
+Avg. learning time from FC (all feat), for LR 	2,500 [ms] (stdev 0,671)
+Avg. learning time from FC (all feat), for M5R 	107,600 [ms] (stdev 6,484)
+Avg. learning time from FC (all feat), for RF 	149,000 [ms] (stdev 11,559)
+-----Feature construction time-----
+Avg. FC time (only Rel feat): 4,200 [ms] stdev 1,400
+*********************************************************************************
+Cartesian product
+*********************************************************************************
+Number of "Cartesian" feat: 5,100 (stdev 0,300)
+-----MAE and RMSE-----
+Avg. MAE M5P 	0,034 (stdev 0,006) 	Avg. RMSE M5P 	0,065 (stdev 0,020)
+Avg. MAE LR 	0,298 (stdev 0,014) 	Avg. RMSE LR 	0,366 (stdev 0,016)
+Avg. MAE M5R 	0,031 (stdev 0,009) 	Avg. RMSE M5R 	0,069 (stdev 0,032)
+Avg. MAE RF 	0,101 (stdev 0,003) 	Avg. RMSE RF 	0,136 (stdev 0,006)
+-----Learning and testing time-----
+Avg. learning time from FC (all feat), for M5P 	107,700 [ms] (stdev 6,466)
+Avg. learning time from FC (all feat), for LR 	7,100 [ms] (stdev 1,136)
+Avg. learning time from FC (all feat), for M5R 	427,600 [ms] (stdev 41,738)
+Avg. learning time from FC (all feat), for RF 	158,100 [ms] (stdev 40,483)
+-----Feature construction time-----
+Avg. FC time (only Cart feat): 5,700 [ms] stdev 2,002
+*********************************************************************************
+All features dataset
+*********************************************************************************
+Avg. number of groups for feature construction: 5,100 (stdev 0,300)
+Avg. size of groups (num. of candidate attr.) per folds (num of attr. in all groups):: 12,300 (stdev 0,900)
+Avg. size of groups (num. of candidate attr.) per groups per folds (avg. of avg.): 2,410 (stdev 0,030)
+Max avg. group (length) of constructs (num of attr.): 3,000 (stdev 0,000)
+Number of logical feat: 15,300 (stdev 0,900) number of numerical feat: 25,500 (stdev 1,500) number of relational feat: 5,100 (stdev 0,300) number of "Cartesian" feat: 5,100 (stdev 0,300) number of FURIA feat: 29,700 (stdev 2,100) number of thr. feat: 0,000 (stdev 0,000)
+-----MAE and RMSE-----
+Avg. MAE M5P 	0,035 (stdev 0,007) 	Avg. RMSE M5P 	0,082 (stdev 0,037)
+Avg. MAE LR 	0,223 (stdev 0,020) 	Avg. RMSE LR 	0,320 (stdev 0,111)
+Avg. MAE M5R 	0,023 (stdev 0,012) 	Avg. RMSE M5R 	0,054 (stdev 0,037)
+Avg. MAE RF 	0,109 (stdev 0,003) 	Avg. RMSE RF 	0,141 (stdev 0,007)
+-----Learning and testing time-----
+Avg. learning time from FC (all feat), for M5P 	327,800 [ms] (stdev 19,939)
+Avg. learning time from FC (all feat), for LR 	206,700 [ms] (stdev 60,251)
+Avg. learning time from FC (all feat), for M5R 	1139,200 [ms] (stdev 163,043)
+Avg. learning time from FC (all feat), for RF 	250,500 [ms] (stdev 51,719)
+-----Feature construction time-----
+Avg. FC time (all feat): 390,200 [ms] (stdev 26,973)
+*********************************************************************************
+FS on validation dataset - results
+*********************************************************************************
+-----MAE and RMSE-----
+Avg. MAE M5P 	0,022 (stdev 0,012) 	Avg. RMSE M5P 	0,063 (stdev 0,043)
+Avg. MAE LR 	0,218 (stdev 0,012) 	Avg. RMSE LR 	0,279 (stdev 0,016)
+Avg. MAE M5R 	0,013 (stdev 0,012) 	Avg. RMSE M5R 	0,052 (stdev 0,051)
+Avg. MAE RF 	0,076 (stdev 0,012) 	Avg. RMSE RF 	0,113 (stdev 0,019)
+-----Search time-----
+Avg. search time M5P 	1250,400 (stdev 47,458)
+Avg. search time LR 	950,300 (stdev 46,808)
+Avg. search time M5R 	2083,800 (stdev 179,893)
+Avg. search time RF 	1279,400 (stdev 80,748)
+-----Learning and testing time-----
+Avg. learn time M5P 	100,700 (stdev 43,214)
+Avg. learn time LR 	141,500 (stdev 21,718)
+Avg. learn time M5R 	218,500 (stdev 205,554)
+Avg. learn time RF 	151,300 (stdev 28,485)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Total processing time (rConcept.arff): 237678
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

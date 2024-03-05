@@ -1,0 +1,9 @@
+dataset: rConcept.arff
+dataset: rDisjunctBin.arff
+dataset: rLinear.arff
+dataset: rLinNoisy.arff
+dataset: rLocLinear.arff
+dataset: rNonLinPoly.arff
+dataset: rNonLinSinCos.arff
+dataset: rRandom.arff
+dataset: rRedundant.arff

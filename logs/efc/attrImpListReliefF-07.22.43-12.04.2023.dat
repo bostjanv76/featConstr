@@ -1,0 +1,944 @@
+dataset: cLogicalConcBEasy.arff
+								--------------
+									Fold  1
+								--------------
+Feature evaluation: ReliefF (All features dataset) - After CI
+Ranked attributes:
+ 0.63    39 num-of-N((A2 = 1) and (A3 = 1) and (A1 = 0))
+ 0.623   40 num-of-N((A4 = 1) and (A5 = 1) and (A1 = 1))
+ 0.511   37 (A2 = 1) and (A3 = 1) and (A1 = 0)
+ 0.489   38 (A4 = 1) and (A5 = 1) and (A1 = 1)
+ 0.473   12 A3 equ A5
+ 0.473   22 A3 xor A5
+ 0.469   15 A2 equ A5
+ 0.469   25 A2 xor A5
+ 0.461   10 A3 equ A4
+ 0.461   20 A3 xor A4
+ 0.459   11 A1 equ A3
+ 0.459   21 A1 xor A3
+ 0.457   13 A2 equ A4
+ 0.457   23 A2 xor A4
+ 0.457   26 A1 xor A5
+ 0.457   16 A1 equ A5
+ 0.442    9 A1 equ A2
+ 0.442   19 A1 xor A2
+ 0.44    24 A1 xor A4
+ 0.44    14 A1 equ A4
+ 0.358   17 A2 xor A3
+ 0.358    7 A2 equ A3
+ 0.35    18 A4 xor A5
+ 0.35     8 A4 equ A5
+ 0.336   36 A1 impl A5
+ 0.312   34 A1 impl A4
+ 0.253    1 A1
+ 0.239   30 A3 impl A4
+ 0.237    5 A5
+ 0.235    3 A3
+ 0.234   33 A2 impl A4
+ 0.231    2 A2
+ 0.231   35 A2 impl A5
+ 0.229   32 A3 impl A5
+ 0.226    4 A4
+ 0.181   28 A4 impl A5
+ 0.181   27 A2 impl A3
+ 0.116   31 A1 impl A3
+ 0.115   29 A1 impl A2
+ 0        6 A6
+
+
+								--------------
+									Fold  2
+								--------------
+Feature evaluation: ReliefF (All features dataset) - After CI
+Ranked attributes:
+ 0.636   39 num-of-N((A2 = 1) and (A3 = 1) and (A1 = 0))
+ 0.625   40 num-of-N((A4 = 1) and (A5 = 1) and (A1 = 1))
+ 0.516   37 (A2 = 1) and (A3 = 1) and (A1 = 0)
+ 0.484   38 (A4 = 1) and (A5 = 1) and (A1 = 1)
+ 0.475   11 A1 equ A3
+ 0.475   21 A1 xor A3
+ 0.47    12 A3 equ A5
+ 0.47    22 A3 xor A5
+ 0.468   10 A3 equ A4
+ 0.468   20 A3 xor A4
+ 0.458   16 A1 equ A5
+ 0.458   26 A1 xor A5
+ 0.455   24 A1 xor A4
+ 0.455   14 A1 equ A4
+ 0.447   15 A2 equ A5
+ 0.447   25 A2 xor A5
+ 0.445   23 A2 xor A4
+ 0.445   13 A2 equ A4
+ 0.444    9 A1 equ A2
+ 0.444   19 A1 xor A2
+ 0.352   17 A2 xor A3
+ 0.352    7 A2 equ A3
+ 0.337    8 A4 equ A5
+ 0.337   18 A4 xor A5
+ 0.327   36 A1 impl A5
+ 0.32    34 A1 impl A4
+ 0.261    1 A1
+ 0.249   30 A3 impl A4
+ 0.248    3 A3
+ 0.232   33 A2 impl A4
+ 0.232   32 A3 impl A5
+ 0.225    2 A2
+ 0.225   35 A2 impl A5
+ 0.222    5 A5
+ 0.22     4 A4
+ 0.187   27 A2 impl A3
+ 0.17    28 A4 impl A5
+ 0.118   31 A1 impl A3
+ 0.109   29 A1 impl A2
+ 0        6 A6
+
+
+								--------------
+									Fold  3
+								--------------
+Feature evaluation: ReliefF (All features dataset) - After CI
+Ranked attributes:
+ 0.643   39 num-of-N((A3 = 1) and (A2 = 1) and (A1 = 0))
+ 0.614   40 num-of-N((A4 = 1) and (A5 = 1) and (A1 = 1))
+ 0.524   37 (A3 = 1) and (A2 = 1) and (A1 = 0)
+ 0.476   38 (A4 = 1) and (A5 = 1) and (A1 = 1)
+ 0.473   11 A1 equ A3
+ 0.473   21 A1 xor A3
+ 0.472   12 A3 equ A5
+ 0.472   22 A3 xor A5
+ 0.466   10 A3 equ A4
+ 0.466   20 A3 xor A4
+ 0.458   15 A2 equ A5
+ 0.458   25 A2 xor A5
+ 0.453   19 A1 xor A2
+ 0.453    9 A1 equ A2
+ 0.452   13 A2 equ A4
+ 0.452   23 A2 xor A4
+ 0.451   16 A1 equ A5
+ 0.451   26 A1 xor A5
+ 0.446   14 A1 equ A4
+ 0.446   24 A1 xor A4
+ 0.36    17 A2 xor A3
+ 0.36     7 A2 equ A3
+ 0.33    18 A4 xor A5
+ 0.33     8 A4 equ A5
+ 0.322   36 A1 impl A5
+ 0.311   34 A1 impl A4
+ 0.256    1 A1
+ 0.252    3 A3
+ 0.242   30 A3 impl A4
+ 0.24    32 A3 impl A5
+ 0.239    2 A2
+ 0.239   33 A2 impl A4
+ 0.237   35 A2 impl A5
+ 0.219    5 A5
+ 0.213    4 A4
+ 0.187   27 A2 impl A3
+ 0.168   28 A4 impl A5
+ 0.118   31 A1 impl A3
+ 0.106   29 A1 impl A2
+ 0        6 A6
+
+
+								--------------
+									Fold  4
+								--------------
+Feature evaluation: ReliefF (All features dataset) - After CI
+Ranked attributes:
+ 0.629   39 num-of-N((A2 = 1) and (A3 = 1) and (A1 = 0))
+ 0.617   40 num-of-N((A4 = 1) and (A5 = 1) and (A1 = 1))
+ 0.516   37 (A2 = 1) and (A3 = 1) and (A1 = 0)
+ 0.484   38 (A4 = 1) and (A5 = 1) and (A1 = 1)
+ 0.481   12 A2 equ A4
+ 0.481   22 A2 xor A4
+ 0.466   15 A2 equ A5
+ 0.466   25 A2 xor A5
+ 0.465   10 A3 equ A4
+ 0.465   20 A3 xor A4
+ 0.452   14 A1 equ A4
+ 0.452   24 A1 xor A4
+ 0.452   11 A1 equ A3
+ 0.452   21 A1 xor A3
+ 0.45    23 A3 xor A5
+ 0.45    13 A3 equ A5
+ 0.438   19 A1 xor A2
+ 0.438    9 A1 equ A2
+ 0.434   26 A1 xor A5
+ 0.434   16 A1 equ A5
+ 0.369    7 A2 equ A3
+ 0.369   17 A2 xor A3
+ 0.347    8 A4 equ A5
+ 0.347   18 A4 xor A5
+ 0.329   34 A1 impl A4
+ 0.315   36 A1 impl A5
+ 0.262   32 A2 impl A4
+ 0.248    2 A2
+ 0.246    1 A1
+ 0.245   35 A2 impl A5
+ 0.233    3 A3
+ 0.233   30 A3 impl A4
+ 0.232    4 A4
+ 0.217    5 A5
+ 0.215   33 A3 impl A5
+ 0.177   27 A2 impl A3
+ 0.166   28 A4 impl A5
+ 0.112   31 A1 impl A3
+ 0.111   29 A1 impl A2
+ 0        6 A6
+
+
+								--------------
+									Fold  5
+								--------------
+Feature evaluation: ReliefF (All features dataset) - After CI
+Ranked attributes:
+ 0.652   39 num-of-N((A3 = 1) and (A2 = 1) and (A1 = 0))
+ 0.628   40 num-of-N((A4 = 1) and (A5 = 1) and (A1 = 1))
+ 0.528   37 (A3 = 1) and (A2 = 1) and (A1 = 0)
+ 0.491   21 A1 xor A3
+ 0.491   11 A1 equ A3
+ 0.482   23 A3 xor A5
+ 0.482   13 A3 equ A5
+ 0.475   26 A1 xor A5
+ 0.475   16 A1 equ A5
+ 0.472   38 (A4 = 1) and (A5 = 1) and (A1 = 1)
+ 0.46    10 A3 equ A4
+ 0.46    20 A3 xor A4
+ 0.457    9 A1 equ A2
+ 0.457   19 A1 xor A2
+ 0.453   24 A1 xor A4
+ 0.453   14 A1 equ A4
+ 0.441   25 A2 xor A5
+ 0.441   15 A2 equ A5
+ 0.419   22 A2 xor A4
+ 0.419   12 A2 equ A4
+ 0.357   17 A2 xor A3
+ 0.357    7 A2 equ A3
+ 0.342   36 A1 impl A5
+ 0.327    8 A4 equ A5
+ 0.327   18 A4 xor A5
+ 0.31    34 A1 impl A4
+ 0.28     1 A1
+ 0.253    3 A3
+ 0.239   33 A3 impl A5
+ 0.231   30 A3 impl A4
+ 0.23     5 A5
+ 0.217   35 A2 impl A5
+ 0.211    2 A2
+ 0.209   32 A2 impl A4
+ 0.207    4 A4
+ 0.199   27 A2 impl A3
+ 0.175   28 A4 impl A5
+ 0.123   31 A1 impl A3
+ 0.117   29 A1 impl A2
+ 0        6 A6
+
+
+								--------------
+									Fold  6
+								--------------
+Feature evaluation: ReliefF (All features dataset) - After CI
+Ranked attributes:
+ 0.637   40 num-of-N((A4 = 1) and (A5 = 1) and (A1 = 1))
+ 0.632   39 num-of-N((A2 = 1) and (A3 = 1) and (A1 = 0))
+ 0.5     37 (A2 = 1) and (A3 = 1) and (A1 = 0)
+ 0.5     38 (A4 = 1) and (A5 = 1) and (A1 = 1)
+ 0.467   21 A1 xor A3
+ 0.467   11 A1 equ A3
+ 0.465   26 A1 xor A5
+ 0.465   16 A1 equ A5
+ 0.46    14 A1 equ A4
+ 0.46    24 A1 xor A4
+ 0.457   10 A3 equ A4
+ 0.457   20 A3 xor A4
+ 0.455   12 A3 equ A5
+ 0.455   22 A3 xor A5
+ 0.45     9 A1 equ A2
+ 0.45    19 A1 xor A2
+ 0.449   13 A2 equ A4
+ 0.449   23 A2 xor A4
+ 0.447   15 A2 equ A5
+ 0.447   25 A2 xor A5
+ 0.348    8 A4 equ A5
+ 0.348   18 A4 xor A5
+ 0.347    7 A2 equ A3
+ 0.347   17 A2 xor A3
+ 0.327   36 A1 impl A5
+ 0.317   34 A1 impl A4
+ 0.268    1 A1
+ 0.233   33 A2 impl A4
+ 0.232   35 A2 impl A5
+ 0.23    30 A3 impl A4
+ 0.229    3 A3
+ 0.228    4 A4
+ 0.225    5 A5
+ 0.222    2 A2
+ 0.22    32 A3 impl A5
+ 0.177   27 A2 impl A3
+ 0.173   28 A4 impl A5
+ 0.128   31 A1 impl A3
+ 0.12    29 A1 impl A2
+ 0        6 A6
+
+
+								--------------
+									Fold  7
+								--------------
+Feature evaluation: ReliefF (All features dataset) - After CI
+Ranked attributes:
+ 0.633   39 num-of-N((A2 = 1) and (A3 = 1) and (A1 = 0))
+ 0.619   40 num-of-N((A4 = 1) and (A5 = 1) and (A1 = 1))
+ 0.506   37 (A2 = 1) and (A3 = 1) and (A1 = 0)
+ 0.495   38 (A4 = 1) and (A5 = 1) and (A1 = 1)
+ 0.472   22 A3 xor A5
+ 0.472   12 A3 equ A5
+ 0.468   10 A3 equ A4
+ 0.468   20 A3 xor A4
+ 0.467   21 A1 xor A3
+ 0.467   11 A1 equ A3
+ 0.458   15 A2 equ A5
+ 0.458   25 A2 xor A5
+ 0.457   26 A1 xor A5
+ 0.457   16 A1 equ A5
+ 0.455   23 A2 xor A4
+ 0.455   13 A2 equ A4
+ 0.45    24 A1 xor A4
+ 0.45    14 A1 equ A4
+ 0.446    9 A1 equ A2
+ 0.446   19 A1 xor A2
+ 0.354    7 A2 equ A3
+ 0.354   17 A2 xor A3
+ 0.332    8 A4 equ A5
+ 0.332   18 A4 xor A5
+ 0.324   36 A1 impl A5
+ 0.314   34 A1 impl A4
+ 0.253    1 A1
+ 0.252   30 A3 impl A4
+ 0.243   32 A3 impl A5
+ 0.241    3 A3
+ 0.23     5 A5
+ 0.228    2 A2
+ 0.228   35 A2 impl A5
+ 0.227    4 A4
+ 0.227   33 A2 impl A4
+ 0.183   27 A2 impl A3
+ 0.167   28 A4 impl A5
+ 0.121   31 A1 impl A3
+ 0.111   29 A1 impl A2
+ 0        6 A6
+
+
+								--------------
+									Fold  8
+								--------------
+Feature evaluation: ReliefF (All features dataset) - After CI
+Ranked attributes:
+ 0.632   40 num-of-N((A4 = 1) and (A5 = 1) and (A1 = 1))
+ 0.629   39 num-of-N((A2 = 1) and (A3 = 1) and (A1 = 0))
+ 0.505   37 (A2 = 1) and (A3 = 1) and (A1 = 0)
+ 0.495   38 (A4 = 1) and (A5 = 1) and (A1 = 1)
+ 0.477   22 A3 xor A5
+ 0.477   12 A3 equ A5
+ 0.466   26 A1 xor A5
+ 0.466   16 A1 equ A5
+ 0.462   15 A2 equ A5
+ 0.462   25 A2 xor A5
+ 0.46    21 A1 xor A3
+ 0.46    11 A1 equ A3
+ 0.455   10 A3 equ A4
+ 0.455   20 A3 xor A4
+ 0.448    9 A1 equ A2
+ 0.448   19 A1 xor A2
+ 0.447   14 A1 equ A4
+ 0.447   24 A1 xor A4
+ 0.44    13 A2 equ A4
+ 0.44    23 A2 xor A4
+ 0.352   17 A4 xor A5
+ 0.352    7 A4 equ A5
+ 0.35     8 A2 equ A3
+ 0.35    18 A2 xor A3
+ 0.337   36 A1 impl A5
+ 0.31    34 A1 impl A4
+ 0.261    1 A1
+ 0.24    30 A3 impl A4
+ 0.239    5 A5
+ 0.237    3 A3
+ 0.237   32 A3 impl A5
+ 0.23    35 A2 impl A5
+ 0.223   33 A2 impl A4
+ 0.222    2 A2
+ 0.217    4 A4
+ 0.187   27 A4 impl A5
+ 0.183   28 A2 impl A3
+ 0.122   31 A1 impl A3
+ 0.114   29 A1 impl A2
+ 0        6 A6
+
+
+								--------------
+									Fold  9
+								--------------
+Feature evaluation: ReliefF (All features dataset) - After CI
+Ranked attributes:
+ 0.624   40 num-of-N((A3 = 1) and (A2 = 1) and (A1 = 0))
+ 0.621   39 num-of-N((A4 = 1) and (A5 = 1) and (A1 = 1))
+ 0.505   38 (A3 = 1) and (A2 = 1) and (A1 = 0)
+ 0.495   37 (A4 = 1) and (A5 = 1) and (A1 = 1)
+ 0.485   10 A3 equ A4
+ 0.485   20 A3 xor A4
+ 0.473   12 A3 equ A5
+ 0.473   22 A3 xor A5
+ 0.464   13 A2 equ A4
+ 0.464   23 A2 xor A4
+ 0.455   11 A1 equ A3
+ 0.455   21 A1 xor A3
+ 0.453   15 A2 equ A5
+ 0.453   25 A2 xor A5
+ 0.448   16 A1 equ A5
+ 0.448   26 A1 xor A5
+ 0.441   24 A1 xor A4
+ 0.441   14 A1 equ A4
+ 0.433    9 A1 equ A2
+ 0.433   19 A1 xor A2
+ 0.36     8 A2 equ A3
+ 0.36    18 A2 xor A3
+ 0.353    7 A4 equ A5
+ 0.353   17 A4 xor A5
+ 0.327   36 A1 impl A5
+ 0.312   34 A1 impl A4
+ 0.246    3 A3
+ 0.245    1 A1
+ 0.242   32 A3 impl A5
+ 0.239    4 A4
+ 0.239   30 A3 impl A4
+ 0.238   33 A2 impl A4
+ 0.233   35 A2 impl A5
+ 0.228    5 A5
+ 0.225    2 A2
+ 0.19    28 A2 impl A3
+ 0.171   27 A4 impl A5
+ 0.118   31 A1 impl A3
+ 0.114   29 A1 impl A2
+ 0        6 A6
+
+
+								--------------
+									Fold 10
+								--------------
+Feature evaluation: ReliefF (All features dataset) - After CI
+Ranked attributes:
+ 0.645   39 num-of-N((A2 = 1) and (A3 = 1) and (A1 = 0))
+ 0.619   40 num-of-N((A4 = 1) and (A5 = 1) and (A1 = 1))
+ 0.528   37 (A2 = 1) and (A3 = 1) and (A1 = 0)
+ 0.482   11 A1 equ A3
+ 0.482   21 A1 xor A3
+ 0.472   38 (A4 = 1) and (A5 = 1) and (A1 = 1)
+ 0.47    22 A3 xor A5
+ 0.47    12 A3 equ A5
+ 0.466   26 A1 xor A5
+ 0.466   16 A1 equ A5
+ 0.458   15 A2 equ A5
+ 0.458   25 A2 xor A5
+ 0.458   19 A1 xor A2
+ 0.458    9 A1 equ A2
+ 0.456   10 A3 equ A4
+ 0.456   20 A3 xor A4
+ 0.445   24 A1 xor A4
+ 0.445   14 A1 equ A4
+ 0.443   23 A2 xor A4
+ 0.443   13 A2 equ A4
+ 0.351   17 A2 xor A3
+ 0.351    7 A2 equ A3
+ 0.328   18 A4 xor A5
+ 0.328    8 A4 equ A5
+ 0.327   36 A1 impl A5
+ 0.312   34 A1 impl A4
+ 0.265    1 A1
+ 0.243    3 A3
+ 0.234   35 A2 impl A5
+ 0.232   33 A2 impl A4
+ 0.23    30 A3 impl A4
+ 0.23     2 A2
+ 0.228   32 A3 impl A5
+ 0.228    5 A5
+ 0.213    4 A4
+ 0.182   27 A2 impl A3
+ 0.171   28 A4 impl A5
+ 0.114   31 A1 impl A3
+ 0.112   29 A1 impl A2
+ 0        6 A6
+
+
+dataset: cLogicalConcBEasyNoisy.arff
+								--------------
+									Fold  1
+								--------------
+Feature evaluation: ReliefF (All features dataset) - After CI
+Ranked attributes:
+ 0.4727   40 num-of-N((A3 = 1) and (A2 = 1) and (A1 = 0))
+ 0.4286   39 num-of-N((A5 = 1) and (A4 = 1) and (A1 = 1))
+ 0.3285   19 A1 xor A2
+ 0.3285    9 A1 equ A2
+ 0.3236   38 (A3 = 1) and (A2 = 1) and (A1 = 0)
+ 0.3085    8 A2 equ A3
+ 0.3085   18 A2 xor A3
+ 0.3082   12 A1 equ A3
+ 0.3082   22 A1 xor A3
+ 0.3073   21 A2 xor A4
+ 0.3073   11 A2 equ A4
+ 0.3042   25 A2 xor A5
+ 0.3042   15 A2 equ A5
+ 0.2972   24 A1 xor A4
+ 0.2972   14 A1 equ A4
+ 0.2952   16 A1 equ A5
+ 0.2952   26 A1 xor A5
+ 0.2907   10 A3 equ A4
+ 0.2907   20 A3 xor A4
+ 0.2827   23 A3 xor A5
+ 0.2827   13 A3 equ A5
+ 0.2648   17 A4 xor A5
+ 0.2648    7 A4 equ A5
+ 0.2633   37 (A5 = 1) and (A4 = 1) and (A1 = 1)
+ 0.1867   36 A1 impl A5
+ 0.1846   34 A1 impl A4
+ 0.1687    2 A2
+ 0.1597    1 A1
+ 0.1562   35 A2 impl A5
+ 0.1528   33 A3 impl A5
+ 0.1521    3 A3
+ 0.1464   30 A3 impl A4
+ 0.1427   28 A2 impl A3
+ 0.1393   27 A4 impl A5
+ 0.1386    4 A4
+ 0.1373   31 A2 impl A4
+ 0.1354    5 A5
+ 0.0905   29 A1 impl A2
+ 0.0876   32 A1 impl A3
+ 0.0398    6 A6
+
+
+								--------------
+									Fold  2
+								--------------
+Feature evaluation: ReliefF (All features dataset) - After CI
+Ranked attributes:
+ 0.4583   40 num-of-N((A3 = 1) and (A2 = 1) and (A1 = 0))
+ 0.4492   39 num-of-N((A5 = 1) and (A4 = 1) and (A1 = 1))
+ 0.3243    9 A1 equ A2
+ 0.3243   19 A1 xor A2
+ 0.3082   38 (A3 = 1) and (A2 = 1) and (A1 = 0)
+ 0.3069   24 A1 xor A4
+ 0.3069   14 A1 equ A4
+ 0.3048   16 A1 equ A5
+ 0.3048   26 A1 xor A5
+ 0.3048   21 A2 xor A4
+ 0.3048   11 A2 equ A4
+ 0.3031   15 A2 equ A5
+ 0.3031   25 A2 xor A5
+ 0.303    23 A1 xor A3
+ 0.303    13 A1 equ A3
+ 0.2963   10 A3 equ A4
+ 0.2963   20 A3 xor A4
+ 0.2962   18 A2 xor A3
+ 0.2962    8 A2 equ A3
+ 0.2919   12 A3 equ A5
+ 0.2919   22 A3 xor A5
+ 0.2864    7 A4 equ A5
+ 0.2864   17 A4 xor A5
+ 0.2699   37 (A5 = 1) and (A4 = 1) and (A1 = 1)
+ 0.1955   34 A1 impl A4
+ 0.1932   36 A1 impl A5
+ 0.1653   32 A3 impl A5
+ 0.1631    1 A1
+ 0.1615   35 A2 impl A5
+ 0.1613    2 A2
+ 0.1502    3 A3
+ 0.1485   31 A2 impl A4
+ 0.1462    4 A4
+ 0.1418    5 A5
+ 0.1404   28 A2 impl A3
+ 0.1394   27 A4 impl A5
+ 0.1365   30 A3 impl A4
+ 0.0928   29 A1 impl A2
+ 0.0867   33 A1 impl A3
+ 0.0371    6 A6
+
+
+								--------------
+									Fold  3
+								--------------
+Feature evaluation: ReliefF (All features dataset) - After CI
+Ranked attributes:
+ 0.4594   40 num-of-N((A3 = 1) and (A2 = 1) and (A1 = 0))
+ 0.4522   39 num-of-N((A5 = 1) and (A4 = 1) and (A1 = 1))
+ 0.3191   24 A1 xor A4
+ 0.3191   14 A1 equ A4
+ 0.3176   10 A1 equ A2
+ 0.3176   20 A1 xor A2
+ 0.3172   13 A1 equ A3
+ 0.3172   23 A1 xor A3
+ 0.3079   26 A1 xor A5
+ 0.3079   16 A1 equ A5
+ 0.2978   19 A3 xor A4
+ 0.2978    9 A3 equ A4
+ 0.2923   12 A2 equ A4
+ 0.2923   22 A2 xor A4
+ 0.2902   38 (A3 = 1) and (A2 = 1) and (A1 = 0)
+ 0.2882   18 A2 xor A3
+ 0.2882    8 A2 equ A3
+ 0.28     11 A3 equ A5
+ 0.28     21 A3 xor A5
+ 0.2774    7 A4 equ A5
+ 0.2774   17 A4 xor A5
+ 0.2761   25 A2 xor A5
+ 0.2761   15 A2 equ A5
+ 0.2709   37 (A5 = 1) and (A4 = 1) and (A1 = 1)
+ 0.1912   34 A1 impl A4
+ 0.181    36 A1 impl A5
+ 0.1748    1 A1
+ 0.1642   31 A3 impl A5
+ 0.1522   35 A2 impl A5
+ 0.1509    4 A4
+ 0.1478   28 A2 impl A3
+ 0.1469    3 A3
+ 0.1446   32 A2 impl A4
+ 0.1428    2 A2
+ 0.1422   27 A4 impl A5
+ 0.1381   29 A3 impl A4
+ 0.1331    5 A5
+ 0.1071   30 A1 impl A2
+ 0.0978   33 A1 impl A3
+ 0.0457    6 A6
+
+
+								--------------
+									Fold  4
+								--------------
+Feature evaluation: ReliefF (All features dataset) - After CI
+Ranked attributes:
+ 0.4649   40 num-of-N((A3 = 1) and (A2 = 1) and (A1 = 0))
+ 0.4431   39 num-of-N((A5 = 1) and (A4 = 1) and (A1 = 1))
+ 0.3265   10 A1 equ A2
+ 0.3265   20 A1 xor A2
+ 0.3191   12 A1 equ A3
+ 0.3191   22 A1 xor A3
+ 0.3143   38 (A3 = 1) and (A2 = 1) and (A1 = 0)
+ 0.3139   26 A1 xor A5
+ 0.3139   16 A1 equ A5
+ 0.3088   24 A1 xor A4
+ 0.3088   14 A1 equ A4
+ 0.2897   15 A2 equ A5
+ 0.2897   25 A2 xor A5
+ 0.2892   11 A2 equ A4
+ 0.2892   21 A2 xor A4
+ 0.2883   17 A2 xor A3
+ 0.2883    7 A2 equ A3
+ 0.2802   13 A3 equ A5
+ 0.2802   23 A3 xor A5
+ 0.2774   19 A3 xor A4
+ 0.2774    9 A3 equ A4
+ 0.2651   37 (A5 = 1) and (A4 = 1) and (A1 = 1)
+ 0.2635    8 A4 equ A5
+ 0.2635   18 A4 xor A5
+ 0.1948   36 A1 impl A5
+ 0.1881   34 A1 impl A4
+ 0.1762    1 A1
+ 0.1543    2 A2
+ 0.1489   35 A2 impl A5
+ 0.1478   33 A3 impl A5
+ 0.1426    3 A3
+ 0.1377    5 A5
+ 0.1358   31 A2 impl A4
+ 0.1348    4 A4
+ 0.1341   27 A2 impl A3
+ 0.1319   28 A4 impl A5
+ 0.1163   29 A3 impl A4
+ 0.0916   32 A1 impl A3
+ 0.0912   30 A1 impl A2
+ 0.039     6 A6
+
+
+								--------------
+									Fold  5
+								--------------
+Feature evaluation: ReliefF (All features dataset) - After CI
+Ranked attributes:
+ 0.4901   40 num-of-N((A3 = 1) and (A2 = 1) and (A1 = 0))
+ 0.411    39 num-of-N((A4 = 1) and (A5 = 1) and (A1 = 1))
+ 0.3378    8 A2 equ A3
+ 0.3378   18 A2 xor A3
+ 0.3266   11 A1 equ A3
+ 0.3266   21 A1 xor A3
+ 0.3232    9 A1 equ A2
+ 0.3232   19 A1 xor A2
+ 0.3214   10 A3 equ A4
+ 0.3214   20 A3 xor A4
+ 0.3197   38 (A3 = 1) and (A2 = 1) and (A1 = 0)
+ 0.3029   12 A2 equ A4
+ 0.3029   22 A2 xor A4
+ 0.3006   24 A1 xor A4
+ 0.3006   14 A1 equ A4
+ 0.2894   23 A3 xor A5
+ 0.2894   13 A3 equ A5
+ 0.2758   15 A2 equ A5
+ 0.2758   25 A2 xor A5
+ 0.2704   26 A1 xor A5
+ 0.2704   16 A1 equ A5
+ 0.258    37 (A4 = 1) and (A5 = 1) and (A1 = 1)
+ 0.251    17 A4 xor A5
+ 0.251     7 A4 equ A5
+ 0.181    34 A1 impl A4
+ 0.1765    3 A3
+ 0.1745   28 A2 impl A3
+ 0.1628    2 A2
+ 0.1603    1 A1
+ 0.1591   36 A1 impl A5
+ 0.1549   33 A3 impl A5
+ 0.1459   35 A2 impl A5
+ 0.1454   30 A3 impl A4
+ 0.1449    4 A4
+ 0.1428   32 A2 impl A4
+ 0.1207   27 A4 impl A5
+ 0.1129    5 A5
+ 0.1118   29 A1 impl A2
+ 0.0968   31 A1 impl A3
+ 0.0451    6 A6
+
+
+								--------------
+									Fold  6
+								--------------
+Feature evaluation: ReliefF (All features dataset) - After CI
+Ranked attributes:
+ 0.4699   40 num-of-N((A3 = 1) and (A2 = 1) and (A1 = 0))
+ 0.4366   39 num-of-N((A5 = 1) and (A4 = 1) and (A1 = 1))
+ 0.3339   13 A1 equ A3
+ 0.3339   23 A1 xor A3
+ 0.315    14 A1 equ A4
+ 0.315    24 A1 xor A4
+ 0.311    10 A3 equ A4
+ 0.311    20 A3 xor A4
+ 0.3102   19 A1 xor A2
+ 0.3102    9 A1 equ A2
+ 0.2989   38 (A3 = 1) and (A2 = 1) and (A1 = 0)
+ 0.2982    8 A2 equ A3
+ 0.2982   18 A2 xor A3
+ 0.2934   26 A1 xor A5
+ 0.2934   16 A1 equ A5
+ 0.2906   22 A3 xor A5
+ 0.2906   12 A3 equ A5
+ 0.2889   11 A2 equ A4
+ 0.2889   21 A2 xor A4
+ 0.2679   15 A2 equ A5
+ 0.2679   25 A2 xor A5
+ 0.2647   17 A4 xor A5
+ 0.2647    7 A4 equ A5
+ 0.2519   37 (A5 = 1) and (A4 = 1) and (A1 = 1)
+ 0.1861   34 A1 impl A4
+ 0.1722   36 A1 impl A5
+ 0.1707    1 A1
+ 0.1673    3 A3
+ 0.166    32 A3 impl A5
+ 0.1539   28 A2 impl A3
+ 0.1468    4 A4
+ 0.1421    2 A2
+ 0.1419   31 A2 impl A4
+ 0.1388   35 A2 impl A5
+ 0.1384   30 A3 impl A4
+ 0.1301   27 A4 impl A5
+ 0.1259    5 A5
+ 0.1074   33 A1 impl A3
+ 0.0901   29 A1 impl A2
+ 0.0519    6 A6
+
+
+								--------------
+									Fold  7
+								--------------
+Feature evaluation: ReliefF (All features dataset) - After CI
+Ranked attributes:
+ 0.4658   40 num-of-N((A3 = 1) and (A2 = 1) and (A1 = 0))
+ 0.4318   39 num-of-N((A5 = 1) and (A4 = 1) and (A1 = 1))
+ 0.3228   38 (A3 = 1) and (A2 = 1) and (A1 = 0)
+ 0.3136   22 A1 xor A3
+ 0.3136   12 A1 equ A3
+ 0.3107   10 A1 equ A2
+ 0.3107   20 A1 xor A2
+ 0.3074   18 A2 xor A3
+ 0.3074    8 A2 equ A3
+ 0.3042   19 A3 xor A4
+ 0.3042    9 A3 equ A4
+ 0.3028   14 A1 equ A4
+ 0.3028   24 A1 xor A4
+ 0.2919   21 A3 xor A5
+ 0.2919   11 A3 equ A5
+ 0.2911   13 A2 equ A4
+ 0.2911   23 A2 xor A4
+ 0.2903   26 A1 xor A5
+ 0.2903   16 A1 equ A5
+ 0.2762   15 A2 equ A5
+ 0.2762   25 A2 xor A5
+ 0.2704   17 A4 xor A5
+ 0.2704    7 A4 equ A5
+ 0.2447   37 (A5 = 1) and (A4 = 1) and (A1 = 1)
+ 0.1873   36 A1 impl A5
+ 0.1766   34 A1 impl A4
+ 0.1622    1 A1
+ 0.1616    3 A3
+ 0.1609   31 A3 impl A5
+ 0.1548   28 A2 impl A3
+ 0.1484    2 A2
+ 0.1463   35 A2 impl A5
+ 0.1426    4 A4
+ 0.1416   29 A3 impl A4
+ 0.1303    5 A5
+ 0.1302   33 A2 impl A4
+ 0.1298   27 A4 impl A5
+ 0.0926   32 A1 impl A3
+ 0.0797   30 A1 impl A2
+ 0.0374    6 A6
+
+
+								--------------
+									Fold  8
+								--------------
+Feature evaluation: ReliefF (All features dataset) - After CI
+Ranked attributes:
+ 0.5896   41 num-of-N((A5 = 1) and (A2 = 1) and (A3 = 1) and (A1 = 0))
+ 0.4796   42 num-of-N((A3 = 1) and (A2 = 1) and (A1 = 0))
+ 0.4262   40 num-of-N((A5 = 1) and (A4 = 1) and (A1 = 1))
+ 0.3343   11 A1 equ A3
+ 0.3343   21 A1 xor A3
+ 0.3209   19 A1 xor A2
+ 0.3209    9 A1 equ A2
+ 0.3199   24 A1 xor A4
+ 0.3199   14 A1 equ A4
+ 0.3151   39 (A3 = 1) and (A2 = 1) and (A1 = 0)
+ 0.3124   20 A3 xor A4
+ 0.3124   10 A3 equ A4
+ 0.3038    8 A2 equ A3
+ 0.3038   18 A2 xor A3
+ 0.299    12 A2 equ A4
+ 0.299    22 A2 xor A4
+ 0.2807   16 A1 equ A5
+ 0.2807   26 A1 xor A5
+ 0.2757   23 A3 xor A5
+ 0.2757   13 A3 equ A5
+ 0.2603   25 A2 xor A5
+ 0.2603   15 A2 equ A5
+ 0.2555   37 (A5 = 1) and (A4 = 1) and (A1 = 1)
+ 0.2518    7 A4 equ A5
+ 0.2518   17 A4 xor A5
+ 0.2014   34 A1 impl A4
+ 0.1706    1 A1
+ 0.1657    3 A3
+ 0.1594   36 A1 impl A5
+ 0.1568   33 A3 impl A5
+ 0.1511   28 A2 impl A3
+ 0.1507   30 A3 impl A4
+ 0.1502    2 A2
+ 0.1488    4 A4
+ 0.1363   32 A2 impl A4
+ 0.1361   35 A2 impl A5
+ 0.1283   38 (A5 = 1) and (A2 = 1) and (A3 = 1) and (A1 = 0)
+ 0.1116   27 A4 impl A5
+ 0.1101    5 A5
+ 0.1039   31 A1 impl A3
+ 0.096    29 A1 impl A2
+ 0.0456    6 A6
+
+
+								--------------
+									Fold  9
+								--------------
+Feature evaluation: ReliefF (All features dataset) - After CI
+Ranked attributes:
+ 0.4664   40 num-of-N((A3 = 1) and (A2 = 1) and (A1 = 0))
+ 0.448    39 num-of-N((A5 = 1) and (A4 = 1) and (A1 = 1))
+ 0.3329   11 A1 equ A3
+ 0.3329   21 A1 xor A3
+ 0.3322   14 A1 equ A4
+ 0.3322   24 A1 xor A4
+ 0.3181    9 A1 equ A2
+ 0.3181   19 A1 xor A2
+ 0.3015   26 A1 xor A5
+ 0.3015   16 A1 equ A5
+ 0.3014   10 A3 equ A4
+ 0.3014   20 A3 xor A4
+ 0.2978   38 (A3 = 1) and (A2 = 1) and (A1 = 0)
+ 0.2836    8 A2 equ A3
+ 0.2836   18 A2 xor A3
+ 0.2827   23 A2 xor A4
+ 0.2827   13 A2 equ A4
+ 0.2742   37 (A5 = 1) and (A4 = 1) and (A1 = 1)
+ 0.2708   12 A3 equ A5
+ 0.2708   22 A3 xor A5
+ 0.2623    7 A4 equ A5
+ 0.2623   17 A4 xor A5
+ 0.2521   15 A2 equ A5
+ 0.2521   25 A2 xor A5
+ 0.2047   34 A1 impl A4
+ 0.1837    1 A1
+ 0.179    36 A1 impl A5
+ 0.1531    3 A3
+ 0.1484    4 A4
+ 0.1462   28 A2 impl A3
+ 0.146    32 A3 impl A5
+ 0.1408   33 A2 impl A4
+ 0.1402   30 A3 impl A4
+ 0.1343    2 A2
+ 0.1256   35 A2 impl A5
+ 0.1249   27 A4 impl A5
+ 0.1178    5 A5
+ 0.1104   29 A1 impl A2
+ 0.0933   31 A1 impl A3
+ 0.0463    6 A6
+
+
+								--------------
+									Fold 10
+								--------------
+Feature evaluation: ReliefF (All features dataset) - After CI
+Ranked attributes:
+ 0.4572   40 num-of-N((A3 = 1) and (A2 = 1) and (A1 = 0))
+ 0.4337   39 num-of-N((A5 = 1) and (A4 = 1) and (A1 = 1))
+ 0.3208   24 A1 xor A4
+ 0.3208   14 A1 equ A4
+ 0.3135   10 A1 equ A2
+ 0.3135   20 A1 xor A2
+ 0.3092   12 A1 equ A3
+ 0.3092   22 A1 xor A3
+ 0.2991   23 A2 xor A4
+ 0.2991   13 A2 equ A4
+ 0.2987   19 A3 xor A4
+ 0.2987    9 A3 equ A4
+ 0.2918   17 A2 xor A3
+ 0.2918    7 A2 equ A3
+ 0.2889   38 (A3 = 1) and (A2 = 1) and (A1 = 0)
+ 0.2818   26 A1 xor A5
+ 0.2818   16 A1 equ A5
+ 0.2648   18 A4 xor A5
+ 0.2648    8 A4 equ A5
+ 0.2617   21 A3 xor A5
+ 0.2617   11 A3 equ A5
+ 0.2593   25 A2 xor A5
+ 0.2593   15 A2 equ A5
+ 0.2539   37 (A5 = 1) and (A4 = 1) and (A1 = 1)
+ 0.1988   34 A1 impl A4
+ 0.1667    1 A1
+ 0.1621   36 A1 impl A5
+ 0.1542    4 A4
+ 0.1535   31 A3 impl A5
+ 0.1474   33 A2 impl A4
+ 0.147    27 A2 impl A3
+ 0.1468    2 A2
+ 0.1465    3 A3
+ 0.1422   35 A2 impl A5
+ 0.1385   29 A3 impl A4
+ 0.1177   28 A4 impl A5
+ 0.1152    5 A5
+ 0.1048   30 A1 impl A2
+ 0.0958   32 A1 impl A3
+ 0.0462    6 A6
+
+

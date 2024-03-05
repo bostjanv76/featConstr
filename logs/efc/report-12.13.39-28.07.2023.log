@@ -1,0 +1,82 @@
+dataset: rConcept.arff
+Number of folds for testing (CV): 2
+*********************************************************************************
+number of instances: 2000
+number of attributes: 6
+number of classes: 1
+---------------------------------------------------------------------------------
+Testing method: CV, number of folds: 2
+Feature selection on validation dataset. Percentage of split (subTrain:validation) 75%:25%
+---------------------------------------------------------------------------------
+Feature types included in construction: logical operators based, decision rule, threshold, relational, Cartesian product, numerical
+*********************************************************************************
+Original dataset
+*********************************************************************************
+-----MAE and RMSE-----
+Avg. MAE RF 	10,50 (stdev 1,38) 	Avg. RMSE RF 	16,18 (stdev 3,09)
+*********************************************************************************
+Only Logical features
+*********************************************************************************
+Number of logical feat: 25,50 (stdev 1,50)
+-----MAE and RMSE-----
+Avg. MAE RF 	23,12 (stdev 0,00) 	Avg. RMSE RF 	30,56 (stdev 0,04)
+-----Learning and testing time-----
+Avg. learning time from FC (all feat), for RF 	422,50 [ms] (stdev 42,50)
+-----Feature construction time-----
+Avg. FC time (only Log feat): 564,00 [ms] stdev 2,00
+*********************************************************************************
+Numerical features
+*********************************************************************************
+Number of numerical feat: 42,50 (stdev 2,50)
+-----MAE and RMSE-----
+Avg. MAE RF 	15,72 (stdev 0,16) 	Avg. RMSE RF 	26,16 (stdev 0,31)
+-----Learning and testing time-----
+Avg. learning time from FC (all feat), for RF 	229,00 [ms] (stdev 18,00)
+-----Feature construction time-----
+Avg. FC time (only Num feat): 28,00 [ms] stdev 3,00
+*********************************************************************************
+Relational features
+*********************************************************************************
+Number of relational feat: 8,50 (stdev 0,50)
+-----MAE and RMSE-----
+Avg. MAE RF 	16,76 (stdev 1,09) 	Avg. RMSE RF 	23,90 (stdev 2,18)
+-----Learning and testing time-----
+Avg. learning time from FC (all feat), for RF 	133,50 [ms] (stdev 22,50)
+-----Feature construction time-----
+Avg. FC time (only Rel feat): 12,00 [ms] stdev 3,00
+*********************************************************************************
+Cartesian product
+*********************************************************************************
+Number of "Cartesian" feat: 8,50 (stdev 0,50)
+-----MAE and RMSE-----
+Avg. MAE RF 	16,83 (stdev 0,14) 	Avg. RMSE RF 	22,97 (stdev 0,12)
+-----Learning and testing time-----
+Avg. learning time from FC (all feat), for RF 	209,00 [ms] (stdev 60,00)
+-----Feature construction time-----
+Avg. FC time (only Cart feat): 13,50 [ms] stdev 2,50
+*********************************************************************************
+All features dataset
+*********************************************************************************
+Avg. number of groups for feature construction: 13,00 (stdev 0,00)
+Avg. size of groups (num. of candidate attr.) per folds (num of attr. in all groups):: 33,50 (stdev 0,50)
+Avg. size of groups (num. of candidate attr.) per groups per folds (avg. of avg.): 2,58 (stdev 0,04)
+Max avg. group (length) of constructs (num of attr.): 4,00 (stdev 0,00)
+Number of logical feat: 25,50 (stdev 1,50) number of numerical feat: 42,50 (stdev 2,50) number of relational feat: 8,50 (stdev 0,50) number of "Cartesian" feat: 8,50 (stdev 0,50) number of FURIA feat: 53,50 (stdev 3,50) number of thr. feat: 0,00 (stdev 0,00)
+-----MAE and RMSE-----
+Avg. MAE RF 	13,46 (stdev 0,05) 	Avg. RMSE RF 	18,71 (stdev 0,41)
+-----Learning and testing time-----
+Avg. learning time from FC (all feat), for RF 	211,00 [ms] (stdev 59,00)
+-----Feature construction time-----
+Avg. FC time (all feat): 617,50 [ms] (stdev 4,50)
+*********************************************************************************
+FS on validation dataset - results
+*********************************************************************************
+-----MAE and RMSE-----
+Avg. MAE RF 	10,50 (stdev 1,38) 	Avg. RMSE RF 	16,18 (stdev 3,09)
+-----Search time-----
+Avg. search time RF 	636,00 (stdev 28,00)
+-----Learning and testing time-----
+Avg. learn time RF 	163,00 (stdev 16,00)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Total processing time (rConcept.arff): 23345
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

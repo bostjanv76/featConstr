@@ -1,0 +1,1269 @@
+dataset: Balance scale.arff
+								--------------
+									Fold  1
+								--------------
+Feature evaluation: ReliefF (All features dataset) - After CI
+Ranked attributes:
+ 0.3176   103 num-of-N((left-distance >= 3) and (right-weight <= 2) and (left-weight >= 2))
+ 0.256    105 num-of-N((left-distance >= 3) and (left-weight >= 3))
+ 0.2542    85 left-weight_x_left-distance
+ 0.2528   107 num-of-N((left-distance >= 3) and (right-weight <= 2))
+ 0.2522    89 left-distance_x_right-distance
+ 0.2501   106 num-of-N((left-weight >= 4) and (left-distance >= 2) and (right-weight <= 3))
+ 0.2485    86 left-distance_x_right-weight
+ 0.2449    87 right-weight_x_right-distance
+ 0.2364   108 num-of-N((right-weight <= 2) and (left-weight >= 3))
+ 0.2354    77 left-distance LESSTHAN right-distance
+ 0.235     90 left-weight_x_right-distance
+ 0.2324   100 num-of-N((right-distance <= 2) and (left-distance >= 2))
+ 0.2318    88 left-weight_x_right-weight
+ 0.223     96 (left-distance >= 3) and (left-weight >= 3)
+ 0.223      5 left-weight==B2of2 and left-distance==B2of2
+ 0.2222    74 left-distance LESSTHAN right-weight
+ 0.2202   104 num-of-N((right-distance <= 2) and (left-weight >= 2))
+ 0.2201    76 left-weight LESSTHAN right-weight
+ 0.22      17 left-weight==B2of2 equ left-distance==B2of2
+ 0.22      23 left-weight==B2of2 xor left-distance==B2of2
+ 0.2156    25 right-weight==B2of2 xor right-distance==B2of2
+ 0.2156    19 right-weight==B2of2 equ right-distance==B2of2
+ 0.214    101 num-of-N((right-distance <= 1) and (left-distance >= 2))
+ 0.2117    21 left-distance==B2of2 equ right-distance==B2of2
+ 0.2117    27 left-distance==B2of2 xor right-distance==B2of2
+ 0.2116   102 num-of-N((left-distance >= 4) and (left-weight >= 3))
+ 0.2081    18 left-distance==B2of2 equ right-weight==B2of2
+ 0.2081    24 left-distance==B2of2 xor right-weight==B2of2
+ 0.2067     7 right-weight==B2of2 and right-distance==B2of2
+ 0.2044    78 left-weight LESSTHAN right-distance
+ 0.1962    28 left-weight==B2of2 xor right-distance==B2of2
+ 0.1962    22 left-weight==B2of2 equ right-distance==B2of2
+ 0.1952    91 (right-distance <= 2) and (left-distance >= 2)
+ 0.1938    20 left-weight==B2of2 equ right-weight==B2of2
+ 0.1938    26 left-weight==B2of2 xor right-weight==B2of2
+ 0.1906    94 (left-distance >= 3) and (right-weight <= 2) and (left-weight >= 2)
+ 0.1788    95 (right-distance <= 2) and (left-weight >= 2)
+ 0.1646    98 (left-distance >= 3) and (right-weight <= 2)
+ 0.1646    30 left-distance==B2of2 impl right-weight==B2of2
+ 0.1554    93 (left-distance >= 4) and (left-weight >= 3)
+ 0.1486    34 left-weight==B2of2 impl right-distance==B2of2
+ 0.1413     6 left-distance==B2of2 and right-weight==B2of2
+ 0.1413    97 (left-weight >= 4) and (left-distance >= 2) and (right-weight <= 3)
+ 0.1395     9 left-distance==B2of2 and right-distance==B2of2
+ 0.1367    33 left-distance==B2of2 impl right-distance==B2of2
+ 0.1356    37 left-weight==B2of2 and left-distance==B2of2 and right-weight==B2of2
+ 0.1328    35 left-distance==B2of2 and right-weight==B2of2 and right-distance==B2of2
+ 0.1297    92 (right-distance <= 1) and (left-distance >= 2)
+ 0.1294     8 left-weight==B2of2 and right-weight==B2of2
+ 0.1291    36 left-weight==B2of2 and left-distance==B2of2 and right-distance==B2of2
+ 0.1273    32 left-weight==B2of2 impl right-weight==B2of2
+ 0.1273    99 (right-weight <= 2) and (left-weight >= 3)
+ 0.1197    67 left-weight MULTIPLY left-distance
+ 0.1186    38 left-weight==B2of2 and right-weight==B2of2 and right-distance==B2of2
+ 0.1155    69 right-weight MULTIPLY right-distance
+ 0.1143    10 left-weight==B2of2 and right-distance==B2of2
+ 0.1082    31 right-weight==B2of2 impl right-distance==B2of2
+ 0.1071    50 left-distance SUBTRACT right-weight
+ 0.1055    53 left-distance SUBTRACT right-distance
+ 0.1046    29 left-weight==B2of2 impl left-distance==B2of2
+ 0.1029    52 left-weight SUBTRACT right-weight
+ 0.102     43 left-weight ADD left-distance
+ 0.1006     2 left-distance
+ 0.0997    45 right-weight ADD right-distance
+ 0.0995    54 left-weight SUBTRACT right-distance
+ 0.0978    57 left-distance DIVIDE right-weight
+ 0.0969    58 right-weight DIVIDE left-distance
+ 0.0964     3 right-weight
+ 0.0959    62 right-weight DIVIDE left-weight
+ 0.0954    64 right-distance DIVIDE left-distance
+ 0.0948    63 left-distance DIVIDE right-distance
+ 0.0914     4 right-distance
+ 0.0905    66 right-distance DIVIDE left-weight
+ 0.0903     1 left-weight
+ 0.0899    65 left-weight DIVIDE right-distance
+ 0.0895    83 left-distance DIFF right-distance
+ 0.0881    61 left-weight DIVIDE right-weight
+ 0.0845    82 left-weight DIFF right-weight
+ 0.0842    80 left-distance DIFF right-weight
+ 0.0819    84 left-weight DIFF right-distance
+ 0.073     16 left-weight==B2of2 or right-distance==B2of2
+ 0.0727    13 right-weight==B2of2 or right-distance==B2of2
+ 0.0691    11 left-weight==B2of2 or left-distance==B2of2
+ 0.0653    15 left-distance==B2of2 or right-distance==B2of2
+ 0.061     56 left-distance DIVIDE left-weight
+ 0.0583    55 left-weight DIVIDE left-distance
+ 0.0581    12 left-distance==B2of2 or right-weight==B2of2
+ 0.0566    59 right-weight DIVIDE right-distance
+ 0.0559    60 right-distance DIVIDE right-weight
+ 0.0557    75 right-weight LESSTHAN right-distance
+ 0.0553    14 left-weight==B2of2 or right-weight==B2of2
+ 0.0553    68 left-distance MULTIPLY right-weight
+ 0.0531    71 left-distance MULTIPLY right-distance
+ 0.0515    73 left-weight LESSTHAN left-distance
+ 0.0502    70 left-weight MULTIPLY right-weight
+ 0.0499    72 left-weight MULTIPLY right-distance
+ 0.047     49 left-weight SUBTRACT left-distance
+ 0.0456    51 right-weight SUBTRACT right-distance
+ 0.0453    47 left-distance ADD right-distance
+ 0.0442    44 left-distance ADD right-weight
+ 0.0426    48 left-weight ADD right-distance
+ 0.0419    46 left-weight ADD right-weight
+ 0.0302    42 left-weight==B2of2 or right-weight==B2of2 or right-distance==B2of2
+ 0.0296    79 left-weight DIFF left-distance
+ 0.0283    40 left-weight==B2of2 or left-distance==B2of2 or right-distance==B2of2
+ 0.0236    41 left-weight==B2of2 or left-distance==B2of2 or right-weight==B2of2
+ 0.0216    81 right-weight DIFF right-distance
+ 0.0206    39 left-distance==B2of2 or right-weight==B2of2 or right-distance==B2of2
+
+
+								--------------
+									Fold  2
+								--------------
+Feature evaluation: ReliefF (All features dataset) - After CI
+Ranked attributes:
+ 0.2992    153 num-of-N((left-weight >= 3) and (left-distance >= 3) and (right-distance <= 3))
+ 0.2729    128 left-distance_x_right-weight
+ 0.2672    129 right-weight_x_right-distance
+ 0.2591    127 left-weight_x_left-distance
+ 0.2563    150 num-of-N((right-distance <= 1) and (left-weight >= 2) and (right-weight <= 3))
+ 0.2559    131 left-weight_x_right-weight
+ 0.2462    119 left-weight LESSTHAN right-weight
+ 0.2456    156 num-of-N((right-distance <= 2) and (left-distance >= 3))
+ 0.2422    130 left-distance_x_right-distance
+ 0.2416    154 num-of-N((right-weight <= 2) and (left-weight >= 3))
+ 0.2409    147 num-of-N((right-weight <= 1) and (left-distance >= 2))
+ 0.235     116 left-distance LESSTHAN right-weight
+ 0.2309      5 left-weight==B2of2 and left-distance==B2of2
+ 0.2307    148 num-of-N((left-distance >= 4) and (left-weight >= 2) and (right-weight <= 3))
+ 0.2299     29 left-weight==B2of2 equ left-distance==B2of2
+ 0.2299     41 left-weight==B2of2 xor left-distance==B2of2
+ 0.2297    149 num-of-N((right-distance <= 2) and (left-weight >= 3))
+ 0.2254    132 left-weight_x_right-distance
+ 0.2251    152 num-of-N((left-weight >= 4) and (left-distance >= 3))
+ 0.2239    145 num-of-N((right-distance <= 1) and (left-distance >= 2))
+ 0.2211     33 right-weight==B1of3 equ right-distance==B2of2
+ 0.2211     45 right-weight==B1of3 xor right-distance==B2of2
+ 0.2183     18 left-distance==B2of2 or right-weight==B1of3
+ 0.2146    155 num-of-N((right-weight <= 1) and (right-distance <= 3))
+ 0.2135    118 left-distance LESSTHAN right-distance
+ 0.2116     30 left-distance==B2of2 equ right-weight==B1of3
+ 0.2116     42 left-distance==B2of2 xor right-weight==B1of3
+ 0.2096    120 left-weight LESSTHAN right-distance
+ 0.2046     49 left-weight==B2of2 xor right-weight==B1of3
+ 0.2046     37 left-weight==B2of2 equ right-weight==B1of3
+ 0.2019     48 left-distance==B2of2 xor right-distance==B2of2
+ 0.2019     36 left-distance==B2of2 equ right-distance==B2of2
+ 0.1988     25 left-weight==B2of2 or right-weight==B1of3
+ 0.1905     40 left-weight==B2of2 equ right-distance==B2of2
+ 0.1905     52 left-weight==B2of2 xor right-distance==B2of2
+ 0.1798    141 (left-weight >= 3) and (left-distance >= 3) and (right-distance <= 3)
+ 0.1794     32 left-distance==B2of2 equ right-weight==B3of3
+ 0.1794     44 left-distance==B2of2 xor right-weight==B3of3
+ 0.1789     46 right-weight==B2of3 xor right-distance==B2of2
+ 0.1789     34 right-weight==B2of3 equ right-distance==B2of2
+ 0.1704     43 left-distance==B2of2 xor right-weight==B2of3
+ 0.1704     31 left-distance==B2of2 equ right-weight==B2of3
+ 0.1666     47 right-weight==B3of3 xor right-distance==B2of2
+ 0.1666     35 right-weight==B3of3 equ right-distance==B2of2
+ 0.1631     56 left-distance==B2of2 impl right-weight==B3of3
+ 0.1622     38 left-weight==B2of2 equ right-weight==B2of3
+ 0.1622     50 left-weight==B2of2 xor right-weight==B2of3
+ 0.1618    135 (right-weight <= 1) and (left-distance >= 2)
+ 0.1607    140 (left-weight >= 4) and (left-distance >= 3)
+ 0.1581     54 left-distance==B2of2 impl right-weight==B1of3
+ 0.157      10 right-weight==B2of3 and right-distance==B2of2
+ 0.1556    151 num-of-N((left-weight >= 4) and (left-distance >= 4))
+ 0.1495     61 left-weight==B2of2 impl right-weight==B1of3
+ 0.1489     39 left-weight==B2of2 equ right-weight==B3of3
+ 0.1489     51 left-weight==B2of2 xor right-weight==B3of3
+ 0.1485     60 left-distance==B2of2 impl right-distance==B2of2
+ 0.1485    144 (right-distance <= 2) and (left-distance >= 3)
+ 0.1422     63 left-weight==B2of2 impl right-weight==B3of3
+ 0.1386    142 (right-weight <= 2) and (left-weight >= 3)
+ 0.1383     65 left-weight==B2of2 and left-distance==B2of2 and right-distance==B2of2
+ 0.1326    133 (right-distance <= 1) and (left-distance >= 2)
+ 0.1297     16 left-weight==B2of2 and right-distance==B2of2
+ 0.1294    146 num-of-N((right-distance <= 2) and (left-weight >= 5))
+ 0.1289     11 right-weight==B3of3 and right-distance==B2of2
+ 0.1288    136 (left-distance >= 4) and (left-weight >= 2) and (right-weight <= 3)
+ 0.128      64 left-weight==B2of2 impl right-distance==B2of2
+ 0.128     137 (right-distance <= 2) and (left-weight >= 3)
+ 0.1275     62 left-weight==B2of2 impl right-weight==B2of3
+ 0.127      55 left-distance==B2of2 impl right-weight==B2of3
+ 0.126       7 left-distance==B2of2 and right-weight==B2of3
+ 0.1256     12 left-distance==B2of2 and right-distance==B2of2
+ 0.1228     21 right-weight==B1of3 or right-distance==B2of2
+ 0.1206     14 left-weight==B2of2 and right-weight==B2of3
+ 0.12       53 left-weight==B2of2 impl left-distance==B2of2
+ 0.1193    111 right-weight MULTIPLY right-distance
+ 0.1186    109 left-weight MULTIPLY left-distance
+ 0.1165     73 left-weight==B2of2 and right-weight==B2of3 and right-distance==B2of2
+ 0.1145     70 left-weight==B2of2 and left-distance==B2of2 and right-weight==B2of3
+ 0.1143    139 (left-weight >= 4) and (left-distance >= 4)
+ 0.1124     67 left-distance==B2of2 and right-weight==B2of3 and right-distance==B2of2
+ 0.1062     92 left-distance SUBTRACT right-weight
+ 0.1052     95 left-weight SUBTRACT right-weight
+ 0.1049     20 left-distance==B2of2 or right-weight==B3of3
+ 0.1032     99 left-distance DIVIDE right-weight
+ 0.102      87 right-weight ADD right-distance
+ 0.1019     94 left-distance SUBTRACT right-distance
+ 0.1014     96 left-weight SUBTRACT right-distance
+ 0.1004      3 right-weight
+ 0.0997    105 left-weight DIVIDE right-weight
+ 0.0994     85 left-weight ADD left-distance
+ 0.0972    125 left-weight DIFF right-weight
+ 0.0965    106 right-weight DIVIDE left-weight
+ 0.0965      2 left-distance
+ 0.0964    107 left-weight DIVIDE right-distance
+ 0.0958      6 left-distance==B2of2 and right-weight==B1of3
+ 0.0955    100 right-weight DIVIDE left-distance
+ 0.0951    104 right-distance DIVIDE left-distance
+ 0.0934      9 right-weight==B1of3 and right-distance==B2of2
+ 0.0932      4 right-distance
+ 0.0931      1 left-weight
+ 0.0931     13 left-weight==B2of2 and right-weight==B1of3
+ 0.0925    103 left-distance DIVIDE right-distance
+ 0.0919    108 right-distance DIVIDE left-weight
+ 0.091     122 left-distance DIFF right-weight
+ 0.0864     26 left-weight==B2of2 or right-weight==B2of3
+ 0.0849     19 left-distance==B2of2 or right-weight==B2of3
+ 0.084      22 right-weight==B2of3 or right-distance==B2of2
+ 0.0827    143 (right-weight <= 1) and (right-distance <= 3)
+ 0.0823    126 left-weight DIFF right-distance
+ 0.0793    124 left-distance DIFF right-distance
+ 0.0789     71 left-weight==B2of2 and left-distance==B2of2 and right-weight==B3of3
+ 0.0789     76 left-distance==B2of2 or right-weight==B1of3 or right-distance==B2of2
+ 0.0755     23 right-weight==B3of3 or right-distance==B2of2
+ 0.0744     68 left-distance==B2of2 and right-weight==B3of3 and right-distance==B2of2
+ 0.0734     27 left-weight==B2of2 or right-weight==B3of3
+ 0.0725     15 left-weight==B2of2 and right-weight==B3of3
+ 0.0712      8 left-distance==B2of2 and right-weight==B3of3
+ 0.0711     74 left-weight==B2of2 and right-weight==B3of3 and right-distance==B2of2
+ 0.0694     24 left-distance==B2of2 or right-distance==B2of2
+ 0.0688    138 (right-distance <= 1) and (left-weight >= 2) and (right-weight <= 3)
+ 0.0658     79 left-weight==B2of2 or left-distance==B2of2 or right-weight==B1of3
+ 0.0651    102 right-distance DIVIDE right-weight
+ 0.0635     59 right-weight==B3of3 impl right-distance==B2of2
+ 0.0628     97 left-weight DIVIDE left-distance
+ 0.0618     82 left-weight==B2of2 or right-weight==B1of3 or right-distance==B2of2
+ 0.0615     17 left-weight==B2of2 or left-distance==B2of2
+ 0.061     101 right-weight DIVIDE right-distance
+ 0.0592     98 left-distance DIVIDE left-weight
+ 0.0589     66 left-distance==B2of2 and right-weight==B1of3 and right-distance==B2of2
+ 0.0583     72 left-weight==B2of2 and right-weight==B1of3 and right-distance==B2of2
+ 0.0581     58 right-weight==B2of3 impl right-distance==B2of2
+ 0.0566    115 left-weight LESSTHAN left-distance
+ 0.056     110 left-distance MULTIPLY right-weight
+ 0.0543    117 right-weight LESSTHAN right-distance
+ 0.0536    112 left-distance MULTIPLY right-distance
+ 0.0529    113 left-weight MULTIPLY right-weight
+ 0.0529    114 left-weight MULTIPLY right-distance
+ 0.0523     28 left-weight==B2of2 or right-distance==B2of2
+ 0.0486     93 right-weight SUBTRACT right-distance
+ 0.0484     91 left-weight SUBTRACT left-distance
+ 0.0479     86 left-distance ADD right-weight
+ 0.0453     88 left-distance ADD right-distance
+ 0.0436     89 left-weight ADD right-weight
+ 0.0415     78 left-distance==B2of2 or right-weight==B3of3 or right-distance==B2of2
+ 0.0414     90 left-weight ADD right-distance
+ 0.041      77 left-distance==B2of2 or right-weight==B2of3 or right-distance==B2of2
+ 0.0344     84 left-weight==B2of2 or right-weight==B3of3 or right-distance==B2of2
+ 0.0343     69 left-weight==B2of2 and left-distance==B2of2 and right-weight==B1of3
+ 0.0341     81 left-weight==B2of2 or left-distance==B2of2 or right-weight==B3of3
+ 0.0335     57 right-weight==B1of3 impl right-distance==B2of2
+ 0.0282     75 left-weight==B2of2 or left-distance==B2of2 or right-distance==B2of2
+ 0.0256    121 left-weight DIFF left-distance
+ 0.0253     83 left-weight==B2of2 or right-weight==B2of3 or right-distance==B2of2
+ 0.0229    134 (right-distance <= 2) and (left-weight >= 5)
+ 0.0226    123 right-weight DIFF right-distance
+ 0.0214     80 left-weight==B2of2 or left-distance==B2of2 or right-weight==B2of3
+
+
+								--------------
+									Fold  3
+								--------------
+Feature evaluation: ReliefF (All features dataset) - After CI
+Ranked attributes:
+ 0.291    102 num-of-N((left-distance >= 3) and (right-weight <= 2))
+ 0.2869    87 left-distance_x_right-weight
+ 0.2805   101 num-of-N((left-distance >= 3) and (left-weight >= 3))
+ 0.2778    86 left-weight_x_left-distance
+ 0.2753   104 num-of-N((right-distance <= 2) and (left-distance >= 3))
+ 0.2713    89 left-distance_x_right-distance
+ 0.2688    85 right-weight_x_right-distance
+ 0.2526   103 num-of-N((right-weight <= 2) and (left-weight >= 3))
+ 0.2495    88 left-weight_x_right-weight
+ 0.2449    77 left-distance LESSTHAN right-distance
+ 0.2392     5 right-weight==B2of2 and right-distance==B2of2
+ 0.2363    18 left-weight==B2of2 equ left-distance==B2of2
+ 0.2363    24 left-weight==B2of2 xor left-distance==B2of2
+ 0.2352    23 right-weight==B2of2 xor right-distance==B2of2
+ 0.2352    17 right-weight==B2of2 equ right-distance==B2of2
+ 0.2351    90 left-weight_x_right-distance
+ 0.2331    19 left-distance==B2of2 equ right-weight==B2of2
+ 0.2331    25 left-distance==B2of2 xor right-weight==B2of2
+ 0.2313    94 (left-distance >= 3) and (left-weight >= 3)
+ 0.2313     6 left-weight==B2of2 and left-distance==B2of2
+ 0.2303   100 num-of-N((right-distance <= 2) and (left-weight >= 2))
+ 0.2289    75 left-distance LESSTHAN right-weight
+ 0.2168    21 left-distance==B2of2 equ right-distance==B2of2
+ 0.2168    27 left-distance==B2of2 xor right-distance==B2of2
+ 0.2162    78 left-weight LESSTHAN right-distance
+ 0.2075    76 left-weight LESSTHAN right-weight
+ 0.203     20 left-weight==B2of2 equ right-weight==B2of2
+ 0.203     26 left-weight==B2of2 xor right-weight==B2of2
+ 0.203     99 num-of-N((right-distance <= 1) and (left-weight >= 2))
+ 0.2026    98 num-of-N((right-weight <= 1) and (left-distance >= 2))
+ 0.1997    93 (right-distance <= 2) and (left-weight >= 2)
+ 0.1891    22 left-weight==B2of2 equ right-distance==B2of2
+ 0.1891    28 left-weight==B2of2 xor right-distance==B2of2
+ 0.1686    34 left-weight==B2of2 impl right-distance==B2of2
+ 0.1654    95 (left-distance >= 3) and (right-weight <= 2)
+ 0.1654    31 left-distance==B2of2 impl right-weight==B2of2
+ 0.1598    33 left-distance==B2of2 impl right-distance==B2of2
+ 0.1598    97 (right-distance <= 2) and (left-distance >= 3)
+ 0.1555     7 left-distance==B2of2 and right-weight==B2of2
+ 0.154     32 left-weight==B2of2 impl right-weight==B2of2
+ 0.154     96 (right-weight <= 2) and (left-weight >= 3)
+ 0.1436    38 left-weight==B2of2 and left-distance==B2of2 and right-weight==B2of2
+ 0.142     37 left-weight==B2of2 and right-weight==B2of2 and right-distance==B2of2
+ 0.1374     9 left-distance==B2of2 and right-distance==B2of2
+ 0.1361    36 left-distance==B2of2 and right-weight==B2of2 and right-distance==B2of2
+ 0.1355     8 left-weight==B2of2 and right-weight==B2of2
+ 0.1274    91 (right-weight <= 1) and (left-distance >= 2)
+ 0.1248    92 (right-distance <= 1) and (left-weight >= 2)
+ 0.1237    30 left-weight==B2of2 impl left-distance==B2of2
+ 0.1237    35 left-weight==B2of2 and left-distance==B2of2 and right-distance==B2of2
+ 0.1226    10 left-weight==B2of2 and right-distance==B2of2
+ 0.1188    67 right-weight MULTIPLY right-distance
+ 0.115     68 left-weight MULTIPLY left-distance
+ 0.1085    53 left-distance SUBTRACT right-distance
+ 0.1058    51 left-distance SUBTRACT right-weight
+ 0.1052    29 right-weight==B2of2 impl right-distance==B2of2
+ 0.103     54 left-weight SUBTRACT right-distance
+ 0.1027     2 left-distance
+ 0.1017    44 left-weight ADD left-distance
+ 0.1       43 right-weight ADD right-distance
+ 0.0991     4 right-distance
+ 0.0989    52 left-weight SUBTRACT right-weight
+ 0.098     81 left-distance DIFF right-weight
+ 0.0971    64 right-distance DIVIDE left-distance
+ 0.096     65 left-weight DIVIDE right-distance
+ 0.0957    63 left-distance DIVIDE right-distance
+ 0.0955    59 left-distance DIVIDE right-weight
+ 0.094     60 right-weight DIVIDE left-distance
+ 0.0933    12 left-weight==B2of2 or left-distance==B2of2
+ 0.0919    62 right-weight DIVIDE left-weight
+ 0.0919    61 left-weight DIVIDE right-weight
+ 0.0911     3 right-weight
+ 0.0896     1 left-weight
+ 0.0886    83 left-distance DIFF right-distance
+ 0.0883    82 left-weight DIFF right-weight
+ 0.0878    66 right-distance DIVIDE left-weight
+ 0.0748    84 left-weight DIFF right-distance
+ 0.0713    15 left-distance==B2of2 or right-distance==B2of2
+ 0.0694    13 left-distance==B2of2 or right-weight==B2of2
+ 0.0673    11 right-weight==B2of2 or right-distance==B2of2
+ 0.0635    74 left-weight LESSTHAN left-distance
+ 0.0613    14 left-weight==B2of2 or right-weight==B2of2
+ 0.0606    55 right-weight DIVIDE right-distance
+ 0.0599    16 left-weight==B2of2 or right-distance==B2of2
+ 0.0595    56 right-distance DIVIDE right-weight
+ 0.0574    58 left-distance DIVIDE left-weight
+ 0.0559    73 right-weight LESSTHAN right-distance
+ 0.0551    57 left-weight DIVIDE left-distance
+ 0.0549    69 left-distance MULTIPLY right-weight
+ 0.0545    71 left-distance MULTIPLY right-distance
+ 0.0511    72 left-weight MULTIPLY right-distance
+ 0.0507    70 left-weight MULTIPLY right-weight
+ 0.0488    49 right-weight SUBTRACT right-distance
+ 0.0472    47 left-distance ADD right-distance
+ 0.047     50 left-weight SUBTRACT left-distance
+ 0.0464    45 left-distance ADD right-weight
+ 0.043     48 left-weight ADD right-distance
+ 0.0421    46 left-weight ADD right-weight
+ 0.0318    39 left-weight==B2of2 or left-distance==B2of2 or right-distance==B2of2
+ 0.0299    40 left-distance==B2of2 or right-weight==B2of2 or right-distance==B2of2
+ 0.0298    42 left-weight==B2of2 or left-distance==B2of2 or right-weight==B2of2
+ 0.0267    80 left-weight DIFF left-distance
+ 0.0246    79 right-weight DIFF right-distance
+ 0.0183    41 left-weight==B2of2 or right-weight==B2of2 or right-distance==B2of2
+
+
+								--------------
+									Fold  4
+								--------------
+Feature evaluation: ReliefF (All features dataset) - After CI
+Ranked attributes:
+ 0.2801   108 num-of-N((left-weight >= 3) and (left-distance >= 2) and (right-distance <= 3))
+ 0.2673    85 right-weight_x_right-distance
+ 0.2568   102 num-of-N((right-weight <= 2) and (left-distance >= 3))
+ 0.2561   112 num-of-N((right-distance <= 2) and (left-distance >= 3))
+ 0.2528    89 left-distance_x_right-distance
+ 0.2523    87 left-distance_x_right-weight
+ 0.2496   110 num-of-N((left-distance >= 4) and (right-distance <= 3) and (left-weight >= 2))
+ 0.248    107 num-of-N((left-weight >= 3) and (left-distance >= 3))
+ 0.2453    86 left-weight_x_left-distance
+ 0.2449   106 num-of-N((right-distance <= 3) and (right-weight <= 3) and (left-distance >= 2))
+ 0.2417   103 num-of-N((right-distance <= 2) and (left-weight >= 3))
+ 0.2394    88 left-weight_x_right-weight
+ 0.2373    90 left-weight_x_right-distance
+ 0.2317    23 right-weight==B2of2 xor right-distance==B2of2
+ 0.2317    17 right-weight==B2of2 equ right-distance==B2of2
+ 0.2293    75 left-distance LESSTHAN right-weight
+ 0.2272    78 left-weight LESSTHAN right-distance
+ 0.227      5 right-weight==B2of2 and right-distance==B2of2
+ 0.2263    97 (left-weight >= 3) and (left-distance >= 2) and (right-distance <= 3)
+ 0.2198    76 left-weight LESSTHAN right-weight
+ 0.2191    18 left-weight==B2of2 equ left-distance==B2of2
+ 0.2191    24 left-weight==B2of2 xor left-distance==B2of2
+ 0.2169    77 left-distance LESSTHAN right-distance
+ 0.214    111 num-of-N((right-weight <= 1) and (left-weight >= 2))
+ 0.2112    27 left-distance==B2of2 xor right-distance==B2of2
+ 0.2112    21 left-distance==B2of2 equ right-distance==B2of2
+ 0.2112    19 left-distance==B2of2 equ right-weight==B2of2
+ 0.2112    25 left-distance==B2of2 xor right-weight==B2of2
+ 0.2082     6 left-weight==B2of2 and left-distance==B2of2
+ 0.2082    96 (left-weight >= 3) and (left-distance >= 3)
+ 0.2072   104 num-of-N((right-distance <= 1) and (left-weight >= 2))
+ 0.2068   109 num-of-N((right-weight <= 2) and (left-weight >= 4))
+ 0.1987    20 left-weight==B2of2 equ right-weight==B2of2
+ 0.1987    26 left-weight==B2of2 xor right-weight==B2of2
+ 0.1937    28 left-weight==B2of2 xor right-distance==B2of2
+ 0.1937    22 left-weight==B2of2 equ right-distance==B2of2
+ 0.1664    33 left-distance==B2of2 impl right-distance==B2of2
+ 0.1664   101 (right-distance <= 2) and (left-distance >= 3)
+ 0.1555   105 num-of-N((left-weight >= 4) and (left-distance >= 4))
+ 0.1527    34 left-weight==B2of2 impl right-distance==B2of2
+ 0.1527    92 (right-distance <= 2) and (left-weight >= 3)
+ 0.1461    91 (right-weight <= 2) and (left-distance >= 3)
+ 0.1461    31 left-distance==B2of2 impl right-weight==B2of2
+ 0.1443    95 (right-distance <= 3) and (right-weight <= 3) and (left-distance >= 2)
+ 0.1422    32 left-weight==B2of2 impl right-weight==B2of2
+ 0.1352    36 left-distance==B2of2 and right-weight==B2of2 and right-distance==B2of2
+ 0.135     99 (left-distance >= 4) and (right-distance <= 3) and (left-weight >= 2)
+ 0.1347     9 left-distance==B2of2 and right-distance==B2of2
+ 0.1342     7 left-distance==B2of2 and right-weight==B2of2
+ 0.1334   100 (right-weight <= 1) and (left-weight >= 2)
+ 0.1245    93 (right-distance <= 1) and (left-weight >= 2)
+ 0.1239    38 left-weight==B2of2 and left-distance==B2of2 and right-weight==B2of2
+ 0.1234    37 left-weight==B2of2 and right-weight==B2of2 and right-distance==B2of2
+ 0.1227     8 left-weight==B2of2 and right-weight==B2of2
+ 0.1199    29 right-weight==B2of2 impl right-distance==B2of2
+ 0.1199    10 left-weight==B2of2 and right-distance==B2of2
+ 0.1182    35 left-weight==B2of2 and left-distance==B2of2 and right-distance==B2of2
+ 0.1177    67 right-weight MULTIPLY right-distance
+ 0.1145    30 left-weight==B2of2 impl left-distance==B2of2
+ 0.1114    68 left-weight MULTIPLY left-distance
+ 0.1063    51 left-distance SUBTRACT right-weight
+ 0.1052    53 left-distance SUBTRACT right-distance
+ 0.1021    43 right-weight ADD right-distance
+ 0.101     54 left-weight SUBTRACT right-distance
+ 0.1005    52 left-weight SUBTRACT right-weight
+ 0.0992    84 left-weight DIFF right-distance
+ 0.0986    94 (left-weight >= 4) and (left-distance >= 4)
+ 0.0983     3 right-weight
+ 0.0978    63 left-distance DIVIDE right-distance
+ 0.0972    60 right-weight DIVIDE left-distance
+ 0.0969     4 right-distance
+ 0.0967     2 left-distance
+ 0.0962    59 left-distance DIVIDE right-weight
+ 0.0961    44 left-weight ADD left-distance
+ 0.0932    61 left-weight DIVIDE right-weight
+ 0.0921    64 right-distance DIVIDE left-distance
+ 0.0915    62 right-weight DIVIDE left-weight
+ 0.0914    65 left-weight DIVIDE right-distance
+ 0.0891    66 right-distance DIVIDE left-weight
+ 0.0884    83 left-distance DIFF right-distance
+ 0.0868     1 left-weight
+ 0.0858    81 left-distance DIFF right-weight
+ 0.0847    82 left-weight DIFF right-weight
+ 0.0828    98 (right-weight <= 2) and (left-weight >= 4)
+ 0.0795    11 right-weight==B2of2 or right-distance==B2of2
+ 0.0699    15 left-distance==B2of2 or right-distance==B2of2
+ 0.0689    12 left-weight==B2of2 or left-distance==B2of2
+ 0.068     13 left-distance==B2of2 or right-weight==B2of2
+ 0.0652    14 left-weight==B2of2 or right-weight==B2of2
+ 0.065     16 left-weight==B2of2 or right-distance==B2of2
+ 0.0607    56 right-distance DIVIDE right-weight
+ 0.06      73 right-weight LESSTHAN right-distance
+ 0.0587    55 right-weight DIVIDE right-distance
+ 0.0581    57 left-weight DIVIDE left-distance
+ 0.0551    58 left-distance DIVIDE left-weight
+ 0.0541    71 left-distance MULTIPLY right-distance
+ 0.0531    69 left-distance MULTIPLY right-weight
+ 0.0518    72 left-weight MULTIPLY right-distance
+ 0.0507    70 left-weight MULTIPLY right-weight
+ 0.0486    49 right-weight SUBTRACT right-distance
+ 0.0462    47 left-distance ADD right-distance
+ 0.046     74 left-weight LESSTHAN left-distance
+ 0.0458    45 left-distance ADD right-weight
+ 0.0449    50 left-weight SUBTRACT left-distance
+ 0.0431    46 left-weight ADD right-weight
+ 0.0426    48 left-weight ADD right-distance
+ 0.0339    40 left-distance==B2of2 or right-weight==B2of2 or right-distance==B2of2
+ 0.0328    41 left-weight==B2of2 or right-weight==B2of2 or right-distance==B2of2
+ 0.0302    79 right-weight DIFF right-distance
+ 0.0254    39 left-weight==B2of2 or left-distance==B2of2 or right-distance==B2of2
+ 0.0233    42 left-weight==B2of2 or left-distance==B2of2 or right-weight==B2of2
+ 0.0117    80 left-weight DIFF left-distance
+
+
+								--------------
+									Fold  5
+								--------------
+Feature evaluation: ReliefF (All features dataset) - After CI
+Ranked attributes:
+ 0.3221    153 num-of-N((right-weight <= 2) and (left-weight >= 3) and (left-distance >= 2))
+ 0.3066    155 num-of-N((left-weight >= 3) and (left-distance >= 3) and (right-distance <= 3))
+ 0.3022    147 num-of-N((right-distance <= 2) and (left-weight >= 2) and (left-distance >= 2))
+ 0.2634    127 left-weight_x_left-distance
+ 0.2623    150 num-of-N((right-distance <= 2) and (left-weight >= 3))
+ 0.2605    132 left-weight_x_right-distance
+ 0.259     152 num-of-N((right-distance <= 2) and (right-weight <= 2))
+ 0.2575    129 right-weight_x_right-distance
+ 0.2574    156 num-of-N((right-weight <= 2) and (left-weight >= 3))
+ 0.2531    130 left-weight_x_right-weight
+ 0.2517    118 left-weight LESSTHAN right-weight
+ 0.2491    131 left-distance_x_right-distance
+ 0.2486    128 left-distance_x_right-weight
+ 0.2485    148 num-of-N((right-weight <= 2) and (left-distance >= 3))
+ 0.2485     53 left-weight==B2of2 impl left-distance==B1of3
+ 0.2407    120 left-weight LESSTHAN right-distance
+ 0.2297    146 num-of-N((right-distance <= 2) and (left-distance >= 2))
+ 0.2252     47 right-weight==B2of2 xor right-distance==B2of2
+ 0.2252     35 right-weight==B2of2 equ right-distance==B2of2
+ 0.224      11 right-weight==B2of2 and right-distance==B2of2
+ 0.2217    151 num-of-N((left-weight >= 4) and (left-distance >= 3))
+ 0.2185    135 (right-distance <= 2) and (left-weight >= 2) and (left-distance >= 2)
+ 0.2168     41 left-weight==B2of2 xor left-distance==B1of3
+ 0.2168     29 left-weight==B2of2 equ left-distance==B1of3
+ 0.2155     52 left-weight==B2of2 xor right-distance==B2of2
+ 0.2155     40 left-weight==B2of2 equ right-distance==B2of2
+ 0.2132    116 left-distance LESSTHAN right-weight
+ 0.2119    119 left-distance LESSTHAN right-distance
+ 0.2061     36 left-weight==B2of2 equ right-weight==B2of2
+ 0.2061     48 left-weight==B2of2 xor right-weight==B2of2
+ 0.2048    154 num-of-N((right-weight <= 2) and (left-distance >= 4))
+ 0.1904     37 left-distance==B1of3 equ right-distance==B2of2
+ 0.1904     49 left-distance==B1of3 xor right-distance==B2of2
+ 0.1904     32 left-distance==B1of3 equ right-weight==B2of2
+ 0.1904     44 left-distance==B1of3 xor right-weight==B2of2
+ 0.1865     43 left-weight==B2of2 xor left-distance==B3of3
+ 0.1865     31 left-weight==B2of2 equ left-distance==B3of3
+ 0.1858     25 left-distance==B1of3 or right-distance==B2of2
+ 0.1858    134 (right-distance <= 2) and (left-distance >= 2)
+ 0.1814     46 left-distance==B3of3 xor right-weight==B2of2
+ 0.1814     34 left-distance==B3of3 equ right-weight==B2of2
+ 0.1793    141 (right-weight <= 2) and (left-weight >= 3) and (left-distance >= 2)
+ 0.1786    149 num-of-N((right-distance <= 1) and (left-distance >= 4))
+ 0.1777     39 left-distance==B3of3 equ right-distance==B2of2
+ 0.1777     51 left-distance==B3of3 xor right-distance==B2of2
+ 0.1773    145 num-of-N((left-distance >= 4) and (left-weight >= 4))
+ 0.1768     20 left-distance==B1of3 or right-weight==B2of2
+ 0.1766     42 left-weight==B2of2 xor left-distance==B2of3
+ 0.1766     30 left-weight==B2of2 equ left-distance==B2of3
+ 0.1699    143 (left-weight >= 3) and (left-distance >= 3) and (right-distance <= 3)
+ 0.1657    139 (left-weight >= 4) and (left-distance >= 3)
+ 0.1646     38 left-distance==B2of3 equ right-distance==B2of2
+ 0.1646     50 left-distance==B2of3 xor right-distance==B2of2
+ 0.1645     33 left-distance==B2of3 equ right-weight==B2of2
+ 0.1645     45 left-distance==B2of3 xor right-weight==B2of2
+ 0.1628     60 left-weight==B2of2 impl right-weight==B2of2
+ 0.1628    144 (right-weight <= 2) and (left-weight >= 3)
+ 0.1613     54 left-weight==B2of2 impl left-distance==B2of3
+ 0.1488     16 left-weight==B2of2 and right-distance==B2of2
+ 0.1478      7 left-weight==B2of2 and left-distance==B3of3
+ 0.1437    136 (right-weight <= 2) and (left-distance >= 3)
+ 0.1374    138 (right-distance <= 2) and (left-weight >= 3)
+ 0.1374     64 left-weight==B2of2 impl right-distance==B2of2
+ 0.137      17 left-weight==B2of2 or left-distance==B1of3
+ 0.1349      6 left-weight==B2of2 and left-distance==B2of3
+ 0.1301     74 left-weight==B2of2 and right-weight==B2of2 and right-distance==B2of2
+ 0.1267     12 left-weight==B2of2 and right-weight==B2of2
+ 0.118     111 right-weight MULTIPLY right-distance
+ 0.1177    109 left-weight MULTIPLY left-distance
+ 0.112      59 right-weight==B2of2 impl right-distance==B2of2
+ 0.1111      9 left-distance==B2of3 and right-weight==B2of2
+ 0.1102     94 left-weight SUBTRACT right-weight
+ 0.1096     96 left-weight SUBTRACT right-distance
+ 0.109     133 (left-distance >= 4) and (left-weight >= 4)
+ 0.1063      1 left-weight
+ 0.1061     55 left-weight==B2of2 impl left-distance==B3of3
+ 0.1045     66 left-weight==B2of2 and left-distance==B2of3 and right-distance==B2of2
+ 0.1027     85 left-weight ADD left-distance
+ 0.1025     87 right-weight ADD right-distance
+ 0.1018     70 left-distance==B3of3 and right-weight==B2of2 and right-distance==B2of2
+ 0.101     122 left-distance DIFF right-weight
+ 0.1005     92 left-distance SUBTRACT right-weight
+ 0.1004    108 right-distance DIVIDE left-weight
+ 0.1004     14 left-distance==B2of3 and right-distance==B2of2
+ 0.1        95 left-distance SUBTRACT right-distance
+ 0.0999     26 left-distance==B2of3 or right-distance==B2of2
+ 0.0973    103 left-weight DIVIDE right-weight
+ 0.0972      4 right-distance
+ 0.0969      3 right-weight
+ 0.0963     67 left-weight==B2of2 and left-distance==B3of3 and right-distance==B2of2
+ 0.0962    105 left-distance DIVIDE right-distance
+ 0.0954     19 left-weight==B2of2 or left-distance==B3of3
+ 0.0953     72 left-weight==B2of2 and left-distance==B2of3 and right-weight==B2of2
+ 0.0947    107 left-weight DIVIDE right-distance
+ 0.0943     18 left-weight==B2of2 or left-distance==B2of3
+ 0.0941    104 right-weight DIVIDE left-weight
+ 0.0941    100 right-weight DIVIDE left-distance
+ 0.0937     10 left-distance==B3of3 and right-weight==B2of2
+ 0.0936     62 left-distance==B2of3 impl right-distance==B2of2
+ 0.0934     15 left-distance==B3of3 and right-distance==B2of2
+ 0.0924     57 left-distance==B2of3 impl right-weight==B2of2
+ 0.0917    124 left-weight DIFF right-weight
+ 0.0915    106 right-distance DIVIDE left-distance
+ 0.0913     69 left-distance==B2of3 and right-weight==B2of2 and right-distance==B2of2
+ 0.09       73 left-weight==B2of2 and left-distance==B3of3 and right-weight==B2of2
+ 0.0899     63 left-distance==B3of3 impl right-distance==B2of2
+ 0.0898      8 left-distance==B1of3 and right-weight==B2of2
+ 0.0898    126 left-weight DIFF right-distance
+ 0.0884     99 left-distance DIVIDE right-weight
+ 0.0876      2 left-distance
+ 0.086      22 left-distance==B3of3 or right-weight==B2of2
+ 0.0833     13 left-distance==B1of3 and right-distance==B2of2
+ 0.083      27 left-distance==B3of3 or right-distance==B2of2
+ 0.0821     21 left-distance==B2of3 or right-weight==B2of2
+ 0.0817    125 left-distance DIFF right-distance
+ 0.0753      5 left-weight==B2of2 and left-distance==B1of3
+ 0.0734     58 left-distance==B3of3 impl right-weight==B2of2
+ 0.0734    142 (right-weight <= 2) and (left-distance >= 4)
+ 0.0708     24 left-weight==B2of2 or right-weight==B2of2
+ 0.0689     23 right-weight==B2of2 or right-distance==B2of2
+ 0.0689    140 (right-distance <= 2) and (right-weight <= 2)
+ 0.0681     81 left-weight==B2of2 or left-distance==B1of3 or right-weight==B2of2
+ 0.0671     75 left-weight==B2of2 or left-distance==B1of3 or right-distance==B2of2
+ 0.0657    115 left-weight LESSTHAN left-distance
+ 0.0631     28 left-weight==B2of2 or right-distance==B2of2
+ 0.0628    117 right-weight LESSTHAN right-distance
+ 0.0609    101 right-weight DIVIDE right-distance
+ 0.0585     98 left-distance DIVIDE left-weight
+ 0.0585     97 left-weight DIVIDE left-distance
+ 0.0578     78 left-distance==B1of3 or right-weight==B2of2 or right-distance==B2of2
+ 0.0576    114 left-weight MULTIPLY right-distance
+ 0.0564     65 left-weight==B2of2 and left-distance==B1of3 and right-distance==B2of2
+ 0.0563    102 right-distance DIVIDE right-weight
+ 0.0552    112 left-weight MULTIPLY right-weight
+ 0.0548     71 left-weight==B2of2 and left-distance==B1of3 and right-weight==B2of2
+ 0.0539    110 left-distance MULTIPLY right-weight
+ 0.0537    113 left-distance MULTIPLY right-distance
+ 0.0494     93 right-weight SUBTRACT right-distance
+ 0.0493    137 (right-distance <= 1) and (left-distance >= 4)
+ 0.0488     90 left-weight ADD right-distance
+ 0.0483     91 left-weight SUBTRACT left-distance
+ 0.0476     88 left-weight ADD right-weight
+ 0.0446     86 left-distance ADD right-weight
+ 0.044      89 left-distance ADD right-distance
+ 0.0428     83 left-weight==B2of2 or left-distance==B3of3 or right-weight==B2of2
+ 0.0411     77 left-weight==B2of2 or left-distance==B3of3 or right-distance==B2of2
+ 0.0404     76 left-weight==B2of2 or left-distance==B2of3 or right-distance==B2of2
+ 0.0383     80 left-distance==B3of3 or right-weight==B2of2 or right-distance==B2of2
+ 0.0378     82 left-weight==B2of2 or left-distance==B2of3 or right-weight==B2of2
+ 0.0376     68 left-distance==B1of3 and right-weight==B2of2 and right-distance==B2of2
+ 0.0376     61 left-distance==B1of3 impl right-distance==B2of2
+ 0.0369     56 left-distance==B1of3 impl right-weight==B2of2
+ 0.0289     79 left-distance==B2of3 or right-weight==B2of2 or right-distance==B2of2
+ 0.0259    123 right-weight DIFF right-distance
+ 0.0238     84 left-weight==B2of2 or right-weight==B2of2 or right-distance==B2of2
+ 0.021     121 left-weight DIFF left-distance
+
+
+								--------------
+									Fold  6
+								--------------
+Feature evaluation: ReliefF (All features dataset) - After CI
+Ranked attributes:
+ 0.3316   110 num-of-N((left-weight >= 3) and (left-distance >= 3) and (right-weight <= 3))
+ 0.3085   107 num-of-N((left-distance >= 2) and (right-weight <= 2) and (left-weight >= 2))
+ 0.2885   106 num-of-N((left-weight >= 3) and (left-distance >= 3))
+ 0.2859    85 left-weight_x_left-distance
+ 0.2774   109 num-of-N((left-weight >= 3) and (right-distance <= 2))
+ 0.2738    90 left-weight_x_right-distance
+ 0.2642   105 num-of-N((left-weight >= 3) and (right-weight <= 2))
+ 0.2639   108 num-of-N((right-distance <= 3) and (right-weight <= 2) and (left-weight >= 2))
+ 0.2609    89 left-weight_x_right-weight
+ 0.2564    87 right-weight_x_right-distance
+ 0.2538   104 num-of-N((right-weight <= 2) and (left-distance >= 3))
+ 0.2517    88 left-distance_x_right-distance
+ 0.249     86 left-distance_x_right-weight
+ 0.2454    97 (left-distance >= 2) and (right-weight <= 2) and (left-weight >= 2)
+ 0.2442    96 (left-weight >= 3) and (left-distance >= 3)
+ 0.2442     5 left-weight==B2of2 and left-distance==B2of2
+ 0.2442    17 left-weight==B2of2 equ left-distance==B2of2
+ 0.2442    23 left-weight==B2of2 xor left-distance==B2of2
+ 0.2435   103 num-of-N((right-distance <= 2) and (left-distance >= 2))
+ 0.2373    76 left-distance LESSTHAN right-distance
+ 0.2334    74 left-distance LESSTHAN right-weight
+ 0.2287    25 right-weight==B2of2 xor right-distance==B2of2
+ 0.2287    19 right-weight==B2of2 equ right-distance==B2of2
+ 0.2259    28 left-weight==B2of2 xor right-distance==B2of2
+ 0.2259    22 left-weight==B2of2 equ right-distance==B2of2
+ 0.2248    78 left-weight LESSTHAN right-distance
+ 0.2178   101 num-of-N((right-distance <= 1) and (left-distance >= 2))
+ 0.2149    77 left-weight LESSTHAN right-weight
+ 0.2115   100 (left-weight >= 3) and (left-distance >= 3) and (right-weight <= 3)
+ 0.211      7 right-weight==B2of2 and right-distance==B2of2
+ 0.2077    24 left-distance==B2of2 xor right-weight==B2of2
+ 0.2077    18 left-distance==B2of2 equ right-weight==B2of2
+ 0.2071    21 left-weight==B2of2 equ right-weight==B2of2
+ 0.2071    27 left-weight==B2of2 xor right-weight==B2of2
+ 0.2063    26 left-distance==B2of2 xor right-distance==B2of2
+ 0.2063    20 left-distance==B2of2 equ right-distance==B2of2
+ 0.1967    93 (right-distance <= 2) and (left-distance >= 2)
+ 0.1816   102 num-of-N((left-distance >= 4) and (left-weight >= 4))
+ 0.1608    34 left-weight==B2of2 impl right-distance==B2of2
+ 0.1608    99 (left-weight >= 3) and (right-distance <= 2)
+ 0.1588    33 left-weight==B2of2 impl right-weight==B2of2
+ 0.1588    95 (left-weight >= 3) and (right-weight <= 2)
+ 0.1526    94 (right-weight <= 2) and (left-distance >= 3)
+ 0.1526    30 left-distance==B2of2 impl right-weight==B2of2
+ 0.1521    10 left-weight==B2of2 and right-distance==B2of2
+ 0.148     35 left-weight==B2of2 and left-distance==B2of2 and right-distance==B2of2
+ 0.1431    32 left-distance==B2of2 impl right-distance==B2of2
+ 0.1356     8 left-distance==B2of2 and right-distance==B2of2
+ 0.1345    37 left-weight==B2of2 and left-distance==B2of2 and right-weight==B2of2
+ 0.1324     9 left-weight==B2of2 and right-weight==B2of2
+ 0.1245     6 left-distance==B2of2 and right-weight==B2of2
+ 0.1239    38 left-weight==B2of2 and right-weight==B2of2 and right-distance==B2of2
+ 0.1235    67 left-weight MULTIPLY left-distance
+ 0.1208    36 left-distance==B2of2 and right-weight==B2of2 and right-distance==B2of2
+ 0.1193    91 (right-distance <= 1) and (left-distance >= 2)
+ 0.1186    29 left-weight==B2of2 impl left-distance==B2of2
+ 0.1166    92 (left-distance >= 4) and (left-weight >= 4)
+ 0.1163    31 right-weight==B2of2 impl right-distance==B2of2
+ 0.1112    69 right-weight MULTIPLY right-distance
+ 0.108     43 left-weight ADD left-distance
+ 0.107     50 left-distance SUBTRACT right-weight
+ 0.1058    53 left-weight SUBTRACT right-weight
+ 0.1044    52 left-distance SUBTRACT right-distance
+ 0.1043    54 left-weight SUBTRACT right-distance
+ 0.1038     1 left-weight
+ 0.1024     2 left-distance
+ 0.0984    62 right-distance DIVIDE left-distance
+ 0.0969    58 right-weight DIVIDE left-distance
+ 0.0962    66 right-distance DIVIDE left-weight
+ 0.0959    45 right-weight ADD right-distance
+ 0.0956    65 left-weight DIVIDE right-distance
+ 0.0955    98 (right-distance <= 3) and (right-weight <= 2) and (left-weight >= 2)
+ 0.095     63 left-weight DIVIDE right-weight
+ 0.0944    80 left-distance DIFF right-weight
+ 0.0941    57 left-distance DIVIDE right-weight
+ 0.0932    64 right-weight DIVIDE left-weight
+ 0.093      3 right-weight
+ 0.0918    61 left-distance DIVIDE right-distance
+ 0.0915    82 left-distance DIFF right-distance
+ 0.09       4 right-distance
+ 0.0885    11 left-weight==B2of2 or left-distance==B2of2
+ 0.0849    84 left-weight DIFF right-distance
+ 0.0812    83 left-weight DIFF right-weight
+ 0.0753    13 right-weight==B2of2 or right-distance==B2of2
+ 0.0735    12 left-distance==B2of2 or right-weight==B2of2
+ 0.0681    15 left-weight==B2of2 or right-weight==B2of2
+ 0.0666    16 left-weight==B2of2 or right-distance==B2of2
+ 0.0661    73 left-weight LESSTHAN left-distance
+ 0.0633    55 left-weight DIVIDE left-distance
+ 0.0621    75 right-weight LESSTHAN right-distance
+ 0.0619    14 left-distance==B2of2 or right-distance==B2of2
+ 0.0579    72 left-weight MULTIPLY right-distance
+ 0.0574    70 left-distance MULTIPLY right-distance
+ 0.0569    56 left-distance DIVIDE left-weight
+ 0.0568    59 right-weight DIVIDE right-distance
+ 0.0559    60 right-distance DIVIDE right-weight
+ 0.053     71 left-weight MULTIPLY right-weight
+ 0.0516    68 left-distance MULTIPLY right-weight
+ 0.0497    49 left-weight SUBTRACT left-distance
+ 0.0475    51 right-weight SUBTRACT right-distance
+ 0.0471    46 left-distance ADD right-distance
+ 0.0471    48 left-weight ADD right-distance
+ 0.0454    44 left-distance ADD right-weight
+ 0.0452    47 left-weight ADD right-weight
+ 0.0352    41 left-weight==B2of2 or left-distance==B2of2 or right-weight==B2of2
+ 0.0306    40 left-distance==B2of2 or right-weight==B2of2 or right-distance==B2of2
+ 0.0288    79 left-weight DIFF left-distance
+ 0.0279    42 left-weight==B2of2 or right-weight==B2of2 or right-distance==B2of2
+ 0.0261    39 left-weight==B2of2 or left-distance==B2of2 or right-distance==B2of2
+ 0.0206    81 right-weight DIFF right-distance
+
+
+								--------------
+									Fold  7
+								--------------
+Feature evaluation: ReliefF (All features dataset) - After CI
+Ranked attributes:
+ 0.2657    86 right-weight_x_right-distance
+ 0.2496    89 left-weight_x_right-weight
+ 0.2487   105 num-of-N((left-weight >= 3) and (left-distance >= 3))
+ 0.2463    85 left-weight_x_left-distance
+ 0.2457   104 num-of-N((right-distance <= 2) and (left-weight >= 3))
+ 0.2455   103 num-of-N((right-weight <= 2) and (left-distance >= 3))
+ 0.2434   110 num-of-N((right-distance <= 2) and (left-distance >= 3))
+ 0.2417    87 left-distance_x_right-weight
+ 0.2406    90 left-weight_x_right-distance
+ 0.2385    88 left-distance_x_right-distance
+ 0.2364    24 right-weight==B2of2 xor right-distance==B2of2
+ 0.2364    18 right-weight==B2of2 equ right-distance==B2of2
+ 0.235     76 left-distance LESSTHAN right-distance
+ 0.2334   106 num-of-N((left-distance >= 3) and (right-distance <= 1))
+ 0.2238     6 right-weight==B2of2 and right-distance==B2of2
+ 0.2218    17 left-weight==B2of2 equ left-distance==B2of2
+ 0.2218    23 left-weight==B2of2 xor left-distance==B2of2
+ 0.2187    75 left-distance LESSTHAN right-weight
+ 0.2154   101 num-of-N((right-weight <= 1) and (left-distance >= 2))
+ 0.214      5 left-weight==B2of2 and left-distance==B2of2
+ 0.214     95 (left-weight >= 3) and (left-distance >= 3)
+ 0.2135   102 num-of-N((left-distance >= 4) and (left-weight >= 3))
+ 0.2109   109 num-of-N((right-weight <= 1) and (left-weight >= 2))
+ 0.2085    21 left-weight==B2of2 equ right-weight==B2of2
+ 0.2085    27 left-weight==B2of2 xor right-weight==B2of2
+ 0.2044    78 left-weight LESSTHAN right-distance
+ 0.2024    77 left-weight LESSTHAN right-weight
+ 0.202     20 left-distance==B2of2 equ right-distance==B2of2
+ 0.202     26 left-distance==B2of2 xor right-distance==B2of2
+ 0.2017    28 left-weight==B2of2 xor right-distance==B2of2
+ 0.2017    22 left-weight==B2of2 equ right-distance==B2of2
+ 0.1993   107 num-of-N((right-distance <= 1) and (right-weight <= 3))
+ 0.1973    25 left-distance==B2of2 xor right-weight==B2of2
+ 0.1973    19 left-distance==B2of2 equ right-weight==B2of2
+ 0.1586   108 num-of-N((left-weight >= 4) and (right-weight <= 3))
+ 0.1573    92 (left-distance >= 4) and (left-weight >= 3)
+ 0.1503    34 left-weight==B2of2 impl right-distance==B2of2
+ 0.1503    94 (right-distance <= 2) and (left-weight >= 3)
+ 0.1447    93 (right-weight <= 2) and (left-distance >= 3)
+ 0.1447    31 left-distance==B2of2 impl right-weight==B2of2
+ 0.1426    33 left-weight==B2of2 impl right-weight==B2of2
+ 0.1426    91 (right-weight <= 1) and (left-distance >= 2)
+ 0.1417     9 left-weight==B2of2 and right-weight==B2of2
+ 0.14     100 (right-distance <= 2) and (left-distance >= 3)
+ 0.14      32 left-distance==B2of2 impl right-distance==B2of2
+ 0.1321    38 left-weight==B2of2 and left-distance==B2of2 and right-weight==B2of2
+ 0.1303    37 left-weight==B2of2 and right-weight==B2of2 and right-distance==B2of2
+ 0.1294    99 (right-weight <= 1) and (left-weight >= 2)
+ 0.1294    36 left-distance==B2of2 and right-weight==B2of2 and right-distance==B2of2
+ 0.1248     8 left-distance==B2of2 and right-distance==B2of2
+ 0.1235    35 left-weight==B2of2 and left-distance==B2of2 and right-distance==B2of2
+ 0.1233     7 left-distance==B2of2 and right-weight==B2of2
+ 0.1228    10 left-weight==B2of2 and right-distance==B2of2
+ 0.1212    30 right-weight==B2of2 impl right-distance==B2of2
+ 0.1209    68 right-weight MULTIPLY right-distance
+ 0.111     67 left-weight MULTIPLY left-distance
+ 0.1088    29 left-weight==B2of2 impl left-distance==B2of2
+ 0.1054    52 left-distance SUBTRACT right-distance
+ 0.1053    44 right-weight ADD right-distance
+ 0.1034    51 left-distance SUBTRACT right-weight
+ 0.1023    54 left-weight SUBTRACT right-distance
+ 0.1023     4 right-distance
+ 0.1003    53 left-weight SUBTRACT right-weight
+ 0.099     62 right-distance DIVIDE left-distance
+ 0.0989     3 right-weight
+ 0.0973    84 left-weight DIFF right-distance
+ 0.0972    65 left-weight DIVIDE right-distance
+ 0.0954    59 left-distance DIVIDE right-weight
+ 0.0946    98 (left-weight >= 4) and (right-weight <= 3)
+ 0.0938    43 left-weight ADD left-distance
+ 0.0938    64 right-weight DIVIDE left-weight
+ 0.0931    61 left-distance DIVIDE right-distance
+ 0.0927    60 right-weight DIVIDE left-distance
+ 0.0927    66 right-distance DIVIDE left-weight
+ 0.0924     2 left-distance
+ 0.0915    83 left-weight DIFF right-weight
+ 0.0893    63 left-weight DIVIDE right-weight
+ 0.0859     1 left-weight
+ 0.0856    81 left-distance DIFF right-weight
+ 0.0843    82 left-distance DIFF right-distance
+ 0.0764    12 right-weight==B2of2 or right-distance==B2of2
+ 0.075     97 (right-distance <= 1) and (right-weight <= 3)
+ 0.0688    96 (left-distance >= 3) and (right-distance <= 1)
+ 0.0687    16 left-weight==B2of2 or right-distance==B2of2
+ 0.0674    14 left-distance==B2of2 or right-distance==B2of2
+ 0.0664    13 left-distance==B2of2 or right-weight==B2of2
+ 0.0626    58 right-distance DIVIDE right-weight
+ 0.0617    11 left-weight==B2of2 or left-distance==B2of2
+ 0.0616    57 right-weight DIVIDE right-distance
+ 0.0604    15 left-weight==B2of2 or right-weight==B2of2
+ 0.0594    55 left-weight DIVIDE left-distance
+ 0.0582    56 left-distance DIVIDE left-weight
+ 0.0556    72 left-weight MULTIPLY right-distance
+ 0.0536    71 left-weight MULTIPLY right-weight
+ 0.0535    74 right-weight LESSTHAN right-distance
+ 0.0513    70 left-distance MULTIPLY right-distance
+ 0.0507    50 right-weight SUBTRACT right-distance
+ 0.0505    69 left-distance MULTIPLY right-weight
+ 0.0465    49 left-weight SUBTRACT left-distance
+ 0.0464    73 left-weight LESSTHAN left-distance
+ 0.0457    48 left-weight ADD right-distance
+ 0.0449    46 left-distance ADD right-distance
+ 0.0435    47 left-weight ADD right-weight
+ 0.0434    45 left-distance ADD right-weight
+ 0.0336    40 left-distance==B2of2 or right-weight==B2of2 or right-distance==B2of2
+ 0.03      41 left-weight==B2of2 or right-weight==B2of2 or right-distance==B2of2
+ 0.0274    39 left-weight==B2of2 or left-distance==B2of2 or right-distance==B2of2
+ 0.0251    42 left-weight==B2of2 or left-distance==B2of2 or right-weight==B2of2
+ 0.0222    80 right-weight DIFF right-distance
+ 0.0144    79 left-weight DIFF left-distance
+
+
+								--------------
+									Fold  8
+								--------------
+Feature evaluation: ReliefF (All features dataset) - After CI
+Ranked attributes:
+ 0.3182   115 num-of-N((right-distance <= 2) and (left-distance >= 3) and (left-weight >= 2))
+ 0.3158   118 num-of-N((left-weight >= 3) and (left-distance >= 3) and (right-weight <= 3))
+ 0.276    107 num-of-N((right-weight <= 1) and (left-weight >= 2) and (left-distance >= 2))
+ 0.2752   117 num-of-N((right-distance <= 1) and (left-weight >= 2) and (left-distance >= 2))
+ 0.2746    85 right-weight_x_right-distance
+ 0.2666   113 num-of-N((right-distance <= 2) and (left-weight >= 3))
+ 0.2632   109 num-of-N((right-weight <= 2) and (left-weight >= 3))
+ 0.2625    90 left-weight_x_right-distance
+ 0.2608    86 left-weight_x_left-distance
+ 0.2597    88 left-weight_x_right-weight
+ 0.2573   112 num-of-N((right-weight <= 2) and (left-distance >= 3))
+ 0.253     87 left-distance_x_right-weight
+ 0.2525   110 num-of-N((right-distance <= 2) and (left-distance >= 3))
+ 0.2488    89 left-distance_x_right-distance
+ 0.245    106 num-of-N((right-weight <= 3) and (right-distance <= 3) and (left-weight >= 2))
+ 0.2436    76 left-weight LESSTHAN right-weight
+ 0.243     75 left-distance LESSTHAN right-weight
+ 0.2376   108 num-of-N((left-weight >= 4) and (right-weight <= 2))
+ 0.2362    17 right-weight==B2of2 equ right-distance==B2of2
+ 0.2362    23 right-weight==B2of2 xor right-distance==B2of2
+ 0.2352    78 left-weight LESSTHAN right-distance
+ 0.2345   116 num-of-N((left-weight >= 4) and (right-distance <= 3) and (left-distance >= 2))
+ 0.2289     6 left-weight==B2of2 and left-distance==B2of2
+ 0.2276     5 right-weight==B2of2 and right-distance==B2of2
+ 0.2275    18 left-weight==B2of2 equ left-distance==B2of2
+ 0.2275    24 left-weight==B2of2 xor left-distance==B2of2
+ 0.2178    22 left-weight==B2of2 equ right-distance==B2of2
+ 0.2178    28 left-weight==B2of2 xor right-distance==B2of2
+ 0.212    105 num-of-N((left-weight >= 3) and (left-distance >= 4))
+ 0.2072    27 left-distance==B2of2 xor right-distance==B2of2
+ 0.2072    21 left-distance==B2of2 equ right-distance==B2of2
+ 0.206     19 left-distance==B2of2 equ right-weight==B2of2
+ 0.206     25 left-distance==B2of2 xor right-weight==B2of2
+ 0.2027    26 left-weight==B2of2 xor right-weight==B2of2
+ 0.2027    20 left-weight==B2of2 equ right-weight==B2of2
+ 0.2026   104 (left-weight >= 3) and (left-distance >= 3) and (right-weight <= 3)
+ 0.1884    77 left-distance LESSTHAN right-distance
+ 0.1834   111 num-of-N((right-weight <= 1) and (right-distance <= 3))
+ 0.1709   101 (right-distance <= 2) and (left-distance >= 3) and (left-weight >= 2)
+ 0.1693    95 (right-weight <= 2) and (left-weight >= 3)
+ 0.1693    32 left-weight==B2of2 impl right-weight==B2of2
+ 0.1665   114 num-of-N((left-weight >= 4) and (left-distance >= 4))
+ 0.1571    98 (right-weight <= 2) and (left-distance >= 3)
+ 0.1571    31 left-distance==B2of2 impl right-weight==B2of2
+ 0.1515    96 (right-distance <= 2) and (left-distance >= 3)
+ 0.1515    33 left-distance==B2of2 impl right-distance==B2of2
+ 0.1462    99 (right-distance <= 2) and (left-weight >= 3)
+ 0.1462    34 left-weight==B2of2 impl right-distance==B2of2
+ 0.1439    10 left-weight==B2of2 and right-distance==B2of2
+ 0.1432     9 left-distance==B2of2 and right-distance==B2of2
+ 0.1379    91 (left-weight >= 3) and (left-distance >= 4)
+ 0.1352    92 (right-weight <= 3) and (right-distance <= 3) and (left-weight >= 2)
+ 0.1339    35 left-weight==B2of2 and left-distance==B2of2 and right-distance==B2of2
+ 0.1337   102 (left-weight >= 4) and (right-distance <= 3) and (left-distance >= 2)
+ 0.133      7 left-distance==B2of2 and right-weight==B2of2
+ 0.1325    36 left-distance==B2of2 and right-weight==B2of2 and right-distance==B2of2
+ 0.1285    93 (right-weight <= 1) and (left-weight >= 2) and (left-distance >= 2)
+ 0.1279     8 left-weight==B2of2 and right-weight==B2of2
+ 0.1263    37 left-weight==B2of2 and right-weight==B2of2 and right-distance==B2of2
+ 0.1244    38 left-weight==B2of2 and left-distance==B2of2 and right-weight==B2of2
+ 0.1187    67 right-weight MULTIPLY right-distance
+ 0.1152   103 (right-distance <= 1) and (left-weight >= 2) and (left-distance >= 2)
+ 0.1142    52 left-weight SUBTRACT right-weight
+ 0.1139    68 left-weight MULTIPLY left-distance
+ 0.108     29 right-weight==B2of2 impl right-distance==B2of2
+ 0.1072    54 left-weight SUBTRACT right-distance
+ 0.1071     3 right-weight
+ 0.1064    30 left-weight==B2of2 impl left-distance==B2of2
+ 0.1058    51 left-distance SUBTRACT right-weight
+ 0.1053    43 right-weight ADD right-distance
+ 0.1042    81 left-distance DIFF right-weight
+ 0.1034     1 left-weight
+ 0.1019    61 left-weight DIVIDE right-weight
+ 0.1012    44 left-weight ADD left-distance
+ 0.1       62 right-weight DIVIDE left-weight
+ 0.0994    53 left-distance SUBTRACT right-distance
+ 0.099     66 right-distance DIVIDE left-weight
+ 0.0988   100 (left-weight >= 4) and (left-distance >= 4)
+ 0.0975    84 left-weight DIFF right-distance
+ 0.0955    94 (left-weight >= 4) and (right-weight <= 2)
+ 0.0945    59 left-distance DIVIDE right-weight
+ 0.0936     4 right-distance
+ 0.0926    60 right-weight DIVIDE left-distance
+ 0.0919    63 left-distance DIVIDE right-distance
+ 0.0913    65 left-weight DIVIDE right-distance
+ 0.0897    11 right-weight==B2of2 or right-distance==B2of2
+ 0.0891    83 left-distance DIFF right-distance
+ 0.0885    64 right-distance DIVIDE left-distance
+ 0.0865     2 left-distance
+ 0.0824    82 left-weight DIFF right-weight
+ 0.0698    12 left-weight==B2of2 or left-distance==B2of2
+ 0.068     14 left-weight==B2of2 or right-weight==B2of2
+ 0.0656    16 left-weight==B2of2 or right-distance==B2of2
+ 0.0642    13 left-distance==B2of2 or right-weight==B2of2
+ 0.0636    73 right-weight LESSTHAN right-distance
+ 0.06      56 right-distance DIVIDE right-weight
+ 0.0594    74 left-weight LESSTHAN left-distance
+ 0.059     58 left-distance DIVIDE left-weight
+ 0.0577    70 left-weight MULTIPLY right-weight
+ 0.0565    15 left-distance==B2of2 or right-distance==B2of2
+ 0.0557    97 (right-weight <= 1) and (right-distance <= 3)
+ 0.0539    72 left-weight MULTIPLY right-distance
+ 0.0526    55 right-weight DIVIDE right-distance
+ 0.0524    71 left-distance MULTIPLY right-distance
+ 0.0524    69 left-distance MULTIPLY right-weight
+ 0.0518    57 left-weight DIVIDE left-distance
+ 0.049     49 right-weight SUBTRACT right-distance
+ 0.0483    46 left-weight ADD right-weight
+ 0.0459    50 left-weight SUBTRACT left-distance
+ 0.044     48 left-weight ADD right-distance
+ 0.0423    45 left-distance ADD right-weight
+ 0.04      47 left-distance ADD right-distance
+ 0.0328    79 right-weight DIFF right-distance
+ 0.0307    41 left-weight==B2of2 or right-weight==B2of2 or right-distance==B2of2
+ 0.0272    40 left-distance==B2of2 or right-weight==B2of2 or right-distance==B2of2
+ 0.0266    42 left-weight==B2of2 or left-distance==B2of2 or right-weight==B2of2
+ 0.0229    39 left-weight==B2of2 or left-distance==B2of2 or right-distance==B2of2
+ 0.0165    80 left-weight DIFF left-distance
+
+
+								--------------
+									Fold  9
+								--------------
+Feature evaluation: ReliefF (All features dataset) - After CI
+Ranked attributes:
+ 0.2739   104 num-of-N((left-distance >= 3) and (right-weight <= 3) and (left-weight >= 2))
+ 0.2722   103 num-of-N((left-weight >= 3) and (right-distance <= 3) and (left-distance >= 2))
+ 0.2614   105 num-of-N((left-weight >= 3) and (right-distance <= 2))
+ 0.2565    90 left-weight_x_right-distance
+ 0.2469    86 left-weight_x_left-distance
+ 0.2449   108 num-of-N((right-distance <= 2) and (left-distance >= 3))
+ 0.2419    85 right-weight_x_right-distance
+ 0.2418    89 left-distance_x_right-distance
+ 0.2415   106 num-of-N((right-distance <= 3) and (left-weight >= 2) and (right-weight <= 3))
+ 0.2367   107 num-of-N((right-weight <= 2) and (left-weight >= 3))
+ 0.2316    88 left-weight_x_right-weight
+ 0.2299    77 left-distance LESSTHAN right-distance
+ 0.2292    78 left-weight LESSTHAN right-distance
+ 0.2219   101 num-of-N((right-weight <= 3) and (left-distance >= 2) and (right-distance <= 3))
+ 0.2178    18 left-weight==B2of2 equ left-distance==B2of2
+ 0.2178    24 left-weight==B2of2 xor left-distance==B2of2
+ 0.216     75 left-distance LESSTHAN right-weight
+ 0.2158     5 right-weight==B2of2 and right-distance==B2of2
+ 0.215    102 num-of-N((right-weight <= 2) and (left-distance >= 3))
+ 0.2142    17 right-weight==B2of2 equ right-distance==B2of2
+ 0.2142    23 right-weight==B2of2 xor right-distance==B2of2
+ 0.2128    87 left-distance_x_right-weight
+ 0.2102    22 left-weight==B2of2 equ right-distance==B2of2
+ 0.2102    28 left-weight==B2of2 xor right-distance==B2of2
+ 0.2092    76 left-weight LESSTHAN right-weight
+ 0.2078     6 left-weight==B2of2 and left-distance==B2of2
+ 0.2034    94 (left-weight >= 3) and (right-distance <= 3) and (left-distance >= 2)
+ 0.2013    21 left-distance==B2of2 equ right-distance==B2of2
+ 0.2013    27 left-distance==B2of2 xor right-distance==B2of2
+ 0.1998    20 left-weight==B2of2 equ right-weight==B2of2
+ 0.1998    26 left-weight==B2of2 xor right-weight==B2of2
+ 0.1968    95 (left-distance >= 3) and (right-weight <= 3) and (left-weight >= 2)
+ 0.1828    19 left-distance==B2of2 equ right-weight==B2of2
+ 0.1828    25 left-distance==B2of2 xor right-weight==B2of2
+ 0.174    100 num-of-N((left-distance >= 4) and (left-weight >= 4))
+ 0.158     33 left-distance==B2of2 impl right-distance==B2of2
+ 0.158     99 (right-distance <= 2) and (left-distance >= 3)
+ 0.1548    34 left-weight==B2of2 impl right-distance==B2of2
+ 0.1548    96 (left-weight >= 3) and (right-distance <= 2)
+ 0.1374    32 left-weight==B2of2 impl right-weight==B2of2
+ 0.1374    98 (right-weight <= 2) and (left-weight >= 3)
+ 0.1371    38 left-weight==B2of2 and left-distance==B2of2 and right-weight==B2of2
+ 0.1316    10 left-weight==B2of2 and right-distance==B2of2
+ 0.1312    35 left-distance==B2of2 and right-weight==B2of2 and right-distance==B2of2
+ 0.1297    37 left-weight==B2of2 and right-weight==B2of2 and right-distance==B2of2
+ 0.127     97 (right-distance <= 3) and (left-weight >= 2) and (right-weight <= 3)
+ 0.126      8 left-weight==B2of2 and right-weight==B2of2
+ 0.1239     9 left-distance==B2of2 and right-distance==B2of2
+ 0.1214    36 left-weight==B2of2 and left-distance==B2of2 and right-distance==B2of2
+ 0.1206     7 left-distance==B2of2 and right-weight==B2of2
+ 0.119     91 (left-distance >= 4) and (left-weight >= 4)
+ 0.117     67 right-weight MULTIPLY right-distance
+ 0.115     68 left-weight MULTIPLY left-distance
+ 0.1128    93 (right-weight <= 2) and (left-distance >= 3)
+ 0.1128    31 left-distance==B2of2 impl right-weight==B2of2
+ 0.1124    29 right-weight==B2of2 impl right-distance==B2of2
+ 0.1119    92 (right-weight <= 3) and (left-distance >= 2) and (right-distance <= 3)
+ 0.1079    54 left-weight SUBTRACT right-distance
+ 0.1072    30 left-weight==B2of2 impl left-distance==B2of2
+ 0.1039    53 left-distance SUBTRACT right-distance
+ 0.1027    52 left-weight SUBTRACT right-weight
+ 0.1018    84 left-weight DIFF right-distance
+ 0.1009    44 left-weight ADD left-distance
+ 0.1002     4 right-distance
+ 0.0997     1 left-weight
+ 0.0996    43 right-weight ADD right-distance
+ 0.0995    66 right-distance DIVIDE left-weight
+ 0.0985    82 left-weight DIFF right-weight
+ 0.0982    51 left-distance SUBTRACT right-weight
+ 0.0955    65 left-weight DIVIDE right-distance
+ 0.0946    63 left-distance DIVIDE right-distance
+ 0.0929    62 right-weight DIVIDE left-weight
+ 0.0925    61 left-weight DIVIDE right-weight
+ 0.0906     2 left-distance
+ 0.0895     3 right-weight
+ 0.0888    60 right-weight DIVIDE left-distance
+ 0.0873    59 left-distance DIVIDE right-weight
+ 0.0869    83 left-distance DIFF right-distance
+ 0.0867    64 right-distance DIVIDE left-distance
+ 0.081     81 left-distance DIFF right-weight
+ 0.0713    15 left-distance==B2of2 or right-distance==B2of2
+ 0.069     12 left-weight==B2of2 or left-distance==B2of2
+ 0.0688    16 left-weight==B2of2 or right-distance==B2of2
+ 0.0666    74 left-weight LESSTHAN left-distance
+ 0.0635    14 left-weight==B2of2 or right-weight==B2of2
+ 0.0589    55 right-weight DIVIDE right-distance
+ 0.0589    58 left-distance DIVIDE left-weight
+ 0.0582    56 right-distance DIVIDE right-weight
+ 0.0579    13 left-distance==B2of2 or right-weight==B2of2
+ 0.0572    11 right-weight==B2of2 or right-distance==B2of2
+ 0.0568    73 right-weight LESSTHAN right-distance
+ 0.0566    72 left-weight MULTIPLY right-distance
+ 0.0549    57 left-weight DIVIDE left-distance
+ 0.0531    71 left-distance MULTIPLY right-distance
+ 0.0526    70 left-weight MULTIPLY right-weight
+ 0.0524    69 left-distance MULTIPLY right-weight
+ 0.0484    50 left-weight SUBTRACT left-distance
+ 0.0475    48 left-weight ADD right-distance
+ 0.0471    49 right-weight SUBTRACT right-distance
+ 0.0457    47 left-distance ADD right-distance
+ 0.0442    46 left-weight ADD right-weight
+ 0.0434    45 left-distance ADD right-weight
+ 0.0367    80 left-weight DIFF left-distance
+ 0.0321    42 left-weight==B2of2 or left-distance==B2of2 or right-weight==B2of2
+ 0.0275    40 left-weight==B2of2 or left-distance==B2of2 or right-distance==B2of2
+ 0.0258    39 left-distance==B2of2 or right-weight==B2of2 or right-distance==B2of2
+ 0.0234    41 left-weight==B2of2 or right-weight==B2of2 or right-distance==B2of2
+ 0.02      79 right-weight DIFF right-distance
+
+
+								--------------
+									Fold 10
+								--------------
+Feature evaluation: ReliefF (All features dataset) - After CI
+Ranked attributes:
+ 0.323    110 num-of-N((right-distance <= 2) and (left-weight >= 3) and (left-distance >= 3))
+ 0.3216   105 num-of-N((right-weight <= 2) and (left-distance >= 3) and (left-weight >= 3))
+ 0.2543   115 num-of-N((right-weight <= 2) and (right-distance <= 2))
+ 0.2518    85 right-weight_x_right-distance
+ 0.2518   106 num-of-N((left-weight >= 4) and (left-distance >= 2) and (right-distance <= 3))
+ 0.2447    86 left-weight_x_left-distance
+ 0.2439   113 num-of-N((right-distance <= 2) and (left-weight >= 3))
+ 0.2432    88 left-weight_x_right-weight
+ 0.2396    90 left-weight_x_right-distance
+ 0.2379   108 num-of-N((right-distance <= 2) and (left-distance >= 3))
+ 0.2359    78 left-weight LESSTHAN right-distance
+ 0.2327    89 left-distance_x_right-distance
+ 0.2327   112 num-of-N((right-weight <= 2) and (left-distance >= 3))
+ 0.2326    76 left-weight LESSTHAN right-weight
+ 0.2285    87 left-distance_x_right-weight
+ 0.2276   109 num-of-N((right-weight <= 2) and (left-weight >= 2))
+ 0.2242    23 right-weight==B2of2 xor right-distance==B2of2
+ 0.2242    17 right-weight==B2of2 equ right-distance==B2of2
+ 0.2191    77 left-distance LESSTHAN right-distance
+ 0.2174    24 left-weight==B2of2 xor left-distance==B2of2
+ 0.2174    18 left-weight==B2of2 equ left-distance==B2of2
+ 0.2153     6 left-weight==B2of2 and left-distance==B2of2
+ 0.2145   114 num-of-N((left-weight >= 4) and (left-distance >= 3))
+ 0.2088   104 num-of-N((right-distance <= 1) and (left-weight >= 2))
+ 0.2078     5 right-weight==B2of2 and right-distance==B2of2
+ 0.2073    75 left-distance LESSTHAN right-weight
+ 0.2067   116 num-of-N((right-weight <= 1) and (left-weight >= 2))
+ 0.202     26 left-weight==B2of2 xor right-weight==B2of2
+ 0.202     20 left-weight==B2of2 equ right-weight==B2of2
+ 0.1985    21 left-distance==B2of2 equ right-distance==B2of2
+ 0.1985    27 left-distance==B2of2 xor right-distance==B2of2
+ 0.1971    96 (right-weight <= 2) and (left-weight >= 2)
+ 0.1941    22 left-weight==B2of2 equ right-distance==B2of2
+ 0.1941    28 left-weight==B2of2 xor right-distance==B2of2
+ 0.1908    19 left-distance==B2of2 equ right-weight==B2of2
+ 0.1908    25 left-distance==B2of2 xor right-weight==B2of2
+ 0.1572   101 (left-weight >= 4) and (left-distance >= 3)
+ 0.1465    95 (right-distance <= 2) and (left-distance >= 3)
+ 0.1465    33 left-distance==B2of2 impl right-distance==B2of2
+ 0.1452    93 (left-weight >= 4) and (left-distance >= 2) and (right-distance <= 3)
+ 0.1439   100 (right-distance <= 2) and (left-weight >= 3)
+ 0.1439    34 left-weight==B2of2 impl right-distance==B2of2
+ 0.1402   111 num-of-N((left-distance >= 5) and (left-weight >= 2) and (right-distance <= 4))
+ 0.1385    32 left-weight==B2of2 impl right-weight==B2of2
+ 0.1355    99 (right-weight <= 2) and (left-distance >= 3)
+ 0.1355    31 left-distance==B2of2 impl right-weight==B2of2
+ 0.131    103 (right-weight <= 1) and (left-weight >= 2)
+ 0.1297    91 (right-distance <= 1) and (left-weight >= 2)
+ 0.1272    36 left-distance==B2of2 and right-weight==B2of2 and right-distance==B2of2
+ 0.1224    97 (right-distance <= 2) and (left-weight >= 3) and (left-distance >= 3)
+ 0.1222    38 left-weight==B2of2 and left-distance==B2of2 and right-weight==B2of2
+ 0.1216     9 left-distance==B2of2 and right-distance==B2of2
+ 0.1213     8 left-weight==B2of2 and right-weight==B2of2
+ 0.1182     7 left-distance==B2of2 and right-weight==B2of2
+ 0.1172    92 (right-weight <= 2) and (left-distance >= 3) and (left-weight >= 3)
+ 0.1157    68 left-weight MULTIPLY left-distance
+ 0.112     10 left-weight==B2of2 and right-distance==B2of2
+ 0.1111    67 right-weight MULTIPLY right-distance
+ 0.111     37 left-weight==B2of2 and right-weight==B2of2 and right-distance==B2of2
+ 0.1094    35 left-weight==B2of2 and left-distance==B2of2 and right-distance==B2of2
+ 0.1088   107 num-of-N((left-distance >= 5) and (right-weight <= 3))
+ 0.1082    54 left-weight SUBTRACT right-distance
+ 0.1066    29 right-weight==B2of2 impl right-distance==B2of2
+ 0.1064    52 left-weight SUBTRACT right-weight
+ 0.1048     1 left-weight
+ 0.1014    83 left-distance DIFF right-distance
+ 0.1013    44 left-weight ADD left-distance
+ 0.1011    30 left-weight==B2of2 impl left-distance==B2of2
+ 0.1004    53 left-distance SUBTRACT right-distance
+ 0.0984    43 right-weight ADD right-distance
+ 0.0976    51 left-distance SUBTRACT right-weight
+ 0.0959    65 left-weight DIVIDE right-distance
+ 0.0956    61 left-weight DIVIDE right-weight
+ 0.0955     4 right-distance
+ 0.0946    66 right-distance DIVIDE left-weight
+ 0.0932    62 right-weight DIVIDE left-weight
+ 0.0927     3 right-weight
+ 0.0916    64 right-distance DIVIDE left-distance
+ 0.0915    60 right-weight DIVIDE left-distance
+ 0.0903    82 left-weight DIFF right-weight
+ 0.0892    63 left-distance DIVIDE right-distance
+ 0.0888    59 left-distance DIVIDE right-weight
+ 0.0866     2 left-distance
+ 0.0865    81 left-distance DIFF right-weight
+ 0.0847    84 left-weight DIFF right-distance
+ 0.0766   102 (right-weight <= 2) and (right-distance <= 2)
+ 0.0766    11 right-weight==B2of2 or right-distance==B2of2
+ 0.0737    14 left-weight==B2of2 or right-weight==B2of2
+ 0.0734    16 left-weight==B2of2 or right-distance==B2of2
+ 0.0665    15 left-distance==B2of2 or right-distance==B2of2
+ 0.0644    13 left-distance==B2of2 or right-weight==B2of2
+ 0.0619    12 left-weight==B2of2 or left-distance==B2of2
+ 0.0609    73 right-weight LESSTHAN right-distance
+ 0.0605    74 left-weight LESSTHAN left-distance
+ 0.0564    57 left-weight DIVIDE left-distance
+ 0.0561    56 right-distance DIVIDE right-weight
+ 0.0554    55 right-weight DIVIDE right-distance
+ 0.0548    58 left-distance DIVIDE left-weight
+ 0.0537    70 left-weight MULTIPLY right-weight
+ 0.0516    72 left-weight MULTIPLY right-distance
+ 0.0508    69 left-distance MULTIPLY right-weight
+ 0.0502    71 left-distance MULTIPLY right-distance
+ 0.047     46 left-weight ADD right-weight
+ 0.0468    49 right-weight SUBTRACT right-distance
+ 0.0453    50 left-weight SUBTRACT left-distance
+ 0.0448    48 left-weight ADD right-distance
+ 0.0421    47 left-distance ADD right-distance
+ 0.0421    45 left-distance ADD right-weight
+ 0.0407    98 (left-distance >= 5) and (left-weight >= 2) and (right-distance <= 4)
+ 0.0358    41 left-weight==B2of2 or right-weight==B2of2 or right-distance==B2of2
+ 0.0331    94 (left-distance >= 5) and (right-weight <= 3)
+ 0.0322    40 left-distance==B2of2 or right-weight==B2of2 or right-distance==B2of2
+ 0.0309    39 left-weight==B2of2 or left-distance==B2of2 or right-distance==B2of2
+ 0.0275    42 left-weight==B2of2 or left-distance==B2of2 or right-weight==B2of2
+ 0.0226    79 right-weight DIFF right-distance
+ 0.0143    80 left-weight DIFF left-distance
+
+

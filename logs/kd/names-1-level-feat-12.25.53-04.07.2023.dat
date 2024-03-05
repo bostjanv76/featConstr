@@ -1,0 +1,28 @@
+NEW 	 OLD
+F1L1	I80 and I90
+F2L1	I70 and I80
+F3L1	I70 and I90
+F4L1	I80 or I90
+F5L1	I70 or I80
+F6L1	I70 or I90
+F7L1	I80 equ I90
+F8L1	I70 equ I80
+F9L1	I70 equ I90
+F10L1	I80 xor I90
+F11L1	I70 xor I80
+F12L1	I70 xor I90
+F13L1	I80 impl I90
+F14L1	I70 impl I80
+F15L1	I70 impl I90
+F16L1	I70 and I80 and I90
+F17L1	I70 or I80 or I90
+F18L1	(I70 = 0) and (I90 = 0)
+F19L1	(I90 = 0)
+F20L1	(I80 = 0) and (I70 = 0)
+F21L1	(I90 = 0) and (I80 = 0)
+F22L1	num-of-N((I70 = 0) and (I90 = 0))
+F23L1	num-of-N((I80 = 0) and (I70 = 0))
+F24L1	num-of-N((I90 = 0) and (I80 = 0))
+F25L1	I80_x_I90
+F26L1	I70_x_I80
+F27L1	I70_x_I90

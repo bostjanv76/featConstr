@@ -1,0 +1,548 @@
+dataset: rConcept.arff
+								--------------
+								Fold  1
+								--------------
+We remove max(NOISE,minNoise) groups, NOISE=10.0% -> 18, minNoise=3 we remove groups of size 18. Explanation method: IME, num. of expl. inst. 180, pct of expl. instances is 10 (fold 1). Number of bins for discretisation (simple binning) is 2.
+--------------
+Threshold: 0,10
+--------------
+	A2: 135
+	A3: 28
+--------------
+Threshold: 0,20
+--------------
+	A2: 135
+	A3: 28
+--------------
+Threshold: 0,30
+--------------
+	A2: 135
+	A3: 27
+--------------
+Threshold: 0,40
+--------------
+	A2: 112
+	A2 | A3: 19
+--------------
+Threshold: 0,50
+--------------
+	A2: 65
+	A2 | A3: 49
+	A2 | A4: 24
+	A1 | A2: 23
+--------------
+Threshold: 0,60
+--------------
+	A2 | A3: 66
+	A2 | A4: 41
+	A1 | A2: 32
+	A2: 19
+--------------
+Threshold: 0,70
+--------------
+	A2 | A3: 51
+	A2 | A4: 39
+	A1 | A2: 29
+	A2 | A3 | A4: 20
+	A1 | A2 | A3: 19
+--------------
+Threshold: 0,80
+--------------
+	A1 | A2 | A3: 50
+	A2 | A3 | A4: 40
+	A2 | A3: 26
+*********************************************************************************
+All potential concepts based on thresholds
+	A2 A3 ~#~ A2 A4 ~#~ A1 A2 ~#~ A2 A3 A4 ~#~ A1 A2 A3 ~#~ 
+*********************************************************************************
+								--------------
+								Fold  2
+								--------------
+We remove max(NOISE,minNoise) groups, NOISE=10.0% -> 18, minNoise=3 we remove groups of size 18. Explanation method: IME, num. of expl. inst. 180, pct of expl. instances is 10 (fold 2). Number of bins for discretisation (simple binning) is 2.
+--------------
+Threshold: 0,10
+--------------
+	A2: 136
+	A3: 27
+--------------
+Threshold: 0,20
+--------------
+	A2: 136
+	A3: 27
+--------------
+Threshold: 0,30
+--------------
+	A2: 135
+	A3: 26
+--------------
+Threshold: 0,40
+--------------
+	A2: 122
+	A3: 19
+--------------
+Threshold: 0,50
+--------------
+	A2: 76
+	A2 | A3: 42
+	A2 | A4: 26
+	A1 | A2: 19
+--------------
+Threshold: 0,60
+--------------
+	A2 | A3: 60
+	A2 | A4: 44
+	A2: 33
+	A1 | A2: 31
+--------------
+Threshold: 0,70
+--------------
+	A2 | A3: 57
+	A2 | A4: 40
+	A1 | A2: 27
+	A1 | A2 | A3: 20
+--------------
+Threshold: 0,80
+--------------
+	A1 | A2 | A3: 52
+	A2 | A3: 36
+	A2 | A3 | A4: 27
+*********************************************************************************
+All potential concepts based on thresholds
+	A2 A3 ~#~ A2 A4 ~#~ A1 A2 ~#~ A1 A2 A3 ~#~ A2 A3 A4 ~#~ 
+*********************************************************************************
+								--------------
+								Fold  3
+								--------------
+We remove max(NOISE,minNoise) groups, NOISE=10.0% -> 18, minNoise=3 we remove groups of size 18. Explanation method: IME, num. of expl. inst. 180, pct of expl. instances is 10 (fold 3). Number of bins for discretisation (simple binning) is 2.
+--------------
+Threshold: 0,10
+--------------
+	A2: 129
+	A3: 35
+--------------
+Threshold: 0,20
+--------------
+	A2: 129
+	A3: 35
+--------------
+Threshold: 0,30
+--------------
+	A2: 128
+	A3: 35
+--------------
+Threshold: 0,40
+--------------
+	A2: 112
+	A3: 27
+--------------
+Threshold: 0,50
+--------------
+	A2: 61
+	A2 | A3: 54
+	A2 | A4: 31
+--------------
+Threshold: 0,60
+--------------
+	A2 | A3: 70
+	A2 | A4: 49
+	A2: 22
+	A1 | A2: 22
+--------------
+Threshold: 0,70
+--------------
+	A2 | A3: 67
+	A2 | A4: 41
+	A1 | A2 | A3: 21
+	A1 | A2: 19
+--------------
+Threshold: 0,80
+--------------
+	A1 | A2 | A3: 65
+	A2 | A3: 23
+	A2 | A3 | A4: 19
+*********************************************************************************
+All potential concepts based on thresholds
+	A2 A3 ~#~ A2 A4 ~#~ A1 A2 ~#~ A1 A2 A3 ~#~ A2 A3 A4 ~#~ 
+*********************************************************************************
+								--------------
+								Fold  4
+								--------------
+We remove max(NOISE,minNoise) groups, NOISE=10.0% -> 18, minNoise=3 we remove groups of size 18. Explanation method: IME, num. of expl. inst. 180, pct of expl. instances is 10 (fold 4). Number of bins for discretisation (simple binning) is 2.
+--------------
+Threshold: 0,10
+--------------
+	A2: 137
+	A3: 28
+--------------
+Threshold: 0,20
+--------------
+	A2: 137
+	A3: 28
+--------------
+Threshold: 0,30
+--------------
+	A2: 135
+	A3: 28
+--------------
+Threshold: 0,40
+--------------
+	A2: 122
+	A3: 21
+--------------
+Threshold: 0,50
+--------------
+	A2: 78
+	A2 | A4: 35
+	A2 | A3: 25
+--------------
+Threshold: 0,60
+--------------
+	A2 | A4: 44
+	A2: 38
+	A2 | A3: 38
+	A1 | A2: 36
+--------------
+Threshold: 0,70
+--------------
+	A2 | A4: 42
+	A2 | A3: 37
+	A1 | A2: 35
+	A1 | A2 | A3: 19
+--------------
+Threshold: 0,80
+--------------
+	A1 | A2 | A3: 50
+	A2 | A3 | A4: 27
+	A2 | A4: 20
+	A1 | A2: 20
+*********************************************************************************
+All potential concepts based on thresholds
+	A2 A4 ~#~ A2 A3 ~#~ A1 A2 ~#~ A1 A2 A3 ~#~ A2 A3 A4 ~#~ 
+*********************************************************************************
+								--------------
+								Fold  5
+								--------------
+We remove max(NOISE,minNoise) groups, NOISE=10.0% -> 18, minNoise=3 we remove groups of size 18. Explanation method: IME, num. of expl. inst. 180, pct of expl. instances is 10 (fold 5). Number of bins for discretisation (simple binning) is 2.
+--------------
+Threshold: 0,10
+--------------
+	A2: 119
+	A3: 37
+--------------
+Threshold: 0,20
+--------------
+	A2: 119
+	A3: 37
+--------------
+Threshold: 0,30
+--------------
+	A2: 118
+	A3: 36
+--------------
+Threshold: 0,40
+--------------
+	A2: 96
+	A3: 23
+	A2 | A3: 23
+--------------
+Threshold: 0,50
+--------------
+	A2: 59
+	A2 | A3: 53
+	A2 | A4: 27
+	A1 | A2: 20
+--------------
+Threshold: 0,60
+--------------
+	A2 | A3: 64
+	A2 | A4: 38
+	A1 | A2: 31
+	A2: 27
+--------------
+Threshold: 0,70
+--------------
+	A2 | A3: 54
+	A2 | A4: 33
+	A1 | A2: 27
+	A1 | A2 | A3: 24
+--------------
+Threshold: 0,80
+--------------
+	A1 | A2 | A3: 65
+	A2 | A3 | A4: 29
+	A2 | A3: 23
+*********************************************************************************
+All potential concepts based on thresholds
+	A2 A3 ~#~ A2 A4 ~#~ A1 A2 ~#~ A1 A2 A3 ~#~ A2 A3 A4 ~#~ 
+*********************************************************************************
+								--------------
+								Fold  6
+								--------------
+We remove max(NOISE,minNoise) groups, NOISE=10.0% -> 18, minNoise=3 we remove groups of size 18. Explanation method: IME, num. of expl. inst. 180, pct of expl. instances is 10 (fold 6). Number of bins for discretisation (simple binning) is 2.
+--------------
+Threshold: 0,10
+--------------
+	A2: 135
+	A3: 28
+--------------
+Threshold: 0,20
+--------------
+	A2: 135
+	A3: 28
+--------------
+Threshold: 0,30
+--------------
+	A2: 134
+	A3: 28
+--------------
+Threshold: 0,40
+--------------
+	A2: 118
+--------------
+Threshold: 0,50
+--------------
+	A2: 62
+	A2 | A3: 42
+	A2 | A4: 36
+	A1 | A2: 24
+--------------
+Threshold: 0,60
+--------------
+	A2 | A3: 55
+	A2 | A4: 49
+	A1 | A2: 33
+	A2: 27
+--------------
+Threshold: 0,70
+--------------
+	A2 | A3: 50
+	A2 | A4: 42
+	A1 | A2: 34
+	A1 | A2 | A3: 22
+--------------
+Threshold: 0,80
+--------------
+	A1 | A2 | A3: 55
+	A2 | A3 | A4: 31
+	A2 | A3: 22
+*********************************************************************************
+All potential concepts based on thresholds
+	A2 A3 ~#~ A2 A4 ~#~ A1 A2 ~#~ A1 A2 A3 ~#~ A2 A3 A4 ~#~ 
+*********************************************************************************
+								--------------
+								Fold  7
+								--------------
+We remove max(NOISE,minNoise) groups, NOISE=10.0% -> 18, minNoise=3 we remove groups of size 18. Explanation method: IME, num. of expl. inst. 180, pct of expl. instances is 10 (fold 7). Number of bins for discretisation (simple binning) is 2.
+--------------
+Threshold: 0,10
+--------------
+	A2: 136
+	A3: 26
+--------------
+Threshold: 0,20
+--------------
+	A2: 136
+	A3: 26
+--------------
+Threshold: 0,30
+--------------
+	A2: 135
+	A3: 25
+--------------
+Threshold: 0,40
+--------------
+	A2: 120
+--------------
+Threshold: 0,50
+--------------
+	A2: 76
+	A2 | A3: 36
+	A2 | A4: 31
+	A1 | A2: 21
+--------------
+Threshold: 0,60
+--------------
+	A2 | A4: 54
+	A2 | A3: 47
+	A1 | A2: 34
+	A2: 26
+--------------
+Threshold: 0,70
+--------------
+	A2 | A3: 48
+	A2 | A4: 45
+	A1 | A2: 34
+--------------
+Threshold: 0,80
+--------------
+	A1 | A2 | A3: 50
+	A2 | A3 | A4: 36
+	A1 | A2: 20
+	A2 | A3: 19
+*********************************************************************************
+All potential concepts based on thresholds
+	A2 A3 ~#~ A2 A4 ~#~ A1 A2 ~#~ A1 A2 A3 ~#~ A2 A3 A4 ~#~ 
+*********************************************************************************
+								--------------
+								Fold  8
+								--------------
+We remove max(NOISE,minNoise) groups, NOISE=10.0% -> 18, minNoise=3 we remove groups of size 18. Explanation method: IME, num. of expl. inst. 180, pct of expl. instances is 10 (fold 8). Number of bins for discretisation (simple binning) is 2.
+--------------
+Threshold: 0,10
+--------------
+	A2: 130
+	A3: 28
+--------------
+Threshold: 0,20
+--------------
+	A2: 130
+	A3: 28
+--------------
+Threshold: 0,30
+--------------
+	A2: 129
+	A3: 28
+--------------
+Threshold: 0,40
+--------------
+	A2: 107
+	A3: 23
+--------------
+Threshold: 0,50
+--------------
+	A2: 59
+	A2 | A3: 43
+	A2 | A4: 31
+	A1 | A2: 23
+--------------
+Threshold: 0,60
+--------------
+	A2 | A3: 62
+	A2 | A4: 44
+	A1 | A2: 30
+	A2: 20
+--------------
+Threshold: 0,70
+--------------
+	A2 | A3: 58
+	A2 | A4: 33
+	A1 | A2: 26
+	A1 | A2 | A3: 22
+--------------
+Threshold: 0,80
+--------------
+	A1 | A2 | A3: 60
+	A2 | A3 | A4: 27
+	A2 | A3: 24
+*********************************************************************************
+All potential concepts based on thresholds
+	A2 A3 ~#~ A2 A4 ~#~ A1 A2 ~#~ A1 A2 A3 ~#~ A2 A3 A4 ~#~ 
+*********************************************************************************
+								--------------
+								Fold  9
+								--------------
+We remove max(NOISE,minNoise) groups, NOISE=10.0% -> 18, minNoise=3 we remove groups of size 18. Explanation method: IME, num. of expl. inst. 180, pct of expl. instances is 10 (fold 9). Number of bins for discretisation (simple binning) is 2.
+--------------
+Threshold: 0,10
+--------------
+	A2: 130
+	A3: 36
+--------------
+Threshold: 0,20
+--------------
+	A2: 130
+	A3: 36
+--------------
+Threshold: 0,30
+--------------
+	A2: 129
+	A3: 36
+--------------
+Threshold: 0,40
+--------------
+	A2: 108
+	A3: 28
+--------------
+Threshold: 0,50
+--------------
+	A2: 68
+	A2 | A3: 44
+	A2 | A4: 26
+--------------
+Threshold: 0,60
+--------------
+	A2 | A3: 62
+	A2 | A4: 38
+	A1 | A2: 31
+	A2: 28
+--------------
+Threshold: 0,70
+--------------
+	A2 | A3: 58
+	A1 | A2: 34
+	A2 | A4: 32
+--------------
+Threshold: 0,80
+--------------
+	A1 | A2 | A3: 56
+	A2 | A3: 29
+	A2 | A3 | A4: 28
+*********************************************************************************
+All potential concepts based on thresholds
+	A2 A3 ~#~ A2 A4 ~#~ A1 A2 ~#~ A1 A2 A3 ~#~ A2 A3 A4 ~#~ 
+*********************************************************************************
+								--------------
+								Fold 10
+								--------------
+We remove max(NOISE,minNoise) groups, NOISE=10.0% -> 18, minNoise=3 we remove groups of size 18. Explanation method: IME, num. of expl. inst. 180, pct of expl. instances is 10 (fold 10). Number of bins for discretisation (simple binning) is 2.
+--------------
+Threshold: 0,10
+--------------
+	A2: 145
+	A3: 20
+--------------
+Threshold: 0,20
+--------------
+	A2: 145
+	A3: 20
+--------------
+Threshold: 0,30
+--------------
+	A2: 145
+	A3: 19
+--------------
+Threshold: 0,40
+--------------
+	A2: 131
+--------------
+Threshold: 0,50
+--------------
+	A2: 74
+	A2 | A3: 41
+	A2 | A4: 29
+--------------
+Threshold: 0,60
+--------------
+	A2 | A3: 54
+	A2 | A4: 46
+	A1 | A2: 37
+	A2: 27
+--------------
+Threshold: 0,70
+--------------
+	A2 | A4: 47
+	A2 | A3: 46
+	A1 | A2: 36
+	A1 | A2 | A3: 22
+--------------
+Threshold: 0,80
+--------------
+	A1 | A2 | A3: 50
+	A2 | A3 | A4: 29
+	A1 | A2 | A4: 20
+	A2 | A3: 20
+	A1 | A2: 19
+*********************************************************************************
+All potential concepts based on thresholds
+	A2 A3 ~#~ A2 A4 ~#~ A1 A2 ~#~ A1 A2 A3 ~#~ A2 A3 A4 ~#~ A1 A2 A4 ~#~ 
+*********************************************************************************

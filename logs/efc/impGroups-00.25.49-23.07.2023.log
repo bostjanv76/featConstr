@@ -1,0 +1,619 @@
+dataset: Glass.arff
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 1, minNoise=1 we remove groups of size 1. Tree SHAP num of expl. inst. 26 (fold 1). Explaining class: headlamps).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  1
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	Mg: 24
+	RI: 2
+--------------
+Threshold: 0,20
+--------------
+	Mg: 14
+	Mg | Ba: 9
+	RI: 2
+--------------
+Threshold: 0,30
+--------------
+	Mg | Ba: 13
+	Mg: 9
+--------------
+Threshold: 0,40
+--------------
+	Mg | Ca | Ba: 13
+	Mg: 5
+	Na | Mg: 4
+	RI | Mg: 2
+--------------
+Threshold: 0,50
+--------------
+	Mg | Ca | Ba | Fe: 11
+	Na | Mg: 4
+	Mg: 3
+	Na | Mg | Ba: 2
+	Mg | Ca | Ba: 2
+--------------
+Threshold: 0,60
+--------------
+	Mg | Ca | Ba | Fe: 13
+	Na | Mg | Ba: 3
+	Mg: 3
+	Na | Mg | Ca | Ba: 2
+--------------
+Threshold: 0,70
+--------------
+	Mg | K | Ca | Ba | Fe: 13
+	Na | Mg | Ca | Ba: 3
+	Na | Mg: 3
+	Na | Mg | Ca | Ba | Fe: 3
+--------------
+Threshold: 0,80
+--------------
+	Mg | Si | K | Ca | Ba | Fe: 13
+	Na | Mg | Ca | Ba | Fe: 4
+	Na | Mg | K | Ca | Ba | Fe: 3
+	Na | Mg: 3
+	RI | Na | Mg | Ca | Ba | Fe: 2
+*********************************************************************************
+All potential concepts based on thresholds
+	Mg Ba ~#~ Mg Ca Ba ~#~ Na Mg ~#~ RI Mg ~#~ Mg Ca Ba Fe ~#~ Na Mg Ba ~#~ Na Mg Ca Ba ~#~ Mg K Ca Ba Fe ~#~ Na Mg Ca Ba Fe ~#~ Mg Si K Ca Ba Fe ~#~ Na Mg K Ca Ba Fe ~#~ RI Na Mg Ca Ba Fe ~#~ 
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 1, minNoise=1 we remove groups of size 1. Tree SHAP num of expl. inst. 26 (fold 2). Explaining class: headlamps).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  2
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	Mg: 22
+	Ba: 3
+--------------
+Threshold: 0,20
+--------------
+	Mg: 11
+	Mg | Ba: 10
+	Ca | Ba: 3
+--------------
+Threshold: 0,30
+--------------
+	Mg | Ba: 11
+	Mg: 9
+	Ca | Ba: 3
+	RI | Mg: 3
+--------------
+Threshold: 0,40
+--------------
+	Mg | Ca | Ba: 10
+	Mg | Ba: 7
+	Ca | Ba | Fe: 3
+	Mg: 2
+	RI | Mg: 2
+--------------
+Threshold: 0,50
+--------------
+	Mg | Ca | Ba | Fe: 9
+	Mg | Ca | Ba: 8
+	Mg: 2
+	K | Ca | Ba | Fe: 2
+--------------
+Threshold: 0,60
+--------------
+	Mg | Ca | Ba | Fe: 17
+	K | Ca | Ba | Fe: 3
+--------------
+Threshold: 0,70
+--------------
+	Mg | K | Ca | Ba | Fe: 15
+	Mg | Ca | Ba | Fe: 2
+	Si | K | Ca | Ba | Fe: 2
+--------------
+Threshold: 0,80
+--------------
+	Mg | K | Ca | Ba | Fe: 16
+	Si | K | Ca | Ba | Fe: 3
+*********************************************************************************
+All potential concepts based on thresholds
+	Mg Ba ~#~ Ca Ba ~#~ RI Mg ~#~ Mg Ca Ba ~#~ Ca Ba Fe ~#~ Mg Ca Ba Fe ~#~ K Ca Ba Fe ~#~ Mg K Ca Ba Fe ~#~ Si K Ca Ba Fe ~#~ 
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 1, minNoise=1 we remove groups of size 1. Tree SHAP num of expl. inst. 27 (fold 3). Explaining class: headlamps).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  3
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	Mg: 22
+	RI: 2
+	Ba: 2
+--------------
+Threshold: 0,20
+--------------
+	Mg: 13
+	Mg | Ba: 9
+	Ca | Ba: 2
+	RI: 2
+--------------
+Threshold: 0,30
+--------------
+	Mg | Ba: 13
+	Mg: 6
+	Na | Mg: 4
+	Ca | Ba: 2
+	RI: 2
+--------------
+Threshold: 0,40
+--------------
+	Mg | Ca | Ba: 13
+	Mg | Ba: 5
+	Na | Mg: 4
+	Ca | Ba | Fe: 2
+--------------
+Threshold: 0,50
+--------------
+	Mg | Ca | Ba | Fe: 11
+	Mg | Ca | Ba: 7
+	Na | Mg | Ba: 3
+--------------
+Threshold: 0,60
+--------------
+	Mg | Ca | Ba | Fe: 18
+	Na | Mg | Ca | Ba: 3
+	K | Ca | Ba | Fe: 2
+--------------
+Threshold: 0,70
+--------------
+	Mg | K | Ca | Ba | Fe: 17
+	Na | Mg | Ca | Ba | Fe: 3
+--------------
+Threshold: 0,80
+--------------
+	Mg | Si | K | Ca | Ba | Fe: 16
+	Na | Mg | K | Ca | Ba | Fe: 3
+	Mg | K | Ca | Ba | Fe: 2
+	Si | K | Ca | Ba | Fe: 2
+*********************************************************************************
+All potential concepts based on thresholds
+	Mg Ba ~#~ Ca Ba ~#~ Na Mg ~#~ Mg Ca Ba ~#~ Ca Ba Fe ~#~ Mg Ca Ba Fe ~#~ Na Mg Ba ~#~ Na Mg Ca Ba ~#~ K Ca Ba Fe ~#~ Mg K Ca Ba Fe ~#~ Na Mg Ca Ba Fe ~#~ Mg Si K Ca Ba Fe ~#~ Na Mg K Ca Ba Fe ~#~ Si K Ca Ba Fe ~#~ 
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 1, minNoise=1 we remove groups of size 1. Tree SHAP num of expl. inst. 26 (fold 4). Explaining class: headlamps).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  4
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	Mg: 15
+	Ba: 9
+	RI: 2
+--------------
+Threshold: 0,20
+--------------
+	Mg: 11
+	Ca | Ba: 9
+	Mg | Ba: 4
+	RI: 2
+--------------
+Threshold: 0,30
+--------------
+	Ca | Ba: 9
+	Mg: 9
+	Mg | Ba: 6
+	RI | Mg: 2
+--------------
+Threshold: 0,40
+--------------
+	Ca | Ba | Fe: 9
+	Mg: 8
+	Mg | Ca | Ba: 4
+	RI | Mg: 2
+	Mg | Ba: 2
+--------------
+Threshold: 0,50
+--------------
+	Ca | Ba | Fe: 9
+	Mg: 4
+	Mg | Ca | Ba: 4
+	Mg | Ba: 4
+	Mg | Ca | Ba | Fe: 2
+	RI | Mg | Ba: 2
+--------------
+Threshold: 0,60
+--------------
+	K | Ca | Ba | Fe: 9
+	Mg | Ca | Ba | Fe: 6
+	Mg | Ca | Ba: 6
+	Mg: 2
+	RI | Mg | Ca | Ba: 2
+--------------
+Threshold: 0,70
+--------------
+	K | Ca | Ba | Fe: 8
+	Mg | K | Ca | Ba | Fe: 6
+	Mg | Ca | Ba | Fe: 6
+	Mg: 2
+	RI | Mg | Ca | Ba | Fe: 2
+--------------
+Threshold: 0,80
+--------------
+	Mg | K | Ca | Ba | Fe: 11
+	Si | K | Ca | Ba | Fe: 9
+	Mg: 2
+	RI | Mg | K | Ca | Ba | Fe: 2
+*********************************************************************************
+All potential concepts based on thresholds
+	Ca Ba ~#~ Mg Ba ~#~ RI Mg ~#~ Ca Ba Fe ~#~ Mg Ca Ba ~#~ Mg Ca Ba Fe ~#~ RI Mg Ba ~#~ K Ca Ba Fe ~#~ RI Mg Ca Ba ~#~ Mg K Ca Ba Fe ~#~ RI Mg Ca Ba Fe ~#~ Si K Ca Ba Fe ~#~ RI Mg K Ca Ba Fe ~#~ 
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 1, minNoise=1 we remove groups of size 1. Tree SHAP num of expl. inst. 26 (fold 5). Explaining class: headlamps).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  5
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	Mg: 23
+	Ba: 2
+--------------
+Threshold: 0,20
+--------------
+	Mg: 14
+	Mg | Ba: 8
+	Ca | Ba: 2
+--------------
+Threshold: 0,30
+--------------
+	Mg | Ba: 12
+	Mg: 9
+	Ca | Ba: 2
+	RI | Mg: 2
+--------------
+Threshold: 0,40
+--------------
+	Mg | Ca | Ba: 12
+	Mg: 4
+	Na | Mg: 3
+	Ca | Ba | Fe: 2
+	Mg | Ba: 2
+--------------
+Threshold: 0,50
+--------------
+	Mg | Ca | Ba | Fe: 7
+	Mg | Ca | Ba: 7
+	Mg: 3
+	Na | Mg | Ba: 2
+	Na | Mg: 2
+--------------
+Threshold: 0,60
+--------------
+	Mg | Ca | Ba | Fe: 12
+	Na | Mg: 3
+	Na | Mg | Ba: 2
+	Mg | Ca | Ba: 2
+	Na | Mg | Ca | Ba: 2
+	K | Ca | Ba | Fe: 2
+--------------
+Threshold: 0,70
+--------------
+	Mg | K | Ca | Ba | Fe: 12
+	Na | Mg: 3
+	Mg | Ca | Ba | Fe: 2
+	Na | Mg | Ca | Ba: 2
+	Si | K | Ca | Ba | Fe: 2
+	Na | Mg | Ca | Ba | Fe: 2
+--------------
+Threshold: 0,80
+--------------
+	Mg | Si | K | Ca | Ba | Fe: 10
+	Mg | K | Ca | Ba | Fe: 4
+	Na | Mg | Ca | Ba: 3
+	Na | Mg | K | Ca | Ba | Fe: 2
+	Si | K | Ca | Ba | Fe: 2
+	Na | Mg | Ca | Ba | Fe: 2
+*********************************************************************************
+All potential concepts based on thresholds
+	Mg Ba ~#~ Ca Ba ~#~ RI Mg ~#~ Mg Ca Ba ~#~ Na Mg ~#~ Ca Ba Fe ~#~ Mg Ca Ba Fe ~#~ Na Mg Ba ~#~ Na Mg Ca Ba ~#~ K Ca Ba Fe ~#~ Mg K Ca Ba Fe ~#~ Si K Ca Ba Fe ~#~ Na Mg Ca Ba Fe ~#~ Mg Si K Ca Ba Fe ~#~ Na Mg K Ca Ba Fe ~#~ 
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 1, minNoise=1 we remove groups of size 1. Tree SHAP num of expl. inst. 26 (fold 6). Explaining class: headlamps).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  6
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	Mg: 14
+	Ba: 10
+	RI: 2
+--------------
+Threshold: 0,20
+--------------
+	Ca | Ba: 10
+	Mg: 10
+	Mg | Ba: 4
+	RI: 2
+--------------
+Threshold: 0,30
+--------------
+	Ca | Ba: 10
+	Mg | Ba: 8
+	Mg: 6
+--------------
+Threshold: 0,40
+--------------
+	Ca | Ba | Fe: 10
+	Mg | Ca | Ba: 8
+	Mg: 4
+	Mg | Ba: 2
+--------------
+Threshold: 0,50
+--------------
+	Mg | Ca | Ba: 6
+	K | Ca | Ba | Fe: 6
+	Ca | Ba | Fe: 4
+	Mg | Ca | Ba | Fe: 4
+	Mg: 3
+--------------
+Threshold: 0,60
+--------------
+	Mg | Ca | Ba | Fe: 10
+	K | Ca | Ba | Fe: 10
+	Mg: 2
+--------------
+Threshold: 0,70
+--------------
+	Si | K | Ca | Ba | Fe: 10
+	Mg | K | Ca | Ba | Fe: 8
+	Mg | Ca | Ba | Fe: 3
+	Mg: 2
+--------------
+Threshold: 0,80
+--------------
+	Mg | K | Ca | Ba | Fe: 10
+	Si | K | Ca | Ba | Fe: 10
+*********************************************************************************
+All potential concepts based on thresholds
+	Ca Ba ~#~ Mg Ba ~#~ Ca Ba Fe ~#~ Mg Ca Ba ~#~ K Ca Ba Fe ~#~ Mg Ca Ba Fe ~#~ Si K Ca Ba Fe ~#~ Mg K Ca Ba Fe ~#~ 
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 1, minNoise=1 we remove groups of size 1. Tree SHAP num of expl. inst. 26 (fold 7). Explaining class: headlamps).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  7
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	Ba: 12
+	Mg: 11
+	RI: 2
+--------------
+Threshold: 0,20
+--------------
+	Ca | Ba: 12
+	Mg: 8
+	Mg | Ba: 3
+--------------
+Threshold: 0,30
+--------------
+	Ca | Ba: 11
+	Na | Mg: 5
+	Mg | Ba: 4
+	Mg: 2
+	RI | Ba: 2
+--------------
+Threshold: 0,40
+--------------
+	Ca | Ba | Fe: 12
+	Na | Mg: 5
+	Mg | Ca | Ba: 4
+	Na | Mg | Ba: 2
+	RI | Ca | Ba: 2
+--------------
+Threshold: 0,50
+--------------
+	K | Ca | Ba | Fe: 8
+	Ca | Ba | Fe: 4
+	Na | Mg | Ba: 3
+	Mg | Ca | Ba | Fe: 3
+	Na | Mg: 2
+	Na | Mg | Ca | Ba: 2
+	RI | Ca | Ba | Fe: 2
+--------------
+Threshold: 0,60
+--------------
+	K | Ca | Ba | Fe: 11
+	Na | Mg | Ca | Ba: 5
+	Mg | K | Ca | Ba | Fe: 3
+	Na | Mg: 2
+--------------
+Threshold: 0,70
+--------------
+	Si | K | Ca | Ba | Fe: 11
+	Na | Mg | Ca | Ba | Fe: 5
+	Mg | K | Ca | Ba | Fe: 4
+	RI | K | Ca | Ba | Fe: 2
+--------------
+Threshold: 0,80
+--------------
+	Si | K | Ca | Ba | Fe: 11
+	Na | Mg | K | Ca | Ba | Fe: 6
+	Mg | Si | K | Ca | Ba | Fe: 4
+	RI | Si | K | Ca | Ba | Fe: 2
+*********************************************************************************
+All potential concepts based on thresholds
+	Ca Ba ~#~ Mg Ba ~#~ Na Mg ~#~ RI Ba ~#~ Ca Ba Fe ~#~ Mg Ca Ba ~#~ Na Mg Ba ~#~ RI Ca Ba ~#~ K Ca Ba Fe ~#~ Mg Ca Ba Fe ~#~ Na Mg Ca Ba ~#~ RI Ca Ba Fe ~#~ Mg K Ca Ba Fe ~#~ Si K Ca Ba Fe ~#~ Na Mg Ca Ba Fe ~#~ RI K Ca Ba Fe ~#~ Na Mg K Ca Ba Fe ~#~ Mg Si K Ca Ba Fe ~#~ RI Si K Ca Ba Fe ~#~ 
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 1, minNoise=1 we remove groups of size 1. Tree SHAP num of expl. inst. 26 (fold 8). Explaining class: headlamps).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  8
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	Mg: 22
+	RI: 2
+	Ba: 2
+--------------
+Threshold: 0,20
+--------------
+	Mg: 16
+	Mg | Ba: 6
+	Ca | Ba: 2
+	RI: 2
+--------------
+Threshold: 0,30
+--------------
+	Mg | Ba: 16
+	Mg: 5
+	Ca | Ba: 2
+	RI | Mg: 2
+--------------
+Threshold: 0,40
+--------------
+	Mg | Ba: 9
+	Mg | Ca | Ba: 7
+	Mg: 5
+	Ca | Ba | Fe: 2
+--------------
+Threshold: 0,50
+--------------
+	Mg | Ca | Ba: 16
+	Mg: 5
+--------------
+Threshold: 0,60
+--------------
+	Mg | Ca | Ba | Fe: 16
+	Mg | Ca | Ba: 3
+	K | Ca | Ba | Fe: 2
+--------------
+Threshold: 0,70
+--------------
+	Mg | Ca | Ba | Fe: 11
+	Mg | K | Ca | Ba | Fe: 8
+--------------
+Threshold: 0,80
+--------------
+	Mg | K | Ca | Ba | Fe: 19
+	Si | K | Ca | Ba | Fe: 2
+*********************************************************************************
+All potential concepts based on thresholds
+	Mg Ba ~#~ Ca Ba ~#~ RI Mg ~#~ Mg Ca Ba ~#~ Ca Ba Fe ~#~ Mg Ca Ba Fe ~#~ K Ca Ba Fe ~#~ Mg K Ca Ba Fe ~#~ Si K Ca Ba Fe ~#~ 
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 1, minNoise=1 we remove groups of size 1. Tree SHAP num of expl. inst. 26 (fold 9). Explaining class: headlamps).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  9
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	Mg: 25
+--------------
+Threshold: 0,20
+--------------
+	Mg: 22
+	Mg | Ba: 3
+--------------
+Threshold: 0,30
+--------------
+	Mg | Ba: 15
+	Mg: 10
+--------------
+Threshold: 0,40
+--------------
+	Mg | Ca | Ba: 11
+	Mg | Ba: 10
+	Mg: 4
+--------------
+Threshold: 0,50
+--------------
+	Mg | Ca | Ba: 19
+	Mg | Ca | Ba | Fe: 2
+	Mg: 2
+	Mg | Ba: 2
+--------------
+Threshold: 0,60
+--------------
+	Mg | Ca | Ba | Fe: 16
+	Mg | Ca | Ba: 7
+--------------
+Threshold: 0,70
+--------------
+	Mg | Ca | Ba | Fe: 12
+	Mg | K | Ca | Ba | Fe: 11
+	Mg | Ca | Ba: 2
+--------------
+Threshold: 0,80
+--------------
+	Mg | K | Ca | Ba | Fe: 22
+	Mg | Ca | Ba | Fe: 2
+*********************************************************************************
+All potential concepts based on thresholds
+	Mg Ba ~#~ Mg Ca Ba ~#~ Mg Ca Ba Fe ~#~ Mg K Ca Ba Fe ~#~ 
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 1, minNoise=1 we remove groups of size 1. Tree SHAP num of expl. inst. 26 (fold 10). Explaining class: headlamps).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold 10
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	Al: 25
+--------------
+Threshold: 0,20
+--------------
+	Al: 19
+	Na | Al: 6
+--------------
+Threshold: 0,30
+--------------
+	Na | Al: 15
+	Al: 9
+	Al | Ba: 2
+--------------
+Threshold: 0,40
+--------------
+	Na | Al: 16
+	Na | Al | Ba: 7
+	Al | Ca | Ba: 2
+--------------
+Threshold: 0,50
+--------------
+	Na | Al: 11
+	Na | Al | Ca | Ba: 6
+	Na | Al | Ba: 5
+	Al | Ca | Ba | Fe: 2
+	Na | Mg | Al: 2
+--------------
+Threshold: 0,60
+--------------
+	Na | Al: 7
+	Na | Al | Ca | Ba | Fe: 6
+	Na | Al | Ca | Ba: 5
+	Na | Mg | Al: 4
+	Na | Mg | Al | Ba: 2
+--------------
+Threshold: 0,70
+--------------
+	Na | Al | Ca | Ba | Fe: 11
+	Na | Mg | Al: 7
+	Na | Mg | Al | Ca | Ba: 3
+	Na | Mg | Al | Ba: 3
+--------------
+Threshold: 0,80
+--------------
+	Na | Al | K | Ca | Ba | Fe: 11
+	Na | Mg | Al | Ca | Ba: 7
+	Na | Mg | Al | Ca | Ba | Fe: 6
+	Al | Si | K | Ca | Ba | Fe: 2
+*********************************************************************************
+All potential concepts based on thresholds
+	Na Al ~#~ Al Ba ~#~ Na Al Ba ~#~ Al Ca Ba ~#~ Na Al Ca Ba ~#~ Al Ca Ba Fe ~#~ Na Mg Al ~#~ Na Al Ca Ba Fe ~#~ Na Mg Al Ba ~#~ Na Mg Al Ca Ba ~#~ Na Al K Ca Ba Fe ~#~ Na Mg Al Ca Ba Fe ~#~ Al Si K Ca Ba Fe ~#~ 
+*********************************************************************************

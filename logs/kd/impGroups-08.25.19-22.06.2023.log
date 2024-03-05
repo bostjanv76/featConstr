@@ -1,0 +1,76 @@
+dataset: cLogicalConcBEasy.arff
+IME (explanation), equalSampling, N_SAMPLES: 100 - alg. for searching concepts: MultilayerPerceptron
+Explaining class: 1, explaining all dataset: NO
+---------------------------------------------------------------------------------
+We remove max(NOISE,minNoise) groups, NOISE=0.0% -> 0, minNoise=0 we remove groups of size 0. Number of instances from class (1) is 16
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+--------------
+Threshold: 0,10
+--------------
+	A3: 6
+	A5: 5
+	A4: 3
+	A1: 1
+	A2: 1
+--------------
+Threshold: 0,20
+--------------
+	A3: 6
+	A5: 5
+	A4: 3
+	A1: 1
+	A2: 1
+--------------
+Threshold: 0,30
+--------------
+	A3: 6
+	A5: 5
+	A4: 3
+	A1: 1
+	A2: 1
+--------------
+Threshold: 0,40
+--------------
+	A2 | A3: 4
+	A4 | A5: 4
+	A4: 2
+	A1 | A3: 2
+	A3: 1
+	A5: 1
+	A1 | A2: 1
+	A1 | A5: 1
+--------------
+Threshold: 0,50
+--------------
+	A4 | A5: 7
+	A2 | A3: 5
+	A1 | A3: 2
+	A1 | A2: 1
+	A1 | A5: 1
+--------------
+Threshold: 0,60
+--------------
+	A2 | A3: 5
+	A1 | A4 | A5: 4
+	A4 | A5: 4
+	A1 | A3: 2
+	A1 | A2: 1
+--------------
+Threshold: 0,70
+--------------
+	A1 | A2 | A3: 6
+	A1 | A4 | A5: 5
+	A4 | A5: 3
+	A2 | A3: 2
+--------------
+Threshold: 0,80
+--------------
+	A1 | A2 | A3: 6
+	A1 | A4 | A5: 6
+	A2 | A3 | A5: 2
+	A3 | A4 | A5: 1
+	A2 | A4 | A5: 1
+*********************************************************************************
+All potential concepts, based on thresholds.
+	A2 A3 ~#~ A4 A5 ~#~ A1 A3 ~#~ A1 A2 ~#~ A1 A5 ~#~ A1 A4 A5 ~#~ A1 A2 A3 ~#~ A2 A3 A5 ~#~ A3 A4 A5 ~#~ A2 A4 A5 ~#~ 
+*********************************************************************************

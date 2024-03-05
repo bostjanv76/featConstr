@@ -1,0 +1,1197 @@
+dataset: cLogicalConcBEasy-uniqueSamples.arff
+								--------------
+									Fold  1
+								--------------
+Feature evaluation: MDL (All features dataset) - After CI
+ 0,2354 A1 and A4 and A5
+ 0,2354 (A5 = 1) and (A4 = 1) and (A1 = 1)
+ 0,2354 (A3 = 1) and (A2 = 1) and (A1 = 0)
+ 0,2354 (A2 = 1) and (A3 = 1) and (A1 = 0)
+ 0,2119 num-of-N((A3 = 1) and (A2 = 1) and (A1 = 0))
+ 0,2119 num-of-N((A2 = 1) and (A3 = 1) and (A1 = 0))
+ 0,1838 num-of-N((A5 = 1) and (A4 = 1) and (A1 = 1))
+ 0,1272 A4 and A5
+ 0,1272 A2 and A3
+ 0,1272 (A5 = 1) and (A4 = 1)
+ 0,1272 (A3 = 1) and (A2 = 1)
+ 0,1272 (A2 = 1) and (A3 = 1)
+ 0,1104 A3 and A4 and A5
+ 0,1104 A2 and A3 and A5
+ 0,1104 A2 and A3 and A4
+ 0,0972 num-of-N((A3 = 1) and (A2 = 1))
+ 0,0972 num-of-N((A2 = 1) and (A3 = 1))
+ 0,0952 num-of-N((A5 = 1) and (A4 = 1))
+ 0,0768 A2 and A4 and A5
+ 0,0728 A1 or A2
+ 0,0663 A2_x_A3
+ 0,0656 A4_x_A5
+ 0,0635 A1 or A3
+ 0,0602 A3 and A5
+ 0,0602 A3 and A4
+ 0,0575 A1 xor A2
+ 0,0575 A1 equ A2
+ 0,0565 A1_x_A2
+ 0,0545 A2 or A5
+ 0,0545 A2 or A4
+ 0,0475 A2 xor A3
+ 0,0475 A2 equ A3
+ 0,0460 A3 or A5
+ 0,0460 A1 impl A5
+ 0,0460 A1 impl A4
+ 0,0458 A2 and A5
+ 0,0458 A1 and A5
+ 0,0458 A1 and A4
+ 0,0407 A3_x_A5
+ 0,0399 A2_x_A5
+ 0,0382 A5
+ 0,0379 A3 or A4
+ 0,0376 A1_x_A3
+ 0,0348 A3_x_A4
+ 0,0344 A1_x_A5
+ 0,0334 A2 and A4
+ 0,0329 A1_x_A4
+ 0,0303 A2_x_A4
+ 0,0296 A4
+ 0,0286 A1 xor A3
+ 0,0286 A1 equ A3
+ 0,0216 A3
+ 0,0138 A1 and A3 and A5
+ 0,0138 A1 and A3 and A4
+ 0,0126 A4 xor A5
+ 0,0126 A4 equ A5
+ 0,0126 A2
+ 0,0126 A1 xor A4
+ 0,0126 A1 equ A4
+ 0,0097 A1 or A3 or A5
+ 0,0097 A1 or A2 or A5
+ 0,0097 A1 or A2 or A4
+ 0,0097 A1 or A2 or A3
+ 0,0057 A1 xor A5
+ 0,0057 A1 equ A5
+ 0,0039 A2 or A4 or A5
+ 0,0039 A1 or A3 or A4
+ 0,0012 A4 or A5
+ 0,0012 A2 impl A3
+ -0,0013 A3 or A4 or A5
+ -0,0013 A2 or A3 or A5
+ -0,0013 A2 or A3 or A4
+ -0,0045 A1 and A2 and A5
+ -0,0045 A1 and A2 and A4
+ -0,0147 A4 impl A5
+ -0,0208 A1 or A4 or A5
+ -0,0213 A2 or A3
+ -0,0232 A1 impl A2
+ -0,0242 A1 and A2 and A3
+ -0,0259 A1 impl A3
+ -0,0268 A3 xor A4
+ -0,0268 A3 equ A4
+ -0,0278 A3 impl A5
+ -0,0278 A3 impl A4
+ -0,0278 A1 or A5
+ -0,0286 A2 impl A4
+ -0,0286 A2 impl A5
+ -0,0286 A1 or A4
+ -0,0286 A1 and A2
+ -0,0291 A3 xor A5
+ -0,0291 A3 equ A5
+ -0,0299 A1 and A3
+ -0,0307 A6
+ -0,0318 A1
+ -0,0324 A2 xor A5
+ -0,0324 A2 xor A4
+ -0,0324 A2 equ A5
+ -0,0324 A2 equ A4
+MDL (param. search)
+The best parameter when using J48: MDL@0.0
+MDL (param. search)
+The best parameter when using NaiveBayes: MDL@0.0
+MDL (param. search)
+The best parameter when using SMO: MDL@0.0
+MDL (param. search)
+The best parameter when using SMO: MDL@0.0
+MDL (param. search)
+The best parameter when using IBk: MDL@0.25
+MDL (param. search)
+The best parameter when using FURIA: MDL@0.5
+MDL (param. search)
+The best parameter when using RandomForest: MDL@0.0
+								--------------
+									Fold  2
+								--------------
+Feature evaluation: MDL (All features dataset) - After CI
+ 0,2354 A1 and A4 and A5
+ 0,2354 (A5 = 1) and (A4 = 1) and (A1 = 1)
+ 0,2354 (A4 = 1) and (A5 = 1) and (A1 = 1)
+ 0,2354 (A2 = 1) and (A3 = 1) and (A1 = 0)
+ 0,1940 num-of-N((A2 = 1) and (A3 = 1) and (A1 = 0))
+ 0,1932 num-of-N((A5 = 1) and (A4 = 1) and (A1 = 1))
+ 0,1932 num-of-N((A4 = 1) and (A5 = 1) and (A1 = 1))
+ 0,1272 A4 and A5
+ 0,1272 A2 and A3
+ 0,1272 (A5 = 1) and (A4 = 1)
+ 0,1272 (A4 = 1) and (A5 = 1)
+ 0,1272 (A2 = 1) and (A3 = 1)
+ 0,1104 A2 and A4 and A5
+ 0,1104 A2 and A3 and A5
+ 0,0952 num-of-N((A5 = 1) and (A4 = 1))
+ 0,0952 num-of-N((A4 = 1) and (A5 = 1))
+ 0,0952 num-of-N((A2 = 1) and (A3 = 1))
+ 0,0779 num-of-N((A2 = 1) and (A5 = 1))
+ 0,0768 A3 and A4 and A5
+ 0,0768 A2 and A3 and A4
+ 0,0748 A2 and A5
+ 0,0748 (A2 = 1) and (A5 = 1)
+ 0,0672 A2_x_A3
+ 0,0656 A4_x_A5
+ 0,0635 A1 or A2
+ 0,0602 (A2 = 1) and (A1 = 0)
+ 0,0566 A1_x_A2
+ 0,0545 A3 or A4
+ 0,0545 A2 or A4
+ 0,0545 A1 impl A5
+ 0,0545 A1 impl A4
+ 0,0520 A2_x_A5
+ 0,0460 A3 or A5
+ 0,0460 A2 or A5
+ 0,0460 A1 or A3
+ 0,0458 A2 and A4
+ 0,0399 A2_x_A4
+ 0,0387 num-of-N((A2 = 1) and (A1 = 0))
+ 0,0382 A4 xor A5
+ 0,0382 A4 equ A5
+ 0,0382 A2 xor A3
+ 0,0382 A2 equ A3
+ 0,0382 A2
+ 0,0334 A3 and A5
+ 0,0334 A1 and A5
+ 0,0334 A1 and A4
+ 0,0303 A1_x_A5
+ 0,0303 A1_x_A4
+ 0,0296 A5
+ 0,0296 A1 xor A4
+ 0,0296 A1 xor A3
+ 0,0296 A1 equ A4
+ 0,0296 A1 equ A3
+ 0,0286 A1 xor A2
+ 0,0286 A1 equ A2
+ 0,0241 A1_x_A3
+ 0,0241 A3_x_A5
+ 0,0177 A3_x_A4
+ 0,0138 A1 and A2 and A5
+ 0,0138 A1 and A2 and A4
+ 0,0126 A4
+ 0,0126 A1 xor A5
+ 0,0126 A1 equ A5
+ 0,0111 A3 and A4
+ 0,0097 A1 or A2 or A4
+ 0,0057 A3
+ 0,0039 A3 or A4 or A5
+ 0,0039 A2 or A3 or A4
+ 0,0039 A1 or A3 or A4
+ 0,0039 A1 or A2 or A5
+ 0,0039 A1 or A2 or A3
+ 0,0012 A4 impl A5
+ -0,0013 A2 or A4 or A5
+ -0,0013 A2 or A3 or A5
+ -0,0013 A1 or A3 or A5
+ -0,0045 A1 and A3 and A5
+ -0,0045 A1 and A3 and A4
+ -0,0183 A4 or A5
+ -0,0183 A2 or A3
+ -0,0183 A2 impl A3
+ -0,0242 A1 or A4 or A5
+ -0,0242 A1 and A2 and A3
+ -0,0268 A2 xor A5
+ -0,0268 A2 equ A5
+ -0,0286 A1 or A5
+ -0,0286 A1 impl A2
+ -0,0286 A3 impl A5
+ -0,0286 A2 impl A5
+ -0,0286 A1 and A3
+ -0,0286 A3 impl A4
+ -0,0286 A2 impl A4
+ -0,0286 A1 or A4
+ -0,0286 A1 impl A3
+ -0,0291 A6
+ -0,0291 A3 xor A4
+ -0,0291 A3 equ A4
+ -0,0299 A1 and A2
+ -0,0324 A3 xor A5
+ -0,0324 A3 equ A5
+ -0,0324 A2 xor A4
+ -0,0324 A2 equ A4
+ -0,0324 A1
+MDL (param. search)
+The best parameter when using J48: MDL@0.25
+MDL (param. search)
+The best parameter when using NaiveBayes: MDL@0.0
+MDL (param. search)
+The best parameter when using SMO: MDL@0.0
+MDL (param. search)
+The best parameter when using SMO: MDL@0.0
+MDL (param. search)
+The best parameter when using IBk: MDL@0.0
+MDL (param. search)
+The best parameter when using FURIA: MDL@0.25
+MDL (param. search)
+The best parameter when using RandomForest: MDL@0.0
+								--------------
+									Fold  3
+								--------------
+Feature evaluation: MDL (All features dataset) - After CI
+ 0,2354 A1 and A4 and A5
+ 0,2354 (A4 = 1) and (A5 = 1) and (A1 = 1)
+ 0,2354 (A2 = 1) and (A3 = 1) and (A1 = 0)
+ 0,2037 num-of-N((A2 = 1) and (A3 = 1) and (A1 = 0))
+ 0,1957 num-of-N((A4 = 1) and (A5 = 1) and (A1 = 1))
+ 0,1483 A4 and A5
+ 0,1483 (A4 = 1) and (A5 = 1)
+ 0,1164 num-of-N((A4 = 1) and (A5 = 1))
+ 0,1103 A2 and A3
+ 0,1103 (A2 = 1) and (A3 = 1)
+ 0,1065 A2 and A4 and A5
+ 0,0889 num-of-N((A4 = 1) and (A2 = 1) and (A3 = 1))
+ 0,0887 A4_x_A5
+ 0,0813 num-of-N((A4 = 1) and (A2 = 1))
+ 0,0813 num-of-N((A2 = 1) and (A4 = 1))
+ 0,0775 num-of-N((A2 = 1) and (A3 = 1))
+ 0,0768 A3 and A4 and A5
+ 0,0768 A2 and A3 and A4
+ 0,0768 (A4 = 1) and (A2 = 1) and (A3 = 1)
+ 0,0635 A3 or A4
+ 0,0635 A2 or A4
+ 0,0635 A1 impl A5
+ 0,0635 A1 impl A4
+ 0,0602 A2 and A4
+ 0,0602 (A4 = 1) and (A2 = 1)
+ 0,0602 (A2 = 1) and (A4 = 1)
+ 0,0602 (A2 = 1) and (A1 = 0)
+ 0,0576 A2_x_A4
+ 0,0545 A2 or A5
+ 0,0545 A1 or A2
+ 0,0504 A1_x_A2
+ 0,0475 A4 xor A5
+ 0,0475 A4 equ A5
+ 0,0475 A4
+ 0,0475 A1 xor A5
+ 0,0475 A1 equ A5
+ 0,0474 A2_x_A3
+ 0,0470 A2 and A3 and A5
+ 0,0467 num-of-N((A2 = 1) and (A1 = 0))
+ 0,0460 A3 or A5
+ 0,0405 A3_x_A4
+ 0,0405 A1_x_A5
+ 0,0405 A1_x_A4
+ 0,0382 A1 xor A2
+ 0,0382 A1 equ A2
+ 0,0379 A1 or A3
+ 0,0334 A3 and A4
+ 0,0334 A1 and A5
+ 0,0334 A1 and A4
+ 0,0248 A2_x_A5
+ 0,0216 A1 xor A3
+ 0,0216 A1 equ A3
+ 0,0214 A2 and A5
+ 0,0202 A2 xor A3
+ 0,0202 A2 equ A3
+ 0,0202 A2
+ 0,0172 A1_x_A3
+ 0,0111 A3 and A5
+ 0,0100 A3_x_A5
+ 0,0057 A5
+ 0,0057 A3
+ 0,0057 A1 xor A4
+ 0,0057 A1 equ A4
+ 0,0039 A3 or A4 or A5
+ 0,0039 A2 or A4 or A5
+ 0,0039 A2 or A3 or A4
+ 0,0039 A1 or A3 or A4
+ 0,0039 A1 or A2 or A4
+ -0,0013 A2 or A3 or A5
+ -0,0013 A1 or A2 or A5
+ -0,0013 A1 or A2 or A3
+ -0,0045 A1 and A3 and A5
+ -0,0045 A1 and A3 and A4
+ -0,0045 A1 and A2 and A5
+ -0,0045 A1 and A2 and A4
+ -0,0059 A1 or A3 or A5
+ -0,0183 A4 or A5
+ -0,0183 A4 impl A5
+ -0,0183 A2 or A3
+ -0,0183 A2 impl A3
+ -0,0214 A1 or A4 or A5
+ -0,0214 A1 and A2 and A3
+ -0,0232 A1 or A5
+ -0,0264 A2 impl A5
+ -0,0286 A3 impl A4
+ -0,0286 A2 impl A4
+ -0,0286 A1 or A4
+ -0,0286 A1 and A3
+ -0,0286 A1 and A2
+ -0,0286 A3 impl A5
+ -0,0291 A6
+ -0,0299 A1 impl A3
+ -0,0299 A1 impl A2
+ -0,0307 A3 xor A5
+ -0,0307 A3 equ A5
+ -0,0307 A2 xor A5
+ -0,0307 A2 equ A5
+ -0,0318 A3 xor A4
+ -0,0318 A3 equ A4
+ -0,0318 A1
+ -0,0324 A2 xor A4
+ -0,0324 A2 equ A4
+MDL (param. search)
+The best parameter when using J48: MDL@0.0
+MDL (param. search)
+The best parameter when using NaiveBayes: MDL@0.0
+MDL (param. search)
+The best parameter when using SMO: MDL@0.0
+MDL (param. search)
+The best parameter when using SMO: MDL@0.0
+MDL (param. search)
+The best parameter when using IBk: MDL@0.0
+MDL (param. search)
+The best parameter when using FURIA: MDL@0.0
+MDL (param. search)
+The best parameter when using RandomForest: MDL@0.25
+								--------------
+									Fold  4
+								--------------
+Feature evaluation: MDL (All features dataset) - After CI
+ 0,2827 (A3 = 1) and (A2 = 1) and (A1 = 0)
+ 0,2388 num-of-N((A3 = 1) and (A2 = 1) and (A1 = 0))
+ 0,1914 A1 and A4 and A5
+ 0,1914 (A4 = 1) and (A5 = 1) and (A1 = 1)
+ 0,1560 num-of-N((A4 = 1) and (A5 = 1) and (A1 = 1))
+ 0,1483 A2 and A3
+ 0,1483 (A3 = 1) and (A2 = 1)
+ 0,1156 num-of-N((A3 = 1) and (A2 = 1))
+ 0,1065 A2 and A3 and A4
+ 0,0913 A4 and A5
+ 0,0913 (A4 = 1) and (A5 = 1)
+ 0,0913 (A3 = 1) and (A1 = 0)
+ 0,0889 num-of-N((A3 = 1) and (A4 = 1) and (A5 = 1))
+ 0,0855 A2_x_A3
+ 0,0768 A3 and A4 and A5
+ 0,0768 A2 and A4 and A5
+ 0,0768 A2 and A3 and A5
+ 0,0768 (A3 = 1) and (A4 = 1) and (A5 = 1)
+ 0,0753 num-of-N((A3 = 1) and (A4 = 1))
+ 0,0728 A1 impl A4
+ 0,0711 A1_x_A3
+ 0,0674 num-of-N((A3 = 1) and (A1 = 0))
+ 0,0635 A3 or A5
+ 0,0635 A1 impl A5
+ 0,0602 A3 and A4
+ 0,0602 (A3 = 1) and (A4 = 1)
+ 0,0581 num-of-N((A4 = 1) and (A5 = 1))
+ 0,0545 A3 or A4
+ 0,0545 A2 or A5
+ 0,0545 A1 or A3
+ 0,0520 A3_x_A4
+ 0,0478 A3_x_A5
+ 0,0475 A3
+ 0,0460 A2 or A4
+ 0,0458 A3 and A5
+ 0,0458 A2 and A4
+ 0,0407 A1_x_A4
+ 0,0382 A1 xor A3
+ 0,0382 A1 equ A3
+ 0,0379 A1 or A2
+ 0,0348 A1_x_A2
+ 0,0334 A2 and A5
+ 0,0329 A2_x_A4
+ 0,0303 A2_x_A5
+ 0,0296 A2
+ 0,0292 A4_x_A5
+ 0,0286 A1 xor A4
+ 0,0286 A1 equ A4
+ 0,0256 A1_x_A5
+ 0,0216 A1 xor A2
+ 0,0216 A1 equ A2
+ 0,0214 A1 and A4
+ 0,0202 A2 xor A3
+ 0,0202 A2 equ A3
+ 0,0126 A5
+ 0,0126 A4
+ 0,0126 A1 xor A5
+ 0,0126 A1 equ A5
+ 0,0111 A1 and A5
+ 0,0064 A1 and A3 and A4
+ 0,0064 A1 and A2 and A4
+ 0,0057 A4 xor A5
+ 0,0057 A4 equ A5
+ 0,0039 A3 or A4 or A5
+ 0,0039 A2 or A4 or A5
+ 0,0039 A2 or A3 or A5
+ 0,0039 A1 or A3 or A5
+ 0,0012 A2 or A3
+ -0,0013 A2 or A3 or A4
+ -0,0013 A1 or A3 or A4
+ -0,0013 A1 or A2 or A5
+ -0,0013 A1 or A2 or A3
+ -0,0045 A1 and A3 and A5
+ -0,0045 A1 and A2 and A5
+ -0,0059 A1 or A2 or A4
+ -0,0105 A2 impl A3
+ -0,0147 A4 or A5
+ -0,0183 A4 impl A5
+ -0,0214 A1 or A4 or A5
+ -0,0214 A1 and A2 and A3
+ -0,0232 A1 or A4
+ -0,0264 A3 impl A5
+ -0,0264 A1 or A5
+ -0,0268 A1
+ -0,0278 A1 impl A3
+ -0,0278 A1 impl A2
+ -0,0286 A1 and A3
+ -0,0286 A1 and A2
+ -0,0286 A3 impl A4
+ -0,0286 A2 impl A5
+ -0,0291 A6
+ -0,0299 A2 impl A4
+ -0,0318 A3 xor A4
+ -0,0318 A3 equ A4
+ -0,0318 A2 xor A4
+ -0,0318 A2 equ A4
+ -0,0324 A3 xor A5
+ -0,0324 A3 equ A5
+ -0,0324 A2 xor A5
+ -0,0324 A2 equ A5
+MDL (param. search)
+The best parameter when using J48: MDL@0.25
+MDL (param. search)
+The best parameter when using NaiveBayes: MDL@0.0
+MDL (param. search)
+The best parameter when using SMO: MDL@0.0
+MDL (param. search)
+The best parameter when using SMO: MDL@0.5
+MDL (param. search)
+The best parameter when using IBk: MDL@0.0
+MDL (param. search)
+The best parameter when using FURIA: MDL@0.0
+MDL (param. search)
+The best parameter when using RandomForest: MDL@0.0
+								--------------
+									Fold  5
+								--------------
+Feature evaluation: MDL (All features dataset) - After CI
+ 0,2625 (A3 = 1) and (A2 = 1) and (A1 = 0)
+ 0,2189 A1 and A4 and A5
+ 0,2189 (A4 = 1) and (A5 = 1) and (A1 = 1)
+ 0,2118 num-of-N((A3 = 1) and (A2 = 1) and (A1 = 0))
+ 0,1770 num-of-N((A4 = 1) and (A5 = 1) and (A1 = 1))
+ 0,1529 A4 and A5
+ 0,1529 (A5 = 1) and (A4 = 1)
+ 0,1529 (A4 = 1) and (A5 = 1)
+ 0,1459 A2 and A3
+ 0,1459 (A3 = 1) and (A2 = 1)
+ 0,1316 A3 and A4 and A5
+ 0,1197 num-of-N((A5 = 1) and (A4 = 1))
+ 0,1197 num-of-N((A4 = 1) and (A5 = 1))
+ 0,1154 num-of-N((A3 = 1) and (A2 = 1))
+ 0,1045 num-of-N((A3 = 1) and (A4 = 1))
+ 0,0995 A2 and A4 and A5
+ 0,0995 A2 and A3 and A5
+ 0,0995 A2 and A3 and A4
+ 0,0901 A4_x_A5
+ 0,0873 A2_x_A3
+ 0,0854 num-of-N((A4 = 1) and (A2 = 1))
+ 0,0854 num-of-N((A3 = 1) and (A5 = 1))
+ 0,0812 A3_x_A4
+ 0,0794 A3 or A4
+ 0,0794 A1 impl A4
+ 0,0776 A3 and A4
+ 0,0776 (A3 = 1) and (A4 = 1)
+ 0,0776 (A3 = 1) and (A1 = 0)
+ 0,0750 A1_x_A3
+ 0,0697 A3 or A5
+ 0,0697 A2 or A4
+ 0,0697 A1 or A3
+ 0,0640 A1_x_A4
+ 0,0638 A3_x_A5
+ 0,0619 A2_x_A4
+ 0,0619 A3 and A5
+ 0,0619 A2 and A4
+ 0,0619 (A4 = 1) and (A2 = 1)
+ 0,0619 (A3 = 1) and (A5 = 1)
+ 0,0603 A2 or A5
+ 0,0603 A1 impl A5
+ 0,0580 A3
+ 0,0529 num-of-N((A3 = 1) and (A1 = 0))
+ 0,0514 A1 or A2
+ 0,0497 A1 and A4
+ 0,0497 (A4 = 1) and (A1 = 1)
+ 0,0481 A2 and A5
+ 0,0450 A2_x_A5
+ 0,0390 A1_x_A2
+ 0,0389 A4
+ 0,0387 A2
+ 0,0341 num-of-N((A4 = 1) and (A1 = 1))
+ 0,0309 A1_x_A5
+ 0,0298 A4 xor A5
+ 0,0298 A4 equ A5
+ 0,0298 A1 xor A4
+ 0,0298 A1 xor A3
+ 0,0298 A1 equ A4
+ 0,0298 A1 equ A3
+ 0,0244 A1 and A5
+ 0,0231 A1 and A3 and A4
+ 0,0231 A1 and A2 and A4
+ 0,0215 A5
+ 0,0139 A2 xor A3
+ 0,0139 A2 equ A3
+ 0,0139 A1 xor A5
+ 0,0139 A1 xor A2
+ 0,0139 A1 equ A5
+ 0,0139 A1 equ A2
+ 0,0132 A3 or A4 or A5
+ 0,0132 A2 or A3 or A5
+ 0,0132 A2 or A3 or A4
+ 0,0132 A1 or A3 or A5
+ 0,0132 A1 or A3 or A4
+ 0,0119 A2 or A3
+ 0,0095 A1 and A3 and A5
+ 0,0095 A1 and A2 and A5
+ 0,0070 A2 or A4 or A5
+ 0,0070 A1 or A2 or A5
+ 0,0070 A1 or A2 or A4
+ 0,0070 A1 or A2 or A3
+ -0,0107 A4 or A5
+ -0,0107 A2 impl A3
+ -0,0148 A4 impl A5
+ -0,0215 A1 or A4 or A5
+ -0,0237 A1 and A2 and A3
+ -0,0269 A3 impl A5
+ -0,0269 A1 impl A3
+ -0,0269 A1 impl A2
+ -0,0285 A3 impl A4
+ -0,0285 A2 impl A5
+ -0,0285 A1 or A5
+ -0,0285 A1 or A4
+ -0,0285 A1 and A3
+ -0,0285 A1 and A2
+ -0,0292 A6
+ -0,0293 A2 impl A4
+ -0,0307 A1
+ -0,0315 A3 xor A5
+ -0,0315 A3 xor A4
+ -0,0315 A3 equ A5
+ -0,0315 A3 equ A4
+ -0,0315 A2 xor A5
+ -0,0315 A2 xor A4
+ -0,0315 A2 equ A5
+ -0,0315 A2 equ A4
+MDL (param. search)
+The best parameter when using J48: MDL@0.25
+MDL (param. search)
+The best parameter when using NaiveBayes: MDL@0.0
+MDL (param. search)
+The best parameter when using SMO: MDL@0.0
+MDL (param. search)
+The best parameter when using SMO: MDL@0.0
+MDL (param. search)
+The best parameter when using IBk: MDL@0.25
+MDL (param. search)
+The best parameter when using FURIA: MDL@0.0
+MDL (param. search)
+The best parameter when using RandomForest: MDL@0.0
+								--------------
+									Fold  6
+								--------------
+Feature evaluation: MDL (All features dataset) - After CI
+ 0,2625 A1 and A4 and A5
+ 0,2625 (A5 = 1) and (A4 = 1) and (A1 = 1)
+ 0,2625 (A4 = 1) and (A5 = 1) and (A1 = 1)
+ 0,2391 num-of-N((A5 = 1) and (A4 = 1) and (A1 = 1))
+ 0,2391 num-of-N((A4 = 1) and (A5 = 1) and (A1 = 1))
+ 0,2189 (A3 = 1) and (A2 = 1) and (A1 = 0)
+ 0,1773 num-of-N((A3 = 1) and (A2 = 1) and (A1 = 0))
+ 0,1297 A4 and A5
+ 0,1297 (A5 = 1) and (A4 = 1)
+ 0,1297 (A4 = 1) and (A5 = 1)
+ 0,1095 A2 and A3
+ 0,1095 (A3 = 1) and (A2 = 1)
+ 0,0988 num-of-N((A5 = 1) and (A4 = 1))
+ 0,0988 num-of-N((A4 = 1) and (A5 = 1))
+ 0,0972 A3 and A4 and A5
+ 0,0794 A1 or A3
+ 0,0767 num-of-N((A3 = 1) and (A2 = 1))
+ 0,0697 A3 or A4
+ 0,0685 A2 and A4 and A5
+ 0,0685 A2 and A3 and A5
+ 0,0685 A2 and A3 and A4
+ 0,0684 A4_x_A5
+ 0,0640 A1_x_A3
+ 0,0619 A1 and A4
+ 0,0619 (A4 = 1) and (A1 = 1)
+ 0,0603 A3 or A5
+ 0,0603 A2 or A5
+ 0,0603 A2 or A4
+ 0,0603 A1 or A2
+ 0,0603 A1 impl A4
+ 0,0561 A1_x_A4
+ 0,0524 num-of-N((A4 = 1) and (A1 = 1))
+ 0,0514 A1 impl A5
+ 0,0497 (A3 = 1) and (A1 = 0)
+ 0,0491 A2_x_A3
+ 0,0481 A1 and A5
+ 0,0480 A1 xor A4
+ 0,0480 A1 equ A4
+ 0,0466 A3_x_A4
+ 0,0395 A3_x_A5
+ 0,0392 num-of-N((A3 = 1) and (A1 = 0))
+ 0,0390 A1_x_A5
+ 0,0389 A4 xor A5
+ 0,0389 A4 equ A5
+ 0,0389 A1 xor A3
+ 0,0389 A1 equ A3
+ 0,0388 A2_x_A4
+ 0,0387 A1 xor A5
+ 0,0387 A1 equ A5
+ 0,0361 A3 and A5
+ 0,0361 A3 and A4
+ 0,0361 A2 and A4
+ 0,0309 A2_x_A5
+ 0,0309 A1_x_A2
+ 0,0298 A3
+ 0,0244 A2 and A5
+ 0,0231 A1 and A2 and A4
+ 0,0215 A4
+ 0,0215 A2
+ 0,0139 A5
+ 0,0139 A1 xor A2
+ 0,0139 A1 equ A2
+ 0,0132 A2 or A3 or A5
+ 0,0132 A2 or A3 or A4
+ 0,0132 A1 or A3 or A5
+ 0,0132 A1 or A3 or A4
+ 0,0132 A1 or A2 or A3
+ 0,0095 A1 and A3 and A5
+ 0,0095 A1 and A3 and A4
+ 0,0095 A1 and A2 and A5
+ 0,0070 A3 or A4 or A5
+ 0,0070 A1 or A2 or A5
+ 0,0070 A1 or A2 or A4
+ 0,0069 A2 xor A3
+ 0,0069 A2 equ A3
+ 0,0014 A2 or A4 or A5
+ -0,0060 A2 or A3
+ -0,0107 A4 impl A5
+ -0,0148 A2 impl A3
+ -0,0183 A4 or A5
+ -0,0215 A1 or A4 or A5
+ -0,0237 A1 and A2 and A3
+ -0,0269 A3 impl A5
+ -0,0269 A3 impl A4
+ -0,0269 A2 impl A5
+ -0,0269 A1 impl A3
+ -0,0269 A1 and A2
+ -0,0285 A2 impl A4
+ -0,0285 A1 or A5
+ -0,0285 A1 or A4
+ -0,0285 A1 impl A2
+ -0,0285 A1 and A3
+ -0,0307 A3 xor A4
+ -0,0307 A3 equ A4
+ -0,0307 A2 xor A5
+ -0,0307 A2 equ A5
+ -0,0307 A1
+ -0,0315 A6
+ -0,0315 A3 xor A5
+ -0,0315 A3 equ A5
+ -0,0315 A2 xor A4
+ -0,0315 A2 equ A4
+MDL (param. search)
+The best parameter when using J48: MDL@0.25
+MDL (param. search)
+The best parameter when using NaiveBayes: MDL@0.0
+MDL (param. search)
+The best parameter when using SMO: MDL@0.0
+MDL (param. search)
+The best parameter when using SMO: MDL@0.5
+MDL (param. search)
+The best parameter when using IBk: MDL@0.25
+MDL (param. search)
+The best parameter when using FURIA: MDL@0.0
+MDL (param. search)
+The best parameter when using RandomForest: MDL@0.25
+								--------------
+									Fold  7
+								--------------
+Feature evaluation: MDL (All features dataset) - After CI
+ 0,2625 A1 and A4 and A5
+ 0,2625 (A5 = 1) and (A4 = 1) and (A1 = 1)
+ 0,2189 (A2 = 1) and (A3 = 1) and (A1 = 0)
+ 0,2105 num-of-N((A5 = 1) and (A4 = 1) and (A1 = 1))
+ 0,1813 num-of-N((A2 = 1) and (A3 = 1) and (A1 = 0))
+ 0,1681 A4 and A5
+ 0,1681 (A5 = 1) and (A4 = 1)
+ 0,1359 num-of-N((A5 = 1) and (A4 = 1))
+ 0,1297 A2 and A3
+ 0,1297 (A2 = 1) and (A3 = 1)
+ 0,1064 A4_x_A5
+ 0,0995 A3 and A4 and A5
+ 0,0995 A2 and A4 and A5
+ 0,0995 A2 and A3 and A5
+ 0,0995 A2 and A3 and A4
+ 0,0975 num-of-N((A2 = 1) and (A3 = 1))
+ 0,0920 num-of-N((A5 = 1) and (A2 = 1))
+ 0,0794 A2 or A5
+ 0,0776 A1 and A5
+ 0,0776 (A5 = 1) and (A1 = 1)
+ 0,0750 A1_x_A5
+ 0,0700 A2_x_A5
+ 0,0697 A3 or A5
+ 0,0697 A2 or A4
+ 0,0697 A1 or A2
+ 0,0697 A1 impl A5
+ 0,0680 A2_x_A3
+ 0,0619 A2 and A5
+ 0,0619 (A5 = 1) and (A2 = 1)
+ 0,0603 A1 or A3
+ 0,0580 A5
+ 0,0551 A3_x_A5
+ 0,0529 num-of-N((A5 = 1) and (A1 = 1))
+ 0,0518 A2_x_A4
+ 0,0514 A3 or A4
+ 0,0514 A1 impl A4
+ 0,0481 A3 and A5
+ 0,0481 A3 and A4
+ 0,0481 A2 and A4
+ 0,0481 A1 and A4
+ 0,0466 A1_x_A2
+ 0,0390 A3_x_A4
+ 0,0390 A1_x_A4
+ 0,0387 A4
+ 0,0309 A1_x_A3
+ 0,0298 A4 xor A5
+ 0,0298 A4 equ A5
+ 0,0298 A2 xor A3
+ 0,0298 A2 equ A3
+ 0,0298 A2
+ 0,0298 A1 xor A5
+ 0,0298 A1 equ A5
+ 0,0231 A1 and A2 and A5
+ 0,0215 A1 xor A3
+ 0,0215 A1 xor A2
+ 0,0215 A1 equ A3
+ 0,0215 A1 equ A2
+ 0,0139 A3
+ 0,0139 A1 xor A4
+ 0,0139 A1 equ A4
+ 0,0132 A2 or A4 or A5
+ 0,0132 A2 or A3 or A5
+ 0,0132 A1 or A2 or A5
+ 0,0132 A1 or A2 or A4
+ 0,0095 A1 and A3 and A5
+ 0,0095 A1 and A3 and A4
+ 0,0095 A1 and A2 and A4
+ 0,0070 A3 or A4 or A5
+ 0,0070 A2 or A3 or A4
+ 0,0070 A1 or A3 or A5
+ 0,0070 A1 or A3 or A4
+ 0,0070 A1 or A2 or A3
+ 0,0057 A4 or A5
+ -0,0060 A4 impl A5
+ -0,0148 A2 or A3
+ -0,0148 A2 impl A3
+ -0,0201 A1 or A4 or A5
+ -0,0215 A1 and A2 and A3
+ -0,0269 A1 impl A3
+ -0,0269 A1 and A2
+ -0,0269 A3 impl A5
+ -0,0269 A3 impl A4
+ -0,0269 A1 or A5
+ -0,0269 A1 or A4
+ -0,0272 A2 impl A4
+ -0,0275 A2 impl A5
+ -0,0285 A1 impl A2
+ -0,0285 A1 and A3
+ -0,0307 A3 xor A4
+ -0,0307 A3 equ A4
+ -0,0307 A1
+ -0,0315 A6
+ -0,0317 A3 xor A5
+ -0,0317 A3 equ A5
+ -0,0317 A2 xor A5
+ -0,0317 A2 xor A4
+ -0,0317 A2 equ A5
+ -0,0317 A2 equ A4
+MDL (param. search)
+The best parameter when using J48: MDL@0.25
+MDL (param. search)
+The best parameter when using NaiveBayes: MDL@0.25
+MDL (param. search)
+The best parameter when using SMO: MDL@0.0
+MDL (param. search)
+The best parameter when using SMO: MDL@0.0
+MDL (param. search)
+The best parameter when using IBk: MDL@0.0
+MDL (param. search)
+The best parameter when using FURIA: MDL@0.25
+MDL (param. search)
+The best parameter when using RandomForest: MDL@0.0
+								--------------
+									Fold  8
+								--------------
+Feature evaluation: MDL (All features dataset) - After CI
+ 0,2625 A1 and A4 and A5
+ 0,2625 (A5 = 1) and (A4 = 1) and (A1 = 1)
+ 0,2189 (A3 = 1) and (A2 = 1) and (A1 = 0)
+ 0,2152 num-of-N((A5 = 1) and (A4 = 1) and (A1 = 1))
+ 0,1813 num-of-N((A3 = 1) and (A2 = 1) and (A1 = 0))
+ 0,1459 A4 and A5
+ 0,1459 (A5 = 1) and (A4 = 1)
+ 0,1119 num-of-N((A5 = 1) and (A4 = 1))
+ 0,1095 A2 and A3
+ 0,1095 (A3 = 1) and (A2 = 1)
+ 0,1095 (A2 = 1) and (A3 = 1)
+ 0,0995 A3 and A4 and A5
+ 0,0995 A2 and A4 and A5
+ 0,0995 A2 and A3 and A5
+ 0,0983 num-of-N((A5 = 1) and (A3 = 1))
+ 0,0873 num-of-N((A3 = 1) and (A4 = 1))
+ 0,0843 A4_x_A5
+ 0,0794 A3 or A4
+ 0,0794 A1 or A3
+ 0,0776 A3 and A5
+ 0,0776 A1 and A4
+ 0,0776 (A5 = 1) and (A3 = 1)
+ 0,0776 (A4 = 1) and (A1 = 1)
+ 0,0769 num-of-N((A3 = 1) and (A2 = 1))
+ 0,0769 num-of-N((A2 = 1) and (A3 = 1))
+ 0,0750 A1_x_A4
+ 0,0741 A3_x_A5
+ 0,0697 A3 or A5
+ 0,0697 A1 impl A4
+ 0,0694 num-of-N((A4 = 1) and (A1 = 1))
+ 0,0685 A2 and A3 and A4
+ 0,0640 A1_x_A3
+ 0,0640 A3_x_A4
+ 0,0619 A1 and A5
+ 0,0619 (A5 = 1) and (A1 = 1)
+ 0,0603 A2 or A4
+ 0,0603 A1 or A2
+ 0,0603 A1 impl A5
+ 0,0580 A1 xor A4
+ 0,0580 A1 equ A4
+ 0,0561 A1_x_A5
+ 0,0514 A2 or A5
+ 0,0500 A2_x_A3
+ 0,0497 A3 and A4
+ 0,0497 (A3 = 1) and (A4 = 1)
+ 0,0497 (A3 = 1) and (A1 = 0)
+ 0,0481 A2 and A5
+ 0,0480 A5
+ 0,0412 A2_x_A5
+ 0,0389 A3
+ 0,0368 num-of-N((A5 = 1) and (A1 = 1))
+ 0,0341 num-of-N((A3 = 1) and (A1 = 0))
+ 0,0323 A1_x_A2
+ 0,0323 A2_x_A4
+ 0,0301 A4 xor A5
+ 0,0301 A4 equ A5
+ 0,0298 A4
+ 0,0298 A1 xor A3
+ 0,0298 A1 xor A2
+ 0,0298 A1 equ A3
+ 0,0298 A1 equ A2
+ 0,0244 A2 and A4
+ 0,0231 A1 and A3 and A5
+ 0,0231 A1 and A3 and A4
+ 0,0215 A1 xor A5
+ 0,0215 A1 equ A5
+ 0,0139 A2 xor A3
+ 0,0139 A2 equ A3
+ 0,0132 A3 or A4 or A5
+ 0,0132 A2 or A4 or A5
+ 0,0132 A2 or A3 or A4
+ 0,0132 A1 or A3 or A5
+ 0,0132 A1 or A3 or A4
+ 0,0132 A1 or A2 or A3
+ 0,0095 A1 and A2 and A5
+ 0,0095 A1 and A2 and A4
+ 0,0070 A2 or A3 or A5
+ 0,0070 A1 or A2 or A5
+ 0,0070 A1 or A2 or A4
+ 0,0069 A2
+ -0,0000 A4 impl A5
+ -0,0060 A4 or A5
+ -0,0060 A2 impl A3
+ -0,0107 A2 or A3
+ -0,0237 A1 or A4 or A5
+ -0,0237 A1 and A2 and A3
+ -0,0244 A1 impl A2
+ -0,0256 A2 impl A5
+ -0,0269 A3 impl A4
+ -0,0269 A1 and A3
+ -0,0269 A1 or A5
+ -0,0275 A3 impl A5
+ -0,0285 A1 or A4
+ -0,0285 A1 impl A3
+ -0,0293 A2 impl A4
+ -0,0293 A1 and A2
+ -0,0307 A3 xor A5
+ -0,0307 A3 xor A4
+ -0,0307 A3 equ A5
+ -0,0307 A3 equ A4
+ -0,0307 A2 xor A5
+ -0,0307 A2 xor A4
+ -0,0307 A2 equ A5
+ -0,0307 A2 equ A4
+ -0,0307 A1
+ -0,0315 A6
+MDL (param. search)
+The best parameter when using J48: MDL@0.0
+MDL (param. search)
+The best parameter when using NaiveBayes: MDL@0.25
+MDL (param. search)
+The best parameter when using SMO: MDL@0.0
+MDL (param. search)
+The best parameter when using SMO: MDL@0.0
+MDL (param. search)
+The best parameter when using IBk: MDL@0.25
+MDL (param. search)
+The best parameter when using FURIA: MDL@0.0
+MDL (param. search)
+The best parameter when using RandomForest: MDL@0.0
+								--------------
+									Fold  9
+								--------------
+Feature evaluation: MDL (All features dataset) - After CI
+ 0,2815 (A2 = 1) and (A3 = 1) and (A1 = 0)
+ 0,2344 num-of-N((A2 = 1) and (A3 = 1) and (A1 = 0))
+ 0,1925 A2 and A3
+ 0,1925 (A2 = 1) and (A3 = 1)
+ 0,1908 A1 and A4 and A5
+ 0,1908 (A5 = 1) and (A4 = 1) and (A1 = 1)
+ 0,1600 num-of-N((A2 = 1) and (A3 = 1))
+ 0,1499 num-of-N((A5 = 1) and (A4 = 1) and (A1 = 1))
+ 0,1437 A2 and A3 and A5
+ 0,1267 A2_x_A3
+ 0,1116 A4 and A5
+ 0,1116 (A5 = 1) and (A4 = 1)
+ 0,1116 (A4 = 1) and (A5 = 1)
+ 0,1110 A2 and A3 and A4
+ 0,1067 A2 and A4 and A5
+ 0,0993 num-of-N((A2 = 1) and (A5 = 1))
+ 0,0929 (A2 = 1) and (A1 = 0)
+ 0,0818 A1_x_A2
+ 0,0783 num-of-N((A5 = 1) and (A4 = 1))
+ 0,0783 num-of-N((A4 = 1) and (A5 = 1))
+ 0,0781 A2 and A5
+ 0,0781 (A2 = 1) and (A5 = 1)
+ 0,0775 A3 and A4 and A5
+ 0,0763 A2_x_A5
+ 0,0700 num-of-N((A2 = 1) and (A1 = 0))
+ 0,0682 A2 or A5
+ 0,0682 A2 or A4
+ 0,0682 A1 or A2
+ 0,0682 A1 impl A5
+ 0,0647 A2 xor A3
+ 0,0647 A2 equ A3
+ 0,0605 A2
+ 0,0593 A3 or A5
+ 0,0557 A2_x_A4
+ 0,0508 A3 or A4
+ 0,0508 A1 or A3
+ 0,0508 A1 impl A4
+ 0,0488 A4_x_A5
+ 0,0475 A3 and A5
+ 0,0475 A2 and A4
+ 0,0452 A1_x_A5
+ 0,0450 A1_x_A3
+ 0,0440 A3_x_A5
+ 0,0413 A1 xor A2
+ 0,0413 A1 equ A2
+ 0,0351 A3 and A4
+ 0,0349 A1 and A5
+ 0,0327 A3
+ 0,0327 A1 xor A3
+ 0,0327 A1 equ A3
+ 0,0293 A3_x_A4
+ 0,0230 A5
+ 0,0230 A1 xor A5
+ 0,0230 A1 equ A5
+ 0,0220 A1 and A2 and A5
+ 0,0154 A1_x_A4
+ 0,0153 A4 xor A5
+ 0,0153 A4 equ A5
+ 0,0127 A1 and A4
+ 0,0083 A4
+ 0,0083 A1 xor A4
+ 0,0083 A1 equ A4
+ 0,0082 A2 or A4 or A5
+ 0,0082 A2 or A3 or A5
+ 0,0082 A2 or A3 or A4
+ 0,0082 A1 or A2 or A5
+ 0,0082 A1 or A2 or A4
+ 0,0082 A1 or A2 or A3
+ 0,0072 A1 and A3 and A5
+ 0,0027 A3 or A4 or A5
+ 0,0027 A1 or A3 or A5
+ 0,0027 A1 or A3 or A4
+ -0,0037 A1 and A3 and A4
+ -0,0037 A1 and A2 and A4
+ -0,0055 A2 impl A3
+ -0,0120 A4 impl A5
+ -0,0120 A2 or A3
+ -0,0159 A4 or A5
+ -0,0209 A1 or A4 or A5
+ -0,0209 A1 and A2 and A3
+ -0,0223 A2 impl A4
+ -0,0280 A3 impl A4
+ -0,0280 A2 impl A5
+ -0,0280 A1 or A5
+ -0,0280 A1 or A4
+ -0,0280 A1 impl A2
+ -0,0283 A1 and A2
+ -0,0285 A1 impl A3
+ -0,0285 A1 and A3
+ -0,0295 A3 impl A5
+ -0,0298 A1
+ -0,0320 A2 xor A5
+ -0,0320 A2 xor A4
+ -0,0320 A2 equ A5
+ -0,0320 A2 equ A4
+ -0,0323 A6
+ -0,0323 A3 xor A5
+ -0,0323 A3 xor A4
+ -0,0323 A3 equ A5
+ -0,0323 A3 equ A4
+MDL (param. search)
+The best parameter when using J48: MDL@0.25
+MDL (param. search)
+The best parameter when using NaiveBayes: MDL@0.0
+MDL (param. search)
+The best parameter when using SMO: MDL@0.0
+MDL (param. search)
+The best parameter when using SMO: MDL@0.0
+MDL (param. search)
+The best parameter when using IBk: MDL@0.0
+MDL (param. search)
+The best parameter when using FURIA: MDL@0.25
+MDL (param. search)
+The best parameter when using RandomForest: MDL@0.0
+								--------------
+									Fold 10
+								--------------
+Feature evaluation: MDL (All features dataset) - After CI
+ 0,2815 A1 and A4 and A5
+ 0,2815 (A4 = 1) and (A5 = 1) and (A1 = 1)
+ 0,2434 num-of-N((A4 = 1) and (A5 = 1) and (A1 = 1))
+ 0,1908 (A3 = 1) and (A2 = 1) and (A1 = 0)
+ 0,1477 num-of-N((A3 = 1) and (A2 = 1) and (A1 = 0))
+ 0,1332 A2 and A3
+ 0,1332 (A3 = 1) and (A2 = 1)
+ 0,1287 A4 and A5
+ 0,1287 (A4 = 1) and (A5 = 1)
+ 0,1073 num-of-N((A4 = 1) and (A2 = 1) and (A3 = 1))
+ 0,1067 A2 and A3 and A4
+ 0,1067 (A4 = 1) and (A2 = 1) and (A3 = 1)
+ 0,0997 num-of-N((A3 = 1) and (A2 = 1))
+ 0,0945 num-of-N((A4 = 1) and (A5 = 1))
+ 0,0929 A1 and A5
+ 0,0929 (A5 = 1) and (A1 = 1)
+ 0,0912 num-of-N((A5 = 1) and (A1 = 1))
+ 0,0796 A1_x_A5
+ 0,0775 A3 and A4 and A5
+ 0,0775 A2 and A4 and A5
+ 0,0765 A1 and A4
+ 0,0765 (A4 = 1) and (A1 = 1)
+ 0,0765 (A1 = 1) and (A4 = 1)
+ 0,0750 A1 xor A5
+ 0,0750 A1 equ A5
+ 0,0732 A2 and A3 and A5
+ 0,0692 A2_x_A3
+ 0,0682 A3 or A5
+ 0,0682 A2 or A5
+ 0,0656 A4_x_A5
+ 0,0593 A3 or A4
+ 0,0593 A1 or A3
+ 0,0593 A1 or A2
+ 0,0593 A1 impl A5
+ 0,0566 A1_x_A4
+ 0,0565 num-of-N((A4 = 1) and (A1 = 1))
+ 0,0565 num-of-N((A1 = 1) and (A4 = 1))
+ 0,0508 A2 or A4
+ 0,0508 A1 impl A4
+ 0,0477 A1 and A3 and A5
+ 0,0475 A3 and A4
+ 0,0475 A2 and A4
+ 0,0452 A3_x_A5
+ 0,0440 A3_x_A4
+ 0,0413 A1 xor A4
+ 0,0413 A1 equ A4
+ 0,0379 A2_x_A4
+ 0,0372 A2_x_A5
+ 0,0349 A3 and A5
+ 0,0327 A4
+ 0,0291 A1 and A3 and A4
+ 0,0291 A1 and A2 and A5
+ 0,0291 A1 and A2 and A4
+ 0,0247 A4 xor A5
+ 0,0247 A4 equ A5
+ 0,0245 A1_x_A3
+ 0,0231 A1_x_A2
+ 0,0230 A5
+ 0,0230 A3
+ 0,0230 A2 xor A3
+ 0,0230 A2 equ A3
+ 0,0229 A2 and A5
+ 0,0153 A2
+ 0,0083 A1 xor A2
+ 0,0083 A1 equ A2
+ 0,0082 A3 or A4 or A5
+ 0,0082 A2 or A4 or A5
+ 0,0082 A2 or A3 or A5
+ 0,0082 A1 or A3 or A5
+ 0,0082 A1 or A2 or A5
+ 0,0027 A2 or A3 or A4
+ 0,0027 A1 or A3 or A4
+ 0,0027 A1 or A2 or A4
+ 0,0027 A1 or A2 or A3
+ 0,0020 A1 xor A3
+ 0,0020 A1 equ A3
+ -0,0120 A4 or A5
+ -0,0120 A2 impl A3
+ -0,0159 A4 impl A5
+ -0,0159 A2 or A3
+ -0,0162 A1 and A2 and A3
+ -0,0223 A1 and A3
+ -0,0238 A1 or A4 or A5
+ -0,0256 A1 and A2
+ -0,0279 A2 xor A5
+ -0,0279 A2 equ A5
+ -0,0279 A1
+ -0,0280 A3 impl A5
+ -0,0280 A2 impl A5
+ -0,0280 A1 impl A2
+ -0,0283 A3 impl A4
+ -0,0285 A2 impl A4
+ -0,0285 A1 or A4
+ -0,0295 A1 or A5
+ -0,0295 A1 impl A3
+ -0,0298 A6
+ -0,0298 A3 xor A5
+ -0,0298 A3 equ A5
+ -0,0320 A2 xor A4
+ -0,0320 A2 equ A4
+ -0,0323 A3 xor A4
+ -0,0323 A3 equ A4
+MDL (param. search)
+The best parameter when using J48: MDL@0.25
+MDL (param. search)
+The best parameter when using NaiveBayes: MDL@0.0
+MDL (param. search)
+The best parameter when using SMO: MDL@0.0
+MDL (param. search)
+The best parameter when using SMO: MDL@0.0
+MDL (param. search)
+The best parameter when using IBk: MDL@0.0
+MDL (param. search)
+The best parameter when using FURIA: MDL@0.0
+MDL (param. search)
+The best parameter when using RandomForest: MDL@0.25

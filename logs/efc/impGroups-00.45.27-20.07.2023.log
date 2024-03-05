@@ -1,0 +1,41 @@
+dataset: Autos.arff
+*********************************************************************************
+All potential concepts based on thresholds
+	bore compression-ratio horsepower ~#~ normalized-losses num-of-doors width ~#~ engine-location fuel-system compression-ratio ~#~ num-of-doors compression-ratio peak-rpm ~#~ height horsepower highway-mpg ~#~ body-style engine-size city-mpg ~#~ normalized-losses bore horsepower ~#~ curb-weight fuel-system compression-ratio ~#~ length engine-size stroke ~#~ 
+*********************************************************************************
+*********************************************************************************
+All potential concepts based on thresholds
+	width height engine-size ~#~ aspiration engine-location compression-ratio ~#~ engine-type num-of-cylinders highway-mpg ~#~ width height stroke ~#~ curb-weight fuel-system highway-mpg ~#~ fuel-system compression-ratio peak-rpm ~#~ body-style width peak-rpm ~#~ aspiration curb-weight fuel-system ~#~ length compression-ratio horsepower ~#~ 
+*********************************************************************************
+*********************************************************************************
+All potential concepts based on thresholds
+	drive-wheels engine-size price ~#~ engine-location engine-size peak-rpm ~#~ num-of-doors body-style wheel-base ~#~ fuel-type stroke highway-mpg ~#~ fuel-type curb-weight compression-ratio ~#~ normalized-losses aspiration width ~#~ num-of-doors body-style engine-size ~#~ make length highway-mpg ~#~ num-of-doors height engine-type ~#~ 
+*********************************************************************************
+*********************************************************************************
+All potential concepts based on thresholds
+	length engine-size stroke ~#~ engine-location num-of-cylinders horsepower ~#~ wheel-base engine-type engine-size ~#~ make width fuel-system ~#~ fuel-type curb-weight bore ~#~ normalized-losses drive-wheels width ~#~ curb-weight horsepower price ~#~ make fuel-type engine-type ~#~ make engine-location engine-type ~#~ 
+*********************************************************************************
+*********************************************************************************
+All potential concepts based on thresholds
+	aspiration fuel-system highway-mpg ~#~ fuel-type stroke price ~#~ normalized-losses make num-of-doors ~#~ wheel-base width price ~#~ engine-size fuel-system peak-rpm ~#~ make height peak-rpm ~#~ make width stroke ~#~ wheel-base bore compression-ratio ~#~ normalized-losses wheel-base horsepower ~#~ 
+*********************************************************************************
+*********************************************************************************
+All potential concepts based on thresholds
+	compression-ratio horsepower price ~#~ num-of-cylinders stroke horsepower ~#~ normalized-losses wheel-base city-mpg ~#~ fuel-type compression-ratio highway-mpg ~#~ width peak-rpm highway-mpg ~#~ num-of-doors drive-wheels bore ~#~ engine-location horsepower peak-rpm ~#~ fuel-type aspiration engine-size ~#~ num-of-cylinders city-mpg highway-mpg ~#~ 
+*********************************************************************************
+*********************************************************************************
+All potential concepts based on thresholds
+	drive-wheels height horsepower ~#~ width height engine-size ~#~ body-style length engine-size ~#~ aspiration length curb-weight ~#~ drive-wheels wheel-base engine-size ~#~ normalized-losses length engine-size ~#~ wheel-base curb-weight horsepower ~#~ width fuel-system peak-rpm ~#~ make wheel-base width ~#~ 
+*********************************************************************************
+*********************************************************************************
+All potential concepts based on thresholds
+	make aspiration height ~#~ drive-wheels city-mpg price ~#~ engine-type fuel-system bore ~#~ fuel-type engine-size horsepower ~#~ fuel-type num-of-doors engine-size ~#~ normalized-losses bore compression-ratio ~#~ body-style peak-rpm highway-mpg ~#~ normalized-losses fuel-type peak-rpm ~#~ num-of-cylinders fuel-system horsepower ~#~ 
+*********************************************************************************
+*********************************************************************************
+All potential concepts based on thresholds
+	fuel-type engine-size stroke ~#~ body-style length num-of-cylinders ~#~ normalized-losses width highway-mpg ~#~ wheel-base length city-mpg ~#~ height fuel-system city-mpg ~#~ make body-style curb-weight ~#~ aspiration num-of-doors body-style ~#~ engine-location bore horsepower ~#~ normalized-losses drive-wheels engine-location ~#~ 
+*********************************************************************************
+*********************************************************************************
+All potential concepts based on thresholds
+	drive-wheels length city-mpg ~#~ normalized-losses num-of-doors price ~#~ num-of-doors width city-mpg ~#~ num-of-doors wheel-base num-of-cylinders ~#~ body-style wheel-base height ~#~ make engine-location height ~#~ wheel-base height horsepower ~#~ make wheel-base bore ~#~ length engine-size fuel-system ~#~ 
+*********************************************************************************

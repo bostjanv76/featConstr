@@ -1,0 +1,1601 @@
+NEW 	 OLD
+F1L1	EBIT==B1of3 and net_income==B1of3
+F2L1	EBIT==B1of3 and net_income==B2of3
+F3L1	EBIT==B1of3 and net_income==B3of3
+F4L1	EBIT==B2of3 and net_income==B1of3
+F5L1	EBIT==B2of3 and net_income==B2of3
+F6L1	EBIT==B2of3 and net_income==B3of3
+F7L1	EBIT==B3of3 and net_income==B1of3
+F8L1	EBIT==B3of3 and net_income==B2of3
+F9L1	EBIT==B3of3 and net_income==B3of3
+F10L1	EBIT==B1of3 and FFO==B1of3
+F11L1	EBIT==B1of3 and FFO==B2of3
+F12L1	EBIT==B1of3 and FFO==B3of3
+F13L1	EBIT==B2of3 and FFO==B1of3
+F14L1	EBIT==B2of3 and FFO==B2of3
+F15L1	EBIT==B2of3 and FFO==B3of3
+F16L1	EBIT==B3of3 and FFO==B1of3
+F17L1	EBIT==B3of3 and FFO==B2of3
+F18L1	EBIT==B3of3 and FFO==B3of3
+F19L1	equity==B2of2 and debt==B2of2
+F20L1	net_income==B1of3 and equity==B2of2
+F21L1	net_income==B2of3 and equity==B2of2
+F22L1	net_income==B3of3 and equity==B2of2
+F23L1	net_income==B1of3 and debt==B2of2
+F24L1	net_income==B2of3 and debt==B2of2
+F25L1	net_income==B3of3 and debt==B2of2
+F26L1	equity==B2of2 and FFO==B1of3
+F27L1	equity==B2of2 and FFO==B2of3
+F28L1	equity==B2of2 and FFO==B3of3
+F29L1	net_income==B1of3 and FFO==B1of3
+F30L1	net_income==B1of3 and FFO==B3of3
+F31L1	net_income==B2of3 and FFO==B1of3
+F32L1	net_income==B2of3 and FFO==B2of3
+F33L1	net_income==B2of3 and FFO==B3of3
+F34L1	net_income==B3of3 and FFO==B2of3
+F35L1	net_income==B3of3 and FFO==B3of3
+F36L1	interest==B2of2 and equity==B2of2
+F37L1	interest==B2of2 and debt==B2of2
+F38L1	debt==B2of2 and FFO==B1of3
+F39L1	debt==B2of2 and FFO==B2of3
+F40L1	debt==B2of2 and FFO==B3of3
+F41L1	interest==B2of2 and EBIT==B1of3
+F42L1	interest==B2of2 and EBIT==B2of3
+F43L1	interest==B2of2 and EBIT==B3of3
+F44L1	interest==B2of2 and net_income==B1of3
+F45L1	interest==B2of2 and net_income==B2of3
+F46L1	interest==B2of2 and net_income==B3of3
+F47L1	interest==B2of2 and FFO==B1of3
+F48L1	interest==B2of2 and FFO==B2of3
+F49L1	interest==B2of2 and FFO==B3of3
+F50L1	EBIT==B1of3 and equity==B2of2
+F51L1	EBIT==B2of3 and equity==B2of2
+F52L1	EBIT==B3of3 and equity==B2of2
+F53L1	EBIT==B1of3 and debt==B2of2
+F54L1	EBIT==B2of3 and debt==B2of2
+F55L1	EBIT==B3of3 and debt==B2of2
+F56L1	EBIT==B1of3 or net_income==B1of3
+F57L1	EBIT==B1of3 or net_income==B2of3
+F58L1	EBIT==B1of3 or net_income==B3of3
+F59L1	EBIT==B2of3 or net_income==B1of3
+F60L1	EBIT==B2of3 or net_income==B2of3
+F61L1	EBIT==B2of3 or net_income==B3of3
+F62L1	EBIT==B3of3 or net_income==B1of3
+F63L1	EBIT==B3of3 or net_income==B2of3
+F64L1	EBIT==B3of3 or net_income==B3of3
+F65L1	cost_of_labor or interest==B2of2
+F66L1	cost_of_labor or EBIT==B1of3
+F67L1	cost_of_labor or EBIT==B2of3
+F68L1	cost_of_labor or EBIT==B3of3
+F69L1	cost_of_labor or net_income==B1of3
+F70L1	cost_of_labor or net_income==B2of3
+F71L1	cost_of_labor or net_income==B3of3
+F72L1	EBIT==B1of3 or FFO==B1of3
+F73L1	EBIT==B1of3 or FFO==B2of3
+F74L1	EBIT==B1of3 or FFO==B3of3
+F75L1	EBIT==B2of3 or FFO==B1of3
+F76L1	EBIT==B2of3 or FFO==B2of3
+F77L1	EBIT==B2of3 or FFO==B3of3
+F78L1	EBIT==B3of3 or FFO==B1of3
+F79L1	EBIT==B3of3 or FFO==B2of3
+F80L1	EBIT==B3of3 or FFO==B3of3
+F81L1	cost_of_labor or FFO==B1of3
+F82L1	cost_of_labor or FFO==B2of3
+F83L1	cost_of_labor or FFO==B3of3
+F84L1	equity==B2of2 or debt==B2of2
+F85L1	equity==B2of2 or total_oper_liabilities
+F86L1	net_income==B1of3 or equity==B2of2
+F87L1	net_income==B2of3 or equity==B2of2
+F88L1	net_income==B3of3 or equity==B2of2
+F89L1	net_income==B1of3 or debt==B2of2
+F90L1	net_income==B2of3 or debt==B2of2
+F91L1	net_income==B3of3 or debt==B2of2
+F92L1	equity==B2of2 or st_liabilities
+F93L1	equity==B2of2 or inventories
+F94L1	financial_expenses or equity==B2of2
+F95L1	net_income==B1of3 or total_oper_liabilities
+F96L1	net_income==B2of3 or total_oper_liabilities
+F97L1	net_income==B3of3 or total_oper_liabilities
+F98L1	net_income==B1of3 or st_liabilities
+F99L1	net_income==B2of3 or st_liabilities
+F100L1	net_income==B3of3 or st_liabilities
+F101L1	net_income==B1of3 or inventories
+F102L1	net_income==B2of3 or inventories
+F103L1	net_income==B3of3 or inventories
+F104L1	st_liabilities or FFO==B1of3
+F105L1	st_liabilities or FFO==B2of3
+F106L1	st_liabilities or FFO==B3of3
+F107L1	equity==B2of2 or FFO==B1of3
+F108L1	equity==B2of2 or FFO==B2of3
+F109L1	equity==B2of2 or FFO==B3of3
+F110L1	financial_expenses or interest==B2of2
+F111L1	debt==B2of2 or total_oper_liabilities
+F112L1	financial_expenses or net_income==B1of3
+F113L1	financial_expenses or net_income==B2of3
+F114L1	financial_expenses or net_income==B3of3
+F115L1	net_income==B1of3 or FFO==B1of3
+F116L1	net_income==B1of3 or FFO==B2of3
+F117L1	net_income==B1of3 or FFO==B3of3
+F118L1	net_income==B2of3 or FFO==B1of3
+F119L1	net_income==B2of3 or FFO==B2of3
+F120L1	net_income==B2of3 or FFO==B3of3
+F121L1	net_income==B3of3 or FFO==B1of3
+F122L1	net_income==B3of3 or FFO==B2of3
+F123L1	net_income==B3of3 or FFO==B3of3
+F124L1	debt==B2of2 or st_liabilities
+F125L1	debt==B2of2 or inventories
+F126L1	interest==B2of2 or equity==B2of2
+F127L1	financial_expenses or FFO==B1of3
+F128L1	financial_expenses or FFO==B2of3
+F129L1	financial_expenses or FFO==B3of3
+F130L1	interest==B2of2 or debt==B2of2
+F131L1	interest==B2of2 or total_oper_liabilities
+F132L1	interest==B2of2 or st_liabilities
+F133L1	interest==B2of2 or inventories
+F134L1	inventories or FFO==B1of3
+F135L1	inventories or FFO==B2of3
+F136L1	inventories or FFO==B3of3
+F137L1	total_oper_liabilities or FFO==B1of3
+F138L1	total_oper_liabilities or FFO==B2of3
+F139L1	total_oper_liabilities or FFO==B3of3
+F140L1	debt==B2of2 or FFO==B1of3
+F141L1	debt==B2of2 or FFO==B2of3
+F142L1	debt==B2of2 or FFO==B3of3
+F143L1	interest==B2of2 or EBIT==B1of3
+F144L1	interest==B2of2 or EBIT==B2of3
+F145L1	interest==B2of2 or EBIT==B3of3
+F146L1	interest==B2of2 or net_income==B1of3
+F147L1	interest==B2of2 or net_income==B2of3
+F148L1	interest==B2of2 or net_income==B3of3
+F149L1	interest==B2of2 or FFO==B1of3
+F150L1	interest==B2of2 or FFO==B2of3
+F151L1	interest==B2of2 or FFO==B3of3
+F152L1	EBIT==B1of3 or equity==B2of2
+F153L1	EBIT==B2of3 or equity==B2of2
+F154L1	EBIT==B3of3 or equity==B2of2
+F155L1	EBIT==B1of3 or debt==B2of2
+F156L1	EBIT==B2of3 or debt==B2of2
+F157L1	EBIT==B3of3 or debt==B2of2
+F158L1	cost_of_labor or equity==B2of2
+F159L1	EBIT==B1of3 or total_oper_liabilities
+F160L1	EBIT==B2of3 or total_oper_liabilities
+F161L1	EBIT==B3of3 or total_oper_liabilities
+F162L1	cost_of_labor or debt==B2of2
+F163L1	EBIT==B1of3 or st_liabilities
+F164L1	EBIT==B2of3 or st_liabilities
+F165L1	EBIT==B3of3 or st_liabilities
+F166L1	EBIT==B1of3 or inventories
+F167L1	EBIT==B2of3 or inventories
+F168L1	EBIT==B3of3 or inventories
+F169L1	EBIT==B1of3 equ net_income==B1of3
+F170L1	EBIT==B1of3 equ net_income==B2of3
+F171L1	EBIT==B1of3 equ net_income==B3of3
+F172L1	EBIT==B2of3 equ net_income==B1of3
+F173L1	EBIT==B2of3 equ net_income==B2of3
+F174L1	EBIT==B2of3 equ net_income==B3of3
+F175L1	EBIT==B3of3 equ net_income==B1of3
+F176L1	EBIT==B3of3 equ net_income==B2of3
+F177L1	EBIT==B3of3 equ net_income==B3of3
+F178L1	cost_of_labor equ interest==B2of2
+F179L1	cost_of_labor equ EBIT==B1of3
+F180L1	cost_of_labor equ EBIT==B2of3
+F181L1	cost_of_labor equ EBIT==B3of3
+F182L1	cost_of_labor equ net_income==B1of3
+F183L1	cost_of_labor equ net_income==B2of3
+F184L1	cost_of_labor equ net_income==B3of3
+F185L1	EBIT==B1of3 equ FFO==B1of3
+F186L1	EBIT==B1of3 equ FFO==B2of3
+F187L1	EBIT==B1of3 equ FFO==B3of3
+F188L1	EBIT==B2of3 equ FFO==B1of3
+F189L1	EBIT==B2of3 equ FFO==B2of3
+F190L1	EBIT==B2of3 equ FFO==B3of3
+F191L1	EBIT==B3of3 equ FFO==B1of3
+F192L1	EBIT==B3of3 equ FFO==B2of3
+F193L1	EBIT==B3of3 equ FFO==B3of3
+F194L1	cost_of_labor equ FFO==B1of3
+F195L1	cost_of_labor equ FFO==B2of3
+F196L1	cost_of_labor equ FFO==B3of3
+F197L1	equity==B2of2 equ debt==B2of2
+F198L1	equity==B2of2 equ total_oper_liabilities
+F199L1	net_income==B1of3 equ equity==B2of2
+F200L1	net_income==B2of3 equ equity==B2of2
+F201L1	net_income==B3of3 equ equity==B2of2
+F202L1	net_income==B1of3 equ debt==B2of2
+F203L1	net_income==B2of3 equ debt==B2of2
+F204L1	net_income==B3of3 equ debt==B2of2
+F205L1	equity==B2of2 equ st_liabilities
+F206L1	equity==B2of2 equ inventories
+F207L1	financial_expenses equ equity==B2of2
+F208L1	net_income==B1of3 equ total_oper_liabilities
+F209L1	net_income==B2of3 equ total_oper_liabilities
+F210L1	net_income==B3of3 equ total_oper_liabilities
+F211L1	net_income==B1of3 equ st_liabilities
+F212L1	net_income==B2of3 equ st_liabilities
+F213L1	net_income==B3of3 equ st_liabilities
+F214L1	net_income==B1of3 equ inventories
+F215L1	net_income==B2of3 equ inventories
+F216L1	net_income==B3of3 equ inventories
+F217L1	st_liabilities equ FFO==B1of3
+F218L1	st_liabilities equ FFO==B2of3
+F219L1	st_liabilities equ FFO==B3of3
+F220L1	equity==B2of2 equ FFO==B1of3
+F221L1	equity==B2of2 equ FFO==B2of3
+F222L1	equity==B2of2 equ FFO==B3of3
+F223L1	financial_expenses equ interest==B2of2
+F224L1	debt==B2of2 equ total_oper_liabilities
+F225L1	financial_expenses equ net_income==B1of3
+F226L1	financial_expenses equ net_income==B2of3
+F227L1	financial_expenses equ net_income==B3of3
+F228L1	net_income==B1of3 equ FFO==B1of3
+F229L1	net_income==B1of3 equ FFO==B2of3
+F230L1	net_income==B1of3 equ FFO==B3of3
+F231L1	net_income==B2of3 equ FFO==B1of3
+F232L1	net_income==B2of3 equ FFO==B2of3
+F233L1	net_income==B2of3 equ FFO==B3of3
+F234L1	net_income==B3of3 equ FFO==B1of3
+F235L1	net_income==B3of3 equ FFO==B2of3
+F236L1	net_income==B3of3 equ FFO==B3of3
+F237L1	debt==B2of2 equ st_liabilities
+F238L1	debt==B2of2 equ inventories
+F239L1	interest==B2of2 equ equity==B2of2
+F240L1	financial_expenses equ FFO==B1of3
+F241L1	financial_expenses equ FFO==B2of3
+F242L1	financial_expenses equ FFO==B3of3
+F243L1	interest==B2of2 equ debt==B2of2
+F244L1	interest==B2of2 equ total_oper_liabilities
+F245L1	interest==B2of2 equ st_liabilities
+F246L1	interest==B2of2 equ inventories
+F247L1	inventories equ FFO==B1of3
+F248L1	inventories equ FFO==B2of3
+F249L1	inventories equ FFO==B3of3
+F250L1	total_oper_liabilities equ FFO==B1of3
+F251L1	total_oper_liabilities equ FFO==B2of3
+F252L1	total_oper_liabilities equ FFO==B3of3
+F253L1	debt==B2of2 equ FFO==B1of3
+F254L1	debt==B2of2 equ FFO==B2of3
+F255L1	debt==B2of2 equ FFO==B3of3
+F256L1	interest==B2of2 equ EBIT==B1of3
+F257L1	interest==B2of2 equ EBIT==B2of3
+F258L1	interest==B2of2 equ EBIT==B3of3
+F259L1	interest==B2of2 equ net_income==B1of3
+F260L1	interest==B2of2 equ net_income==B2of3
+F261L1	interest==B2of2 equ net_income==B3of3
+F262L1	interest==B2of2 equ FFO==B1of3
+F263L1	interest==B2of2 equ FFO==B2of3
+F264L1	interest==B2of2 equ FFO==B3of3
+F265L1	EBIT==B1of3 equ equity==B2of2
+F266L1	EBIT==B2of3 equ equity==B2of2
+F267L1	EBIT==B3of3 equ equity==B2of2
+F268L1	EBIT==B1of3 equ debt==B2of2
+F269L1	EBIT==B2of3 equ debt==B2of2
+F270L1	EBIT==B3of3 equ debt==B2of2
+F271L1	cost_of_labor equ equity==B2of2
+F272L1	EBIT==B1of3 equ total_oper_liabilities
+F273L1	EBIT==B2of3 equ total_oper_liabilities
+F274L1	EBIT==B3of3 equ total_oper_liabilities
+F275L1	cost_of_labor equ debt==B2of2
+F276L1	EBIT==B1of3 equ st_liabilities
+F277L1	EBIT==B2of3 equ st_liabilities
+F278L1	EBIT==B3of3 equ st_liabilities
+F279L1	EBIT==B1of3 equ inventories
+F280L1	EBIT==B2of3 equ inventories
+F281L1	EBIT==B3of3 equ inventories
+F282L1	EBIT==B1of3 xor net_income==B1of3
+F283L1	EBIT==B1of3 xor net_income==B2of3
+F284L1	EBIT==B1of3 xor net_income==B3of3
+F285L1	EBIT==B2of3 xor net_income==B1of3
+F286L1	EBIT==B2of3 xor net_income==B2of3
+F287L1	EBIT==B2of3 xor net_income==B3of3
+F288L1	EBIT==B3of3 xor net_income==B1of3
+F289L1	EBIT==B3of3 xor net_income==B2of3
+F290L1	EBIT==B3of3 xor net_income==B3of3
+F291L1	cost_of_labor xor interest==B2of2
+F292L1	cost_of_labor xor EBIT==B1of3
+F293L1	cost_of_labor xor EBIT==B2of3
+F294L1	cost_of_labor xor EBIT==B3of3
+F295L1	cost_of_labor xor net_income==B1of3
+F296L1	cost_of_labor xor net_income==B2of3
+F297L1	cost_of_labor xor net_income==B3of3
+F298L1	EBIT==B1of3 xor FFO==B1of3
+F299L1	EBIT==B1of3 xor FFO==B2of3
+F300L1	EBIT==B1of3 xor FFO==B3of3
+F301L1	EBIT==B2of3 xor FFO==B1of3
+F302L1	EBIT==B2of3 xor FFO==B2of3
+F303L1	EBIT==B2of3 xor FFO==B3of3
+F304L1	EBIT==B3of3 xor FFO==B1of3
+F305L1	EBIT==B3of3 xor FFO==B2of3
+F306L1	EBIT==B3of3 xor FFO==B3of3
+F307L1	cost_of_labor xor FFO==B1of3
+F308L1	cost_of_labor xor FFO==B2of3
+F309L1	cost_of_labor xor FFO==B3of3
+F310L1	equity==B2of2 xor debt==B2of2
+F311L1	equity==B2of2 xor total_oper_liabilities
+F312L1	net_income==B1of3 xor equity==B2of2
+F313L1	net_income==B2of3 xor equity==B2of2
+F314L1	net_income==B3of3 xor equity==B2of2
+F315L1	net_income==B1of3 xor debt==B2of2
+F316L1	net_income==B2of3 xor debt==B2of2
+F317L1	net_income==B3of3 xor debt==B2of2
+F318L1	equity==B2of2 xor st_liabilities
+F319L1	equity==B2of2 xor inventories
+F320L1	financial_expenses xor equity==B2of2
+F321L1	net_income==B1of3 xor total_oper_liabilities
+F322L1	net_income==B2of3 xor total_oper_liabilities
+F323L1	net_income==B3of3 xor total_oper_liabilities
+F324L1	net_income==B1of3 xor st_liabilities
+F325L1	net_income==B2of3 xor st_liabilities
+F326L1	net_income==B3of3 xor st_liabilities
+F327L1	net_income==B1of3 xor inventories
+F328L1	net_income==B2of3 xor inventories
+F329L1	net_income==B3of3 xor inventories
+F330L1	st_liabilities xor FFO==B1of3
+F331L1	st_liabilities xor FFO==B2of3
+F332L1	st_liabilities xor FFO==B3of3
+F333L1	equity==B2of2 xor FFO==B1of3
+F334L1	equity==B2of2 xor FFO==B2of3
+F335L1	equity==B2of2 xor FFO==B3of3
+F336L1	financial_expenses xor interest==B2of2
+F337L1	debt==B2of2 xor total_oper_liabilities
+F338L1	financial_expenses xor net_income==B1of3
+F339L1	financial_expenses xor net_income==B2of3
+F340L1	financial_expenses xor net_income==B3of3
+F341L1	net_income==B1of3 xor FFO==B1of3
+F342L1	net_income==B1of3 xor FFO==B2of3
+F343L1	net_income==B1of3 xor FFO==B3of3
+F344L1	net_income==B2of3 xor FFO==B1of3
+F345L1	net_income==B2of3 xor FFO==B2of3
+F346L1	net_income==B2of3 xor FFO==B3of3
+F347L1	net_income==B3of3 xor FFO==B1of3
+F348L1	net_income==B3of3 xor FFO==B2of3
+F349L1	net_income==B3of3 xor FFO==B3of3
+F350L1	debt==B2of2 xor st_liabilities
+F351L1	debt==B2of2 xor inventories
+F352L1	interest==B2of2 xor equity==B2of2
+F353L1	financial_expenses xor FFO==B1of3
+F354L1	financial_expenses xor FFO==B2of3
+F355L1	financial_expenses xor FFO==B3of3
+F356L1	interest==B2of2 xor debt==B2of2
+F357L1	interest==B2of2 xor total_oper_liabilities
+F358L1	interest==B2of2 xor st_liabilities
+F359L1	interest==B2of2 xor inventories
+F360L1	inventories xor FFO==B1of3
+F361L1	inventories xor FFO==B2of3
+F362L1	inventories xor FFO==B3of3
+F363L1	total_oper_liabilities xor FFO==B1of3
+F364L1	total_oper_liabilities xor FFO==B2of3
+F365L1	total_oper_liabilities xor FFO==B3of3
+F366L1	debt==B2of2 xor FFO==B1of3
+F367L1	debt==B2of2 xor FFO==B2of3
+F368L1	debt==B2of2 xor FFO==B3of3
+F369L1	interest==B2of2 xor EBIT==B1of3
+F370L1	interest==B2of2 xor EBIT==B2of3
+F371L1	interest==B2of2 xor EBIT==B3of3
+F372L1	interest==B2of2 xor net_income==B1of3
+F373L1	interest==B2of2 xor net_income==B2of3
+F374L1	interest==B2of2 xor net_income==B3of3
+F375L1	interest==B2of2 xor FFO==B1of3
+F376L1	interest==B2of2 xor FFO==B2of3
+F377L1	interest==B2of2 xor FFO==B3of3
+F378L1	EBIT==B1of3 xor equity==B2of2
+F379L1	EBIT==B2of3 xor equity==B2of2
+F380L1	EBIT==B3of3 xor equity==B2of2
+F381L1	EBIT==B1of3 xor debt==B2of2
+F382L1	EBIT==B2of3 xor debt==B2of2
+F383L1	EBIT==B3of3 xor debt==B2of2
+F384L1	cost_of_labor xor equity==B2of2
+F385L1	EBIT==B1of3 xor total_oper_liabilities
+F386L1	EBIT==B2of3 xor total_oper_liabilities
+F387L1	EBIT==B3of3 xor total_oper_liabilities
+F388L1	cost_of_labor xor debt==B2of2
+F389L1	EBIT==B1of3 xor st_liabilities
+F390L1	EBIT==B2of3 xor st_liabilities
+F391L1	EBIT==B3of3 xor st_liabilities
+F392L1	EBIT==B1of3 xor inventories
+F393L1	EBIT==B2of3 xor inventories
+F394L1	EBIT==B3of3 xor inventories
+F395L1	EBIT==B1of3 impl net_income==B1of3
+F396L1	EBIT==B1of3 impl net_income==B2of3
+F397L1	EBIT==B1of3 impl net_income==B3of3
+F398L1	EBIT==B2of3 impl net_income==B1of3
+F399L1	EBIT==B2of3 impl net_income==B2of3
+F400L1	EBIT==B2of3 impl net_income==B3of3
+F401L1	EBIT==B3of3 impl net_income==B1of3
+F402L1	EBIT==B3of3 impl net_income==B2of3
+F403L1	EBIT==B3of3 impl net_income==B3of3
+F404L1	EBIT==B1of3 impl FFO==B1of3
+F405L1	EBIT==B1of3 impl FFO==B2of3
+F406L1	EBIT==B1of3 impl FFO==B3of3
+F407L1	EBIT==B2of3 impl FFO==B1of3
+F408L1	EBIT==B2of3 impl FFO==B2of3
+F409L1	EBIT==B2of3 impl FFO==B3of3
+F410L1	EBIT==B3of3 impl FFO==B1of3
+F411L1	EBIT==B3of3 impl FFO==B2of3
+F412L1	EBIT==B3of3 impl FFO==B3of3
+F413L1	equity==B2of2 impl debt==B2of2
+F414L1	equity==B2of2 impl total_oper_liabilities
+F415L1	net_income==B1of3 impl equity==B2of2
+F416L1	net_income==B2of3 impl equity==B2of2
+F417L1	net_income==B3of3 impl equity==B2of2
+F418L1	net_income==B1of3 impl debt==B2of2
+F419L1	net_income==B2of3 impl debt==B2of2
+F420L1	net_income==B3of3 impl debt==B2of2
+F421L1	equity==B2of2 impl st_liabilities
+F422L1	equity==B2of2 impl inventories
+F423L1	net_income==B1of3 impl total_oper_liabilities
+F424L1	net_income==B2of3 impl total_oper_liabilities
+F425L1	net_income==B3of3 impl total_oper_liabilities
+F426L1	net_income==B1of3 impl st_liabilities
+F427L1	net_income==B2of3 impl st_liabilities
+F428L1	net_income==B3of3 impl st_liabilities
+F429L1	net_income==B1of3 impl inventories
+F430L1	net_income==B2of3 impl inventories
+F431L1	net_income==B3of3 impl inventories
+F432L1	equity==B2of2 impl FFO==B1of3
+F433L1	equity==B2of2 impl FFO==B2of3
+F434L1	equity==B2of2 impl FFO==B3of3
+F435L1	debt==B2of2 impl total_oper_liabilities
+F436L1	net_income==B1of3 impl FFO==B1of3
+F437L1	net_income==B1of3 impl FFO==B2of3
+F438L1	net_income==B1of3 impl FFO==B3of3
+F439L1	net_income==B2of3 impl FFO==B1of3
+F440L1	net_income==B2of3 impl FFO==B2of3
+F441L1	net_income==B2of3 impl FFO==B3of3
+F442L1	net_income==B3of3 impl FFO==B1of3
+F443L1	net_income==B3of3 impl FFO==B2of3
+F444L1	net_income==B3of3 impl FFO==B3of3
+F445L1	debt==B2of2 impl st_liabilities
+F446L1	debt==B2of2 impl inventories
+F447L1	interest==B2of2 impl equity==B2of2
+F448L1	interest==B2of2 impl debt==B2of2
+F449L1	interest==B2of2 impl total_oper_liabilities
+F450L1	interest==B2of2 impl st_liabilities
+F451L1	interest==B2of2 impl inventories
+F452L1	debt==B2of2 impl FFO==B1of3
+F453L1	debt==B2of2 impl FFO==B2of3
+F454L1	debt==B2of2 impl FFO==B3of3
+F455L1	interest==B2of2 impl EBIT==B1of3
+F456L1	interest==B2of2 impl EBIT==B2of3
+F457L1	interest==B2of2 impl EBIT==B3of3
+F458L1	interest==B2of2 impl net_income==B1of3
+F459L1	interest==B2of2 impl net_income==B2of3
+F460L1	interest==B2of2 impl net_income==B3of3
+F461L1	interest==B2of2 impl FFO==B1of3
+F462L1	interest==B2of2 impl FFO==B2of3
+F463L1	interest==B2of2 impl FFO==B3of3
+F464L1	EBIT==B1of3 impl equity==B2of2
+F465L1	EBIT==B2of3 impl equity==B2of2
+F466L1	EBIT==B3of3 impl equity==B2of2
+F467L1	EBIT==B1of3 impl debt==B2of2
+F468L1	EBIT==B2of3 impl debt==B2of2
+F469L1	EBIT==B3of3 impl debt==B2of2
+F470L1	EBIT==B1of3 impl total_oper_liabilities
+F471L1	EBIT==B2of3 impl total_oper_liabilities
+F472L1	EBIT==B3of3 impl total_oper_liabilities
+F473L1	EBIT==B1of3 impl st_liabilities
+F474L1	EBIT==B2of3 impl st_liabilities
+F475L1	EBIT==B3of3 impl st_liabilities
+F476L1	EBIT==B1of3 impl inventories
+F477L1	EBIT==B2of3 impl inventories
+F478L1	EBIT==B3of3 impl inventories
+F479L1	EBIT==B1of3 and equity==B2of2 and FFO==B1of3
+F480L1	EBIT==B1of3 and equity==B2of2 and FFO==B3of3
+F481L1	EBIT==B2of3 and equity==B2of2 and FFO==B1of3
+F482L1	EBIT==B2of3 and equity==B2of2 and FFO==B2of3
+F483L1	EBIT==B2of3 and equity==B2of2 and FFO==B3of3
+F484L1	EBIT==B3of3 and equity==B2of2 and FFO==B1of3
+F485L1	EBIT==B3of3 and equity==B2of2 and FFO==B2of3
+F486L1	EBIT==B3of3 and equity==B2of2 and FFO==B3of3
+F487L1	interest==B2of2 and EBIT==B1of3 and net_income==B1of3
+F488L1	interest==B2of2 and EBIT==B1of3 and net_income==B3of3
+F489L1	interest==B2of2 and EBIT==B2of3 and net_income==B1of3
+F490L1	interest==B2of2 and EBIT==B2of3 and net_income==B2of3
+F491L1	interest==B2of2 and EBIT==B3of3 and net_income==B1of3
+F492L1	interest==B2of2 and EBIT==B3of3 and net_income==B2of3
+F493L1	interest==B2of2 and EBIT==B3of3 and net_income==B3of3
+F494L1	EBIT==B1of3 and net_income==B1of3 and FFO==B1of3
+F495L1	EBIT==B1of3 and net_income==B1of3 and FFO==B3of3
+F496L1	EBIT==B1of3 and net_income==B2of3 and FFO==B2of3
+F497L1	EBIT==B1of3 and net_income==B3of3 and FFO==B3of3
+F498L1	EBIT==B2of3 and net_income==B1of3 and FFO==B1of3
+F499L1	EBIT==B2of3 and net_income==B2of3 and FFO==B1of3
+F500L1	EBIT==B2of3 and net_income==B2of3 and FFO==B2of3
+F501L1	EBIT==B2of3 and net_income==B2of3 and FFO==B3of3
+F502L1	EBIT==B2of3 and net_income==B3of3 and FFO==B3of3
+F503L1	EBIT==B3of3 and net_income==B1of3 and FFO==B1of3
+F504L1	EBIT==B3of3 and net_income==B1of3 and FFO==B3of3
+F505L1	EBIT==B3of3 and net_income==B2of3 and FFO==B1of3
+F506L1	EBIT==B3of3 and net_income==B2of3 and FFO==B2of3
+F507L1	EBIT==B3of3 and net_income==B2of3 and FFO==B3of3
+F508L1	EBIT==B3of3 and net_income==B3of3 and FFO==B2of3
+F509L1	EBIT==B3of3 and net_income==B3of3 and FFO==B3of3
+F510L1	interest==B2of2 and EBIT==B1of3 and FFO==B1of3
+F511L1	interest==B2of2 and EBIT==B1of3 and FFO==B3of3
+F512L1	interest==B2of2 and EBIT==B2of3 and FFO==B1of3
+F513L1	interest==B2of2 and EBIT==B2of3 and FFO==B2of3
+F514L1	interest==B2of2 and EBIT==B2of3 and FFO==B3of3
+F515L1	interest==B2of2 and EBIT==B3of3 and FFO==B1of3
+F516L1	interest==B2of2 and EBIT==B3of3 and FFO==B2of3
+F517L1	interest==B2of2 and EBIT==B3of3 and FFO==B3of3
+F518L1	EBIT==B1of3 and debt==B2of2 and FFO==B1of3
+F519L1	EBIT==B1of3 and debt==B2of2 and FFO==B2of3
+F520L1	EBIT==B1of3 and debt==B2of2 and FFO==B3of3
+F521L1	EBIT==B2of3 and debt==B2of2 and FFO==B1of3
+F522L1	EBIT==B2of3 and debt==B2of2 and FFO==B2of3
+F523L1	EBIT==B2of3 and debt==B2of2 and FFO==B3of3
+F524L1	EBIT==B3of3 and debt==B2of2 and FFO==B1of3
+F525L1	EBIT==B3of3 and debt==B2of2 and FFO==B2of3
+F526L1	EBIT==B3of3 and debt==B2of2 and FFO==B3of3
+F527L1	interest==B2of2 and equity==B2of2 and debt==B2of2
+F528L1	interest==B2of2 and net_income==B1of3 and equity==B2of2
+F529L1	interest==B2of2 and net_income==B2of3 and equity==B2of2
+F530L1	interest==B2of2 and net_income==B3of3 and equity==B2of2
+F531L1	interest==B2of2 and net_income==B1of3 and debt==B2of2
+F532L1	interest==B2of2 and net_income==B2of3 and debt==B2of2
+F533L1	interest==B2of2 and net_income==B3of3 and debt==B2of2
+F534L1	interest==B2of2 and equity==B2of2 and FFO==B1of3
+F535L1	interest==B2of2 and equity==B2of2 and FFO==B2of3
+F536L1	interest==B2of2 and equity==B2of2 and FFO==B3of3
+F537L1	interest==B2of2 and net_income==B1of3 and FFO==B1of3
+F538L1	interest==B2of2 and net_income==B1of3 and FFO==B3of3
+F539L1	interest==B2of2 and net_income==B2of3 and FFO==B1of3
+F540L1	interest==B2of2 and net_income==B2of3 and FFO==B2of3
+F541L1	interest==B2of2 and net_income==B2of3 and FFO==B3of3
+F542L1	interest==B2of2 and net_income==B3of3 and FFO==B2of3
+F543L1	interest==B2of2 and net_income==B3of3 and FFO==B3of3
+F544L1	interest==B2of2 and debt==B2of2 and FFO==B1of3
+F545L1	interest==B2of2 and debt==B2of2 and FFO==B2of3
+F546L1	interest==B2of2 and debt==B2of2 and FFO==B3of3
+F547L1	net_income==B1of3 and equity==B2of2 and debt==B2of2
+F548L1	net_income==B2of3 and equity==B2of2 and debt==B2of2
+F549L1	net_income==B3of3 and equity==B2of2 and debt==B2of2
+F550L1	net_income==B1of3 and equity==B2of2 and FFO==B1of3
+F551L1	net_income==B1of3 and equity==B2of2 and FFO==B3of3
+F552L1	net_income==B2of3 and equity==B2of2 and FFO==B1of3
+F553L1	net_income==B2of3 and equity==B2of2 and FFO==B2of3
+F554L1	net_income==B2of3 and equity==B2of2 and FFO==B3of3
+F555L1	net_income==B3of3 and equity==B2of2 and FFO==B2of3
+F556L1	net_income==B3of3 and equity==B2of2 and FFO==B3of3
+F557L1	net_income==B1of3 and debt==B2of2 and FFO==B1of3
+F558L1	net_income==B1of3 and debt==B2of2 and FFO==B3of3
+F559L1	net_income==B2of3 and debt==B2of2 and FFO==B1of3
+F560L1	net_income==B2of3 and debt==B2of2 and FFO==B2of3
+F561L1	net_income==B2of3 and debt==B2of2 and FFO==B3of3
+F562L1	net_income==B3of3 and debt==B2of2 and FFO==B2of3
+F563L1	net_income==B3of3 and debt==B2of2 and FFO==B3of3
+F564L1	equity==B2of2 and debt==B2of2 and FFO==B1of3
+F565L1	equity==B2of2 and debt==B2of2 and FFO==B2of3
+F566L1	equity==B2of2 and debt==B2of2 and FFO==B3of3
+F567L1	EBIT==B1of3 and equity==B2of2 and debt==B2of2
+F568L1	EBIT==B2of3 and equity==B2of2 and debt==B2of2
+F569L1	EBIT==B3of3 and equity==B2of2 and debt==B2of2
+F570L1	EBIT==B1of3 and net_income==B1of3 and debt==B2of2
+F571L1	EBIT==B1of3 and net_income==B2of3 and debt==B2of2
+F572L1	EBIT==B1of3 and net_income==B3of3 and debt==B2of2
+F573L1	EBIT==B2of3 and net_income==B1of3 and debt==B2of2
+F574L1	EBIT==B2of3 and net_income==B2of3 and debt==B2of2
+F575L1	EBIT==B2of3 and net_income==B3of3 and debt==B2of2
+F576L1	EBIT==B3of3 and net_income==B1of3 and debt==B2of2
+F577L1	EBIT==B3of3 and net_income==B2of3 and debt==B2of2
+F578L1	EBIT==B3of3 and net_income==B3of3 and debt==B2of2
+F579L1	interest==B2of2 and EBIT==B1of3 and equity==B2of2
+F580L1	interest==B2of2 and EBIT==B2of3 and equity==B2of2
+F581L1	interest==B2of2 and EBIT==B3of3 and equity==B2of2
+F582L1	EBIT==B1of3 and net_income==B1of3 and equity==B2of2
+F583L1	EBIT==B1of3 and net_income==B3of3 and equity==B2of2
+F584L1	EBIT==B2of3 and net_income==B1of3 and equity==B2of2
+F585L1	EBIT==B2of3 and net_income==B2of3 and equity==B2of2
+F586L1	EBIT==B2of3 and net_income==B3of3 and equity==B2of2
+F587L1	EBIT==B3of3 and net_income==B1of3 and equity==B2of2
+F588L1	EBIT==B3of3 and net_income==B2of3 and equity==B2of2
+F589L1	EBIT==B3of3 and net_income==B3of3 and equity==B2of2
+F590L1	interest==B2of2 and EBIT==B1of3 and debt==B2of2
+F591L1	interest==B2of2 and EBIT==B2of3 and debt==B2of2
+F592L1	interest==B2of2 and EBIT==B3of3 and debt==B2of2
+F593L1	EBIT==B1of3 or net_income==B1of3 or total_oper_liabilities
+F594L1	EBIT==B1of3 or net_income==B2of3 or total_oper_liabilities
+F595L1	EBIT==B1of3 or net_income==B3of3 or total_oper_liabilities
+F596L1	EBIT==B2of3 or net_income==B1of3 or total_oper_liabilities
+F597L1	EBIT==B2of3 or net_income==B2of3 or total_oper_liabilities
+F598L1	EBIT==B2of3 or net_income==B3of3 or total_oper_liabilities
+F599L1	EBIT==B3of3 or net_income==B1of3 or total_oper_liabilities
+F600L1	EBIT==B3of3 or net_income==B2of3 or total_oper_liabilities
+F601L1	EBIT==B3of3 or net_income==B3of3 or total_oper_liabilities
+F602L1	debt==B2of2 or total_oper_liabilities or FFO==B1of3
+F603L1	debt==B2of2 or total_oper_liabilities or FFO==B2of3
+F604L1	debt==B2of2 or total_oper_liabilities or FFO==B3of3
+F605L1	cost_of_labor or net_income==B1of3 or st_liabilities
+F606L1	cost_of_labor or net_income==B2of3 or st_liabilities
+F607L1	cost_of_labor or net_income==B3of3 or st_liabilities
+F608L1	interest==B2of2 or EBIT==B1of3 or total_oper_liabilities
+F609L1	interest==B2of2 or EBIT==B2of3 or total_oper_liabilities
+F610L1	interest==B2of2 or EBIT==B3of3 or total_oper_liabilities
+F611L1	EBIT==B1of3 or net_income==B1of3 or inventories
+F612L1	EBIT==B1of3 or net_income==B2of3 or inventories
+F613L1	EBIT==B1of3 or net_income==B3of3 or inventories
+F614L1	EBIT==B2of3 or net_income==B1of3 or inventories
+F615L1	EBIT==B2of3 or net_income==B2of3 or inventories
+F616L1	EBIT==B2of3 or net_income==B3of3 or inventories
+F617L1	EBIT==B3of3 or net_income==B1of3 or inventories
+F618L1	EBIT==B3of3 or net_income==B2of3 or inventories
+F619L1	EBIT==B3of3 or net_income==B3of3 or inventories
+F620L1	interest==B2of2 or EBIT==B1of3 or st_liabilities
+F621L1	interest==B2of2 or EBIT==B2of3 or st_liabilities
+F622L1	interest==B2of2 or EBIT==B3of3 or st_liabilities
+F623L1	EBIT==B1of3 or net_income==B1of3 or st_liabilities
+F624L1	EBIT==B1of3 or net_income==B2of3 or st_liabilities
+F625L1	EBIT==B1of3 or net_income==B3of3 or st_liabilities
+F626L1	EBIT==B2of3 or net_income==B1of3 or st_liabilities
+F627L1	EBIT==B2of3 or net_income==B2of3 or st_liabilities
+F628L1	EBIT==B2of3 or net_income==B3of3 or st_liabilities
+F629L1	EBIT==B3of3 or net_income==B1of3 or st_liabilities
+F630L1	EBIT==B3of3 or net_income==B2of3 or st_liabilities
+F631L1	EBIT==B3of3 or net_income==B3of3 or st_liabilities
+F632L1	interest==B2of2 or EBIT==B1of3 or inventories
+F633L1	interest==B2of2 or EBIT==B2of3 or inventories
+F634L1	interest==B2of2 or EBIT==B3of3 or inventories
+F635L1	cost_of_labor or st_liabilities or FFO==B1of3
+F636L1	cost_of_labor or st_liabilities or FFO==B2of3
+F637L1	cost_of_labor or st_liabilities or FFO==B3of3
+F638L1	EBIT==B1of3 or st_liabilities or FFO==B1of3
+F639L1	EBIT==B1of3 or st_liabilities or FFO==B2of3
+F640L1	EBIT==B1of3 or st_liabilities or FFO==B3of3
+F641L1	EBIT==B2of3 or st_liabilities or FFO==B1of3
+F642L1	EBIT==B2of3 or st_liabilities or FFO==B2of3
+F643L1	EBIT==B2of3 or st_liabilities or FFO==B3of3
+F644L1	EBIT==B3of3 or st_liabilities or FFO==B1of3
+F645L1	EBIT==B3of3 or st_liabilities or FFO==B2of3
+F646L1	EBIT==B3of3 or st_liabilities or FFO==B3of3
+F647L1	cost_of_labor or equity==B2of2 or FFO==B1of3
+F648L1	cost_of_labor or equity==B2of2 or FFO==B2of3
+F649L1	cost_of_labor or equity==B2of2 or FFO==B3of3
+F650L1	cost_of_labor or debt==B2of2 or total_oper_liabilities
+F651L1	EBIT==B1of3 or equity==B2of2 or FFO==B1of3
+F652L1	EBIT==B1of3 or equity==B2of2 or FFO==B2of3
+F653L1	EBIT==B1of3 or equity==B2of2 or FFO==B3of3
+F654L1	EBIT==B2of3 or equity==B2of2 or FFO==B1of3
+F655L1	EBIT==B2of3 or equity==B2of2 or FFO==B2of3
+F656L1	EBIT==B2of3 or equity==B2of2 or FFO==B3of3
+F657L1	EBIT==B3of3 or equity==B2of2 or FFO==B1of3
+F658L1	EBIT==B3of3 or equity==B2of2 or FFO==B2of3
+F659L1	EBIT==B3of3 or equity==B2of2 or FFO==B3of3
+F660L1	cost_of_labor or net_income==B1of3 or FFO==B1of3
+F661L1	cost_of_labor or net_income==B1of3 or FFO==B2of3
+F662L1	cost_of_labor or net_income==B1of3 or FFO==B3of3
+F663L1	cost_of_labor or net_income==B2of3 or FFO==B1of3
+F664L1	cost_of_labor or net_income==B2of3 or FFO==B2of3
+F665L1	cost_of_labor or net_income==B2of3 or FFO==B3of3
+F666L1	cost_of_labor or net_income==B3of3 or FFO==B1of3
+F667L1	cost_of_labor or net_income==B3of3 or FFO==B2of3
+F668L1	cost_of_labor or net_income==B3of3 or FFO==B3of3
+F669L1	interest==B2of2 or EBIT==B1of3 or net_income==B1of3
+F670L1	interest==B2of2 or EBIT==B1of3 or net_income==B2of3
+F671L1	interest==B2of2 or EBIT==B1of3 or net_income==B3of3
+F672L1	interest==B2of2 or EBIT==B2of3 or net_income==B1of3
+F673L1	interest==B2of2 or EBIT==B2of3 or net_income==B2of3
+F674L1	interest==B2of2 or EBIT==B2of3 or net_income==B3of3
+F675L1	interest==B2of2 or EBIT==B3of3 or net_income==B1of3
+F676L1	interest==B2of2 or EBIT==B3of3 or net_income==B2of3
+F677L1	interest==B2of2 or EBIT==B3of3 or net_income==B3of3
+F678L1	net_income==B1of3 or total_oper_liabilities or st_liabilities
+F679L1	net_income==B2of3 or total_oper_liabilities or st_liabilities
+F680L1	net_income==B3of3 or total_oper_liabilities or st_liabilities
+F681L1	net_income==B1of3 or total_oper_liabilities or inventories
+F682L1	net_income==B2of3 or total_oper_liabilities or inventories
+F683L1	net_income==B3of3 or total_oper_liabilities or inventories
+F684L1	cost_of_labor or debt==B2of2 or st_liabilities
+F685L1	EBIT==B1of3 or net_income==B1of3 or FFO==B1of3
+F686L1	EBIT==B1of3 or net_income==B1of3 or FFO==B2of3
+F687L1	EBIT==B1of3 or net_income==B1of3 or FFO==B3of3
+F688L1	EBIT==B1of3 or net_income==B2of3 or FFO==B1of3
+F689L1	EBIT==B1of3 or net_income==B2of3 or FFO==B2of3
+F690L1	EBIT==B1of3 or net_income==B2of3 or FFO==B3of3
+F691L1	EBIT==B1of3 or net_income==B3of3 or FFO==B1of3
+F692L1	EBIT==B1of3 or net_income==B3of3 or FFO==B2of3
+F693L1	EBIT==B1of3 or net_income==B3of3 or FFO==B3of3
+F694L1	EBIT==B2of3 or net_income==B1of3 or FFO==B1of3
+F695L1	EBIT==B2of3 or net_income==B1of3 or FFO==B2of3
+F696L1	EBIT==B2of3 or net_income==B1of3 or FFO==B3of3
+F697L1	EBIT==B2of3 or net_income==B2of3 or FFO==B1of3
+F698L1	EBIT==B2of3 or net_income==B2of3 or FFO==B2of3
+F699L1	EBIT==B2of3 or net_income==B2of3 or FFO==B3of3
+F700L1	EBIT==B2of3 or net_income==B3of3 or FFO==B1of3
+F701L1	EBIT==B2of3 or net_income==B3of3 or FFO==B2of3
+F702L1	EBIT==B2of3 or net_income==B3of3 or FFO==B3of3
+F703L1	EBIT==B3of3 or net_income==B1of3 or FFO==B1of3
+F704L1	EBIT==B3of3 or net_income==B1of3 or FFO==B2of3
+F705L1	EBIT==B3of3 or net_income==B1of3 or FFO==B3of3
+F706L1	EBIT==B3of3 or net_income==B2of3 or FFO==B1of3
+F707L1	EBIT==B3of3 or net_income==B2of3 or FFO==B2of3
+F708L1	EBIT==B3of3 or net_income==B2of3 or FFO==B3of3
+F709L1	EBIT==B3of3 or net_income==B3of3 or FFO==B1of3
+F710L1	EBIT==B3of3 or net_income==B3of3 or FFO==B2of3
+F711L1	EBIT==B3of3 or net_income==B3of3 or FFO==B3of3
+F712L1	debt==B2of2 or total_oper_liabilities or st_liabilities
+F713L1	EBIT==B1of3 or debt==B2of2 or total_oper_liabilities
+F714L1	EBIT==B2of3 or debt==B2of2 or total_oper_liabilities
+F715L1	EBIT==B3of3 or debt==B2of2 or total_oper_liabilities
+F716L1	debt==B2of2 or total_oper_liabilities or inventories
+F717L1	financial_expenses or interest==B2of2 or equity==B2of2
+F718L1	interest==B2of2 or EBIT==B1of3 or FFO==B1of3
+F719L1	interest==B2of2 or EBIT==B1of3 or FFO==B2of3
+F720L1	interest==B2of2 or EBIT==B1of3 or FFO==B3of3
+F721L1	interest==B2of2 or EBIT==B2of3 or FFO==B1of3
+F722L1	interest==B2of2 or EBIT==B2of3 or FFO==B2of3
+F723L1	interest==B2of2 or EBIT==B2of3 or FFO==B3of3
+F724L1	interest==B2of2 or EBIT==B3of3 or FFO==B1of3
+F725L1	interest==B2of2 or EBIT==B3of3 or FFO==B2of3
+F726L1	interest==B2of2 or EBIT==B3of3 or FFO==B3of3
+F727L1	EBIT==B1of3 or debt==B2of2 or st_liabilities
+F728L1	EBIT==B2of3 or debt==B2of2 or st_liabilities
+F729L1	EBIT==B3of3 or debt==B2of2 or st_liabilities
+F730L1	EBIT==B1of3 or debt==B2of2 or inventories
+F731L1	EBIT==B2of3 or debt==B2of2 or inventories
+F732L1	EBIT==B3of3 or debt==B2of2 or inventories
+F733L1	financial_expenses or interest==B2of2 or total_oper_liabilities
+F734L1	financial_expenses or interest==B2of2 or inventories
+F735L1	EBIT==B1of3 or inventories or FFO==B1of3
+F736L1	EBIT==B1of3 or inventories or FFO==B2of3
+F737L1	EBIT==B1of3 or inventories or FFO==B3of3
+F738L1	EBIT==B2of3 or inventories or FFO==B1of3
+F739L1	EBIT==B2of3 or inventories or FFO==B2of3
+F740L1	EBIT==B2of3 or inventories or FFO==B3of3
+F741L1	EBIT==B3of3 or inventories or FFO==B1of3
+F742L1	EBIT==B3of3 or inventories or FFO==B2of3
+F743L1	EBIT==B3of3 or inventories or FFO==B3of3
+F744L1	financial_expenses or total_oper_liabilities or FFO==B1of3
+F745L1	financial_expenses or total_oper_liabilities or FFO==B2of3
+F746L1	financial_expenses or total_oper_liabilities or FFO==B3of3
+F747L1	cost_of_labor or debt==B2of2 or FFO==B1of3
+F748L1	cost_of_labor or debt==B2of2 or FFO==B2of3
+F749L1	cost_of_labor or debt==B2of2 or FFO==B3of3
+F750L1	EBIT==B1of3 or debt==B2of2 or FFO==B1of3
+F751L1	EBIT==B1of3 or debt==B2of2 or FFO==B2of3
+F752L1	EBIT==B1of3 or debt==B2of2 or FFO==B3of3
+F753L1	EBIT==B2of3 or debt==B2of2 or FFO==B1of3
+F754L1	EBIT==B2of3 or debt==B2of2 or FFO==B2of3
+F755L1	EBIT==B2of3 or debt==B2of2 or FFO==B3of3
+F756L1	EBIT==B3of3 or debt==B2of2 or FFO==B1of3
+F757L1	EBIT==B3of3 or debt==B2of2 or FFO==B2of3
+F758L1	EBIT==B3of3 or debt==B2of2 or FFO==B3of3
+F759L1	net_income==B1of3 or total_oper_liabilities or FFO==B1of3
+F760L1	net_income==B1of3 or total_oper_liabilities or FFO==B2of3
+F761L1	net_income==B1of3 or total_oper_liabilities or FFO==B3of3
+F762L1	net_income==B2of3 or total_oper_liabilities or FFO==B1of3
+F763L1	net_income==B2of3 or total_oper_liabilities or FFO==B2of3
+F764L1	net_income==B2of3 or total_oper_liabilities or FFO==B3of3
+F765L1	net_income==B3of3 or total_oper_liabilities or FFO==B1of3
+F766L1	net_income==B3of3 or total_oper_liabilities or FFO==B2of3
+F767L1	net_income==B3of3 or total_oper_liabilities or FFO==B3of3
+F768L1	interest==B2of2 or equity==B2of2 or debt==B2of2
+F769L1	financial_expenses or interest==B2of2 or net_income==B1of3
+F770L1	financial_expenses or interest==B2of2 or net_income==B2of3
+F771L1	financial_expenses or interest==B2of2 or net_income==B3of3
+F772L1	interest==B2of2 or equity==B2of2 or total_oper_liabilities
+F773L1	interest==B2of2 or net_income==B1of3 or equity==B2of2
+F774L1	interest==B2of2 or net_income==B2of3 or equity==B2of2
+F775L1	interest==B2of2 or net_income==B3of3 or equity==B2of2
+F776L1	interest==B2of2 or equity==B2of2 or inventories
+F777L1	interest==B2of2 or net_income==B1of3 or debt==B2of2
+F778L1	interest==B2of2 or net_income==B2of3 or debt==B2of2
+F779L1	interest==B2of2 or net_income==B3of3 or debt==B2of2
+F780L1	interest==B2of2 or equity==B2of2 or st_liabilities
+F781L1	financial_expenses or interest==B2of2 or FFO==B1of3
+F782L1	financial_expenses or interest==B2of2 or FFO==B2of3
+F783L1	financial_expenses or interest==B2of2 or FFO==B3of3
+F784L1	equity==B2of2 or total_oper_liabilities or FFO==B1of3
+F785L1	equity==B2of2 or total_oper_liabilities or FFO==B2of3
+F786L1	equity==B2of2 or total_oper_liabilities or FFO==B3of3
+F787L1	interest==B2of2 or net_income==B1of3 or total_oper_liabilities
+F788L1	interest==B2of2 or net_income==B2of3 or total_oper_liabilities
+F789L1	interest==B2of2 or net_income==B3of3 or total_oper_liabilities
+F790L1	interest==B2of2 or net_income==B1of3 or st_liabilities
+F791L1	interest==B2of2 or net_income==B2of3 or st_liabilities
+F792L1	interest==B2of2 or net_income==B3of3 or st_liabilities
+F793L1	interest==B2of2 or net_income==B1of3 or inventories
+F794L1	interest==B2of2 or net_income==B2of3 or inventories
+F795L1	interest==B2of2 or net_income==B3of3 or inventories
+F796L1	interest==B2of2 or st_liabilities or FFO==B1of3
+F797L1	interest==B2of2 or st_liabilities or FFO==B2of3
+F798L1	interest==B2of2 or st_liabilities or FFO==B3of3
+F799L1	interest==B2of2 or equity==B2of2 or FFO==B1of3
+F800L1	interest==B2of2 or equity==B2of2 or FFO==B2of3
+F801L1	interest==B2of2 or equity==B2of2 or FFO==B3of3
+F802L1	interest==B2of2 or debt==B2of2 or total_oper_liabilities
+F803L1	equity==B2of2 or total_oper_liabilities or st_liabilities
+F804L1	equity==B2of2 or total_oper_liabilities or inventories
+F805L1	interest==B2of2 or debt==B2of2 or st_liabilities
+F806L1	interest==B2of2 or net_income==B1of3 or FFO==B1of3
+F807L1	interest==B2of2 or net_income==B1of3 or FFO==B2of3
+F808L1	interest==B2of2 or net_income==B1of3 or FFO==B3of3
+F809L1	interest==B2of2 or net_income==B2of3 or FFO==B1of3
+F810L1	interest==B2of2 or net_income==B2of3 or FFO==B2of3
+F811L1	interest==B2of2 or net_income==B2of3 or FFO==B3of3
+F812L1	interest==B2of2 or net_income==B3of3 or FFO==B1of3
+F813L1	interest==B2of2 or net_income==B3of3 or FFO==B2of3
+F814L1	interest==B2of2 or net_income==B3of3 or FFO==B3of3
+F815L1	interest==B2of2 or debt==B2of2 or inventories
+F816L1	total_oper_liabilities or st_liabilities or FFO==B1of3
+F817L1	total_oper_liabilities or st_liabilities or FFO==B2of3
+F818L1	total_oper_liabilities or st_liabilities or FFO==B3of3
+F819L1	interest==B2of2 or inventories or FFO==B1of3
+F820L1	interest==B2of2 or inventories or FFO==B2of3
+F821L1	interest==B2of2 or inventories or FFO==B3of3
+F822L1	debt==B2of2 or st_liabilities or FFO==B1of3
+F823L1	debt==B2of2 or st_liabilities or FFO==B2of3
+F824L1	debt==B2of2 or st_liabilities or FFO==B3of3
+F825L1	interest==B2of2 or debt==B2of2 or FFO==B1of3
+F826L1	interest==B2of2 or debt==B2of2 or FFO==B2of3
+F827L1	interest==B2of2 or debt==B2of2 or FFO==B3of3
+F828L1	financial_expenses or equity==B2of2 or total_oper_liabilities
+F829L1	net_income==B1of3 or equity==B2of2 or debt==B2of2
+F830L1	net_income==B2of3 or equity==B2of2 or debt==B2of2
+F831L1	net_income==B3of3 or equity==B2of2 or debt==B2of2
+F832L1	financial_expenses or net_income==B1of3 or equity==B2of2
+F833L1	financial_expenses or net_income==B2of3 or equity==B2of2
+F834L1	financial_expenses or net_income==B3of3 or equity==B2of2
+F835L1	net_income==B1of3 or equity==B2of2 or st_liabilities
+F836L1	net_income==B2of3 or equity==B2of2 or st_liabilities
+F837L1	net_income==B3of3 or equity==B2of2 or st_liabilities
+F838L1	financial_expenses or equity==B2of2 or inventories
+F839L1	net_income==B1of3 or equity==B2of2 or total_oper_liabilities
+F840L1	net_income==B2of3 or equity==B2of2 or total_oper_liabilities
+F841L1	net_income==B3of3 or equity==B2of2 or total_oper_liabilities
+F842L1	financial_expenses or net_income==B1of3 or total_oper_liabilities
+F843L1	financial_expenses or net_income==B2of3 or total_oper_liabilities
+F844L1	financial_expenses or net_income==B3of3 or total_oper_liabilities
+F845L1	total_oper_liabilities or inventories or FFO==B1of3
+F846L1	total_oper_liabilities or inventories or FFO==B2of3
+F847L1	total_oper_liabilities or inventories or FFO==B3of3
+F848L1	net_income==B1of3 or equity==B2of2 or inventories
+F849L1	net_income==B2of3 or equity==B2of2 or inventories
+F850L1	net_income==B3of3 or equity==B2of2 or inventories
+F851L1	financial_expenses or net_income==B1of3 or inventories
+F852L1	financial_expenses or net_income==B2of3 or inventories
+F853L1	financial_expenses or net_income==B3of3 or inventories
+F854L1	net_income==B1of3 or st_liabilities or FFO==B1of3
+F855L1	net_income==B1of3 or st_liabilities or FFO==B2of3
+F856L1	net_income==B1of3 or st_liabilities or FFO==B3of3
+F857L1	net_income==B2of3 or st_liabilities or FFO==B1of3
+F858L1	net_income==B2of3 or st_liabilities or FFO==B2of3
+F859L1	net_income==B2of3 or st_liabilities or FFO==B3of3
+F860L1	net_income==B3of3 or st_liabilities or FFO==B1of3
+F861L1	net_income==B3of3 or st_liabilities or FFO==B2of3
+F862L1	net_income==B3of3 or st_liabilities or FFO==B3of3
+F863L1	debt==B2of2 or inventories or FFO==B1of3
+F864L1	debt==B2of2 or inventories or FFO==B2of3
+F865L1	debt==B2of2 or inventories or FFO==B3of3
+F866L1	financial_expenses or equity==B2of2 or FFO==B1of3
+F867L1	financial_expenses or equity==B2of2 or FFO==B2of3
+F868L1	financial_expenses or equity==B2of2 or FFO==B3of3
+F869L1	net_income==B1of3 or equity==B2of2 or FFO==B1of3
+F870L1	net_income==B1of3 or equity==B2of2 or FFO==B2of3
+F871L1	net_income==B1of3 or equity==B2of2 or FFO==B3of3
+F872L1	net_income==B2of3 or equity==B2of2 or FFO==B1of3
+F873L1	net_income==B2of3 or equity==B2of2 or FFO==B2of3
+F874L1	net_income==B2of3 or equity==B2of2 or FFO==B3of3
+F875L1	net_income==B3of3 or equity==B2of2 or FFO==B1of3
+F876L1	net_income==B3of3 or equity==B2of2 or FFO==B2of3
+F877L1	net_income==B3of3 or equity==B2of2 or FFO==B3of3
+F878L1	financial_expenses or net_income==B1of3 or FFO==B1of3
+F879L1	financial_expenses or net_income==B1of3 or FFO==B2of3
+F880L1	financial_expenses or net_income==B1of3 or FFO==B3of3
+F881L1	financial_expenses or net_income==B2of3 or FFO==B1of3
+F882L1	financial_expenses or net_income==B2of3 or FFO==B2of3
+F883L1	financial_expenses or net_income==B2of3 or FFO==B3of3
+F884L1	financial_expenses or net_income==B3of3 or FFO==B1of3
+F885L1	financial_expenses or net_income==B3of3 or FFO==B2of3
+F886L1	financial_expenses or net_income==B3of3 or FFO==B3of3
+F887L1	net_income==B1of3 or debt==B2of2 or total_oper_liabilities
+F888L1	net_income==B2of3 or debt==B2of2 or total_oper_liabilities
+F889L1	net_income==B3of3 or debt==B2of2 or total_oper_liabilities
+F890L1	cost_of_labor or interest==B2of2 or equity==B2of2
+F891L1	EBIT==B1of3 or total_oper_liabilities or st_liabilities
+F892L1	EBIT==B2of3 or total_oper_liabilities or st_liabilities
+F893L1	EBIT==B3of3 or total_oper_liabilities or st_liabilities
+F894L1	net_income==B1of3 or debt==B2of2 or st_liabilities
+F895L1	net_income==B2of3 or debt==B2of2 or st_liabilities
+F896L1	net_income==B3of3 or debt==B2of2 or st_liabilities
+F897L1	net_income==B1of3 or debt==B2of2 or inventories
+F898L1	net_income==B2of3 or debt==B2of2 or inventories
+F899L1	net_income==B3of3 or debt==B2of2 or inventories
+F900L1	cost_of_labor or interest==B2of2 or debt==B2of2
+F901L1	cost_of_labor or interest==B2of2 or total_oper_liabilities
+F902L1	cost_of_labor or interest==B2of2 or st_liabilities
+F903L1	financial_expenses or inventories or FFO==B1of3
+F904L1	financial_expenses or inventories or FFO==B2of3
+F905L1	financial_expenses or inventories or FFO==B3of3
+F906L1	cost_of_labor or total_oper_liabilities or FFO==B1of3
+F907L1	cost_of_labor or total_oper_liabilities or FFO==B2of3
+F908L1	cost_of_labor or total_oper_liabilities or FFO==B3of3
+F909L1	EBIT==B1of3 or total_oper_liabilities or FFO==B1of3
+F910L1	EBIT==B1of3 or total_oper_liabilities or FFO==B2of3
+F911L1	EBIT==B1of3 or total_oper_liabilities or FFO==B3of3
+F912L1	EBIT==B2of3 or total_oper_liabilities or FFO==B1of3
+F913L1	EBIT==B2of3 or total_oper_liabilities or FFO==B2of3
+F914L1	EBIT==B2of3 or total_oper_liabilities or FFO==B3of3
+F915L1	EBIT==B3of3 or total_oper_liabilities or FFO==B1of3
+F916L1	EBIT==B3of3 or total_oper_liabilities or FFO==B2of3
+F917L1	EBIT==B3of3 or total_oper_liabilities or FFO==B3of3
+F918L1	equity==B2of2 or st_liabilities or FFO==B1of3
+F919L1	equity==B2of2 or st_liabilities or FFO==B2of3
+F920L1	equity==B2of2 or st_liabilities or FFO==B3of3
+F921L1	net_income==B1of3 or inventories or FFO==B1of3
+F922L1	net_income==B1of3 or inventories or FFO==B2of3
+F923L1	net_income==B1of3 or inventories or FFO==B3of3
+F924L1	net_income==B2of3 or inventories or FFO==B1of3
+F925L1	net_income==B2of3 or inventories or FFO==B2of3
+F926L1	net_income==B2of3 or inventories or FFO==B3of3
+F927L1	net_income==B3of3 or inventories or FFO==B1of3
+F928L1	net_income==B3of3 or inventories or FFO==B2of3
+F929L1	net_income==B3of3 or inventories or FFO==B3of3
+F930L1	cost_of_labor or interest==B2of2 or EBIT==B1of3
+F931L1	cost_of_labor or interest==B2of2 or EBIT==B2of3
+F932L1	cost_of_labor or interest==B2of2 or EBIT==B3of3
+F933L1	cost_of_labor or interest==B2of2 or net_income==B1of3
+F934L1	cost_of_labor or interest==B2of2 or net_income==B2of3
+F935L1	cost_of_labor or interest==B2of2 or net_income==B3of3
+F936L1	net_income==B1of3 or debt==B2of2 or FFO==B1of3
+F937L1	net_income==B1of3 or debt==B2of2 or FFO==B2of3
+F938L1	net_income==B1of3 or debt==B2of2 or FFO==B3of3
+F939L1	net_income==B2of3 or debt==B2of2 or FFO==B1of3
+F940L1	net_income==B2of3 or debt==B2of2 or FFO==B2of3
+F941L1	net_income==B2of3 or debt==B2of2 or FFO==B3of3
+F942L1	net_income==B3of3 or debt==B2of2 or FFO==B1of3
+F943L1	net_income==B3of3 or debt==B2of2 or FFO==B2of3
+F944L1	net_income==B3of3 or debt==B2of2 or FFO==B3of3
+F945L1	cost_of_labor or EBIT==B1of3 or debt==B2of2
+F946L1	cost_of_labor or EBIT==B2of3 or debt==B2of2
+F947L1	cost_of_labor or EBIT==B3of3 or debt==B2of2
+F948L1	cost_of_labor or interest==B2of2 or FFO==B1of3
+F949L1	cost_of_labor or interest==B2of2 or FFO==B2of3
+F950L1	cost_of_labor or interest==B2of2 or FFO==B3of3
+F951L1	cost_of_labor or EBIT==B1of3 or equity==B2of2
+F952L1	cost_of_labor or EBIT==B2of3 or equity==B2of2
+F953L1	cost_of_labor or EBIT==B3of3 or equity==B2of2
+F954L1	cost_of_labor or EBIT==B1of3 or total_oper_liabilities
+F955L1	cost_of_labor or EBIT==B2of3 or total_oper_liabilities
+F956L1	cost_of_labor or EBIT==B3of3 or total_oper_liabilities
+F957L1	cost_of_labor or EBIT==B1of3 or st_liabilities
+F958L1	cost_of_labor or EBIT==B2of3 or st_liabilities
+F959L1	cost_of_labor or EBIT==B3of3 or st_liabilities
+F960L1	equity==B2of2 or debt==B2of2 or FFO==B1of3
+F961L1	equity==B2of2 or debt==B2of2 or FFO==B2of3
+F962L1	equity==B2of2 or debt==B2of2 or FFO==B3of3
+F963L1	equity==B2of2 or inventories or FFO==B1of3
+F964L1	equity==B2of2 or inventories or FFO==B2of3
+F965L1	equity==B2of2 or inventories or FFO==B3of3
+F966L1	cost_of_labor or EBIT==B1of3 or net_income==B1of3
+F967L1	cost_of_labor or EBIT==B1of3 or net_income==B2of3
+F968L1	cost_of_labor or EBIT==B1of3 or net_income==B3of3
+F969L1	cost_of_labor or EBIT==B2of3 or net_income==B1of3
+F970L1	cost_of_labor or EBIT==B2of3 or net_income==B2of3
+F971L1	cost_of_labor or EBIT==B2of3 or net_income==B3of3
+F972L1	cost_of_labor or EBIT==B3of3 or net_income==B1of3
+F973L1	cost_of_labor or EBIT==B3of3 or net_income==B2of3
+F974L1	cost_of_labor or EBIT==B3of3 or net_income==B3of3
+F975L1	interest==B2of2 or total_oper_liabilities or st_liabilities
+F976L1	cost_of_labor or EBIT==B1of3 or FFO==B1of3
+F977L1	cost_of_labor or EBIT==B1of3 or FFO==B2of3
+F978L1	cost_of_labor or EBIT==B1of3 or FFO==B3of3
+F979L1	cost_of_labor or EBIT==B2of3 or FFO==B1of3
+F980L1	cost_of_labor or EBIT==B2of3 or FFO==B2of3
+F981L1	cost_of_labor or EBIT==B2of3 or FFO==B3of3
+F982L1	cost_of_labor or EBIT==B3of3 or FFO==B1of3
+F983L1	cost_of_labor or EBIT==B3of3 or FFO==B2of3
+F984L1	cost_of_labor or EBIT==B3of3 or FFO==B3of3
+F985L1	interest==B2of2 or total_oper_liabilities or inventories
+F986L1	equity==B2of2 or debt==B2of2 or total_oper_liabilities
+F987L1	equity==B2of2 or debt==B2of2 or st_liabilities
+F988L1	equity==B2of2 or debt==B2of2 or inventories
+F989L1	interest==B2of2 or total_oper_liabilities or FFO==B1of3
+F990L1	interest==B2of2 or total_oper_liabilities or FFO==B2of3
+F991L1	interest==B2of2 or total_oper_liabilities or FFO==B3of3
+F992L1	cost_of_labor or equity==B2of2 or debt==B2of2
+F993L1	EBIT==B1of3 or equity==B2of2 or debt==B2of2
+F994L1	EBIT==B2of3 or equity==B2of2 or debt==B2of2
+F995L1	EBIT==B3of3 or equity==B2of2 or debt==B2of2
+F996L1	cost_of_labor or equity==B2of2 or total_oper_liabilities
+F997L1	EBIT==B1of3 or equity==B2of2 or total_oper_liabilities
+F998L1	EBIT==B2of3 or equity==B2of2 or total_oper_liabilities
+F999L1	EBIT==B3of3 or equity==B2of2 or total_oper_liabilities
+F1000L1	cost_of_labor or net_income==B1of3 or debt==B2of2
+F1001L1	cost_of_labor or net_income==B2of3 or debt==B2of2
+F1002L1	cost_of_labor or net_income==B3of3 or debt==B2of2
+F1003L1	cost_of_labor or equity==B2of2 or st_liabilities
+F1004L1	cost_of_labor or net_income==B1of3 or equity==B2of2
+F1005L1	cost_of_labor or net_income==B2of3 or equity==B2of2
+F1006L1	cost_of_labor or net_income==B3of3 or equity==B2of2
+F1007L1	EBIT==B1of3 or net_income==B1of3 or debt==B2of2
+F1008L1	EBIT==B1of3 or net_income==B2of3 or debt==B2of2
+F1009L1	EBIT==B1of3 or net_income==B3of3 or debt==B2of2
+F1010L1	EBIT==B2of3 or net_income==B1of3 or debt==B2of2
+F1011L1	EBIT==B2of3 or net_income==B2of3 or debt==B2of2
+F1012L1	EBIT==B2of3 or net_income==B3of3 or debt==B2of2
+F1013L1	EBIT==B3of3 or net_income==B1of3 or debt==B2of2
+F1014L1	EBIT==B3of3 or net_income==B2of3 or debt==B2of2
+F1015L1	EBIT==B3of3 or net_income==B3of3 or debt==B2of2
+F1016L1	interest==B2of2 or EBIT==B1of3 or equity==B2of2
+F1017L1	interest==B2of2 or EBIT==B2of3 or equity==B2of2
+F1018L1	interest==B2of2 or EBIT==B3of3 or equity==B2of2
+F1019L1	EBIT==B1of3 or equity==B2of2 or inventories
+F1020L1	EBIT==B2of3 or equity==B2of2 or inventories
+F1021L1	EBIT==B3of3 or equity==B2of2 or inventories
+F1022L1	cost_of_labor or net_income==B1of3 or total_oper_liabilities
+F1023L1	cost_of_labor or net_income==B2of3 or total_oper_liabilities
+F1024L1	cost_of_labor or net_income==B3of3 or total_oper_liabilities
+F1025L1	EBIT==B1of3 or net_income==B1of3 or equity==B2of2
+F1026L1	EBIT==B1of3 or net_income==B2of3 or equity==B2of2
+F1027L1	EBIT==B1of3 or net_income==B3of3 or equity==B2of2
+F1028L1	EBIT==B2of3 or net_income==B1of3 or equity==B2of2
+F1029L1	EBIT==B2of3 or net_income==B2of3 or equity==B2of2
+F1030L1	EBIT==B2of3 or net_income==B3of3 or equity==B2of2
+F1031L1	EBIT==B3of3 or net_income==B1of3 or equity==B2of2
+F1032L1	EBIT==B3of3 or net_income==B2of3 or equity==B2of2
+F1033L1	EBIT==B3of3 or net_income==B3of3 or equity==B2of2
+F1034L1	interest==B2of2 or EBIT==B1of3 or debt==B2of2
+F1035L1	interest==B2of2 or EBIT==B2of3 or debt==B2of2
+F1036L1	interest==B2of2 or EBIT==B3of3 or debt==B2of2
+F1037L1	EBIT==B1of3 or equity==B2of2 or st_liabilities
+F1038L1	EBIT==B2of3 or equity==B2of2 or st_liabilities
+F1039L1	EBIT==B3of3 or equity==B2of2 or st_liabilities
+F1040L1	(equity >= 4080902) and (net_income >= 1165380)
+F1041L1	(FFO >= 700888) and (debt <= 9677732) and (EBIT >= 425171)
+F1042L1	(net_income >= 345491)
+F1043L1	(net_income >= 78502) and (interest <= 138370)
+F1044L1	(interest <= 24296) and (interest >= 8964) and (inventories >= 181495)
+F1045L1	(net_income >= 102445)
+F1046L1	(net_income >= 78502) and (debt <= 3735270)
+F1047L1	(net_income >= 78502) and (debt <= 3788009)
+F1048L1	(net_income >= 237480) and (interest <= 171415)
+F1049L1	(net_income >= 1002998)
+F1050L1	(net_income >= 97163) and (interest <= 135997)
+F1051L1	(FFO >= 688731) and (debt <= 4516999)
+F1052L1	(net_income >= 97163) and (interest <= 143618)
+F1053L1	(FFO >= 1151120) and (total_oper_liabilities <= 4594001) and (equity >= 5854267)
+F1054L1	(FFO >= 688731) and (net_income >= 1629286)
+F1055L1	(FFO >= 700888) and (debt <= 3984667)
+F1056L1	(debt <= 560000) and (equity >= 1135178) and (EBIT >= -2659)
+F1057L1	(EBIT >= 517177) and (debt <= 9677732)
+F1058L1	(debt <= 560000) and (EBIT >= -21159)
+F1059L1	(equity >= 1487584) and (debt <= 2523298)
+F1060L1	(financial_expenses <= 243) and (equity >= 740444)
+F1061L1	(FFO >= 103264) and (debt <= 829862)
+F1062L1	(equity >= 2997107) and (debt <= 1786476)
+F1063L1	(debt <= 560000) and (FFO >= 103264)
+F1064L1	(net_income >= 1825123)
+F1065L1	(net_income >= 320544) and (interest <= 253726)
+F1066L1	(net_income >= 97163)
+F1067L1	(net_income >= 237480)
+F1068L1	(FFO >= 740256) and (debt <= 9677732) and (equity >= 4056412)
+F1069L1	(net_income >= 18063) and (equity >= 2137782) and (total_oper_liabilities <= 5376892)
+F1070L1	(net_income >= 97163) and (total_oper_liabilities <= 2286996)
+F1071L1	(net_income >= 97163) and (interest <= 80359)
+F1072L1	(debt <= 560000) and (equity >= 1135178) and (equity <= 1708654)
+F1073L1	(net_income >= 1165380)
+F1074L1	(net_income >= 237480) and (EBIT >= 2344965)
+F1075L1	(net_income >= 18063) and (equity >= 2150541) and (st_liabilities <= 5566453)
+F1076L1	(debt <= 560000) and (net_income >= -84300)
+F1077L1	(net_income >= 100907) and (interest <= 138370)
+F1078L1	(debt <= 560000) and (equity >= 1135178)
+F1079L1	(net_income >= 978246)
+F1080L1	(debt <= 1377150)
+F1081L1	(net_income >= 18063) and (equity >= 2150541)
+F1082L1	(net_income >= 78502)
+F1083L1	(net_income >= 1119234)
+F1084L1	(net_income >= 173241) and (EBIT >= 517177)
+F1085L1	(net_income >= 18063) and (equity >= 2469145) and (total_oper_liabilities <= 1950672)
+F1086L1	(net_income >= 320544) and (interest <= 170643)
+F1087L1	(net_income >= 78502) and (EBIT >= 517177)
+F1088L1	(FFO >= 688731) and (total_oper_liabilities <= 5036867) and (cost_of_labor >= 4502930)
+F1089L1	(net_income >= 78502) and (total_oper_liabilities <= 2408953)
+F1090L1	(interest <= 24296) and (total_oper_liabilities <= 970874)
+F1091L1	(net_income >= 211730) and (interest <= 143618)
+F1092L1	(debt <= 201036) and (interest >= 17377)
+F1093L1	(net_income >= 320544) and (interest <= 143618)
+F1094L1	(net_income >= 237480) and (interest <= 171415) and (cost_of_labor >= 744260) and (total_oper_liabilities <= 34890452)
+F1095L1	(FFO >= 688731) and (total_oper_liabilities <= 5036867) and (debt <= 4516999)
+F1096L1	(debt <= 430423) and (equity >= 1135178) and (EBIT >= -21159)
+F1097L1	(net_income >= 97163) and (debt <= 3735270)
+F1098L1	(net_income >= 97163) and (debt <= 2466556) and (total_oper_liabilities <= 2714836)
+F1099L1	(debt <= 560000) and (total_oper_liabilities <= 906417)
+F1100L1	(net_income >= 97163) and (interest <= 80359) and (interest >= 544)
+F1101L1	(net_income >= 21858) and (interest <= 16478) and (debt >= 223368)
+F1102L1	(interest <= 24296) and (equity >= 1564993) and (EBIT <= 193887) and (EBIT >= -2659)
+F1103L1	(EBIT >= 667000) and (debt <= 9677732)
+F1104L1	(equity >= 3255508) and (total_oper_liabilities <= 1950672) and (EBIT >= -113520)
+F1105L1	(debt <= 560000) and (equity >= 1135178) and (interest >= 8964)
+F1106L1	(net_income >= 78502) and (debt <= 2274055)
+F1107L1	(equity >= 3899182) and (debt <= 12107354)
+F1108L1	(net_income >= 345491) and (debt <= 6552946)
+F1109L1	(debt <= 560000) and (equity >= 1135178) and (FFO >= 103264)
+F1110L1	(net_income >= 78502) and (interest <= 253726)
+F1111L1	(net_income >= 320544) and (debt <= 4516999)
+F1112L1	(net_income >= 78502) and (debt <= 2466556)
+F1113L1	(net_income >= 1629286)
+F1114L1	(FFO >= 1151120) and (net_income >= 1629286)
+F1115L1	(equity >= 6022214) and (equity <= 8570398)
+F1116L1	(net_income >= 18063) and (EBIT >= 2344965)
+F1117L1	(net_income >= 18063) and (equity >= 2469145) and (debt <= 3788009) and (equity <= 4723607)
+F1118L1	(net_income >= 78502) and (st_liabilities <= 4185734)
+F1119L1	(debt <= 560000) and (FFO >= 103264) and (equity >= 1135178)
+F1120L1	(net_income >= 1629286) and (EBIT >= 517177)
+F1121L1	(interest >= 703179) and (interest <= 760013)
+F1122L1	(debt <= 560000) and (total_oper_liabilities <= 906417) and (net_income >= -84300)
+F1123L1	(debt <= 560000) and (st_liabilities <= 1174034)
+F1124L1	(net_income >= 78502) and (st_liabilities <= 4899133)
+F1125L1	(net_income >= 78502) and (total_oper_liabilities <= 2286996)
+F1126L1	(st_liabilities <= 1174034) and (debt <= 560000)
+F1127L1	(debt <= 430423) and (st_liabilities <= 1174034)
+F1128L1	(interest <= 24296) and (total_oper_liabilities <= 1057717)
+F1129L1	(net_income >= 18063) and (FFO >= 1090104)
+F1130L1	(net_income >= 97163) and (debt <= 3500000)
+F1131L1	(FFO >= 714285) and (debt <= 3735270)
+F1132L1	(FFO >= 700888) and (debt <= 4516999)
+F1133L1	(net_income >= 388822)
+F1134L1	(net_income >= 392599)
+F1135L1	(net_income >= 397188)
+F1136L1	(FFO >= 700888) and (debt <= 5406379)
+F1137L1	(net_income >= 18063) and (equity >= 2469145)
+F1138L1	(net_income >= 18063) and (equity >= 2382394) and (total_oper_liabilities <= 1950672)
+F1139L1	(FFO >= 1151120) and (net_income >= 1165380)
+F1140L1	(net_income >= 78502) and (interest <= 79608)
+F1141L1	(debt <= 560000) and (total_oper_liabilities <= 970874)
+F1142L1	(net_income >= 30613) and (total_oper_liabilities <= 1967237) and (total_oper_liabilities >= 901156)
+F1143L1	(net_income >= 392599) and (interest <= 364151)
+F1144L1	(equity >= 2382394) and (debt <= 2156655)
+F1145L1	(net_income >= 97163) and (interest <= 171415)
+F1146L1	(interest <= 24296) and (total_oper_liabilities <= 1508233)
+F1147L1	(debt <= 560000) and (total_oper_liabilities <= 1508233)
+F1148L1	(equity >= 3445271) and (total_oper_liabilities <= 4736986) and (total_oper_liabilities >= 3283080) and (net_income <= 397188)
+F1149L1	(net_income >= 21858) and (equity >= 2382394)
+F1150L1	(net_income >= 320544) and (interest <= 171415) and (total_oper_liabilities <= 34890452)
+F1151L1	(net_income >= 97163) and (total_oper_liabilities <= 2408953)
+F1152L1	(net_income >= 97163) and (debt <= 2466556)
+F1153L1	(interest <= 24296) and (interest >= 8964) and (equity >= 602538) and (net_income >= -17144)
+F1154L1	(FFO >= 688731) and (debt <= 4516999) and (total_oper_liabilities <= 18769290)
+F1155L1	(debt <= 560000) and (equity >= 1135178) and (FFO >= 103264) and (net_income >= -84300)
+F1156L1	(equity >= 2382394) and (total_oper_liabilities <= 1950672) and (net_income >= -84300)
+F1157L1	num-of-N((equity >= 4080902) and (net_income >= 1165380))
+F1158L1	num-of-N((FFO >= 700888) and (debt <= 9677732) and (EBIT >= 425171))
+F1159L1	num-of-N((net_income >= 78502) and (interest <= 138370))
+F1160L1	num-of-N((interest <= 24296) and (interest >= 8964) and (inventories >= 181495))
+F1161L1	num-of-N((net_income >= 78502) and (debt <= 3735270))
+F1162L1	num-of-N((net_income >= 78502) and (debt <= 3788009))
+F1163L1	num-of-N((net_income >= 237480) and (interest <= 171415))
+F1164L1	num-of-N((net_income >= 97163) and (interest <= 135997))
+F1165L1	num-of-N((FFO >= 688731) and (debt <= 4516999))
+F1166L1	num-of-N((net_income >= 97163) and (interest <= 143618))
+F1167L1	num-of-N((FFO >= 1151120) and (total_oper_liabilities <= 4594001) and (equity >= 5854267))
+F1168L1	num-of-N((FFO >= 688731) and (net_income >= 1629286))
+F1169L1	num-of-N((FFO >= 700888) and (debt <= 3984667))
+F1170L1	num-of-N((debt <= 560000) and (equity >= 1135178) and (EBIT >= -2659))
+F1171L1	num-of-N((EBIT >= 517177) and (debt <= 9677732))
+F1172L1	num-of-N((debt <= 560000) and (EBIT >= -21159))
+F1173L1	num-of-N((equity >= 1487584) and (debt <= 2523298))
+F1174L1	num-of-N((financial_expenses <= 243) and (equity >= 740444))
+F1175L1	num-of-N((FFO >= 103264) and (debt <= 829862))
+F1176L1	num-of-N((equity >= 2997107) and (debt <= 1786476))
+F1177L1	num-of-N((debt <= 560000) and (FFO >= 103264))
+F1178L1	num-of-N((net_income >= 320544) and (interest <= 253726))
+F1179L1	num-of-N((FFO >= 740256) and (debt <= 9677732) and (equity >= 4056412))
+F1180L1	num-of-N((net_income >= 18063) and (equity >= 2137782) and (total_oper_liabilities <= 5376892))
+F1181L1	num-of-N((net_income >= 97163) and (total_oper_liabilities <= 2286996))
+F1182L1	num-of-N((net_income >= 97163) and (interest <= 80359))
+F1183L1	num-of-N((debt <= 560000) and (equity >= 1135178) and (equity <= 1708654))
+F1184L1	num-of-N((net_income >= 237480) and (EBIT >= 2344965))
+F1185L1	num-of-N((net_income >= 18063) and (equity >= 2150541) and (st_liabilities <= 5566453))
+F1186L1	num-of-N((debt <= 560000) and (net_income >= -84300))
+F1187L1	num-of-N((net_income >= 100907) and (interest <= 138370))
+F1188L1	num-of-N((debt <= 560000) and (equity >= 1135178))
+F1189L1	num-of-N((net_income >= 18063) and (equity >= 2150541))
+F1190L1	num-of-N((net_income >= 173241) and (EBIT >= 517177))
+F1191L1	num-of-N((net_income >= 18063) and (equity >= 2469145) and (total_oper_liabilities <= 1950672))
+F1192L1	num-of-N((net_income >= 320544) and (interest <= 170643))
+F1193L1	num-of-N((net_income >= 78502) and (EBIT >= 517177))
+F1194L1	num-of-N((FFO >= 688731) and (total_oper_liabilities <= 5036867) and (cost_of_labor >= 4502930))
+F1195L1	num-of-N((net_income >= 78502) and (total_oper_liabilities <= 2408953))
+F1196L1	num-of-N((interest <= 24296) and (total_oper_liabilities <= 970874))
+F1197L1	num-of-N((net_income >= 211730) and (interest <= 143618))
+F1198L1	num-of-N((debt <= 201036) and (interest >= 17377))
+F1199L1	num-of-N((net_income >= 320544) and (interest <= 143618))
+F1200L1	num-of-N((net_income >= 237480) and (interest <= 171415) and (cost_of_labor >= 744260) and (total_oper_liabilities <= 34890452))
+F1201L1	num-of-N((FFO >= 688731) and (total_oper_liabilities <= 5036867) and (debt <= 4516999))
+F1202L1	num-of-N((debt <= 430423) and (equity >= 1135178) and (EBIT >= -21159))
+F1203L1	num-of-N((net_income >= 97163) and (debt <= 3735270))
+F1204L1	num-of-N((net_income >= 97163) and (debt <= 2466556) and (total_oper_liabilities <= 2714836))
+F1205L1	num-of-N((debt <= 560000) and (total_oper_liabilities <= 906417))
+F1206L1	num-of-N((net_income >= 97163) and (interest <= 80359) and (interest >= 544))
+F1207L1	num-of-N((net_income >= 21858) and (interest <= 16478) and (debt >= 223368))
+F1208L1	num-of-N((interest <= 24296) and (equity >= 1564993) and (EBIT <= 193887) and (EBIT >= -2659))
+F1209L1	num-of-N((EBIT >= 667000) and (debt <= 9677732))
+F1210L1	num-of-N((equity >= 3255508) and (total_oper_liabilities <= 1950672) and (EBIT >= -113520))
+F1211L1	num-of-N((debt <= 560000) and (equity >= 1135178) and (interest >= 8964))
+F1212L1	num-of-N((net_income >= 78502) and (debt <= 2274055))
+F1213L1	num-of-N((equity >= 3899182) and (debt <= 12107354))
+F1214L1	num-of-N((net_income >= 345491) and (debt <= 6552946))
+F1215L1	num-of-N((debt <= 560000) and (equity >= 1135178) and (FFO >= 103264))
+F1216L1	num-of-N((net_income >= 78502) and (interest <= 253726))
+F1217L1	num-of-N((net_income >= 320544) and (debt <= 4516999))
+F1218L1	num-of-N((net_income >= 78502) and (debt <= 2466556))
+F1219L1	num-of-N((FFO >= 1151120) and (net_income >= 1629286))
+F1220L1	num-of-N((equity >= 6022214) and (equity <= 8570398))
+F1221L1	num-of-N((net_income >= 18063) and (EBIT >= 2344965))
+F1222L1	num-of-N((net_income >= 18063) and (equity >= 2469145) and (debt <= 3788009) and (equity <= 4723607))
+F1223L1	num-of-N((net_income >= 78502) and (st_liabilities <= 4185734))
+F1224L1	num-of-N((debt <= 560000) and (FFO >= 103264) and (equity >= 1135178))
+F1225L1	num-of-N((net_income >= 1629286) and (EBIT >= 517177))
+F1226L1	num-of-N((interest >= 703179) and (interest <= 760013))
+F1227L1	num-of-N((debt <= 560000) and (total_oper_liabilities <= 906417) and (net_income >= -84300))
+F1228L1	num-of-N((debt <= 560000) and (st_liabilities <= 1174034))
+F1229L1	num-of-N((net_income >= 78502) and (st_liabilities <= 4899133))
+F1230L1	num-of-N((net_income >= 78502) and (total_oper_liabilities <= 2286996))
+F1231L1	num-of-N((st_liabilities <= 1174034) and (debt <= 560000))
+F1232L1	num-of-N((debt <= 430423) and (st_liabilities <= 1174034))
+F1233L1	num-of-N((interest <= 24296) and (total_oper_liabilities <= 1057717))
+F1234L1	num-of-N((net_income >= 18063) and (FFO >= 1090104))
+F1235L1	num-of-N((net_income >= 97163) and (debt <= 3500000))
+F1236L1	num-of-N((FFO >= 714285) and (debt <= 3735270))
+F1237L1	num-of-N((FFO >= 700888) and (debt <= 4516999))
+F1238L1	num-of-N((FFO >= 700888) and (debt <= 5406379))
+F1239L1	num-of-N((net_income >= 18063) and (equity >= 2469145))
+F1240L1	num-of-N((net_income >= 18063) and (equity >= 2382394) and (total_oper_liabilities <= 1950672))
+F1241L1	num-of-N((FFO >= 1151120) and (net_income >= 1165380))
+F1242L1	num-of-N((net_income >= 78502) and (interest <= 79608))
+F1243L1	num-of-N((debt <= 560000) and (total_oper_liabilities <= 970874))
+F1244L1	num-of-N((net_income >= 30613) and (total_oper_liabilities <= 1967237) and (total_oper_liabilities >= 901156))
+F1245L1	num-of-N((net_income >= 392599) and (interest <= 364151))
+F1246L1	num-of-N((equity >= 2382394) and (debt <= 2156655))
+F1247L1	num-of-N((net_income >= 97163) and (interest <= 171415))
+F1248L1	num-of-N((interest <= 24296) and (total_oper_liabilities <= 1508233))
+F1249L1	num-of-N((debt <= 560000) and (total_oper_liabilities <= 1508233))
+F1250L1	num-of-N((equity >= 3445271) and (total_oper_liabilities <= 4736986) and (total_oper_liabilities >= 3283080) and (net_income <= 397188))
+F1251L1	num-of-N((net_income >= 21858) and (equity >= 2382394))
+F1252L1	num-of-N((net_income >= 320544) and (interest <= 171415) and (total_oper_liabilities <= 34890452))
+F1253L1	num-of-N((net_income >= 97163) and (total_oper_liabilities <= 2408953))
+F1254L1	num-of-N((net_income >= 97163) and (debt <= 2466556))
+F1255L1	num-of-N((interest <= 24296) and (interest >= 8964) and (equity >= 602538) and (net_income >= -17144))
+F1256L1	num-of-N((FFO >= 688731) and (debt <= 4516999) and (total_oper_liabilities <= 18769290))
+F1257L1	num-of-N((debt <= 560000) and (equity >= 1135178) and (FFO >= 103264) and (net_income >= -84300))
+F1258L1	num-of-N((equity >= 2382394) and (total_oper_liabilities <= 1950672) and (net_income >= -84300))
+F1259L1	EBIT ADD net_income
+F1260L1	cost_of_labor ADD interest
+F1261L1	cost_of_labor ADD EBIT
+F1262L1	cost_of_labor ADD net_income
+F1263L1	EBIT ADD FFO
+F1264L1	cost_of_labor ADD FFO
+F1265L1	equity ADD debt
+F1266L1	equity ADD total_oper_liabilities
+F1267L1	net_income ADD equity
+F1268L1	net_income ADD debt
+F1269L1	equity ADD st_liabilities
+F1270L1	equity ADD inventories
+F1271L1	financial_expenses ADD equity
+F1272L1	net_income ADD total_oper_liabilities
+F1273L1	net_income ADD st_liabilities
+F1274L1	net_income ADD inventories
+F1275L1	financial_expenses ADD total_oper_liabilities
+F1276L1	financial_expenses ADD inventories
+F1277L1	st_liabilities ADD FFO
+F1278L1	equity ADD FFO
+F1279L1	financial_expenses ADD interest
+F1280L1	total_oper_liabilities ADD st_liabilities
+F1281L1	debt ADD total_oper_liabilities
+F1282L1	total_oper_liabilities ADD inventories
+F1283L1	financial_expenses ADD net_income
+F1284L1	net_income ADD FFO
+F1285L1	debt ADD st_liabilities
+F1286L1	debt ADD inventories
+F1287L1	interest ADD equity
+F1288L1	financial_expenses ADD FFO
+F1289L1	interest ADD debt
+F1290L1	interest ADD total_oper_liabilities
+F1291L1	interest ADD st_liabilities
+F1292L1	interest ADD inventories
+F1293L1	inventories ADD FFO
+F1294L1	total_oper_liabilities ADD FFO
+F1295L1	debt ADD FFO
+F1296L1	interest ADD EBIT
+F1297L1	interest ADD net_income
+F1298L1	interest ADD FFO
+F1299L1	EBIT ADD equity
+F1300L1	EBIT ADD debt
+F1301L1	cost_of_labor ADD equity
+F1302L1	EBIT ADD total_oper_liabilities
+F1303L1	cost_of_labor ADD debt
+F1304L1	EBIT ADD st_liabilities
+F1305L1	EBIT ADD inventories
+F1306L1	cost_of_labor ADD total_oper_liabilities
+F1307L1	cost_of_labor ADD st_liabilities
+F1308L1	EBIT SUBTRACT net_income
+F1309L1	cost_of_labor SUBTRACT interest
+F1310L1	cost_of_labor SUBTRACT EBIT
+F1311L1	cost_of_labor SUBTRACT net_income
+F1312L1	EBIT SUBTRACT FFO
+F1313L1	cost_of_labor SUBTRACT FFO
+F1314L1	equity SUBTRACT debt
+F1315L1	equity SUBTRACT total_oper_liabilities
+F1316L1	net_income SUBTRACT equity
+F1317L1	net_income SUBTRACT debt
+F1318L1	equity SUBTRACT st_liabilities
+F1319L1	equity SUBTRACT inventories
+F1320L1	financial_expenses SUBTRACT equity
+F1321L1	net_income SUBTRACT total_oper_liabilities
+F1322L1	net_income SUBTRACT st_liabilities
+F1323L1	net_income SUBTRACT inventories
+F1324L1	financial_expenses SUBTRACT total_oper_liabilities
+F1325L1	financial_expenses SUBTRACT inventories
+F1326L1	st_liabilities SUBTRACT FFO
+F1327L1	equity SUBTRACT FFO
+F1328L1	financial_expenses SUBTRACT interest
+F1329L1	total_oper_liabilities SUBTRACT st_liabilities
+F1330L1	debt SUBTRACT total_oper_liabilities
+F1331L1	total_oper_liabilities SUBTRACT inventories
+F1332L1	financial_expenses SUBTRACT net_income
+F1333L1	net_income SUBTRACT FFO
+F1334L1	debt SUBTRACT st_liabilities
+F1335L1	debt SUBTRACT inventories
+F1336L1	interest SUBTRACT equity
+F1337L1	financial_expenses SUBTRACT FFO
+F1338L1	interest SUBTRACT debt
+F1339L1	interest SUBTRACT total_oper_liabilities
+F1340L1	interest SUBTRACT st_liabilities
+F1341L1	interest SUBTRACT inventories
+F1342L1	inventories SUBTRACT FFO
+F1343L1	total_oper_liabilities SUBTRACT FFO
+F1344L1	debt SUBTRACT FFO
+F1345L1	interest SUBTRACT EBIT
+F1346L1	interest SUBTRACT net_income
+F1347L1	interest SUBTRACT FFO
+F1348L1	EBIT SUBTRACT equity
+F1349L1	EBIT SUBTRACT debt
+F1350L1	cost_of_labor SUBTRACT equity
+F1351L1	EBIT SUBTRACT total_oper_liabilities
+F1352L1	cost_of_labor SUBTRACT debt
+F1353L1	EBIT SUBTRACT st_liabilities
+F1354L1	EBIT SUBTRACT inventories
+F1355L1	cost_of_labor SUBTRACT total_oper_liabilities
+F1356L1	cost_of_labor SUBTRACT st_liabilities
+F1357L1	EBIT DIVIDE net_income
+F1358L1	net_income DIVIDE EBIT
+F1359L1	cost_of_labor DIVIDE interest
+F1360L1	interest DIVIDE cost_of_labor
+F1361L1	cost_of_labor DIVIDE EBIT
+F1362L1	EBIT DIVIDE cost_of_labor
+F1363L1	cost_of_labor DIVIDE net_income
+F1364L1	net_income DIVIDE cost_of_labor
+F1365L1	EBIT DIVIDE FFO
+F1366L1	FFO DIVIDE EBIT
+F1367L1	cost_of_labor DIVIDE FFO
+F1368L1	FFO DIVIDE cost_of_labor
+F1369L1	equity DIVIDE debt
+F1370L1	debt DIVIDE equity
+F1371L1	equity DIVIDE total_oper_liabilities
+F1372L1	total_oper_liabilities DIVIDE equity
+F1373L1	net_income DIVIDE equity
+F1374L1	equity DIVIDE net_income
+F1375L1	net_income DIVIDE debt
+F1376L1	debt DIVIDE net_income
+F1377L1	equity DIVIDE st_liabilities
+F1378L1	st_liabilities DIVIDE equity
+F1379L1	equity DIVIDE inventories
+F1380L1	inventories DIVIDE equity
+F1381L1	financial_expenses DIVIDE equity
+F1382L1	equity DIVIDE financial_expenses
+F1383L1	net_income DIVIDE total_oper_liabilities
+F1384L1	total_oper_liabilities DIVIDE net_income
+F1385L1	net_income DIVIDE st_liabilities
+F1386L1	st_liabilities DIVIDE net_income
+F1387L1	net_income DIVIDE inventories
+F1388L1	inventories DIVIDE net_income
+F1389L1	financial_expenses DIVIDE total_oper_liabilities
+F1390L1	total_oper_liabilities DIVIDE financial_expenses
+F1391L1	financial_expenses DIVIDE inventories
+F1392L1	inventories DIVIDE financial_expenses
+F1393L1	st_liabilities DIVIDE FFO
+F1394L1	FFO DIVIDE st_liabilities
+F1395L1	equity DIVIDE FFO
+F1396L1	FFO DIVIDE equity
+F1397L1	financial_expenses DIVIDE interest
+F1398L1	interest DIVIDE financial_expenses
+F1399L1	total_oper_liabilities DIVIDE st_liabilities
+F1400L1	st_liabilities DIVIDE total_oper_liabilities
+F1401L1	debt DIVIDE total_oper_liabilities
+F1402L1	total_oper_liabilities DIVIDE debt
+F1403L1	total_oper_liabilities DIVIDE inventories
+F1404L1	inventories DIVIDE total_oper_liabilities
+F1405L1	financial_expenses DIVIDE net_income
+F1406L1	net_income DIVIDE financial_expenses
+F1407L1	net_income DIVIDE FFO
+F1408L1	FFO DIVIDE net_income
+F1409L1	debt DIVIDE st_liabilities
+F1410L1	st_liabilities DIVIDE debt
+F1411L1	debt DIVIDE inventories
+F1412L1	inventories DIVIDE debt
+F1413L1	interest DIVIDE equity
+F1414L1	equity DIVIDE interest
+F1415L1	financial_expenses DIVIDE FFO
+F1416L1	FFO DIVIDE financial_expenses
+F1417L1	interest DIVIDE debt
+F1418L1	debt DIVIDE interest
+F1419L1	interest DIVIDE total_oper_liabilities
+F1420L1	total_oper_liabilities DIVIDE interest
+F1421L1	interest DIVIDE st_liabilities
+F1422L1	st_liabilities DIVIDE interest
+F1423L1	interest DIVIDE inventories
+F1424L1	inventories DIVIDE interest
+F1425L1	inventories DIVIDE FFO
+F1426L1	FFO DIVIDE inventories
+F1427L1	total_oper_liabilities DIVIDE FFO
+F1428L1	FFO DIVIDE total_oper_liabilities
+F1429L1	debt DIVIDE FFO
+F1430L1	FFO DIVIDE debt
+F1431L1	interest DIVIDE EBIT
+F1432L1	EBIT DIVIDE interest
+F1433L1	interest DIVIDE net_income
+F1434L1	net_income DIVIDE interest
+F1435L1	interest DIVIDE FFO
+F1436L1	FFO DIVIDE interest
+F1437L1	EBIT DIVIDE equity
+F1438L1	equity DIVIDE EBIT
+F1439L1	EBIT DIVIDE debt
+F1440L1	debt DIVIDE EBIT
+F1441L1	cost_of_labor DIVIDE equity
+F1442L1	equity DIVIDE cost_of_labor
+F1443L1	EBIT DIVIDE total_oper_liabilities
+F1444L1	total_oper_liabilities DIVIDE EBIT
+F1445L1	cost_of_labor DIVIDE debt
+F1446L1	debt DIVIDE cost_of_labor
+F1447L1	EBIT DIVIDE st_liabilities
+F1448L1	st_liabilities DIVIDE EBIT
+F1449L1	EBIT DIVIDE inventories
+F1450L1	inventories DIVIDE EBIT
+F1451L1	cost_of_labor DIVIDE total_oper_liabilities
+F1452L1	total_oper_liabilities DIVIDE cost_of_labor
+F1453L1	cost_of_labor DIVIDE st_liabilities
+F1454L1	st_liabilities DIVIDE cost_of_labor
+F1455L1	EBIT MULTIPLY net_income
+F1456L1	cost_of_labor MULTIPLY interest
+F1457L1	cost_of_labor MULTIPLY EBIT
+F1458L1	cost_of_labor MULTIPLY net_income
+F1459L1	EBIT MULTIPLY FFO
+F1460L1	cost_of_labor MULTIPLY FFO
+F1461L1	equity MULTIPLY debt
+F1462L1	equity MULTIPLY total_oper_liabilities
+F1463L1	net_income MULTIPLY equity
+F1464L1	net_income MULTIPLY debt
+F1465L1	equity MULTIPLY st_liabilities
+F1466L1	equity MULTIPLY inventories
+F1467L1	financial_expenses MULTIPLY equity
+F1468L1	net_income MULTIPLY total_oper_liabilities
+F1469L1	net_income MULTIPLY st_liabilities
+F1470L1	net_income MULTIPLY inventories
+F1471L1	financial_expenses MULTIPLY total_oper_liabilities
+F1472L1	financial_expenses MULTIPLY inventories
+F1473L1	st_liabilities MULTIPLY FFO
+F1474L1	equity MULTIPLY FFO
+F1475L1	financial_expenses MULTIPLY interest
+F1476L1	total_oper_liabilities MULTIPLY st_liabilities
+F1477L1	debt MULTIPLY total_oper_liabilities
+F1478L1	total_oper_liabilities MULTIPLY inventories
+F1479L1	financial_expenses MULTIPLY net_income
+F1480L1	net_income MULTIPLY FFO
+F1481L1	debt MULTIPLY st_liabilities
+F1482L1	debt MULTIPLY inventories
+F1483L1	interest MULTIPLY equity
+F1484L1	financial_expenses MULTIPLY FFO
+F1485L1	interest MULTIPLY debt
+F1486L1	interest MULTIPLY total_oper_liabilities
+F1487L1	interest MULTIPLY st_liabilities
+F1488L1	interest MULTIPLY inventories
+F1489L1	inventories MULTIPLY FFO
+F1490L1	total_oper_liabilities MULTIPLY FFO
+F1491L1	debt MULTIPLY FFO
+F1492L1	interest MULTIPLY EBIT
+F1493L1	interest MULTIPLY net_income
+F1494L1	interest MULTIPLY FFO
+F1495L1	EBIT MULTIPLY equity
+F1496L1	EBIT MULTIPLY debt
+F1497L1	cost_of_labor MULTIPLY equity
+F1498L1	EBIT MULTIPLY total_oper_liabilities
+F1499L1	cost_of_labor MULTIPLY debt
+F1500L1	EBIT MULTIPLY st_liabilities
+F1501L1	EBIT MULTIPLY inventories
+F1502L1	cost_of_labor MULTIPLY total_oper_liabilities
+F1503L1	cost_of_labor MULTIPLY st_liabilities
+F1504L1	EBIT LESSTHAN net_income
+F1505L1	cost_of_labor LESSTHAN interest
+F1506L1	cost_of_labor LESSTHAN EBIT
+F1507L1	cost_of_labor LESSTHAN net_income
+F1508L1	EBIT LESSTHAN FFO
+F1509L1	cost_of_labor LESSTHAN FFO
+F1510L1	equity LESSTHAN debt
+F1511L1	equity LESSTHAN total_oper_liabilities
+F1512L1	net_income LESSTHAN equity
+F1513L1	net_income LESSTHAN debt
+F1514L1	equity LESSTHAN st_liabilities
+F1515L1	equity LESSTHAN inventories
+F1516L1	financial_expenses LESSTHAN equity
+F1517L1	net_income LESSTHAN total_oper_liabilities
+F1518L1	net_income LESSTHAN st_liabilities
+F1519L1	net_income LESSTHAN inventories
+F1520L1	financial_expenses LESSTHAN total_oper_liabilities
+F1521L1	financial_expenses LESSTHAN inventories
+F1522L1	st_liabilities LESSTHAN FFO
+F1523L1	equity LESSTHAN FFO
+F1524L1	total_oper_liabilities LESSTHAN st_liabilities
+F1525L1	debt LESSTHAN total_oper_liabilities
+F1526L1	total_oper_liabilities LESSTHAN inventories
+F1527L1	financial_expenses LESSTHAN net_income
+F1528L1	net_income LESSTHAN FFO
+F1529L1	debt LESSTHAN st_liabilities
+F1530L1	debt LESSTHAN inventories
+F1531L1	interest LESSTHAN equity
+F1532L1	financial_expenses LESSTHAN FFO
+F1533L1	interest LESSTHAN debt
+F1534L1	interest LESSTHAN total_oper_liabilities
+F1535L1	interest LESSTHAN st_liabilities
+F1536L1	interest LESSTHAN inventories
+F1537L1	inventories LESSTHAN FFO
+F1538L1	total_oper_liabilities LESSTHAN FFO
+F1539L1	debt LESSTHAN FFO
+F1540L1	interest LESSTHAN EBIT
+F1541L1	interest LESSTHAN net_income
+F1542L1	interest LESSTHAN FFO
+F1543L1	EBIT LESSTHAN equity
+F1544L1	EBIT LESSTHAN debt
+F1545L1	cost_of_labor LESSTHAN equity
+F1546L1	EBIT LESSTHAN total_oper_liabilities
+F1547L1	cost_of_labor LESSTHAN debt
+F1548L1	EBIT LESSTHAN st_liabilities
+F1549L1	EBIT LESSTHAN inventories
+F1550L1	cost_of_labor LESSTHAN total_oper_liabilities
+F1551L1	cost_of_labor LESSTHAN st_liabilities
+F1552L1	financial_expenses DIFF interest
+F1553L1	total_oper_liabilities DIFF st_liabilities
+F1554L1	net_income DIFF FFO
+F1555L1	debt DIFF inventories
+F1556L1	interest DIFF debt
+F1557L1	interest DIFF inventories
+F1558L1	EBIT_x_net_income
+F1559L1	cost_of_labor_x_interest
+F1560L1	cost_of_labor_x_EBIT
+F1561L1	cost_of_labor_x_net_income
+F1562L1	EBIT_x_FFO
+F1563L1	cost_of_labor_x_FFO
+F1564L1	equity_x_debt
+F1565L1	equity_x_total_oper_liabilities
+F1566L1	net_income_x_equity
+F1567L1	net_income_x_debt
+F1568L1	equity_x_st_liabilities
+F1569L1	equity_x_inventories
+F1570L1	financial_expenses_x_equity
+F1571L1	net_income_x_total_oper_liabilities
+F1572L1	net_income_x_st_liabilities
+F1573L1	net_income_x_inventories
+F1574L1	st_liabilities_x_FFO
+F1575L1	equity_x_FFO
+F1576L1	financial_expenses_x_interest
+F1577L1	debt_x_total_oper_liabilities
+F1578L1	financial_expenses_x_net_income
+F1579L1	net_income_x_FFO
+F1580L1	debt_x_st_liabilities
+F1581L1	debt_x_inventories
+F1582L1	interest_x_equity
+F1583L1	financial_expenses_x_FFO
+F1584L1	interest_x_debt
+F1585L1	interest_x_total_oper_liabilities
+F1586L1	interest_x_st_liabilities
+F1587L1	interest_x_inventories
+F1588L1	inventories_x_FFO
+F1589L1	total_oper_liabilities_x_FFO
+F1590L1	debt_x_FFO
+F1591L1	interest_x_EBIT
+F1592L1	interest_x_net_income
+F1593L1	interest_x_FFO
+F1594L1	EBIT_x_equity
+F1595L1	EBIT_x_debt
+F1596L1	cost_of_labor_x_equity
+F1597L1	EBIT_x_total_oper_liabilities
+F1598L1	cost_of_labor_x_debt
+F1599L1	EBIT_x_st_liabilities
+F1600L1	EBIT_x_inventories

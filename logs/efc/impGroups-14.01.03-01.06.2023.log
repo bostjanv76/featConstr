@@ -1,0 +1,379 @@
+dataset: Spectf heart.arff
+We remove max(NOISE,minNoise) groups, NOISE=10.0% -> 9, minNoise=3 we remove groups of size 9. Tree SHAP num of expl. inst. 86 (fold 1). Explaining class: 1).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  1
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	V40: 46
+	V33: 25
+--------------
+Threshold: 0,20
+--------------
+	V33 | V40: 17
+	V30 | V40: 10
+--------------
+Threshold: 0,30
+--------------
+--------------
+Threshold: 0,40
+--------------
+--------------
+Threshold: 0,50
+--------------
+--------------
+Threshold: 0,60
+--------------
+--------------
+Threshold: 0,70
+--------------
+--------------
+Threshold: 0,80
+--------------
+*********************************************************************************
+All potential concepts based on thresholds
+	V33 V40 ~#~ V30 V40 ~#~ 
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=10.0% -> 9, minNoise=3 we remove groups of size 9. Tree SHAP num of expl. inst. 86 (fold 2). Explaining class: 1).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  2
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	V40: 67
+--------------
+Threshold: 0,20
+--------------
+	V40: 30
+	V33 | V40: 17
+--------------
+Threshold: 0,30
+--------------
+	V33 | V40: 14
+--------------
+Threshold: 0,40
+--------------
+--------------
+Threshold: 0,50
+--------------
+--------------
+Threshold: 0,60
+--------------
+--------------
+Threshold: 0,70
+--------------
+--------------
+Threshold: 0,80
+--------------
+*********************************************************************************
+All potential concepts based on thresholds
+	V33 V40 ~#~ 
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=10.0% -> 9, minNoise=3 we remove groups of size 9. Tree SHAP num of expl. inst. 86 (fold 3). Explaining class: 1).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  3
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	V40: 57
+	V33: 14
+--------------
+Threshold: 0,20
+--------------
+	V40: 26
+	V33 | V40: 20
+	V38 | V40: 11
+--------------
+Threshold: 0,30
+--------------
+	V33 | V40: 20
+--------------
+Threshold: 0,40
+--------------
+--------------
+Threshold: 0,50
+--------------
+--------------
+Threshold: 0,60
+--------------
+--------------
+Threshold: 0,70
+--------------
+--------------
+Threshold: 0,80
+--------------
+*********************************************************************************
+All potential concepts based on thresholds
+	V33 V40 ~#~ V38 V40 ~#~ 
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=10.0% -> 9, minNoise=3 we remove groups of size 9. Tree SHAP num of expl. inst. 86 (fold 4). Explaining class: 1).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  4
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	V40: 60
+	V33: 16
+--------------
+Threshold: 0,20
+--------------
+	V40: 25
+	V33 | V40: 19
+--------------
+Threshold: 0,30
+--------------
+	V33 | V40: 14
+--------------
+Threshold: 0,40
+--------------
+--------------
+Threshold: 0,50
+--------------
+--------------
+Threshold: 0,60
+--------------
+--------------
+Threshold: 0,70
+--------------
+--------------
+Threshold: 0,80
+--------------
+*********************************************************************************
+All potential concepts based on thresholds
+	V33 V40 ~#~ 
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=10.0% -> 9, minNoise=3 we remove groups of size 9. Tree SHAP num of expl. inst. 85 (fold 5). Explaining class: 1).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  5
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	V40: 58
+	V33: 17
+--------------
+Threshold: 0,20
+--------------
+	V33 | V40: 19
+	V40: 16
+--------------
+Threshold: 0,30
+--------------
+	V33 | V40: 16
+--------------
+Threshold: 0,40
+--------------
+--------------
+Threshold: 0,50
+--------------
+--------------
+Threshold: 0,60
+--------------
+--------------
+Threshold: 0,70
+--------------
+--------------
+Threshold: 0,80
+--------------
+*********************************************************************************
+All potential concepts based on thresholds
+	V33 V40 ~#~ 
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=10.0% -> 9, minNoise=3 we remove groups of size 9. Tree SHAP num of expl. inst. 85 (fold 6). Explaining class: 1).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  6
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	V40: 60
+	V30: 10
+--------------
+Threshold: 0,20
+--------------
+	V30 | V40: 20
+	V33 | V40: 13
+--------------
+Threshold: 0,30
+--------------
+	V30 | V38 | V40: 10
+--------------
+Threshold: 0,40
+--------------
+--------------
+Threshold: 0,50
+--------------
+--------------
+Threshold: 0,60
+--------------
+--------------
+Threshold: 0,70
+--------------
+--------------
+Threshold: 0,80
+--------------
+*********************************************************************************
+All potential concepts based on thresholds
+	V30 V40 ~#~ V33 V40 ~#~ V30 V38 V40 ~#~ 
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=10.0% -> 9, minNoise=3 we remove groups of size 9. Tree SHAP num of expl. inst. 85 (fold 7). Explaining class: 1).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  7
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	V40: 65
+--------------
+Threshold: 0,20
+--------------
+	V40: 23
+	V33 | V40: 18
+	V26 | V40: 15
+--------------
+Threshold: 0,30
+--------------
+	V33 | V40: 14
+	V26 | V40: 10
+--------------
+Threshold: 0,40
+--------------
+--------------
+Threshold: 0,50
+--------------
+--------------
+Threshold: 0,60
+--------------
+--------------
+Threshold: 0,70
+--------------
+--------------
+Threshold: 0,80
+--------------
+*********************************************************************************
+All potential concepts based on thresholds
+	V33 V40 ~#~ V26 V40 ~#~ 
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=10.0% -> 9, minNoise=3 we remove groups of size 9. Tree SHAP num of expl. inst. 85 (fold 8). Explaining class: 1).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  8
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	V40: 54
+	V33: 21
+--------------
+Threshold: 0,20
+--------------
+	V33 | V40: 25
+--------------
+Threshold: 0,30
+--------------
+--------------
+Threshold: 0,40
+--------------
+--------------
+Threshold: 0,50
+--------------
+--------------
+Threshold: 0,60
+--------------
+--------------
+Threshold: 0,70
+--------------
+--------------
+Threshold: 0,80
+--------------
+*********************************************************************************
+All potential concepts based on thresholds
+	V33 V40 ~#~ 
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=10.0% -> 9, minNoise=3 we remove groups of size 9. Tree SHAP num of expl. inst. 85 (fold 9). Explaining class: 1).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold  9
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	V40: 58
+	V41: 10
+--------------
+Threshold: 0,20
+--------------
+	V33 | V40: 18
+	V40: 15
+	V26 | V40: 13
+--------------
+Threshold: 0,30
+--------------
+	V33 | V40: 13
+--------------
+Threshold: 0,40
+--------------
+--------------
+Threshold: 0,50
+--------------
+--------------
+Threshold: 0,60
+--------------
+--------------
+Threshold: 0,70
+--------------
+--------------
+Threshold: 0,80
+--------------
+*********************************************************************************
+All potential concepts based on thresholds
+	V33 V40 ~#~ V26 V40 ~#~ 
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=10.0% -> 9, minNoise=3 we remove groups of size 9. Tree SHAP num of expl. inst. 86 (fold 10). Explaining class: 1).
+Lower threshold thrL: 0.1 upper threshold thrU: 0.8 with step: 0.1
+								--------------
+									Fold 10
+								--------------
+--------------
+Threshold: 0,10
+--------------
+	V40: 48
+--------------
+Threshold: 0,20
+--------------
+	V26 | V40: 11
+	V34 | V40: 11
+	V33 | V40: 10
+--------------
+Threshold: 0,30
+--------------
+--------------
+Threshold: 0,40
+--------------
+--------------
+Threshold: 0,50
+--------------
+--------------
+Threshold: 0,60
+--------------
+--------------
+Threshold: 0,70
+--------------
+--------------
+Threshold: 0,80
+--------------
+*********************************************************************************
+All potential concepts based on thresholds
+	V26 V40 ~#~ V34 V40 ~#~ V33 V40 ~#~ 
+*********************************************************************************

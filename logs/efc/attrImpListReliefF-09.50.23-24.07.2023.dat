@@ -1,0 +1,3491 @@
+dataset: Glass_new.arff
+								--------------
+									Fold  1
+								--------------
+Feature evaluation: ReliefF (All features dataset) - After CI
+Ranked attributes:
+ 0.444058    309 Mg_x_Ba
+ 0.424193    304 Na_x_Mg
+ 0.408099    159 Mg==B2of2 impl K==B3of3
+ 0.405761    176 Mg==B2of2 impl Ba==B2of2
+ 0.394513    308 RI_x_K
+ 0.394369    311 RI_x_Ba
+ 0.393719    157 Mg==B2of2 impl K==B1of3
+ 0.391172    303 RI_x_Na
+ 0.387178     18 Mg==B2of2 and K==B2of3
+ 0.370631    306 Mg_x_K
+ 0.33973     229 RI==B4of5 or Na==B2of2 or K==B1of3
+ 0.332508    214 RI==B4of5 or K==B1of3 or Ba==B2of2
+ 0.329034     40 RI==B4of5 or Na==B2of2
+ 0.329034    114 RI==B4of5 xor Na==B2of2
+ 0.329034     77 RI==B4of5 equ Na==B2of2
+ 0.327793    247 RI==B4of5 or Na==B2of2 or Ba==B2of2
+ 0.322146    109 RI==B4of5 equ Ba==B2of2
+ 0.322146    146 RI==B4of5 xor Ba==B2of2
+ 0.322146     72 RI==B4of5 or Ba==B2of2
+ 0.318418    216 RI==B4of5 or K==B3of3 or Ba==B2of2
+ 0.307132    231 RI==B4of5 or Na==B2of2 or K==B3of3
+ 0.305361     98 RI==B4of5 equ K==B1of3
+ 0.305361    135 RI==B4of5 xor K==B1of3
+ 0.305361     61 RI==B4of5 or K==B1of3
+ 0.304712    305 K_x_Ba
+ 0.30431      48 Mg==B2of2 or K==B3of3
+ 0.302741    155 K==B2of3 impl Ba==B2of2
+ 0.300425    122 Mg==B2of2 xor K==B3of3
+ 0.300425     85 Mg==B2of2 equ K==B3of3
+ 0.300271    136 RI==B4of5 xor K==B2of3
+ 0.300271     99 RI==B4of5 equ K==B2of3
+ 0.293946    226 RI==B3of5 or Na==B2of2 or K==B1of3
+ 0.293876     39 RI==B3of5 or Na==B2of2
+ 0.292421    310 Na_x_Ba
+ 0.290235     47 Mg==B2of2 or K==B2of3
+ 0.289447     49 Na==B2of2 or K==B1of3
+ 0.289187     71 RI==B3of5 or Ba==B2of2
+ 0.286096    220 RI==B1of5 or Na==B2of2 or K==B1of3
+ 0.281426    241 Na==B2of2 or K==B1of3 or Ba==B2of2
+ 0.280995    211 RI==B3of5 or K==B1of3 or Ba==B2of2
+ 0.280223     58 RI==B3of5 or K==B1of3
+ 0.279517    213 RI==B3of5 or K==B3of3 or Ba==B2of2
+ 0.279313    246 RI==B3of5 or Na==B2of2 or Ba==B2of2
+ 0.278785    307 Na_x_K
+ 0.278044    243 Na==B2of2 or K==B3of3 or Ba==B2of2
+ 0.277153     43 K==B1of3 or Ba==B2of2
+ 0.276795    153 Na==B2of2 impl Mg==B2of2
+ 0.276345    130 RI==B2of5 xor K==B2of3
+ 0.276345     56 RI==B2of5 or K==B2of3
+ 0.276345     93 RI==B2of5 equ K==B2of3
+ 0.274943    223 RI==B2of5 or Na==B2of2 or K==B1of3
+ 0.274012    205 RI==B1of5 or K==B1of3 or Ba==B2of2
+ 0.272994    315 num-of-N((Ba >= 0.4) and (Na >= 14.14))
+ 0.272635     62 RI==B4of5 or K==B2of3
+ 0.270523     68 Na==B2of2 or Ba==B2of2
+ 0.270432    170 RI==B3of5 impl K==B3of3
+ 0.268357    228 RI==B3of5 or Na==B2of2 or K==B3of3
+ 0.267804    208 RI==B2of5 or K==B1of3 or Ba==B2of2
+ 0.267254    244 RI==B1of5 or Na==B2of2 or Ba==B2of2
+ 0.266733     60 RI==B3of5 or K==B3of3
+ 0.265227     51 Na==B2of2 or K==B3of3
+ 0.265227    225 RI==B2of5 or Na==B2of2 or K==B3of3
+ 0.261666    222 RI==B1of5 or Na==B2of2 or K==B3of3
+ 0.261599     45 K==B3of3 or Ba==B2of2
+ 0.261599    210 RI==B2of5 or K==B3of3 or Ba==B2of2
+ 0.260605    245 RI==B2of5 or Na==B2of2 or Ba==B2of2
+ 0.256297    207 RI==B1of5 or K==B3of3 or Ba==B2of2
+ 0.2557       97 RI==B3of5 equ K==B3of3
+ 0.2557      134 RI==B3of5 xor K==B3of3
+ 0.253301     37 RI==B1of5 or Na==B2of2
+ 0.251256    234 RI==B5of5 or Na==B2of2 or K==B3of3
+ 0.247654    271 Mg DIVIDE Na
+ 0.246191    219 RI==B5of5 or K==B3of3 or Ba==B2of2
+ 0.244661    141 Mg==B2of2 xor Ba==B2of2
+ 0.244661    104 Mg==B2of2 equ Ba==B2of2
+ 0.243472    119 K==B3of3 xor Ba==B2of2
+ 0.243472     82 K==B3of3 equ Ba==B2of2
+ 0.243098     67 Mg==B2of2 or Ba==B2of2
+ 0.242727    132 RI==B3of5 xor K==B1of3
+ 0.242727     95 RI==B3of5 equ K==B1of3
+ 0.242275    112 RI==B2of5 xor Na==B2of2
+ 0.242275     75 RI==B2of5 equ Na==B2of2
+ 0.242275     38 RI==B2of5 or Na==B2of2
+ 0.242163     88 Na==B2of2 equ K==B3of3
+ 0.242163    125 Na==B2of2 xor K==B3of3
+ 0.240021    312 (Na >= 14.14)
+ 0.239935     53 RI==B1of5 or K==B2of3
+ 0.238477      3 Mg
+ 0.236456     90 RI==B1of5 equ K==B2of3
+ 0.236456    127 RI==B1of5 xor K==B2of3
+ 0.234065    161 Na==B2of2 impl K==B2of3
+ 0.233633    217 RI==B5of5 or K==B1of3 or Ba==B2of2
+ 0.233485    281 Ba DIVIDE Mg
+ 0.233485    275 K DIVIDE Mg
+ 0.233485    270 Na DIVIDE Mg
+ 0.232038     52 RI==B1of5 or K==B1of3
+ 0.230591    162 Na==B2of2 impl K==B3of3
+ 0.229471    180 RI==B3of5 impl Ba==B2of2
+ 0.228815    313 (Ba >= 0.4)
+ 0.228815    295 K LESSTHAN Ba
+ 0.227639    287 Na MULTIPLY Mg
+ 0.226598    106 RI==B1of5 equ Ba==B2of2
+ 0.226598     69 RI==B1of5 or Ba==B2of2
+ 0.226598    143 RI==B1of5 xor Ba==B2of2
+ 0.22565     111 RI==B1of5 xor Na==B2of2
+ 0.22565      74 RI==B1of5 equ Na==B2of2
+ 0.223467    113 RI==B3of5 xor Na==B2of2
+ 0.223467     76 RI==B3of5 equ Na==B2of2
+ 0.222356    129 RI==B2of5 xor K==B1of3
+ 0.222356     55 RI==B2of5 or K==B1of3
+ 0.222356     92 RI==B2of5 equ K==B1of3
+ 0.222115    248 RI==B5of5 or Na==B2of2 or Ba==B2of2
+ 0.221102     70 RI==B2of5 or Ba==B2of2
+ 0.221102    107 RI==B2of5 equ Ba==B2of2
+ 0.221102    144 RI==B2of5 xor Ba==B2of2
+ 0.220577    145 RI==B3of5 xor Ba==B2of2
+ 0.220577    108 RI==B3of5 equ Ba==B2of2
+ 0.220224    232 RI==B5of5 or Na==B2of2 or K==B1of3
+ 0.219631    133 RI==B3of5 xor K==B2of3
+ 0.219631     96 RI==B3of5 equ K==B2of3
+ 0.2189      168 RI==B3of5 impl K==B1of3
+ 0.21682      27 RI==B3of5 and K==B2of3
+ 0.215205     64 RI==B5of5 or K==B1of3
+ 0.211976     73 RI==B5of5 or Ba==B2of2
+ 0.209885     34 Na==B2of2 and Ba==B2of2
+ 0.209885    314 (Ba >= 0.4) and (Na >= 14.14)
+ 0.208833     41 RI==B5of5 or Na==B2of2
+ 0.207944     20 Na==B2of2 and K==B1of3
+ 0.207899    150 RI==B3of5 impl Na==B2of2
+ 0.206228    272 K DIVIDE Ba
+ 0.206228    282 Na DIVIDE Ba
+ 0.206228    280 Mg DIVIDE Ba
+ 0.206228    284 RI DIVIDE Ba
+ 0.202145    139 RI==B5of5 xor K==B2of3
+ 0.202145    102 RI==B5of5 equ K==B2of3
+ 0.202033     35 RI==B3of5 and Ba==B2of2
+ 0.2003      172 RI==B4of5 impl K==B3of3
+ 0.2003       29 RI==B4of5 and K==B2of3
+ 0.2003      171 RI==B4of5 impl K==B1of3
+ 0.2003      181 RI==B4of5 impl Ba==B2of2
+ 0.2003      151 RI==B4of5 impl Na==B2of2
+ 0.197624    298 Mg LESSTHAN Ba
+ 0.196884     89 RI==B1of5 equ K==B1of3
+ 0.196884    126 RI==B1of5 xor K==B1of3
+ 0.196686    110 RI==B5of5 equ Ba==B2of2
+ 0.196686    147 RI==B5of5 xor Ba==B2of2
+ 0.193446    274 Mg DIVIDE K
+ 0.193446    273 Ba DIVIDE K
+ 0.193446    278 RI DIVIDE K
+ 0.193446    276 Na DIVIDE K
+ 0.190987     63 RI==B4of5 or K==B3of3
+ 0.190987    137 RI==B4of5 xor K==B3of3
+ 0.190987    100 RI==B4of5 equ K==B3of3
+ 0.188059     66 RI==B5of5 or K==B3of3
+ 0.18619      42 Na==B2of2 or Mg==B2of2
+ 0.185727    138 RI==B5of5 xor K==B1of3
+ 0.185727    101 RI==B5of5 equ K==B1of3
+ 0.18303     169 RI==B3of5 impl K==B2of3
+ 0.181443     78 RI==B5of5 equ Na==B2of2
+ 0.181443    115 RI==B5of5 xor Na==B2of2
+ 0.180222     14 K==B1of3 and Ba==B2of2
+ 0.178694     65 RI==B5of5 or K==B2of3
+ 0.177385     79 Na==B2of2 equ Mg==B2of2
+ 0.177385    116 Na==B2of2 xor Mg==B2of2
+ 0.175522    140 RI==B5of5 xor K==B3of3
+ 0.175522    103 RI==B5of5 equ K==B3of3
+ 0.17388     203 RI==B3of5 and Na==B2of2 and Ba==B2of2
+ 0.173678    253 Mg ADD K
+ 0.173206    256 Mg ADD Ba
+ 0.170501     11 RI==B3of5 and Na==B2of2
+ 0.170324     46 Mg==B2of2 or K==B1of3
+ 0.168617    265 Mg SUBTRACT Ba
+ 0.166689    240 Mg==B2of2 or K==B3of3 or Ba==B2of2
+ 0.164811    183 RI==B3of5 and K==B1of3 and Ba==B2of2
+ 0.164811     26 RI==B3of5 and K==B1of3
+ 0.160097    120 Mg==B2of2 xor K==B1of3
+ 0.160097     83 Mg==B2of2 equ K==B1of3
+ 0.158879    152 RI==B5of5 impl Na==B2of2
+ 0.157227    182 RI==B5of5 impl Ba==B2of2
+ 0.156344    200 Na==B2of2 and K==B1of3 and Ba==B2of2
+ 0.155135    235 Na==B2of2 or Mg==B2of2 or K==B1of3
+ 0.149854    238 Mg==B2of2 or K==B1of3 or Ba==B2of2
+ 0.14841     249 Na==B2of2 or Mg==B2of2 or Ba==B2of2
+ 0.147161    260 Na SUBTRACT Mg
+ 0.140933    190 RI==B3of5 and Na==B2of2 and K==B1of3
+ 0.139919    173 RI==B5of5 impl K==B1of3
+ 0.138277    175 RI==B5of5 impl K==B3of3
+ 0.135194    289 Mg MULTIPLY K
+ 0.131063     31 RI==B5of5 and K==B2of3
+ 0.114411    239 Mg==B2of2 or K==B2of3 or Ba==B2of2
+ 0.112312    209 RI==B2of5 or K==B2of3 or Ba==B2of2
+ 0.109539    118 K==B2of3 xor Ba==B2of2
+ 0.109539     81 K==B2of3 equ Ba==B2of2
+ 0.10767      44 K==B2of3 or Ba==B2of2
+ 0.10767     215 RI==B4of5 or K==B2of3 or Ba==B2of2
+ 0.105463    301 Mg DIFF K
+ 0.099667    105 Na==B2of2 equ Ba==B2of2
+ 0.099667    142 Na==B2of2 xor Ba==B2of2
+ 0.098474    212 RI==B3of5 or K==B2of3 or Ba==B2of2
+ 0.096378    237 Na==B2of2 or Mg==B2of2 or K==B3of3
+ 0.095975    117 K==B1of3 xor Ba==B2of2
+ 0.095975     80 K==B1of3 equ Ba==B2of2
+ 0.093833     59 RI==B3of5 or K==B2of3
+ 0.093062    300 K DIFF Ba
+ 0.092952    251 Na ADD Mg
+ 0.092415    154 K==B1of3 impl Ba==B2of2
+ 0.086713    262 Mg SUBTRACT K
+ 0.086251    257 Na ADD Ba
+ 0.083513    177 Na==B2of2 impl Ba==B2of2
+ 0.075935    302 Mg DIFF Ba
+ 0.072876    296 Mg LESSTHAN K
+ 0.070976      4 Al
+ 0.069695    206 RI==B1of5 or K==B2of3 or Ba==B2of2
+ 0.069666    293 Na MULTIPLY Ba
+ 0.066315    121 Mg==B2of2 xor K==B2of3
+ 0.066315     84 Mg==B2of2 equ K==B2of3
+ 0.063002    285 Ba DIVIDE RI
+ 0.062582    267 RI SUBTRACT Ba
+ 0.062394      8 Ba
+ 0.062009    258 RI ADD Ba
+ 0.061791    294 RI MULTIPLY Ba
+ 0.061756    174 RI==B5of5 impl K==B2of3
+ 0.053051    286 RI MULTIPLY Na
+ 0.052214    250 RI ADD Na
+ 0.052099      2 Na
+ 0.051985    259 RI SUBTRACT Na
+ 0.051188    269 Na DIVIDE RI
+ 0.050064    268 RI DIVIDE Na
+ 0.048926    299 RI LESSTHAN Ba
+ 0.047038     12 RI==B5of5 and Na==B2of2
+ 0.046977     30 RI==B5of5 and K==B1of3
+ 0.046         7 Ca
+ 0.045362    283 Ba DIVIDE Na
+ 0.042961    263 Na SUBTRACT K
+ 0.038972    236 Na==B2of2 or Mg==B2of2 or K==B2of3
+ 0.038928     87 Na==B2of2 equ K==B2of3
+ 0.038928    124 Na==B2of2 xor K==B2of3
+ 0.037031     50 Na==B2of2 or K==B2of3
+ 0.037031    221 RI==B1of5 or Na==B2of2 or K==B2of3
+ 0.037031    230 RI==B4of5 or Na==B2of2 or K==B2of3
+ 0.036643     86 Na==B2of2 equ K==B1of3
+ 0.036643    123 Na==B2of2 xor K==B1of3
+ 0.035949      1 RI
+ 0.035499     91 RI==B1of5 equ K==B3of3
+ 0.035499     54 RI==B1of5 or K==B3of3
+ 0.035499    128 RI==B1of5 xor K==B3of3
+ 0.0354      224 RI==B2of5 or Na==B2of2 or K==B2of3
+ 0.034413    261 K SUBTRACT Ba
+ 0.033444     57 RI==B2of5 or K==B3of3
+ 0.032359    131 RI==B2of5 xor K==B3of3
+ 0.032359     94 RI==B2of5 equ K==B3of3
+ 0.031723    193 RI==B5of5 and Na==B2of2 and K==B1of3
+ 0.028218    233 RI==B5of5 or Na==B2of2 or K==B2of3
+ 0.025938      5 Si
+ 0.023245    252 K ADD Ba
+ 0.023016    254 Na ADD K
+ 0.022451    156 K==B3of3 impl Ba==B2of2
+ 0.019461    290 Na MULTIPLY K
+ 0.01904     266 Na SUBTRACT Ba
+ 0.019003    291 RI MULTIPLY K
+ 0.018935    255 RI ADD K
+ 0.018932      6 K
+ 0.018862    279 K DIVIDE RI
+ 0.018826    264 RI SUBTRACT K
+ 0.01857     277 K DIVIDE Na
+ 0.017292     28 RI==B3of5 and K==B3of3
+ 0.016095     22 Na==B2of2 and K==B3of3
+ 0.014272    195 RI==B5of5 and Na==B2of2 and K==B3of3
+ 0.014036     32 RI==B5of5 and K==B3of3
+ 0.013931    160 Na==B2of2 impl K==B1of3
+ 0.012407    242 Na==B2of2 or K==B2of3 or Ba==B2of2
+ 0.011627    292 Mg MULTIPLY Ba
+ 0.010345    218 RI==B5of5 or K==B2of3 or Ba==B2of2
+ 0.007545    297 RI LESSTHAN K
+ 0.006568     23 RI==B1of5 and K==B1of3
+ 0.006568    164 RI==B1of5 impl K==B2of3
+ 0.006568     10 RI==B1of5 and Na==B2of2
+ 0.006568    189 RI==B1of5 and Na==B2of2 and K==B1of3
+ 0.006489     13 Na==B2of2 and Mg==B2of2
+ 0.006082    185 RI==B3of5 and K==B3of3 and Ba==B2of2
+ 0.006045      9 Fe
+ 0.006041     16 K==B3of3 and Ba==B2of2
+ 0.005733    288 K MULTIPLY Ba
+ 0.005555     15 K==B2of3 and Ba==B2of2
+ 0.005381    165 RI==B1of5 impl K==B3of3
+ 0.005381    178 RI==B1of5 impl Ba==B2of2
+ 0.004649    187 RI==B5of5 and K==B2of3 and Ba==B2of2
+ 0.004399    201 Na==B2of2 and K==B2of3 and Ba==B2of2
+ 0.003856    158 Mg==B2of2 impl K==B2of3
+ 0.003292     33 Mg==B2of2 and Ba==B2of2
+ 0.003292    199 Mg==B2of2 and K==B2of3 and Ba==B2of2
+ 0.002895    192 RI==B3of5 and Na==B2of2 and K==B3of3
+ 0.002895     19 Mg==B2of2 and K==B3of3
+ 0.002895    198 Na==B2of2 and Mg==B2of2 and K==B3of3
+ 0.002321    191 RI==B3of5 and Na==B2of2 and K==B2of3
+ 0.00214      36 RI==B5of5 and Ba==B2of2
+ 0.001697    184 RI==B3of5 and K==B2of3 and Ba==B2of2
+ 0.00163     204 RI==B5of5 and Na==B2of2 and Ba==B2of2
+ 0.001123    227 RI==B3of5 or Na==B2of2 or K==B2of3
+ 0.00096      17 Mg==B2of2 and K==B1of3
+ 0.000184    202 Na==B2of2 and K==B3of3 and Ba==B2of2
+ 0.000184    188 RI==B5of5 and K==B3of3 and Ba==B2of2
+-0.0007      196 Na==B2of2 and Mg==B2of2 and K==B1of3
+-0.001025    163 RI==B1of5 impl K==B1of3
+-0.001025    148 RI==B1of5 impl Na==B2of2
+-0.001025     24 RI==B1of5 and K==B2of3
+-0.001812     21 Na==B2of2 and K==B2of3
+-0.002907    194 RI==B5of5 and Na==B2of2 and K==B2of3
+-0.003339    186 RI==B5of5 and K==B1of3 and Ba==B2of2
+-0.004648    197 Na==B2of2 and Mg==B2of2 and K==B2of3
+-0.007815    149 RI==B2of5 impl Na==B2of2
+-0.007815     25 RI==B2of5 and K==B3of3
+-0.007815    166 RI==B2of5 impl K==B1of3
+-0.007815    167 RI==B2of5 impl K==B2of3
+-0.007815    179 RI==B2of5 impl Ba==B2of2
+
+
+								--------------
+									Fold  2
+								--------------
+Feature evaluation: ReliefF (All features dataset) - After CI
+Ranked attributes:
+ 0.428153    260 Mg_x_Ba
+ 0.408075    126 Mg==B2of2 impl K==B3of3
+ 0.406395    130 Mg==B2of2 impl Ba==B2of2
+ 0.404378    261 RI_x_K
+ 0.395982    263 RI_x_Ba
+ 0.395283    255 RI_x_Na
+ 0.38678      18 Mg==B2of2 and K==B2of3
+ 0.385183    256 Na_x_Mg
+ 0.362778    174 RI==B2of3 or K==B1of3 or Ba==B2of2
+ 0.360797    258 Mg_x_K
+ 0.35511     124 Mg==B2of2 impl K==B1of3
+ 0.34809     176 RI==B2of3 or K==B3of3 or Ba==B2of2
+ 0.34684      61 RI==B2of3 or Ba==B2of2
+ 0.342181    199 RI==B2of3 or Na==B2of2 or Ba==B2of2
+ 0.339405     37 RI==B2of3 or Na==B2of2
+ 0.331649    188 RI==B2of3 or Na==B2of2 or K==B3of3
+ 0.328362    186 RI==B2of3 or Na==B2of2 or K==B1of3
+ 0.316598    171 RI==B1of3 or K==B1of3 or Ba==B2of2
+ 0.315102     53 RI==B2of3 or K==B1of3
+ 0.312815     88 RI==B2of3 equ Ba==B2of2
+ 0.312815    115 RI==B2of3 xor Ba==B2of2
+ 0.311608     50 RI==B1of3 or K==B1of3
+ 0.308021    122 K==B2of3 impl Ba==B2of2
+ 0.306951    173 RI==B1of3 or K==B3of3 or Ba==B2of2
+ 0.306437     99 Mg==B2of2 xor K==B3of3
+ 0.306437     72 Mg==B2of2 equ K==B3of3
+ 0.306009     64 RI==B2of3 equ Na==B2of2
+ 0.306009     91 RI==B2of3 xor Na==B2of2
+ 0.298878    108 RI==B2of3 xor K==B2of3
+ 0.298878     81 RI==B2of3 equ K==B2of3
+ 0.298145     60 RI==B1of3 or Ba==B2of2
+ 0.297978    257 K_x_Ba
+ 0.294587     80 RI==B2of3 equ K==B1of3
+ 0.294587    107 RI==B2of3 xor K==B1of3
+ 0.291319    262 Na_x_Ba
+ 0.285126     36 RI==B1of3 or Na==B2of2
+ 0.280976    198 RI==B1of3 or Na==B2of2 or Ba==B2of2
+ 0.279902    120 Na==B2of2 impl Mg==B2of2
+ 0.27981      40 K==B1of3 or Ba==B2of2
+ 0.276335    185 RI==B1of3 or Na==B2of2 or K==B3of3
+ 0.274911    183 RI==B1of3 or Na==B2of2 or K==B1of3
+ 0.274562     45 Mg==B2of2 or K==B3of3
+ 0.269298     48 Na==B2of2 or K==B3of3
+ 0.268298    197 Na==B2of2 or K==B3of3 or Ba==B2of2
+ 0.268173    259 Na_x_K
+ 0.259417    103 Mg==B2of2 xor Ba==B2of2
+ 0.259417     76 Mg==B2of2 equ Ba==B2of2
+ 0.258803     42 K==B3of3 or Ba==B2of2
+ 0.257614     59 Na==B2of2 or Ba==B2of2
+ 0.256819    191 RI==B3of3 or Na==B2of2 or K==B3of3
+ 0.256803     52 RI==B1of3 or K==B3of3
+ 0.252592    106 RI==B1of3 xor K==B3of3
+ 0.252592     79 RI==B1of3 equ K==B3of3
+ 0.251452    195 Na==B2of2 or K==B1of3 or Ba==B2of2
+ 0.250938    142 RI==B2of3 impl Ba==B2of2
+ 0.250938    134 RI==B2of3 impl K==B1of3
+ 0.250938     28 RI==B2of3 and K==B2of3
+ 0.245269    133 RI==B1of3 impl K==B3of3
+ 0.245258    179 RI==B3of3 or K==B3of3 or Ba==B2of2
+ 0.244279    177 RI==B3of3 or K==B1of3 or Ba==B2of2
+ 0.243418    269 num-of-N((Ba >= 0.53) and (Na >= 14.14))
+ 0.240133    128 Na==B2of2 impl K==B2of3
+ 0.24007      44 Mg==B2of2 or K==B2of3
+ 0.238618     75 Na==B2of2 equ K==B3of3
+ 0.238618    102 Na==B2of2 xor K==B3of3
+ 0.235419    136 RI==B2of3 impl K==B3of3
+ 0.235157     46 Na==B2of2 or K==B1of3
+ 0.234743     49 Mg==B2of2 or Ba==B2of2
+ 0.234526    118 RI==B2of3 impl Na==B2of2
+ 0.233614     82 RI==B2of3 equ K==B3of3
+ 0.233614     55 RI==B2of3 or K==B3of3
+ 0.233614    109 RI==B2of3 xor K==B3of3
+ 0.232631     78 RI==B1of3 equ K==B2of3
+ 0.232631    105 RI==B1of3 xor K==B2of3
+ 0.231407     25 RI==B1of3 and K==B2of3
+ 0.228914    141 RI==B1of3 impl Ba==B2of2
+ 0.228177     77 RI==B1of3 equ K==B1of3
+ 0.228177    104 RI==B1of3 xor K==B1of3
+ 0.227913    200 RI==B3of3 or Na==B2of2 or Ba==B2of2
+ 0.2259      131 RI==B1of3 impl K==B1of3
+ 0.222809     62 RI==B3of3 or Ba==B2of2
+ 0.221781    266 (Ba >= 0.53)
+ 0.219889     54 RI==B2of3 or K==B2of3
+ 0.218673    129 Na==B2of2 impl K==B3of3
+ 0.216026     38 RI==B3of3 or Na==B2of2
+ 0.216026    189 RI==B3of3 or Na==B2of2 or K==B1of3
+ 0.215728    117 RI==B1of3 impl Na==B2of2
+ 0.213563    223 Mg DIVIDE Na
+ 0.212594     87 RI==B1of3 equ Ba==B2of2
+ 0.212594    114 RI==B1of3 xor Ba==B2of2
+ 0.207433     90 RI==B1of3 xor Na==B2of2
+ 0.207433     63 RI==B1of3 equ Na==B2of2
+ 0.205834     69 K==B3of3 equ Ba==B2of2
+ 0.205834     96 K==B3of3 xor Ba==B2of2
+ 0.203502      3 Mg
+ 0.202274     32 Na==B2of2 and Ba==B2of2
+ 0.202157     20 Na==B2of2 and K==B1of3
+ 0.201558    236 RI DIVIDE Ba
+ 0.201558    224 K DIVIDE Ba
+ 0.201558    234 Na DIVIDE Ba
+ 0.201558    230 Mg DIVIDE Ba
+ 0.201186     56 RI==B3of3 or K==B1of3
+ 0.200507     89 RI==B3of3 equ Ba==B2of2
+ 0.200507    116 RI==B3of3 xor Ba==B2of2
+ 0.199174    247 K LESSTHAN Ba
+ 0.194971     58 RI==B3of3 or K==B3of3
+ 0.192835     84 RI==B3of3 equ K==B2of3
+ 0.192835    111 RI==B3of3 xor K==B2of3
+ 0.191971    239 Na MULTIPLY Mg
+ 0.189095     65 RI==B3of3 equ Na==B2of2
+ 0.189095     92 RI==B3of3 xor Na==B2of2
+ 0.180166    112 RI==B3of3 xor K==B3of3
+ 0.180166     85 RI==B3of3 equ K==B3of3
+ 0.1782      231 Ba DIVIDE Mg
+ 0.1782      227 K DIVIDE Mg
+ 0.1782      222 Na DIVIDE Mg
+ 0.177782    110 RI==B3of3 xor K==B1of3
+ 0.177782     83 RI==B3of3 equ K==B1of3
+ 0.173373    182 Mg==B2of2 or K==B3of3 or Ba==B2of2
+ 0.169851    228 Na DIVIDE K
+ 0.169851    225 Ba DIVIDE K
+ 0.169851    232 RI DIVIDE K
+ 0.169851    226 Mg DIVIDE K
+ 0.168593     43 Mg==B2of2 or K==B1of3
+ 0.16616     143 RI==B3of3 impl Ba==B2of2
+ 0.161753    267 (Ba >= 0.53) and (Na >= 14.14)
+ 0.160168    137 RI==B3of3 impl K==B1of3
+ 0.157921     97 Mg==B2of2 xor K==B1of3
+ 0.157921     70 Mg==B2of2 equ K==B1of3
+ 0.156545    249 Mg LESSTHAN Ba
+ 0.152896     66 Na==B2of2 equ Mg==B2of2
+ 0.152896     93 Na==B2of2 xor Mg==B2of2
+ 0.151424    205 Mg ADD K
+ 0.149479     30 RI==B3of3 and K==B2of3
+ 0.149429    216 Mg SUBTRACT Ba
+ 0.148574    139 RI==B3of3 impl K==B3of3
+ 0.14794     119 RI==B3of3 impl Na==B2of2
+ 0.146493    207 Mg ADD Ba
+ 0.13851     180 Mg==B2of2 or K==B1of3 or Ba==B2of2
+ 0.138373     57 RI==B3of3 or K==B2of3
+ 0.133223     39 Na==B2of2 or Mg==B2of2
+ 0.132984     33 RI==B1of3 and Ba==B2of2
+ 0.130289     94 K==B1of3 xor Ba==B2of2
+ 0.130289     67 K==B1of3 equ Ba==B2of2
+ 0.128255    265 (Na >= 14.36)
+ 0.126481     68 K==B2of3 equ Ba==B2of2
+ 0.126481     95 K==B2of3 xor Ba==B2of2
+ 0.126451    212 Na SUBTRACT Mg
+ 0.125484    181 Mg==B2of2 or K==B2of3 or Ba==B2of2
+ 0.12468     201 Na==B2of2 or Mg==B2of2 or Ba==B2of2
+ 0.120692    164 Na==B2of2 and K==B1of3 and Ba==B2of2
+ 0.120692     14 K==B1of3 and Ba==B2of2
+ 0.119979    192 Na==B2of2 or Mg==B2of2 or K==B1of3
+ 0.119306    175 RI==B2of3 or K==B2of3 or Ba==B2of2
+ 0.119306     41 K==B2of3 or Ba==B2of2
+ 0.118495     86 Na==B2of2 equ Ba==B2of2
+ 0.118495    113 Na==B2of2 xor Ba==B2of2
+ 0.114334    167 RI==B1of3 and Na==B2of2 and Ba==B2of2
+ 0.111172    140 Na==B2of2 impl Ba==B2of2
+ 0.109834     10 RI==B1of3 and Na==B2of2
+ 0.109473    241 Mg MULTIPLY K
+ 0.103657    121 K==B1of3 impl Ba==B2of2
+ 0.103241    252 K DIFF Ba
+ 0.098556    132 RI==B1of3 impl K==B2of3
+ 0.096191     98 Mg==B2of2 xor K==B2of3
+ 0.096191     71 Mg==B2of2 equ K==B2of3
+ 0.081145    209 Na ADD Ba
+ 0.08097      51 RI==B1of3 or K==B2of3
+ 0.08048     214 Mg SUBTRACT K
+ 0.079827    203 Na ADD Mg
+ 0.079275    138 RI==B3of3 impl K==B2of3
+ 0.075758     12 RI==B3of3 and Na==B2of2
+ 0.074364    194 Na==B2of2 or Mg==B2of2 or K==B3of3
+ 0.073771    172 RI==B1of3 or K==B2of3 or Ba==B2of2
+ 0.072531    253 Mg DIFF K
+ 0.06994       4 Al
+ 0.06958     153 RI==B1of3 and Na==B2of2 and K==B1of3
+ 0.06958      24 RI==B1of3 and K==B1of3
+ 0.069009    245 Na MULTIPLY Ba
+ 0.067297    144 RI==B1of3 and K==B1of3 and Ba==B2of2
+ 0.063051    237 Ba DIVIDE RI
+ 0.062646    219 RI SUBTRACT Ba
+ 0.062417      8 Ba
+ 0.062032    210 RI ADD Ba
+ 0.061789    246 RI MULTIPLY Ba
+ 0.058298    248 Mg LESSTHAN K
+ 0.058089    158 RI==B3of3 and Na==B2of2 and K==B1of3
+ 0.056359     29 RI==B3of3 and K==B1of3
+ 0.051716    254 Mg DIFF Ba
+ 0.047391    238 RI MULTIPLY Na
+ 0.046616    202 RI ADD Na
+ 0.046511      2 Na
+ 0.046408    211 RI SUBTRACT Na
+ 0.045864    251 RI LESSTHAN Ba
+ 0.045796    235 Ba DIVIDE Na
+ 0.045699    221 Na DIVIDE RI
+ 0.045651      7 Ca
+ 0.045197    220 RI DIVIDE Na
+ 0.044011    101 Na==B2of2 xor K==B2of3
+ 0.044011     74 Na==B2of2 equ K==B2of3
+ 0.040172     73 Na==B2of2 equ K==B1of3
+ 0.040172    100 Na==B2of2 xor K==B1of3
+ 0.039272    215 Na SUBTRACT K
+ 0.038555      1 RI
+ 0.038285     13 Na==B2of2 and Mg==B2of2
+ 0.033689    127 Na==B2of2 impl K==B1of3
+ 0.032868    204 K ADD Ba
+ 0.031558    264 (Ba >= 0.76) and (Ba <= 1.19)
+ 0.031558    268 num-of-N((Ba >= 0.76) and (Ba <= 1.19))
+ 0.031409    213 K SUBTRACT Ba
+ 0.027711     22 Na==B2of2 and K==B3of3
+ 0.027464      5 Si
+ 0.026851    206 Na ADD K
+ 0.026699     23 Mg==B2of2 and Ba==B2of2
+ 0.026485     19 Mg==B2of2 and K==B3of3
+ 0.026306     16 K==B3of3 and Ba==B2of2
+ 0.025648    243 Mg MULTIPLY Ba
+ 0.025502    160 RI==B3of3 and Na==B2of2 and K==B3of3
+ 0.025401    125 Mg==B2of2 impl K==B2of3
+ 0.025281     26 RI==B1of3 and K==B3of3
+ 0.024823     31 RI==B3of3 and K==B3of3
+ 0.024482    242 Na MULTIPLY K
+ 0.024459    123 K==B3of3 impl Ba==B2of2
+ 0.024223    152 Mg==B2of2 and K==B3of3 and Ba==B2of2
+ 0.024119    187 RI==B2of3 or Na==B2of2 or K==B2of3
+ 0.024119     47 Na==B2of2 or K==B2of3
+ 0.023673    244 RI MULTIPLY K
+ 0.023605      6 K
+ 0.023593    208 RI ADD K
+ 0.023538    233 K DIVIDE RI
+ 0.023508    217 RI SUBTRACT K
+ 0.022951    229 K DIVIDE Na
+ 0.020266     21 Na==B2of2 and K==B2of3
+ 0.019107    162 Na==B2of2 and Mg==B2of2 and K==B2of3
+ 0.017973    190 RI==B3of3 or Na==B2of2 or K==B2of3
+ 0.01789     218 Na SUBTRACT Ba
+ 0.017159    250 RI LESSTHAN K
+ 0.014726    240 K MULTIPLY Ba
+ 0.014082    165 Na==B2of2 and K==B2of3 and Ba==B2of2
+ 0.013913    146 RI==B1of3 and K==B3of3 and Ba==B2of2
+ 0.013775    169 RI==B3of3 and Na==B2of2 and Ba==B2of2
+ 0.012906    178 RI==B3of3 or K==B2of3 or Ba==B2of2
+ 0.012822     15 K==B2of3 and Ba==B2of2
+ 0.012428    163 Na==B2of2 and Mg==B2of2 and K==B3of3
+ 0.012206    170 Na==B2of2 and Mg==B2of2 and Ba==B2of2
+ 0.012078     35 RI==B3of3 and Ba==B2of2
+ 0.011707    193 Na==B2of2 or Mg==B2of2 or K==B2of3
+ 0.011707    196 Na==B2of2 or K==B2of3 or Ba==B2of2
+ 0.010781    166 Na==B2of2 and K==B3of3 and Ba==B2of2
+ 0.010631    154 RI==B1of3 and Na==B2of2 and K==B2of3
+ 0.010435    145 RI==B1of3 and K==B2of3 and Ba==B2of2
+ 0.00996       9 Fe
+ 0.009705    150 RI==B3of3 and K==B3of3 and Ba==B2of2
+ 0.0071      157 RI==B2of3 and Na==B2of2 and K==B2of3
+ 0.006779     11 RI==B2of3 and Na==B2of2
+ 0.006232    159 RI==B3of3 and Na==B2of2 and K==B2of3
+ 0.004581    155 RI==B1of3 and Na==B2of2 and K==B3of3
+ 0.004145    184 RI==B1of3 or Na==B2of2 or K==B2of3
+ 0.003783    149 RI==B3of3 and K==B2of3 and Ba==B2of2
+ 0.003291    151 Mg==B2of2 and K==B2of3 and Ba==B2of2
+ 0.000889    147 RI==B2of3 and K==B1of3 and Ba==B2of2
+ 0.000889     34 RI==B2of3 and Ba==B2of2
+ 0.000889    135 RI==B2of3 impl K==B2of3
+ 0.000889    168 RI==B2of3 and Na==B2of2 and Ba==B2of2
+ 0.000889    156 RI==B2of3 and Na==B2of2 and K==B1of3
+ 0.000889     27 RI==B2of3 and K==B1of3
+ 0.000213     17 Mg==B2of2 and K==B1of3
+ 0.000213    161 Na==B2of2 and Mg==B2of2 and K==B1of3
+-0.004785    148 RI==B3of3 and K==B1of3 and Ba==B2of2
+
+
+								--------------
+									Fold  3
+								--------------
+Feature evaluation: ReliefF (All features dataset) - After CI
+Ranked attributes:
+ 0.447064    338 RI_x_Mg
+ 0.430816    341 Mg_x_Ba
+ 0.415162    161 Mg==B2of2 impl K==B4of4
+ 0.413259    166 Mg==B2of2 impl Ba==B2of2
+ 0.38529     335 Na_x_Mg
+ 0.382072     85 RI==B2of3 equ Mg==B2of2
+ 0.382072    121 RI==B2of3 xor Mg==B2of2
+ 0.381167     49 RI==B2of3 or Mg==B2of2
+ 0.381167    259 RI==B2of3 or Mg==B2of2 or K==B3of4
+ 0.381167     53 Mg==B2of2 or K==B3of4
+ 0.360958    158 Mg==B2of2 impl K==B1of4
+ 0.360765    344 RI_x_Ba
+ 0.357608    336 RI_x_Na
+ 0.334404    355 num-of-N((RI >= 1.52247) and (RI <= 1.52315) and (Mg <= 3.34))
+ 0.33177     222 RI==B2of3 or K==B1of4 or Ba==B2of2
+ 0.330139    339 Mg_x_K
+ 0.314734    225 RI==B2of3 or K==B4of4 or Ba==B2of2
+ 0.311388    342 RI_x_K
+ 0.308931    271 RI==B2of3 or Na==B2of2 or Ba==B2of2
+ 0.306237    248 RI==B2of3 or Na==B2of2 or K==B4of4
+ 0.302252     42 RI==B2of3 or Na==B2of2
+ 0.301773     90 Mg==B2of2 equ K==B4of4
+ 0.301773    126 Mg==B2of2 xor K==B4of4
+ 0.300588    110 RI==B2of3 equ Ba==B2of2
+ 0.300588    146 RI==B2of3 xor Ba==B2of2
+ 0.300588     74 RI==B2of3 or Ba==B2of2
+ 0.298168     78 RI==B2of3 equ Na==B2of2
+ 0.298168    114 RI==B2of3 xor Na==B2of2
+ 0.298068    245 RI==B2of3 or Na==B2of2 or K==B1of4
+ 0.293162    343 Na_x_Ba
+ 0.287293     44 K==B1of4 or Ba==B2of2
+ 0.287158     84 RI==B1of3 equ Mg==B2of2
+ 0.287158    120 RI==B1of3 xor Mg==B2of2
+ 0.28079     148 Na==B2of2 impl Mg==B2of2
+ 0.279597    160 Mg==B2of2 impl K==B3of4
+ 0.279597     89 Mg==B2of2 equ K==B3of4
+ 0.279597    125 Mg==B2of2 xor K==B3of4
+ 0.279553     21 Mg==B2of2 and K==B2of4
+ 0.27696      58 Na==B2of2 or K==B4of4
+ 0.276852    337 K_x_Ba
+ 0.275867    268 Na==B2of2 or K==B4of4 or Ba==B2of2
+ 0.274588     47 K==B4of4 or Ba==B2of2
+ 0.268218    260 RI==B2of3 or Mg==B2of2 or K==B4of4
+ 0.268218     54 Mg==B2of2 or K==B4of4
+ 0.265722     64 RI==B2of3 or K==B1of4
+ 0.265722    100 RI==B2of3 equ K==B1of4
+ 0.265722    136 RI==B2of3 xor K==B1of4
+ 0.262809    351 num-of-N((Ba >= 0.4) and (K <= 0.08))
+ 0.261144     72 Na==B2of2 or Ba==B2of2
+ 0.259312    265 Na==B2of2 or K==B1of4 or Ba==B2of2
+ 0.250362    218 RI==B1of3 or K==B1of4 or Ba==B2of2
+ 0.249687    258 RI==B2of3 or Mg==B2of2 or K==B2of4
+ 0.249687     52 Mg==B2of2 or K==B2of4
+ 0.249294    135 RI==B1of3 xor K==B4of4
+ 0.249294     99 RI==B1of3 equ K==B4of4
+ 0.248493     95 Mg==B2of2 equ Ba==B2of2
+ 0.248493    131 Mg==B2of2 xor Ba==B2of2
+ 0.2482       17 RI==B1of3 and Mg==B2of2
+ 0.247758     60 RI==B1of3 or K==B1of4
+ 0.245329    164 Na==B2of2 impl K==B3of4
+ 0.244114    170 RI==B1of3 impl K==B4of4
+ 0.243796    340 Na_x_K
+ 0.242456     55 Na==B2of2 or K==B1of4
+ 0.242199     94 Na==B2of2 equ K==B4of4
+ 0.242199    130 Na==B2of2 xor K==B4of4
+ 0.241385     63 RI==B1of3 or K==B4of4
+ 0.241176    221 RI==B1of3 or K==B4of4 or Ba==B2of2
+ 0.237103    163 Na==B2of2 impl K==B2of4
+ 0.236769    252 RI==B3of3 or Na==B2of2 or K==B4of4
+ 0.23513      73 RI==B1of3 or Ba==B2of2
+ 0.231972    348 (Ba >= 0.4)
+ 0.228452    229 RI==B3of3 or K==B4of4 or Ba==B2of2
+ 0.225111    297 Mg DIVIDE Na
+ 0.222903    235 Mg==B2of2 or K==B3of4 or Ba==B2of2
+ 0.222903     59 Mg==B2of2 or Ba==B2of2
+ 0.222903    274 RI==B2of3 or Mg==B2of2 or Ba==B2of2
+ 0.222216    153 K==B2of4 impl Ba==B2of2
+ 0.222134    122 RI==B3of3 xor Mg==B2of2
+ 0.222134     86 RI==B3of3 equ Mg==B2of2
+ 0.221577    226 RI==B3of3 or K==B1of4 or Ba==B2of2
+ 0.219047     83 K==B4of4 equ Ba==B2of2
+ 0.219047    119 K==B4of4 xor Ba==B2of2
+ 0.218943    179 RI==B1of3 impl Ba==B2of2
+ 0.218917    165 Na==B2of2 impl K==B4of4
+ 0.215109    327 RI LESSTHAN Mg
+ 0.214217    303 Mg DIVIDE RI
+ 0.213756      3 Mg
+ 0.213299    319 RI MULTIPLY Mg
+ 0.21327     279 RI ADD Mg
+ 0.213128    289 RI SUBTRACT Mg
+ 0.212164    220 RI==B1of3 or K==B3of4 or Ba==B2of2
+ 0.212134     37 Na==B2of2 and Ba==B2of2
+ 0.21159     308 Mg DIVIDE Ba
+ 0.21159     300 K DIVIDE Ba
+ 0.21159     314 RI DIVIDE Ba
+ 0.21159     312 Na DIVIDE Ba
+ 0.210851    109 RI==B1of3 equ Ba==B2of2
+ 0.210851    145 RI==B1of3 xor Ba==B2of2
+ 0.210757     41 RI==B1of3 or Na==B2of2
+ 0.209841     96 RI==B1of3 equ K==B1of4
+ 0.209841    132 RI==B1of3 xor K==B1of4
+ 0.208958    326 K LESSTHAN Ba
+ 0.207792    241 RI==B1of3 or Na==B2of2 or K==B1of4
+ 0.20715     149 RI==B1of3 impl Na==B2of2
+ 0.206641    270 RI==B1of3 or Na==B2of2 or Ba==B2of2
+ 0.206377     62 RI==B1of3 or K==B3of4
+ 0.205233    167 RI==B1of3 impl K==B1of4
+ 0.203071    244 RI==B1of3 or Na==B2of2 or K==B4of4
+ 0.202923    263 RI==B3of3 or Mg==B2of2 or K==B3of4
+ 0.202923     50 RI==B3of3 or Mg==B2of2
+ 0.202923    156 RI==B1of3 impl Mg==B2of2
+ 0.202741     38 RI==B1of3 and Ba==B2of2
+ 0.202638    224 RI==B2of3 or K==B3of4 or Ba==B2of2
+ 0.202466    272 RI==B3of3 or Na==B2of2 or Ba==B2of2
+ 0.202229    113 RI==B1of3 xor Na==B2of2
+ 0.202229     77 RI==B1of3 equ Na==B2of2
+ 0.201556    316 Na MULTIPLY Mg
+ 0.201507    305 K DIVIDE Mg
+ 0.201507    296 Na DIVIDE Mg
+ 0.201507    309 Ba DIVIDE Mg
+ 0.201507    302 RI DIVIDE Mg
+ 0.200579     75 RI==B3of3 or Ba==B2of2
+ 0.198827     24 Na==B2of2 and K==B1of4
+ 0.19114      43 RI==B3of3 or Na==B2of2
+ 0.19114     249 RI==B3of3 or Na==B2of2 or K==B1of4
+ 0.185964     82 K==B3of4 equ Ba==B2of2
+ 0.185964    118 K==B3of4 xor Ba==B2of2
+ 0.185964     46 K==B3of4 or Ba==B2of2
+ 0.185437    247 RI==B2of3 or Na==B2of2 or K==B3of4
+ 0.185109    243 RI==B1of3 or Na==B2of2 or K==B3of4
+ 0.183921    111 RI==B3of3 equ Ba==B2of2
+ 0.183921    147 RI==B3of3 xor Ba==B2of2
+ 0.183725    264 RI==B3of3 or Mg==B2of2 or K==B4of4
+ 0.183712     65 RI==B2of3 or K==B2of4
+ 0.182635    214 RI==B1of3 and Na==B2of2 and Ba==B2of2
+ 0.182016    267 Na==B2of2 or K==B3of4 or Ba==B2of2
+ 0.178679     71 RI==B3of3 or K==B4of4
+ 0.177645     11 RI==B1of3 and Na==B2of2
+ 0.175614     57 Na==B2of2 or K==B3of4
+ 0.175614     93 Na==B2of2 equ K==B3of4
+ 0.175614    129 Na==B2of2 xor K==B3of4
+ 0.174838     68 RI==B3of3 or K==B1of4
+ 0.170976    139 RI==B2of3 xor K==B4of4
+ 0.170976     67 RI==B2of3 or K==B4of4
+ 0.170976    103 RI==B2of3 equ K==B4of4
+ 0.169558     51 Mg==B2of2 or K==B1of4
+ 0.169558    257 RI==B2of3 or Mg==B2of2 or K==B1of4
+ 0.16898      79 RI==B3of3 equ Na==B2of2
+ 0.16898     115 RI==B3of3 xor Na==B2of2
+ 0.165647    329 Mg LESSTHAN Ba
+ 0.164924    107 RI==B3of3 equ K==B4of4
+ 0.164924    143 RI==B3of3 xor K==B4of4
+ 0.162773    140 RI==B3of3 xor K==B1of4
+ 0.162773    104 RI==B3of3 equ K==B1of4
+ 0.15835     123 Mg==B2of2 xor K==B1of4
+ 0.15835      87 Mg==B2of2 equ K==B1of4
+ 0.158253    137 RI==B2of3 xor K==B2of4
+ 0.158253    101 RI==B2of3 equ K==B2of4
+ 0.157069    345 (Ba >= 0.4) and (K <= 0.08)
+ 0.155947    282 Mg ADD Ba
+ 0.155706    306 Na DIVIDE K
+ 0.155706    310 RI DIVIDE K
+ 0.155706    301 Ba DIVIDE K
+ 0.155706    304 Mg DIVIDE K
+ 0.154638    292 Mg SUBTRACT Ba
+ 0.153733    280 Mg ADD K
+ 0.151376    172 RI==B2of3 impl K==B3of4
+ 0.151376    205 RI==B2of3 and Mg==B2of2 and K==B2of4
+ 0.151376    173 RI==B2of3 impl K==B4of4
+ 0.151376    180 RI==B2of3 impl Ba==B2of2
+ 0.151376    171 RI==B2of3 impl K==B1of4
+ 0.151376     32 RI==B2of3 and K==B2of4
+ 0.151376     18 RI==B2of3 and Mg==B2of2
+ 0.149237    262 RI==B3of3 or Mg==B2of2 or K==B2of4
+ 0.147151    169 RI==B1of3 impl K==B3of4
+ 0.14712      66 RI==B2of3 or K==B3of4
+ 0.14712     138 RI==B2of3 xor K==B3of4
+ 0.14712     102 RI==B2of3 equ K==B3of4
+ 0.145851     48 RI==B1of3 or Mg==B2of2
+ 0.145851    157 RI==B3of3 impl Mg==B2of2
+ 0.145851    255 RI==B1of3 or Mg==B2of2 or K==B3of4
+ 0.145805    236 Mg==B2of2 or K==B4of4 or Ba==B2of2
+ 0.145778     19 RI==B3of3 and Mg==B2of2
+ 0.144964    233 Mg==B2of2 or K==B1of4 or Ba==B2of2
+ 0.144085     76 Na==B2of2 equ Mg==B2of2
+ 0.144085    112 Na==B2of2 xor Mg==B2of2
+ 0.14242      69 RI==B3of3 or K==B2of4
+ 0.14242     168 RI==B1of3 impl K==B2of4
+ 0.142131    286 Na SUBTRACT Mg
+ 0.140436    354 num-of-N((K >= 1.41) and (RI >= 1.51653))
+ 0.138528    174 RI==B3of3 impl K==B1of4
+ 0.137735    273 RI==B1of3 or Mg==B2of2 or Ba==B2of2
+ 0.13762     150 RI==B2of3 impl Na==B2of2
+ 0.13691     176 RI==B3of3 impl K==B3of4
+ 0.134898    105 RI==B3of3 equ K==B2of4
+ 0.134898    141 RI==B3of3 xor K==B2of4
+ 0.134006    181 RI==B3of3 impl Ba==B2of2
+ 0.133489    106 RI==B3of3 equ K==B3of4
+ 0.133489    142 RI==B3of3 xor K==B3of4
+ 0.130029     28 RI==B1of3 and K==B1of4
+ 0.130029    195 RI==B1of3 and Na==B2of2 and K==B1of4
+ 0.129893    177 RI==B3of3 impl K==B4of4
+ 0.129626     70 RI==B3of3 or K==B3of4
+ 0.129375    239 Na==B2of2 or Mg==B2of2 or K==B3of4
+ 0.129375    231 RI==B2of3 or Na==B2of2 or Mg==B2of2
+ 0.129375     40 Na==B2of2 or Mg==B2of2
+ 0.128348     14 K==B1of4 and Ba==B2of2
+ 0.128348    182 RI==B1of3 and K==B1of4 and Ba==B2of2
+ 0.128348    210 Na==B2of2 and K==B1of4 and Ba==B2of2
+ 0.127924    134 RI==B1of3 xor K==B3of4
+ 0.127924     98 RI==B1of3 equ K==B3of4
+ 0.125995    207 RI==B3of3 and Mg==B2of2 and K==B2of4
+ 0.124029     34 RI==B3of3 and K==B2of4
+ 0.123629    237 Na==B2of2 or Mg==B2of2 or K==B1of4
+ 0.120914    251 RI==B3of3 or Na==B2of2 or K==B3of4
+ 0.120832    269 Na==B2of2 or Mg==B2of2 or Ba==B2of2
+ 0.11983     234 Mg==B2of2 or K==B2of4 or Ba==B2of2
+ 0.118177    228 RI==B3of3 or K==B3of4 or Ba==B2of2
+ 0.115127    116 K==B1of4 xor Ba==B2of2
+ 0.115127     80 K==B1of4 equ Ba==B2of2
+ 0.114301    256 RI==B1of3 or Mg==B2of2 or K==B4of4
+ 0.11412     353 num-of-N((RI >= 1.52247) and (RI <= 1.52315) and (K >= 0.6))
+ 0.11405     151 RI==B3of3 impl Na==B2of2
+ 0.111957    320 Mg MULTIPLY K
+ 0.109023    108 Na==B2of2 equ Ba==B2of2
+ 0.109023    144 Na==B2of2 xor Ba==B2of2
+ 0.107025    223 RI==B2of3 or K==B2of4 or Ba==B2of2
+ 0.107025     45 K==B2of4 or Ba==B2of2
+ 0.102321    253 RI==B1of3 or Mg==B2of2 or K==B1of4
+ 0.101049    178 Na==B2of2 impl Ba==B2of2
+ 0.097031     81 K==B2of4 equ Ba==B2of2
+ 0.097031    117 K==B2of4 xor Ba==B2of2
+ 0.0906      124 Mg==B2of2 xor K==B2of4
+ 0.0906       88 Mg==B2of2 equ K==B2of4
+ 0.089537    152 K==B1of4 impl Ba==B2of2
+ 0.089222    332 K DIFF Ba
+ 0.08737     290 Mg SUBTRACT K
+ 0.080927    284 Na ADD Ba
+ 0.080235    276 Na ADD Mg
+ 0.078391    230 RI==B1of3 or Na==B2of2 or Mg==B2of2
+ 0.075656     97 RI==B1of3 equ K==B2of4
+ 0.075656    133 RI==B1of3 xor K==B2of4
+ 0.073026      4 Al
+ 0.072716     13 RI==B3of3 and Na==B2of2
+ 0.072337    328 Mg LESSTHAN K
+ 0.06874     202 RI==B1of3 and Mg==B2of2 and K==B2of4
+ 0.068024    333 Mg DIFF K
+ 0.06533     324 Na MULTIPLY Ba
+ 0.063931    254 RI==B1of3 or Mg==B2of2 or K==B2of4
+ 0.061455    227 RI==B3of3 or K==B2of4 or Ba==B2of2
+ 0.061147    334 Mg DIFF Ba
+ 0.060598    159 Mg==B2of2 impl K==B2of4
+ 0.060445     29 RI==B1of3 and K==B2of4
+ 0.059723    315 Ba DIVIDE RI
+ 0.059337    295 RI SUBTRACT Ba
+ 0.059114      8 Ba
+ 0.05877     250 RI==B3of3 or Na==B2of2 or K==B2of4
+ 0.058736    285 RI ADD Ba
+ 0.058671    203 RI==B1of3 and Mg==B2of2 and K==B3of4
+ 0.058671     30 RI==B1of3 and K==B3of4
+ 0.058511    325 RI MULTIPLY Ba
+ 0.055897    240 Na==B2of2 or Mg==B2of2 or K==B4of4
+ 0.055852    175 RI==B3of3 impl K==B2of4
+ 0.055852     61 RI==B1of3 or K==B2of4
+ 0.053001    346 (Ba >= 0.81) and (Ba <= 1.68)
+ 0.053001    352 num-of-N((Ba >= 0.81) and (Ba <= 1.68))
+ 0.052345    199 RI==B3of3 and Na==B2of2 and K==B1of4
+ 0.048455     33 RI==B3of3 and K==B1of4
+ 0.0484      317 RI MULTIPLY Na
+ 0.047686    154 K==B3of4 impl Ba==B2of2
+ 0.047686     22 Mg==B2of2 and K==B3of4
+ 0.04756     277 RI ADD Na
+ 0.047447      2 Na
+ 0.047335    287 RI SUBTRACT Na
+ 0.046588    299 Na DIVIDE RI
+ 0.046378    219 RI==B1of3 or K==B2of4 or Ba==B2of2
+ 0.045838    298 RI DIVIDE Na
+ 0.043399    313 Ba DIVIDE Na
+ 0.04317      56 Na==B2of2 or K==B2of4
+ 0.04317     246 RI==B2of3 or Na==B2of2 or K==B2of4
+ 0.042455    291 Na SUBTRACT K
+ 0.040497      7 Ca
+ 0.03929     266 Na==B2of2 or K==B2of4 or Ba==B2of2
+ 0.038249      1 RI
+ 0.037345     92 Na==B2of2 equ K==B2of4
+ 0.037345    128 Na==B2of2 xor K==B2of4
+ 0.034926     10 Na==B2of2 and Mg==B2of2
+ 0.034498    278 K ADD Ba
+ 0.03376     331 RI LESSTHAN Ba
+ 0.033292    288 K SUBTRACT Ba
+ 0.032865     31 RI==B1of3 and K==B4of4
+ 0.031487    155 K==B4of4 impl Ba==B2of2
+ 0.030312    350 (RI >= 1.52247) and (RI <= 1.52315) and (Mg <= 3.34)
+ 0.030312    347 (RI >= 1.52247) and (RI <= 1.52315) and (K >= 0.6)
+ 0.03023       5 Si
+ 0.029786    127 Na==B2of2 xor K==B1of4
+ 0.029786     91 Na==B2of2 equ K==B1of4
+ 0.02936     162 Na==B2of2 impl K==B1of4
+ 0.028958    321 Na MULTIPLY K
+ 0.028752    281 Na ADD K
+ 0.028216    323 RI MULTIPLY K
+ 0.028166     26 Na==B2of2 and K==B4of4
+ 0.028152    283 RI ADD K
+ 0.028148      6 K
+ 0.028081    311 K DIVIDE RI
+ 0.028028    293 RI SUBTRACT K
+ 0.027525    307 K DIVIDE Na
+ 0.027429     27 Mg==B2of2 and Ba==B2of2
+ 0.02699      23 Mg==B2of2 and K==B4of4
+ 0.026967     16 K==B4of4 and Ba==B2of2
+ 0.026249    201 RI==B3of3 and Na==B2of2 and K==B4of4
+ 0.02611     189 RI==B3of3 and Na==B2of2 and Mg==B2of2
+ 0.026042    322 Mg MULTIPLY Ba
+ 0.02504      36 RI==B3of3 and K==B4of4
+ 0.024947    191 Mg==B2of2 and K==B4of4 and Ba==B2of2
+ 0.024363    261 RI==B3of3 or Mg==B2of2 or K==B1of4
+ 0.023351    330 RI LESSTHAN K
+ 0.017615    294 Na SUBTRACT Ba
+ 0.016973    275 RI==B3of3 or Mg==B2of2 or Ba==B2of2
+ 0.015958    215 RI==B3of3 and Na==B2of2 and Ba==B2of2
+ 0.015739    204 RI==B1of3 and Mg==B2of2 and K==B4of4
+ 0.015522    238 Na==B2of2 or Mg==B2of2 or K==B2of4
+ 0.015106    349 (K >= 1.41) and (RI >= 1.51653)
+ 0.014921    318 K MULTIPLY Ba
+ 0.014898    193 Na==B2of2 and Mg==B2of2 and K==B2of4
+ 0.014462     39 RI==B3of3 and Ba==B2of2
+ 0.014277    184 RI==B1of3 and K==B4of4 and Ba==B2of2
+ 0.013057     25 Na==B2of2 and K==B2of4
+ 0.01304     216 RI==B1of3 and Mg==B2of2 and Ba==B2of2
+ 0.012524    217 RI==B3of3 and Mg==B2of2 and Ba==B2of2
+ 0.012524    213 Na==B2of2 and Mg==B2of2 and Ba==B2of2
+ 0.012523    194 Na==B2of2 and Mg==B2of2 and K==B4of4
+ 0.011392    232 RI==B3of3 or Na==B2of2 or Mg==B2of2
+ 0.011027    212 Na==B2of2 and K==B4of4 and Ba==B2of2
+ 0.010015    186 RI==B3of3 and K==B4of4 and Ba==B2of2
+ 0.009824    209 RI==B3of3 and Mg==B2of2 and K==B4of4
+ 0.00873     211 Na==B2of2 and K==B2of4 and Ba==B2of2
+ 0.007462     15 K==B2of4 and Ba==B2of2
+ 0.006387      9 Fe
+ 0.006035    188 RI==B2of3 and Na==B2of2 and Mg==B2of2
+ 0.006035     12 RI==B2of3 and Na==B2of2
+ 0.006035    198 RI==B2of3 and Na==B2of2 and K==B2of4
+ 0.005809    200 RI==B3of3 and Na==B2of2 and K==B2of4
+ 0.005393    196 RI==B1of3 and Na==B2of2 and K==B2of4
+ 0.005269    183 RI==B1of3 and K==B2of4 and Ba==B2of2
+ 0.004333    197 RI==B1of3 and Na==B2of2 and K==B4of4
+ 0.003706    187 RI==B1of3 and Na==B2of2 and Mg==B2of2
+ 0.003604    185 RI==B3of3 and K==B2of4 and Ba==B2of2
+ 0.003316    190 Mg==B2of2 and K==B2of4 and Ba==B2of2
+-0.000248    206 RI==B3of3 and Mg==B2of2 and K==B1of4
+-0.000248    192 Na==B2of2 and Mg==B2of2 and K==B1of4
+-0.000248     20 Mg==B2of2 and K==B1of4
+-0.008135    208 RI==B3of3 and Mg==B2of2 and K==B3of4
+-0.008135     35 RI==B3of3 and K==B3of4
+-0.01046     242 RI==B1of3 or Na==B2of2 or K==B2of4
+
+
+								--------------
+									Fold  4
+								--------------
+Feature evaluation: ReliefF (All features dataset) - After CI
+Ranked attributes:
+ 0.427001     444 Mg_x_Ba
+ 0.403846     446 RI_x_Ba
+ 0.403365     235 Mg==B2of2 impl K==B4of4
+ 0.401706     255 Mg==B2of2 impl Ba==B2of2
+ 0.400413     435 RI_x_Na
+ 0.383832     436 Na_x_Mg
+ 0.382133     347 RI==B2of3 or Na==B2of2 or Ba==B2of2
+ 0.373991     302 RI==B2of3 or K==B1of4 or Ba==B2of2
+ 0.369628      81 Mg==B2of2 or K==B3of4
+ 0.367591     442 Al_x_Ba
+ 0.366008     438 Na_x_Al
+ 0.364152     314 RI==B2of3 or Na==B2of2 or K==B1of4
+ 0.36016      105 RI==B2of3 or Ba==B2of2
+ 0.354373      57 RI==B2of3 or Na==B2of2
+ 0.354178     305 RI==B2of3 or K==B4of4 or Ba==B2of2
+ 0.350758     232 Mg==B2of2 impl K==B1of4
+ 0.345041     207 RI==B2of3 xor Ba==B2of2
+ 0.345041     156 RI==B2of3 equ Ba==B2of2
+ 0.343037     159 RI==B2of3 xor Na==B2of2
+ 0.343037     108 RI==B2of3 equ Na==B2of2
+ 0.338851     317 RI==B2of3 or Na==B2of2 or K==B4of4
+ 0.316257     443 RI_x_K
+ 0.31576       94 RI==B2of3 or K==B1of4
+ 0.312467     223 Al==B1of3 impl K==B4of4
+ 0.307422     220 Al==B1of3 impl K==B1of4
+ 0.307036      56 RI==B1of3 or Na==B2of2
+ 0.306961     145 RI==B2of3 equ K==B1of4
+ 0.306961     196 RI==B2of3 xor K==B1of4
+ 0.305915     440 Mg_x_K
+ 0.303556     310 RI==B1of3 or Na==B2of2 or K==B1of4
+ 0.302658     240 Al==B1of3 impl Ba==B2of2
+ 0.299218     133 Mg==B2of2 equ K==B4of4
+ 0.299218     184 Mg==B2of2 xor K==B4of4
+ 0.29887      313 RI==B1of3 or Na==B2of2 or K==B4of4
+ 0.292213     346 RI==B1of3 or Na==B2of2 or Ba==B2of2
+ 0.291658     333 Na==B2of2 or K==B4of4 or Ba==B2of2
+ 0.288068     330 Na==B2of2 or K==B1of4 or Ba==B2of2
+ 0.287522     451 num-of-N((Ba >= 0.4) and (Na >= 13.87))
+ 0.286958     439 Al_x_K
+ 0.282806     298 RI==B1of3 or K==B1of4 or Ba==B2of2
+ 0.282529     353 Al==B1of3 or K==B1of4 or Ba==B2of2
+ 0.282164     345 Na==B2of2 or Al==B3of3 or K==B4of4
+ 0.281991     189 Al==B1of3 xor Ba==B2of2
+ 0.281991     138 Al==B1of3 equ Ba==B2of2
+ 0.28074      103 Na==B2of2 or Ba==B2of2
+ 0.280733      87 Al==B1of3 or Ba==B2of2
+ 0.280356     301 RI==B1of3 or K==B4of4 or Ba==B2of2
+ 0.279686     445 Na_x_Ba
+ 0.276991     360 Al==B2of3 or K==B4of4 or Ba==B2of2
+ 0.275266      90 RI==B1of3 or K==B1of4
+ 0.274885     342 Na==B2of2 or Al==B3of3 or K==B1of4
+ 0.274536      60 K==B1of4 or Ba==B2of2
+ 0.271211     361 Al==B3of3 or K==B1of4 or Ba==B2of2
+ 0.271084     104 RI==B1of3 or Ba==B2of2
+ 0.270949     350 Na==B2of2 or Al==B1of3 or Ba==B2of2
+ 0.268643      69 Al==B1of3 or K==B3of4
+ 0.268146      75 Al==B3of3 or K==B1of4
+ 0.267075     437 K_x_Ba
+ 0.266872     341 Na==B2of2 or Al==B2of3 or K==B4of4
+ 0.266843      82 Mg==B2of2 or K==B4of4
+ 0.266225      66 Na==B2of2 or Al==B3of3
+ 0.261482      63 K==B4of4 or Ba==B2of2
+ 0.261446     334 Na==B2of2 or Al==B1of3 or K==B1of4
+ 0.260707      64 Na==B2of2 or Al==B1of3
+ 0.260669     153 Mg==B2of2 equ Ba==B2of2
+ 0.260669     204 Mg==B2of2 xor Ba==B2of2
+ 0.260627     309 RI==B3of3 or K==B4of4 or Ba==B2of2
+ 0.258641      67 Al==B1of3 or K==B1of4
+ 0.25762      352 Na==B2of2 or Al==B3of3 or Ba==B2of2
+ 0.255821     321 RI==B3of3 or Na==B2of2 or K==B4of4
+ 0.255585      83 Na==B2of2 or K==B1of4
+ 0.255493      21 Al==B1of3 and K==B2of4
+ 0.253621      86 Na==B2of2 or K==B4of4
+ 0.251286     172 Al==B1of3 xor K==B4of4
+ 0.251286     121 Al==B1of3 equ K==B4of4
+ 0.249894     210 RI==B2of3 impl Na==B2of2
+ 0.249894     247 RI==B2of3 impl K==B1of4
+ 0.249894     258 RI==B2of3 impl Ba==B2of2
+ 0.2498        93 RI==B1of3 or K==B4of4
+ 0.249575     166 Na==B2of2 xor Al==B1of3
+ 0.249575     115 Na==B2of2 equ Al==B1of3
+ 0.249288     222 Al==B1of3 impl K==B3of4
+ 0.249145     306 RI==B3of3 or K==B1of4 or Ba==B2of2
+ 0.247186     195 RI==B1of3 xor K==B4of4
+ 0.247186     144 RI==B1of3 equ K==B4of4
+ 0.24688      351 Na==B2of2 or Al==B2of3 or Ba==B2of2
+ 0.246282     169 Al==B1of3 xor K==B1of4
+ 0.246282     118 Al==B1of3 equ K==B1of4
+ 0.246202     364 Al==B3of3 or K==B4of4 or Ba==B2of2
+ 0.245404      32 Mg==B2of2 and K==B2of4
+ 0.244446     234 Mg==B2of2 impl K==B3of4
+ 0.244446     132 Mg==B2of2 equ K==B3of4
+ 0.244446     183 Mg==B2of2 xor K==B3of4
+ 0.244246     230 Al==B3of3 impl K==B3of4
+ 0.242922     250 RI==B2of3 impl K==B4of4
+ 0.241511     348 RI==B3of3 or Na==B2of2 or Ba==B2of2
+ 0.24085      312 RI==B1of3 or Na==B2of2 or K==B3of4
+ 0.240739      78 Al==B3of3 or K==B4of4
+ 0.240361     246 RI==B1of3 impl K==B4of4
+ 0.239958     304 RI==B2of3 or K==B3of4 or Ba==B2of2
+ 0.239168      70 Al==B1of3 or K==B4of4
+ 0.238894     357 Al==B2of3 or K==B1of4 or Ba==B2of2
+ 0.237906     199 RI==B2of3 xor K==B4of4
+ 0.237906      97 RI==B2of3 or K==B4of4
+ 0.237906     148 RI==B2of3 equ K==B4of4
+ 0.237529     102 Mg==B2of2 or Ba==B2of2
+ 0.237529     328 Mg==B2of2 or K==B3of4 or Ba==B2of2
+ 0.236504     338 Na==B2of2 or Al==B2of3 or K==B1of4
+ 0.23554       80 Mg==B2of2 or K==B2of4
+ 0.233446     316 RI==B2of3 or Na==B2of2 or K==B3of4
+ 0.23308      441 Na_x_K
+ 0.230031     356 Al==B1of3 or K==B4of4 or Ba==B2of2
+ 0.229739      89 Al==B3of3 or Ba==B2of2
+ 0.227127     106 RI==B3of3 or Ba==B2of2
+ 0.227038      65 Na==B2of2 or Al==B2of3
+ 0.22588      238 Na==B2of2 impl K==B3of4
+ 0.225171     212 Na==B2of2 impl Mg==B2of2
+ 0.224884     190 Al==B2of3 xor Ba==B2of2
+ 0.224884     139 Al==B2of3 equ Ba==B2of2
+ 0.224884      88 Al==B2of3 or Ba==B2of2
+ 0.223704     448 (Ba >= 0.4)
+ 0.221961     257 RI==B1of3 impl Ba==B2of2
+ 0.221708     158 RI==B1of3 xor Na==B2of2
+ 0.221708     107 RI==B1of3 equ Na==B2of2
+ 0.221571     392 Mg DIVIDE Na
+ 0.218782      39 Al==B3of3 and Ba==B2of2
+ 0.217061     171 Al==B1of3 xor K==B3of4
+ 0.217061     120 Al==B1of3 equ K==B3of4
+ 0.216592     337 Na==B2of2 or Al==B1of3 or K==B4of4
+ 0.215732     318 RI==B3of3 or Na==B2of2 or K==B1of4
+ 0.215529     243 RI==B1of3 impl K==B1of4
+ 0.215436     340 Na==B2of2 or Al==B2of3 or K==B3of4
+ 0.214931     209 RI==B1of3 impl Na==B2of2
+ 0.213352     188 Na==B2of2 xor K==B4of4
+ 0.213352     137 Na==B2of2 equ K==B4of4
+ 0.213045     165 K==B4of4 xor Ba==B2of2
+ 0.213045     114 K==B4of4 equ Ba==B2of2
+ 0.212646     300 RI==B1of3 or K==B3of4 or Ba==B2of2
+ 0.212457     192 RI==B1of3 xor K==B1of4
+ 0.212457     141 RI==B1of3 equ K==B1of4
+ 0.212017       3 Mg
+ 0.210288     206 RI==B1of3 xor Ba==B2of2
+ 0.210288     155 RI==B1of3 equ Ba==B2of2
+ 0.210071     449 (Ba >= 0.4) and (Na >= 13.87)
+ 0.210046      74 Al==B2of3 or K==B4of4
+ 0.210046     176 Al==B2of3 xor K==B4of4
+ 0.210046     125 Al==B2of3 equ K==B4of4
+ 0.208336      98 RI==B3of3 or K==B1of4
+ 0.207106      96 RI==B2of3 or K==B3of4
+ 0.20661      167 Na==B2of2 xor Al==B2of3
+ 0.20661      116 Na==B2of2 equ Al==B2of3
+ 0.206319      58 RI==B3of3 or Na==B2of2
+ 0.20601      359 Al==B2of3 or K==B3of4 or Ba==B2of2
+ 0.204688     208 RI==B3of3 xor Ba==B2of2
+ 0.204688     157 RI==B3of3 equ Ba==B2of2
+ 0.204576     407 Mg DIVIDE Ba
+ 0.204576     409 Na DIVIDE Ba
+ 0.204576     403 Al DIVIDE Ba
+ 0.204576     411 RI DIVIDE Ba
+ 0.204576     393 K DIVIDE Ba
+ 0.203339     332 Na==B2of2 or K==B3of4 or Ba==B2of2
+ 0.201104     425 K LESSTHAN Ba
+ 0.200548     414 Na MULTIPLY Mg
+ 0.196872     447 (Na >= 14.14)
+ 0.196734     217 Na==B2of2 impl Al==B1of3
+ 0.196153     214 K==B2of4 impl Ba==B2of2
+ 0.194267     237 Na==B2of2 impl K==B2of4
+ 0.193762     101 RI==B3of3 or K==B4of4
+ 0.19321      408 Ba DIVIDE Mg
+ 0.19321      391 Na DIVIDE Mg
+ 0.19321      400 K DIVIDE Mg
+ 0.192739      71 Al==B2of3 or K==B1of4
+ 0.190681      73 Al==B2of3 or K==B3of4
+ 0.185855     239 Na==B2of2 impl K==B4of4
+ 0.185681     344 Na==B2of2 or Al==B3of3 or K==B3of4
+ 0.184556      95 RI==B2of3 or K==B2of4
+ 0.183683      45 RI==B2of3 and K==B2of4
+ 0.182811      92 RI==B1of3 or K==B3of4
+ 0.181221     149 RI==B3of3 equ K==B1of4
+ 0.181221     200 RI==B3of3 xor K==B1of4
+ 0.179366     160 RI==B3of3 xor Na==B2of2
+ 0.179366     109 RI==B3of3 equ Na==B2of2
+ 0.178599     249 RI==B2of3 impl K==B3of4
+ 0.177952     218 Na==B2of2 impl Al==B2of3
+ 0.177023     211 RI==B3of3 impl Na==B2of2
+ 0.17676      152 RI==B3of3 equ K==B4of4
+ 0.17676      203 RI==B3of3 xor K==B4of4
+ 0.176245     164 K==B3of4 xor Ba==B2of2
+ 0.176245     113 K==B3of4 equ Ba==B2of2
+ 0.176245      62 K==B3of4 or Ba==B2of2
+ 0.175903      68 Al==B1of3 or K==B2of4
+ 0.175795     180 Al==B3of3 xor K==B4of4
+ 0.175795     129 Al==B3of3 equ K==B4of4
+ 0.175428      85 Na==B2of2 or K==B3of4
+ 0.175428     187 Na==B2of2 xor K==B3of4
+ 0.175428     136 Na==B2of2 equ K==B3of4
+ 0.175253     229 Al==B3of3 impl K==B2of4
+ 0.172377     324 Na==B2of2 or Mg==B2of2 or K==B3of4
+ 0.172377      59 Na==B2of2 or Mg==B2of2
+ 0.172157     161 Na==B2of2 xor Mg==B2of2
+ 0.172157     110 Na==B2of2 equ Mg==B2of2
+ 0.171437     363 Al==B3of3 or K==B3of4 or Ba==B2of2
+ 0.170108      19 Na==B2of2 and Al==B3of3
+ 0.166994     401 Na DIVIDE K
+ 0.166994     405 RI DIVIDE K
+ 0.166994     394 Ba DIVIDE K
+ 0.166994     397 Al DIVIDE K
+ 0.166994     399 Mg DIVIDE K
+ 0.166532      77 Al==B3of3 or K==B3of4
+ 0.164958     224 Al==B2of3 impl K==B1of4
+ 0.162811     259 RI==B3of3 impl Ba==B2of2
+ 0.162638     241 Al==B2of3 impl Ba==B2of2
+ 0.162638     227 Al==B2of3 impl K==B4of4
+ 0.162503     355 Al==B1of3 or K==B3of4 or Ba==B2of2
+ 0.162498      52 Na==B2of2 and Ba==B2of2
+ 0.161167     128 Al==B3of3 equ K==B3of4
+ 0.161167     179 Al==B3of3 xor K==B3of4
+ 0.158893      53 RI==B1of3 and Ba==B2of2
+ 0.158568     122 Al==B2of3 equ K==B1of4
+ 0.158568     173 Al==B2of3 xor K==B1of4
+ 0.158456     231 Al==B3of3 impl K==B4of4
+ 0.157152     430 Mg LESSTHAN Ba
+ 0.156287     245 RI==B1of3 impl K==B3of4
+ 0.155739      35 Na==B2of2 and K==B1of4
+ 0.155467     349 Na==B2of2 or Mg==B2of2 or Ba==B2of2
+ 0.154518     374 Mg ADD Ba
+ 0.153271     329 Mg==B2of2 or K==B4of4 or Ba==B2of2
+ 0.153056     370 Mg ADD K
+ 0.151723     293 Na==B2of2 and Al==B3of3 and Ba==B2of2
+ 0.150946     386 Mg SUBTRACT Ba
+ 0.15032      251 RI==B3of3 impl K==B1of4
+ 0.150162      79 Mg==B2of2 or K==B1of4
+ 0.148952     198 RI==B2of3 xor K==B3of4
+ 0.148952     147 RI==B2of3 equ K==B3of4
+ 0.147379     336 Na==B2of2 or Al==B1of3 or K==B3of4
+ 0.146365     326 Mg==B2of2 or K==B1of4 or Ba==B2of2
+ 0.145679     452 num-of-N((K >= 0.76) and (Al <= 1.81))
+ 0.144539     100 RI==B3of3 or K==B3of4
+ 0.14242      253 RI==B3of3 impl K==B3of4
+ 0.142112     130 Mg==B2of2 equ K==B1of4
+ 0.142112     181 Mg==B2of2 xor K==B1of4
+ 0.141793     254 RI==B3of3 impl K==B4of4
+ 0.141368     322 Na==B2of2 or Mg==B2of2 or K==B1of4
+ 0.1406       303 RI==B2of3 or K==B2of4 or Ba==B2of2
+ 0.139804     123 Al==B2of3 equ K==B2of4
+ 0.139804     174 Al==B2of3 xor K==B2of4
+ 0.137        320 RI==B3of3 or Na==B2of2 or K==B3of4
+ 0.134171     308 RI==B3of3 or K==B3of4 or Ba==B2of2
+ 0.13417       72 Al==B2of3 or K==B2of4
+ 0.132464     201 RI==B3of3 xor K==B2of4
+ 0.132464     150 RI==B3of3 equ K==B2of4
+ 0.131267     202 RI==B3of3 xor K==B3of4
+ 0.131267     151 RI==B3of3 equ K==B3of4
+ 0.130792     378 Na SUBTRACT Mg
+ 0.127279      48 RI==B3of3 and K==B2of4
+ 0.125372     327 Mg==B2of2 or K==B2of4 or Ba==B2of2
+ 0.123754     197 RI==B2of3 xor K==B2of4
+ 0.123754     146 RI==B2of3 equ K==B2of4
+ 0.123388      14 K==B1of4 and Ba==B2of2
+ 0.123388     295 Al==B3of3 and K==B1of4 and Ba==B2of2
+ 0.123184      27 Al==B3of3 and K==B1of4
+ 0.118875     244 RI==B1of3 impl K==B2of4
+ 0.118386     177 Al==B3of3 xor K==B1of4
+ 0.118386     126 Al==B3of3 equ K==B1of4
+ 0.118227     162 K==B1of4 xor Ba==B2of2
+ 0.118227     111 K==B1of4 equ Ba==B2of2
+ 0.114159      61 K==B2of4 or Ba==B2of2
+ 0.112674     418 Mg MULTIPLY K
+ 0.109788     154 Na==B2of2 equ Ba==B2of2
+ 0.109788     205 Na==B2of2 xor Ba==B2of2
+ 0.10728      194 RI==B1of3 xor K==B3of4
+ 0.10728      143 RI==B1of3 equ K==B3of4
+ 0.102409     163 K==B2of4 xor Ba==B2of2
+ 0.102409     112 K==B2of4 equ Ba==B2of2
+ 0.10207       99 RI==B3of3 or K==B2of4
+ 0.101514     279 Na==B2of2 and K==B1of4 and Ba==B2of2
+ 0.101373     285 Na==B2of2 and Al==B3of3 and K==B1of4
+ 0.097903     354 Al==B1of3 or K==B2of4 or Ba==B2of2
+ 0.096288      10 RI==B1of3 and Na==B2of2
+ 0.095801     288 RI==B1of3 and Na==B2of2 and Ba==B2of2
+ 0.094456     416 Na MULTIPLY Al
+ 0.093829     168 Na==B2of2 xor Al==B3of3
+ 0.093829     117 Na==B2of2 equ Al==B3of3
+ 0.093297      40 RI==B1of3 and K==B1of4
+ 0.093273     432 K DIFF Ba
+ 0.093143     213 K==B1of4 impl Ba==B2of2
+ 0.090772     260 RI==B1of3 and K==B1of4 and Ba==B2of2
+ 0.089955     325 Na==B2of2 or Mg==B2of2 or K==B4of4
+ 0.088325     372 Al ADD Ba
+ 0.088118     368 Na ADD Al
+ 0.085899     366 Na ADD Mg
+ 0.085196     256 Na==B2of2 impl Ba==B2of2
+ 0.085022     375 Na ADD Ba
+ 0.084153     382 Mg SUBTRACT K
+ 0.080608     433 Mg DIFF K
+ 0.079511     182 Mg==B2of2 xor K==B2of4
+ 0.079511     131 Mg==B2of2 equ K==B2of4
+ 0.078913     315 RI==B2of3 or Na==B2of2 or K==B2of4
+ 0.077371       4 Al
+ 0.075171     226 Al==B2of3 impl K==B3of4
+ 0.074002     335 Na==B2of2 or Al==B1of3 or K==B2of4
+ 0.072738     267 RI==B1of3 and Na==B2of2 and K==B1of4
+ 0.070767     175 Al==B2of3 xor K==B3of4
+ 0.070767     124 Al==B2of3 equ K==B3of4
+ 0.070618     423 Na MULTIPLY Ba
+ 0.069899      42 RI==B1of3 and K==B3of4
+ 0.069602     233 Mg==B2of2 impl K==B2of4
+ 0.068606      41 RI==B1of3 and K==B2of4
+ 0.065921     252 RI==B3of3 impl K==B2of4
+ 0.065472     142 RI==B1of3 equ K==B2of4
+ 0.065472     193 RI==B1of3 xor K==B2of4
+ 0.065123      25 Al==B2of3 and K==B2of4
+ 0.064444     412 Ba DIVIDE RI
+ 0.064146     388 RI SUBTRACT Ba
+ 0.063803       8 Ba
+ 0.063526     228 Al==B3of3 impl K==B1of4
+ 0.063403     376 RI ADD Ba
+ 0.063168     424 RI MULTIPLY Ba
+ 0.06316      362 Al==B3of3 or K==B2of4 or Ba==B2of2
+ 0.06316       76 Al==B3of3 or K==B2of4
+ 0.063146     420 Al MULTIPLY Ba
+ 0.061954     396 Al DIVIDE Na
+ 0.061382     434 Mg DIFF Ba
+ 0.061174      12 RI==B3of3 and Na==B2of2
+ 0.060349     404 Ba DIVIDE Al
+ 0.057151      33 Mg==B2of2 and K==B3of4
+ 0.057151     215 K==B3of4 impl Ba==B2of2
+ 0.056557      84 Na==B2of2 or K==B2of4
+ 0.056317     427 Mg LESSTHAN K
+ 0.055629     319 RI==B3of3 or Na==B2of2 or K==B2of4
+ 0.055121     219 Na==B2of2 impl Al==B3of3
+ 0.054285     307 RI==B3of3 or K==B2of4 or Ba==B2of2
+ 0.052299      91 RI==B1of3 or K==B2of4
+ 0.052185     127 Al==B3of3 equ K==B2of4
+ 0.052185     178 Al==B3of3 xor K==B2of4
+ 0.051646     140 Al==B3of3 equ Ba==B2of2
+ 0.051646     191 Al==B3of3 xor Ba==B2of2
+ 0.050701     331 Na==B2of2 or K==B2of4 or Ba==B2of2
+ 0.050455     413 RI MULTIPLY Na
+ 0.050215      30 Al==B3of3 and K==B4of4
+ 0.049552     365 RI ADD Na
+ 0.04943        2 Na
+ 0.049311     377 RI SUBTRACT Na
+ 0.04848      390 Na DIVIDE RI
+ 0.048088     389 RI DIVIDE Na
+ 0.047505       7 Ca
+ 0.047448     398 K DIVIDE Al
+ 0.047403      47 RI==B3of3 and K==B1of4
+ 0.047003     431 RI LESSTHAN Ba
+ 0.046885     299 RI==B1of3 or K==B2of4 or Ba==B2of2
+ 0.046835     410 Ba DIVIDE Na
+ 0.046357     242 Al==B3of3 impl Ba==B2of2
+ 0.046192     381 Al SUBTRACT K
+ 0.043761     135 Na==B2of2 equ K==B2of4
+ 0.043761     186 Na==B2of2 xor K==B2of4
+ 0.042884     383 Na SUBTRACT K
+ 0.042183       1 RI
+ 0.041405     134 Na==B2of2 equ K==B1of4
+ 0.041405     185 Na==B2of2 xor K==B1of4
+ 0.039883     384 Al SUBTRACT Ba
+ 0.038927     225 Al==B2of3 impl K==B2of4
+ 0.038058     323 Na==B2of2 or Mg==B2of2 or K==B2of4
+ 0.035941     119 Al==B1of3 equ K==B2of4
+ 0.035941     170 Al==B1of3 xor K==B2of4
+ 0.034823     379 K SUBTRACT Ba
+ 0.034207     367 K ADD Ba
+ 0.032567     216 K==B4of4 impl Ba==B2of2
+ 0.031568     271 RI==B3of3 and Na==B2of2 and K==B1of4
+ 0.028922     371 Na ADD K
+ 0.028163     380 Na SUBTRACT Al
+ 0.027667       5 Si
+ 0.027635     358 Al==B2of3 or K==B2of4 or Ba==B2of2
+ 0.027025     419 Na MULTIPLY K
+ 0.026465     421 RI MULTIPLY K
+ 0.026399       6 K
+ 0.026386     373 RI ADD K
+ 0.026332     406 K DIVIDE RI
+ 0.026328      43 RI==B1of3 and K==B4of4
+ 0.026311     422 Mg MULTIPLY Ba
+ 0.02629      385 RI SUBTRACT K
+ 0.026115      26 Al==B2of3 and K==B3of4
+ 0.025933     402 K DIVIDE Na
+ 0.025824      37 Na==B2of2 and K==B4of4
+ 0.025824     287 Na==B2of2 and Al==B3of3 and K==B4of4
+ 0.025434     395 Na DIVIDE Al
+ 0.025186      51 Mg==B2of2 and Ba==B2of2
+ 0.02518       18 Na==B2of2 and Al==B2of3
+ 0.02518      284 Na==B2of2 and Al==B2of3 and K==B1of4
+ 0.02518       24 Al==B2of3 and K==B1of4
+ 0.024952      34 Mg==B2of2 and K==B4of4
+ 0.02487      369 Al ADD K
+ 0.024394     273 RI==B3of3 and Na==B2of2 and K==B4of4
+ 0.024241     297 Al==B3of3 and K==B4of4 and Ba==B2of2
+ 0.024241      16 K==B4of4 and Ba==B2of2
+ 0.02355       50 RI==B3of3 and K==B4of4
+ 0.023089     278 Mg==B2of2 and K==B4of4 and Ba==B2of2
+ 0.022486     236 Na==B2of2 impl K==B1of4
+ 0.022263     339 Na==B2of2 or Al==B2of3 or K==B2of4
+ 0.020514     343 Na==B2of2 or Al==B3of3 or K==B2of4
+ 0.019448     450 (K >= 0.76) and (Al <= 1.81)
+ 0.018571     429 RI LESSTHAN K
+ 0.015963     387 Na SUBTRACT Ba
+ 0.014864      13 Na==B2of2 and Mg==B2of2
+ 0.014024     417 Al MULTIPLY K
+ 0.013529      29 Al==B3of3 and K==B3of4
+ 0.013227     415 K MULTIPLY Ba
+ 0.013227      20 Al==B1of3 and K==B1of4
+ 0.013096     290 RI==B3of3 and Na==B2of2 and Ba==B2of2
+ 0.012615      55 RI==B3of3 and Ba==B2of2
+ 0.012393     262 RI==B1of3 and K==B4of4 and Ba==B2of2
+ 0.011129     276 Na==B2of2 and Mg==B2of2 and K==B4of4
+ 0.008723     281 Na==B2of2 and K==B4of4 and Ba==B2of2
+ 0.008723     266 RI==B3of3 and K==B4of4 and Ba==B2of2
+ 0.008638      17 Na==B2of2 and Al==B1of3
+ 0.008613     291 Na==B2of2 and Mg==B2of2 and Ba==B2of2
+ 0.007506      15 K==B2of4 and Ba==B2of2
+ 0.007054      23 Al==B1of3 and K==B4of4
+ 0.006316     426 Al LESSTHAN K
+ 0.006001      28 Al==B3of3 and K==B2of4
+ 0.005343       9 Fe
+ 0.004748      38 Al==B1of3 and Ba==B2of2
+ 0.004748     294 Al==B1of3 and K==B2of4 and Ba==B2of2
+ 0.004686     261 RI==B1of3 and K==B2of4 and Ba==B2of2
+ 0.004165     296 Al==B3of3 and K==B2of4 and Ba==B2of2
+ 0.004007     265 RI==B3of3 and K==B2of4 and Ba==B2of2
+ 0.003842     282 Na==B2of2 and Al==B1of3 and K==B1of4
+ 0.003169     269 RI==B1of3 and Na==B2of2 and K==B4of4
+ 0.002912     277 Mg==B2of2 and K==B2of4 and Ba==B2of2
+ 0.002441     292 Na==B2of2 and Al==B1of3 and Ba==B2of2
+ 0.001517      44 RI==B2of3 and K==B1of4
+ 0.001517     263 RI==B2of3 and K==B1of4 and Ba==B2of2
+ 0.001517     270 RI==B2of3 and Na==B2of2 and K==B1of4
+ 0.001517     289 RI==B2of3 and Na==B2of2 and Ba==B2of2
+ 0.001517      54 RI==B2of3 and Ba==B2of2
+ 0.001517      11 RI==B2of3 and Na==B2of2
+ 0.001406      31 Mg==B2of2 and K==B1of4
+ 0.00122      280 Na==B2of2 and K==B2of4 and Ba==B2of2
+ 0.000548     428 Al LESSTHAN Ba
+-0.001115     274 Na==B2of2 and Mg==B2of2 and K==B1of4
+-0.001222     286 Na==B2of2 and Al==B3of3 and K==B2of4
+-0.001222     268 RI==B1of3 and Na==B2of2 and K==B2of4
+-0.001757     311 RI==B1of3 or Na==B2of2 or K==B2of4
+-0.002158     221 Al==B1of3 impl K==B2of4
+-0.002337      49 RI==B3of3 and K==B3of4
+-0.003277     264 RI==B3of3 and K==B1of4 and Ba==B2of2
+-0.003613     272 RI==B3of3 and Na==B2of2 and K==B2of4
+-0.003613     283 Na==B2of2 and Al==B1of3 and K==B2of4
+-0.004782     275 Na==B2of2 and Mg==B2of2 and K==B2of4
+-0.004835      36 Na==B2of2 and K==B2of4
+-0.006711      46 RI==B2of3 and K==B3of4
+-0.007082     248 RI==B2of3 impl K==B2of4
+-0.011205      22 Al==B1of3 and K==B3of4
+
+
+								--------------
+									Fold  5
+								--------------
+Feature evaluation: ReliefF (All features dataset) - After CI
+Ranked attributes:
+ 0.4335027     572 Mg_x_Ba
+ 0.4105884     266 Mg==B2of2 impl K==B4of4
+ 0.4083382     283 Mg==B2of2 impl Ba==B2of2
+ 0.4003067     569 RI_x_Al
+ 0.3976923     575 RI_x_Ba
+ 0.3777072     263 Mg==B2of2 impl K==B1of4
+ 0.3777072      85 Mg==B2of2 or K==B3of4
+ 0.3768483     563 Na_x_Mg
+ 0.3745273     571 Al_x_Ba
+ 0.3663631     564 RI_x_Na
+ 0.3624103     566 Na_x_Al
+ 0.3509791      90 RI==B2of3 or Al==B1of3
+ 0.3491213     415 RI==B2of3 or K==B1of4 or Ba==B2of2
+ 0.3374152     568 Mg_x_K
+ 0.3309906     418 RI==B2of3 or K==B4of4 or Ba==B2of2
+ 0.3276526     178 RI==B2of3 equ Ba==B2of2
+ 0.3276526     118 RI==B2of3 or Ba==B2of2
+ 0.3276526     238 RI==B2of3 xor Ba==B2of2
+ 0.325756      567 Al_x_K
+ 0.3223132     470 RI==B2of3 or Na==B2of2 or Ba==B2of2
+ 0.3216393     446 RI==B2of3 or Al==B1of3 or Ba==B2of2
+ 0.3209536     146 Mg==B2of2 equ K==B4of4
+ 0.3209536     206 Mg==B2of2 xor K==B4of4
+ 0.319215      435 RI==B2of3 or Na==B2of2 or K==B1of4
+ 0.3164871     573 RI_x_K
+ 0.311666      387 RI==B2of3 or Al==B1of3 or K==B1of4
+ 0.3102198     251 Al==B1of3 impl K==B1of4
+ 0.3086102      30 Mg==B2of2 and K==B2of4
+ 0.3070361     254 Al==B1of3 impl K==B4of4
+ 0.3014976      20 Al==B1of3 and K==B2of4
+ 0.2986199     390 RI==B2of3 or Al==B1of3 or K==B4of4
+ 0.2970362     369 RI==B2of3 or Na==B2of2 or Al==B1of3
+ 0.2953084     280 Al==B1of3 impl Ba==B2of2
+ 0.2949578     395 RI==B2of3 or Al==B3of3 or K==B1of4
+ 0.2943986     475 Al==B1of3 or K==B1of4 or Ba==B2of2
+ 0.2920246     122 RI==B2of3 equ Na==B2of2
+ 0.2920246      62 RI==B2of3 or Na==B2of2
+ 0.2920246     182 RI==B2of3 xor Na==B2of2
+ 0.2887299     398 RI==B2of3 or Al==B3of3 or K==B4of4
+ 0.2882183     389 RI==B2of3 or Al==B1of3 or K==B3of4
+ 0.287664       86 Mg==B2of2 or K==B4of4
+ 0.2865586     448 RI==B2of3 or Al==B3of3 or Ba==B2of2
+ 0.2854844     253 Al==B1of3 impl K==B3of4
+ 0.285101      100 Al==B1of3 or Ba==B2of2
+ 0.2850993     438 RI==B2of3 or Na==B2of2 or K==B4of4
+ 0.2842217     483 Al==B3of3 or K==B1of4 or Ba==B2of2
+ 0.2839623     265 Mg==B2of2 impl K==B3of4
+ 0.2839623     205 Mg==B2of2 xor K==B3of4
+ 0.2839623     145 Mg==B2of2 equ K==B3of4
+ 0.2837768     220 Al==B1of3 xor Ba==B2of2
+ 0.2837768     160 Al==B1of3 equ Ba==B2of2
+ 0.2816546      64 K==B1of4 or Ba==B2of2
+ 0.2807564      79 Al==B3of3 or K==B1of4
+ 0.2806442      92 RI==B2of3 or Al==B3of3
+ 0.2806442     152 RI==B2of3 equ Al==B3of3
+ 0.2806442     212 RI==B2of3 xor Al==B3of3
+ 0.2789747     452 Na==B2of2 or K==B1of4 or Ba==B2of2
+ 0.2773779     588 num-of-N((Al >= 1.79) and (K <= 0.14))
+ 0.2771696     168 RI==B2of3 equ K==B1of4
+ 0.2771696     108 RI==B2of3 or K==B1of4
+ 0.2771696     228 RI==B2of3 xor K==B1of4
+ 0.2763643     565 K_x_Ba
+ 0.2739623     482 Al==B2of3 or K==B4of4 or Ba==B2of2
+ 0.2725914     456 Na==B2of2 or Al==B1of3 or K==B1of4
+ 0.2723481     267 RI==B1of3 impl Al==B1of3
+ 0.271437      472 Na==B2of2 or Al==B1of3 or Ba==B2of2
+ 0.2714242     431 RI==B1of3 or Na==B2of2 or K==B1of4
+ 0.271318       71 Al==B1of3 or K==B1of4
+ 0.2703584     464 Na==B2of2 or Al==B3of3 or K==B1of4
+ 0.2702842     383 RI==B1of3 or Al==B3of3 or K==B1of4
+ 0.2691395     223 Mg==B2of2 xor Ba==B2of2
+ 0.2691395     163 Mg==B2of2 equ Ba==B2of2
+ 0.2688113     371 RI==B2of3 or Na==B2of2 or Al==B3of3
+ 0.2683577     411 RI==B1of3 or K==B1of4 or Ba==B2of2
+ 0.2682427     104 RI==B1of3 or K==B1of4
+ 0.2648244     405 RI==B3of3 or Al==B2of3 or K==B3of4
+ 0.2642042     194 Al==B1of3 xor K==B4of4
+ 0.2642042     134 Al==B1of3 equ K==B4of4
+ 0.2636126     422 RI==B3of3 or K==B4of4 or Ba==B2of2
+ 0.2623874      68 Na==B2of2 or Al==B1of3
+ 0.2612925      61 RI==B1of3 or Na==B2of2
+ 0.2604629     455 Na==B2of2 or K==B4of4 or Ba==B2of2
+ 0.2601191     419 RI==B3of3 or K==B1of4 or Ba==B2of2
+ 0.2576105     131 Al==B1of3 equ K==B1of4
+ 0.2576105     191 Al==B1of3 xor K==B1of4
+ 0.2556985     442 RI==B3of3 or Na==B2of2 or K==B4of4
+ 0.2554283     382 RI==B1of3 or Al==B2of3 or K==B4of4
+ 0.255179      467 Na==B2of2 or Al==B3of3 or K==B4of4
+ 0.2544276     406 RI==B3of3 or Al==B2of3 or K==B4of4
+ 0.2543914      67 K==B4of4 or Ba==B2of2
+ 0.2541102     379 RI==B1of3 or Al==B2of3 or K==B1of4
+ 0.2539422     414 RI==B1of3 or K==B4of4 or Ba==B2of2
+ 0.25349        74 Al==B1of3 or K==B4of4
+ 0.252632      463 Na==B2of2 or Al==B2of3 or K==B4of4
+ 0.251769      445 RI==B1of3 or Al==B3of3 or Ba==B2of2
+ 0.2516949     574 Na_x_Ba
+ 0.2514204     478 Al==B1of3 or K==B4of4 or Ba==B2of2
+ 0.2509309      88 RI==B1of3 or Al==B2of3
+ 0.250742       73 Al==B1of3 or K==B3of4
+ 0.2506031     444 RI==B1of3 or Al==B2of3 or Ba==B2of2
+ 0.2505054     367 RI==B1of3 or Na==B2of2 or Al==B2of3
+ 0.2504751      89 RI==B1of3 or Al==B3of3
+ 0.2504751     386 RI==B1of3 or Al==B3of3 or K==B4of4
+ 0.2503769     434 RI==B1of3 or Na==B2of2 or K==B4of4
+ 0.2500854     116 Na==B2of2 or Ba==B2of2
+ 0.2499926     117 RI==B1of3 or Ba==B2of2
+ 0.2499561     402 RI==B3of3 or Al==B1of3 or K==B4of4
+ 0.2498847     471 RI==B3of3 or Na==B2of2 or Ba==B2of2
+ 0.2477913      96 Na==B2of2 or K==B1of4
+ 0.2477355     128 Na==B2of2 equ Al==B1of3
+ 0.2477355     188 Na==B2of2 xor Al==B1of3
+ 0.2469959     469 RI==B1of3 or Na==B2of2 or Ba==B2of2
+ 0.2463857     486 Al==B3of3 or K==B4of4 or Ba==B2of2
+ 0.2463119     479 Al==B2of3 or K==B1of4 or Ba==B2of2
+ 0.2456103     429 Mg==B2of2 or K==B3of4 or Ba==B2of2
+ 0.2456103     103 Mg==B2of2 or Ba==B2of2
+ 0.2455016     287 RI==B1of3 impl K==B4of4
+ 0.2454795     481 Al==B2of3 or K==B3of4 or Ba==B2of2
+ 0.2452635     368 RI==B1of3 or Na==B2of2 or Al==B3of3
+ 0.2452446     167 RI==B1of3 equ K==B4of4
+ 0.2452446     227 RI==B1of3 xor K==B4of4
+ 0.2438803     407 RI==B3of3 or Al==B3of3 or K==B1of4
+ 0.2434455      94 RI==B3of3 or Al==B2of3
+ 0.2432961      77 Al==B2of3 or K==B3of4
+ 0.2430518     107 RI==B1of3 or K==B4of4
+ 0.2423439     374 RI==B3of3 or Na==B2of2 or Al==B3of3
+ 0.2417863      82 Al==B3of3 or K==B4of4
+ 0.2415756      93 RI==B3of3 or Al==B1of3
+ 0.2403263      70 Na==B2of2 or Al==B3of3
+ 0.2400617     261 Al==B3of3 impl K==B3of4
+ 0.2387166     462 Na==B2of2 or Al==B2of3 or K==B3of4
+ 0.2386099     119 RI==B3of3 or Ba==B2of2
+ 0.2378722     133 Al==B1of3 equ K==B3of4
+ 0.2378722     193 Al==B1of3 xor K==B3of4
+ 0.2358964     154 RI==B3of3 equ Al==B2of3
+ 0.2358964     214 RI==B3of3 xor Al==B2of3
+ 0.2351766     213 RI==B3of3 xor Al==B1of3
+ 0.2351766     153 RI==B3of3 equ Al==B1of3
+ 0.2347523     473 Na==B2of2 or Al==B2of3 or Ba==B2of2
+ 0.2339314     245 K==B2of4 impl Ba==B2of2
+ 0.2336365     148 RI==B1of3 equ Al==B2of3
+ 0.2336365     208 RI==B1of3 xor Al==B2of3
+ 0.2334405     410 RI==B3of3 or Al==B3of3 or K==B4of4
+ 0.2325854     221 Al==B2of3 xor Ba==B2of2
+ 0.2325854     101 Al==B2of3 or Ba==B2of2
+ 0.2325854     161 Al==B2of3 equ Ba==B2of2
+ 0.2320199     474 Na==B2of2 or Al==B3of3 or Ba==B2of2
+ 0.231015      102 Al==B3of3 or Ba==B2of2
+ 0.230584      570 Na_x_K
+ 0.22992       198 Al==B2of3 xor K==B4of4
+ 0.22992       138 Al==B2of3 equ K==B4of4
+ 0.22992        78 Al==B2of3 or K==B4of4
+ 0.2297382     433 RI==B1of3 or Na==B2of2 or K==B3of4
+ 0.2286696     459 Na==B2of2 or Al==B1of3 or K==B4of4
+ 0.228046      460 Na==B2of2 or Al==B2of3 or K==B1of4
+ 0.2277798     381 RI==B1of3 or Al==B2of3 or K==B3of4
+ 0.225654      586 num-of-N((Ba >= 0.4) and (Ba <= 1.71))
+ 0.225654      578 (Ba >= 0.4) and (Ba <= 1.71)
+ 0.2245776     451 RI==B3of3 or Al==B3of3 or Ba==B2of2
+ 0.2245776      95 RI==B3of3 or Al==B3of3
+ 0.2240476     555 RI LESSTHAN Al
+ 0.221397      413 RI==B1of3 or K==B3of4 or Ba==B2of2
+ 0.2209944      99 Na==B2of2 or K==B4of4
+ 0.220908      439 RI==B3of3 or Na==B2of2 or K==B1of4
+ 0.2201587     581 (Ba >= 0.4)
+ 0.2200364     179 RI==B3of3 equ Ba==B2of2
+ 0.2200364     239 RI==B3of3 xor Ba==B2of2
+ 0.2199916     584 num-of-N((Na >= 14.14) and (K <= 0.08))
+ 0.2194909     385 RI==B1of3 or Al==B3of3 or K==B3of4
+ 0.2192233      69 Na==B2of2 or Al==B2of3
+ 0.2185587     297 RI==B1of3 impl Ba==B2of2
+ 0.2174907     514 Mg DIVIDE Na
+ 0.2164387      45 Al==B3of3 and Ba==B2of2
+ 0.2160893     393 RI==B2of3 or Al==B2of3 or K==B3of4
+ 0.2137919     127 K==B4of4 equ Ba==B2of2
+ 0.2137919     187 K==B4of4 xor Ba==B2of2
+ 0.2115745     106 RI==B1of3 or K==B3of4
+ 0.2111807     417 RI==B2of3 or K==B3of4 or Ba==B2of2
+ 0.2105821      63 RI==B3of3 or Na==B2of2
+ 0.2094606     517 K DIVIDE Ba
+ 0.2094606     529 Al DIVIDE Ba
+ 0.2094606     531 Mg DIVIDE Ba
+ 0.2094606     535 Na DIVIDE Ba
+ 0.2094606     537 RI DIVIDE Ba
+ 0.2090153     284 RI==B1of3 impl K==B1of4
+ 0.2083598     237 RI==B1of3 xor Ba==B2of2
+ 0.2083598     177 RI==B1of3 equ Ba==B2of2
+ 0.2077231       3 Mg
+ 0.2077182     115 RI==B3of3 or K==B4of4
+ 0.2066774     112 RI==B3of3 or K==B1of4
+ 0.205812      164 RI==B1of3 equ K==B1of4
+ 0.205812      224 RI==B1of3 xor K==B1of4
+ 0.2021359      75 Al==B2of3 or K==B1of4
+ 0.2017316     111 RI==B2of3 or K==B4of4
+ 0.2017316     171 RI==B2of3 equ K==B4of4
+ 0.2017316     231 RI==B2of3 xor K==B4of4
+ 0.2016796     272 RI==B2of3 impl Al==B3of3
+ 0.2016796     288 RI==B2of3 impl K==B1of4
+ 0.2016796     291 RI==B2of3 impl K==B4of4
+ 0.2016796     298 RI==B2of3 impl Ba==B2of2
+ 0.2016796     242 RI==B2of3 impl Na==B2of2
+ 0.2006185     189 Na==B2of2 xor Al==B2of3
+ 0.2006185     129 Na==B2of2 equ Al==B2of3
+ 0.1994382     454 Na==B2of2 or K==B3of4 or Ba==B2of2
+ 0.1994135     241 RI==B1of3 impl Na==B2of2
+ 0.1993453     449 RI==B3of3 or Al==B1of3 or Ba==B2of2
+ 0.1984559      84 Mg==B2of2 or K==B2of4
+ 0.1982004     255 Al==B2of3 impl K==B1of4
+ 0.1977613     109 RI==B2of3 or K==B2of4
+ 0.1977516     552 K LESSTHAN Ba
+ 0.1962741     258 Al==B2of3 impl K==B4of4
+ 0.1962741     281 Al==B2of3 impl Ba==B2of2
+ 0.1960918     278 Na==B2of2 impl K==B3of4
+ 0.195955      539 Na MULTIPLY Mg
+ 0.1956331     240 Na==B2of2 impl Mg==B2of2
+ 0.1948379     485 Al==B3of3 or K==B3of4 or Ba==B2of2
+ 0.1943416     590 num-of-N((K >= 1.76) and (Al <= 1.81))
+ 0.1922469     450 RI==B3of3 or Al==B2of3 or Ba==B2of2
+ 0.1917667      81 Al==B3of3 or K==B3of4
+ 0.1903761     466 Na==B2of2 or Al==B3of3 or K==B3of4
+ 0.1902119     121 RI==B1of3 equ Na==B2of2
+ 0.1902119     181 RI==B1of3 xor Na==B2of2
+ 0.1899248     142 Al==B3of3 equ K==B4of4
+ 0.1899248     202 Al==B3of3 xor K==B4of4
+ 0.1899208     373 RI==B3of3 or Na==B2of2 or Al==B2of3
+ 0.1895417     219 Na==B2of2 xor K==B4of4
+ 0.1895417     159 Na==B2of2 equ K==B4of4
+ 0.1894087     150 RI==B2of3 equ Al==B1of3
+ 0.1894087     210 RI==B2of3 xor Al==B1of3
+ 0.1892754     399 RI==B3of3 or Al==B1of3 or K==B1of4
+ 0.1890788     524 K DIVIDE Mg
+ 0.1890788     513 Na DIVIDE Mg
+ 0.1890788     532 Ba DIVIDE Mg
+ 0.1883642     403 RI==B3of3 or Al==B2of3 or K==B1of4
+ 0.18825        58 RI==B1of3 and Ba==B2of2
+ 0.18825       344 RI==B1of3 and Al==B3of3 and Ba==B2of2
+ 0.1878767     186 K==B3of4 xor Ba==B2of2
+ 0.1878767      66 K==B3of4 or Ba==B2of2
+ 0.1878767     126 K==B3of4 equ Ba==B2of2
+ 0.1874938     235 RI==B3of3 xor K==B4of4
+ 0.1874938     175 RI==B3of3 equ K==B4of4
+ 0.1854633     397 RI==B2of3 or Al==B3of3 or K==B3of4
+ 0.1849182     268 RI==B1of3 impl Al==B2of3
+ 0.1835341     437 RI==B2of3 or Na==B2of2 or K==B3of4
+ 0.1832815     580 (Al >= 1.79) and (K <= 0.14)
+ 0.1824086     248 Na==B2of2 impl Al==B1of3
+ 0.1816994     201 Al==B3of3 xor K==B3of4
+ 0.1816994     141 Al==B3of3 equ K==B3of4
+ 0.1814682     372 RI==B3of3 or Na==B2of2 or Al==B1of3
+ 0.1813406     215 RI==B3of3 xor Al==B3of3
+ 0.1813406     155 RI==B3of3 equ Al==B3of3
+ 0.1811125     425 Na==B2of2 or Mg==B2of2 or K==B3of4
+ 0.1811125      60 Na==B2of2 or Mg==B2of2
+ 0.1800359      83 Mg==B2of2 or K==B1of4
+ 0.1800359     143 Mg==B2of2 equ K==B1of4
+ 0.1800359     203 Mg==B2of2 xor K==B1of4
+ 0.1799028      91 RI==B2of3 or Al==B2of3
+ 0.1798975     180 Na==B2of2 xor Mg==B2of2
+ 0.1798975     120 Na==B2of2 equ Mg==B2of2
+ 0.1781907     147 RI==B1of3 equ Al==B1of3
+ 0.1781907     207 RI==B1of3 xor Al==B1of3
+ 0.177935      430 Mg==B2of2 or K==B4of4 or Ba==B2of2
+ 0.1761364      35 RI==B1of3 and Al==B3of3
+ 0.1758581     299 RI==B3of3 impl Ba==B2of2
+ 0.1755239     151 RI==B2of3 equ Al==B2of3
+ 0.1755239     211 RI==B2of3 xor Al==B2of3
+ 0.1745613     394 RI==B2of3 or Al==B2of3 or K==B4of4
+ 0.1738902     262 Al==B3of3 impl K==B4of4
+ 0.1735315     409 RI==B3of3 or Al==B3of3 or K==B3of4
+ 0.1725622     183 RI==B3of3 xor Na==B2of2
+ 0.1725622     123 RI==B3of3 equ Na==B2of2
+ 0.1724313     290 RI==B2of3 impl K==B3of4
+ 0.1724313      51 RI==B2of3 and K==B2of4
+ 0.172261      269 RI==B1of3 impl Al==B3of3
+ 0.1714565      98 Na==B2of2 or K==B3of4
+ 0.1714565     218 Na==B2of2 xor K==B3of4
+ 0.1714565     158 Na==B2of2 equ K==B3of4
+ 0.1713885     533 RI DIVIDE K
+ 0.1713885     527 Na DIVIDE K
+ 0.1713885     518 Ba DIVIDE K
+ 0.1713885     523 Mg DIVIDE K
+ 0.1713885     521 Al DIVIDE K
+ 0.1710419     135 Al==B2of3 equ K==B1of4
+ 0.1710419     195 Al==B2of3 xor K==B1of4
+ 0.1709976     232 RI==B3of3 xor K==B1of4
+ 0.1709976     172 RI==B3of3 equ K==B1of4
+ 0.1704341      18 Na==B2of2 and Al==B3of3
+ 0.1700063     292 RI==B3of3 impl K==B1of4
+ 0.1685029     589 num-of-N((K >= 0.76) and (Na >= 14.32))
+ 0.1675988     110 RI==B2of3 or K==B3of4
+ 0.1667143     243 RI==B3of3 impl Na==B2of2
+ 0.164403      114 RI==B3of3 or K==B3of4
+ 0.1639391     279 Na==B2of2 impl K==B4of4
+ 0.1637718     294 RI==B3of3 impl K==B3of4
+ 0.1634942     136 Al==B2of3 equ K==B2of4
+ 0.1634942     196 Al==B2of3 xor K==B2of4
+ 0.1631071     477 Al==B1of3 or K==B3of4 or Ba==B2of2
+ 0.1627567     249 Na==B2of2 impl Al==B2of3
+ 0.1608108      57 Na==B2of2 and Ba==B2of2
+ 0.1603795     576 (Na >= 14.14) and (K <= 0.08)
+ 0.1586721     441 RI==B3of3 or Na==B2of2 or K==B3of4
+ 0.15855       271 RI==B2of3 impl Al==B2of3
+ 0.15855        36 RI==B2of3 and Al==B1of3
+ 0.1583984     149 RI==B1of3 equ Al==B3of3
+ 0.1583984     209 RI==B1of3 xor Al==B3of3
+ 0.1577574     421 RI==B3of3 or K==B3of4 or Ba==B2of2
+ 0.1575949     557 Mg LESSTHAN Ba
+ 0.1573246     295 RI==B3of3 impl K==B4of4
+ 0.1561991     492 Mg ADD K
+ 0.1559747     496 Mg ADD Ba
+ 0.1559596     458 Na==B2of2 or Al==B1of3 or K==B3of4
+ 0.1553407     275 RI==B3of3 impl Al==B3of3
+ 0.1552906      34 RI==B1of3 and Al==B2of3
+ 0.1545877     277 Na==B2of2 impl K==B2of4
+ 0.1543626     286 RI==B1of3 impl K==B3of4
+ 0.1543237     139 Al==B3of3 equ K==B1of4
+ 0.1543237     199 Al==B3of3 xor K==B1of4
+ 0.154033      388 RI==B2of3 or Al==B1of3 or K==B2of4
+ 0.154033       72 Al==B1of3 or K==B2of4
+ 0.152541      234 RI==B3of3 xor K==B3of4
+ 0.152541      174 RI==B3of3 equ K==B3of4
+ 0.1522568     468 Na==B2of2 or Mg==B2of2 or Ba==B2of2
+ 0.151987      401 RI==B3of3 or Al==B1of3 or K==B3of4
+ 0.1509026     361 Na==B2of2 and Al==B3of3 and Ba==B2of2
+ 0.1505163     427 Mg==B2of2 or K==B1of4 or Ba==B2of2
+ 0.1502853     423 Na==B2of2 or Mg==B2of2 or K==B1of4
+ 0.1494911     392 RI==B2of3 or Al==B2of3 or K==B2of4
+ 0.148204      509 Mg SUBTRACT Ba
+ 0.1470805     260 Al==B3of3 impl K==B2of4
+ 0.1458626     230 RI==B2of3 xor K==B3of4
+ 0.1458626     170 RI==B2of3 equ K==B3of4
+ 0.1437433      54 RI==B3of3 and K==B2of4
+ 0.1428898     173 RI==B3of3 equ K==B2of4
+ 0.1428898     233 RI==B3of3 xor K==B2of4
+ 0.1410999     416 RI==B2of3 or K==B2of4 or Ba==B2of2
+ 0.1388723     447 RI==B2of3 or Al==B2of3 or Ba==B2of2
+ 0.1387443     169 RI==B2of3 equ K==B2of4
+ 0.1387443     229 RI==B2of3 xor K==B2of4
+ 0.1370302     124 K==B1of4 equ Ba==B2of2
+ 0.1370302     184 K==B1of4 xor Ba==B2of2
+ 0.1345369     274 RI==B3of3 impl Al==B2of3
+ 0.1328378      76 Al==B2of3 or K==B2of4
+ 0.1320555     226 RI==B1of3 xor K==B3of4
+ 0.1320555     166 RI==B1of3 equ K==B3of4
+ 0.1319438      38 RI==B3of3 and Al==B1of3
+ 0.1307805     370 RI==B2of3 or Na==B2of2 or Al==B2of3
+ 0.1300989     317 RI==B2of3 and Al==B1of3 and K==B2of4
+ 0.1270821     197 Al==B2of3 xor K==B3of4
+ 0.1270821     137 Al==B2of3 equ K==B3of4
+ 0.1251108     500 Na SUBTRACT Mg
+ 0.1233519      41 Na==B2of2 and K==B1of4
+ 0.123154      285 RI==B1of3 impl K==B2of4
+ 0.1228249     358 RI==B1of3 and Na==B2of2 and Ba==B2of2
+ 0.1218778     302 RI==B1of3 and Na==B2of2 and Al==B3of3
+ 0.1212987      11 RI==B1of3 and Na==B2of2
+ 0.1210967      65 K==B2of4 or Ba==B2of2
+ 0.120733      391 RI==B2of3 or Al==B2of3 or K==B1of4
+ 0.1204713     273 RI==B3of3 impl Al==B1of3
+ 0.1188853     125 K==B2of4 equ Ba==B2of2
+ 0.1188853     185 K==B2of4 xor Ba==B2of2
+ 0.1168355     144 Mg==B2of2 equ K==B2of4
+ 0.1168355     204 Mg==B2of2 xor K==B2of4
+ 0.1146577     321 RI==B3of3 and Al==B1of3 and K==B2of4
+ 0.1135219     428 Mg==B2of2 or K==B2of4 or Ba==B2of2
+ 0.1123201      87 RI==B1of3 or Al==B1of3
+ 0.1123201     377 RI==B1of3 or Al==B1of3 or K==B3of4
+ 0.1107707     443 RI==B1of3 or Al==B1of3 or Ba==B2of2
+ 0.1106768     375 RI==B1of3 or Al==B1of3 or K==B1of4
+ 0.1073521     544 Mg MULTIPLY K
+ 0.107248      257 Al==B2of3 impl K==B3of4
+ 0.1071996     400 RI==B3of3 or Al==B1of3 or K==B2of4
+ 0.1068708     426 Na==B2of2 or Mg==B2of2 or K==B4of4
+ 0.1048074     396 RI==B2of3 or Al==B3of3 or K==B2of4
+ 0.1044274     113 RI==B3of3 or K==B2of4
+ 0.1004572      13 K==B1of4 and Ba==B2of2
+ 0.1004572      26 Al==B3of3 and K==B1of4
+ 0.1004572     363 Al==B3of3 and K==B1of4 and Ba==B2of2
+ 0.0983068     404 RI==B3of3 or Al==B2of3 or K==B2of4
+ 0.0966841     585 num-of-N((Na >= 14.32) and (K >= 0.31))
+ 0.0965126     244 K==B1of4 impl Ba==B2of2
+ 0.0965126     560 K DIFF Ba
+ 0.0959446      24 Al==B2of3 and K==B2of4
+ 0.0941547     366 RI==B1of3 or Na==B2of2 or Al==B1of3
+ 0.0933522     132 Al==B1of3 equ K==B2of4
+ 0.0933522     192 Al==B1of3 xor K==B2of4
+ 0.0888491      47 RI==B1of3 and K==B1of4
+ 0.0876494     140 Al==B3of3 equ K==B2of4
+ 0.0876494     200 Al==B3of3 xor K==B2of4
+ 0.0871394     176 Na==B2of2 equ Ba==B2of2
+ 0.0871394     236 Na==B2of2 xor Ba==B2of2
+ 0.0871383     490 Na ADD Al
+ 0.0866543     484 Al==B3of3 or K==B2of4 or Ba==B2of2
+ 0.0866543      80 Al==B3of3 or K==B2of4
+ 0.0863568     313 RI==B1of3 and Al==B3of3 and K==B1of4
+ 0.0863568     328 RI==B1of3 and K==B1of4 and Ba==B2of2
+ 0.0855196     190 Na==B2of2 xor Al==B3of3
+ 0.0855196     130 Na==B2of2 equ Al==B3of3
+ 0.0838806     378 RI==B1of3 or Al==B1of3 or K==B4of4
+ 0.0837386     476 Al==B1of3 or K==B2of4 or Ba==B2of2
+ 0.0835758     487 Na ADD Mg
+ 0.0834807     165 RI==B1of3 equ K==B2of4
+ 0.0834807     225 RI==B1of3 xor K==B2of4
+ 0.079804      505 Mg SUBTRACT K
+ 0.0796176     347 Na==B2of2 and K==B1of4 and Ba==B2of2
+ 0.0796176     354 Na==B2of2 and Al==B3of3 and K==B1of4
+ 0.0795813      39 RI==B3of3 and Al==B2of3
+ 0.0785457     550 Na MULTIPLY Ba
+ 0.0779575     542 Na MULTIPLY Al
+ 0.0777483     498 Na ADD Ba
+ 0.0774834     495 Al ADD Ba
+ 0.0750776      48 RI==B1of3 and K==B2of4
+ 0.0744016     259 Al==B3of3 impl K==B1of4
+ 0.0741413     436 RI==B2of3 or Na==B2of2 or K==B2of4
+ 0.0733812     561 Mg DIFF K
+ 0.0708139     293 RI==B3of3 impl K==B2of4
+ 0.0695381     264 Mg==B2of2 impl K==B2of4
+ 0.0687381      49 RI==B1of3 and K==B3of4
+ 0.0682792     338 RI==B1of3 and Na==B2of2 and K==B1of4
+ 0.0671298     545 RI MULTIPLY Al
+ 0.0671064     506 RI SUBTRACT Al
+ 0.0670988       4 Al
+ 0.0670892     493 RI ADD Al
+ 0.0670676     526 Al DIVIDE RI
+ 0.0656503     324 RI==B3of3 and Al==B2of3 and K==B2of4
+ 0.063481      554 Mg LESSTHAN K
+ 0.0630318     562 Mg DIFF Ba
+ 0.062043      296 Na==B2of2 impl Ba==B2of2
+ 0.0610021     156 Na==B2of2 equ K==B1of4
+ 0.0610021     216 Na==B2of2 xor K==B1of4
+ 0.0600567     457 Na==B2of2 or Al==B1of3 or K==B2of4
+ 0.0596148     105 RI==B1of3 or K==B2of4
+ 0.0587792      33 RI==B1of3 and Al==B1of3
+ 0.0585637     538 Ba DIVIDE RI
+ 0.0581904     512 RI SUBTRACT Ba
+ 0.0579724       8 Ba
+ 0.0577142     520 Al DIVIDE Na
+ 0.0576221     499 RI ADD Ba
+ 0.0576126     440 RI==B3of3 or Na==B2of2 or K==B2of4
+ 0.0573866     551 RI MULTIPLY Ba
+ 0.0570308     307 RI==B1of3 and Al==B1of3 and K==B2of4
+ 0.0569279     530 Ba DIVIDE Al
+ 0.0546802      97 Na==B2of2 or K==B2of4
+ 0.0544815     420 RI==B3of3 or K==B2of4 or Ba==B2of2
+ 0.0539772     412 RI==B1of3 or K==B2of4 or Ba==B2of2
+ 0.0530107     246 K==B3of4 impl Ba==B2of2
+ 0.0530107      31 Mg==B2of2 and K==B3of4
+ 0.0524622     217 Na==B2of2 xor K==B2of4
+ 0.0524622     157 Na==B2of2 equ K==B2of4
+ 0.0504145      53 RI==B3of3 and K==B1of4
+ 0.0500851     547 Al MULTIPLY Ba
+ 0.0499019     250 Na==B2of2 impl Al==B3of3
+ 0.048391        7 Ca
+ 0.0468906     540 RI MULTIPLY Na
+ 0.0465663     504 Al SUBTRACT K
+ 0.0462471     488 RI ADD Na
+ 0.0461591       2 Na
+ 0.0460717     501 RI SUBTRACT Na
+ 0.0454776     516 Na DIVIDE RI
+ 0.04489       256 Al==B2of3 impl K==B2of4
+ 0.0447903     515 RI DIVIDE Na
+ 0.0443319     453 Na==B2of2 or K==B2of4 or Ba==B2of2
+ 0.0436765     376 RI==B1of3 or Al==B1of3 or K==B2of4
+ 0.04362        12 RI==B3of3 and Na==B2of2
+ 0.0435243     522 K DIVIDE Al
+ 0.0431125     311 RI==B1of3 and Al==B2of3 and K==B2of4
+ 0.0429134      29 Al==B3of3 and K==B4of4
+ 0.0425487     536 Ba DIVIDE Na
+ 0.0419127     222 Al==B3of3 xor Ba==B2of2
+ 0.0419127     162 Al==B3of3 equ Ba==B2of2
+ 0.0414846     384 RI==B1of3 or Al==B3of3 or K==B2of4
+ 0.0390247       1 RI
+ 0.0386057      23 Al==B2of3 and K==B1of4
+ 0.0379032     507 Na SUBTRACT K
+ 0.0369601     282 Al==B3of3 impl Ba==B2of2
+ 0.0359942     276 Na==B2of2 impl K==B1of4
+ 0.0356056     559 RI LESSTHAN Ba
+ 0.0352742     508 Al SUBTRACT Ba
+ 0.0327766     424 Na==B2of2 or Mg==B2of2 or K==B2of4
+ 0.0319888     480 Al==B2of3 or K==B2of4 or Ba==B2of2
+ 0.0309484     461 Na==B2of2 or Al==B2of3 or K==B2of4
+ 0.0301109     577 (Na >= 14.32) and (K >= 0.31)
+ 0.0291573     525 RI DIVIDE Al
+ 0.0286595     502 K SUBTRACT Ba
+ 0.0273265     489 K ADD Ba
+ 0.0257652     356 Na==B2of2 and Al==B3of3 and K==B4of4
+ 0.0257652      43 Na==B2of2 and K==B4of4
+ 0.0255913      46 Mg==B2of2 and Ba==B2of2
+ 0.0252896     494 Na ADD K
+ 0.025271       17 Na==B2of2 and Al==B2of3
+ 0.0252626      40 RI==B3of3 and Al==B3of3
+ 0.024963      352 Na==B2of2 and Al==B2of3 and K==B1of4
+ 0.024963      323 RI==B3of3 and Al==B2of3 and K==B1of4
+ 0.0248057      14 K==B2of4 and Ba==B2of2
+ 0.0247608      32 Mg==B2of2 and K==B4of4
+ 0.0243478     343 RI==B3of3 and Na==B2of2 and K==B4of4
+ 0.0243478     582 (K >= 0.76) and (Na >= 14.32)
+ 0.0243359      27 Al==B3of3 and K==B2of4
+ 0.0240568     503 Na SUBTRACT Al
+ 0.0238254     519 Na DIVIDE Al
+ 0.023757      329 RI==B1of3 and K==B2of4 and Ba==B2of2
+ 0.023757      314 RI==B1of3 and Al==B3of3 and K==B2of4
+ 0.0233434     337 Mg==B2of2 and K==B4of4 and Ba==B2of2
+ 0.0232815     327 RI==B3of3 and Al==B3of3 and K==B4of4
+ 0.0232815      56 RI==B3of3 and K==B4of4
+ 0.0229778       5 Si
+ 0.0229391     548 Mg MULTIPLY Ba
+ 0.0227639      15 K==B4of4 and Ba==B2of2
+ 0.0227639     365 Al==B3of3 and K==B4of4 and Ba==B2of2
+ 0.0227207     364 Al==B3of3 and K==B2of4 and Ba==B2of2
+ 0.0220282     546 Na MULTIPLY K
+ 0.0218679     305 RI==B3of3 and Na==B2of2 and Al==B3of3
+ 0.0212982     549 RI MULTIPLY K
+ 0.0212473     247 K==B4of4 impl Ba==B2of2
+ 0.0212368       6 K
+ 0.0212224     497 RI ADD K
+ 0.0211787     491 Al ADD K
+ 0.0211773     534 K DIVIDE RI
+ 0.0211426     510 RI SUBTRACT K
+ 0.021053      341 RI==B3of3 and Na==B2of2 and K==B1of4
+ 0.0207265      50 RI==B1of3 and K==B4of4
+ 0.0206635     528 K DIVIDE Na
+ 0.0195139     312 RI==B1of3 and Al==B2of3 and K==B3of4
+ 0.0195139      25 Al==B2of3 and K==B3of4
+ 0.0182213     583 (K >= 1.76) and (Al <= 1.81)
+ 0.0174014     408 RI==B3of3 or Al==B3of3 or K==B2of4
+ 0.0168066     511 Na SUBTRACT Ba
+ 0.0165836     465 Na==B2of2 or Al==B3of3 or K==B2of4
+ 0.0163044     579 (Na >= 13.87) and (Na <= 13.88)
+ 0.0163044     587 num-of-N((Na >= 13.87) and (Na <= 13.88))
+ 0.0156749     380 RI==B1of3 or Al==B2of3 or K==B2of4
+ 0.0154268     316 RI==B1of3 and Al==B3of3 and K==B4of4
+ 0.0151354      19 Al==B1of3 and K==B1of4
+ 0.0150695     319 RI==B2of3 and Al==B2of3 and K==B2of4
+ 0.0150695     270 RI==B2of3 impl Al==B1of3
+ 0.0150695      37 RI==B2of3 and Al==B2of3
+ 0.0148964      28 Al==B3of3 and K==B3of4
+ 0.0148964     315 RI==B1of3 and Al==B3of3 and K==B3of4
+ 0.0143662     348 Na==B2of2 and K==B2of4 and Ba==B2of2
+ 0.014309      558 RI LESSTHAN K
+ 0.0142811     304 RI==B3of3 and Na==B2of2 and Al==B2of3
+ 0.0139049     541 K MULTIPLY Ba
+ 0.0131731     339 RI==B1of3 and Na==B2of2 and K==B2of4
+ 0.0127481     355 Na==B2of2 and Al==B3of3 and K==B2of4
+ 0.0121187     330 RI==B1of3 and K==B4of4 and Ba==B2of2
+ 0.0110429     359 RI==B3of3 and Na==B2of2 and Ba==B2of2
+ 0.0110382      59 RI==B3of3 and Ba==B2of2
+ 0.0108588     335 Na==B2of2 and Mg==B2of2 and K==B4of4
+ 0.0095203      10 Na==B2of2 and Mg==B2of2
+ 0.0093121      42 Na==B2of2 and K==B2of4
+ 0.0092045     543 Al MULTIPLY K
+ 0.008796      357 Na==B2of2 and Mg==B2of2 and Ba==B2of2
+ 0.008796      333 RI==B3of3 and K==B4of4 and Ba==B2of2
+ 0.008796      349 Na==B2of2 and K==B4of4 and Ba==B2of2
+ 0.0080515     320 RI==B3of3 and Al==B1of3 and K==B1of4
+ 0.00656       350 Na==B2of2 and Al==B1of3 and K==B1of4
+ 0.0063933       9 Fe
+ 0.0060763     252 Al==B1of3 impl K==B2of4
+ 0.0057464     309 RI==B1of3 and Al==B1of3 and K==B4of4
+ 0.0057464      22 Al==B1of3 and K==B4of4
+ 0.0050625     346 RI==B3of3 and Al==B3of3 and Ba==B2of2
+ 0.00438       308 RI==B1of3 and Al==B1of3 and K==B3of4
+ 0.0040732     345 RI==B3of3 and Al==B1of3 and Ba==B2of2
+ 0.0040732     362 Al==B1of3 and K==B2of4 and Ba==B2of2
+ 0.0040732      44 Al==B1of3 and Ba==B2of2
+ 0.0032703      16 Na==B2of2 and Al==B1of3
+ 0.0030534     336 Mg==B2of2 and K==B2of4 and Ba==B2of2
+ 0.0028197     332 RI==B3of3 and K==B2of4 and Ba==B2of2
+ 0.0027083     340 RI==B1of3 and Na==B2of2 and K==B4of4
+ 0.0023583     301 RI==B1of3 and Na==B2of2 and Al==B2of3
+ 0.0017996     310 RI==B1of3 and Al==B2of3 and K==B1of4
+ 0.0017996     306 RI==B1of3 and Al==B1of3 and K==B1of4
+ 0.0017996     300 RI==B1of3 and Na==B2of2 and Al==B1of3
+ 0.0016181     360 Na==B2of2 and Al==B1of3 and Ba==B2of2
+ 0.0013978     326 RI==B3of3 and Al==B3of3 and K==B2of4
+ 0.0006422     353 Na==B2of2 and Al==B2of3 and K==B2of4
+ 0.0003645     556 Al LESSTHAN Ba
+ 0.0001923     553 Al LESSTHAN K
+ 0.0000801     334 Na==B2of2 and Mg==B2of2 and K==B2of4
+-0.0003077     303 RI==B3of3 and Na==B2of2 and Al==B1of3
+-0.000572      351 Na==B2of2 and Al==B1of3 and K==B2of4
+-0.000572      342 RI==B3of3 and Na==B2of2 and K==B2of4
+-0.0012195     432 RI==B1of3 or Na==B2of2 or K==B2of4
+-0.0026451      55 RI==B3of3 and K==B3of4
+-0.0026451     322 RI==B3of3 and Al==B1of3 and K==B3of4
+-0.0035162     331 RI==B3of3 and K==B1of4 and Ba==B2of2
+-0.0035162     325 RI==B3of3 and Al==B3of3 and K==B1of4
+-0.0075344      21 Al==B1of3 and K==B3of4
+-0.0076428      52 RI==B2of3 and K==B3of4
+-0.0076428     289 RI==B2of3 impl K==B2of4
+-0.0076428     318 RI==B2of3 and Al==B1of3 and K==B3of4
+
+
+								--------------
+									Fold  6
+								--------------
+Feature evaluation: ReliefF (All features dataset) - After CI
+Ranked attributes:
+ 0.466111    295 RI_x_Mg
+ 0.429791    298 Mg_x_Ba
+ 0.408384    137 Mg==B2of2 impl K==B3of3
+ 0.40678     141 Mg==B2of2 impl Ba==B2of2
+ 0.394558    299 RI_x_K
+ 0.388902     20 Mg==B2of2 and K==B2of3
+ 0.383124    301 RI_x_Ba
+ 0.379672    293 Na_x_Mg
+ 0.378897    104 RI==B2of3 xor Mg==B2of2
+ 0.378897     74 RI==B2of3 equ Mg==B2of2
+ 0.375747     44 RI==B2of3 or Mg==B2of2
+ 0.364364    292 RI_x_Na
+ 0.359329    296 Mg_x_K
+ 0.357698    135 Mg==B2of2 impl K==B1of3
+ 0.339324    190 RI==B2of3 or K==B1of3 or Ba==B2of2
+ 0.323518    124 RI==B2of3 xor Ba==B2of2
+ 0.323518     64 RI==B2of3 or Ba==B2of2
+ 0.323518     94 RI==B2of3 equ Ba==B2of2
+ 0.321743    205 RI==B2of3 or Na==B2of2 or K==B1of3
+ 0.321733    192 RI==B2of3 or K==B3of3 or Ba==B2of2
+ 0.319792    227 RI==B2of3 or Na==B2of2 or Ba==B2of2
+ 0.305161     67 RI==B2of3 equ Na==B2of2
+ 0.305161     37 RI==B2of3 or Na==B2of2
+ 0.305161     97 RI==B2of3 xor Na==B2of2
+ 0.304665     87 RI==B2of3 equ K==B2of3
+ 0.304665    117 RI==B2of3 xor K==B2of3
+ 0.303537    131 K==B2of3 impl Ba==B2of2
+ 0.298906    108 Mg==B2of2 xor K==B3of3
+ 0.298906     78 Mg==B2of2 equ K==B3of3
+ 0.295407    294 K_x_Ba
+ 0.295144    207 RI==B2of3 or Na==B2of2 or K==B3of3
+ 0.291515     73 RI==B1of3 equ Mg==B2of2
+ 0.291515    103 RI==B1of3 xor Mg==B2of2
+ 0.286814    116 RI==B2of3 xor K==B1of3
+ 0.286814     86 RI==B2of3 equ K==B1of3
+ 0.286814     56 RI==B2of3 or K==B1of3
+ 0.282935    214 Na==B2of2 or K==B1of3 or Ba==B2of2
+ 0.276916     40 K==B1of3 or Ba==B2of2
+ 0.271524    202 RI==B1of3 or Na==B2of2 or K==B1of3
+ 0.267111     48 Mg==B2of2 or K==B3of3
+ 0.267111    222 RI==B2of3 or Mg==B2of2 or K==B3of3
+ 0.26384     300 Na_x_Ba
+ 0.263154     57 RI==B2of3 or K==B2of3
+ 0.262166    216 Na==B2of2 or K==B3of3 or Ba==B2of2
+ 0.260363     42 K==B3of3 or Ba==B2of2
+ 0.260077     53 RI==B1of3 or K==B1of3
+ 0.258435    187 RI==B1of3 or K==B1of3 or Ba==B2of2
+ 0.257241     85 RI==B1of3 equ K==B3of3
+ 0.257241    115 RI==B1of3 xor K==B3of3
+ 0.257062    112 Mg==B2of2 xor Ba==B2of2
+ 0.257062     82 Mg==B2of2 equ Ba==B2of2
+ 0.257009    189 RI==B1of3 or K==B3of3 or Ba==B2of2
+ 0.255098     36 RI==B1of3 or Na==B2of2
+ 0.253767     55 RI==B1of3 or K==B3of3
+ 0.252808    297 Na_x_K
+ 0.25272      62 Na==B2of2 or Ba==B2of2
+ 0.251316    195 RI==B3of3 or K==B3of3 or Ba==B2of2
+ 0.249369     63 RI==B1of3 or Ba==B2of2
+ 0.247692    204 RI==B1of3 or Na==B2of2 or K==B3of3
+ 0.246921     49 Na==B2of2 or K==B1of3
+ 0.246666    309 num-of-N((Ba >= 0.4) and (Na >= 14.14))
+ 0.246402    144 RI==B1of3 impl K==B3of3
+ 0.245298     51 Na==B2of2 or K==B3of3
+ 0.243       210 RI==B3of3 or Na==B2of2 or K==B3of3
+ 0.242322    221 RI==B2of3 or Mg==B2of2 or K==B2of3
+ 0.242322     47 Mg==B2of2 or K==B2of3
+ 0.241688    226 RI==B1of3 or Na==B2of2 or Ba==B2of2
+ 0.233906     16 RI==B1of3 and Mg==B2of2
+ 0.231999     52 Mg==B2of2 or Ba==B2of2
+ 0.231999    231 RI==B2of3 or Mg==B2of2 or Ba==B2of2
+ 0.230274    193 RI==B3of3 or K==B1of3 or Ba==B2of2
+ 0.228804    284 RI LESSTHAN Mg
+ 0.227517    256 Mg DIVIDE Na
+ 0.227502     84 RI==B1of3 equ K==B2of3
+ 0.227502    114 RI==B1of3 xor K==B2of3
+ 0.226773    304 (Ba >= 0.4)
+ 0.225293    176 RI==B1of3 and Mg==B2of2 and K==B2of3
+ 0.223816    262 K DIVIDE Mg
+ 0.223816    259 RI DIVIDE Mg
+ 0.223816    266 Ba DIVIDE Mg
+ 0.223816    255 Na DIVIDE Mg
+ 0.222681     75 RI==B3of3 equ Mg==B2of2
+ 0.222681    105 RI==B3of3 xor Mg==B2of2
+ 0.219428    260 Mg DIVIDE RI
+ 0.219143     65 RI==B3of3 or Ba==B2of2
+ 0.21892       3 Mg
+ 0.218415    276 RI MULTIPLY Mg
+ 0.218376    236 RI ADD Mg
+ 0.218298    246 RI SUBTRACT Mg
+ 0.217913    228 RI==B3of3 or Na==B2of2 or Ba==B2of2
+ 0.217089    129 Na==B2of2 impl Mg==B2of2
+ 0.21504     113 RI==B1of3 xor K==B1of3
+ 0.21504      83 RI==B1of3 equ K==B1of3
+ 0.214936    307 num-of-N((Na >= 14.14) and (K <= 0.08))
+ 0.213322     27 RI==B1of3 and K==B2of3
+ 0.208688    274 Na MULTIPLY Mg
+ 0.207981    151 RI==B1of3 impl Ba==B2of2
+ 0.205855    139 Na==B2of2 impl K==B2of3
+ 0.205602    257 K DIVIDE Ba
+ 0.205602    265 Mg DIVIDE Ba
+ 0.205602    271 RI DIVIDE Ba
+ 0.205602    269 Na DIVIDE Ba
+ 0.205198    111 Na==B2of2 xor K==B3of3
+ 0.205198     81 Na==B2of2 equ K==B3of3
+ 0.204153    283 K LESSTHAN Ba
+ 0.203196    102 K==B3of3 xor Ba==B2of2
+ 0.203196     72 K==B3of3 equ Ba==B2of2
+ 0.202832     61 RI==B3of3 or K==B3of3
+ 0.201477    142 RI==B1of3 impl K==B1of3
+ 0.200528     58 RI==B2of3 or K==B3of3
+ 0.200528    118 RI==B2of3 xor K==B3of3
+ 0.200528     88 RI==B2of3 equ K==B3of3
+ 0.198008     29 RI==B2of3 and K==B2of3
+ 0.198008    127 RI==B2of3 impl Na==B2of2
+ 0.198008    178 RI==B2of3 and Mg==B2of2 and K==B2of3
+ 0.198008     17 RI==B2of3 and Mg==B2of2
+ 0.198008    145 RI==B2of3 impl K==B1of3
+ 0.198008    146 RI==B2of3 impl K==B3of3
+ 0.198008    152 RI==B2of3 impl Ba==B2of2
+ 0.195699    120 RI==B3of3 xor K==B2of3
+ 0.195699     90 RI==B3of3 equ K==B2of3
+ 0.193725    123 RI==B1of3 xor Ba==B2of2
+ 0.193725     93 RI==B1of3 equ Ba==B2of2
+ 0.192874     95 RI==B3of3 equ Ba==B2of2
+ 0.192874    125 RI==B3of3 xor Ba==B2of2
+ 0.192573     34 RI==B1of3 and Ba==B2of2
+ 0.191134    126 RI==B1of3 impl Na==B2of2
+ 0.190816     38 RI==B3of3 or Na==B2of2
+ 0.190816    208 RI==B3of3 or Na==B2of2 or K==B1of3
+ 0.190263     59 RI==B3of3 or K==B1of3
+ 0.190235    121 RI==B3of3 xor K==B3of3
+ 0.190235     91 RI==B3of3 equ K==B3of3
+ 0.18953     286 Mg LESSTHAN Ba
+ 0.186041     66 RI==B1of3 equ Na==B2of2
+ 0.186041     96 RI==B1of3 xor Na==B2of2
+ 0.18418     133 RI==B1of3 impl Mg==B2of2
+ 0.18418      45 RI==B3of3 or Mg==B2of2
+ 0.183281    305 (Ba >= 0.4) and (Na >= 14.14)
+ 0.183281     33 Na==B2of2 and Ba==B2of2
+ 0.17515     140 Na==B2of2 impl K==B3of3
+ 0.174121    302 (Na >= 14.14) and (K <= 0.08)
+ 0.172156     89 RI==B3of3 equ K==B1of3
+ 0.172156    119 RI==B3of3 xor K==B1of3
+ 0.169077    220 RI==B2of3 or Mg==B2of2 or K==B1of3
+ 0.169077     46 Mg==B2of2 or K==B1of3
+ 0.168243    230 RI==B1of3 or Mg==B2of2 or Ba==B2of2
+ 0.168115    134 RI==B3of3 impl Mg==B2of2
+ 0.168115     43 RI==B1of3 or Mg==B2of2
+ 0.167842     69 Na==B2of2 equ Mg==B2of2
+ 0.167842     99 Na==B2of2 xor Mg==B2of2
+ 0.167523    225 RI==B3of3 or Mg==B2of2 or K==B3of3
+ 0.167317    197 RI==B2of3 or Na==B2of2 or Mg==B2of2
+ 0.167317     39 Na==B2of2 or Mg==B2of2
+ 0.164682    239 Mg ADD Ba
+ 0.160812     22 Na==B2of2 and K==B1of3
+ 0.160785     76 Mg==B2of2 equ K==B1of3
+ 0.160785    106 Mg==B2of2 xor K==B1of3
+ 0.159268    153 RI==B3of3 impl Ba==B2of2
+ 0.158242    249 Mg SUBTRACT Ba
+ 0.158221    237 Mg ADD K
+ 0.156367    201 Mg==B2of2 or K==B3of3 or Ba==B2of2
+ 0.154892     98 RI==B3of3 xor Na==B2of2
+ 0.154892     68 RI==B3of3 equ Na==B2of2
+ 0.154033    211 Na==B2of2 or Mg==B2of2 or K==B1of3
+ 0.152494    261 Mg DIVIDE K
+ 0.152494    258 Ba DIVIDE K
+ 0.152494    263 Na DIVIDE K
+ 0.152494    267 RI DIVIDE K
+ 0.152244    149 RI==B3of3 impl K==B3of3
+ 0.15032     147 RI==B3of3 impl K==B1of3
+ 0.148014     18 RI==B3of3 and Mg==B2of2
+ 0.146179    128 RI==B3of3 impl Na==B2of2
+ 0.144489     60 RI==B3of3 or K==B2of3
+ 0.144489    143 RI==B1of3 impl K==B2of3
+ 0.144251    199 Mg==B2of2 or K==B1of3 or Ba==B2of2
+ 0.143719     31 RI==B3of3 and K==B2of3
+ 0.141697    182 RI==B1of3 and Na==B2of2 and Ba==B2of2
+ 0.139473    229 Na==B2of2 or Mg==B2of2 or Ba==B2of2
+ 0.13741      10 RI==B1of3 and Na==B2of2
+ 0.134811    219 RI==B1of3 or Mg==B2of2 or K==B3of3
+ 0.133193    244 Na SUBTRACT Mg
+ 0.132162    180 RI==B3of3 and Mg==B2of2 and K==B2of3
+ 0.129038    224 RI==B3of3 or Mg==B2of2 or K==B2of3
+ 0.127673    173 Na==B2of2 and K==B1of3 and Ba==B2of2
+ 0.127673     13 K==B1of3 and Ba==B2of2
+ 0.12523     100 K==B1of3 xor Ba==B2of2
+ 0.12523      70 K==B1of3 equ Ba==B2of2
+ 0.115958    200 Mg==B2of2 or K==B2of3 or Ba==B2of2
+ 0.115449     71 K==B2of3 equ Ba==B2of2
+ 0.115449    101 K==B2of3 xor Ba==B2of2
+ 0.112874    154 RI==B1of3 and K==B1of3 and Ba==B2of2
+ 0.11237     164 RI==B1of3 and Na==B2of2 and K==B1of3
+ 0.11237      26 RI==B1of3 and K==B1of3
+ 0.11086     277 Mg MULTIPLY K
+ 0.109681     41 K==B2of3 or Ba==B2of2
+ 0.109681    191 RI==B2of3 or K==B2of3 or Ba==B2of2
+ 0.101437    196 RI==B1of3 or Na==B2of2 or Mg==B2of2
+ 0.100704    217 RI==B1of3 or Mg==B2of2 or K==B1of3
+ 0.093776     54 RI==B1of3 or K==B2of3
+ 0.093776    148 RI==B3of3 impl K==B2of3
+ 0.093118    130 K==B1of3 impl Ba==B2of2
+ 0.093056    289 K DIFF Ba
+ 0.090899     77 Mg==B2of2 equ K==B2of3
+ 0.090899    107 Mg==B2of2 xor K==B2of3
+ 0.088307    234 Na ADD Mg
+ 0.087192    218 RI==B1of3 or Mg==B2of2 or K==B2of3
+ 0.085929    188 RI==B1of3 or K==B2of3 or Ba==B2of2
+ 0.085422    290 Mg DIFF K
+ 0.085153    122 Na==B2of2 xor Ba==B2of2
+ 0.085153     92 Na==B2of2 equ Ba==B2of2
+ 0.084776    247 Mg SUBTRACT K
+ 0.084541    285 Mg LESSTHAN K
+ 0.084528    241 Na ADD Ba
+ 0.078194    213 Na==B2of2 or Mg==B2of2 or K==B3of3
+ 0.077639      4 Al
+ 0.072994    291 Mg DIFF Ba
+ 0.072525    281 Na MULTIPLY Ba
+ 0.066309     30 RI==B3of3 and K==B1of3
+ 0.066205    272 Ba DIVIDE RI
+ 0.065746    252 RI SUBTRACT Ba
+ 0.065677    150 Na==B2of2 impl Ba==B2of2
+ 0.06553       8 Ba
+ 0.06509     242 RI ADD Ba
+ 0.064861    282 RI MULTIPLY Ba
+ 0.055997     11 RI==B3of3 and Na==B2of2
+ 0.053308    288 RI LESSTHAN Ba
+ 0.048138    270 Ba DIVIDE Na
+ 0.048064    273 RI MULTIPLY Na
+ 0.047286    233 RI ADD Na
+ 0.047182      2 Na
+ 0.047079    243 RI SUBTRACT Na
+ 0.046378    254 Na DIVIDE RI
+ 0.04598     253 RI DIVIDE Na
+ 0.045807      7 Ca
+ 0.043436     80 Na==B2of2 equ K==B2of3
+ 0.043436    110 Na==B2of2 xor K==B2of3
+ 0.043353     50 Na==B2of2 or K==B2of3
+ 0.043353    206 RI==B2of3 or Na==B2of2 or K==B2of3
+ 0.037505    248 Na SUBTRACT K
+ 0.037262    308 num-of-N((K >= 1.41) and (K <= 2.7))
+ 0.037262    303 (K >= 1.41) and (K <= 2.7)
+ 0.037148      1 RI
+ 0.035864     79 Na==B2of2 equ K==B1of3
+ 0.035864    109 Na==B2of2 xor K==B1of3
+ 0.032143    212 Na==B2of2 or Mg==B2of2 or K==B2of3
+ 0.031987    235 K ADD Ba
+ 0.031535     15 K==B3of3 and Ba==B2of2
+ 0.029444    167 RI==B3of3 and Na==B2of2 and K==B1of3
+ 0.029082    245 K SUBTRACT Ba
+ 0.028834     28 RI==B1of3 and K==B3of3
+ 0.028195     24 Na==B2of2 and K==B3of3
+ 0.02751     209 RI==B3of3 or Na==B2of2 or K==B2of3
+ 0.027029     25 Mg==B2of2 and Ba==B2of2
+ 0.026845     21 Mg==B2of2 and K==B3of3
+ 0.026679      5 Si
+ 0.02656     169 RI==B3of3 and Na==B2of2 and K==B3of3
+ 0.026556     32 RI==B3of3 and K==B3of3
+ 0.025964    223 RI==B3of3 or Mg==B2of2 or K==B1of3
+ 0.025562    136 Mg==B2of2 impl K==B2of3
+ 0.025526    279 Mg MULTIPLY Ba
+ 0.024788    238 Na ADD K
+ 0.024781    163 Mg==B2of2 and K==B3of3 and Ba==B2of2
+ 0.023533    132 K==B3of3 impl Ba==B2of2
+ 0.021663    278 Na MULTIPLY K
+ 0.021278    198 RI==B3of3 or Na==B2of2 or Mg==B2of2
+ 0.02077     280 RI MULTIPLY K
+ 0.020701      6 K
+ 0.020692    240 RI ADD K
+ 0.020631    268 K DIVIDE RI
+ 0.020612    250 RI SUBTRACT K
+ 0.020549    138 Na==B2of2 impl K==B1of3
+ 0.020092    287 RI LESSTHAN K
+ 0.019918    264 K DIVIDE Na
+ 0.019807    310 num-of-N((Ba >= 0.81) and (Ba <= 1.19))
+ 0.019807    306 (Ba >= 0.81) and (Ba <= 1.19)
+ 0.019292    215 Na==B2of2 or K==B2of3 or Ba==B2of2
+ 0.018898    275 K MULTIPLY Ba
+ 0.018668    156 RI==B1of3 and K==B3of3 and Ba==B2of2
+ 0.018301    251 Na SUBTRACT Ba
+ 0.015397    177 RI==B1of3 and Mg==B2of2 and K==B3of3
+ 0.015335     12 Na==B2of2 and Mg==B2of2
+ 0.01453     203 RI==B1of3 or Na==B2of2 or K==B2of3
+ 0.012731    172 Na==B2of2 and Mg==B2of2 and K==B3of3
+ 0.012687    185 RI==B1of3 and Mg==B2of2 and Ba==B2of2
+ 0.012477    186 RI==B3of3 and Mg==B2of2 and Ba==B2of2
+ 0.012415    161 RI==B3of3 and Na==B2of2 and Mg==B2of2
+ 0.011731      9 Fe
+ 0.011417     14 K==B2of3 and Ba==B2of2
+ 0.01078     155 RI==B1of3 and K==B2of3 and Ba==B2of2
+ 0.010205    159 RI==B3of3 and K==B3of3 and Ba==B2of2
+ 0.010205    175 Na==B2of2 and K==B3of3 and Ba==B2of2
+ 0.010022    181 RI==B3of3 and Mg==B2of2 and K==B3of3
+ 0.010022    184 Na==B2of2 and Mg==B2of2 and Ba==B2of2
+ 0.008423    183 RI==B3of3 and Na==B2of2 and Ba==B2of2
+ 0.008419     35 RI==B3of3 and Ba==B2of2
+ 0.007022    194 RI==B3of3 or K==B2of3 or Ba==B2of2
+ 0.005028    232 RI==B3of3 or Mg==B2of2 or Ba==B2of2
+ 0.003783    160 RI==B1of3 and Na==B2of2 and Mg==B2of2
+ 0.003355    166 RI==B1of3 and Na==B2of2 and K==B3of3
+ 0.003053    162 Mg==B2of2 and K==B2of3 and Ba==B2of2
+ 0.002017    158 RI==B3of3 and K==B2of3 and Ba==B2of2
+ 0.001272    165 RI==B1of3 and Na==B2of2 and K==B2of3
+ 0.000844    174 Na==B2of2 and K==B2of3 and Ba==B2of2
+ 0.000149    179 RI==B3of3 and Mg==B2of2 and K==B1of3
+ 0.000149     19 Mg==B2of2 and K==B1of3
+-0.002531    170 Na==B2of2 and Mg==B2of2 and K==B1of3
+-0.003209     23 Na==B2of2 and K==B2of3
+-0.003256    168 RI==B3of3 and Na==B2of2 and K==B2of3
+-0.003854    157 RI==B3of3 and K==B1of3 and Ba==B2of2
+-0.004742    171 Na==B2of2 and Mg==B2of2 and K==B2of3
+
+
+								--------------
+									Fold  7
+								--------------
+Feature evaluation: ReliefF (All features dataset) - After CI
+Ranked attributes:
+ 0.43114   145 Mg_x_Ba
+ 0.40784    76 Mg==B2of2 impl K==B4of4
+ 0.40633    81 Mg==B2of2 impl Ba==B2of2
+ 0.39157   141 Na_x_Mg
+ 0.37484    30 Mg==B2of2 or K==B3of4
+ 0.3737    143 Mg_x_K
+ 0.3594     73 Mg==B2of2 impl K==B1of4
+ 0.32805   142 K_x_Ba
+ 0.29779    46 Mg==B2of2 equ K==B4of4
+ 0.29779    61 Mg==B2of2 xor K==B4of4
+ 0.29613   144 Na_x_K
+ 0.28557   146 Na_x_Ba
+ 0.28247    68 Na==B2of2 impl Mg==B2of2
+ 0.28173    45 Mg==B2of2 equ K==B3of4
+ 0.28173    75 Mg==B2of2 impl K==B3of4
+ 0.28173    60 Mg==B2of2 xor K==B3of4
+ 0.27928    15 Mg==B2of2 and K==B2of4
+ 0.27703    24 K==B1of4 or Ba==B2of2
+ 0.26591    35 Na==B2of2 or K==B4of4
+ 0.26538    31 Mg==B2of2 or K==B4of4
+ 0.26459   103 Na==B2of2 or K==B4of4 or Ba==B2of2
+ 0.26224    78 Na==B2of2 impl K==B2of4
+ 0.26089    66 Mg==B2of2 xor Ba==B2of2
+ 0.26089    51 Mg==B2of2 equ Ba==B2of2
+ 0.26046    27 K==B4of4 or Ba==B2of2
+ 0.25795    37 Na==B2of2 or Ba==B2of2
+ 0.25779    29 Mg==B2of2 or K==B2of4
+ 0.25672   100 Na==B2of2 or K==B1of4 or Ba==B2of2
+ 0.24255    79 Na==B2of2 impl K==B3of4
+ 0.23925    32 Na==B2of2 or K==B1of4
+ 0.23603    98 Mg==B2of2 or K==B3of4 or Ba==B2of2
+ 0.23603    36 Mg==B2of2 or Ba==B2of2
+ 0.22943    56 K==B3of4 xor Ba==B2of2
+ 0.22943    41 K==B3of4 equ Ba==B2of2
+ 0.22943    26 K==B3of4 or Ba==B2of2
+ 0.2267     65 Na==B2of2 xor K==B4of4
+ 0.2267     50 Na==B2of2 equ K==B4of4
+ 0.22654   147 (Ba >= 0.4)
+ 0.22583    70 K==B2of4 impl Ba==B2of2
+ 0.22064   118 Mg DIVIDE Na
+ 0.21953    18 Na==B2of2 and K==B1of4
+ 0.20981    80 Na==B2of2 impl K==B4of4
+ 0.20962     3 Mg
+ 0.20831   125 Mg DIVIDE Ba
+ 0.20831   127 Na DIVIDE Ba
+ 0.20831   119 K DIVIDE Ba
+ 0.20709    22 Na==B2of2 and Ba==B2of2
+ 0.20601   102 Na==B2of2 or K==B3of4 or Ba==B2of2
+ 0.20526    34 Na==B2of2 or K==B3of4
+ 0.20526    64 Na==B2of2 xor K==B3of4
+ 0.20526    49 Na==B2of2 equ K==B3of4
+ 0.20399   135 K LESSTHAN Ba
+ 0.2034     57 K==B4of4 xor Ba==B2of2
+ 0.2034     42 K==B4of4 equ Ba==B2of2
+ 0.19747   129 Na MULTIPLY Mg
+ 0.19458   126 Ba DIVIDE Mg
+ 0.19458   122 K DIVIDE Mg
+ 0.19458   117 Na DIVIDE Mg
+ 0.16682   121 Mg DIVIDE K
+ 0.16682   120 Ba DIVIDE K
+ 0.16682   123 Na DIVIDE K
+ 0.16671    28 Mg==B2of2 or K==B1of4
+ 0.16574    38 Na==B2of2 equ Mg==B2of2
+ 0.16574    53 Na==B2of2 xor Mg==B2of2
+ 0.16024    99 Mg==B2of2 or K==B4of4 or Ba==B2of2
+ 0.15752    43 Mg==B2of2 equ K==B1of4
+ 0.15752    58 Mg==B2of2 xor K==B1of4
+ 0.15737   137 Mg LESSTHAN Ba
+ 0.15526   109 Mg ADD Ba
+ 0.15486    25 K==B2of4 or Ba==B2of2
+ 0.15241   115 Mg SUBTRACT Ba
+ 0.15173   107 Mg ADD K
+ 0.15136    59 Mg==B2of2 xor K==B2of4
+ 0.15136    44 Mg==B2of2 equ K==B2of4
+ 0.15063    23 Na==B2of2 or Mg==B2of2
+ 0.15063    94 Na==B2of2 or Mg==B2of2 or K==B3of4
+ 0.15044    55 K==B2of4 xor Ba==B2of2
+ 0.15044    40 K==B2of4 equ Ba==B2of2
+ 0.14927    11 K==B1of4 and Ba==B2of2
+ 0.14927    88 Na==B2of2 and K==B1of4 and Ba==B2of2
+ 0.14172    96 Mg==B2of2 or K==B1of4 or Ba==B2of2
+ 0.14117   104 Na==B2of2 or Mg==B2of2 or Ba==B2of2
+ 0.13308    74 Mg==B2of2 impl K==B2of4
+ 0.1312     92 Na==B2of2 or Mg==B2of2 or K==B1of4
+ 0.12991   111 Na SUBTRACT Mg
+ 0.12984    71 K==B3of4 impl Ba==B2of2
+ 0.12984    16 Mg==B2of2 and K==B3of4
+ 0.12254    54 K==B1of4 xor Ba==B2of2
+ 0.12254    39 K==B1of4 equ Ba==B2of2
+ 0.11606   131 Mg MULTIPLY K
+ 0.11327    97 Mg==B2of2 or K==B2of4 or Ba==B2of2
+ 0.10722   101 Na==B2of2 or K==B2of4 or Ba==B2of2
+ 0.10653    33 Na==B2of2 or K==B2of4
+ 0.10298    63 Na==B2of2 xor K==B2of4
+ 0.10298    48 Na==B2of2 equ K==B2of4
+ 0.10205    52 Na==B2of2 equ Ba==B2of2
+ 0.10205    67 Na==B2of2 xor Ba==B2of2
+ 0.09452    82 Na==B2of2 impl Ba==B2of2
+ 0.09198   138 K DIFF Ba
+ 0.09105    69 K==B1of4 impl Ba==B2of2
+ 0.08216   105 Na ADD Mg
+ 0.08106   110 Na ADD Ba
+ 0.07954   113 Mg SUBTRACT K
+ 0.07769    95 Na==B2of2 or Mg==B2of2 or K==B4of4
+ 0.07553   139 Mg DIFF K
+ 0.07096   134 Na MULTIPLY Ba
+ 0.07019   140 Mg DIFF Ba
+ 0.06933     4 Al
+ 0.0687    136 Mg LESSTHAN K
+ 0.06425     8 Ba
+ 0.04802     7 Ca
+ 0.04718   128 Ba DIVIDE Na
+ 0.04606     2 Na
+ 0.0432     62 Na==B2of2 xor K==B1of4
+ 0.0432     47 Na==B2of2 equ K==B1of4
+ 0.03833     1 RI
+ 0.03578   114 Na SUBTRACT K
+ 0.0318    106 K ADD Ba
+ 0.03149    20 Na==B2of2 and K==B4of4
+ 0.0309     77 Na==B2of2 impl K==B1of4
+ 0.03061    13 K==B4of4 and Ba==B2of2
+ 0.02982   133 Mg MULTIPLY Ba
+ 0.02917   112 K SUBTRACT Ba
+ 0.02683    21 Mg==B2of2 and Ba==B2of2
+ 0.02605     5 Si
+ 0.0257     17 Mg==B2of2 and K==B4of4
+ 0.02419   108 Na ADD K
+ 0.02387    87 Mg==B2of2 and K==B4of4 and Ba==B2of2
+ 0.02213   132 Na MULTIPLY K
+ 0.02197    72 K==B4of4 impl Ba==B2of2
+ 0.0212      6 K
+ 0.02029   124 K DIVIDE Na
+ 0.0193     10 Na==B2of2 and Mg==B2of2
+ 0.01866   130 K MULTIPLY Ba
+ 0.01721   116 Na SUBTRACT Ba
+ 0.01512    90 Na==B2of2 and K==B4of4 and Ba==B2of2
+ 0.01236    91 Na==B2of2 and Mg==B2of2 and Ba==B2of2
+ 0.01166    85 Na==B2of2 and Mg==B2of2 and K==B4of4
+ 0.0116     93 Na==B2of2 or Mg==B2of2 or K==B2of4
+ 0.00939    19 Na==B2of2 and K==B2of4
+ 0.00878    89 Na==B2of2 and K==B2of4 and Ba==B2of2
+ 0.00752    12 K==B2of4 and Ba==B2of2
+ 0.00705     9 Fe
+ 0.00695    84 Na==B2of2 and Mg==B2of2 and K==B2of4
+ 0.00377    86 Mg==B2of2 and K==B2of4 and Ba==B2of2
+-0.00246    83 Na==B2of2 and Mg==B2of2 and K==B1of4
+-0.00246    14 Mg==B2of2 and K==B1of4
+
+
+								--------------
+									Fold  8
+								--------------
+Feature evaluation: ReliefF (All features dataset) - After CI
+Ranked attributes:
+ 0.4352335    291 Mg_x_Ba
+ 0.4100324    153 Mg==B2of2 impl Ba==B2of2
+ 0.408021     294 RI_x_Ba
+ 0.401883     148 Mg==B2of2 impl K==B4of4
+ 0.389609     287 RI_x_Na
+ 0.3792746    286 Na_x_Mg
+ 0.3699907     48 Mg==B2of2 or K==B3of4
+ 0.3658786    197 RI==B2of3 or K==B1of4 or Ba==B2of2
+ 0.355891     145 Mg==B2of2 impl K==B1of4
+ 0.3500184     69 RI==B2of3 or Ba==B2of2
+ 0.3500184    102 RI==B2of3 equ Ba==B2of2
+ 0.3500184    135 RI==B2of3 xor Ba==B2of2
+ 0.3468249    200 RI==B2of3 or K==B4of4 or Ba==B2of2
+ 0.3355573    231 RI==B2of3 or Na==B2of2 or Ba==B2of2
+ 0.3268807     40 RI==B2of3 or Na==B2of2
+ 0.3256102    292 RI_x_K
+ 0.3246612     73 RI==B2of3 equ Na==B2of2
+ 0.3246612    106 RI==B2of3 xor Na==B2of2
+ 0.3201933    289 Mg_x_K
+ 0.3172048    217 RI==B2of3 or Na==B2of2 or K==B1of4
+ 0.3170107    220 RI==B2of3 or Na==B2of2 or K==B4of4
+ 0.2939391     59 RI==B2of3 or K==B1of4
+ 0.2939391    125 RI==B2of3 xor K==B1of4
+ 0.2939391     92 RI==B2of3 equ K==B1of4
+ 0.2938739    115 Mg==B2of2 xor K==B4of4
+ 0.2938739     82 Mg==B2of2 equ K==B4of4
+ 0.2875897     42 K==B1of4 or Ba==B2of2
+ 0.2854357    293 Na_x_Ba
+ 0.2802552    288 K_x_Ba
+ 0.2774834    193 RI==B1of3 or K==B1of4 or Ba==B2of2
+ 0.2745753    137 Na==B2of2 impl Mg==B2of2
+ 0.2734247    196 RI==B1of3 or K==B4of4 or Ba==B2of2
+ 0.2719268    204 RI==B3of3 or K==B4of4 or Ba==B2of2
+ 0.2703296    224 RI==B3of3 or Na==B2of2 or K==B4of4
+ 0.2686206     45 K==B4of4 or Ba==B2of2
+ 0.2668688     68 RI==B1of3 or Ba==B2of2
+ 0.2660126     87 Mg==B2of2 equ Ba==B2of2
+ 0.2660126    120 Mg==B2of2 xor Ba==B2of2
+ 0.263958      18 Mg==B2of2 and K==B2of4
+ 0.262608      49 Mg==B2of2 or K==B4of4
+ 0.2596147     55 RI==B1of3 or K==B1of4
+ 0.2594807    228 Na==B2of2 or K==B4of4 or Ba==B2of2
+ 0.2594807     53 Na==B2of2 or K==B4of4
+ 0.2588584     81 Mg==B2of2 equ K==B3of4
+ 0.2588584    147 Mg==B2of2 impl K==B3of4
+ 0.2588584    114 Mg==B2of2 xor K==B3of4
+ 0.253889     124 RI==B1of3 xor K==B4of4
+ 0.253889      91 RI==B1of3 equ K==B4of4
+ 0.2517681    201 RI==B3of3 or K==B1of4 or Ba==B2of2
+ 0.2511729     67 Na==B2of2 or Ba==B2of2
+ 0.2500386     58 RI==B1of3 or K==B4of4
+ 0.2498618    225 Na==B2of2 or K==B1of4 or Ba==B2of2
+ 0.2473738    157 RI==B1of3 impl K==B4of4
+ 0.2431409     54 Mg==B2of2 or Ba==B2of2
+ 0.2431409    211 Mg==B2of2 or K==B3of4 or Ba==B2of2
+ 0.2429006    290 Na_x_K
+ 0.2419889    199 RI==B2of3 or K==B3of4 or Ba==B2of2
+ 0.2388248     70 RI==B3of3 or Ba==B2of2
+ 0.2372724    230 RI==B1of3 or Na==B2of2 or Ba==B2of2
+ 0.2372724     39 RI==B1of3 or Na==B2of2
+ 0.2344636    297 (Ba >= 0.4)
+ 0.2342381    213 RI==B1of3 or Na==B2of2 or K==B1of4
+ 0.2326395    151 Na==B2of2 impl K==B3of4
+ 0.2313284     50 Na==B2of2 or K==B1of4
+ 0.2293649    216 RI==B1of3 or Na==B2of2 or K==B4of4
+ 0.2292675    232 RI==B3of3 or Na==B2of2 or Ba==B2of2
+ 0.2284386    150 Na==B2of2 impl K==B2of4
+ 0.2278978     47 Mg==B2of2 or K==B2of4
+ 0.225091      88 RI==B1of3 equ K==B1of4
+ 0.225091     121 RI==B1of3 xor K==B1of4
+ 0.2246539    142 K==B2of4 impl Ba==B2of2
+ 0.2218058    119 Na==B2of2 xor K==B4of4
+ 0.2218058     86 Na==B2of2 equ K==B4of4
+ 0.2217094     60 RI==B2of3 or K==B2of4
+ 0.2209903    167 RI==B1of3 impl Ba==B2of2
+ 0.2193193    168 RI==B2of3 impl Ba==B2of2
+ 0.2193193    161 RI==B2of3 impl K==B4of4
+ 0.2193193    158 RI==B2of3 impl K==B1of4
+ 0.2191547     95 RI==B2of3 equ K==B4of4
+ 0.2191547    128 RI==B2of3 xor K==B4of4
+ 0.2191547     62 RI==B2of3 or K==B4of4
+ 0.2188548    136 RI==B3of3 xor Ba==B2of2
+ 0.2188548    103 RI==B3of3 equ Ba==B2of2
+ 0.217448     261 Mg DIVIDE Ba
+ 0.217448     255 K DIVIDE Ba
+ 0.217448     265 Na DIVIDE Ba
+ 0.217448     267 RI DIVIDE Ba
+ 0.2164841     41 RI==B3of3 or Na==B2of2
+ 0.2164841    221 RI==B3of3 or Na==B2of2 or K==B1of4
+ 0.2136928    195 RI==B1of3 or K==B3of4 or Ba==B2of2
+ 0.212879     154 RI==B1of3 impl K==B1of4
+ 0.2117751    101 RI==B1of3 equ Ba==B2of2
+ 0.2117751    134 RI==B1of3 xor Ba==B2of2
+ 0.2115807    278 K LESSTHAN Ba
+ 0.2115807     35 Na==B2of2 and Ba==B2of2
+ 0.2113665    252 Mg DIVIDE Na
+ 0.2093745    111 K==B4of4 xor Ba==B2of2
+ 0.2093745     78 K==B4of4 equ Ba==B2of2
+ 0.2091735     66 RI==B3of3 or K==B4of4
+ 0.205382      63 RI==B3of3 or K==B1of4
+ 0.20521      139 RI==B2of3 impl Na==B2of2
+ 0.2033454    138 RI==B1of3 impl Na==B2of2
+ 0.203227     219 RI==B2of3 or Na==B2of2 or K==B3of4
+ 0.2025178     44 K==B3of4 or Ba==B2of2
+ 0.2025178    110 K==B3of4 xor Ba==B2of2
+ 0.2025178     77 K==B3of4 equ Ba==B2of2
+ 0.202028       3 Mg
+ 0.201631      72 RI==B1of3 equ Na==B2of2
+ 0.201631     105 RI==B1of3 xor Na==B2of2
+ 0.2014675    152 Na==B2of2 impl K==B4of4
+ 0.1949593     61 RI==B2of3 or K==B3of4
+ 0.1910442     99 RI==B3of3 equ K==B4of4
+ 0.1910442    132 RI==B3of3 xor K==B4of4
+ 0.1905791    269 Na MULTIPLY Mg
+ 0.1873405     21 Na==B2of2 and K==B1of4
+ 0.1854934    227 Na==B2of2 or K==B3of4 or Ba==B2of2
+ 0.1847136     57 RI==B1of3 or K==B3of4
+ 0.1833823     36 RI==B1of3 and Ba==B2of2
+ 0.1833405     96 RI==B3of3 equ K==B1of4
+ 0.1833405    129 RI==B3of3 xor K==B1of4
+ 0.1825325     74 RI==B3of3 equ Na==B2of2
+ 0.1825325    107 RI==B3of3 xor Na==B2of2
+ 0.1809388    169 RI==B3of3 impl Ba==B2of2
+ 0.1794436    251 Na DIVIDE Mg
+ 0.1794436    262 Ba DIVIDE Mg
+ 0.1794436    258 K DIVIDE Mg
+ 0.1769603    118 Na==B2of2 xor K==B3of4
+ 0.1769603     52 Na==B2of2 or K==B3of4
+ 0.1769603     85 Na==B2of2 equ K==B3of4
+ 0.1757119    215 RI==B1of3 or Na==B2of2 or K==B3of4
+ 0.1684887     46 Mg==B2of2 or K==B1of4
+ 0.167865     212 Mg==B2of2 or K==B4of4 or Ba==B2of2
+ 0.1636182    242 Na SUBTRACT Mg
+ 0.1636082    191 RI==B1of3 and Na==B2of2 and Ba==B2of2
+ 0.1602096     79 Mg==B2of2 equ K==B1of4
+ 0.1602096    112 Mg==B2of2 xor K==B1of4
+ 0.1580493    280 Mg LESSTHAN Ba
+ 0.1572134    198 RI==B2of3 or K==B2of4 or Ba==B2of2
+ 0.1561228    160 RI==B2of3 impl K==B3of4
+ 0.1561228     29 RI==B2of3 and K==B2of4
+ 0.155919     104 Na==B2of2 xor Mg==B2of2
+ 0.155919      71 Na==B2of2 equ Mg==B2of2
+ 0.1554831    164 RI==B3of3 impl K==B3of4
+ 0.1549155     11 RI==B1of3 and Na==B2of2
+ 0.1543077    156 RI==B1of3 impl K==B3of4
+ 0.1528787    247 Mg SUBTRACT Ba
+ 0.152672     238 Mg ADD Ba
+ 0.1525046    209 Mg==B2of2 or K==B1of4 or Ba==B2of2
+ 0.150219     165 RI==B3of3 impl K==B4of4
+ 0.1501862    162 RI==B3of3 impl K==B1of4
+ 0.1501669    155 RI==B1of3 impl K==B2of4
+ 0.1497915     97 RI==B3of3 equ K==B2of4
+ 0.1497915    130 RI==B3of3 xor K==B2of4
+ 0.1473047     65 RI==B3of3 or K==B3of4
+ 0.1468909    203 RI==B3of3 or K==B3of4 or Ba==B2of2
+ 0.1464466     94 RI==B2of3 equ K==B3of4
+ 0.1464466    127 RI==B2of3 xor K==B3of4
+ 0.1452199    236 Mg ADD K
+ 0.1446951    223 RI==B3of3 or Na==B2of2 or K==B3of4
+ 0.1443808    207 Na==B2of2 or Mg==B2of2 or K==B3of4
+ 0.1443808     38 Na==B2of2 or Mg==B2of2
+ 0.1443808    229 Na==B2of2 or Mg==B2of2 or Ba==B2of2
+ 0.1394422    140 RI==B3of3 impl Na==B2of2
+ 0.1385863    259 Na DIVIDE K
+ 0.1385863    256 Ba DIVIDE K
+ 0.1385863    257 Mg DIVIDE K
+ 0.1385863    263 RI DIVIDE K
+ 0.1354717     98 RI==B3of3 equ K==B3of4
+ 0.1354717    131 RI==B3of3 xor K==B3of4
+ 0.133194     126 RI==B2of3 xor K==B2of4
+ 0.133194      93 RI==B2of3 equ K==B2of4
+ 0.1322569    301 num-of-N((Na >= 14.14) and (K <= 0.08) and (K >= 0.04))
+ 0.1296289     32 RI==B3of3 and K==B2of4
+ 0.1289681    205 Na==B2of2 or Mg==B2of2 or K==B1of4
+ 0.1285882     75 K==B1of4 equ Ba==B2of2
+ 0.1285882    108 K==B1of4 xor Ba==B2of2
+ 0.1169413    210 Mg==B2of2 or K==B2of4 or Ba==B2of2
+ 0.1164734     43 K==B2of4 or Ba==B2of2
+ 0.1131741     90 RI==B1of3 equ K==B3of4
+ 0.1131741    123 RI==B1of3 xor K==B3of4
+ 0.1124559    187 Na==B2of2 and K==B1of4 and Ba==B2of2
+ 0.1124559     14 K==B1of4 and Ba==B2of2
+ 0.1094951    272 Mg MULTIPLY K
+ 0.1087372     64 RI==B3of3 or K==B2of4
+ 0.1081667    109 K==B2of4 xor Ba==B2of2
+ 0.1081667     76 K==B2of4 equ Ba==B2of2
+ 0.1037684    100 Na==B2of2 equ Ba==B2of2
+ 0.1037684    133 Na==B2of2 xor Ba==B2of2
+ 0.0992967    170 RI==B1of3 and K==B1of4 and Ba==B2of2
+ 0.098822     180 RI==B1of3 and Na==B2of2 and K==B1of4
+ 0.098822      25 RI==B1of3 and K==B1of4
+ 0.0954579    113 Mg==B2of2 xor K==B2of4
+ 0.0954579     80 Mg==B2of2 equ K==B2of4
+ 0.0953743    166 Na==B2of2 impl Ba==B2of2
+ 0.0940788    141 K==B1of4 impl Ba==B2of2
+ 0.0928399    283 K DIFF Ba
+ 0.0912992    218 RI==B2of3 or Na==B2of2 or K==B2of4
+ 0.0879722    122 RI==B1of3 xor K==B2of4
+ 0.0879722     89 RI==B1of3 equ K==B2of4
+ 0.0872989     27 RI==B1of3 and K==B3of4
+ 0.085474     233 Na ADD Mg
+ 0.0844802    163 RI==B3of3 impl K==B2of4
+ 0.0777279    245 Mg SUBTRACT K
+ 0.0770935    240 Na ADD Ba
+ 0.0759688      4 Al
+ 0.0749105     26 RI==B1of3 and K==B2of4
+ 0.074732     146 Mg==B2of2 impl K==B2of4
+ 0.0736706    208 Na==B2of2 or Mg==B2of2 or K==B4of4
+ 0.0698618     13 RI==B3of3 and Na==B2of2
+ 0.0689957    268 Ba DIVIDE RI
+ 0.0689682    276 Na MULTIPLY Ba
+ 0.0688889      8 Ba
+ 0.0688531    279 Mg LESSTHAN K
+ 0.0688434    250 RI SUBTRACT Ba
+ 0.068782     277 RI MULTIPLY Ba
+ 0.0687141    241 RI ADD Ba
+ 0.0685029    266 Ba DIVIDE Na
+ 0.0677094    184 RI==B3of3 and Na==B2of2 and K==B1of4
+ 0.0667404     31 RI==B3of3 and K==B1of4
+ 0.0628113     56 RI==B1of3 or K==B2of4
+ 0.061064     143 K==B3of4 impl Ba==B2of2
+ 0.061064      19 Mg==B2of2 and K==B3of4
+ 0.0605028    299 (Na >= 14.7)
+ 0.0589112    254 Na DIVIDE RI
+ 0.0587477    194 RI==B1of3 or K==B2of4 or Ba==B2of2
+ 0.058441     243 RI SUBTRACT Na
+ 0.0584236      2 Na
+ 0.0584081    234 RI ADD Na
+ 0.0579374    285 Mg DIFF Ba
+ 0.0575768    270 RI MULTIPLY Na
+ 0.055424      84 Na==B2of2 equ K==B2of4
+ 0.055424     117 Na==B2of2 xor K==B2of4
+ 0.0544163    253 RI DIVIDE Na
+ 0.0544109     51 Na==B2of2 or K==B2of4
+ 0.051891     226 Na==B2of2 or K==B2of4 or Ba==B2of2
+ 0.0517557    202 RI==B3of3 or K==B2of4 or Ba==B2of2
+ 0.046192     284 Mg DIFF K
+ 0.0457276    222 RI==B3of3 or Na==B2of2 or K==B2of4
+ 0.0456724      7 Ca
+ 0.045039     116 Na==B2of2 xor K==B1of4
+ 0.045039      83 Na==B2of2 equ K==B1of4
+ 0.0427018    282 RI LESSTHAN Ba
+ 0.0406662    249 Na SUBTRACT Ba
+ 0.040641     246 Na SUBTRACT K
+ 0.0373453      1 RI
+ 0.0317799     23 Na==B2of2 and K==B4of4
+ 0.0316334    149 Na==B2of2 impl K==B1of4
+ 0.0311044    244 K SUBTRACT Ba
+ 0.030868      28 RI==B1of3 and K==B4of4
+ 0.030749     235 K ADD Ba
+ 0.0296918     16 K==B4of4 and Ba==B2of2
+ 0.0281485      5 Si
+ 0.0278719    274 Mg MULTIPLY Ba
+ 0.0264775    144 K==B4of4 impl Ba==B2of2
+ 0.0264088     20 Mg==B2of2 and K==B4of4
+ 0.0239654    186 RI==B3of3 and Na==B2of2 and K==B4of4
+ 0.0238923    295 (Na >= 14.14) and (K <= 0.08) and (K >= 0.04)
+ 0.0234772     34 RI==B3of3 and K==B4of4
+ 0.0231323     24 Mg==B2of2 and Ba==B2of2
+ 0.0231323    179 Mg==B2of2 and K==B4of4 and Ba==B2of2
+ 0.0225687    237 Na ADD K
+ 0.0214484    273 Na MULTIPLY K
+ 0.0210419    281 RI LESSTHAN K
+ 0.020608     275 RI MULTIPLY K
+ 0.0205408      6 K
+ 0.0205258    239 RI ADD K
+ 0.0204748    264 K DIVIDE RI
+ 0.0204741    248 RI SUBTRACT K
+ 0.0198412    302 num-of-N((Na >= 13.87) and (Na <= 13.88))
+ 0.0198412    296 (Na >= 13.87) and (Na <= 13.88)
+ 0.0197968    260 K DIVIDE Na
+ 0.0194247    300 (K >= 1.76) and (K <= 2.7)
+ 0.0194247    304 num-of-N((K >= 1.76) and (K <= 2.7))
+ 0.0186389    172 RI==B1of3 and K==B4of4 and Ba==B2of2
+ 0.0186127    271 K MULTIPLY Ba
+ 0.0183143     10 Na==B2of2 and Mg==B2of2
+ 0.016371     206 Na==B2of2 or Mg==B2of2 or K==B2of4
+ 0.0140628    189 Na==B2of2 and K==B4of4 and Ba==B2of2
+ 0.0122302    178 Na==B2of2 and Mg==B2of2 and K==B4of4
+ 0.0120884     15 K==B2of4 and Ba==B2of2
+ 0.0120884    188 Na==B2of2 and K==B2of4 and Ba==B2of2
+ 0.0114112     37 RI==B3of3 and Ba==B2of2
+ 0.0114112    192 RI==B3of3 and Na==B2of2 and Ba==B2of2
+ 0.0108281    171 RI==B1of3 and K==B2of4 and Ba==B2of2
+ 0.0106025    181 RI==B1of3 and Na==B2of2 and K==B2of4
+ 0.0101814    182 RI==B1of3 and Na==B2of2 and K==B4of4
+ 0.0097796     22 Na==B2of2 and K==B2of4
+ 0.0083907    175 RI==B3of3 and K==B4of4 and Ba==B2of2
+ 0.0083162    190 Na==B2of2 and Mg==B2of2 and Ba==B2of2
+ 0.0064559    177 Na==B2of2 and Mg==B2of2 and K==B2of4
+ 0.0064431     12 RI==B2of3 and Na==B2of2
+ 0.0064431    183 RI==B2of3 and Na==B2of2 and K==B2of4
+ 0.0063923      9 Fe
+ 0.004027     303 num-of-N((Na >= 14.32) and (Na <= 14.39))
+ 0.004027     298 (Na >= 14.32) and (Na <= 14.39)
+ 0.0012603    174 RI==B3of3 and K==B2of4 and Ba==B2of2
+-0.0000479    176 Na==B2of2 and Mg==B2of2 and K==B1of4
+-0.0000479     17 Mg==B2of2 and K==B1of4
+-0.0019556     33 RI==B3of3 and K==B3of4
+-0.0028775    185 RI==B3of3 and Na==B2of2 and K==B2of4
+-0.0034211    173 RI==B3of3 and K==B1of4 and Ba==B2of2
+-0.0104151    214 RI==B1of3 or Na==B2of2 or K==B2of4
+-0.0146927    159 RI==B2of3 impl K==B2of4
+-0.0146927     30 RI==B2of3 and K==B3of4
+
+
+								--------------
+									Fold  9
+								--------------
+Feature evaluation: ReliefF (All features dataset) - After CI
+Ranked attributes:
+ 0.4368     260 Mg_x_Ba
+ 0.42182    262 RI_x_Ba
+ 0.41254    259 RI_x_K
+ 0.41244    126 Mg==B2of2 impl K==B3of3
+ 0.40366    139 Mg==B2of2 impl Ba==B2of2
+ 0.40324    254 RI_x_Na
+ 0.3923     173 RI==B2of3 or K==B1of3 or Ba==B2of2
+ 0.39114    198 RI==B2of3 or Na==B2of2 or Ba==B2of2
+ 0.39038     18 Mg==B2of2 and K==B2of3
+ 0.38693     61 RI==B2of3 or Ba==B2of2
+ 0.38183    175 RI==B2of3 or K==B3of3 or Ba==B2of2
+ 0.37515    255 Na_x_Mg
+ 0.36765    257 Mg_x_K
+ 0.36512    115 RI==B2of3 xor Ba==B2of2
+ 0.36512     88 RI==B2of3 equ Ba==B2of2
+ 0.36465     37 RI==B2of3 or Na==B2of2
+ 0.36283    184 RI==B2of3 or Na==B2of2 or K==B3of3
+ 0.35902    182 RI==B2of3 or Na==B2of2 or K==B1of3
+ 0.35411     99 Mg==B2of2 xor K==B3of3
+ 0.35411     72 Mg==B2of2 equ K==B3of3
+ 0.35259    124 Mg==B2of2 impl K==B1of3
+ 0.34936     64 RI==B2of3 equ Na==B2of2
+ 0.34936     91 RI==B2of3 xor Na==B2of2
+ 0.33291     52 RI==B2of3 or K==B1of3
+ 0.32972     80 RI==B2of3 equ K==B2of3
+ 0.32972    107 RI==B2of3 xor K==B2of3
+ 0.32023    106 RI==B2of3 xor K==B1of3
+ 0.32023     79 RI==B2of3 equ K==B1of3
+ 0.31672     45 Mg==B2of2 or K==B3of3
+ 0.30111    122 K==B2of3 impl Ba==B2of2
+ 0.29839    181 RI==B1of3 or Na==B2of2 or K==B3of3
+ 0.29839     36 RI==B1of3 or Na==B2of2
+ 0.29607     40 K==B1of3 or Ba==B2of2
+ 0.29415    261 Na_x_Ba
+ 0.2933     170 RI==B1of3 or K==B1of3 or Ba==B2of2
+ 0.288      179 RI==B1of3 or Na==B2of2 or K==B1of3
+ 0.28648    172 RI==B1of3 or K==B3of3 or Ba==B2of2
+ 0.28648     60 RI==B1of3 or Ba==B2of2
+ 0.28545     49 RI==B1of3 or K==B1of3
+ 0.28459    256 K_x_Ba
+ 0.28416    197 RI==B1of3 or Na==B2of2 or Ba==B2of2
+ 0.28293    196 Na==B2of2 or K==B3of3 or Ba==B2of2
+ 0.27751     59 Na==B2of2 or Ba==B2of2
+ 0.27231    194 Na==B2of2 or K==B1of3 or Ba==B2of2
+ 0.26774    133 RI==B2of3 impl K==B1of3
+ 0.26774    118 RI==B2of3 impl Na==B2of2
+ 0.26774    142 RI==B2of3 impl Ba==B2of2
+ 0.26774     27 RI==B2of3 and K==B2of3
+ 0.2595     178 RI==B3of3 or K==B3of3 or Ba==B2of2
+ 0.25905    135 RI==B2of3 impl K==B3of3
+ 0.25842     42 K==B3of3 or Ba==B2of2
+ 0.2575     268 num-of-N((Ba >= 0.4) and (Na >= 14.14))
+ 0.25749    105 RI==B1of3 xor K==B3of3
+ 0.25749     78 RI==B1of3 equ K==B3of3
+ 0.25417     81 RI==B2of3 equ K==B3of3
+ 0.25417     54 RI==B2of3 or K==B3of3
+ 0.25417    108 RI==B2of3 xor K==B3of3
+ 0.25361     51 RI==B1of3 or K==B3of3
+ 0.25206    176 RI==B3of3 or K==B1of3 or Ba==B2of2
+ 0.25012    265 (Ba >= 0.4)
+ 0.24991     85 Mg==B2of2 equ Ba==B2of2
+ 0.24991    112 Mg==B2of2 xor Ba==B2of2
+ 0.24968    132 RI==B1of3 impl K==B3of3
+ 0.24433     48 Na==B2of2 or K==B3of3
+ 0.24219    258 Na_x_K
+ 0.23993    199 RI==B3of3 or Na==B2of2 or Ba==B2of2
+ 0.23992    187 RI==B3of3 or Na==B2of2 or K==B3of3
+ 0.23696     46 Na==B2of2 or K==B1of3
+ 0.23495    120 Na==B2of2 impl Mg==B2of2
+ 0.23084    235 RI DIVIDE Ba
+ 0.23084    231 Mg DIVIDE Ba
+ 0.23084    223 K DIVIDE Ba
+ 0.23084    233 Na DIVIDE Ba
+ 0.23001     62 RI==B3of3 or Ba==B2of2
+ 0.22995    222 Mg DIVIDE Na
+ 0.22973     24 RI==B1of3 and K==B2of3
+ 0.22786    246 K LESSTHAN Ba
+ 0.22727     58 Mg==B2of2 or Ba==B2of2
+ 0.22506     77 RI==B1of3 equ K==B2of3
+ 0.22506    104 RI==B1of3 xor K==B2of3
+ 0.22328     44 Mg==B2of2 or K==B2of3
+ 0.22118     53 RI==B2of3 or K==B2of3
+ 0.22117      3 Mg
+ 0.22114    141 RI==B1of3 impl Ba==B2of2
+ 0.21542    130 RI==B1of3 impl K==B1of3
+ 0.21424    128 Na==B2of2 impl K==B2of3
+ 0.21363    102 Na==B2of2 xor K==B3of3
+ 0.21363     75 Na==B2of2 equ K==B3of3
+ 0.21132    185 RI==B3of3 or Na==B2of2 or K==B1of3
+ 0.21085    226 K DIVIDE Mg
+ 0.21085    221 Na DIVIDE Mg
+ 0.21085    232 Ba DIVIDE Mg
+ 0.21042    103 RI==B1of3 xor K==B1of3
+ 0.21042     76 RI==B1of3 equ K==B1of3
+ 0.21036    238 Na MULTIPLY Mg
+ 0.20741    116 RI==B3of3 xor Ba==B2of2
+ 0.20741     89 RI==B3of3 equ Ba==B2of2
+ 0.20687    110 RI==B3of3 xor K==B2of3
+ 0.20687     83 RI==B3of3 equ K==B2of3
+ 0.20629     55 RI==B3of3 or K==B1of3
+ 0.20603     87 RI==B1of3 equ Ba==B2of2
+ 0.20603    114 RI==B1of3 xor Ba==B2of2
+ 0.20485    117 RI==B1of3 impl Na==B2of2
+ 0.20171     96 K==B3of3 xor Ba==B2of2
+ 0.20171     69 K==B3of3 equ Ba==B2of2
+ 0.20157     38 RI==B3of3 or Na==B2of2
+ 0.2003      63 RI==B1of3 equ Na==B2of2
+ 0.2003      90 RI==B1of3 xor Na==B2of2
+ 0.19993    193 Mg==B2of2 or K==B3of3 or Ba==B2of2
+ 0.19805    129 Na==B2of2 impl K==B3of3
+ 0.1905      57 RI==B3of3 or K==B3of3
+ 0.18907    111 RI==B3of3 xor K==B3of3
+ 0.18907     84 RI==B3of3 equ K==B3of3
+ 0.18801     20 Na==B2of2 and K==B1of3
+ 0.18718     32 Na==B2of2 and Ba==B2of2
+ 0.18314    266 (Ba >= 0.4) and (Na >= 14.14)
+ 0.18284     92 RI==B3of3 xor Na==B2of2
+ 0.18284     65 RI==B3of3 equ Na==B2of2
+ 0.17824    249 Mg LESSTHAN Ba
+ 0.17395     33 RI==B1of3 and Ba==B2of2
+ 0.17376     82 RI==B3of3 equ K==B1of3
+ 0.17376    109 RI==B3of3 xor K==B1of3
+ 0.17016    119 RI==B3of3 impl Na==B2of2
+ 0.16484    207 Mg ADD Ba
+ 0.16441    143 RI==B3of3 impl Ba==B2of2
+ 0.1617     204 Mg ADD K
+ 0.1601     216 Mg SUBTRACT Ba
+ 0.15968     39 Na==B2of2 or Mg==B2of2
+ 0.15928    224 Ba DIVIDE K
+ 0.15928    225 Mg DIVIDE K
+ 0.15928    229 RI DIVIDE K
+ 0.15928    227 Na DIVIDE K
+ 0.15734    138 RI==B3of3 impl K==B3of3
+ 0.1573      56 RI==B3of3 or K==B2of3
+ 0.15625     43 Mg==B2of2 or K==B1of3
+ 0.15488     66 Na==B2of2 equ Mg==B2of2
+ 0.15488     93 Na==B2of2 xor Mg==B2of2
+ 0.14695     29 RI==B3of3 and K==B2of3
+ 0.14542    136 RI==B3of3 impl K==B1of3
+ 0.14457     97 Mg==B2of2 xor K==B1of3
+ 0.14457     70 Mg==B2of2 equ K==B1of3
+ 0.14213    264 (Na >= 14.23)
+ 0.14079    200 Na==B2of2 or Mg==B2of2 or Ba==B2of2
+ 0.14013     14 K==B1of3 and Ba==B2of2
+ 0.1357     191 Mg==B2of2 or K==B1of3 or Ba==B2of2
+ 0.13316    211 Na SUBTRACT Mg
+ 0.13213    188 Na==B2of2 or Mg==B2of2 or K==B1of3
+ 0.1308     131 RI==B1of3 impl K==B2of3
+ 0.12969    190 Na==B2of2 or Mg==B2of2 or K==B3of3
+ 0.12339     98 Mg==B2of2 xor K==B2of3
+ 0.12339     71 Mg==B2of2 equ K==B2of3
+ 0.12305     94 K==B1of3 xor Ba==B2of2
+ 0.12305     67 K==B1of3 equ Ba==B2of2
+ 0.11786    163 Na==B2of2 and K==B1of3 and Ba==B2of2
+ 0.11631    113 Na==B2of2 xor Ba==B2of2
+ 0.11631     86 Na==B2of2 equ Ba==B2of2
+ 0.11622    240 Mg MULTIPLY K
+ 0.10924    166 RI==B1of3 and Na==B2of2 and Ba==B2of2
+ 0.1065      10 RI==B1of3 and Na==B2of2
+ 0.103       23 RI==B1of3 and K==B1of3
+ 0.10084    144 RI==B1of3 and K==B1of3 and Ba==B2of2
+ 0.09143    192 Mg==B2of2 or K==B2of3 or Ba==B2of2
+ 0.09142    251 K DIFF Ba
+ 0.09133    140 Na==B2of2 impl Ba==B2of2
+ 0.09102    121 K==B1of3 impl Ba==B2of2
+ 0.08852     68 K==B2of3 equ Ba==B2of2
+ 0.08852     95 K==B2of3 xor Ba==B2of2
+ 0.08834    202 Na ADD Mg
+ 0.08542     41 K==B2of3 or Ba==B2of2
+ 0.08542    174 RI==B2of3 or K==B2of3 or Ba==B2of2
+ 0.08409    213 Mg SUBTRACT K
+ 0.08203    151 RI==B1of3 and Na==B2of2 and K==B1of3
+ 0.08142    208 Na ADD Ba
+ 0.07481    244 Na MULTIPLY Ba
+ 0.07454    252 Mg DIFF K
+ 0.0728       4 Al
+ 0.07278    247 Mg LESSTHAN K
+ 0.07072    253 Mg DIFF Ba
+ 0.06852    236 Ba DIVIDE RI
+ 0.06805    218 RI SUBTRACT Ba
+ 0.06783      8 Ba
+ 0.06733    209 RI ADD Ba
+ 0.06714    245 RI MULTIPLY Ba
+ 0.05722     50 RI==B1of3 or K==B2of3
+ 0.05612    137 RI==B3of3 impl K==B2of3
+ 0.05511     12 RI==B3of3 and Na==B2of2
+ 0.05091    171 RI==B1of3 or K==B2of3 or Ba==B2of2
+ 0.04997    234 Ba DIVIDE Na
+ 0.04755      7 Ca
+ 0.04584     28 RI==B3of3 and K==B1of3
+ 0.04534    155 RI==B3of3 and Na==B2of2 and K==B1of3
+ 0.04469    237 RI MULTIPLY Na
+ 0.04415    201 RI ADD Na
+ 0.04408      2 Na
+ 0.044      210 RI SUBTRACT Na
+ 0.04358    250 RI LESSTHAN Ba
+ 0.04355    220 Na DIVIDE RI
+ 0.04292    219 RI DIVIDE Na
+ 0.03666    214 Na SUBTRACT K
+ 0.03651      1 RI
+ 0.03197     73 Na==B2of2 equ K==B1of3
+ 0.03197    100 Na==B2of2 xor K==B1of3
+ 0.0315     267 num-of-N((Ba >= 0.76) and (Ba <= 1.19))
+ 0.0315     263 (Ba >= 0.76) and (Ba <= 1.19)
+ 0.0308     212 K SUBTRACT Ba
+ 0.0308     203 K ADD Ba
+ 0.03063     16 K==B3of3 and Ba==B2of2
+ 0.02997    243 Mg MULTIPLY Ba
+ 0.02704     47 Na==B2of2 or K==B2of3
+ 0.02704    183 RI==B2of3 or Na==B2of2 or K==B2of3
+ 0.02648     31 Mg==B2of2 and Ba==B2of2
+ 0.02633     74 Na==B2of2 equ K==B2of3
+ 0.02633    101 Na==B2of2 xor K==B2of3
+ 0.02404     19 Mg==B2of2 and K==B3of3
+ 0.02404    162 Mg==B2of2 and K==B3of3 and Ba==B2of2
+ 0.024        5 Si
+ 0.0239     186 RI==B3of3 or Na==B2of2 or K==B2of3
+ 0.022      241 Na MULTIPLY K
+ 0.02142    242 RI MULTIPLY K
+ 0.02136      6 K
+ 0.02133    206 RI ADD K
+ 0.0213     230 K DIVIDE RI
+ 0.02129    215 RI SUBTRACT K
+ 0.02122    205 Na ADD K
+ 0.02115    125 Mg==B2of2 impl K==B2of3
+ 0.02081    228 K DIVIDE Na
+ 0.01988     25 RI==B1of3 and K==B3of3
+ 0.01988    248 RI LESSTHAN K
+ 0.01883    239 K MULTIPLY Ba
+ 0.01815    146 RI==B1of3 and K==B3of3 and Ba==B2of2
+ 0.01553    217 Na SUBTRACT Ba
+ 0.01542     22 Na==B2of2 and K==B3of3
+ 0.01542    165 Na==B2of2 and K==B3of3 and Ba==B2of2
+ 0.01439    168 RI==B3of3 and Na==B2of2 and Ba==B2of2
+ 0.01429     35 RI==B3of3 and Ba==B2of2
+ 0.01376     13 Na==B2of2 and Mg==B2of2
+ 0.01351    189 Na==B2of2 or Mg==B2of2 or K==B2of3
+ 0.00982    157 RI==B3of3 and Na==B2of2 and K==B3of3
+ 0.00982    150 RI==B3of3 and K==B3of3 and Ba==B2of2
+ 0.00982     30 RI==B3of3 and K==B3of3
+ 0.00964    160 Na==B2of2 and Mg==B2of2 and K==B3of3
+ 0.00964    169 Na==B2of2 and Mg==B2of2 and Ba==B2of2
+ 0.00912      9 Fe
+ 0.00862     15 K==B2of3 and Ba==B2of2
+ 0.00748    127 Na==B2of2 impl K==B1of3
+ 0.00605    153 RI==B1of3 and Na==B2of2 and K==B3of3
+ 0.00567    145 RI==B1of3 and K==B2of3 and Ba==B2of2
+ 0.00472    180 RI==B1of3 or Na==B2of2 or K==B2of3
+ 0.00455    149 RI==B3of3 and K==B2of3 and Ba==B2of2
+ 0.00352    177 RI==B3of3 or K==B2of3 or Ba==B2of2
+ 0.00325    161 Mg==B2of2 and K==B2of3 and Ba==B2of2
+ 0.00212     11 RI==B2of3 and Na==B2of2
+ 0.00212     34 RI==B2of3 and Ba==B2of2
+ 0.00212    134 RI==B2of3 impl K==B2of3
+ 0.00212    154 RI==B2of3 and Na==B2of2 and K==B1of3
+ 0.00212    147 RI==B2of3 and K==B1of3 and Ba==B2of2
+ 0.00212    167 RI==B2of3 and Na==B2of2 and Ba==B2of2
+ 0.00212     26 RI==B2of3 and K==B1of3
+ 0.00183    152 RI==B1of3 and Na==B2of2 and K==B2of3
+ 0.00157    164 Na==B2of2 and K==B2of3 and Ba==B2of2
+ 0.00101    195 Na==B2of2 or K==B2of3 or Ba==B2of2
+-0.00181     17 Mg==B2of2 and K==B1of3
+-0.00234    123 K==B3of3 impl Ba==B2of2
+-0.00317    158 Na==B2of2 and Mg==B2of2 and K==B1of3
+-0.00324    148 RI==B3of3 and K==B1of3 and Ba==B2of2
+-0.00327    159 Na==B2of2 and Mg==B2of2 and K==B2of3
+-0.0051     156 RI==B3of3 and Na==B2of2 and K==B2of3
+-0.00552     21 Na==B2of2 and K==B2of3
+
+
+								--------------
+									Fold 10
+								--------------
+Feature evaluation: ReliefF (All features dataset) - After CI
+Ranked attributes:
+ 0.461624     401 Mg_x_Ba
+ 0.457976     398 RI_x_Mg
+ 0.43232      191 Mg==B2of2 impl K==B4of4
+ 0.423136     196 Mg==B2of2 impl Ba==B2of2
+ 0.411245     395 Na_x_Mg
+ 0.397412     404 RI_x_Ba
+ 0.388024      58 RI==B3of4 or Mg==B2of2
+ 0.388024     321 RI==B3of4 or Mg==B2of2 or K==B3of4
+ 0.388024      62 Mg==B2of2 or K==B3of4
+ 0.386737     396 RI_x_Na
+ 0.373533     101 RI==B3of4 equ Mg==B2of2
+ 0.373533     144 RI==B3of4 xor Mg==B2of2
+ 0.366706     188 Mg==B2of2 impl K==B1of4
+ 0.355124     271 RI==B3of4 or K==B1of4 or Ba==B2of2
+ 0.351053     131 RI==B3of4 equ Ba==B2of2
+ 0.351053      88 RI==B3of4 or Ba==B2of2
+ 0.351053     174 RI==B3of4 xor Ba==B2of2
+ 0.348819     274 RI==B3of4 or K==B4of4 or Ba==B2of2
+ 0.347839     399 Mg_x_K
+ 0.346146     330 RI==B3of4 or Na==B2of2 or Ba==B2of2
+ 0.344489     149 Mg==B2of2 xor K==B4of4
+ 0.344489     106 Mg==B2of2 equ K==B4of4
+ 0.33966       50 RI==B3of4 or Na==B2of2
+ 0.336641      93 RI==B3of4 equ Na==B2of2
+ 0.336641     136 RI==B3of4 xor Na==B2of2
+ 0.327599      87 RI==B2of4 or Ba==B2of2
+ 0.325448     302 RI==B3of4 or Na==B2of2 or K==B4of4
+ 0.324874     299 RI==B3of4 or Na==B2of2 or K==B1of4
+ 0.321171     403 Na_x_Ba
+ 0.31412      143 RI==B2of4 xor Mg==B2of2
+ 0.31412      100 RI==B2of4 equ Mg==B2of2
+ 0.313381     270 RI==B2of4 or K==B4of4 or Ba==B2of2
+ 0.312168     267 RI==B2of4 or K==B1of4 or Ba==B2of2
+ 0.311122     176 Na==B2of2 impl Mg==B2of2
+ 0.310416      52 K==B1of4 or Ba==B2of2
+ 0.309516     402 RI_x_K
+ 0.303593      63 Mg==B2of2 or K==B4of4
+ 0.303593     322 RI==B3of4 or Mg==B2of2 or K==B4of4
+ 0.294355     397 K_x_Ba
+ 0.293231     263 RI==B1of4 or K==B1of4 or Ba==B2of2
+ 0.289264      85 Na==B2of2 or Ba==B2of2
+ 0.286976     163 RI==B3of4 xor K==B1of4
+ 0.286976     120 RI==B3of4 equ K==B1of4
+ 0.286976      77 RI==B3of4 or K==B1of4
+ 0.28596      307 Na==B2of2 or K==B1of4 or Ba==B2of2
+ 0.28405       55 K==B4of4 or Ba==B2of2
+ 0.282861      73 RI==B2of4 or K==B1of4
+ 0.282701     410 num-of-N((Ba >= 0.4) and (Na >= 14.14))
+ 0.281056     105 Mg==B2of2 equ K==B3of4
+ 0.281056     148 Mg==B2of2 xor K==B3of4
+ 0.281056     190 Mg==B2of2 impl K==B3of4
+ 0.27873       23 Mg==B2of2 and K==B2of4
+ 0.277738      67 Na==B2of2 or K==B4of4
+ 0.276656     310 Na==B2of2 or K==B4of4 or Ba==B2of2
+ 0.276524     269 RI==B2of4 or K==B3of4 or Ba==B2of2
+ 0.276253     266 RI==B1of4 or K==B4of4 or Ba==B2of2
+ 0.275679     306 RI==B4of4 or Na==B2of2 or K==B4of4
+ 0.273261      48 RI==B1of4 or Na==B2of2
+ 0.272735     142 RI==B1of4 xor Mg==B2of2
+ 0.272735      99 RI==B1of4 equ Mg==B2of2
+ 0.271471     194 Na==B2of2 impl K==B3of4
+ 0.271242     328 RI==B1of4 or Na==B2of2 or Ba==B2of2
+ 0.271115     193 Na==B2of2 impl K==B2of4
+ 0.269326     294 RI==B1of4 or Na==B2of2 or K==B4of4
+ 0.267867     154 Mg==B2of2 xor Ba==B2of2
+ 0.267867     111 Mg==B2of2 equ Ba==B2of2
+ 0.267586     291 RI==B1of4 or Na==B2of2 or K==B1of4
+ 0.267358     407 (Ba >= 0.4)
+ 0.266094      64 Na==B2of2 or K==B1of4
+ 0.264025      19 RI==B2of4 and Mg==B2of2
+ 0.264025     215 RI==B2of4 impl Ba==B2of2
+ 0.264009     329 RI==B2of4 or Na==B2of2 or Ba==B2of2
+ 0.263378      49 RI==B2of4 or Na==B2of2
+ 0.262875     278 RI==B4of4 or K==B4of4 or Ba==B2of2
+ 0.261793     275 RI==B4of4 or K==B1of4 or Ba==B2of2
+ 0.259049     201 RI==B2of4 impl K==B1of4
+ 0.258349     204 RI==B2of4 impl K==B4of4
+ 0.255853     400 Na_x_K
+ 0.255801      56 RI==B1of4 or Mg==B2of2
+ 0.255801     313 RI==B1of4 or Mg==B2of2 or K==B3of4
+ 0.255224     295 RI==B2of4 or Na==B2of2 or K==B1of4
+ 0.255206     116 RI==B2of4 equ K==B1of4
+ 0.255206     159 RI==B2of4 xor K==B1of4
+ 0.254019     178 RI==B2of4 impl Na==B2of2
+ 0.253447     331 RI==B4of4 or Na==B2of2 or Ba==B2of2
+ 0.252289      86 RI==B1of4 or Ba==B2of2
+ 0.252067      69 RI==B1of4 or K==B1of4
+ 0.251776     162 RI==B2of4 xor K==B4of4
+ 0.251776     119 RI==B2of4 equ K==B4of4
+ 0.251776      76 RI==B2of4 or K==B4of4
+ 0.248138      57 RI==B2of4 or Mg==B2of2
+ 0.248138     317 RI==B2of4 or Mg==B2of2 or K==B3of4
+ 0.245825      43 Na==B2of2 and Ba==B2of2
+ 0.2445       357 Mg DIVIDE Na
+ 0.243487     363 Mg DIVIDE RI
+ 0.243388       3 Mg
+ 0.24329      379 RI MULTIPLY Mg
+ 0.243267     386 K LESSTHAN Ba
+ 0.242881     339 RI ADD Mg
+ 0.242483     320 RI==B3of4 or Mg==B2of2 or K==B2of4
+ 0.242483      61 Mg==B2of2 or K==B2of4
+ 0.242449     349 RI SUBTRACT Mg
+ 0.241876     374 RI DIVIDE Ba
+ 0.241876     360 K DIVIDE Ba
+ 0.241876     372 Na DIVIDE Ba
+ 0.241876     368 Mg DIVIDE Ba
+ 0.240844      68 Mg==B2of2 or Ba==B2of2
+ 0.240844     334 RI==B3of4 or Mg==B2of2 or Ba==B2of2
+ 0.240844     333 RI==B2of4 or Mg==B2of2 or Ba==B2of2
+ 0.240844     285 Mg==B2of2 or K==B3of4 or Ba==B2of2
+ 0.240761      51 RI==B4of4 or Na==B2of2
+ 0.240761     303 RI==B4of4 or Na==B2of2 or K==B1of4
+ 0.240212      89 RI==B4of4 or Ba==B2of2
+ 0.239619     273 RI==B3of4 or K==B3of4 or Ba==B2of2
+ 0.235362     298 RI==B2of4 or Na==B2of2 or K==B4of4
+ 0.232306     195 Na==B2of2 impl K==B4of4
+ 0.231168     153 Na==B2of2 xor K==B4of4
+ 0.231168     110 Na==B2of2 equ K==B4of4
+ 0.226624      54 K==B3of4 or Ba==B2of2
+ 0.226624      97 K==B3of4 equ Ba==B2of2
+ 0.226624     140 K==B3of4 xor Ba==B2of2
+ 0.22649      182 K==B2of4 impl Ba==B2of2
+ 0.22517      173 RI==B2of4 xor Ba==B2of2
+ 0.22517      130 RI==B2of4 equ Ba==B2of2
+ 0.22319      376 Na MULTIPLY Mg
+ 0.221076     141 K==B4of4 xor Ba==B2of2
+ 0.221076      98 K==B4of4 equ Ba==B2of2
+ 0.221039      78 RI==B3of4 or K==B2of4
+ 0.21982       26 Na==B2of2 and K==B1of4
+ 0.219711     102 RI==B4of4 equ Mg==B2of2
+ 0.219711     145 RI==B4of4 xor Mg==B2of2
+ 0.218122     175 RI==B4of4 xor Ba==B2of2
+ 0.218122     132 RI==B4of4 equ Ba==B2of2
+ 0.217338      81 RI==B4of4 or K==B1of4
+ 0.21446       75 RI==B2of4 or K==B3of4
+ 0.208273     314 RI==B1of4 or Mg==B2of2 or K==B4of4
+ 0.207213     297 RI==B2of4 or Na==B2of2 or K==B3of4
+ 0.206802     387 RI LESSTHAN Mg
+ 0.20579      123 RI==B3of4 equ K==B4of4
+ 0.20579      166 RI==B3of4 xor K==B4of4
+ 0.20579       80 RI==B3of4 or K==B4of4
+ 0.204884     135 RI==B2of4 xor Na==B2of2
+ 0.204884      92 RI==B2of4 equ Na==B2of2
+ 0.20062      208 RI==B3of4 impl K==B4of4
+ 0.20062       20 RI==B3of4 and Mg==B2of2
+ 0.20062      216 RI==B3of4 impl Ba==B2of2
+ 0.20062      205 RI==B3of4 impl K==B1of4
+ 0.19901      362 RI DIVIDE Mg
+ 0.19901      365 K DIVIDE Mg
+ 0.19901      369 Ba DIVIDE Mg
+ 0.19901      356 Na DIVIDE Mg
+ 0.198878      84 RI==B4of4 or K==B4of4
+ 0.197533     265 RI==B1of4 or K==B3of4 or Ba==B2of2
+ 0.197196     408 (Ba >= 0.4) and (Na >= 14.14)
+ 0.195026     309 Na==B2of2 or K==B3of4 or Ba==B2of2
+ 0.194866     326 RI==B4of4 or Mg==B2of2 or K==B4of4
+ 0.193564     301 RI==B3of4 or Na==B2of2 or K==B3of4
+ 0.191993     389 Mg LESSTHAN Ba
+ 0.190934      59 RI==B4of4 or Mg==B2of2
+ 0.190934     325 RI==B4of4 or Mg==B2of2 or K==B3of4
+ 0.188062     152 Na==B2of2 xor K==B3of4
+ 0.188062     109 Na==B2of2 equ K==B3of4
+ 0.188062      66 Na==B2of2 or K==B3of4
+ 0.18767      179 RI==B3of4 impl Na==B2of2
+ 0.18645       79 RI==B3of4 or K==B3of4
+ 0.185356     137 RI==B4of4 xor Na==B2of2
+ 0.185356      94 RI==B4of4 equ Na==B2of2
+ 0.180975     286 Mg==B2of2 or K==B4of4 or Ba==B2of2
+ 0.180239     187 RI==B4of4 impl Mg==B2of2
+ 0.179847     332 RI==B1of4 or Mg==B2of2 or Ba==B2of2
+ 0.179537     155 RI==B1of4 xor K==B1of4
+ 0.179537     112 RI==B1of4 equ K==B1of4
+ 0.179449     127 RI==B4of4 equ K==B4of4
+ 0.179449     170 RI==B4of4 xor K==B4of4
+ 0.178261     167 RI==B4of4 xor K==B1of4
+ 0.178261     124 RI==B4of4 equ K==B1of4
+ 0.175033     293 RI==B1of4 or Na==B2of2 or K==B3of4
+ 0.173304     312 RI==B1of4 or Mg==B2of2 or K==B2of4
+ 0.171792     352 Mg SUBTRACT Ba
+ 0.171641     406 (Na >= 14.23)
+ 0.171496     318 RI==B2of4 or Mg==B2of2 or K==B4of4
+ 0.169715     217 RI==B4of4 impl Ba==B2of2
+ 0.168946     366 Na DIVIDE K
+ 0.168946     370 RI DIVIDE K
+ 0.168946     364 Mg DIVIDE K
+ 0.168946     361 Ba DIVIDE K
+ 0.168291     315 RI==B2of4 or Mg==B2of2 or K==B1of4
+ 0.168263      91 RI==B1of4 equ Na==B2of2
+ 0.168263     134 RI==B1of4 xor Na==B2of2
+ 0.166378      60 Mg==B2of2 or K==B1of4
+ 0.166378     319 RI==B3of4 or Mg==B2of2 or K==B1of4
+ 0.163208     340 Mg ADD K
+ 0.162996     133 Na==B2of2 xor Mg==B2of2
+ 0.162996      90 Na==B2of2 equ Mg==B2of2
+ 0.158568     342 Mg ADD Ba
+ 0.154738     103 Mg==B2of2 equ K==B1of4
+ 0.154738     146 Mg==B2of2 xor K==B1of4
+ 0.152635     211 RI==B4of4 impl K==B3of4
+ 0.15111      156 RI==B1of4 xor K==B2of4
+ 0.15111      113 RI==B1of4 equ K==B2of4
+ 0.150627     243 Na==B2of2 and K==B1of4 and Ba==B2of2
+ 0.150627      15 K==B1of4 and Ba==B2of2
+ 0.147539     289 Na==B2of2 or Mg==B2of2 or K==B3of4
+ 0.147539     280 RI==B2of4 or Na==B2of2 or Mg==B2of2
+ 0.147539     281 RI==B3of4 or Na==B2of2 or Mg==B2of2
+ 0.147539      47 Na==B2of2 or Mg==B2of2
+ 0.146981     207 RI==B3of4 impl K==B3of4
+ 0.146981      37 RI==B3of4 and K==B2of4
+ 0.146981     251 RI==B3of4 and Mg==B2of2 and K==B2of4
+ 0.146603     283 Mg==B2of2 or K==B1of4 or Ba==B2of2
+ 0.146194     212 RI==B4of4 impl K==B4of4
+ 0.14372      122 RI==B3of4 equ K==B3of4
+ 0.14372      165 RI==B3of4 xor K==B3of4
+ 0.143536     209 RI==B4of4 impl K==B1of4
+ 0.143498     172 RI==B1of4 xor Ba==B2of2
+ 0.143498     129 RI==B1of4 equ Ba==B2of2
+ 0.14145       83 RI==B4of4 or K==B3of4
+ 0.139626     327 Na==B2of2 or Mg==B2of2 or Ba==B2of2
+ 0.1394       305 RI==B4of4 or Na==B2of2 or K==B3of4
+ 0.138146     202 RI==B2of4 impl K==B2of4
+ 0.136262     346 Na SUBTRACT Mg
+ 0.135636     324 RI==B4of4 or Mg==B2of2 or K==B2of4
+ 0.134362      70 RI==B1of4 or K==B2of4
+ 0.132968     277 RI==B4of4 or K==B3of4 or Ba==B2of2
+ 0.131798     272 RI==B3of4 or K==B2of4 or Ba==B2of2
+ 0.130876     164 RI==B3of4 xor K==B2of4
+ 0.130876     121 RI==B3of4 equ K==B2of4
+ 0.130671     169 RI==B4of4 xor K==B3of4
+ 0.130671     126 RI==B4of4 equ K==B3of4
+ 0.130144      82 RI==B4of4 or K==B2of4
+ 0.12672      138 K==B1of4 xor Ba==B2of2
+ 0.12672       95 K==B1of4 equ Ba==B2of2
+ 0.126576      21 RI==B4of4 and Mg==B2of2
+ 0.126428     287 Na==B2of2 or Mg==B2of2 or K==B1of4
+ 0.124724     203 RI==B2of4 impl K==B3of4
+ 0.123147     180 RI==B4of4 impl Na==B2of2
+ 0.121966     311 RI==B1of4 or Mg==B2of2 or K==B1of4
+ 0.121685     279 RI==B1of4 or Na==B2of2 or Mg==B2of2
+ 0.118565      40 RI==B4of4 and K==B2of4
+ 0.115461     125 RI==B4of4 equ K==B2of4
+ 0.115461     168 RI==B4of4 xor K==B2of4
+ 0.113351     380 Mg MULTIPLY K
+ 0.107173      45 RI==B2of4 and Ba==B2of2
+ 0.107173     186 RI==B2of4 impl Mg==B2of2
+ 0.107173     259 RI==B2of4 and Na==B2of2 and Ba==B2of2
+ 0.105475      53 K==B2of4 or Ba==B2of2
+ 0.104979     147 Mg==B2of2 xor K==B2of4
+ 0.104979     104 Mg==B2of2 equ K==B2of4
+ 0.104375      12 RI==B2of4 and Na==B2of2
+ 0.104059     284 Mg==B2of2 or K==B2of4 or Ba==B2of2
+ 0.103513     128 Na==B2of2 equ Ba==B2of2
+ 0.103513     171 Na==B2of2 xor Ba==B2of2
+ 0.101521     316 RI==B2of4 or Mg==B2of2 or K==B2of4
+ 0.100148      34 RI==B2of4 and K==B1of4
+ 0.100148     221 RI==B2of4 and K==B1of4 and Ba==B2of2
+ 0.100148     237 RI==B2of4 and Na==B2of2 and K==B1of4
+ 0.096908     139 K==B2of4 xor Ba==B2of2
+ 0.096908      96 K==B2of4 equ Ba==B2of2
+ 0.095484     254 RI==B4of4 and Mg==B2of2 and K==B2of4
+ 0.095267      74 RI==B2of4 or K==B2of4
+ 0.094649     213 Na==B2of2 impl Ba==B2of2
+ 0.093796     290 Na==B2of2 or Mg==B2of2 or K==B4of4
+ 0.092063     344 Na ADD Ba
+ 0.091816     392 K DIFF Ba
+ 0.090382     181 K==B1of4 impl Ba==B2of2
+ 0.087663     118 RI==B2of4 equ K==B3of4
+ 0.087663     161 RI==B2of4 xor K==B3of4
+ 0.085548     264 RI==B1of4 or K==B2of4 or Ba==B2of2
+ 0.085501      36 RI==B2of4 and K==B3of4
+ 0.085501     250 RI==B2of4 and Mg==B2of2 and K==B3of4
+ 0.085416     350 Mg SUBTRACT K
+ 0.08338      336 Na ADD Mg
+ 0.082968     393 Mg DIFF K
+ 0.082652     384 Na MULTIPLY Ba
+ 0.081729     117 RI==B2of4 equ K==B2of4
+ 0.081729     160 RI==B2of4 xor K==B2of4
+ 0.081728       4 Al
+ 0.08163      249 RI==B2of4 and Mg==B2of2 and K==B2of4
+ 0.081018     300 RI==B3of4 or Na==B2of2 or K==B2of4
+ 0.077921      35 RI==B2of4 and K==B2of4
+ 0.075666     375 Ba DIVIDE RI
+ 0.075126     355 RI SUBTRACT Ba
+ 0.074915       8 Ba
+ 0.074716     268 RI==B2of4 or K==B2of4 or Ba==B2of2
+ 0.074376     345 RI ADD Ba
+ 0.074171     385 RI MULTIPLY Ba
+ 0.067213     189 Mg==B2of2 impl K==B2of4
+ 0.066936     183 K==B3of4 impl Ba==B2of2
+ 0.066936      24 Mg==B2of2 and K==B3of4
+ 0.066385     210 RI==B4of4 impl K==B2of4
+ 0.065362      72 RI==B1of4 or K==B4of4
+ 0.064306      14 RI==B4of4 and Na==B2of2
+ 0.064189     292 RI==B1of4 or Na==B2of2 or K==B2of4
+ 0.058505     394 Mg DIFF Ba
+ 0.057908      65 Na==B2of2 or K==B2of4
+ 0.057454     388 Mg LESSTHAN K
+ 0.056495     304 RI==B4of4 or Na==B2of2 or K==B2of4
+ 0.056229     391 RI LESSTHAN Ba
+ 0.055186     373 Ba DIVIDE Na
+ 0.05472      308 Na==B2of2 or K==B2of4 or Ba==B2of2
+ 0.052885     108 Na==B2of2 equ K==B2of4
+ 0.052885     151 Na==B2of2 xor K==B2of4
+ 0.05168      377 RI MULTIPLY Na
+ 0.051111     337 RI ADD Na
+ 0.051032       2 Na
+ 0.050954     347 RI SUBTRACT Na
+ 0.050894     276 RI==B4of4 or K==B2of4 or Ba==B2of2
+ 0.050608      71 RI==B1of4 or K==B3of4
+ 0.050428     359 Na DIVIDE RI
+ 0.049597     358 RI DIVIDE Na
+ 0.049318       7 Ca
+ 0.048987     158 RI==B1of4 xor K==B4of4
+ 0.048987     115 RI==B1of4 equ K==B4of4
+ 0.048914     157 RI==B1of4 xor K==B3of4
+ 0.048914     114 RI==B1of4 equ K==B3of4
+ 0.047155     240 RI==B4of4 and Na==B2of2 and K==B1of4
+ 0.045201     150 Na==B2of2 xor K==B1of4
+ 0.045201     107 Na==B2of2 equ K==B1of4
+ 0.045094      39 RI==B4of4 and K==B1of4
+ 0.039139       1 RI
+ 0.038925     351 Na SUBTRACT K
+ 0.034956      44 RI==B1of4 and Ba==B2of2
+ 0.034756     199 RI==B1of4 impl K==B3of4
+ 0.034746     405 (Ba >= 0.76) and (Ba <= 1.19)
+ 0.034746     409 num-of-N((Ba >= 0.76) and (Ba <= 1.19))
+ 0.032983      28 Na==B2of2 and K==B4of4
+ 0.032979      17 K==B4of4 and Ba==B2of2
+ 0.032895     192 Na==B2of2 impl K==B1of4
+ 0.032256     382 Mg MULTIPLY Ba
+ 0.031799     348 K SUBTRACT Ba
+ 0.031247     338 K ADD Ba
+ 0.02899       29 Mg==B2of2 and Ba==B2of2
+ 0.027574     242 RI==B4of4 and Na==B2of2 and K==B4of4
+ 0.027209      42 RI==B4of4 and K==B4of4
+ 0.027035      10 Na==B2of2 and Mg==B2of2
+ 0.026351      25 Mg==B2of2 and K==B4of4
+ 0.026351     230 Mg==B2of2 and K==B4of4 and Ba==B2of2
+ 0.026078       5 Si
+ 0.025866     341 Na ADD K
+ 0.025761      11 RI==B1of4 and Na==B2of2
+ 0.025262     197 RI==B1of4 impl K==B1of4
+ 0.021605     381 Na MULTIPLY K
+ 0.021287     200 RI==B1of4 impl K==B4of4
+ 0.021021     258 RI==B1of4 and Na==B2of2 and Ba==B2of2
+ 0.020477     383 RI MULTIPLY K
+ 0.020415       6 K
+ 0.020405     343 RI ADD K
+ 0.020405     378 K MULTIPLY Ba
+ 0.020369     228 RI==B4of4 and Na==B2of2 and Mg==B2of2
+ 0.020352     371 K DIVIDE RI
+ 0.020318     353 RI SUBTRACT K
+ 0.019438     185 RI==B1of4 impl Mg==B2of2
+ 0.019391     367 K DIVIDE Na
+ 0.018978     220 RI==B1of4 and K==B4of4 and Ba==B2of2
+ 0.018349     354 Na SUBTRACT Ba
+ 0.017881      18 RI==B1of4 and Mg==B2of2
+ 0.017422     260 RI==B4of4 and Na==B2of2 and Ba==B2of2
+ 0.016971     245 Na==B2of2 and K==B4of4 and Ba==B2of2
+ 0.016257      46 RI==B4of4 and Ba==B2of2
+ 0.015244     390 RI LESSTHAN K
+ 0.015244      33 RI==B1of4 and K==B4of4
+ 0.014002     262 RI==B4of4 and Mg==B2of2 and Ba==B2of2
+ 0.014002     257 Na==B2of2 and Mg==B2of2 and Ba==B2of2
+ 0.013989     244 Na==B2of2 and K==B2of4 and Ba==B2of2
+ 0.013396      31 RI==B1of4 and K==B2of4
+ 0.013365     198 RI==B1of4 impl K==B2of4
+ 0.013256      16 K==B2of4 and Ba==B2of2
+ 0.013122     261 RI==B1of4 and Mg==B2of2 and Ba==B2of2
+ 0.013122     248 RI==B1of4 and Mg==B2of2 and K==B4of4
+ 0.012041      27 Na==B2of2 and K==B2of4
+ 0.011338     225 RI==B4of4 and K==B4of4 and Ba==B2of2
+ 0.011156     256 RI==B4of4 and Mg==B2of2 and K==B4of4
+ 0.011156     233 Na==B2of2 and Mg==B2of2 and K==B4of4
+ 0.010568     323 RI==B4of4 or Mg==B2of2 or K==B1of4
+ 0.009281     177 RI==B1of4 impl Na==B2of2
+ 0.009075     232 Na==B2of2 and Mg==B2of2 and K==B2of4
+ 0.008042     184 K==B4of4 impl Ba==B2of2
+ 0.007793     235 RI==B1of4 and Na==B2of2 and K==B2of4
+ 0.007793     219 RI==B1of4 and K==B2of4 and Ba==B2of2
+ 0.007022       9 Fe
+ 0.006593     246 RI==B1of4 and Mg==B2of2 and K==B2of4
+ 0.00608      236 RI==B1of4 and Na==B2of2 and K==B4of4
+ 0.004999     224 RI==B4of4 and K==B2of4 and Ba==B2of2
+ 0.004915      13 RI==B3of4 and Na==B2of2
+ 0.004915     227 RI==B3of4 and Na==B2of2 and Mg==B2of2
+ 0.004915     239 RI==B3of4 and Na==B2of2 and K==B2of4
+ 0.003444     229 Mg==B2of2 and K==B2of4 and Ba==B2of2
+ 0.002183     234 RI==B1of4 and Na==B2of2 and K==B1of4
+ 0.002183      30 RI==B1of4 and K==B1of4
+ 0.002078     214 RI==B1of4 impl Ba==B2of2
+ 0.001353     241 RI==B4of4 and Na==B2of2 and K==B2of4
+ 0.001116     288 Na==B2of2 or Mg==B2of2 or K==B2of4
+ 0.000633     226 RI==B2of4 and Na==B2of2 and Mg==B2of2
+-0.000769     231 Na==B2of2 and Mg==B2of2 and K==B1of4
+-0.000769      22 Mg==B2of2 and K==B1of4
+-0.000769     253 RI==B4of4 and Mg==B2of2 and K==B1of4
+-0.001028     247 RI==B1of4 and Mg==B2of2 and K==B3of4
+-0.001028      32 RI==B1of4 and K==B3of4
+-0.001668     238 RI==B2of4 and Na==B2of2 and K==B2of4
+-0.001741     335 RI==B4of4 or Mg==B2of2 or Ba==B2of2
+-0.001902     296 RI==B2of4 or Na==B2of2 or K==B2of4
+-0.002301     222 RI==B2of4 and K==B2of4 and Ba==B2of2
+-0.002915      41 RI==B4of4 and K==B3of4
+-0.002915     255 RI==B4of4 and Mg==B2of2 and K==B3of4
+-0.003065     218 RI==B1of4 and K==B1of4 and Ba==B2of2
+-0.00345      223 RI==B4of4 and K==B1of4 and Ba==B2of2
+-0.007805     282 RI==B4of4 or Na==B2of2 or Mg==B2of2
+-0.009268     252 RI==B3of4 and Mg==B2of2 and K==B3of4
+-0.009268      38 RI==B3of4 and K==B3of4
+-0.009268     206 RI==B3of4 impl K==B2of4
+
+

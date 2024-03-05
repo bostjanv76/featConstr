@@ -1,0 +1,11 @@
+dataset: cBinClassDisAttr-uniqueInst.arff
+dataset: cBinClassNumBinAttr.arff
+dataset: cBinClassNumDisAttr.arff
+dataset: cConcepts-uniqueInst.arff
+dataset: cDisjunct.arff
+dataset: cLogicalConcB-uniqueInst.arff
+dataset: cLogicalConcBNoisy-uniqueInst.arff
+dataset: cModGroups.arff
+dataset: cMultiVClassDisAttr-uniqueInst.arff
+dataset: condInd-uniqueInst.arff
+dataset: Glass_new.arff

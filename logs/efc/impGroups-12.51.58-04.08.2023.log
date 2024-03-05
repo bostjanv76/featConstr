@@ -1,0 +1,441 @@
+dataset: baskball.arff
+								--------------
+								Fold  1
+								--------------
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 1, minNoise=1 we remove groups of size 1. Explanation method: IME, num. of expl. inst. 8, pct of expl. instances is 10 (fold 1). Number of bins for discretisation (simple binning) is 5.
+--------------
+Threshold: 0,10
+--------------
+	time_played: 8
+--------------
+Threshold: 0,20
+--------------
+	time_played: 8
+--------------
+Threshold: 0,30
+--------------
+	time_played: 8
+--------------
+Threshold: 0,40
+--------------
+	time_played: 8
+--------------
+Threshold: 0,50
+--------------
+	time_played: 8
+--------------
+Threshold: 0,60
+--------------
+	time_played: 7
+--------------
+Threshold: 0,70
+--------------
+	time_played: 3
+	assists_per_minute | time_played: 3
+--------------
+Threshold: 0,80
+--------------
+	assists_per_minute | time_played: 4
+	height | time_played: 2
+*********************************************************************************
+All potential concepts based on thresholds
+	assists_per_minute time_played ~#~ height time_played ~#~ 
+*********************************************************************************
+								--------------
+								Fold  2
+								--------------
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 1, minNoise=1 we remove groups of size 1. Explanation method: IME, num. of expl. inst. 8, pct of expl. instances is 10 (fold 2). Number of bins for discretisation (simple binning) is 5.
+--------------
+Threshold: 0,10
+--------------
+	time_played: 8
+--------------
+Threshold: 0,20
+--------------
+	time_played: 8
+--------------
+Threshold: 0,30
+--------------
+	time_played: 8
+--------------
+Threshold: 0,40
+--------------
+	time_played: 8
+--------------
+Threshold: 0,50
+--------------
+	time_played: 8
+--------------
+Threshold: 0,60
+--------------
+	time_played: 6
+--------------
+Threshold: 0,70
+--------------
+	time_played: 3
+	assists_per_minute | time_played: 3
+	height | time_played: 2
+--------------
+Threshold: 0,80
+--------------
+	height | time_played: 3
+	assists_per_minute | time_played: 2
+*********************************************************************************
+All potential concepts based on thresholds
+	assists_per_minute time_played ~#~ height time_played ~#~ 
+*********************************************************************************
+								--------------
+								Fold  3
+								--------------
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 1, minNoise=1 we remove groups of size 1. Explanation method: IME, num. of expl. inst. 8, pct of expl. instances is 10 (fold 3). Number of bins for discretisation (simple binning) is 5.
+--------------
+Threshold: 0,10
+--------------
+	time_played: 5
+	assists_per_minute: 3
+--------------
+Threshold: 0,20
+--------------
+	time_played: 5
+	assists_per_minute: 3
+--------------
+Threshold: 0,30
+--------------
+	time_played: 5
+	assists_per_minute: 3
+--------------
+Threshold: 0,40
+--------------
+	time_played: 5
+	assists_per_minute: 3
+--------------
+Threshold: 0,50
+--------------
+	time_played: 5
+	assists_per_minute: 2
+--------------
+Threshold: 0,60
+--------------
+	assists_per_minute | time_played: 4
+	time_played: 3
+--------------
+Threshold: 0,70
+--------------
+	assists_per_minute | time_played: 5
+	time_played: 2
+--------------
+Threshold: 0,80
+--------------
+	assists_per_minute | time_played: 7
+*********************************************************************************
+All potential concepts based on thresholds
+	assists_per_minute time_played ~#~ 
+*********************************************************************************
+								--------------
+								Fold  4
+								--------------
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 1, minNoise=1 we remove groups of size 1. Explanation method: IME, num. of expl. inst. 8, pct of expl. instances is 10 (fold 4). Number of bins for discretisation (simple binning) is 5.
+--------------
+Threshold: 0,10
+--------------
+	time_played: 8
+--------------
+Threshold: 0,20
+--------------
+	time_played: 8
+--------------
+Threshold: 0,30
+--------------
+	time_played: 8
+--------------
+Threshold: 0,40
+--------------
+	time_played: 8
+--------------
+Threshold: 0,50
+--------------
+	time_played: 7
+--------------
+Threshold: 0,60
+--------------
+	time_played: 5
+	assists_per_minute | time_played: 2
+--------------
+Threshold: 0,70
+--------------
+	assists_per_minute | time_played: 4
+	time_played: 3
+--------------
+Threshold: 0,80
+--------------
+	assists_per_minute | time_played: 4
+*********************************************************************************
+All potential concepts based on thresholds
+	assists_per_minute time_played ~#~ 
+*********************************************************************************
+								--------------
+								Fold  5
+								--------------
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 1, minNoise=1 we remove groups of size 1. Explanation method: IME, num. of expl. inst. 8, pct of expl. instances is 10 (fold 5). Number of bins for discretisation (simple binning) is 5.
+--------------
+Threshold: 0,10
+--------------
+	time_played: 7
+--------------
+Threshold: 0,20
+--------------
+	time_played: 7
+--------------
+Threshold: 0,30
+--------------
+	time_played: 7
+--------------
+Threshold: 0,40
+--------------
+	time_played: 7
+--------------
+Threshold: 0,50
+--------------
+	time_played: 6
+	assists_per_minute | time_played: 2
+--------------
+Threshold: 0,60
+--------------
+	time_played: 4
+	assists_per_minute | time_played: 3
+--------------
+Threshold: 0,70
+--------------
+	time_played: 4
+	assists_per_minute | time_played: 3
+--------------
+Threshold: 0,80
+--------------
+	assists_per_minute | time_played: 5
+	height | time_played: 2
+*********************************************************************************
+All potential concepts based on thresholds
+	assists_per_minute time_played ~#~ height time_played ~#~ 
+*********************************************************************************
+								--------------
+								Fold  6
+								--------------
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 1, minNoise=1 we remove groups of size 1. Explanation method: IME, num. of expl. inst. 8, pct of expl. instances is 10 (fold 6). Number of bins for discretisation (simple binning) is 5.
+--------------
+Threshold: 0,10
+--------------
+	time_played: 7
+--------------
+Threshold: 0,20
+--------------
+	time_played: 7
+--------------
+Threshold: 0,30
+--------------
+	time_played: 7
+--------------
+Threshold: 0,40
+--------------
+	time_played: 7
+--------------
+Threshold: 0,50
+--------------
+	time_played: 7
+--------------
+Threshold: 0,60
+--------------
+	time_played: 4
+	assists_per_minute | time_played: 3
+--------------
+Threshold: 0,70
+--------------
+	assists_per_minute | time_played: 4
+	time_played | age: 2
+	time_played: 2
+--------------
+Threshold: 0,80
+--------------
+	assists_per_minute | time_played: 5
+*********************************************************************************
+All potential concepts based on thresholds
+	assists_per_minute time_played ~#~ time_played age ~#~ 
+*********************************************************************************
+								--------------
+								Fold  7
+								--------------
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 1, minNoise=1 we remove groups of size 1. Explanation method: IME, num. of expl. inst. 8, pct of expl. instances is 10 (fold 7). Number of bins for discretisation (simple binning) is 5.
+--------------
+Threshold: 0,10
+--------------
+	time_played: 5
+	assists_per_minute: 3
+--------------
+Threshold: 0,20
+--------------
+	time_played: 5
+	assists_per_minute: 3
+--------------
+Threshold: 0,30
+--------------
+	time_played: 5
+	assists_per_minute: 3
+--------------
+Threshold: 0,40
+--------------
+	time_played: 5
+	assists_per_minute: 3
+--------------
+Threshold: 0,50
+--------------
+	time_played: 4
+	assists_per_minute: 2
+--------------
+Threshold: 0,60
+--------------
+	assists_per_minute | time_played: 4
+	time_played: 3
+--------------
+Threshold: 0,70
+--------------
+	assists_per_minute | time_played: 4
+	time_played: 3
+--------------
+Threshold: 0,80
+--------------
+	assists_per_minute | time_played: 5
+*********************************************************************************
+All potential concepts based on thresholds
+	assists_per_minute time_played ~#~ 
+*********************************************************************************
+								--------------
+								Fold  8
+								--------------
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 1, minNoise=1 we remove groups of size 1. Explanation method: IME, num. of expl. inst. 8, pct of expl. instances is 10 (fold 8). Number of bins for discretisation (simple binning) is 5.
+--------------
+Threshold: 0,10
+--------------
+	time_played: 7
+--------------
+Threshold: 0,20
+--------------
+	time_played: 7
+--------------
+Threshold: 0,30
+--------------
+	time_played: 7
+--------------
+Threshold: 0,40
+--------------
+	time_played: 7
+--------------
+Threshold: 0,50
+--------------
+	time_played: 7
+--------------
+Threshold: 0,60
+--------------
+	time_played: 6
+--------------
+Threshold: 0,70
+--------------
+	assists_per_minute | time_played: 4
+	time_played: 3
+--------------
+Threshold: 0,80
+--------------
+	assists_per_minute | time_played: 5
+	time_played: 2
+*********************************************************************************
+All potential concepts based on thresholds
+	assists_per_minute time_played ~#~ 
+*********************************************************************************
+								--------------
+								Fold  9
+								--------------
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 1, minNoise=1 we remove groups of size 1. Explanation method: IME, num. of expl. inst. 8, pct of expl. instances is 10 (fold 9). Number of bins for discretisation (simple binning) is 5.
+--------------
+Threshold: 0,10
+--------------
+	time_played: 6
+	assists_per_minute: 2
+--------------
+Threshold: 0,20
+--------------
+	time_played: 6
+	assists_per_minute: 2
+--------------
+Threshold: 0,30
+--------------
+	time_played: 6
+	assists_per_minute: 2
+--------------
+Threshold: 0,40
+--------------
+	time_played: 6
+	assists_per_minute: 2
+--------------
+Threshold: 0,50
+--------------
+	assists_per_minute | time_played: 5
+	time_played: 3
+--------------
+Threshold: 0,60
+--------------
+	assists_per_minute | time_played: 5
+	time_played: 3
+--------------
+Threshold: 0,70
+--------------
+	assists_per_minute | time_played: 5
+	time_played: 3
+--------------
+Threshold: 0,80
+--------------
+	assists_per_minute | time_played: 4
+*********************************************************************************
+All potential concepts based on thresholds
+	assists_per_minute time_played ~#~ 
+*********************************************************************************
+								--------------
+								Fold 10
+								--------------
+We remove max(NOISE,minNoise) groups, NOISE=1.0% -> 1, minNoise=1 we remove groups of size 1. Explanation method: IME, num. of expl. inst. 8, pct of expl. instances is 10 (fold 10). Number of bins for discretisation (simple binning) is 5.
+--------------
+Threshold: 0,10
+--------------
+	time_played: 8
+--------------
+Threshold: 0,20
+--------------
+	time_played: 8
+--------------
+Threshold: 0,30
+--------------
+	time_played: 8
+--------------
+Threshold: 0,40
+--------------
+	time_played: 7
+--------------
+Threshold: 0,50
+--------------
+	time_played: 6
+	assists_per_minute | time_played: 2
+--------------
+Threshold: 0,60
+--------------
+	time_played: 4
+	assists_per_minute | time_played: 4
+--------------
+Threshold: 0,70
+--------------
+	assists_per_minute | time_played: 4
+	time_played: 2
+--------------
+Threshold: 0,80
+--------------
+	assists_per_minute | time_played: 4
+*********************************************************************************
+All potential concepts based on thresholds
+	assists_per_minute time_played ~#~ 
+*********************************************************************************

@@ -1,0 +1,113 @@
+dataset: rLinear.arff
+								--------------
+									Fold  1
+								--------------
+Feature evaluation: ReliefF (All features dataset) - After CI
+Ranked attributes:
+ 0.064322   41 A2_x_A3
+ 0.05745    15 A2==(49.924849-inf) xor A3==(49.965708-inf)
+ 0.05745    12 A2==(49.924849-inf) equ A3==(49.965708-inf)
+ 0.042371    3 A3
+ 0.041503   23 A2 ADD A3
+ 0.038814   43 A1_x_A3
+ 0.038688   35 A2 MULTIPLY A3
+ 0.038082    9 A2==(49.924849-inf) or A3==(49.965708-inf)
+ 0.034088   17 A1==(50.038406-inf) xor A3==(49.965708-inf)
+ 0.034088   14 A1==(50.038406-inf) equ A3==(49.965708-inf)
+ 0.033984    6 A2==(49.924849-inf) and A3==(49.965708-inf)
+ 0.029055   18 A2==(49.924849-inf) impl A3==(49.965708-inf)
+ 0.023939   11 A1==(50.038406-inf) or A3==(49.965708-inf)
+ 0.022879   25 A1 ADD A3
+ 0.021119   40 A1 LESSTHAN A3
+ 0.020545   37 A1 MULTIPLY A3
+ 0.020088   22 A1==(50.038406-inf) or A2==(49.924849-inf) or A3==(49.965708-inf)
+ 0.019048    8 A1==(50.038406-inf) and A3==(49.965708-inf)
+ 0.018228    2 A2
+ 0.01812    38 A2 LESSTHAN A3
+ 0.014812   20 A1==(50.038406-inf) impl A3==(49.965708-inf)
+ 0.012751   26 A2 SUBTRACT A3
+ 0.012351   21 A1==(50.038406-inf) and A2==(49.924849-inf) and A3==(49.965708-inf)
+ 0.011069   16 A1==(50.038406-inf) xor A2==(49.924849-inf)
+ 0.011069   13 A1==(50.038406-inf) equ A2==(49.924849-inf)
+ 0.010909   10 A1==(50.038406-inf) or A2==(49.924849-inf)
+ 0.010666   24 A1 ADD A2
+ 0.010595   42 A1_x_A2
+ 0.009899   28 A1 SUBTRACT A3
+ 0.009351   36 A1 MULTIPLY A2
+ 0.002976    7 A1==(50.038406-inf) and A2==(49.924849-inf)
+ 0.002892   29 A2 DIVIDE A3
+ 0.002591   19 A1==(50.038406-inf) impl A2==(49.924849-inf)
+ 0.001831   27 A1 SUBTRACT A2
+ 0.00105    31 A1 DIVIDE A2
+ 0.000887   30 A3 DIVIDE A2
+ 0.000748   33 A1 DIVIDE A3
+ 0.000732   34 A3 DIVIDE A1
+ 0.000709   32 A2 DIVIDE A1
+-0.005262    1 A1
+-0.005337   39 A1 LESSTHAN A2
+-0.013284    4 A4
+-0.014193    5 A5
+
+
+ReliefF (param. search)
+The best parameter when using M5P: ReliefF@0.25
+ReliefF (param. search)
+The best parameter when using LinearRegression: ReliefF@0.25
+ReliefF (param. search)
+The best parameter when using RandomForest: ReliefF@0.0
+								--------------
+									Fold  2
+								--------------
+Feature evaluation: ReliefF (All features dataset) - After CI
+Ranked attributes:
+ 0.064537   41 A2_x_A3
+ 0.063299   15 A2==(50.023122-inf) xor A3==(49.980094-inf)
+ 0.063299   12 A2==(50.023122-inf) equ A3==(49.980094-inf)
+ 0.045877   43 A1_x_A3
+ 0.043547   14 A1==(49.980537-inf) equ A3==(49.980094-inf)
+ 0.043547   17 A1==(49.980537-inf) xor A3==(49.980094-inf)
+ 0.042259    3 A3
+ 0.038869   23 A2 ADD A3
+ 0.037069    6 A2==(50.023122-inf) and A3==(49.980094-inf)
+ 0.034691   35 A2 MULTIPLY A3
+ 0.032657    9 A2==(50.023122-inf) or A3==(49.980094-inf)
+ 0.029163   18 A2==(50.023122-inf) impl A3==(49.980094-inf)
+ 0.027767   11 A1==(49.980537-inf) or A3==(49.980094-inf)
+ 0.023097   25 A1 ADD A3
+ 0.022048   37 A1 MULTIPLY A3
+ 0.020901    8 A1==(49.980537-inf) and A3==(49.980094-inf)
+ 0.020656   22 A1==(49.980537-inf) or A2==(50.023122-inf) or A3==(49.980094-inf)
+ 0.018289   38 A2 LESSTHAN A3
+ 0.016993   20 A1==(49.980537-inf) impl A3==(49.980094-inf)
+ 0.015945   21 A1==(49.980537-inf) and A2==(50.023122-inf) and A3==(49.980094-inf)
+ 0.01335     2 A2
+ 0.011845   40 A1 LESSTHAN A3
+ 0.011525   26 A2 SUBTRACT A3
+ 0.010685   42 A1_x_A2
+ 0.009707   16 A1==(49.980537-inf) xor A2==(50.023122-inf)
+ 0.009707   13 A1==(49.980537-inf) equ A2==(50.023122-inf)
+ 0.008968   28 A1 SUBTRACT A3
+ 0.0088     24 A1 ADD A2
+ 0.00861    10 A1==(49.980537-inf) or A2==(50.023122-inf)
+ 0.008142   36 A1 MULTIPLY A2
+ 0.004607    7 A1==(49.980537-inf) and A2==(50.023122-inf)
+ 0.002984   19 A1==(49.980537-inf) impl A2==(50.023122-inf)
+ 0.001643   34 A3 DIVIDE A1
+ 0.001365   33 A1 DIVIDE A3
+ 0.001263   29 A2 DIVIDE A3
+ 0.000704   32 A2 DIVIDE A1
+-0.00029    27 A1 SUBTRACT A2
+-0.000725   30 A3 DIVIDE A2
+-0.000745   31 A1 DIVIDE A2
+-0.005301    1 A1
+-0.00709    39 A1 LESSTHAN A2
+-0.012298    5 A5
+-0.014372    4 A4
+
+
+ReliefF (param. search)
+The best parameter when using M5P: ReliefF@0.0
+ReliefF (param. search)
+The best parameter when using LinearRegression: ReliefF@0.0
+ReliefF (param. search)
+The best parameter when using RandomForest: ReliefF@0.0

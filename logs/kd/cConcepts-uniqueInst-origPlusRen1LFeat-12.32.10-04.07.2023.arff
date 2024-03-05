@@ -1,0 +1,87 @@
+@relation 'if A2=0 then C=All-of-N(A1=1, A3=0||A3==A4) else C=num-of-N(A3=1, A1==A4)>0?1:0-weka.filters.unsupervised.attribute.ReplaceMissingValues-weka.filters.unsupervised.attribute.Add-TNOM-NA1 and A2-L0,1-C6-W1.0-weka.filters.unsupervised.attribute.Add-TNOM-NA3 and A4-L0,1-C7-W1.0-weka.filters.unsupervised.attribute.Add-TNOM-NA2 and A3-L0,1-C8-W1.0-weka.filters.unsupervised.attribute.Add-TNOM-NA1 and A3-L0,1-C9-W1.0-weka.filters.unsupervised.attribute.Add-TNOM-NA2 and A4-L0,1-C10-W1.0-weka.filters.unsupervised.attribute.Add-TNOM-NA1 and A4-L0,1-C11-W1.0-weka.filters.unsupervised.attribute.Add-TNOM-NA1 or A2-L0,1-C12-W1.0-weka.filters.unsupervised.attribute.Add-TNOM-NA3 or A4-L0,1-C13-W1.0-weka.filters.unsupervised.attribute.Add-TNOM-NA2 or A3-L0,1-C14-W1.0-weka.filters.unsupervised.attribute.Add-TNOM-NA1 or A3-L0,1-C15-W1.0-weka.filters.unsupervised.attribute.Add-TNOM-NA2 or A4-L0,1-C16-W1.0-weka.filters.unsupervised.attribute.Add-TNOM-NA1 or A4-L0,1-C17-W1.0-weka.filters.unsupervised.attribute.Add-TNOM-NA1 equ A2-L0,1-C18-W1.0-weka.filters.unsupervised.attribute.Add-TNOM-NA3 equ A4-L0,1-C19-W1.0-weka.filters.unsupervised.attribute.Add-TNOM-NA2 equ A3-L0,1-C20-W1.0-weka.filters.unsupervised.attribute.Add-TNOM-NA1 equ A3-L0,1-C21-W1.0-weka.filters.unsupervised.attribute.Add-TNOM-NA2 equ A4-L0,1-C22-W1.0-weka.filters.unsupervised.attribute.Add-TNOM-NA1 equ A4-L0,1-C23-W1.0-weka.filters.unsupervised.attribute.Add-TNOM-NA1 xor A2-L0,1-C24-W1.0-weka.filters.unsupervised.attribute.Add-TNOM-NA3 xor A4-L0,1-C25-W1.0-weka.filters.unsupervised.attribute.Add-TNOM-NA2 xor A3-L0,1-C26-W1.0-weka.filters.unsupervised.attribute.Add-TNOM-NA1 xor A3-L0,1-C27-W1.0-weka.filters.unsupervised.attribute.Add-TNOM-NA2 xor A4-L0,1-C28-W1.0-weka.filters.unsupervised.attribute.Add-TNOM-NA1 xor A4-L0,1-C29-W1.0-weka.filters.unsupervised.attribute.Add-TNOM-NA1 impl A2-L0,1-C30-W1.0-weka.filters.unsupervised.attribute.Add-TNOM-NA3 impl A4-L0,1-C31-W1.0-weka.filters.unsupervised.attribute.Add-TNOM-NA2 impl A3-L0,1-C32-W1.0-weka.filters.unsupervised.attribute.Add-TNOM-NA1 impl A3-L0,1-C33-W1.0-weka.filters.unsupervised.attribute.Add-TNOM-NA2 impl A4-L0,1-C34-W1.0-weka.filters.unsupervised.attribute.Add-TNOM-NA1 impl A4-L0,1-C35-W1.0-weka.filters.unsupervised.attribute.Add-TNOM-NA1 and A2 and A4-L0,1-C36-W1.0-weka.filters.unsupervised.attribute.Add-TNOM-NA2 and A3 and A4-L0,1-C37-W1.0-weka.filters.unsupervised.attribute.Add-TNOM-NA1 and A2 and A3-L0,1-C38-W1.0-weka.filters.unsupervised.attribute.Add-TNOM-NA1 or A2 or A4-L0,1-C39-W1.0-weka.filters.unsupervised.attribute.Add-TNOM-NA2 or A3 or A4-L0,1-C40-W1.0-weka.filters.unsupervised.attribute.Add-TNOM-NA1 or A2 or A3-L0,1-C41-W1.0-weka.filters.unsupervised.attribute.Add-TNOM-N(A1 = 0) and (A2 = 0)-L0,1-C42-W1.0-weka.filters.unsupervised.attribute.Add-TNOM-N(A2 = 0)-L0,1-C43-W1.0-weka.filters.unsupervised.attribute.Add-TNOM-Nnum-of-N((A1 = 0) and (A2 = 0))-L0,1,2-C44-W1.0-weka.filters.unsupervised.attribute.Add-TNOM-NA1_x_A2-L0_x_0,0_x_1,1_x_0,1_x_1-C45-W1.0-weka.filters.unsupervised.attribute.Add-TNOM-NA3_x_A4-L0_x_0,0_x_1,1_x_0,1_x_1-C46-W1.0-weka.filters.unsupervised.attribute.Add-TNOM-NA2_x_A3-L0_x_0,0_x_1,1_x_0,1_x_1-C47-W1.0-weka.filters.unsupervised.attribute.Add-TNOM-NA1_x_A3-L0_x_0,0_x_1,1_x_0,1_x_1-C48-W1.0-weka.filters.unsupervised.attribute.Add-TNOM-NA2_x_A4-L0_x_0,0_x_1,1_x_0,1_x_1-C49-W1.0-weka.filters.unsupervised.attribute.Add-TNOM-NA1_x_A4-L0_x_0,0_x_1,1_x_0,1_x_1-C50-W1.0'
+
+@attribute A1 {0,1}
+@attribute A2 {0,1}
+@attribute A3 {0,1}
+@attribute A4 {0,1}
+@attribute A5 {0,1}
+@attribute F1L1 {0,1}
+@attribute F2L1 {0,1}
+@attribute F3L1 {0,1}
+@attribute F4L1 {0,1}
+@attribute F5L1 {0,1}
+@attribute F6L1 {0,1}
+@attribute F7L1 {0,1}
+@attribute F8L1 {0,1}
+@attribute F9L1 {0,1}
+@attribute F10L1 {0,1}
+@attribute F11L1 {0,1}
+@attribute F12L1 {0,1}
+@attribute F13L1 {0,1}
+@attribute F14L1 {0,1}
+@attribute F15L1 {0,1}
+@attribute F16L1 {0,1}
+@attribute F17L1 {0,1}
+@attribute F18L1 {0,1}
+@attribute F19L1 {0,1}
+@attribute F20L1 {0,1}
+@attribute F21L1 {0,1}
+@attribute F22L1 {0,1}
+@attribute F23L1 {0,1}
+@attribute F24L1 {0,1}
+@attribute F25L1 {0,1}
+@attribute F26L1 {0,1}
+@attribute F27L1 {0,1}
+@attribute F28L1 {0,1}
+@attribute F29L1 {0,1}
+@attribute F30L1 {0,1}
+@attribute F31L1 {0,1}
+@attribute F32L1 {0,1}
+@attribute F33L1 {0,1}
+@attribute F34L1 {0,1}
+@attribute F35L1 {0,1}
+@attribute F36L1 {0,1}
+@attribute F37L1 {0,1}
+@attribute F38L1 {0,1}
+@attribute F39L1 {0,1,2}
+@attribute F40L1 {0_x_0,0_x_1,1_x_0,1_x_1}
+@attribute F41L1 {0_x_0,0_x_1,1_x_0,1_x_1}
+@attribute F42L1 {0_x_0,0_x_1,1_x_0,1_x_1}
+@attribute F43L1 {0_x_0,0_x_1,1_x_0,1_x_1}
+@attribute F44L1 {0_x_0,0_x_1,1_x_0,1_x_1}
+@attribute F45L1 {0_x_0,0_x_1,1_x_0,1_x_1}
+@attribute class {0,1}
+
+@data
+1,1,1,0,1,1,0,1,1,0,0,1,1,1,1,1,1,1,0,1,1,0,0,0,1,0,0,1,1,1,0,1,1,0,0,0,0,1,1,1,1,0,0,0,1_x_1,1_x_0,1_x_1,1_x_1,1_x_0,1_x_0,1
+0,1,1,0,0,0,0,1,0,0,0,1,1,1,1,1,0,0,0,1,0,0,1,1,1,0,1,1,0,1,0,1,1,0,1,0,0,0,1,1,1,0,0,1,0_x_1,1_x_0,1_x_1,0_x_1,1_x_0,0_x_0,1
+0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,0,0,0,0,0,0,1,1,1,1,1,1,0,0,0,0,0,0,1,1,2,0_x_0,0_x_0,0_x_0,0_x_0,0_x_0,0_x_0,0
+1,0,0,1,1,0,0,0,0,0,1,1,1,0,1,1,1,0,0,1,0,0,1,1,1,0,1,1,0,0,1,1,0,1,1,0,0,0,1,1,1,0,1,1,1_x_0,0_x_1,0_x_0,1_x_0,0_x_1,1_x_1,1
+1,1,1,0,0,1,0,1,1,0,0,1,1,1,1,1,1,1,0,1,1,0,0,0,1,0,0,1,1,1,0,1,1,0,0,0,0,1,1,1,1,0,0,0,1_x_1,1_x_0,1_x_1,1_x_1,1_x_0,1_x_0,1
+1,1,0,1,1,1,0,0,0,1,1,1,1,1,1,1,1,1,0,0,0,1,1,0,1,1,1,0,0,1,1,0,0,1,1,1,0,0,1,1,1,0,0,0,1_x_1,0_x_1,1_x_0,1_x_0,1_x_1,1_x_1,1
+1,0,0,0,1,0,0,0,0,0,0,1,0,0,1,0,1,0,1,1,0,1,0,1,0,0,1,0,1,0,1,1,0,1,0,0,0,0,1,0,1,0,1,1,1_x_0,0_x_0,0_x_0,1_x_0,0_x_0,1_x_0,1
+1,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,1,0,1,1,0,1,0,1,0,0,1,0,1,0,1,1,0,1,0,0,0,0,1,0,1,0,1,1,1_x_0,0_x_0,0_x_0,1_x_0,0_x_0,1_x_0,1
+0,1,1,0,1,0,0,1,0,0,0,1,1,1,1,1,0,0,0,1,0,0,1,1,1,0,1,1,0,1,0,1,1,0,1,0,0,0,1,1,1,0,0,1,0_x_1,1_x_0,1_x_1,0_x_1,1_x_0,0_x_0,1
+0,1,0,0,1,0,0,0,0,0,0,1,0,1,0,1,0,0,1,0,1,0,1,1,0,1,0,1,0,1,1,0,1,0,1,0,0,0,1,1,1,0,0,1,0_x_1,0_x_0,1_x_0,0_x_0,1_x_0,0_x_0,1
+0,0,1,0,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,1,1,0,1,1,1,0,0,1,0,1,1,1,1,0,0,0,0,1,1,1,1,2,0_x_0,1_x_0,0_x_1,0_x_1,0_x_0,0_x_0,0
+1,0,1,1,1,0,1,0,1,0,1,1,1,1,1,1,1,0,1,0,1,0,1,1,0,1,0,1,0,0,1,1,1,1,1,0,0,0,1,1,1,0,1,1,1_x_0,1_x_1,0_x_1,1_x_1,0_x_1,1_x_1,1
+0,0,0,1,1,0,0,0,0,0,0,0,1,0,0,1,1,1,0,1,1,0,0,0,1,0,0,1,1,1,1,1,1,1,1,0,0,0,1,1,0,1,1,2,0_x_0,0_x_1,0_x_0,0_x_0,0_x_1,0_x_1,0
+0,1,1,1,0,0,1,1,0,1,0,1,1,1,1,1,1,0,1,1,0,1,0,1,0,0,1,0,1,1,1,1,1,1,1,0,1,0,1,1,1,0,0,1,0_x_1,1_x_1,1_x_1,0_x_1,1_x_1,0_x_1,1
+1,0,1,0,0,0,0,0,1,0,0,1,1,1,1,0,1,0,0,0,1,1,0,1,1,1,0,0,1,0,0,1,1,1,0,0,0,0,1,1,1,0,1,1,1_x_0,1_x_0,0_x_1,1_x_1,0_x_0,1_x_0,0
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,1_x_1,1_x_1,1_x_1,1_x_1,1_x_1,1_x_1,1
+0,0,1,1,0,0,1,0,0,0,0,0,1,1,1,1,1,1,1,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,0,0,0,1,1,1,1,1,2,0_x_0,1_x_1,0_x_1,0_x_1,0_x_1,0_x_1,0
+0,0,1,0,1,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,1,1,0,1,1,1,0,0,1,0,1,1,1,1,0,0,0,0,1,1,1,1,2,0_x_0,1_x_0,0_x_1,0_x_1,0_x_0,0_x_0,0
+1,1,0,0,0,1,0,0,0,0,0,1,0,1,1,1,1,1,1,0,0,0,0,0,0,1,1,1,1,1,1,0,0,0,0,0,0,0,1,1,1,0,0,0,1_x_1,0_x_0,1_x_0,1_x_0,1_x_0,1_x_0,0
+1,0,1,1,0,0,1,0,1,0,1,1,1,1,1,1,1,0,1,0,1,0,1,1,0,1,0,1,0,0,1,1,1,1,1,0,0,0,1,1,1,0,1,1,1_x_0,1_x_1,0_x_1,1_x_1,0_x_1,1_x_1,1
+0,1,1,1,1,0,1,1,0,1,0,1,1,1,1,1,1,0,1,1,0,1,0,1,0,0,1,0,1,1,1,1,1,1,1,0,1,0,1,1,1,0,0,1,0_x_1,1_x_1,1_x_1,0_x_1,1_x_1,0_x_1,1
+0,0,1,1,1,0,1,0,0,0,0,0,1,1,1,1,1,1,1,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,0,0,0,1,1,1,1,1,2,0_x_0,1_x_1,0_x_1,0_x_1,0_x_1,0_x_1,0
+0,1,0,1,1,0,0,0,0,1,0,1,1,1,0,1,1,0,0,0,1,1,0,1,1,1,0,0,1,1,1,0,1,1,1,0,0,0,1,1,1,0,0,1,0_x_1,0_x_1,1_x_0,0_x_0,1_x_1,0_x_1,0
+0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,1,1,1,0,1,1,0,0,0,1,0,0,1,1,1,1,1,1,1,1,0,0,0,1,1,0,1,1,2,0_x_0,0_x_1,0_x_0,0_x_0,0_x_1,0_x_1,0
+1,0,1,0,1,0,0,0,1,0,0,1,1,1,1,0,1,0,0,0,1,1,0,1,1,1,0,0,1,0,0,1,1,1,0,0,0,0,1,1,1,0,1,1,1_x_0,1_x_0,0_x_1,1_x_1,0_x_0,1_x_0,0
+0,1,0,0,0,0,0,0,0,0,0,1,0,1,0,1,0,0,1,0,1,0,1,1,0,1,0,1,0,1,1,0,1,0,1,0,0,0,1,1,1,0,0,1,0_x_1,0_x_0,1_x_0,0_x_0,1_x_0,0_x_0,1
+1,1,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,1_x_1,1_x_1,1_x_1,1_x_1,1_x_1,1_x_1,1
+1,0,0,1,0,0,0,0,0,0,1,1,1,0,1,1,1,0,0,1,0,0,1,1,1,0,1,1,0,0,1,1,0,1,1,0,0,0,1,1,1,0,1,1,1_x_0,0_x_1,0_x_0,1_x_0,0_x_1,1_x_1,1
+0,1,0,1,0,0,0,0,0,1,0,1,1,1,0,1,1,0,0,0,1,1,0,1,1,1,0,0,1,1,1,0,1,1,1,0,0,0,1,1,1,0,0,1,0_x_1,0_x_1,1_x_0,0_x_0,1_x_1,0_x_1,0
+1,1,0,0,1,1,0,0,0,0,0,1,0,1,1,1,1,1,1,0,0,0,0,0,0,1,1,1,1,1,1,0,0,0,0,0,0,0,1,1,1,0,0,0,1_x_1,0_x_0,1_x_0,1_x_0,1_x_0,1_x_0,0
+1,1,0,1,0,1,0,0,0,1,1,1,1,1,1,1,1,1,0,0,0,1,1,0,1,1,1,0,0,1,1,0,0,1,1,1,0,0,1,1,1,0,0,0,1_x_1,0_x_1,1_x_0,1_x_0,1_x_1,1_x_1,1
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,0,0,0,0,0,0,1,1,1,1,1,1,0,0,0,0,0,0,1,1,2,0_x_0,0_x_0,0_x_0,0_x_0,0_x_0,0_x_0,0

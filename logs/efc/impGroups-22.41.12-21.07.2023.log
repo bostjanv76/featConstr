@@ -1,0 +1,41 @@
+dataset: Balance scale.arff
+*********************************************************************************
+All potential concepts based on thresholds
+	left-distance right-weight left-weight ~#~ left-distance right-distance left-weight ~#~ left-distance right-weight right-distance ~#~ right-weight right-distance left-weight ~#~ 
+*********************************************************************************
+*********************************************************************************
+All potential concepts based on thresholds
+	left-distance right-distance left-weight ~#~ right-weight left-distance left-weight ~#~ right-weight right-distance left-weight ~#~ right-weight left-distance right-distance ~#~ 
+*********************************************************************************
+*********************************************************************************
+All potential concepts based on thresholds
+	right-weight left-weight right-distance ~#~ left-distance left-weight right-distance ~#~ left-distance right-weight left-weight ~#~ left-distance right-weight right-distance ~#~ 
+*********************************************************************************
+*********************************************************************************
+All potential concepts based on thresholds
+	right-distance left-weight right-weight ~#~ left-weight left-distance right-weight ~#~ right-distance left-weight left-distance ~#~ right-distance left-distance right-weight ~#~ 
+*********************************************************************************
+*********************************************************************************
+All potential concepts based on thresholds
+	right-weight left-weight left-distance ~#~ left-weight right-distance left-distance ~#~ right-weight right-distance left-distance ~#~ right-weight left-weight right-distance ~#~ 
+*********************************************************************************
+*********************************************************************************
+All potential concepts based on thresholds
+	left-distance right-weight right-distance ~#~ left-distance left-weight right-distance ~#~ left-distance left-weight right-weight ~#~ left-weight right-weight right-distance ~#~ 
+*********************************************************************************
+*********************************************************************************
+All potential concepts based on thresholds
+	right-distance left-weight right-weight ~#~ right-distance right-weight left-distance ~#~ right-distance left-weight left-distance ~#~ left-weight right-weight left-distance ~#~ 
+*********************************************************************************
+*********************************************************************************
+All potential concepts based on thresholds
+	left-weight right-weight left-distance ~#~ right-weight right-distance left-distance ~#~ left-weight right-weight right-distance ~#~ left-weight right-distance left-distance ~#~ 
+*********************************************************************************
+*********************************************************************************
+All potential concepts based on thresholds
+	left-weight left-distance right-weight ~#~ right-distance left-weight right-weight ~#~ right-distance left-weight left-distance ~#~ right-distance left-distance right-weight ~#~ 
+*********************************************************************************
+*********************************************************************************
+All potential concepts based on thresholds
+	right-distance right-weight left-distance ~#~ right-distance left-weight right-weight ~#~ right-distance left-weight left-distance ~#~ left-weight right-weight left-distance ~#~ 
+*********************************************************************************

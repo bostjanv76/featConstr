@@ -1,0 +1,63 @@
+dataset: cLogicalConcBEasy.arff
+Explaining class: 1 explaining whole dataset: YES
+Internal (during building) accuracy of explanation model: 100.0
+*********************************************************************************
+We remove max(NOISE,minNoise) groups, NOISE=10.0% -> 49, minNoise=3 we remove groups of size 49. Tree SHAP num of expl. inst. 2000
+Lower threshold thrL: 0.6 upper threshold thrU: 0.8 with step: 0.1
+--------------
+Threshold: 0,60
+--------------
+	A4 | A5: 291
+	A2 | A3: 258
+	A3 | A4: 199
+	A1 | A2 | A3: 190
+	A2 | A4: 138
+	A1 | A4 | A5: 128
+	A3 | A5: 122
+	A2 | A5: 114
+	A1 | A3: 76
+	A1 | A3 | A4: 75
+	A2 | A4 | A5: 67
+	A1 | A5: 66
+	A3 | A4 | A5: 59
+	A2 | A3 | A4: 58
+	A1 | A4: 55
+	A2 | A3 | A5: 53
+	A1 | A2: 51
+--------------
+Threshold: 0,70
+--------------
+	A1 | A2 | A3: 253
+	A1 | A3 | A4: 206
+	A2 | A3 | A4: 198
+	A1 | A4 | A5: 180
+	A3 | A4 | A5: 170
+	A2 | A4: 138
+	A2 | A3: 131
+	A4 | A5: 128
+	A3 | A4: 123
+	A3 | A5: 122
+	A2 | A5: 114
+	A2 | A4 | A5: 67
+	A1 | A3 | A5: 66
+	A2 | A3 | A5: 53
+	A1 | A2 | A4: 51
+--------------
+Threshold: 0,80
+--------------
+	A2 | A3 | A4: 391
+	A3 | A4 | A5: 307
+	A2 | A4 | A5: 189
+	A1 | A2 | A3: 187
+	A2 | A3 | A5: 178
+	A1 | A2 | A3 | A4: 172
+	A1 | A3 | A4 | A5: 134
+	A1 | A4 | A5: 128
+	A2 | A3 | A4 | A5: 120
+	A1 | A3 | A4: 76
+	A1 | A3 | A5: 66
+	A1 | A2 | A4 | A5: 52
+*********************************************************************************
+All potential concepts, based on thresholds.
+	A4 A5 ~#~ A2 A3 ~#~ A3 A4 ~#~ A1 A2 A3 ~#~ A2 A4 ~#~ A1 A4 A5 ~#~ A3 A5 ~#~ A2 A5 ~#~ A1 A3 ~#~ A1 A3 A4 ~#~ A2 A4 A5 ~#~ A1 A5 ~#~ A3 A4 A5 ~#~ A2 A3 A4 ~#~ A1 A4 ~#~ A2 A3 A5 ~#~ A1 A2 ~#~ A1 A3 A5 ~#~ A1 A2 A4 ~#~ A1 A2 A3 A4 ~#~ A1 A3 A4 A5 ~#~ A2 A3 A4 A5 ~#~ A1 A2 A4 A5 ~#~ 
+*********************************************************************************

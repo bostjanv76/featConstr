@@ -1,0 +1,798 @@
+dataset: Car.arff
+--------------
+Threshold: 0,10
+--------------
+	buying: 228
+	persons: 94
+	safety: 14
+	maint: 9
+--------------
+Threshold: 0,20
+--------------
+	buying: 228
+	persons: 94
+	safety: 14
+	maint: 9
+--------------
+Threshold: 0,30
+--------------
+	buying: 204
+	persons: 70
+	buying | persons: 31
+	safety: 14
+	buying | safety: 14
+	maint: 8
+--------------
+Threshold: 0,40
+--------------
+	buying: 126
+	buying | persons: 86
+	buying | safety: 46
+	buying | maint: 30
+	persons: 28
+	persons | safety: 10
+	maint | persons: 8
+	maint | safety: 6
+	safety: 5
+--------------
+Threshold: 0,50
+--------------
+	buying | persons: 155
+	buying | safety: 66
+	buying: 61
+	buying | maint: 35
+	persons | safety: 10
+	maint | persons: 8
+	maint | safety: 6
+--------------
+Threshold: 0,60
+--------------
+	buying | persons: 154
+	buying | safety: 54
+	buying | maint: 41
+	buying | persons | safety: 35
+	buying | maint | safety: 30
+	buying: 11
+	maint | persons: 8
+	persons | safety: 6
+--------------
+Threshold: 0,70
+--------------
+	buying | persons: 108
+	buying | maint | persons: 71
+	buying | persons | safety: 65
+	buying | maint | safety: 45
+	buying | safety: 36
+	buying | maint: 12
+--------------
+Threshold: 0,80
+--------------
+	buying | persons | safety: 100
+	buying | maint | persons: 86
+	buying | persons: 68
+	buying | maint | persons | safety: 45
+	buying | maint | safety: 35
+	buying | safety: 10
+*********************************************************************************
+All potential concepts based on thresholds
+	buying persons ~#~ buying safety ~#~ buying maint ~#~ persons safety ~#~ maint persons ~#~ maint safety ~#~ buying persons safety ~#~ buying maint safety ~#~ buying maint persons ~#~ buying maint persons safety ~#~ 
+*********************************************************************************
+--------------
+Threshold: 0,10
+--------------
+	maint: 211
+	persons: 115
+	safety: 10
+	buying: 9
+--------------
+Threshold: 0,20
+--------------
+	maint: 211
+	persons: 115
+	safety: 10
+	buying: 9
+--------------
+Threshold: 0,30
+--------------
+	maint: 187
+	persons: 82
+	maint | persons: 33
+	maint | safety: 19
+	safety: 8
+	buying: 7
+--------------
+Threshold: 0,40
+--------------
+	maint: 122
+	maint | persons: 91
+	maint | safety: 44
+	buying | maint: 35
+	persons: 24
+	persons | safety: 11
+	buying | persons: 10
+	buying | safety: 6
+--------------
+Threshold: 0,50
+--------------
+	maint | persons: 160
+	maint | safety: 62
+	maint: 55
+	buying | maint: 39
+	persons | safety: 11
+	buying | persons: 10
+	buying | safety: 6
+--------------
+Threshold: 0,60
+--------------
+	maint | persons: 140
+	maint | safety: 53
+	buying | maint: 36
+	maint | persons | safety: 34
+	buying | maint | safety: 31
+	buying | maint | persons: 21
+	maint: 11
+	buying | persons: 9
+	persons | safety: 6
+--------------
+Threshold: 0,70
+--------------
+	maint | persons: 94
+	buying | maint | persons: 80
+	maint | persons | safety: 70
+	buying | maint | safety: 46
+	maint | safety: 37
+	buying | maint: 10
+--------------
+Threshold: 0,80
+--------------
+	maint | persons | safety: 124
+	buying | maint | persons: 76
+	buying | maint | persons | safety: 66
+	maint | persons: 38
+	buying | maint | safety: 34
+	maint | safety: 7
+*********************************************************************************
+All potential concepts based on thresholds
+	maint persons ~#~ maint safety ~#~ buying maint ~#~ persons safety ~#~ buying persons ~#~ buying safety ~#~ maint persons safety ~#~ buying maint safety ~#~ buying maint persons ~#~ buying maint persons safety ~#~ 
+*********************************************************************************
+--------------
+Threshold: 0,10
+--------------
+	maint: 221
+	persons: 103
+	safety: 13
+	buying: 8
+--------------
+Threshold: 0,20
+--------------
+	maint: 221
+	persons: 103
+	safety: 13
+	buying: 8
+--------------
+Threshold: 0,30
+--------------
+	maint: 196
+	persons: 82
+	maint | persons: 28
+	safety: 12
+	maint | safety: 12
+	buying: 7
+	persons | safety: 5
+--------------
+Threshold: 0,40
+--------------
+	maint: 129
+	maint | persons: 90
+	maint | safety: 40
+	buying | maint: 29
+	persons: 24
+	persons | safety: 11
+	buying | persons: 11
+	buying | safety: 6
+	safety: 5
+--------------
+Threshold: 0,50
+--------------
+	maint | persons: 156
+	maint: 67
+	maint | safety: 58
+	buying | maint: 32
+	persons | safety: 11
+	buying | persons: 11
+	buying | safety: 6
+--------------
+Threshold: 0,60
+--------------
+	maint | persons: 156
+	maint | safety: 51
+	buying | maint: 37
+	maint | persons | safety: 33
+	buying | maint | safety: 28
+	maint: 14
+	buying | persons: 11
+	persons | safety: 6
+	buying | persons | safety: 5
+--------------
+Threshold: 0,70
+--------------
+	maint | persons: 107
+	buying | maint | persons: 74
+	maint | persons | safety: 65
+	buying | maint | safety: 42
+	maint | safety: 34
+	buying | maint: 15
+	buying | persons | safety: 5
+--------------
+Threshold: 0,80
+--------------
+	maint | persons | safety: 99
+	buying | maint | persons: 94
+	maint | persons: 60
+	buying | maint | persons | safety: 56
+	buying | maint | safety: 25
+	maint | safety: 10
+*********************************************************************************
+All potential concepts based on thresholds
+	maint persons ~#~ maint safety ~#~ persons safety ~#~ buying maint ~#~ buying persons ~#~ buying safety ~#~ maint persons safety ~#~ buying maint safety ~#~ buying persons safety ~#~ buying maint persons ~#~ buying maint persons safety ~#~ 
+*********************************************************************************
+--------------
+Threshold: 0,10
+--------------
+	maint: 214
+	buying: 68
+	persons: 55
+	safety: 8
+--------------
+Threshold: 0,20
+--------------
+	maint: 214
+	buying: 68
+	persons: 55
+	safety: 8
+--------------
+Threshold: 0,30
+--------------
+	maint: 197
+	buying: 64
+	persons: 43
+	maint | persons: 20
+	safety: 8
+	maint | safety: 7
+--------------
+Threshold: 0,40
+--------------
+	maint: 105
+	maint | persons: 82
+	buying | maint: 65
+	maint | safety: 25
+	buying: 20
+	buying | persons: 16
+	persons: 15
+	persons | safety: 7
+	safety: 6
+--------------
+Threshold: 0,50
+--------------
+	maint | persons: 136
+	buying | maint: 89
+	maint | safety: 50
+	maint: 31
+	buying | persons: 23
+	persons | safety: 6
+	buying | safety: 5
+--------------
+Threshold: 0,60
+--------------
+	maint | persons: 126
+	buying | maint: 83
+	maint | safety: 39
+	buying | maint | persons: 25
+	maint | persons | safety: 23
+	buying | maint | safety: 19
+	buying | persons: 12
+	persons | safety: 5
+	buying | persons | safety: 5
+	buying | safety: 5
+--------------
+Threshold: 0,70
+--------------
+	buying | maint | persons: 108
+	maint | persons: 63
+	maint | persons | safety: 61
+	buying | maint | safety: 48
+	buying | maint: 31
+	maint | safety: 20
+	buying | persons: 8
+	buying | persons | safety: 5
+--------------
+Threshold: 0,80
+--------------
+	buying | maint | persons: 136
+	maint | persons | safety: 86
+	buying | maint | persons | safety: 55
+	buying | maint | safety: 38
+	maint | persons: 26
+*********************************************************************************
+All potential concepts based on thresholds
+	maint persons ~#~ maint safety ~#~ buying maint ~#~ buying persons ~#~ persons safety ~#~ buying safety ~#~ buying maint persons ~#~ maint persons safety ~#~ buying maint safety ~#~ buying persons safety ~#~ buying maint persons safety ~#~ 
+*********************************************************************************
+--------------
+Threshold: 0,10
+--------------
+	maint: 110
+	buying: 109
+	persons: 88
+	safety: 39
+--------------
+Threshold: 0,20
+--------------
+	maint: 110
+	buying: 109
+	persons: 88
+	safety: 39
+--------------
+Threshold: 0,30
+--------------
+	buying: 109
+	maint: 108
+	persons: 49
+	persons | safety: 39
+	buying | safety: 19
+	safety: 17
+--------------
+Threshold: 0,40
+--------------
+	buying | maint: 78
+	buying: 57
+	buying | persons: 50
+	maint: 49
+	persons | safety: 39
+	maint | persons: 32
+	buying | safety: 32
+	maint | safety: 9
+--------------
+Threshold: 0,50
+--------------
+	buying | maint: 106
+	buying | persons: 70
+	maint | persons: 47
+	buying | safety: 47
+	persons | safety: 38
+	maint | safety: 25
+	maint: 7
+	buying: 5
+--------------
+Threshold: 0,60
+--------------
+	buying | maint: 108
+	buying | persons | safety: 41
+	buying | maint | safety: 41
+	buying | maint | persons: 40
+	buying | persons: 35
+	maint | persons: 29
+	buying | safety: 18
+	maint | persons | safety: 18
+	maint | safety: 16
+--------------
+Threshold: 0,70
+--------------
+	buying | maint | persons: 143
+	buying | maint | safety: 95
+	buying | persons | safety: 43
+	buying | maint: 35
+	maint | persons | safety: 24
+--------------
+Threshold: 0,80
+--------------
+	buying | maint | persons: 170
+	buying | maint | safety: 88
+	buying | maint | persons | safety: 73
+	buying | persons | safety: 8
+	maint | persons | safety: 7
+*********************************************************************************
+All potential concepts based on thresholds
+	persons safety ~#~ buying safety ~#~ buying maint ~#~ buying persons ~#~ maint persons ~#~ maint safety ~#~ buying persons safety ~#~ buying maint safety ~#~ buying maint persons ~#~ maint persons safety ~#~ buying maint persons safety ~#~ 
+*********************************************************************************
+--------------
+Threshold: 0,10
+--------------
+	buying: 113
+	maint: 107
+	persons: 87
+	safety: 39
+--------------
+Threshold: 0,20
+--------------
+	buying: 113
+	maint: 107
+	persons: 87
+	safety: 39
+--------------
+Threshold: 0,30
+--------------
+	buying: 103
+	maint: 100
+	persons: 52
+	persons | safety: 35
+	maint | safety: 19
+	buying | maint: 15
+	safety: 10
+	buying | safety: 10
+--------------
+Threshold: 0,40
+--------------
+	buying | maint: 70
+	maint | persons: 52
+	buying: 43
+	buying | persons: 42
+	maint: 40
+	maint | safety: 38
+	persons | safety: 37
+	buying | safety: 24
+--------------
+Threshold: 0,50
+--------------
+	buying | maint: 100
+	maint | persons: 72
+	buying | persons: 63
+	maint | safety: 40
+	persons | safety: 37
+	buying | safety: 29
+--------------
+Threshold: 0,60
+--------------
+	buying | maint: 70
+	maint | persons: 52
+	buying | maint | persons: 46
+	buying | persons: 46
+	buying | maint | safety: 39
+	maint | persons | safety: 37
+	buying | persons | safety: 28
+	maint | safety: 14
+	buying | safety: 14
+--------------
+Threshold: 0,70
+--------------
+	buying | maint | persons: 149
+	buying | maint | safety: 75
+	maint | persons | safety: 41
+	buying | persons | safety: 34
+	buying | maint: 23
+	maint | persons: 12
+	buying | persons: 12
+--------------
+Threshold: 0,80
+--------------
+	buying | maint | persons: 183
+	buying | maint | persons | safety: 113
+	buying | maint | safety: 32
+	buying | persons | safety: 12
+	maint | persons | safety: 6
+*********************************************************************************
+All potential concepts based on thresholds
+	persons safety ~#~ maint safety ~#~ buying maint ~#~ buying safety ~#~ maint persons ~#~ buying persons ~#~ buying maint persons ~#~ buying maint safety ~#~ maint persons safety ~#~ buying persons safety ~#~ buying maint persons safety ~#~ 
+*********************************************************************************
+--------------
+Threshold: 0,10
+--------------
+	persons: 111
+	maint: 102
+	buying: 92
+	safety: 41
+--------------
+Threshold: 0,20
+--------------
+	persons: 111
+	maint: 102
+	buying: 92
+	safety: 41
+--------------
+Threshold: 0,30
+--------------
+	persons: 102
+	maint: 86
+	buying: 70
+	safety: 35
+	buying | persons: 18
+	maint | persons: 14
+	persons | safety: 7
+	buying | safety: 7
+	buying | maint: 5
+--------------
+Threshold: 0,40
+--------------
+	maint | persons: 74
+	buying | persons: 72
+	persons | safety: 46
+	buying | safety: 35
+	buying | maint: 34
+	maint | safety: 31
+	persons: 28
+	buying: 13
+	maint: 10
+--------------
+Threshold: 0,50
+--------------
+	buying | persons: 97
+	maint | persons: 85
+	persons | safety: 49
+	buying | maint: 48
+	buying | safety: 35
+	maint | safety: 31
+--------------
+Threshold: 0,60
+--------------
+	buying | persons: 73
+	maint | persons: 64
+	buying | maint: 42
+	buying | maint | safety: 37
+	buying | persons | safety: 35
+	maint | persons | safety: 33
+	persons | safety: 22
+	buying | safety: 14
+	buying | maint | persons: 13
+	maint | safety: 13
+--------------
+Threshold: 0,70
+--------------
+	buying | maint | persons: 141
+	buying | persons | safety: 68
+	maint | persons | safety: 51
+	buying | maint | safety: 38
+	buying | persons: 25
+	maint | persons: 12
+	buying | maint: 10
+--------------
+Threshold: 0,80
+--------------
+	buying | maint | persons: 176
+	buying | maint | persons | safety: 73
+	buying | persons | safety: 41
+	maint | persons | safety: 32
+	buying | maint | safety: 23
+*********************************************************************************
+All potential concepts based on thresholds
+	buying persons ~#~ maint persons ~#~ persons safety ~#~ buying safety ~#~ buying maint ~#~ maint safety ~#~ buying maint safety ~#~ buying persons safety ~#~ maint persons safety ~#~ buying maint persons ~#~ buying maint persons safety ~#~ 
+*********************************************************************************
+--------------
+Threshold: 0,10
+--------------
+	maint: 114
+	buying: 107
+	persons: 84
+	safety: 41
+--------------
+Threshold: 0,20
+--------------
+	maint: 114
+	buying: 107
+	persons: 84
+	safety: 41
+--------------
+Threshold: 0,30
+--------------
+	maint: 109
+	buying: 105
+	persons: 48
+	persons | safety: 36
+	safety: 22
+	buying | safety: 13
+	buying | maint: 7
+	maint | safety: 6
+--------------
+Threshold: 0,40
+--------------
+	buying | maint: 66
+	buying | persons: 54
+	maint: 53
+	buying: 49
+	buying | safety: 38
+	persons | safety: 36
+	maint | persons: 33
+	maint | safety: 17
+--------------
+Threshold: 0,50
+--------------
+	buying | maint: 103
+	buying | persons: 73
+	maint | persons: 49
+	buying | safety: 47
+	persons | safety: 36
+	maint | safety: 31
+	maint: 6
+--------------
+Threshold: 0,60
+--------------
+	buying | maint: 89
+	buying | maint | persons: 47
+	buying | persons | safety: 44
+	buying | maint | safety: 40
+	buying | persons: 35
+	maint | persons: 32
+	maint | safety: 21
+	maint | persons | safety: 20
+	buying | safety: 18
+--------------
+Threshold: 0,70
+--------------
+	buying | maint | persons: 146
+	buying | maint | safety: 95
+	buying | persons | safety: 44
+	buying | maint: 25
+	maint | persons | safety: 23
+	maint | persons: 8
+--------------
+Threshold: 0,80
+--------------
+	buying | maint | persons: 153
+	buying | maint | persons | safety: 112
+	buying | maint | safety: 70
+	buying | persons | safety: 6
+	maint | persons | safety: 5
+*********************************************************************************
+All potential concepts based on thresholds
+	persons safety ~#~ buying safety ~#~ buying maint ~#~ maint safety ~#~ buying persons ~#~ maint persons ~#~ buying maint persons ~#~ buying persons safety ~#~ buying maint safety ~#~ maint persons safety ~#~ buying maint persons safety ~#~ 
+*********************************************************************************
+--------------
+Threshold: 0,10
+--------------
+	buying: 239
+	maint: 76
+	persons: 26
+	safety: 5
+--------------
+Threshold: 0,20
+--------------
+	buying: 239
+	maint: 76
+	persons: 26
+	safety: 5
+--------------
+Threshold: 0,30
+--------------
+	buying: 217
+	maint: 72
+	persons: 23
+	buying | persons: 22
+	safety: 5
+--------------
+Threshold: 0,40
+--------------
+	buying: 113
+	buying | persons: 77
+	buying | maint: 62
+	buying | safety: 35
+	maint: 19
+	maint | persons: 14
+	persons: 12
+	maint | safety: 7
+	persons | safety: 6
+--------------
+Threshold: 0,50
+--------------
+	buying | persons: 137
+	buying | maint: 89
+	buying | safety: 51
+	buying: 40
+	maint | persons: 16
+	maint | safety: 7
+	persons | safety: 6
+--------------
+Threshold: 0,60
+--------------
+	buying | persons: 122
+	buying | maint: 88
+	buying | safety: 42
+	buying | maint | safety: 24
+	buying | persons | safety: 21
+	buying | maint | persons: 18
+	maint | persons: 10
+	persons | safety: 6
+	maint | persons | safety: 6
+	maint | safety: 5
+--------------
+Threshold: 0,70
+--------------
+	buying | maint | persons: 101
+	buying | persons: 69
+	buying | persons | safety: 61
+	buying | maint | safety: 56
+	buying | maint: 32
+	buying | safety: 18
+	maint | persons | safety: 6
+--------------
+Threshold: 0,80
+--------------
+	buying | maint | persons: 136
+	buying | persons | safety: 93
+	buying | maint | persons | safety: 55
+	buying | maint | safety: 43
+	buying | persons: 14
+*********************************************************************************
+All potential concepts based on thresholds
+	buying persons ~#~ buying maint ~#~ buying safety ~#~ maint persons ~#~ maint safety ~#~ persons safety ~#~ buying maint safety ~#~ buying persons safety ~#~ buying maint persons ~#~ maint persons safety ~#~ buying maint persons safety ~#~ 
+*********************************************************************************
+--------------
+Threshold: 0,10
+--------------
+	buying: 105
+	persons: 105
+	maint: 97
+	safety: 39
+--------------
+Threshold: 0,20
+--------------
+	buying: 105
+	persons: 105
+	maint: 97
+	safety: 39
+--------------
+Threshold: 0,30
+--------------
+	buying: 95
+	persons: 95
+	maint: 91
+	safety: 32
+	persons | safety: 8
+	maint | persons: 7
+	buying | persons: 6
+	buying | safety: 6
+	buying | maint: 5
+--------------
+Threshold: 0,40
+--------------
+	buying | persons: 61
+	maint | persons: 48
+	persons | safety: 44
+	persons: 43
+	buying | maint: 33
+	buying | safety: 33
+	maint: 31
+	maint | safety: 27
+	buying: 24
+--------------
+Threshold: 0,50
+--------------
+	maint | persons: 91
+	buying | persons: 87
+	buying | maint: 56
+	persons | safety: 47
+	buying | safety: 33
+	maint | safety: 28
+--------------
+Threshold: 0,60
+--------------
+	maint | persons: 83
+	buying | persons: 70
+	buying | maint: 46
+	buying | maint | safety: 35
+	buying | persons | safety: 32
+	persons | safety: 27
+	maint | persons | safety: 17
+	maint | safety: 16
+	buying | safety: 12
+	buying | maint | persons: 8
+--------------
+Threshold: 0,70
+--------------
+	buying | maint | persons: 105
+	maint | persons | safety: 57
+	buying | persons | safety: 47
+	maint | persons: 44
+	buying | maint | safety: 41
+	buying | persons: 23
+	buying | maint: 21
+	persons | safety: 6
+--------------
+Threshold: 0,80
+--------------
+	buying | maint | persons: 178
+	buying | maint | persons | safety: 55
+	maint | persons | safety: 52
+	buying | maint | safety: 32
+	buying | persons | safety: 25
+*********************************************************************************
+All potential concepts based on thresholds
+	persons safety ~#~ maint persons ~#~ buying persons ~#~ buying safety ~#~ buying maint ~#~ maint safety ~#~ buying maint safety ~#~ buying persons safety ~#~ maint persons safety ~#~ buying maint persons ~#~ buying maint persons safety ~#~ 
+*********************************************************************************

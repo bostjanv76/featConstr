@@ -1,0 +1,1940 @@
+dataset: baskball.arff
+								--------------
+									Fold  1
+								--------------
+Feature evaluation: ReliefF (All features dataset) - After CI
+Ranked attributes:
+ 0.1103628    145 height==(-inf-168.2] xor time_played==(21.86-27.75]
+ 0.1103628     95 height==(-inf-168.2] equ time_played==(21.86-27.75]
+ 0.1103628     45 height==(-inf-168.2] or time_played==(21.86-27.75]
+ 0.1066193    150 height==(168.2-176.4] xor time_played==(21.86-27.75]
+ 0.1066193     50 height==(168.2-176.4] or time_played==(21.86-27.75]
+ 0.1066193    100 height==(168.2-176.4] equ time_played==(21.86-27.75]
+ 0.0958681    140 assists_per_minute==(0.28484-inf) equ time_played==(21.86-27.75]
+ 0.0958681     90 assists_per_minute==(0.28484-inf) or time_played==(21.86-27.75]
+ 0.0958681    190 assists_per_minute==(0.28484-inf) xor time_played==(21.86-27.75]
+ 0.0883464    105 height==(176.4-184.6] equ time_played==(21.86-27.75]
+ 0.0883464    155 height==(176.4-184.6] xor time_played==(21.86-27.75]
+ 0.0824182     55 height==(176.4-184.6] or time_played==(21.86-27.75]
+ 0.0640874    135 assists_per_minute==(0.22598-0.28484] equ time_played==(21.86-27.75]
+ 0.0640874    185 assists_per_minute==(0.22598-0.28484] xor time_played==(21.86-27.75]
+ 0.0631331     60 height==(184.6-192.8] or time_played==(21.86-27.75]
+ 0.0628335     70 assists_per_minute==(-inf-0.10826] or time_played==(21.86-27.75]
+ 0.059613     214 height==(192.8-inf) impl time_played==(21.86-27.75]
+ 0.0588611    115 height==(192.8-inf) equ time_played==(21.86-27.75]
+ 0.0588611    165 height==(192.8-inf) xor time_played==(21.86-27.75]
+ 0.0571836    170 assists_per_minute==(-inf-0.10826] xor time_played==(21.86-27.75]
+ 0.0571836    120 assists_per_minute==(-inf-0.10826] equ time_played==(21.86-27.75]
+ 0.0562038     85 assists_per_minute==(0.22598-0.28484] or time_played==(21.86-27.75]
+ 0.0546864    219 assists_per_minute==(-inf-0.10826] impl time_played==(21.86-27.75]
+ 0.0471145     54 height==(176.4-184.6] or time_played==(15.97-21.86]
+ 0.0450753     80 assists_per_minute==(0.16712-0.22598] or time_played==(21.86-27.75]
+ 0.0432165     44 height==(-inf-168.2] or time_played==(15.97-21.86]
+ 0.0432165    144 height==(-inf-168.2] xor time_played==(15.97-21.86]
+ 0.0432165     94 height==(-inf-168.2] equ time_played==(15.97-21.86]
+ 0.042814     251 height_x_time_played
+ 0.0421862    154 height==(176.4-184.6] xor time_played==(15.97-21.86]
+ 0.0421862    104 height==(176.4-184.6] equ time_played==(15.97-21.86]
+ 0.0402223     20 height==(192.8-inf) and time_played==(21.86-27.75]
+ 0.0389918    180 assists_per_minute==(0.16712-0.22598] xor time_played==(21.86-27.75]
+ 0.0389918    130 assists_per_minute==(0.16712-0.22598] equ time_played==(21.86-27.75]
+ 0.038094     151 height==(168.2-176.4] xor time_played==(27.75-33.64]
+ 0.038094     101 height==(168.2-176.4] equ time_played==(27.75-33.64]
+ 0.038094      51 height==(168.2-176.4] or time_played==(27.75-33.64]
+ 0.0379786     75 assists_per_minute==(0.10826-0.16712] or time_played==(21.86-27.75]
+ 0.0377313    160 height==(184.6-192.8] xor time_played==(21.86-27.75]
+ 0.0377313    110 height==(184.6-192.8] equ time_played==(21.86-27.75]
+ 0.0337895     96 height==(-inf-168.2] equ time_played==(27.75-33.64]
+ 0.0337895     46 height==(-inf-168.2] or time_played==(27.75-33.64]
+ 0.0337895    146 height==(-inf-168.2] xor time_played==(27.75-33.64]
+ 0.0322259    171 assists_per_minute==(-inf-0.10826] xor time_played==(27.75-33.64]
+ 0.0322259    121 assists_per_minute==(-inf-0.10826] equ time_played==(27.75-33.64]
+ 0.0317871    149 height==(168.2-176.4] xor time_played==(15.97-21.86]
+ 0.0317871     99 height==(168.2-176.4] equ time_played==(15.97-21.86]
+ 0.0317763    221 assists_per_minute==(-inf-0.10826] impl time_played==(33.64-inf)
+ 0.0312222     49 height==(168.2-176.4] or time_played==(15.97-21.86]
+ 0.0310919     89 assists_per_minute==(0.28484-inf) or time_played==(15.97-21.86]
+ 0.0310919    139 assists_per_minute==(0.28484-inf) equ time_played==(15.97-21.86]
+ 0.0310919    189 assists_per_minute==(0.28484-inf) xor time_played==(15.97-21.86]
+ 0.0306946     71 assists_per_minute==(-inf-0.10826] or time_played==(27.75-33.64]
+ 0.0294898    220 assists_per_minute==(-inf-0.10826] impl time_played==(27.75-33.64]
+ 0.0285173    172 assists_per_minute==(-inf-0.10826] xor time_played==(33.64-inf)
+ 0.0285173    122 assists_per_minute==(-inf-0.10826] equ time_played==(33.64-inf)
+ 0.0278583    191 assists_per_minute==(0.28484-inf) xor time_played==(27.75-33.64]
+ 0.0278583     91 assists_per_minute==(0.28484-inf) or time_played==(27.75-33.64]
+ 0.0278583    141 assists_per_minute==(0.28484-inf) equ time_played==(27.75-33.64]
+ 0.0264767     72 assists_per_minute==(-inf-0.10826] or time_played==(33.64-inf)
+ 0.0255962     24 assists_per_minute==(-inf-0.10826] and time_played==(15.97-21.86]
+ 0.0255911    136 assists_per_minute==(0.22598-0.28484] equ time_played==(27.75-33.64]
+ 0.0255911    186 assists_per_minute==(0.22598-0.28484] xor time_played==(27.75-33.64]
+ 0.025525      21 height==(192.8-inf) and time_played==(27.75-33.64]
+ 0.0247163     69 assists_per_minute==(-inf-0.10826] or time_played==(15.97-21.86]
+ 0.0237494     11 height==(176.4-184.6] and time_played==(27.75-33.64]
+ 0.0227143     65 height==(192.8-inf) or time_played==(21.86-27.75]
+ 0.0213772     19 height==(192.8-inf) and time_played==(15.97-21.86]
+ 0.0209801     30 assists_per_minute==(0.10826-0.16712] and time_played==(21.86-27.75]
+ 0.0208906    116 height==(192.8-inf) equ time_played==(27.75-33.64]
+ 0.0208906    166 height==(192.8-inf) xor time_played==(27.75-33.64]
+ 0.0201844     39 assists_per_minute==(0.22598-0.28484] and time_played==(21.86-27.75]
+ 0.0200234    118 assists_per_minute==(-inf-0.10826] equ time_played==(-inf-15.97]
+ 0.0200234    168 assists_per_minute==(-inf-0.10826] xor time_played==(-inf-15.97]
+ 0.0196291    215 height==(192.8-inf) impl time_played==(27.75-33.64]
+ 0.0194343    119 assists_per_minute==(-inf-0.10826] equ time_played==(15.97-21.86]
+ 0.0194343    169 assists_per_minute==(-inf-0.10826] xor time_played==(15.97-21.86]
+ 0.0191331     53 height==(176.4-184.6] or time_played==(-inf-15.97]
+ 0.0184367     15 height==(184.6-192.8] and time_played==(21.86-27.75]
+ 0.0183927     23 assists_per_minute==(-inf-0.10826] and time_played==(-inf-15.97]
+ 0.0174722    125 assists_per_minute==(0.10826-0.16712] equ time_played==(21.86-27.75]
+ 0.0174722    175 assists_per_minute==(0.10826-0.16712] xor time_played==(21.86-27.75]
+ 0.017152      26 assists_per_minute==(-inf-0.10826] and time_played==(27.75-33.64]
+ 0.0167297     86 assists_per_minute==(0.22598-0.28484] or time_played==(27.75-33.64]
+ 0.016019     218 assists_per_minute==(-inf-0.10826] impl time_played==(15.97-21.86]
+ 0.015272     252 assists_per_minute_x_time_played
+ 0.0143645    217 assists_per_minute==(-inf-0.10826] impl time_played==(-inf-15.97]
+ 0.013764      25 assists_per_minute==(-inf-0.10826] and time_played==(21.86-27.75]
+ 0.0137577     68 assists_per_minute==(-inf-0.10826] or time_played==(-inf-15.97]
+ 0.0136932     14 height==(184.6-192.8] and time_played==(15.97-21.86]
+ 0.0131854     18 height==(192.8-inf) and time_played==(-inf-15.97]
+ 0.0131532    202 height==(176.4-184.6] impl time_played==(-inf-15.97]
+ 0.0111356    204 height==(176.4-184.6] impl time_played==(21.86-27.75]
+ 0.0107259    244 assists_per_minute SUBTRACT time_played
+ 0.0107186      3 time_played
+ 0.0107126    242 assists_per_minute ADD time_played
+ 0.010649     246 time_played DIVIDE height
+ 0.010597     103 height==(176.4-184.6] equ time_played==(-inf-15.97]
+ 0.010597     153 height==(176.4-184.6] xor time_played==(-inf-15.97]
+ 0.010445     249 height MULTIPLY time_played
+ 0.0102252      6 height==(168.2-176.4] and time_played==(15.97-21.86]
+ 0.0102252    201 height==(168.2-176.4] impl time_played==(33.64-inf)
+ 0.0098648     34 assists_per_minute==(0.16712-0.22598] and time_played==(15.97-21.86]
+ 0.0098185    164 height==(192.8-inf) xor time_played==(15.97-21.86]
+ 0.0098185    114 height==(192.8-inf) equ time_played==(15.97-21.86]
+ 0.0087746    143 height==(-inf-168.2] xor time_played==(-inf-15.97]
+ 0.0087746     93 height==(-inf-168.2] equ time_played==(-inf-15.97]
+ 0.0087746     43 height==(-inf-168.2] or time_played==(-inf-15.97]
+ 0.0079682    245 height DIVIDE time_played
+ 0.0079427    248 time_played DIVIDE assists_per_minute
+ 0.007115      66 height==(192.8-inf) or time_played==(27.75-33.64]
+ 0.0069589     81 assists_per_minute==(0.16712-0.22598] or time_played==(27.75-33.64]
+ 0.0065277    195 height==(-inf-168.2] impl time_played==(21.86-27.75]
+ 0.0065277      5 height==(-inf-168.2] and time_played==(33.64-inf)
+ 0.0065277    193 height==(-inf-168.2] impl time_played==(-inf-15.97]
+ 0.0065277    196 height==(-inf-168.2] impl time_played==(27.75-33.64]
+ 0.0065277    194 height==(-inf-168.2] impl time_played==(15.97-21.86]
+ 0.0062789    243 height SUBTRACT time_played
+ 0.0054854     74 assists_per_minute==(0.10826-0.16712] or time_played==(15.97-21.86]
+ 0.0053182    159 height==(184.6-192.8] xor time_played==(15.97-21.86]
+ 0.0053182    109 height==(184.6-192.8] equ time_played==(15.97-21.86]
+ 0.0047587    199 height==(168.2-176.4] impl time_played==(21.86-27.75]
+ 0.0047587    197 height==(168.2-176.4] impl time_played==(-inf-15.97]
+ 0.0047587    200 height==(168.2-176.4] impl time_played==(27.75-33.64]
+ 0.0047374     56 height==(176.4-184.6] or time_played==(27.75-33.64]
+ 0.0043795     10 height==(176.4-184.6] and time_played==(21.86-27.75]
+ 0.0041512    124 assists_per_minute==(0.10826-0.16712] equ time_played==(15.97-21.86]
+ 0.0041512    174 assists_per_minute==(0.10826-0.16712] xor time_played==(15.97-21.86]
+ 0.0038988    241 height ADD time_played
+ 0.003514      12 height==(176.4-184.6] and time_played==(33.64-inf)
+ 0.0028858     38 assists_per_minute==(0.22598-0.28484] and time_played==(-inf-15.97]
+ 0.0027575    247 assists_per_minute DIVIDE time_played
+ 0.0024258    213 height==(192.8-inf) impl time_played==(15.97-21.86]
+ 0.0024249     61 height==(184.6-192.8] or time_played==(27.75-33.64]
+ 0.0020979     58 height==(184.6-192.8] or time_played==(-inf-15.97]
+ 0.0016517      2 height
+ 0.0013296     35 assists_per_minute==(0.16712-0.22598] and time_played==(21.86-27.75]
+ 0.0005629    224 assists_per_minute==(0.10826-0.16712] impl time_played==(21.86-27.75]
+ 0.0003596    235 assists_per_minute==(0.22598-0.28484] impl time_played==(27.75-33.64]
+ 0.0003109     31 assists_per_minute==(0.10826-0.16712] and time_played==(27.75-33.64]
+ 0.0001497     67 height==(192.8-inf) or time_played==(33.64-inf)
+ 0.0000956    250 assists_per_minute MULTIPLY time_played
+-0.0000866    106 height==(176.4-184.6] equ time_played==(27.75-33.64]
+-0.0000866    156 height==(176.4-184.6] xor time_played==(27.75-33.64]
+-0.0000921    206 height==(176.4-184.6] impl time_played==(33.64-inf)
+-0.0002922     76 assists_per_minute==(0.10826-0.16712] or time_played==(27.75-33.64]
+-0.0008789     40 assists_per_minute==(0.22598-0.28484] and time_played==(27.75-33.64]
+-0.0015672     73 assists_per_minute==(0.10826-0.16712] or time_played==(-inf-15.97]
+-0.0021542     32 assists_per_minute==(0.10826-0.16712] and time_played==(33.64-inf)
+-0.002275     203 height==(176.4-184.6] impl time_played==(15.97-21.86]
+-0.0023691    209 height==(184.6-192.8] impl time_played==(21.86-27.75]
+-0.0026547     48 height==(168.2-176.4] or time_played==(-inf-15.97]
+-0.0026547    148 height==(168.2-176.4] xor time_played==(-inf-15.97]
+-0.0026547     98 height==(168.2-176.4] equ time_played==(-inf-15.97]
+-0.0027571      1 assists_per_minute
+-0.0029143    208 height==(184.6-192.8] impl time_played==(15.97-21.86]
+-0.0031002      9 height==(176.4-184.6] and time_played==(15.97-21.86]
+-0.00335       88 assists_per_minute==(0.28484-inf) or time_played==(-inf-15.97]
+-0.00335      138 assists_per_minute==(0.28484-inf) equ time_played==(-inf-15.97]
+-0.00335      188 assists_per_minute==(0.28484-inf) xor time_played==(-inf-15.97]
+-0.0033544      4 age
+-0.0034132    236 assists_per_minute==(0.22598-0.28484] impl time_played==(33.64-inf)
+-0.0035354     52 height==(168.2-176.4] or time_played==(33.64-inf)
+-0.0035705     29 assists_per_minute==(0.10826-0.16712] and time_played==(15.97-21.86]
+-0.0051157    131 assists_per_minute==(0.16712-0.22598] equ time_played==(27.75-33.64]
+-0.0051157    181 assists_per_minute==(0.16712-0.22598] xor time_played==(27.75-33.64]
+-0.0054104    123 assists_per_minute==(0.10826-0.16712] equ time_played==(-inf-15.97]
+-0.0054104    173 assists_per_minute==(0.10826-0.16712] xor time_played==(-inf-15.97]
+-0.0054665      7 height==(168.2-176.4] and time_played==(33.64-inf)
+-0.0054665    198 height==(168.2-176.4] impl time_played==(15.97-21.86]
+-0.0055969     42 assists_per_minute==(0.28484-inf) and time_played==(33.64-inf)
+-0.0055969    239 assists_per_minute==(0.28484-inf) impl time_played==(21.86-27.75]
+-0.0055969    240 assists_per_minute==(0.28484-inf) impl time_played==(27.75-33.64]
+-0.0055969    237 assists_per_minute==(0.28484-inf) impl time_played==(-inf-15.97]
+-0.0055969    238 assists_per_minute==(0.28484-inf) impl time_played==(15.97-21.86]
+-0.0062177     64 height==(192.8-inf) or time_played==(15.97-21.86]
+-0.0068966    223 assists_per_minute==(0.10826-0.16712] impl time_played==(15.97-21.86]
+-0.0069715     59 height==(184.6-192.8] or time_played==(15.97-21.86]
+-0.0070798    225 assists_per_minute==(0.10826-0.16712] impl time_played==(27.75-33.64]
+-0.0076689    163 height==(192.8-inf) xor time_played==(-inf-15.97]
+-0.0076689    113 height==(192.8-inf) equ time_played==(-inf-15.97]
+-0.0080867     27 assists_per_minute==(-inf-0.10826] and time_played==(33.64-inf)
+-0.0081081    212 height==(192.8-inf) impl time_played==(-inf-15.97]
+-0.0084926     13 height==(184.6-192.8] and time_played==(-inf-15.97]
+-0.0085251    234 assists_per_minute==(0.22598-0.28484] impl time_played==(21.86-27.75]
+-0.0093106    102 height==(168.2-176.4] equ time_played==(33.64-inf)
+-0.0093106    152 height==(168.2-176.4] xor time_played==(33.64-inf)
+-0.0093166    108 height==(184.6-192.8] equ time_played==(-inf-15.97]
+-0.0093166    158 height==(184.6-192.8] xor time_played==(-inf-15.97]
+-0.0098564     28 assists_per_minute==(0.10826-0.16712] and time_played==(-inf-15.97]
+-0.0103124    207 height==(184.6-192.8] impl time_played==(-inf-15.97]
+-0.0111912    111 height==(184.6-192.8] equ time_played==(27.75-33.64]
+-0.0111912    161 height==(184.6-192.8] xor time_played==(27.75-33.64]
+-0.0116018    222 assists_per_minute==(0.10826-0.16712] impl time_played==(-inf-15.97]
+-0.0116406     97 height==(-inf-168.2] equ time_played==(33.64-inf)
+-0.0116406    147 height==(-inf-168.2] xor time_played==(33.64-inf)
+-0.0119369    184 assists_per_minute==(0.22598-0.28484] xor time_played==(15.97-21.86]
+-0.0119369    134 assists_per_minute==(0.22598-0.28484] equ time_played==(15.97-21.86]
+-0.0119369     84 assists_per_minute==(0.22598-0.28484] or time_played==(15.97-21.86]
+-0.01289      126 assists_per_minute==(0.10826-0.16712] equ time_played==(27.75-33.64]
+-0.01289      176 assists_per_minute==(0.10826-0.16712] xor time_played==(27.75-33.64]
+-0.0137606     92 assists_per_minute==(0.28484-inf) or time_played==(33.64-inf)
+-0.0137606     47 height==(-inf-168.2] or time_played==(33.64-inf)
+-0.0137908     87 assists_per_minute==(0.22598-0.28484] or time_played==(33.64-inf)
+-0.0140958     79 assists_per_minute==(0.16712-0.22598] or time_played==(15.97-21.86]
+-0.0141018     41 assists_per_minute==(0.22598-0.28484] and time_played==(33.64-inf)
+-0.014476      62 height==(184.6-192.8] or time_played==(33.64-inf)
+-0.0145911     63 height==(192.8-inf) or time_played==(-inf-15.97]
+-0.0158231    216 height==(192.8-inf) impl time_played==(33.64-inf)
+-0.0161397     33 assists_per_minute==(0.16712-0.22598] and time_played==(-inf-15.97]
+-0.0174103    179 assists_per_minute==(0.16712-0.22598] xor time_played==(15.97-21.86]
+-0.0174103    129 assists_per_minute==(0.16712-0.22598] equ time_played==(15.97-21.86]
+-0.0175959     77 assists_per_minute==(0.10826-0.16712] or time_played==(33.64-inf)
+-0.0178241     36 assists_per_minute==(0.16712-0.22598] and time_played==(27.75-33.64]
+-0.0179027     16 height==(184.6-192.8] and time_played==(27.75-33.64]
+-0.0180067     22 height==(192.8-inf) and time_played==(33.64-inf)
+-0.0185536    205 height==(176.4-184.6] impl time_played==(27.75-33.64]
+-0.018677     226 assists_per_minute==(0.10826-0.16712] impl time_played==(33.64-inf)
+-0.0186903    117 height==(192.8-inf) equ time_played==(33.64-inf)
+-0.0186903    167 height==(192.8-inf) xor time_played==(33.64-inf)
+-0.0192954      8 height==(176.4-184.6] and time_played==(-inf-15.97]
+-0.0199419    142 assists_per_minute==(0.28484-inf) equ time_played==(33.64-inf)
+-0.0199419    192 assists_per_minute==(0.28484-inf) xor time_played==(33.64-inf)
+-0.0216245    187 assists_per_minute==(0.22598-0.28484] xor time_played==(33.64-inf)
+-0.0216245    137 assists_per_minute==(0.22598-0.28484] equ time_played==(33.64-inf)
+-0.0217072     37 assists_per_minute==(0.16712-0.22598] and time_played==(33.64-inf)
+-0.0218484    211 height==(184.6-192.8] impl time_played==(33.64-inf)
+-0.0222287    177 assists_per_minute==(0.10826-0.16712] xor time_played==(33.64-inf)
+-0.0222287    127 assists_per_minute==(0.10826-0.16712] equ time_played==(33.64-inf)
+-0.0229433     17 height==(184.6-192.8] and time_played==(33.64-inf)
+-0.0230341     83 assists_per_minute==(0.22598-0.28484] or time_played==(-inf-15.97]
+-0.0244746    233 assists_per_minute==(0.22598-0.28484] impl time_played==(15.97-21.86]
+-0.0271333    210 height==(184.6-192.8] impl time_played==(27.75-33.64]
+-0.029281     232 assists_per_minute==(0.22598-0.28484] impl time_played==(-inf-15.97]
+-0.0299016    183 assists_per_minute==(0.22598-0.28484] xor time_played==(-inf-15.97]
+-0.0299016    133 assists_per_minute==(0.22598-0.28484] equ time_played==(-inf-15.97]
+-0.0336085    227 assists_per_minute==(0.16712-0.22598] impl time_played==(-inf-15.97]
+-0.0354217    231 assists_per_minute==(0.16712-0.22598] impl time_played==(33.64-inf)
+-0.0361555    230 assists_per_minute==(0.16712-0.22598] impl time_played==(27.75-33.64]
+-0.0371978     57 height==(176.4-184.6] or time_played==(33.64-inf)
+-0.0410191    107 height==(176.4-184.6] equ time_played==(33.64-inf)
+-0.0410191    157 height==(176.4-184.6] xor time_played==(33.64-inf)
+-0.0447894     78 assists_per_minute==(0.16712-0.22598] or time_played==(-inf-15.97]
+-0.0455257    178 assists_per_minute==(0.16712-0.22598] xor time_played==(-inf-15.97]
+-0.0455257    128 assists_per_minute==(0.16712-0.22598] equ time_played==(-inf-15.97]
+-0.0462745    112 height==(184.6-192.8] equ time_played==(33.64-inf)
+-0.0462745    162 height==(184.6-192.8] xor time_played==(33.64-inf)
+-0.0483468     82 assists_per_minute==(0.16712-0.22598] or time_played==(33.64-inf)
+-0.0487496    229 assists_per_minute==(0.16712-0.22598] impl time_played==(21.86-27.75]
+-0.0538563    228 assists_per_minute==(0.16712-0.22598] impl time_played==(15.97-21.86]
+-0.0587765    132 assists_per_minute==(0.16712-0.22598] equ time_played==(33.64-inf)
+-0.0587765    182 assists_per_minute==(0.16712-0.22598] xor time_played==(33.64-inf)
+
+
+ReliefF (param. search)
+The best parameter when using M5P: ReliefF@0.25
+ReliefF (param. search)
+The best parameter when using LinearRegression: ReliefF@0.5
+ReliefF (param. search)
+The best parameter when using M5Rules: ReliefF@0.25
+ReliefF (param. search)
+The best parameter when using RandomForest: ReliefF@0.0
+								--------------
+									Fold  2
+								--------------
+Feature evaluation: ReliefF (All features dataset) - After CI
+Ranked attributes:
+ 0.0535163    121 assists_per_minute==(-inf-0.11098] equ time_played==(28.458-34.584]
+ 0.0535163    171 assists_per_minute==(-inf-0.11098] xor time_played==(28.458-34.584]
+ 0.0510386    120 assists_per_minute==(-inf-0.11098] equ time_played==(22.332-28.458]
+ 0.0510386    170 assists_per_minute==(-inf-0.11098] xor time_played==(22.332-28.458]
+ 0.0465265     71 assists_per_minute==(-inf-0.11098] or time_played==(28.458-34.584]
+ 0.0464228    219 assists_per_minute==(-inf-0.11098] impl time_played==(22.332-28.458]
+ 0.0406803    145 height==(-inf-168.6] xor time_played==(22.332-28.458]
+ 0.0406803     45 height==(-inf-168.6] or time_played==(22.332-28.458]
+ 0.0406803     95 height==(-inf-168.6] equ time_played==(22.332-28.458]
+ 0.0398051    215 height==(194.4-inf) impl time_played==(28.458-34.584]
+ 0.038932     122 assists_per_minute==(-inf-0.11098] equ time_played==(34.584-inf)
+ 0.038932     172 assists_per_minute==(-inf-0.11098] xor time_played==(34.584-inf)
+ 0.0387155     65 height==(194.4-inf) or time_played==(22.332-28.458]
+ 0.0380585    211 height==(185.8-194.4] impl time_played==(34.584-inf)
+ 0.0372881     50 height==(168.6-177.2] or time_played==(22.332-28.458]
+ 0.0372881    100 height==(168.6-177.2] equ time_played==(22.332-28.458]
+ 0.0372881    150 height==(168.6-177.2] xor time_played==(22.332-28.458]
+ 0.0353888    213 height==(194.4-inf) impl time_played==(16.206-22.332]
+ 0.0339821     20 height==(194.4-inf) and time_played==(22.332-28.458]
+ 0.033867     221 assists_per_minute==(-inf-0.11098] impl time_played==(34.584-inf)
+ 0.0329889    220 assists_per_minute==(-inf-0.11098] impl time_played==(28.458-34.584]
+ 0.0329262    209 height==(185.8-194.4] impl time_played==(22.332-28.458]
+ 0.0320798    101 height==(168.6-177.2] equ time_played==(28.458-34.584]
+ 0.0320798    151 height==(168.6-177.2] xor time_played==(28.458-34.584]
+ 0.0301311     70 assists_per_minute==(-inf-0.11098] or time_played==(22.332-28.458]
+ 0.0296168    212 height==(194.4-inf) impl time_played==(-inf-16.206]
+ 0.029205      67 height==(194.4-inf) or time_played==(34.584-inf)
+ 0.0283958     64 height==(194.4-inf) or time_played==(16.206-22.332]
+ 0.0281409    218 assists_per_minute==(-inf-0.11098] impl time_played==(16.206-22.332]
+ 0.0278618    140 assists_per_minute==(0.28552-inf) equ time_played==(22.332-28.458]
+ 0.0278618    190 assists_per_minute==(0.28552-inf) xor time_played==(22.332-28.458]
+ 0.0278618     90 assists_per_minute==(0.28552-inf) or time_played==(22.332-28.458]
+ 0.027792     155 height==(177.2-185.8] xor time_played==(22.332-28.458]
+ 0.027792     105 height==(177.2-185.8] equ time_played==(22.332-28.458]
+ 0.0277469     14 height==(185.8-194.4] and time_played==(16.206-22.332]
+ 0.0269931    168 assists_per_minute==(-inf-0.11098] xor time_played==(-inf-16.206]
+ 0.0269931    118 assists_per_minute==(-inf-0.11098] equ time_played==(-inf-16.206]
+ 0.0269345     51 height==(168.6-177.2] or time_played==(28.458-34.584]
+ 0.0265831    225 assists_per_minute==(0.11098-0.16916] impl time_played==(28.458-34.584]
+ 0.0262228    114 height==(194.4-inf) equ time_played==(16.206-22.332]
+ 0.0262228    164 height==(194.4-inf) xor time_played==(16.206-22.332]
+ 0.0256383    144 height==(-inf-168.6] xor time_played==(16.206-22.332]
+ 0.0256383     94 height==(-inf-168.6] equ time_played==(16.206-22.332]
+ 0.0256383     44 height==(-inf-168.6] or time_played==(16.206-22.332]
+ 0.0255616     55 height==(177.2-185.8] or time_played==(22.332-28.458]
+ 0.0255531     56 height==(177.2-185.8] or time_played==(28.458-34.584]
+ 0.0253469     32 assists_per_minute==(0.11098-0.16916] and time_played==(34.584-inf)
+ 0.0249975     61 height==(185.8-194.4] or time_played==(28.458-34.584]
+ 0.0249801    119 assists_per_minute==(-inf-0.11098] equ time_played==(16.206-22.332]
+ 0.0249801    169 assists_per_minute==(-inf-0.11098] xor time_played==(16.206-22.332]
+ 0.0249372    216 height==(194.4-inf) impl time_played==(34.584-inf)
+ 0.0246264     63 height==(194.4-inf) or time_played==(-inf-16.206]
+ 0.0238435    251 height_x_time_played
+ 0.0235368     72 assists_per_minute==(-inf-0.11098] or time_played==(34.584-inf)
+ 0.0220473     68 assists_per_minute==(-inf-0.11098] or time_played==(-inf-16.206]
+ 0.0215958     24 assists_per_minute==(-inf-0.11098] and time_played==(16.206-22.332]
+ 0.0209902    113 height==(194.4-inf) equ time_played==(-inf-16.206]
+ 0.0209902    163 height==(194.4-inf) xor time_played==(-inf-16.206]
+ 0.020852     210 height==(185.8-194.4] impl time_played==(28.458-34.584]
+ 0.0196241     62 height==(185.8-194.4] or time_played==(34.584-inf)
+ 0.0186388    146 height==(-inf-168.6] xor time_played==(28.458-34.584]
+ 0.0186388     96 height==(-inf-168.6] equ time_played==(28.458-34.584]
+ 0.0182389    217 assists_per_minute==(-inf-0.11098] impl time_played==(-inf-16.206]
+ 0.0179684     69 assists_per_minute==(-inf-0.11098] or time_played==(16.206-22.332]
+ 0.0168932     46 height==(-inf-168.6] or time_played==(28.458-34.584]
+ 0.0167814    112 height==(185.8-194.4] equ time_played==(34.584-inf)
+ 0.0167814    162 height==(185.8-194.4] xor time_played==(34.584-inf)
+ 0.0166065    167 height==(194.4-inf) xor time_played==(34.584-inf)
+ 0.0166065    117 height==(194.4-inf) equ time_played==(34.584-inf)
+ 0.016439     156 height==(177.2-185.8] xor time_played==(28.458-34.584]
+ 0.016439     106 height==(177.2-185.8] equ time_played==(28.458-34.584]
+ 0.0163458     16 height==(185.8-194.4] and time_played==(28.458-34.584]
+ 0.0162681    207 height==(185.8-194.4] impl time_played==(-inf-16.206]
+ 0.0161839    115 height==(194.4-inf) equ time_played==(22.332-28.458]
+ 0.0161839    165 height==(194.4-inf) xor time_played==(22.332-28.458]
+ 0.0157481     13 height==(185.8-194.4] and time_played==(-inf-16.206]
+ 0.0150617     89 assists_per_minute==(0.28552-inf) or time_played==(16.206-22.332]
+ 0.0150617    139 assists_per_minute==(0.28552-inf) equ time_played==(16.206-22.332]
+ 0.0150617    189 assists_per_minute==(0.28552-inf) xor time_played==(16.206-22.332]
+ 0.0144822     59 height==(185.8-194.4] or time_played==(16.206-22.332]
+ 0.0141197     25 assists_per_minute==(-inf-0.11098] and time_played==(22.332-28.458]
+ 0.0140112     49 height==(168.6-177.2] or time_played==(16.206-22.332]
+ 0.0138427     30 assists_per_minute==(0.11098-0.16916] and time_played==(22.332-28.458]
+ 0.013717     186 assists_per_minute==(0.22734-0.28552] xor time_played==(28.458-34.584]
+ 0.013717     136 assists_per_minute==(0.22734-0.28552] equ time_played==(28.458-34.584]
+ 0.0135939     23 assists_per_minute==(-inf-0.11098] and time_played==(-inf-16.206]
+ 0.0134714     26 assists_per_minute==(-inf-0.11098] and time_played==(28.458-34.584]
+ 0.0133092    152 height==(168.6-177.2] xor time_played==(34.584-inf)
+ 0.0133092     52 height==(168.6-177.2] or time_played==(34.584-inf)
+ 0.0133092    102 height==(168.6-177.2] equ time_played==(34.584-inf)
+ 0.01264       91 assists_per_minute==(0.28552-inf) or time_played==(28.458-34.584]
+ 0.01264      141 assists_per_minute==(0.28552-inf) equ time_played==(28.458-34.584]
+ 0.01264      191 assists_per_minute==(0.28552-inf) xor time_played==(28.458-34.584]
+ 0.012541     208 height==(185.8-194.4] impl time_played==(16.206-22.332]
+ 0.0125185    252 assists_per_minute_x_time_played
+ 0.0122181    116 height==(194.4-inf) equ time_played==(28.458-34.584]
+ 0.0122181    166 height==(194.4-inf) xor time_played==(28.458-34.584]
+ 0.0120368    249 height MULTIPLY time_played
+ 0.0118814    185 assists_per_minute==(0.22734-0.28552] xor time_played==(22.332-28.458]
+ 0.0118814    135 assists_per_minute==(0.22734-0.28552] equ time_played==(22.332-28.458]
+ 0.0115798    126 assists_per_minute==(0.11098-0.16916] equ time_played==(28.458-34.584]
+ 0.0115798    176 assists_per_minute==(0.11098-0.16916] xor time_played==(28.458-34.584]
+ 0.0115185    242 assists_per_minute ADD time_played
+ 0.011431       3 time_played
+ 0.0113796    111 height==(185.8-194.4] equ time_played==(28.458-34.584]
+ 0.0113796    161 height==(185.8-194.4] xor time_played==(28.458-34.584]
+ 0.0113443    244 assists_per_minute SUBTRACT time_played
+ 0.0110101     85 assists_per_minute==(0.22734-0.28552] or time_played==(22.332-28.458]
+ 0.0108187    160 height==(185.8-194.4] xor time_played==(22.332-28.458]
+ 0.0108187    110 height==(185.8-194.4] equ time_played==(22.332-28.458]
+ 0.0106473     99 height==(168.6-177.2] equ time_played==(16.206-22.332]
+ 0.0106473    149 height==(168.6-177.2] xor time_played==(16.206-22.332]
+ 0.0101825    246 time_played DIVIDE height
+ 0.01013       39 assists_per_minute==(0.22734-0.28552] and time_played==(22.332-28.458]
+ 0.0100413    200 height==(168.6-177.2] impl time_played==(28.458-34.584]
+ 0.0100413      6 height==(168.6-177.2] and time_played==(16.206-22.332]
+ 0.009993      74 assists_per_minute==(0.11098-0.16916] or time_played==(16.206-22.332]
+ 0.0094564     66 height==(194.4-inf) or time_played==(28.458-34.584]
+ 0.00881      214 height==(194.4-inf) impl time_played==(22.332-28.458]
+ 0.0078409    241 height ADD time_played
+ 0.0077998    248 time_played DIVIDE assists_per_minute
+ 0.0069352     86 assists_per_minute==(0.22734-0.28552] or time_played==(28.458-34.584]
+ 0.006782     245 height DIVIDE time_played
+ 0.0064117     22 height==(194.4-inf) and time_played==(34.584-inf)
+ 0.0062507     60 height==(185.8-194.4] or time_played==(22.332-28.458]
+ 0.0060395    236 assists_per_minute==(0.22734-0.28552] impl time_played==(34.584-inf)
+ 0.0058823     93 height==(-inf-168.6] equ time_played==(-inf-16.206]
+ 0.0058823     43 height==(-inf-168.6] or time_played==(-inf-16.206]
+ 0.0058823    143 height==(-inf-168.6] xor time_played==(-inf-16.206]
+ 0.0055729    177 assists_per_minute==(0.11098-0.16916] xor time_played==(34.584-inf)
+ 0.0055729    127 assists_per_minute==(0.11098-0.16916] equ time_played==(34.584-inf)
+ 0.0054931     27 assists_per_minute==(-inf-0.11098] and time_played==(34.584-inf)
+ 0.0054032    196 height==(-inf-168.6] impl time_played==(34.584-inf)
+ 0.0054032    194 height==(-inf-168.6] impl time_played==(16.206-22.332]
+ 0.0054032      5 height==(-inf-168.6] and time_played==(28.458-34.584]
+ 0.0054032    193 height==(-inf-168.6] impl time_played==(-inf-16.206]
+ 0.0054032    195 height==(-inf-168.6] impl time_played==(22.332-28.458]
+ 0.0051847     31 assists_per_minute==(0.11098-0.16916] and time_played==(28.458-34.584]
+ 0.0051218     75 assists_per_minute==(0.11098-0.16916] or time_played==(22.332-28.458]
+ 0.0047882    125 assists_per_minute==(0.11098-0.16916] equ time_played==(22.332-28.458]
+ 0.0047882    175 assists_per_minute==(0.11098-0.16916] xor time_played==(22.332-28.458]
+ 0.0046435    109 height==(185.8-194.4] equ time_played==(16.206-22.332]
+ 0.0046435    159 height==(185.8-194.4] xor time_played==(16.206-22.332]
+ 0.0045683    124 assists_per_minute==(0.11098-0.16916] equ time_played==(16.206-22.332]
+ 0.0045683    174 assists_per_minute==(0.11098-0.16916] xor time_played==(16.206-22.332]
+ 0.0040863     34 assists_per_minute==(0.16916-0.22734] and time_played==(16.206-22.332]
+ 0.0038174    201 height==(168.6-177.2] impl time_played==(34.584-inf)
+ 0.0038174    197 height==(168.6-177.2] impl time_played==(-inf-16.206]
+ 0.0038174    199 height==(168.6-177.2] impl time_played==(22.332-28.458]
+ 0.0031906     38 assists_per_minute==(0.22734-0.28552] and time_played==(-inf-16.206]
+ 0.0028166    243 height SUBTRACT time_played
+ 0.0027779     53 height==(177.2-185.8] or time_played==(-inf-16.206]
+ 0.0027683     21 height==(194.4-inf) and time_played==(28.458-34.584]
+ 0.002457     123 assists_per_minute==(0.11098-0.16916] equ time_played==(-inf-16.206]
+ 0.002457     173 assists_per_minute==(0.11098-0.16916] xor time_played==(-inf-16.206]
+ 0.0024109      2 height
+ 0.0022525     57 height==(177.2-185.8] or time_played==(34.584-inf)
+ 0.0015243     58 height==(185.8-194.4] or time_played==(-inf-16.206]
+ 0.0014685     73 assists_per_minute==(0.11098-0.16916] or time_played==(-inf-16.206]
+ 0.0011273     87 assists_per_minute==(0.22734-0.28552] or time_played==(34.584-inf)
+ 0.0009907    247 assists_per_minute DIVIDE time_played
+ 0.00099      137 assists_per_minute==(0.22734-0.28552] equ time_played==(34.584-inf)
+ 0.00099      187 assists_per_minute==(0.22734-0.28552] xor time_played==(34.584-inf)
+ 0.0007405     19 height==(194.4-inf) and time_played==(16.206-22.332]
+ 0.0006783    108 height==(185.8-194.4] equ time_played==(-inf-16.206]
+ 0.0006783    158 height==(185.8-194.4] xor time_played==(-inf-16.206]
+ 0.0000776    250 assists_per_minute MULTIPLY time_played
+ 0.0000165    222 assists_per_minute==(0.11098-0.16916] impl time_played==(-inf-16.206]
+-0.0005781     15 height==(185.8-194.4] and time_played==(22.332-28.458]
+-0.0018774     92 assists_per_minute==(0.28552-inf) or time_played==(34.584-inf)
+-0.0019383    147 height==(-inf-168.6] xor time_played==(34.584-inf)
+-0.0019383     47 height==(-inf-168.6] or time_played==(34.584-inf)
+-0.0019383     97 height==(-inf-168.6] equ time_played==(34.584-inf)
+-0.0028727    204 height==(177.2-185.8] impl time_played==(22.332-28.458]
+-0.0031246    157 height==(177.2-185.8] xor time_played==(34.584-inf)
+-0.0031246    107 height==(177.2-185.8] equ time_played==(34.584-inf)
+-0.0036868      1 assists_per_minute
+-0.0037597     54 height==(177.2-185.8] or time_played==(16.206-22.332]
+-0.0038414     29 assists_per_minute==(0.11098-0.16916] and time_played==(16.206-22.332]
+-0.0041316    206 height==(177.2-185.8] impl time_played==(34.584-inf)
+-0.0045146     10 height==(177.2-185.8] and time_played==(22.332-28.458]
+-0.0045567      4 age
+-0.0046943    138 assists_per_minute==(0.28552-inf) equ time_played==(-inf-16.206]
+-0.0046943    188 assists_per_minute==(0.28552-inf) xor time_played==(-inf-16.206]
+-0.0046943     88 assists_per_minute==(0.28552-inf) or time_played==(-inf-16.206]
+-0.0051515     40 assists_per_minute==(0.22734-0.28552] and time_played==(28.458-34.584]
+-0.0051733    237 assists_per_minute==(0.28552-inf) impl time_played==(-inf-16.206]
+-0.0051733     42 assists_per_minute==(0.28552-inf) and time_played==(34.584-inf)
+-0.0051733    240 assists_per_minute==(0.28552-inf) impl time_played==(28.458-34.584]
+-0.0051733    238 assists_per_minute==(0.28552-inf) impl time_played==(16.206-22.332]
+-0.0051733    239 assists_per_minute==(0.28552-inf) impl time_played==(22.332-28.458]
+-0.0061848     81 assists_per_minute==(0.16916-0.22734] or time_played==(28.458-34.584]
+-0.0062239    198 height==(168.6-177.2] impl time_played==(16.206-22.332]
+-0.0062239      7 height==(168.6-177.2] and time_played==(28.458-34.584]
+-0.0065663    192 assists_per_minute==(0.28552-inf) xor time_played==(34.584-inf)
+-0.0065663    142 assists_per_minute==(0.28552-inf) equ time_played==(34.584-inf)
+-0.00719       11 height==(177.2-185.8] and time_played==(28.458-34.584]
+-0.0078751     76 assists_per_minute==(0.11098-0.16916] or time_played==(28.458-34.584]
+-0.0080243     18 height==(194.4-inf) and time_played==(-inf-16.206]
+-0.0088269    104 height==(177.2-185.8] equ time_played==(16.206-22.332]
+-0.0088269    154 height==(177.2-185.8] xor time_played==(16.206-22.332]
+-0.0091084     35 assists_per_minute==(0.16916-0.22734] and time_played==(22.332-28.458]
+-0.0091087     48 height==(168.6-177.2] or time_played==(-inf-16.206]
+-0.0091087     98 height==(168.6-177.2] equ time_played==(-inf-16.206]
+-0.0091087    148 height==(168.6-177.2] xor time_played==(-inf-16.206]
+-0.0093376      8 height==(177.2-185.8] and time_played==(-inf-16.206]
+-0.0094387    235 assists_per_minute==(0.22734-0.28552] impl time_played==(28.458-34.584]
+-0.0099479     17 height==(185.8-194.4] and time_played==(34.584-inf)
+-0.0102189      9 height==(177.2-185.8] and time_played==(16.206-22.332]
+-0.0108024    226 assists_per_minute==(0.11098-0.16916] impl time_played==(34.584-inf)
+-0.0109509    224 assists_per_minute==(0.11098-0.16916] impl time_played==(22.332-28.458]
+-0.0115033     28 assists_per_minute==(0.11098-0.16916] and time_played==(-inf-16.206]
+-0.0120259     80 assists_per_minute==(0.16916-0.22734] or time_played==(22.332-28.458]
+-0.0136955    223 assists_per_minute==(0.11098-0.16916] impl time_played==(16.206-22.332]
+-0.0141305     33 assists_per_minute==(0.16916-0.22734] and time_played==(-inf-16.206]
+-0.0142898     41 assists_per_minute==(0.22734-0.28552] and time_played==(34.584-inf)
+-0.0154654     12 height==(177.2-185.8] and time_played==(34.584-inf)
+-0.0173357     84 assists_per_minute==(0.22734-0.28552] or time_played==(16.206-22.332]
+-0.0173357    184 assists_per_minute==(0.22734-0.28552] xor time_played==(16.206-22.332]
+-0.0173357    134 assists_per_minute==(0.22734-0.28552] equ time_played==(16.206-22.332]
+-0.0175433    205 height==(177.2-185.8] impl time_played==(28.458-34.584]
+-0.0177166    234 assists_per_minute==(0.22734-0.28552] impl time_played==(22.332-28.458]
+-0.018456      36 assists_per_minute==(0.16916-0.22734] and time_played==(28.458-34.584]
+-0.0197766    130 assists_per_minute==(0.16916-0.22734] equ time_played==(22.332-28.458]
+-0.0197766    180 assists_per_minute==(0.16916-0.22734] xor time_played==(22.332-28.458]
+-0.0199413    233 assists_per_minute==(0.22734-0.28552] impl time_played==(16.206-22.332]
+-0.0202199     77 assists_per_minute==(0.11098-0.16916] or time_played==(34.584-inf)
+-0.0207473     83 assists_per_minute==(0.22734-0.28552] or time_played==(-inf-16.206]
+-0.020757     131 assists_per_minute==(0.16916-0.22734] equ time_played==(28.458-34.584]
+-0.020757     181 assists_per_minute==(0.16916-0.22734] xor time_played==(28.458-34.584]
+-0.0209501     82 assists_per_minute==(0.16916-0.22734] or time_played==(34.584-inf)
+-0.0233641     37 assists_per_minute==(0.16916-0.22734] and time_played==(34.584-inf)
+-0.0248873    232 assists_per_minute==(0.22734-0.28552] impl time_played==(-inf-16.206]
+-0.0273156    153 height==(177.2-185.8] xor time_played==(-inf-16.206]
+-0.0273156    103 height==(177.2-185.8] equ time_played==(-inf-16.206]
+-0.0274869    179 assists_per_minute==(0.16916-0.22734] xor time_played==(16.206-22.332]
+-0.0274869    129 assists_per_minute==(0.16916-0.22734] equ time_played==(16.206-22.332]
+-0.0275372     79 assists_per_minute==(0.16916-0.22734] or time_played==(16.206-22.332]
+-0.0290089    183 assists_per_minute==(0.22734-0.28552] xor time_played==(-inf-16.206]
+-0.0290089    133 assists_per_minute==(0.22734-0.28552] equ time_played==(-inf-16.206]
+-0.0290466    203 height==(177.2-185.8] impl time_played==(16.206-22.332]
+-0.029301     132 assists_per_minute==(0.16916-0.22734] equ time_played==(34.584-inf)
+-0.029301     182 assists_per_minute==(0.16916-0.22734] xor time_played==(34.584-inf)
+-0.0308405    202 height==(177.2-185.8] impl time_played==(-inf-16.206]
+-0.0338445    227 assists_per_minute==(0.16916-0.22734] impl time_played==(-inf-16.206]
+-0.0418551    231 assists_per_minute==(0.16916-0.22734] impl time_played==(34.584-inf)
+-0.0422868     78 assists_per_minute==(0.16916-0.22734] or time_played==(-inf-16.206]
+-0.0432844    128 assists_per_minute==(0.16916-0.22734] equ time_played==(-inf-16.206]
+-0.0432844    178 assists_per_minute==(0.16916-0.22734] xor time_played==(-inf-16.206]
+-0.0435978    230 assists_per_minute==(0.16916-0.22734] impl time_played==(28.458-34.584]
+-0.0508953    229 assists_per_minute==(0.16916-0.22734] impl time_played==(22.332-28.458]
+-0.0518857    228 assists_per_minute==(0.16916-0.22734] impl time_played==(16.206-22.332]
+
+
+ReliefF (param. search)
+The best parameter when using M5P: ReliefF@0.5
+ReliefF (param. search)
+The best parameter when using LinearRegression: ReliefF@0.5
+ReliefF (param. search)
+The best parameter when using M5Rules: ReliefF@0.5
+ReliefF (param. search)
+The best parameter when using RandomForest: ReliefF@0.25
+								--------------
+									Fold  3
+								--------------
+Feature evaluation: ReliefF (All features dataset) - After CI
+Ranked attributes:
+ 0.0396897   102 assists_per_minute==(-inf-0.10826] impl time_played==(22.332-28.458]
+ 0.0358095    78 assists_per_minute==(-inf-0.10826] xor time_played==(28.458-34.584]
+ 0.0358095    53 assists_per_minute==(-inf-0.10826] equ time_played==(28.458-34.584]
+ 0.0326247    72 assists_per_minute==(0.28484-inf) equ time_played==(22.332-28.458]
+ 0.0326247    97 assists_per_minute==(0.28484-inf) xor time_played==(22.332-28.458]
+ 0.0326247    47 assists_per_minute==(0.28484-inf) or time_played==(22.332-28.458]
+ 0.0321029   104 assists_per_minute==(-inf-0.10826] impl time_played==(34.584-inf)
+ 0.031905     77 assists_per_minute==(-inf-0.10826] xor time_played==(22.332-28.458]
+ 0.031905     52 assists_per_minute==(-inf-0.10826] equ time_played==(22.332-28.458]
+ 0.031007    103 assists_per_minute==(-inf-0.10826] impl time_played==(28.458-34.584]
+ 0.0278645    92 assists_per_minute==(0.22598-0.28484] xor time_played==(22.332-28.458]
+ 0.0278645    67 assists_per_minute==(0.22598-0.28484] equ time_played==(22.332-28.458]
+ 0.0261504     8 assists_per_minute==(-inf-0.10826] and time_played==(28.458-34.584]
+ 0.0227389    28 assists_per_minute==(-inf-0.10826] or time_played==(28.458-34.584]
+ 0.0219843     5 assists_per_minute==(-inf-0.10826] and time_played==(-inf-16.206]
+ 0.0185101    50 assists_per_minute==(-inf-0.10826] equ time_played==(-inf-16.206]
+ 0.0185101    75 assists_per_minute==(-inf-0.10826] xor time_played==(-inf-16.206]
+ 0.0182922     6 assists_per_minute==(-inf-0.10826] and time_played==(16.206-22.332]
+ 0.0179317    42 assists_per_minute==(0.22598-0.28484] or time_played==(22.332-28.458]
+ 0.0170776   101 assists_per_minute==(-inf-0.10826] impl time_played==(16.206-22.332]
+ 0.0165007     7 assists_per_minute==(-inf-0.10826] and time_played==(22.332-28.458]
+ 0.0159887   100 assists_per_minute==(-inf-0.10826] impl time_played==(-inf-16.206]
+ 0.014744     68 assists_per_minute==(0.22598-0.28484] equ time_played==(28.458-34.584]
+ 0.014744     93 assists_per_minute==(0.22598-0.28484] xor time_played==(28.458-34.584]
+ 0.0136694    27 assists_per_minute==(-inf-0.10826] or time_played==(22.332-28.458]
+ 0.0134843    29 assists_per_minute==(-inf-0.10826] or time_played==(34.584-inf)
+ 0.012593     12 assists_per_minute==(0.10826-0.16712] and time_played==(22.332-28.458]
+ 0.0121478    79 assists_per_minute==(-inf-0.10826] xor time_played==(34.584-inf)
+ 0.0121478    54 assists_per_minute==(-inf-0.10826] equ time_played==(34.584-inf)
+ 0.011496     37 assists_per_minute==(0.16712-0.22598] or time_played==(22.332-28.458]
+ 0.0108595   124 assists_per_minute ADD time_played
+ 0.0107883     3 time_played
+ 0.0107188   125 assists_per_minute SUBTRACT time_played
+ 0.0103925    25 assists_per_minute==(-inf-0.10826] or time_played==(-inf-16.206]
+ 0.009824     21 assists_per_minute==(0.22598-0.28484] and time_played==(22.332-28.458]
+ 0.0094156    98 assists_per_minute==(0.28484-inf) xor time_played==(28.458-34.584]
+ 0.0094156    73 assists_per_minute==(0.28484-inf) equ time_played==(28.458-34.584]
+ 0.0094156    48 assists_per_minute==(0.28484-inf) or time_played==(28.458-34.584]
+ 0.0074995   127 time_played DIVIDE assists_per_minute
+ 0.0068969    32 assists_per_minute==(0.10826-0.16712] or time_played==(22.332-28.458]
+ 0.0064621    43 assists_per_minute==(0.22598-0.28484] or time_played==(28.458-34.584]
+ 0.0064229    62 assists_per_minute==(0.16712-0.22598] equ time_played==(22.332-28.458]
+ 0.0064229    87 assists_per_minute==(0.16712-0.22598] xor time_played==(22.332-28.458]
+ 0.0054983    96 assists_per_minute==(0.28484-inf) xor time_played==(16.206-22.332]
+ 0.0054983    46 assists_per_minute==(0.28484-inf) or time_played==(16.206-22.332]
+ 0.0054983    71 assists_per_minute==(0.28484-inf) equ time_played==(16.206-22.332]
+ 0.0020086    20 assists_per_minute==(0.22598-0.28484] and time_played==(-inf-16.206]
+ 0.0004912    51 assists_per_minute==(-inf-0.10826] equ time_played==(16.206-22.332]
+ 0.0004912    76 assists_per_minute==(-inf-0.10826] xor time_played==(16.206-22.332]
+ 0.0004809   126 assists_per_minute DIVIDE time_played
+ 0.0003462   128 assists_per_minute MULTIPLY time_played
+ 0.0002563    30 assists_per_minute==(0.10826-0.16712] or time_played==(-inf-16.206]
+ 0.0001387    95 assists_per_minute==(0.28484-inf) xor time_played==(-inf-16.206]
+ 0.0001387    70 assists_per_minute==(0.28484-inf) equ time_played==(-inf-16.206]
+ 0.0001387    45 assists_per_minute==(0.28484-inf) or time_played==(-inf-16.206]
+ 0.0000767    14 assists_per_minute==(0.10826-0.16712] and time_played==(34.584-inf)
+-0.0005906     2 height
+-0.0020769    55 assists_per_minute==(0.10826-0.16712] equ time_played==(-inf-16.206]
+-0.0020769    80 assists_per_minute==(0.10826-0.16712] xor time_played==(-inf-16.206]
+-0.0024243   129 assists_per_minute_x_time_played
+-0.0026824    26 assists_per_minute==(-inf-0.10826] or time_played==(16.206-22.332]
+-0.0028215     1 assists_per_minute
+-0.002892     18 assists_per_minute==(0.16712-0.22598] and time_played==(28.458-34.584]
+-0.0029847     4 age
+-0.003076     31 assists_per_minute==(0.10826-0.16712] or time_played==(16.206-22.332]
+-0.0031678    83 assists_per_minute==(0.10826-0.16712] xor time_played==(28.458-34.584]
+-0.0031678    58 assists_per_minute==(0.10826-0.16712] equ time_played==(28.458-34.584]
+-0.0034173    57 assists_per_minute==(0.10826-0.16712] equ time_played==(22.332-28.458]
+-0.0034173    82 assists_per_minute==(0.10826-0.16712] xor time_played==(22.332-28.458]
+-0.0042011   118 assists_per_minute==(0.22598-0.28484] impl time_played==(28.458-34.584]
+-0.0044597    16 assists_per_minute==(0.16712-0.22598] and time_played==(16.206-22.332]
+-0.0049603    24 assists_per_minute==(0.28484-inf) and time_played==(34.584-inf)
+-0.0049603   120 assists_per_minute==(0.28484-inf) impl time_played==(-inf-16.206]
+-0.0049603   123 assists_per_minute==(0.28484-inf) impl time_played==(28.458-34.584]
+-0.0049603   122 assists_per_minute==(0.28484-inf) impl time_played==(22.332-28.458]
+-0.0049603   121 assists_per_minute==(0.28484-inf) impl time_played==(16.206-22.332]
+-0.0053139    22 assists_per_minute==(0.22598-0.28484] and time_played==(28.458-34.584]
+-0.005353    105 assists_per_minute==(0.10826-0.16712] impl time_played==(-inf-16.206]
+-0.0056184    13 assists_per_minute==(0.10826-0.16712] and time_played==(28.458-34.584]
+-0.0058399   117 assists_per_minute==(0.22598-0.28484] impl time_played==(22.332-28.458]
+-0.0060423    88 assists_per_minute==(0.16712-0.22598] xor time_played==(28.458-34.584]
+-0.0060423    63 assists_per_minute==(0.16712-0.22598] equ time_played==(28.458-34.584]
+-0.0061248    11 assists_per_minute==(0.10826-0.16712] and time_played==(16.206-22.332]
+-0.0066295   108 assists_per_minute==(0.10826-0.16712] impl time_played==(28.458-34.584]
+-0.0084999    19 assists_per_minute==(0.16712-0.22598] and time_played==(34.584-inf)
+-0.0106644    44 assists_per_minute==(0.22598-0.28484] or time_played==(34.584-inf)
+-0.0109988    38 assists_per_minute==(0.16712-0.22598] or time_played==(28.458-34.584]
+-0.0119305    33 assists_per_minute==(0.10826-0.16712] or time_played==(28.458-34.584]
+-0.0120412     9 assists_per_minute==(-inf-0.10826] and time_played==(34.584-inf)
+-0.0123082    17 assists_per_minute==(0.16712-0.22598] and time_played==(22.332-28.458]
+-0.0131305    40 assists_per_minute==(0.22598-0.28484] or time_played==(-inf-16.206]
+-0.0131912   119 assists_per_minute==(0.22598-0.28484] impl time_played==(34.584-inf)
+-0.0153949    23 assists_per_minute==(0.22598-0.28484] and time_played==(34.584-inf)
+-0.0156316    56 assists_per_minute==(0.10826-0.16712] equ time_played==(16.206-22.332]
+-0.0156316    81 assists_per_minute==(0.10826-0.16712] xor time_played==(16.206-22.332]
+-0.0157015   109 assists_per_minute==(0.10826-0.16712] impl time_played==(34.584-inf)
+-0.016668     10 assists_per_minute==(0.10826-0.16712] and time_played==(-inf-16.206]
+-0.0178818    69 assists_per_minute==(0.22598-0.28484] equ time_played==(34.584-inf)
+-0.0178818    94 assists_per_minute==(0.22598-0.28484] xor time_played==(34.584-inf)
+-0.0179094    49 assists_per_minute==(0.28484-inf) or time_played==(34.584-inf)
+-0.0179975    15 assists_per_minute==(0.16712-0.22598] and time_played==(-inf-16.206]
+-0.0181851   116 assists_per_minute==(0.22598-0.28484] impl time_played==(16.206-22.332]
+-0.0199837    36 assists_per_minute==(0.16712-0.22598] or time_played==(16.206-22.332]
+-0.0212197    66 assists_per_minute==(0.22598-0.28484] equ time_played==(16.206-22.332]
+-0.0212197    91 assists_per_minute==(0.22598-0.28484] xor time_played==(16.206-22.332]
+-0.0212197    41 assists_per_minute==(0.22598-0.28484] or time_played==(16.206-22.332]
+-0.0213907    65 assists_per_minute==(0.22598-0.28484] equ time_played==(-inf-16.206]
+-0.0213907    90 assists_per_minute==(0.22598-0.28484] xor time_played==(-inf-16.206]
+-0.0220143   115 assists_per_minute==(0.22598-0.28484] impl time_played==(-inf-16.206]
+-0.0224445   107 assists_per_minute==(0.10826-0.16712] impl time_played==(22.332-28.458]
+-0.0226862    61 assists_per_minute==(0.16712-0.22598] equ time_played==(16.206-22.332]
+-0.0226862    86 assists_per_minute==(0.16712-0.22598] xor time_played==(16.206-22.332]
+-0.0230762    99 assists_per_minute==(0.28484-inf) xor time_played==(34.584-inf)
+-0.0230762    74 assists_per_minute==(0.28484-inf) equ time_played==(34.584-inf)
+-0.0234353    35 assists_per_minute==(0.16712-0.22598] or time_played==(-inf-16.206]
+-0.0240632   106 assists_per_minute==(0.10826-0.16712] impl time_played==(16.206-22.332]
+-0.0247364   110 assists_per_minute==(0.16712-0.22598] impl time_played==(-inf-16.206]
+-0.0264463    34 assists_per_minute==(0.10826-0.16712] or time_played==(34.584-inf)
+-0.0273215    85 assists_per_minute==(0.16712-0.22598] xor time_played==(-inf-16.206]
+-0.0273215    60 assists_per_minute==(0.16712-0.22598] equ time_played==(-inf-16.206]
+-0.0281864    84 assists_per_minute==(0.10826-0.16712] xor time_played==(34.584-inf)
+-0.0281864    59 assists_per_minute==(0.10826-0.16712] equ time_played==(34.584-inf)
+-0.0347168   114 assists_per_minute==(0.16712-0.22598] impl time_played==(34.584-inf)
+-0.037414    112 assists_per_minute==(0.16712-0.22598] impl time_played==(22.332-28.458]
+-0.0393091    89 assists_per_minute==(0.16712-0.22598] xor time_played==(34.584-inf)
+-0.0393091    64 assists_per_minute==(0.16712-0.22598] equ time_played==(34.584-inf)
+-0.0424432   113 assists_per_minute==(0.16712-0.22598] impl time_played==(28.458-34.584]
+-0.0427082   111 assists_per_minute==(0.16712-0.22598] impl time_played==(16.206-22.332]
+-0.0436991    39 assists_per_minute==(0.16712-0.22598] or time_played==(34.584-inf)
+
+
+ReliefF (param. search)
+The best parameter when using M5P: ReliefF@0.25
+ReliefF (param. search)
+The best parameter when using LinearRegression: ReliefF@0.25
+ReliefF (param. search)
+The best parameter when using M5Rules: ReliefF@0.5
+ReliefF (param. search)
+The best parameter when using RandomForest: ReliefF@0.0
+								--------------
+									Fold  4
+								--------------
+Feature evaluation: ReliefF (All features dataset) - After CI
+Ranked attributes:
+ 0.060231    81 assists_per_minute==(-inf-0.09494] xor time_played==(28.458-34.584]
+ 0.060231    56 assists_per_minute==(-inf-0.09494] equ time_played==(28.458-34.584]
+ 0.059872    35 assists_per_minute==(0.09494-0.14048] or time_played==(22.332-28.458]
+ 0.049259    31 assists_per_minute==(-inf-0.09494] or time_played==(28.458-34.584]
+ 0.045185   110 assists_per_minute==(0.09494-0.14048] impl time_played==(22.332-28.458]
+ 0.044519    85 assists_per_minute==(0.09494-0.14048] xor time_played==(22.332-28.458]
+ 0.044519    60 assists_per_minute==(0.09494-0.14048] equ time_played==(22.332-28.458]
+ 0.03988     61 assists_per_minute==(0.09494-0.14048] equ time_played==(28.458-34.584]
+ 0.03988     86 assists_per_minute==(0.09494-0.14048] xor time_played==(28.458-34.584]
+ 0.038146   111 assists_per_minute==(0.09494-0.14048] impl time_played==(28.458-34.584]
+ 0.038008   107 assists_per_minute==(-inf-0.09494] impl time_played==(34.584-inf)
+ 0.037919   109 assists_per_minute==(0.09494-0.14048] impl time_played==(16.206-22.332]
+ 0.035241    78 assists_per_minute==(-inf-0.09494] xor time_played==(-inf-16.206]
+ 0.035241    53 assists_per_minute==(-inf-0.09494] equ time_played==(-inf-16.206]
+ 0.034974    36 assists_per_minute==(0.09494-0.14048] or time_played==(28.458-34.584]
+ 0.034098   105 assists_per_minute==(-inf-0.09494] impl time_played==(22.332-28.458]
+ 0.033707    30 assists_per_minute==(-inf-0.09494] or time_played==(22.332-28.458]
+ 0.03221    106 assists_per_minute==(-inf-0.09494] impl time_played==(28.458-34.584]
+ 0.030793   112 assists_per_minute==(0.09494-0.14048] impl time_played==(34.584-inf)
+ 0.0307      55 assists_per_minute==(-inf-0.09494] equ time_played==(22.332-28.458]
+ 0.0307      80 assists_per_minute==(-inf-0.09494] xor time_played==(22.332-28.458]
+ 0.03057      6 assists_per_minute==(-inf-0.09494] and time_played==(16.206-22.332]
+ 0.030416    75 assists_per_minute==(0.23156-inf) equ time_played==(22.332-28.458]
+ 0.030416   100 assists_per_minute==(0.23156-inf) xor time_played==(22.332-28.458]
+ 0.030403    40 assists_per_minute==(0.14048-0.18602] or time_played==(22.332-28.458]
+ 0.030033    28 assists_per_minute==(-inf-0.09494] or time_played==(-inf-16.206]
+ 0.02772     10 assists_per_minute==(0.09494-0.14048] and time_played==(-inf-16.206]
+ 0.027534    82 assists_per_minute==(-inf-0.09494] xor time_played==(34.584-inf)
+ 0.027534    57 assists_per_minute==(-inf-0.09494] equ time_played==(34.584-inf)
+ 0.026848    32 assists_per_minute==(-inf-0.09494] or time_played==(34.584-inf)
+ 0.025426    13 assists_per_minute==(0.09494-0.14048] and time_played==(28.458-34.584]
+ 0.024996    37 assists_per_minute==(0.09494-0.14048] or time_played==(34.584-inf)
+ 0.024943   108 assists_per_minute==(0.09494-0.14048] impl time_played==(-inf-16.206]
+ 0.022958   103 assists_per_minute==(-inf-0.09494] impl time_played==(-inf-16.206]
+ 0.022646    29 assists_per_minute==(-inf-0.09494] or time_played==(16.206-22.332]
+ 0.021012    76 assists_per_minute==(0.23156-inf) equ time_played==(28.458-34.584]
+ 0.021012   101 assists_per_minute==(0.23156-inf) xor time_played==(28.458-34.584]
+ 0.020241    50 assists_per_minute==(0.23156-inf) or time_played==(22.332-28.458]
+ 0.02001     62 assists_per_minute==(0.09494-0.14048] equ time_played==(34.584-inf)
+ 0.02001     87 assists_per_minute==(0.09494-0.14048] xor time_played==(34.584-inf)
+ 0.019375    65 assists_per_minute==(0.14048-0.18602] equ time_played==(22.332-28.458]
+ 0.019375    90 assists_per_minute==(0.14048-0.18602] xor time_played==(22.332-28.458]
+ 0.018433    33 assists_per_minute==(0.09494-0.14048] or time_played==(-inf-16.206]
+ 0.016413    83 assists_per_minute==(0.09494-0.14048] xor time_played==(-inf-16.206]
+ 0.016413    58 assists_per_minute==(0.09494-0.14048] equ time_played==(-inf-16.206]
+ 0.015519    26 assists_per_minute==(0.23156-inf) and time_played==(28.458-34.584]
+ 0.014696   133 assists_per_minute_x_time_played
+ 0.014539   128 assists_per_minute ADD time_played
+ 0.014457     3 time_played
+ 0.014377   129 assists_per_minute SUBTRACT time_played
+ 0.013498   127 assists_per_minute==(0.23156-inf) impl time_played==(34.584-inf)
+ 0.01297     25 assists_per_minute==(0.23156-inf) and time_played==(22.332-28.458]
+ 0.009876    45 assists_per_minute==(0.18602-0.23156] or time_played==(22.332-28.458]
+ 0.009476    21 assists_per_minute==(0.18602-0.23156] and time_played==(16.206-22.332]
+ 0.007778    66 assists_per_minute==(0.14048-0.18602] equ time_played==(28.458-34.584]
+ 0.007778    91 assists_per_minute==(0.14048-0.18602] xor time_played==(28.458-34.584]
+ 0.007309    51 assists_per_minute==(0.23156-inf) or time_played==(28.458-34.584]
+ 0.006299   131 time_played DIVIDE assists_per_minute
+ 0.006252    12 assists_per_minute==(0.09494-0.14048] and time_played==(22.332-28.458]
+ 0.005677    11 assists_per_minute==(0.09494-0.14048] and time_played==(16.206-22.332]
+ 0.004825     8 assists_per_minute==(-inf-0.09494] and time_played==(28.458-34.584]
+ 0.003327    41 assists_per_minute==(0.14048-0.18602] or time_played==(28.458-34.584]
+ 0.003151    59 assists_per_minute==(0.09494-0.14048] equ time_played==(16.206-22.332]
+ 0.003151    84 assists_per_minute==(0.09494-0.14048] xor time_played==(16.206-22.332]
+ 0.002617    71 assists_per_minute==(0.18602-0.23156] equ time_played==(28.458-34.584]
+ 0.002617    96 assists_per_minute==(0.18602-0.23156] xor time_played==(28.458-34.584]
+ 0.001905    17 assists_per_minute==(0.14048-0.18602] and time_played==(22.332-28.458]
+ 0.00185    130 assists_per_minute DIVIDE time_played
+ 0.001681    95 assists_per_minute==(0.18602-0.23156] xor time_played==(22.332-28.458]
+ 0.001681    70 assists_per_minute==(0.18602-0.23156] equ time_played==(22.332-28.458]
+ 0.001599   132 assists_per_minute MULTIPLY time_played
+ 0.001293    46 assists_per_minute==(0.18602-0.23156] or time_played==(28.458-34.584]
+ 0.001287     5 assists_per_minute==(-inf-0.09494] and time_played==(-inf-16.206]
+ 0.000104     2 height
+-0.000763    14 assists_per_minute==(0.09494-0.14048] and time_played==(34.584-inf)
+-0.001195     7 assists_per_minute==(-inf-0.09494] and time_played==(22.332-28.458]
+-0.0013      38 assists_per_minute==(0.14048-0.18602] or time_played==(-inf-16.206]
+-0.001956    18 assists_per_minute==(0.14048-0.18602] and time_played==(28.458-34.584]
+-0.003655     4 age
+-0.003953    79 assists_per_minute==(-inf-0.09494] xor time_played==(16.206-22.332]
+-0.003953    54 assists_per_minute==(-inf-0.09494] equ time_played==(16.206-22.332]
+-0.004012     1 assists_per_minute
+-0.004348   104 assists_per_minute==(-inf-0.09494] impl time_played==(16.206-22.332]
+-0.005866    19 assists_per_minute==(0.14048-0.18602] and time_played==(34.584-inf)
+-0.005943   125 assists_per_minute==(0.23156-inf) impl time_played==(22.332-28.458]
+-0.006266     9 assists_per_minute==(-inf-0.09494] and time_played==(34.584-inf)
+-0.007804    73 assists_per_minute==(0.23156-inf) equ time_played==(-inf-16.206]
+-0.007804    98 assists_per_minute==(0.23156-inf) xor time_played==(-inf-16.206]
+-0.007804    48 assists_per_minute==(0.23156-inf) or time_played==(-inf-16.206]
+-0.007957    34 assists_per_minute==(0.09494-0.14048] or time_played==(16.206-22.332]
+-0.007985   126 assists_per_minute==(0.23156-inf) impl time_played==(28.458-34.584]
+-0.00894    116 assists_per_minute==(0.14048-0.18602] impl time_played==(28.458-34.584]
+-0.009011   115 assists_per_minute==(0.14048-0.18602] impl time_played==(22.332-28.458]
+-0.009056    64 assists_per_minute==(0.14048-0.18602] equ time_played==(16.206-22.332]
+-0.009056    89 assists_per_minute==(0.14048-0.18602] xor time_played==(16.206-22.332]
+-0.009102    16 assists_per_minute==(0.14048-0.18602] and time_played==(16.206-22.332]
+-0.009277    99 assists_per_minute==(0.23156-inf) xor time_played==(16.206-22.332]
+-0.009277    74 assists_per_minute==(0.23156-inf) equ time_played==(16.206-22.332]
+-0.009277    49 assists_per_minute==(0.23156-inf) or time_played==(16.206-22.332]
+-0.009323    39 assists_per_minute==(0.14048-0.18602] or time_played==(16.206-22.332]
+-0.010241    27 assists_per_minute==(0.23156-inf) and time_played==(34.584-inf)
+-0.010313    22 assists_per_minute==(0.18602-0.23156] and time_played==(22.332-28.458]
+-0.011662    23 assists_per_minute==(0.18602-0.23156] and time_played==(28.458-34.584]
+-0.012703    20 assists_per_minute==(0.18602-0.23156] and time_played==(-inf-16.206]
+-0.016017   118 assists_per_minute==(0.18602-0.23156] impl time_played==(-inf-16.206]
+-0.017867    24 assists_per_minute==(0.18602-0.23156] and time_played==(34.584-inf)
+-0.018303    77 assists_per_minute==(0.23156-inf) equ time_played==(34.584-inf)
+-0.018303   102 assists_per_minute==(0.23156-inf) xor time_played==(34.584-inf)
+-0.018677   123 assists_per_minute==(0.23156-inf) impl time_played==(-inf-16.206]
+-0.018677   124 assists_per_minute==(0.23156-inf) impl time_played==(16.206-22.332]
+-0.022451    42 assists_per_minute==(0.14048-0.18602] or time_played==(34.584-inf)
+-0.022627   117 assists_per_minute==(0.14048-0.18602] impl time_played==(34.584-inf)
+-0.022766    47 assists_per_minute==(0.18602-0.23156] or time_played==(34.584-inf)
+-0.023489   113 assists_per_minute==(0.14048-0.18602] impl time_played==(-inf-16.206]
+-0.0243      15 assists_per_minute==(0.14048-0.18602] and time_played==(-inf-16.206]
+-0.025581    69 assists_per_minute==(0.18602-0.23156] equ time_played==(16.206-22.332]
+-0.025581    94 assists_per_minute==(0.18602-0.23156] xor time_played==(16.206-22.332]
+-0.026174    68 assists_per_minute==(0.18602-0.23156] equ time_played==(-inf-16.206]
+-0.026174    93 assists_per_minute==(0.18602-0.23156] xor time_played==(-inf-16.206]
+-0.02669     67 assists_per_minute==(0.14048-0.18602] equ time_played==(34.584-inf)
+-0.02669     92 assists_per_minute==(0.14048-0.18602] xor time_played==(34.584-inf)
+-0.027238    63 assists_per_minute==(0.14048-0.18602] equ time_played==(-inf-16.206]
+-0.027238    88 assists_per_minute==(0.14048-0.18602] xor time_played==(-inf-16.206]
+-0.028361    43 assists_per_minute==(0.18602-0.23156] or time_played==(-inf-16.206]
+-0.028638    52 assists_per_minute==(0.23156-inf) or time_played==(34.584-inf)
+-0.03132     97 assists_per_minute==(0.18602-0.23156] xor time_played==(34.584-inf)
+-0.03132     72 assists_per_minute==(0.18602-0.23156] equ time_played==(34.584-inf)
+-0.033167    44 assists_per_minute==(0.18602-0.23156] or time_played==(16.206-22.332]
+-0.035269   122 assists_per_minute==(0.18602-0.23156] impl time_played==(34.584-inf)
+-0.042619   120 assists_per_minute==(0.18602-0.23156] impl time_played==(22.332-28.458]
+-0.043553   119 assists_per_minute==(0.18602-0.23156] impl time_played==(16.206-22.332]
+-0.044276   121 assists_per_minute==(0.18602-0.23156] impl time_played==(28.458-34.584]
+-0.046643   114 assists_per_minute==(0.14048-0.18602] impl time_played==(16.206-22.332]
+
+
+ReliefF (param. search)
+The best parameter when using M5P: ReliefF@0.0
+ReliefF (param. search)
+The best parameter when using LinearRegression: ReliefF@0.25
+ReliefF (param. search)
+The best parameter when using M5Rules: ReliefF@0.0
+ReliefF (param. search)
+The best parameter when using RandomForest: ReliefF@0.0
+								--------------
+									Fold  5
+								--------------
+Feature evaluation: ReliefF (All features dataset) - After CI
+Ranked attributes:
+ 0.051293     65 height==(194.4-inf) or time_played==(22.332-28.458]
+ 0.050919     45 height==(-inf-168.6] or time_played==(22.332-28.458]
+ 0.050919    145 height==(-inf-168.6] xor time_played==(22.332-28.458]
+ 0.050919     95 height==(-inf-168.6] equ time_played==(22.332-28.458]
+ 0.050248    120 assists_per_minute==(-inf-0.10826] equ time_played==(22.332-28.458]
+ 0.050248    170 assists_per_minute==(-inf-0.10826] xor time_played==(22.332-28.458]
+ 0.044073    150 height==(168.6-177.2] xor time_played==(22.332-28.458]
+ 0.044073     50 height==(168.6-177.2] or time_played==(22.332-28.458]
+ 0.044073    100 height==(168.6-177.2] equ time_played==(22.332-28.458]
+ 0.037412    155 height==(177.2-185.8] xor time_played==(22.332-28.458]
+ 0.037412    105 height==(177.2-185.8] equ time_played==(22.332-28.458]
+ 0.037053    219 assists_per_minute==(-inf-0.10826] impl time_played==(22.332-28.458]
+ 0.035566    121 assists_per_minute==(-inf-0.10826] equ time_played==(28.458-34.584]
+ 0.035566    171 assists_per_minute==(-inf-0.10826] xor time_played==(28.458-34.584]
+ 0.034828    140 assists_per_minute==(0.28484-inf) equ time_played==(22.332-28.458]
+ 0.034828    190 assists_per_minute==(0.28484-inf) xor time_played==(22.332-28.458]
+ 0.034828     90 assists_per_minute==(0.28484-inf) or time_played==(22.332-28.458]
+ 0.032132    211 height==(185.8-194.4] impl time_played==(34.584-inf)
+ 0.031078    215 height==(194.4-inf) impl time_played==(28.458-34.584]
+ 0.031042     70 assists_per_minute==(-inf-0.10826] or time_played==(22.332-28.458]
+ 0.029918    209 height==(185.8-194.4] impl time_played==(22.332-28.458]
+ 0.029865    212 height==(194.4-inf) impl time_played==(-inf-16.206]
+ 0.028685    151 height==(168.6-177.2] xor time_played==(28.458-34.584]
+ 0.028685    101 height==(168.6-177.2] equ time_played==(28.458-34.584]
+ 0.02795      63 height==(194.4-inf) or time_played==(-inf-16.206]
+ 0.02706     221 assists_per_minute==(-inf-0.10826] impl time_played==(34.584-inf)
+ 0.026815     67 height==(194.4-inf) or time_played==(34.584-inf)
+ 0.025774     64 height==(194.4-inf) or time_played==(16.206-22.332]
+ 0.025528     71 assists_per_minute==(-inf-0.10826] or time_played==(28.458-34.584]
+ 0.025521     62 height==(185.8-194.4] or time_played==(34.584-inf)
+ 0.025402     20 height==(194.4-inf) and time_played==(22.332-28.458]
+ 0.025075    220 assists_per_minute==(-inf-0.10826] impl time_played==(28.458-34.584]
+ 0.023892     26 assists_per_minute==(-inf-0.10826] and time_played==(28.458-34.584]
+ 0.023824    216 height==(194.4-inf) impl time_played==(34.584-inf)
+ 0.023745    207 height==(185.8-194.4] impl time_played==(-inf-16.206]
+ 0.023032     13 height==(185.8-194.4] and time_played==(-inf-16.206]
+ 0.022914    213 height==(194.4-inf) impl time_played==(16.206-22.332]
+ 0.022089    208 height==(185.8-194.4] impl time_played==(16.206-22.332]
+ 0.021982    185 assists_per_minute==(0.22598-0.28484] xor time_played==(22.332-28.458]
+ 0.021982    135 assists_per_minute==(0.22598-0.28484] equ time_played==(22.332-28.458]
+ 0.021655    113 height==(194.4-inf) equ time_played==(-inf-16.206]
+ 0.021655    163 height==(194.4-inf) xor time_played==(-inf-16.206]
+ 0.02092      51 height==(168.6-177.2] or time_played==(28.458-34.584]
+ 0.020598     14 height==(185.8-194.4] and time_played==(16.206-22.332]
+ 0.018378     39 assists_per_minute==(0.22598-0.28484] and time_played==(22.332-28.458]
+ 0.018266     23 assists_per_minute==(-inf-0.10826] and time_played==(-inf-16.206]
+ 0.017729    167 height==(194.4-inf) xor time_played==(34.584-inf)
+ 0.017729    117 height==(194.4-inf) equ time_played==(34.584-inf)
+ 0.017596     93 height==(-inf-168.6] equ time_played==(-inf-16.206]
+ 0.017596    143 height==(-inf-168.6] xor time_played==(-inf-16.206]
+ 0.017596     43 height==(-inf-168.6] or time_played==(-inf-16.206]
+ 0.017527     66 height==(194.4-inf) or time_played==(28.458-34.584]
+ 0.017411     75 assists_per_minute==(0.10826-0.16712] or time_played==(22.332-28.458]
+ 0.017386    144 height==(-inf-168.6] xor time_played==(16.206-22.332]
+ 0.017386     44 height==(-inf-168.6] or time_played==(16.206-22.332]
+ 0.017386     94 height==(-inf-168.6] equ time_played==(16.206-22.332]
+ 0.016771     16 height==(185.8-194.4] and time_played==(28.458-34.584]
+ 0.016617     11 height==(177.2-185.8] and time_played==(28.458-34.584]
+ 0.016583     30 assists_per_minute==(0.10826-0.16712] and time_played==(22.332-28.458]
+ 0.016262     61 height==(185.8-194.4] or time_played==(28.458-34.584]
+ 0.015925    165 height==(194.4-inf) xor time_played==(22.332-28.458]
+ 0.015925    115 height==(194.4-inf) equ time_played==(22.332-28.458]
+ 0.015924     55 height==(177.2-185.8] or time_played==(22.332-28.458]
+ 0.01531     251 height_x_time_played
+ 0.015119    164 height==(194.4-inf) xor time_played==(16.206-22.332]
+ 0.015119    114 height==(194.4-inf) equ time_played==(16.206-22.332]
+ 0.014711     53 height==(177.2-185.8] or time_played==(-inf-16.206]
+ 0.014556     40 assists_per_minute==(0.22598-0.28484] and time_played==(28.458-34.584]
+ 0.014168    110 height==(185.8-194.4] equ time_played==(22.332-28.458]
+ 0.014168    160 height==(185.8-194.4] xor time_played==(22.332-28.458]
+ 0.014095    175 assists_per_minute==(0.10826-0.16712] xor time_played==(22.332-28.458]
+ 0.014095    125 assists_per_minute==(0.10826-0.16712] equ time_played==(22.332-28.458]
+ 0.013698     96 height==(-inf-168.6] equ time_played==(28.458-34.584]
+ 0.013698    146 height==(-inf-168.6] xor time_played==(28.458-34.584]
+ 0.013318    168 assists_per_minute==(-inf-0.10826] xor time_played==(-inf-16.206]
+ 0.013318    118 assists_per_minute==(-inf-0.10826] equ time_played==(-inf-16.206]
+ 0.012408     24 assists_per_minute==(-inf-0.10826] and time_played==(16.206-22.332]
+ 0.012139     46 height==(-inf-168.6] or time_played==(28.458-34.584]
+ 0.01139     236 assists_per_minute==(0.22598-0.28484] impl time_played==(34.584-inf)
+ 0.011233    242 assists_per_minute ADD time_played
+ 0.011233    249 height MULTIPLY time_played
+ 0.011153      3 time_played
+ 0.011073    244 assists_per_minute SUBTRACT time_played
+ 0.010546    246 time_played DIVIDE height
+ 0.010176    217 assists_per_minute==(-inf-0.10826] impl time_played==(-inf-16.206]
+ 0.009598     25 assists_per_minute==(-inf-0.10826] and time_played==(22.332-28.458]
+ 0.009283    122 assists_per_minute==(-inf-0.10826] equ time_played==(34.584-inf)
+ 0.009283    172 assists_per_minute==(-inf-0.10826] xor time_played==(34.584-inf)
+ 0.008781      6 height==(168.6-177.2] and time_played==(16.206-22.332]
+ 0.008781    200 height==(168.6-177.2] impl time_played==(28.458-34.584]
+ 0.008618    204 height==(177.2-185.8] impl time_played==(22.332-28.458]
+ 0.008294     15 height==(185.8-194.4] and time_played==(22.332-28.458]
+ 0.008254     68 assists_per_minute==(-inf-0.10826] or time_played==(-inf-16.206]
+ 0.007975    245 height DIVIDE time_played
+ 0.007932    193 height==(-inf-168.6] impl time_played==(-inf-16.206]
+ 0.007932      5 height==(-inf-168.6] and time_played==(28.458-34.584]
+ 0.007932    194 height==(-inf-168.6] impl time_played==(16.206-22.332]
+ 0.007932    196 height==(-inf-168.6] impl time_played==(34.584-inf)
+ 0.007932    195 height==(-inf-168.6] impl time_played==(22.332-28.458]
+ 0.007927    112 height==(185.8-194.4] equ time_played==(34.584-inf)
+ 0.007927    162 height==(185.8-194.4] xor time_played==(34.584-inf)
+ 0.00749     218 assists_per_minute==(-inf-0.10826] impl time_played==(16.206-22.332]
+ 0.007371     10 height==(177.2-185.8] and time_played==(22.332-28.458]
+ 0.007054    166 height==(194.4-inf) xor time_played==(28.458-34.584]
+ 0.007054    116 height==(194.4-inf) equ time_played==(28.458-34.584]
+ 0.006821     69 assists_per_minute==(-inf-0.10826] or time_played==(16.206-22.332]
+ 0.006815    119 assists_per_minute==(-inf-0.10826] equ time_played==(16.206-22.332]
+ 0.006815    169 assists_per_minute==(-inf-0.10826] xor time_played==(16.206-22.332]
+ 0.006571     72 assists_per_minute==(-inf-0.10826] or time_played==(34.584-inf)
+ 0.00648      91 assists_per_minute==(0.28484-inf) or time_played==(28.458-34.584]
+ 0.00648     191 assists_per_minute==(0.28484-inf) xor time_played==(28.458-34.584]
+ 0.00648     141 assists_per_minute==(0.28484-inf) equ time_played==(28.458-34.584]
+ 0.006405    241 height ADD time_played
+ 0.006228    176 assists_per_minute==(0.10826-0.16712] xor time_played==(28.458-34.584]
+ 0.006228    126 assists_per_minute==(0.10826-0.16712] equ time_played==(28.458-34.584]
+ 0.005947     60 height==(185.8-194.4] or time_played==(22.332-28.458]
+ 0.005918    248 time_played DIVIDE assists_per_minute
+ 0.005267     34 assists_per_minute==(0.16712-0.22598] and time_played==(16.206-22.332]
+ 0.004306    136 assists_per_minute==(0.22598-0.28484] equ time_played==(28.458-34.584]
+ 0.004306    186 assists_per_minute==(0.22598-0.28484] xor time_played==(28.458-34.584]
+ 0.004147    108 height==(185.8-194.4] equ time_played==(-inf-16.206]
+ 0.004147    158 height==(185.8-194.4] xor time_played==(-inf-16.206]
+ 0.004106     85 assists_per_minute==(0.22598-0.28484] or time_played==(22.332-28.458]
+ 0.003882    243 height SUBTRACT time_played
+ 0.003651    188 assists_per_minute==(0.28484-inf) xor time_played==(-inf-16.206]
+ 0.003651     88 assists_per_minute==(0.28484-inf) or time_played==(-inf-16.206]
+ 0.003651    138 assists_per_minute==(0.28484-inf) equ time_played==(-inf-16.206]
+ 0.003628     49 height==(168.6-177.2] or time_played==(16.206-22.332]
+ 0.003441    139 assists_per_minute==(0.28484-inf) equ time_played==(16.206-22.332]
+ 0.003441    189 assists_per_minute==(0.28484-inf) xor time_played==(16.206-22.332]
+ 0.003441     89 assists_per_minute==(0.28484-inf) or time_played==(16.206-22.332]
+ 0.002956    197 height==(168.6-177.2] impl time_played==(-inf-16.206]
+ 0.002956    201 height==(168.6-177.2] impl time_played==(34.584-inf)
+ 0.002956    199 height==(168.6-177.2] impl time_played==(22.332-28.458]
+ 0.002443    225 assists_per_minute==(0.10826-0.16712] impl time_played==(28.458-34.584]
+ 0.002299    159 height==(185.8-194.4] xor time_played==(16.206-22.332]
+ 0.002299    109 height==(185.8-194.4] equ time_played==(16.206-22.332]
+ 0.002042      2 height
+ 0.002012     38 assists_per_minute==(0.22598-0.28484] and time_played==(-inf-16.206]
+ 0.001807    247 assists_per_minute DIVIDE time_played
+ 0.001702    210 height==(185.8-194.4] impl time_played==(28.458-34.584]
+ 0.001695     73 assists_per_minute==(0.10826-0.16712] or time_played==(-inf-16.206]
+ 0.0014       19 height==(194.4-inf) and time_played==(16.206-22.332]
+ 0.001063    206 height==(177.2-185.8] impl time_played==(34.584-inf)
+ 0.000974     59 height==(185.8-194.4] or time_played==(16.206-22.332]
+ 0.000477     98 height==(168.6-177.2] equ time_played==(-inf-16.206]
+ 0.000477    148 height==(168.6-177.2] xor time_played==(-inf-16.206]
+ 0.000477     48 height==(168.6-177.2] or time_played==(-inf-16.206]
+ 0.000443     58 height==(185.8-194.4] or time_played==(-inf-16.206]
+ 0.000267     99 height==(168.6-177.2] equ time_played==(16.206-22.332]
+ 0.000267    149 height==(168.6-177.2] xor time_played==(16.206-22.332]
+ 0.00024     250 assists_per_minute MULTIPLY time_played
+-0.000104    234 assists_per_minute==(0.22598-0.28484] impl time_played==(22.332-28.458]
+-0.00116      32 assists_per_minute==(0.10826-0.16712] and time_played==(34.584-inf)
+-0.002333    102 height==(168.6-177.2] equ time_played==(34.584-inf)
+-0.002333     52 height==(168.6-177.2] or time_played==(34.584-inf)
+-0.002333    152 height==(168.6-177.2] xor time_played==(34.584-inf)
+-0.002377    156 height==(177.2-185.8] xor time_played==(28.458-34.584]
+-0.002377    106 height==(177.2-185.8] equ time_played==(28.458-34.584]
+-0.002677    111 height==(185.8-194.4] equ time_played==(28.458-34.584]
+-0.002677    161 height==(185.8-194.4] xor time_played==(28.458-34.584]
+-0.00312      54 height==(177.2-185.8] or time_played==(16.206-22.332]
+-0.003348     76 assists_per_minute==(0.10826-0.16712] or time_played==(28.458-34.584]
+-0.003781      1 assists_per_minute
+-0.004119     80 assists_per_minute==(0.16712-0.22598] or time_played==(22.332-28.458]
+-0.004302     35 assists_per_minute==(0.16712-0.22598] and time_played==(22.332-28.458]
+-0.00462     214 height==(194.4-inf) impl time_played==(22.332-28.458]
+-0.004697     29 assists_per_minute==(0.10826-0.16712] and time_played==(16.206-22.332]
+-0.005022      4 age
+-0.005218     22 height==(194.4-inf) and time_played==(34.584-inf)
+-0.005219    235 assists_per_minute==(0.22598-0.28484] impl time_played==(28.458-34.584]
+-0.005258    252 assists_per_minute_x_time_played
+-0.005671    130 assists_per_minute==(0.16712-0.22598] equ time_played==(22.332-28.458]
+-0.005671    180 assists_per_minute==(0.16712-0.22598] xor time_played==(22.332-28.458]
+-0.005768     18 height==(194.4-inf) and time_played==(-inf-16.206]
+-0.005826      7 height==(168.6-177.2] and time_played==(28.458-34.584]
+-0.005826    198 height==(168.6-177.2] impl time_played==(16.206-22.332]
+-0.006012    240 assists_per_minute==(0.28484-inf) impl time_played==(28.458-34.584]
+-0.006012    238 assists_per_minute==(0.28484-inf) impl time_played==(16.206-22.332]
+-0.006012    237 assists_per_minute==(0.28484-inf) impl time_played==(-inf-16.206]
+-0.006012     42 assists_per_minute==(0.28484-inf) and time_played==(34.584-inf)
+-0.006012    239 assists_per_minute==(0.28484-inf) impl time_played==(22.332-28.458]
+-0.008632    173 assists_per_minute==(0.10826-0.16712] xor time_played==(-inf-16.206]
+-0.008632    123 assists_per_minute==(0.10826-0.16712] equ time_played==(-inf-16.206]
+-0.00922      77 assists_per_minute==(0.10826-0.16712] or time_played==(34.584-inf)
+-0.009689     83 assists_per_minute==(0.22598-0.28484] or time_played==(-inf-16.206]
+-0.009833     28 assists_per_minute==(0.10826-0.16712] and time_played==(-inf-16.206]
+-0.009906     56 height==(177.2-185.8] or time_played==(28.458-34.584]
+-0.010071    222 assists_per_minute==(0.10826-0.16712] impl time_played==(-inf-16.206]
+-0.010817     74 assists_per_minute==(0.10826-0.16712] or time_played==(16.206-22.332]
+-0.011103     81 assists_per_minute==(0.16712-0.22598] or time_played==(28.458-34.584]
+-0.01112     124 assists_per_minute==(0.10826-0.16712] equ time_played==(16.206-22.332]
+-0.01112     174 assists_per_minute==(0.10826-0.16712] xor time_played==(16.206-22.332]
+-0.011903    104 height==(177.2-185.8] equ time_played==(16.206-22.332]
+-0.011903    154 height==(177.2-185.8] xor time_played==(16.206-22.332]
+-0.012242     27 assists_per_minute==(-inf-0.10826] and time_played==(34.584-inf)
+-0.012603     86 assists_per_minute==(0.22598-0.28484] or time_played==(28.458-34.584]
+-0.013405     41 assists_per_minute==(0.22598-0.28484] and time_played==(34.584-inf)
+-0.014084     36 assists_per_minute==(0.16712-0.22598] and time_played==(28.458-34.584]
+-0.014718     21 height==(194.4-inf) and time_played==(28.458-34.584]
+-0.014992    127 assists_per_minute==(0.10826-0.16712] equ time_played==(34.584-inf)
+-0.014992    177 assists_per_minute==(0.10826-0.16712] xor time_played==(34.584-inf)
+-0.015022      9 height==(177.2-185.8] and time_played==(16.206-22.332]
+-0.015266    223 assists_per_minute==(0.10826-0.16712] impl time_played==(16.206-22.332]
+-0.015355      8 height==(177.2-185.8] and time_played==(-inf-16.206]
+-0.016381    103 height==(177.2-185.8] equ time_played==(-inf-16.206]
+-0.016381    153 height==(177.2-185.8] xor time_played==(-inf-16.206]
+-0.017135     33 assists_per_minute==(0.16712-0.22598] and time_played==(-inf-16.206]
+-0.017949    183 assists_per_minute==(0.22598-0.28484] xor time_played==(-inf-16.206]
+-0.017949    133 assists_per_minute==(0.22598-0.28484] equ time_played==(-inf-16.206]
+-0.018741    131 assists_per_minute==(0.16712-0.22598] equ time_played==(28.458-34.584]
+-0.018741    181 assists_per_minute==(0.16712-0.22598] xor time_played==(28.458-34.584]
+-0.018879     92 assists_per_minute==(0.28484-inf) or time_played==(34.584-inf)
+-0.019063     31 assists_per_minute==(0.10826-0.16712] and time_played==(28.458-34.584]
+-0.019189     47 height==(-inf-168.6] or time_played==(34.584-inf)
+-0.019189    147 height==(-inf-168.6] xor time_played==(34.584-inf)
+-0.019189     97 height==(-inf-168.6] equ time_played==(34.584-inf)
+-0.019305    233 assists_per_minute==(0.22598-0.28484] impl time_played==(16.206-22.332]
+-0.019544     57 height==(177.2-185.8] or time_played==(34.584-inf)
+-0.019623     12 height==(177.2-185.8] and time_played==(34.584-inf)
+-0.020574    224 assists_per_minute==(0.10826-0.16712] impl time_played==(22.332-28.458]
+-0.021036    205 height==(177.2-185.8] impl time_played==(28.458-34.584]
+-0.021827    184 assists_per_minute==(0.22598-0.28484] xor time_played==(16.206-22.332]
+-0.021827     84 assists_per_minute==(0.22598-0.28484] or time_played==(16.206-22.332]
+-0.021827    134 assists_per_minute==(0.22598-0.28484] equ time_played==(16.206-22.332]
+-0.023137    232 assists_per_minute==(0.22598-0.28484] impl time_played==(-inf-16.206]
+-0.023374     87 assists_per_minute==(0.22598-0.28484] or time_played==(34.584-inf)
+-0.024048     17 height==(185.8-194.4] and time_played==(34.584-inf)
+-0.024816    142 assists_per_minute==(0.28484-inf) equ time_played==(34.584-inf)
+-0.024816    192 assists_per_minute==(0.28484-inf) xor time_played==(34.584-inf)
+-0.025084    226 assists_per_minute==(0.10826-0.16712] impl time_played==(34.584-inf)
+-0.027177    137 assists_per_minute==(0.22598-0.28484] equ time_played==(34.584-inf)
+-0.027177    187 assists_per_minute==(0.22598-0.28484] xor time_played==(34.584-inf)
+-0.028462    227 assists_per_minute==(0.16712-0.22598] impl time_played==(-inf-16.206]
+-0.029541     37 assists_per_minute==(0.16712-0.22598] and time_played==(34.584-inf)
+-0.030828    203 height==(177.2-185.8] impl time_played==(16.206-22.332]
+-0.030989     82 assists_per_minute==(0.16712-0.22598] or time_played==(34.584-inf)
+-0.032311    202 height==(177.2-185.8] impl time_played==(-inf-16.206]
+-0.032428     78 assists_per_minute==(0.16712-0.22598] or time_played==(-inf-16.206]
+-0.032621    231 assists_per_minute==(0.16712-0.22598] impl time_played==(34.584-inf)
+-0.033532     79 assists_per_minute==(0.16712-0.22598] or time_played==(16.206-22.332]
+-0.035095    128 assists_per_minute==(0.16712-0.22598] equ time_played==(-inf-16.206]
+-0.035095    178 assists_per_minute==(0.16712-0.22598] xor time_played==(-inf-16.206]
+-0.035337    107 height==(177.2-185.8] equ time_played==(34.584-inf)
+-0.035337    157 height==(177.2-185.8] xor time_played==(34.584-inf)
+-0.036426    129 assists_per_minute==(0.16712-0.22598] equ time_played==(16.206-22.332]
+-0.036426    179 assists_per_minute==(0.16712-0.22598] xor time_played==(16.206-22.332]
+-0.047749    230 assists_per_minute==(0.16712-0.22598] impl time_played==(28.458-34.584]
+-0.050384    182 assists_per_minute==(0.16712-0.22598] xor time_played==(34.584-inf)
+-0.050384    132 assists_per_minute==(0.16712-0.22598] equ time_played==(34.584-inf)
+-0.05045     229 assists_per_minute==(0.16712-0.22598] impl time_played==(22.332-28.458]
+-0.05118     228 assists_per_minute==(0.16712-0.22598] impl time_played==(16.206-22.332]
+
+
+ReliefF (param. search)
+The best parameter when using M5P: ReliefF@0.5
+ReliefF (param. search)
+The best parameter when using LinearRegression: ReliefF@0.5
+ReliefF (param. search)
+The best parameter when using M5Rules: ReliefF@0.5
+ReliefF (param. search)
+The best parameter when using RandomForest: ReliefF@0.25
+								--------------
+									Fold  6
+								--------------
+Feature evaluation: ReliefF (All features dataset) - After CI
+Ranked attributes:
+ 0.04946     122 assists_per_minute==(-inf-0.10826] equ time_played==(22.332-28.458]
+ 0.04946     172 assists_per_minute==(-inf-0.10826] xor time_played==(22.332-28.458]
+ 0.049372    173 assists_per_minute==(-inf-0.10826] xor time_played==(28.458-34.584]
+ 0.049372    123 assists_per_minute==(-inf-0.10826] equ time_played==(28.458-34.584]
+ 0.033981    223 assists_per_minute==(-inf-0.10826] impl time_played==(28.458-34.584]
+ 0.032442      7 time_played==(-inf-16.206] and age==(31-34]
+ 0.031595    205 time_played==(22.332-28.458] impl age==(-inf-25]
+ 0.031595     25 assists_per_minute==(-inf-0.10826] and time_played==(-inf-16.206]
+ 0.027991     73 assists_per_minute==(-inf-0.10826] or time_played==(28.458-34.584]
+ 0.02779      46 time_played==(-inf-16.206] or age==(25-28]
+ 0.02779     146 time_played==(-inf-16.206] xor age==(25-28]
+ 0.02779      96 time_played==(-inf-16.206] equ age==(25-28]
+ 0.027511    222 assists_per_minute==(-inf-0.10826] impl time_played==(22.332-28.458]
+ 0.02686      60 time_played==(28.458-34.584] or age==(-inf-25]
+ 0.023834    211 time_played==(28.458-34.584] impl age==(25-28]
+ 0.022821    108 time_played==(22.332-28.458] equ age==(31-34]
+ 0.022821    158 time_played==(22.332-28.458] xor age==(31-34]
+ 0.022214    149 time_played==(-inf-16.206] xor age==(34-inf)
+ 0.022214    199 time_played==(-inf-16.206] impl age==(34-inf)
+ 0.022214     99 time_played==(-inf-16.206] equ age==(34-inf)
+ 0.022161     72 assists_per_minute==(-inf-0.10826] or time_played==(22.332-28.458]
+ 0.022156    195 time_played==(-inf-16.206] impl age==(-inf-25]
+ 0.021679     28 assists_per_minute==(-inf-0.10826] and time_played==(28.458-34.584]
+ 0.021251     20 time_played==(28.458-34.584] and age==(31-34]
+ 0.020837    109 time_played==(22.332-28.458] equ age==(34-inf)
+ 0.020837    159 time_played==(22.332-28.458] xor age==(34-inf)
+ 0.020837     59 time_played==(22.332-28.458] or age==(34-inf)
+ 0.02018     197 time_played==(-inf-16.206] impl age==(28-31]
+ 0.020136    254 time_played LESSTHAN age
+ 0.019475     27 assists_per_minute==(-inf-0.10826] and time_played==(22.332-28.458]
+ 0.019381    209 time_played==(22.332-28.458] impl age==(34-inf)
+ 0.019054    113 time_played==(28.458-34.584] equ age==(31-34]
+ 0.019054    163 time_played==(28.458-34.584] xor age==(31-34]
+ 0.019045     49 time_played==(-inf-16.206] or age==(34-inf)
+ 0.019045    196 time_played==(-inf-16.206] impl age==(25-28]
+ 0.018156    210 time_played==(28.458-34.584] impl age==(-inf-25]
+ 0.017775     19 time_played==(28.458-34.584] and age==(28-31]
+ 0.017765     97 time_played==(-inf-16.206] equ age==(28-31]
+ 0.017765    147 time_played==(-inf-16.206] xor age==(28-31]
+ 0.017698    164 time_played==(28.458-34.584] xor age==(34-inf)
+ 0.017698     64 time_played==(28.458-34.584] or age==(34-inf)
+ 0.017698    114 time_played==(28.458-34.584] equ age==(34-inf)
+ 0.017513    224 assists_per_minute==(-inf-0.10826] impl time_played==(34.584-inf)
+ 0.016946    214 time_played==(28.458-34.584] impl age==(34-inf)
+ 0.016837     15 time_played==(22.332-28.458] and age==(28-31]
+ 0.015835     14 time_played==(22.332-28.458] and age==(25-28]
+ 0.015119    201 time_played==(16.206-22.332] impl age==(25-28]
+ 0.014851    162 time_played==(28.458-34.584] xor age==(28-31]
+ 0.014851    112 time_played==(28.458-34.584] equ age==(28-31]
+ 0.014772    148 time_played==(-inf-16.206] xor age==(31-34]
+ 0.014772     98 time_played==(-inf-16.206] equ age==(31-34]
+ 0.013957    206 time_played==(22.332-28.458] impl age==(25-28]
+ 0.013487    178 assists_per_minute==(0.10826-0.16712] xor time_played==(28.458-34.584]
+ 0.013487    128 assists_per_minute==(0.10826-0.16712] equ time_played==(28.458-34.584]
+ 0.013406    255 time_played_x_age
+ 0.013308     12 time_played==(16.206-22.332] and age==(31-34]
+ 0.01323     142 assists_per_minute==(0.28484-inf) equ time_played==(22.332-28.458]
+ 0.01323     192 assists_per_minute==(0.28484-inf) xor time_played==(22.332-28.458]
+ 0.01323      92 assists_per_minute==(0.28484-inf) or time_played==(22.332-28.458]
+ 0.013006    249 age DIVIDE time_played
+ 0.012894     90 assists_per_minute==(0.28484-inf) or time_played==(-inf-16.206]
+ 0.012894    190 assists_per_minute==(0.28484-inf) xor time_played==(-inf-16.206]
+ 0.012894    140 assists_per_minute==(0.28484-inf) equ time_played==(-inf-16.206]
+ 0.012406    221 assists_per_minute==(-inf-0.10826] impl time_played==(16.206-22.332]
+ 0.01201     177 assists_per_minute==(0.10826-0.16712] xor time_played==(22.332-28.458]
+ 0.01201     127 assists_per_minute==(0.10826-0.16712] equ time_played==(22.332-28.458]
+ 0.011736    245 assists_per_minute ADD time_played
+ 0.011648      3 time_played
+ 0.0116       47 time_played==(-inf-16.206] or age==(28-31]
+ 0.011562    247 assists_per_minute SUBTRACT time_played
+ 0.011481    212 time_played==(28.458-34.584] impl age==(28-31]
+ 0.011302     41 assists_per_minute==(0.22598-0.28484] and time_played==(22.332-28.458]
+ 0.011042    170 assists_per_minute==(-inf-0.10826] xor time_played==(-inf-16.206]
+ 0.011042    120 assists_per_minute==(-inf-0.10826] equ time_played==(-inf-16.206]
+ 0.011023    252 time_played MULTIPLY age
+ 0.010525    153 time_played==(16.206-22.332] xor age==(31-34]
+ 0.010525    103 time_played==(16.206-22.332] equ age==(31-34]
+ 0.010493    143 assists_per_minute==(0.28484-inf) equ time_played==(28.458-34.584]
+ 0.010493     93 assists_per_minute==(0.28484-inf) or time_played==(28.458-34.584]
+ 0.010493    193 assists_per_minute==(0.28484-inf) xor time_played==(28.458-34.584]
+ 0.009979     52 time_played==(16.206-22.332] or age==(28-31]
+ 0.009867    110 time_played==(28.458-34.584] equ age==(-inf-25]
+ 0.009867    160 time_played==(28.458-34.584] xor age==(-inf-25]
+ 0.009841    145 time_played==(-inf-16.206] xor age==(-inf-25]
+ 0.009841     95 time_played==(-inf-16.206] equ age==(-inf-25]
+ 0.00976      68 time_played==(34.584-inf) or age==(31-34]
+ 0.009629    244 time_played ADD age
+ 0.009341    198 time_played==(-inf-16.206] impl age==(31-34]
+ 0.009313    188 assists_per_minute==(0.22598-0.28484] xor time_played==(28.458-34.584]
+ 0.009313    138 assists_per_minute==(0.22598-0.28484] equ time_played==(28.458-34.584]
+ 0.00931     207 time_played==(22.332-28.458] impl age==(28-31]
+ 0.009254    174 assists_per_minute==(-inf-0.10826] xor time_played==(34.584-inf)
+ 0.009254    124 assists_per_minute==(-inf-0.10826] equ time_played==(34.584-inf)
+ 0.009002     78 assists_per_minute==(0.10826-0.16712] or time_played==(28.458-34.584]
+ 0.008655    208 time_played==(22.332-28.458] impl age==(31-34]
+ 0.008249    246 time_played SUBTRACT age
+ 0.008237    117 time_played==(34.584-inf) equ age==(28-31]
+ 0.008237    167 time_played==(34.584-inf) xor age==(28-31]
+ 0.008176     11 time_played==(16.206-22.332] and age==(28-31]
+ 0.008175     62 time_played==(28.458-34.584] or age==(28-31]
+ 0.007583     67 time_played==(34.584-inf) or age==(28-31]
+ 0.007566     63 time_played==(28.458-34.584] or age==(31-34]
+ 0.006928     58 time_played==(22.332-28.458] or age==(31-34]
+ 0.006667    200 time_played==(16.206-22.332] impl age==(-inf-25]
+ 0.006507    248 time_played DIVIDE age
+ 0.006451     16 time_played==(22.332-28.458] and age==(31-34]
+ 0.006127     57 time_played==(22.332-28.458] or age==(28-31]
+ 0.006006    220 assists_per_minute==(-inf-0.10826] impl time_played==(-inf-16.206]
+ 0.005997      2 height
+ 0.005924    111 time_played==(28.458-34.584] equ age==(25-28]
+ 0.005924    161 time_played==(28.458-34.584] xor age==(25-28]
+ 0.005427     74 assists_per_minute==(-inf-0.10826] or time_played==(34.584-inf)
+ 0.004292    102 time_played==(16.206-22.332] equ age==(28-31]
+ 0.004292    152 time_played==(16.206-22.332] xor age==(28-31]
+ 0.003806     36 assists_per_minute==(0.16712-0.22598] and time_played==(16.206-22.332]
+ 0.003599    101 time_played==(16.206-22.332] equ age==(25-28]
+ 0.003599    151 time_played==(16.206-22.332] xor age==(25-28]
+ 0.003405      6 time_played==(-inf-16.206] and age==(28-31]
+ 0.003218    104 time_played==(16.206-22.332] equ age==(34-inf)
+ 0.003218     54 time_played==(16.206-22.332] or age==(34-inf)
+ 0.003218    154 time_played==(16.206-22.332] xor age==(34-inf)
+ 0.003217     85 assists_per_minute==(0.22598-0.28484] or time_played==(-inf-16.206]
+ 0.003026     40 assists_per_minute==(0.22598-0.28484] and time_played==(-inf-16.206]
+ 0.003007     75 assists_per_minute==(0.10826-0.16712] or time_played==(-inf-16.206]
+ 0.002748    250 assists_per_minute DIVIDE time_played
+ 0.00252      32 assists_per_minute==(0.10826-0.16712] and time_played==(22.332-28.458]
+ 0.002249     76 assists_per_minute==(0.10826-0.16712] or time_played==(16.206-22.332]
+ 0.00198      55 time_played==(22.332-28.458] or age==(-inf-25]
+ 0.001912     88 assists_per_minute==(0.22598-0.28484] or time_played==(28.458-34.584]
+ 0.001495      9 time_played==(16.206-22.332] and age==(-inf-25]
+ 0.001398    251 time_played DIVIDE assists_per_minute
+ 0.000754    204 time_played==(16.206-22.332] impl age==(34-inf)
+ 0.000751      8 time_played==(-inf-16.206] and age==(34-inf)
+ 0.000471     61 time_played==(28.458-34.584] or age==(25-28]
+ 0.000363    239 assists_per_minute==(0.22598-0.28484] impl time_played==(34.584-inf)
+ 0.000226     53 time_played==(16.206-22.332] or age==(31-34]
+ 0.00022      42 assists_per_minute==(0.22598-0.28484] and time_played==(28.458-34.584]
+-0.000437    187 assists_per_minute==(0.22598-0.28484] xor time_played==(22.332-28.458]
+-0.000437    137 assists_per_minute==(0.22598-0.28484] equ time_played==(22.332-28.458]
+-0.000663     45 time_played==(-inf-16.206] or age==(-inf-25]
+-0.000797      5 time_played==(-inf-16.206] and age==(-inf-25]
+-0.00084     253 assists_per_minute MULTIPLY time_played
+-0.000882     37 assists_per_minute==(0.16712-0.22598] and time_played==(22.332-28.458]
+-0.000922     48 time_played==(-inf-16.206] or age==(31-34]
+-0.001178     56 time_played==(22.332-28.458] or age==(25-28]
+-0.001186    168 time_played==(34.584-inf) xor age==(31-34]
+-0.001186    118 time_played==(34.584-inf) equ age==(31-34]
+-0.001377    238 assists_per_minute==(0.22598-0.28484] impl time_played==(28.458-34.584]
+-0.001386    125 assists_per_minute==(0.10826-0.16712] equ time_played==(-inf-16.206]
+-0.001386    175 assists_per_minute==(0.10826-0.16712] xor time_played==(-inf-16.206]
+-0.001387     77 assists_per_minute==(0.10826-0.16712] or time_played==(22.332-28.458]
+-0.001476    228 assists_per_minute==(0.10826-0.16712] impl time_played==(28.458-34.584]
+-0.002231      4 age
+-0.002767    121 assists_per_minute==(-inf-0.10826] equ time_played==(16.206-22.332]
+-0.002767    171 assists_per_minute==(-inf-0.10826] xor time_played==(16.206-22.332]
+-0.003014    155 time_played==(22.332-28.458] xor age==(-inf-25]
+-0.003014    105 time_played==(22.332-28.458] equ age==(-inf-25]
+-0.003254     83 assists_per_minute==(0.16712-0.22598] or time_played==(28.458-34.584]
+-0.003401     34 assists_per_minute==(0.10826-0.16712] and time_played==(34.584-inf)
+-0.003486    157 time_played==(22.332-28.458] xor age==(28-31]
+-0.003486    107 time_played==(22.332-28.458] equ age==(28-31]
+-0.003501    203 time_played==(16.206-22.332] impl age==(31-34]
+-0.003569     26 assists_per_minute==(-inf-0.10826] and time_played==(16.206-22.332]
+-0.003625     70 assists_per_minute==(-inf-0.10826] or time_played==(-inf-16.206]
+-0.004194     31 assists_per_minute==(0.10826-0.16712] and time_played==(16.206-22.332]
+-0.00425      71 assists_per_minute==(-inf-0.10826] or time_played==(16.206-22.332]
+-0.00434       1 assists_per_minute
+-0.005044    185 assists_per_minute==(0.22598-0.28484] xor time_played==(-inf-16.206]
+-0.005044    135 assists_per_minute==(0.22598-0.28484] equ time_played==(-inf-16.206]
+-0.005314     51 time_played==(16.206-22.332] or age==(25-28]
+-0.005397     91 assists_per_minute==(0.28484-inf) or time_played==(16.206-22.332]
+-0.005397    191 assists_per_minute==(0.28484-inf) xor time_played==(16.206-22.332]
+-0.005397    141 assists_per_minute==(0.28484-inf) equ time_played==(16.206-22.332]
+-0.005407    256 assists_per_minute_x_time_played
+-0.005437    213 time_played==(28.458-34.584] impl age==(31-34]
+-0.006151    240 assists_per_minute==(0.28484-inf) impl time_played==(-inf-16.206]
+-0.006151     44 assists_per_minute==(0.28484-inf) and time_played==(34.584-inf)
+-0.006151    241 assists_per_minute==(0.28484-inf) impl time_played==(16.206-22.332]
+-0.006151    242 assists_per_minute==(0.28484-inf) impl time_played==(22.332-28.458]
+-0.006151    243 assists_per_minute==(0.28484-inf) impl time_played==(28.458-34.584]
+-0.006432     87 assists_per_minute==(0.22598-0.28484] or time_played==(22.332-28.458]
+-0.006581     66 time_played==(34.584-inf) or age==(25-28]
+-0.007969    237 assists_per_minute==(0.22598-0.28484] impl time_played==(22.332-28.458]
+-0.008276     18 time_played==(28.458-34.584] and age==(25-28]
+-0.008745     24 time_played==(34.584-inf) and age==(31-34]
+-0.008762     30 assists_per_minute==(0.10826-0.16712] and time_played==(-inf-16.206]
+-0.008901     38 assists_per_minute==(0.16712-0.22598] and time_played==(28.458-34.584]
+-0.009191     29 assists_per_minute==(-inf-0.10826] and time_played==(34.584-inf)
+-0.009442    202 time_played==(16.206-22.332] impl age==(28-31]
+-0.010509     65 time_played==(34.584-inf) or age==(-inf-25]
+-0.01069     166 time_played==(34.584-inf) xor age==(25-28]
+-0.01069     116 time_played==(34.584-inf) equ age==(25-28]
+-0.011472    133 assists_per_minute==(0.16712-0.22598] equ time_played==(28.458-34.584]
+-0.011472    183 assists_per_minute==(0.16712-0.22598] xor time_played==(28.458-34.584]
+-0.011503    215 time_played==(34.584-inf) impl age==(-inf-25]
+-0.011823     22 time_played==(34.584-inf) and age==(25-28]
+-0.012114     50 time_played==(16.206-22.332] or age==(-inf-25]
+-0.012235    126 assists_per_minute==(0.10826-0.16712] equ time_played==(16.206-22.332]
+-0.012235    176 assists_per_minute==(0.10826-0.16712] xor time_played==(16.206-22.332]
+-0.012513     80 assists_per_minute==(0.16712-0.22598] or time_played==(-inf-16.206]
+-0.012597     35 assists_per_minute==(0.16712-0.22598] and time_played==(-inf-16.206]
+-0.012633     89 assists_per_minute==(0.22598-0.28484] or time_played==(34.584-inf)
+-0.012857    106 time_played==(22.332-28.458] equ age==(25-28]
+-0.012857    156 time_played==(22.332-28.458] xor age==(25-28]
+-0.013532    130 assists_per_minute==(0.16712-0.22598] equ time_played==(-inf-16.206]
+-0.013532    180 assists_per_minute==(0.16712-0.22598] xor time_played==(-inf-16.206]
+-0.013606     43 assists_per_minute==(0.22598-0.28484] and time_played==(34.584-inf)
+-0.013905     23 time_played==(34.584-inf) and age==(28-31]
+-0.014367     13 time_played==(22.332-28.458] and age==(-inf-25]
+-0.014535     33 assists_per_minute==(0.10826-0.16712] and time_played==(28.458-34.584]
+-0.014715    236 assists_per_minute==(0.22598-0.28484] impl time_played==(16.206-22.332]
+-0.015037    225 assists_per_minute==(0.10826-0.16712] impl time_played==(-inf-16.206]
+-0.015645     10 time_played==(16.206-22.332] and age==(25-28]
+-0.016443    100 time_played==(16.206-22.332] equ age==(-inf-25]
+-0.016443    150 time_played==(16.206-22.332] xor age==(-inf-25]
+-0.01661      17 time_played==(28.458-34.584] and age==(-inf-25]
+-0.018011     79 assists_per_minute==(0.10826-0.16712] or time_played==(34.584-inf)
+-0.01817     179 assists_per_minute==(0.10826-0.16712] xor time_played==(34.584-inf)
+-0.01817     129 assists_per_minute==(0.10826-0.16712] equ time_played==(34.584-inf)
+-0.018646     39 assists_per_minute==(0.16712-0.22598] and time_played==(34.584-inf)
+-0.018731    119 time_played==(34.584-inf) equ age==(34-inf)
+-0.018731    169 time_played==(34.584-inf) xor age==(34-inf)
+-0.018731     69 time_played==(34.584-inf) or age==(34-inf)
+-0.019466    230 assists_per_minute==(0.16712-0.22598] impl time_played==(-inf-16.206]
+-0.019483    219 time_played==(34.584-inf) impl age==(34-inf)
+-0.019483     94 assists_per_minute==(0.28484-inf) or time_played==(34.584-inf)
+-0.019506    235 assists_per_minute==(0.22598-0.28484] impl time_played==(-inf-16.206]
+-0.019967    234 assists_per_minute==(0.16712-0.22598] impl time_played==(34.584-inf)
+-0.020394     82 assists_per_minute==(0.16712-0.22598] or time_played==(22.332-28.458]
+-0.020747     21 time_played==(34.584-inf) and age==(-inf-25]
+-0.020856    216 time_played==(34.584-inf) impl age==(25-28]
+-0.020961    227 assists_per_minute==(0.10826-0.16712] impl time_played==(22.332-28.458]
+-0.022857    229 assists_per_minute==(0.10826-0.16712] impl time_played==(34.584-inf)
+-0.02527     182 assists_per_minute==(0.16712-0.22598] xor time_played==(22.332-28.458]
+-0.02527     132 assists_per_minute==(0.16712-0.22598] equ time_played==(22.332-28.458]
+-0.025311    165 time_played==(34.584-inf) xor age==(-inf-25]
+-0.025311    115 time_played==(34.584-inf) equ age==(-inf-25]
+-0.025936    144 assists_per_minute==(0.28484-inf) equ time_played==(34.584-inf)
+-0.025936    194 assists_per_minute==(0.28484-inf) xor time_played==(34.584-inf)
+-0.02634     189 assists_per_minute==(0.22598-0.28484] xor time_played==(34.584-inf)
+-0.02634     139 assists_per_minute==(0.22598-0.28484] equ time_played==(34.584-inf)
+-0.026462    226 assists_per_minute==(0.10826-0.16712] impl time_played==(16.206-22.332]
+-0.029672    233 assists_per_minute==(0.16712-0.22598] impl time_played==(28.458-34.584]
+-0.029839    218 time_played==(34.584-inf) impl age==(31-34]
+-0.031988    217 time_played==(34.584-inf) impl age==(28-31]
+-0.03308      81 assists_per_minute==(0.16712-0.22598] or time_played==(16.206-22.332]
+-0.033448    136 assists_per_minute==(0.22598-0.28484] equ time_played==(16.206-22.332]
+-0.033448     86 assists_per_minute==(0.22598-0.28484] or time_played==(16.206-22.332]
+-0.033448    186 assists_per_minute==(0.22598-0.28484] xor time_played==(16.206-22.332]
+-0.038695     84 assists_per_minute==(0.16712-0.22598] or time_played==(34.584-inf)
+-0.038976    181 assists_per_minute==(0.16712-0.22598] xor time_played==(16.206-22.332]
+-0.038976    131 assists_per_minute==(0.16712-0.22598] equ time_played==(16.206-22.332]
+-0.041266    231 assists_per_minute==(0.16712-0.22598] impl time_played==(16.206-22.332]
+-0.043395    232 assists_per_minute==(0.16712-0.22598] impl time_played==(22.332-28.458]
+-0.043465    134 assists_per_minute==(0.16712-0.22598] equ time_played==(34.584-inf)
+-0.043465    184 assists_per_minute==(0.16712-0.22598] xor time_played==(34.584-inf)
+
+
+ReliefF (param. search)
+The best parameter when using M5P: ReliefF@0.25
+ReliefF (param. search)
+The best parameter when using LinearRegression: ReliefF@0.5
+ReliefF (param. search)
+The best parameter when using M5Rules: ReliefF@0.5
+ReliefF (param. search)
+The best parameter when using RandomForest: ReliefF@0.0
+								--------------
+									Fold  7
+								--------------
+Feature evaluation: ReliefF (All features dataset) - After CI
+Ranked attributes:
+ 0.0545425    77 assists_per_minute==(-inf-0.10826] xor time_played==(22.332-28.458]
+ 0.0545425    52 assists_per_minute==(-inf-0.10826] equ time_played==(22.332-28.458]
+ 0.0458607    97 assists_per_minute==(0.28484-inf) xor time_played==(22.332-28.458]
+ 0.0458607    47 assists_per_minute==(0.28484-inf) or time_played==(22.332-28.458]
+ 0.0458607    72 assists_per_minute==(0.28484-inf) equ time_played==(22.332-28.458]
+ 0.0349893    67 assists_per_minute==(0.22598-0.28484] equ time_played==(22.332-28.458]
+ 0.0349893    92 assists_per_minute==(0.22598-0.28484] xor time_played==(22.332-28.458]
+ 0.0342395   102 assists_per_minute==(-inf-0.10826] impl time_played==(22.332-28.458]
+ 0.0324716    53 assists_per_minute==(-inf-0.10826] equ time_played==(28.458-34.584]
+ 0.0324716    78 assists_per_minute==(-inf-0.10826] xor time_played==(28.458-34.584]
+ 0.0272707    27 assists_per_minute==(-inf-0.10826] or time_played==(22.332-28.458]
+ 0.0246003     8 assists_per_minute==(-inf-0.10826] and time_played==(28.458-34.584]
+ 0.0242956    28 assists_per_minute==(-inf-0.10826] or time_played==(28.458-34.584]
+ 0.0235141    42 assists_per_minute==(0.22598-0.28484] or time_played==(22.332-28.458]
+ 0.0217707    93 assists_per_minute==(0.22598-0.28484] xor time_played==(28.458-34.584]
+ 0.0217707    68 assists_per_minute==(0.22598-0.28484] equ time_played==(28.458-34.584]
+ 0.0215872    21 assists_per_minute==(0.22598-0.28484] and time_played==(22.332-28.458]
+ 0.0190448   104 assists_per_minute==(-inf-0.10826] impl time_played==(34.584-inf)
+ 0.0183457   100 assists_per_minute==(-inf-0.10826] impl time_played==(-inf-16.206]
+ 0.0180891     7 assists_per_minute==(-inf-0.10826] and time_played==(22.332-28.458]
+ 0.0170815   103 assists_per_minute==(-inf-0.10826] impl time_played==(28.458-34.584]
+ 0.015937     98 assists_per_minute==(0.28484-inf) xor time_played==(28.458-34.584]
+ 0.015937     48 assists_per_minute==(0.28484-inf) or time_played==(28.458-34.584]
+ 0.015937     73 assists_per_minute==(0.28484-inf) equ time_played==(28.458-34.584]
+ 0.0152006    32 assists_per_minute==(0.10826-0.16712] or time_played==(22.332-28.458]
+ 0.0148357     6 assists_per_minute==(-inf-0.10826] and time_played==(16.206-22.332]
+ 0.013787     12 assists_per_minute==(0.10826-0.16712] and time_played==(22.332-28.458]
+ 0.0122246    82 assists_per_minute==(0.10826-0.16712] xor time_played==(22.332-28.458]
+ 0.0122246    57 assists_per_minute==(0.10826-0.16712] equ time_played==(22.332-28.458]
+ 0.0122032    50 assists_per_minute==(-inf-0.10826] equ time_played==(-inf-16.206]
+ 0.0122032    75 assists_per_minute==(-inf-0.10826] xor time_played==(-inf-16.206]
+ 0.0113635    16 assists_per_minute==(0.16712-0.22598] and time_played==(16.206-22.332]
+ 0.0112689   124 assists_per_minute ADD time_played
+ 0.0112144     3 time_played
+ 0.0111615   125 assists_per_minute SUBTRACT time_played
+ 0.0101273    43 assists_per_minute==(0.22598-0.28484] or time_played==(28.458-34.584]
+ 0.0093024     5 assists_per_minute==(-inf-0.10826] and time_played==(-inf-16.206]
+ 0.0090005    37 assists_per_minute==(0.16712-0.22598] or time_played==(22.332-28.458]
+ 0.0089089    87 assists_per_minute==(0.16712-0.22598] xor time_played==(22.332-28.458]
+ 0.0089089    62 assists_per_minute==(0.16712-0.22598] equ time_played==(22.332-28.458]
+ 0.0061157    22 assists_per_minute==(0.22598-0.28484] and time_played==(28.458-34.584]
+ 0.0059131    54 assists_per_minute==(-inf-0.10826] equ time_played==(34.584-inf)
+ 0.0059131    79 assists_per_minute==(-inf-0.10826] xor time_played==(34.584-inf)
+ 0.0049955   127 time_played DIVIDE assists_per_minute
+ 0.004812     38 assists_per_minute==(0.16712-0.22598] or time_played==(28.458-34.584]
+ 0.004713     30 assists_per_minute==(0.10826-0.16712] or time_played==(-inf-16.206]
+ 0.0046701   119 assists_per_minute==(0.22598-0.28484] impl time_played==(34.584-inf)
+ 0.0044225    29 assists_per_minute==(-inf-0.10826] or time_played==(34.584-inf)
+ 0.0022906    14 assists_per_minute==(0.10826-0.16712] and time_played==(34.584-inf)
+ 0.0020333     2 height
+ 0.0014855    20 assists_per_minute==(0.22598-0.28484] and time_played==(-inf-16.206]
+ 0.0012272   126 assists_per_minute DIVIDE time_played
+-0.0000472   128 assists_per_minute MULTIPLY time_played
+-0.0000966   118 assists_per_minute==(0.22598-0.28484] impl time_played==(28.458-34.584]
+-0.0005682    25 assists_per_minute==(-inf-0.10826] or time_played==(-inf-16.206]
+-0.0020884   101 assists_per_minute==(-inf-0.10826] impl time_played==(16.206-22.332]
+-0.0024348   117 assists_per_minute==(0.22598-0.28484] impl time_played==(22.332-28.458]
+-0.0031511   129 assists_per_minute_x_time_played
+-0.0032911   108 assists_per_minute==(0.10826-0.16712] impl time_played==(28.458-34.584]
+-0.0034288     1 assists_per_minute
+-0.0035968    51 assists_per_minute==(-inf-0.10826] equ time_played==(16.206-22.332]
+-0.0035968    76 assists_per_minute==(-inf-0.10826] xor time_played==(16.206-22.332]
+-0.0037649    58 assists_per_minute==(0.10826-0.16712] equ time_played==(28.458-34.584]
+-0.0037649    83 assists_per_minute==(0.10826-0.16712] xor time_played==(28.458-34.584]
+-0.005398     17 assists_per_minute==(0.16712-0.22598] and time_played==(22.332-28.458]
+-0.0056142    88 assists_per_minute==(0.16712-0.22598] xor time_played==(28.458-34.584]
+-0.0056142    63 assists_per_minute==(0.16712-0.22598] equ time_played==(28.458-34.584]
+-0.0058937    13 assists_per_minute==(0.10826-0.16712] and time_played==(28.458-34.584]
+-0.0059076     4 age
+-0.006091     24 assists_per_minute==(0.28484-inf) and time_played==(34.584-inf)
+-0.006091    123 assists_per_minute==(0.28484-inf) impl time_played==(28.458-34.584]
+-0.006091    121 assists_per_minute==(0.28484-inf) impl time_played==(16.206-22.332]
+-0.006091    120 assists_per_minute==(0.28484-inf) impl time_played==(-inf-16.206]
+-0.006091    122 assists_per_minute==(0.28484-inf) impl time_played==(22.332-28.458]
+-0.0064084    70 assists_per_minute==(0.28484-inf) equ time_played==(-inf-16.206]
+-0.0064084    45 assists_per_minute==(0.28484-inf) or time_played==(-inf-16.206]
+-0.0064084    95 assists_per_minute==(0.28484-inf) xor time_played==(-inf-16.206]
+-0.0068209    26 assists_per_minute==(-inf-0.10826] or time_played==(16.206-22.332]
+-0.0091223    80 assists_per_minute==(0.10826-0.16712] xor time_played==(-inf-16.206]
+-0.0091223    55 assists_per_minute==(0.10826-0.16712] equ time_played==(-inf-16.206]
+-0.011482     46 assists_per_minute==(0.28484-inf) or time_played==(16.206-22.332]
+-0.011482     96 assists_per_minute==(0.28484-inf) xor time_played==(16.206-22.332]
+-0.011482     71 assists_per_minute==(0.28484-inf) equ time_played==(16.206-22.332]
+-0.0116232    44 assists_per_minute==(0.22598-0.28484] or time_played==(34.584-inf)
+-0.0116824     9 assists_per_minute==(-inf-0.10826] and time_played==(34.584-inf)
+-0.0131781    10 assists_per_minute==(0.10826-0.16712] and time_played==(-inf-16.206]
+-0.0139364    40 assists_per_minute==(0.22598-0.28484] or time_played==(-inf-16.206]
+-0.0140264   116 assists_per_minute==(0.22598-0.28484] impl time_played==(16.206-22.332]
+-0.0150682    49 assists_per_minute==(0.28484-inf) or time_played==(34.584-inf)
+-0.0154974    18 assists_per_minute==(0.16712-0.22598] and time_played==(28.458-34.584]
+-0.015789     15 assists_per_minute==(0.16712-0.22598] and time_played==(-inf-16.206]
+-0.0160596    19 assists_per_minute==(0.16712-0.22598] and time_played==(34.584-inf)
+-0.0162543    23 assists_per_minute==(0.22598-0.28484] and time_played==(34.584-inf)
+-0.017001    110 assists_per_minute==(0.16712-0.22598] impl time_played==(-inf-16.206]
+-0.0170605    69 assists_per_minute==(0.22598-0.28484] equ time_played==(34.584-inf)
+-0.0170605    94 assists_per_minute==(0.22598-0.28484] xor time_played==(34.584-inf)
+-0.0172573   115 assists_per_minute==(0.22598-0.28484] impl time_played==(-inf-16.206]
+-0.0174208    31 assists_per_minute==(0.10826-0.16712] or time_played==(16.206-22.332]
+-0.0175322    33 assists_per_minute==(0.10826-0.16712] or time_played==(28.458-34.584]
+-0.0197292    65 assists_per_minute==(0.22598-0.28484] equ time_played==(-inf-16.206]
+-0.0197292    90 assists_per_minute==(0.22598-0.28484] xor time_played==(-inf-16.206]
+-0.0214491    99 assists_per_minute==(0.28484-inf) xor time_played==(34.584-inf)
+-0.0214491    74 assists_per_minute==(0.28484-inf) equ time_played==(34.584-inf)
+-0.0214922    56 assists_per_minute==(0.10826-0.16712] equ time_played==(16.206-22.332]
+-0.0214922    81 assists_per_minute==(0.10826-0.16712] xor time_played==(16.206-22.332]
+-0.0223998    84 assists_per_minute==(0.10826-0.16712] xor time_played==(34.584-inf)
+-0.0223998    59 assists_per_minute==(0.10826-0.16712] equ time_played==(34.584-inf)
+-0.0233474    34 assists_per_minute==(0.10826-0.16712] or time_played==(34.584-inf)
+-0.0239159    11 assists_per_minute==(0.10826-0.16712] and time_played==(16.206-22.332]
+-0.0247604   105 assists_per_minute==(0.10826-0.16712] impl time_played==(-inf-16.206]
+-0.0268942   109 assists_per_minute==(0.10826-0.16712] impl time_played==(34.584-inf)
+-0.027046    106 assists_per_minute==(0.10826-0.16712] impl time_played==(16.206-22.332]
+-0.0286373   107 assists_per_minute==(0.10826-0.16712] impl time_played==(22.332-28.458]
+-0.0286864    60 assists_per_minute==(0.16712-0.22598] equ time_played==(-inf-16.206]
+-0.0286864    85 assists_per_minute==(0.16712-0.22598] xor time_played==(-inf-16.206]
+-0.0288499   114 assists_per_minute==(0.16712-0.22598] impl time_played==(34.584-inf)
+-0.0315162    35 assists_per_minute==(0.16712-0.22598] or time_played==(-inf-16.206]
+-0.0316177    39 assists_per_minute==(0.16712-0.22598] or time_played==(34.584-inf)
+-0.0320848   112 assists_per_minute==(0.16712-0.22598] impl time_played==(22.332-28.458]
+-0.0369168   113 assists_per_minute==(0.16712-0.22598] impl time_played==(28.458-34.584]
+-0.0387007    66 assists_per_minute==(0.22598-0.28484] equ time_played==(16.206-22.332]
+-0.0387007    91 assists_per_minute==(0.22598-0.28484] xor time_played==(16.206-22.332]
+-0.0387007    41 assists_per_minute==(0.22598-0.28484] or time_played==(16.206-22.332]
+-0.0403165    36 assists_per_minute==(0.16712-0.22598] or time_played==(16.206-22.332]
+-0.0412633    64 assists_per_minute==(0.16712-0.22598] equ time_played==(34.584-inf)
+-0.0412633    89 assists_per_minute==(0.16712-0.22598] xor time_played==(34.584-inf)
+-0.0442279    86 assists_per_minute==(0.16712-0.22598] xor time_played==(16.206-22.332]
+-0.0442279    61 assists_per_minute==(0.16712-0.22598] equ time_played==(16.206-22.332]
+-0.049316    111 assists_per_minute==(0.16712-0.22598] impl time_played==(16.206-22.332]
+
+
+ReliefF (param. search)
+The best parameter when using M5P: ReliefF@0.0
+ReliefF (param. search)
+The best parameter when using LinearRegression: ReliefF@0.5
+ReliefF (param. search)
+The best parameter when using M5Rules: ReliefF@0.0
+ReliefF (param. search)
+The best parameter when using RandomForest: ReliefF@0.5
+								--------------
+									Fold  8
+								--------------
+Feature evaluation: ReliefF (All features dataset) - After CI
+Ranked attributes:
+ 0.048941    77 assists_per_minute==(-inf-0.10826] xor time_played==(22.332-28.458]
+ 0.048941    52 assists_per_minute==(-inf-0.10826] equ time_played==(22.332-28.458]
+ 0.048162   102 assists_per_minute==(-inf-0.10826] impl time_played==(22.332-28.458]
+ 0.044817    53 assists_per_minute==(-inf-0.10826] equ time_played==(28.458-34.584]
+ 0.044817    78 assists_per_minute==(-inf-0.10826] xor time_played==(28.458-34.584]
+ 0.036796   104 assists_per_minute==(-inf-0.10826] impl time_played==(34.584-inf)
+ 0.036541    28 assists_per_minute==(-inf-0.10826] or time_played==(28.458-34.584]
+ 0.03328     97 assists_per_minute==(0.28484-inf) xor time_played==(22.332-28.458]
+ 0.03328     72 assists_per_minute==(0.28484-inf) equ time_played==(22.332-28.458]
+ 0.03328     47 assists_per_minute==(0.28484-inf) or time_played==(22.332-28.458]
+ 0.032121   103 assists_per_minute==(-inf-0.10826] impl time_played==(28.458-34.584]
+ 0.024491   100 assists_per_minute==(-inf-0.10826] impl time_played==(-inf-16.206]
+ 0.022744     5 assists_per_minute==(-inf-0.10826] and time_played==(-inf-16.206]
+ 0.022692     7 assists_per_minute==(-inf-0.10826] and time_played==(22.332-28.458]
+ 0.022521    27 assists_per_minute==(-inf-0.10826] or time_played==(22.332-28.458]
+ 0.022118    92 assists_per_minute==(0.22598-0.28484] xor time_played==(22.332-28.458]
+ 0.022118    67 assists_per_minute==(0.22598-0.28484] equ time_played==(22.332-28.458]
+ 0.021328     6 assists_per_minute==(-inf-0.10826] and time_played==(16.206-22.332]
+ 0.021217     8 assists_per_minute==(-inf-0.10826] and time_played==(28.458-34.584]
+ 0.021192    50 assists_per_minute==(-inf-0.10826] equ time_played==(-inf-16.206]
+ 0.021192    75 assists_per_minute==(-inf-0.10826] xor time_played==(-inf-16.206]
+ 0.020512   101 assists_per_minute==(-inf-0.10826] impl time_played==(16.206-22.332]
+ 0.017978    54 assists_per_minute==(-inf-0.10826] equ time_played==(34.584-inf)
+ 0.017978    79 assists_per_minute==(-inf-0.10826] xor time_played==(34.584-inf)
+ 0.01735     37 assists_per_minute==(0.16712-0.22598] or time_played==(22.332-28.458]
+ 0.014607    12 assists_per_minute==(0.10826-0.16712] and time_played==(22.332-28.458]
+ 0.012909    29 assists_per_minute==(-inf-0.10826] or time_played==(34.584-inf)
+ 0.011005   124 assists_per_minute ADD time_played
+ 0.010971     3 time_played
+ 0.010938   125 assists_per_minute SUBTRACT time_played
+ 0.010841    25 assists_per_minute==(-inf-0.10826] or time_played==(-inf-16.206]
+ 0.010136    82 assists_per_minute==(0.10826-0.16712] xor time_played==(22.332-28.458]
+ 0.010136    57 assists_per_minute==(0.10826-0.16712] equ time_played==(22.332-28.458]
+ 0.009174    51 assists_per_minute==(-inf-0.10826] equ time_played==(16.206-22.332]
+ 0.009174    76 assists_per_minute==(-inf-0.10826] xor time_played==(16.206-22.332]
+ 0.009051    87 assists_per_minute==(0.16712-0.22598] xor time_played==(22.332-28.458]
+ 0.009051    62 assists_per_minute==(0.16712-0.22598] equ time_played==(22.332-28.458]
+ 0.008049   108 assists_per_minute==(0.10826-0.16712] impl time_played==(28.458-34.584]
+ 0.008049    21 assists_per_minute==(0.22598-0.28484] and time_played==(22.332-28.458]
+ 0.007648   127 time_played DIVIDE assists_per_minute
+ 0.005892    42 assists_per_minute==(0.22598-0.28484] or time_played==(22.332-28.458]
+ 0.004744    32 assists_per_minute==(0.10826-0.16712] or time_played==(22.332-28.458]
+ 0.003958    98 assists_per_minute==(0.28484-inf) xor time_played==(28.458-34.584]
+ 0.003958    73 assists_per_minute==(0.28484-inf) equ time_played==(28.458-34.584]
+ 0.003958    48 assists_per_minute==(0.28484-inf) or time_played==(28.458-34.584]
+ 0.003622    58 assists_per_minute==(0.10826-0.16712] equ time_played==(28.458-34.584]
+ 0.003622    83 assists_per_minute==(0.10826-0.16712] xor time_played==(28.458-34.584]
+ 0.003006    14 assists_per_minute==(0.10826-0.16712] and time_played==(34.584-inf)
+ 0.002168   126 assists_per_minute DIVIDE time_played
+ 0.001357    11 assists_per_minute==(0.10826-0.16712] and time_played==(16.206-22.332]
+ 0.000884    20 assists_per_minute==(0.22598-0.28484] and time_played==(-inf-16.206]
+ 0.000308     2 height
+-0.000433    30 assists_per_minute==(0.10826-0.16712] or time_played==(-inf-16.206]
+-0.001734   128 assists_per_minute MULTIPLY time_played
+-0.002104    45 assists_per_minute==(0.28484-inf) or time_played==(-inf-16.206]
+-0.002104    95 assists_per_minute==(0.28484-inf) xor time_played==(-inf-16.206]
+-0.002104    70 assists_per_minute==(0.28484-inf) equ time_played==(-inf-16.206]
+-0.00249      1 assists_per_minute
+-0.002744    16 assists_per_minute==(0.16712-0.22598] and time_played==(16.206-22.332]
+-0.003068    26 assists_per_minute==(-inf-0.10826] or time_played==(16.206-22.332]
+-0.003195    22 assists_per_minute==(0.22598-0.28484] and time_played==(28.458-34.584]
+-0.003868   129 assists_per_minute_x_time_played
+-0.00413      4 age
+-0.005813    96 assists_per_minute==(0.28484-inf) xor time_played==(16.206-22.332]
+-0.005813    71 assists_per_minute==(0.28484-inf) equ time_played==(16.206-22.332]
+-0.005813    46 assists_per_minute==(0.28484-inf) or time_played==(16.206-22.332]
+-0.006038   123 assists_per_minute==(0.28484-inf) impl time_played==(28.458-34.584]
+-0.006038    24 assists_per_minute==(0.28484-inf) and time_played==(34.584-inf)
+-0.006038   122 assists_per_minute==(0.28484-inf) impl time_played==(22.332-28.458]
+-0.006038   121 assists_per_minute==(0.28484-inf) impl time_played==(16.206-22.332]
+-0.006038   120 assists_per_minute==(0.28484-inf) impl time_played==(-inf-16.206]
+-0.007308    33 assists_per_minute==(0.10826-0.16712] or time_played==(28.458-34.584]
+-0.007502    93 assists_per_minute==(0.22598-0.28484] xor time_played==(28.458-34.584]
+-0.007502    68 assists_per_minute==(0.22598-0.28484] equ time_played==(28.458-34.584]
+-0.00755     13 assists_per_minute==(0.10826-0.16712] and time_played==(28.458-34.584]
+-0.007707    55 assists_per_minute==(0.10826-0.16712] equ time_played==(-inf-16.206]
+-0.007707    80 assists_per_minute==(0.10826-0.16712] xor time_played==(-inf-16.206]
+-0.008608    17 assists_per_minute==(0.16712-0.22598] and time_played==(22.332-28.458]
+-0.008777   107 assists_per_minute==(0.10826-0.16712] impl time_played==(22.332-28.458]
+-0.009311    10 assists_per_minute==(0.10826-0.16712] and time_played==(-inf-16.206]
+-0.009955    81 assists_per_minute==(0.10826-0.16712] xor time_played==(16.206-22.332]
+-0.009955    56 assists_per_minute==(0.10826-0.16712] equ time_played==(16.206-22.332]
+-0.011158     9 assists_per_minute==(-inf-0.10826] and time_played==(34.584-inf)
+-0.011607   105 assists_per_minute==(0.10826-0.16712] impl time_played==(-inf-16.206]
+-0.012454    31 assists_per_minute==(0.10826-0.16712] or time_played==(16.206-22.332]
+-0.012529   106 assists_per_minute==(0.10826-0.16712] impl time_played==(16.206-22.332]
+-0.013113    43 assists_per_minute==(0.22598-0.28484] or time_played==(28.458-34.584]
+-0.014121   119 assists_per_minute==(0.22598-0.28484] impl time_played==(34.584-inf)
+-0.014456   117 assists_per_minute==(0.22598-0.28484] impl time_played==(22.332-28.458]
+-0.015928   109 assists_per_minute==(0.10826-0.16712] impl time_played==(34.584-inf)
+-0.016022    18 assists_per_minute==(0.16712-0.22598] and time_played==(28.458-34.584]
+-0.017094    38 assists_per_minute==(0.16712-0.22598] or time_played==(28.458-34.584]
+-0.017305   118 assists_per_minute==(0.22598-0.28484] impl time_played==(28.458-34.584]
+-0.017361    84 assists_per_minute==(0.10826-0.16712] xor time_played==(34.584-inf)
+-0.017361    59 assists_per_minute==(0.10826-0.16712] equ time_played==(34.584-inf)
+-0.018481    15 assists_per_minute==(0.16712-0.22598] and time_played==(-inf-16.206]
+-0.018576    34 assists_per_minute==(0.10826-0.16712] or time_played==(34.584-inf)
+-0.019807    23 assists_per_minute==(0.22598-0.28484] and time_played==(34.584-inf)
+-0.020705    19 assists_per_minute==(0.16712-0.22598] and time_played==(34.584-inf)
+-0.021172    86 assists_per_minute==(0.16712-0.22598] xor time_played==(16.206-22.332]
+-0.021172    61 assists_per_minute==(0.16712-0.22598] equ time_played==(16.206-22.332]
+-0.022624    63 assists_per_minute==(0.16712-0.22598] equ time_played==(28.458-34.584]
+-0.022624    88 assists_per_minute==(0.16712-0.22598] xor time_played==(28.458-34.584]
+-0.024878    49 assists_per_minute==(0.28484-inf) or time_played==(34.584-inf)
+-0.027423    66 assists_per_minute==(0.22598-0.28484] equ time_played==(16.206-22.332]
+-0.027423    91 assists_per_minute==(0.22598-0.28484] xor time_played==(16.206-22.332]
+-0.027423    41 assists_per_minute==(0.22598-0.28484] or time_played==(16.206-22.332]
+-0.027481    40 assists_per_minute==(0.22598-0.28484] or time_played==(-inf-16.206]
+-0.028011    90 assists_per_minute==(0.22598-0.28484] xor time_played==(-inf-16.206]
+-0.028011    65 assists_per_minute==(0.22598-0.28484] equ time_played==(-inf-16.206]
+-0.030433    35 assists_per_minute==(0.16712-0.22598] or time_played==(-inf-16.206]
+-0.031207    44 assists_per_minute==(0.22598-0.28484] or time_played==(34.584-inf)
+-0.031251    74 assists_per_minute==(0.28484-inf) equ time_played==(34.584-inf)
+-0.031251    99 assists_per_minute==(0.28484-inf) xor time_played==(34.584-inf)
+-0.03153     85 assists_per_minute==(0.16712-0.22598] xor time_played==(-inf-16.206]
+-0.03153     60 assists_per_minute==(0.16712-0.22598] equ time_played==(-inf-16.206]
+-0.032698   116 assists_per_minute==(0.22598-0.28484] impl time_played==(16.206-22.332]
+-0.033582   115 assists_per_minute==(0.22598-0.28484] impl time_played==(-inf-16.206]
+-0.034677   110 assists_per_minute==(0.16712-0.22598] impl time_played==(-inf-16.206]
+-0.037742    36 assists_per_minute==(0.16712-0.22598] or time_played==(16.206-22.332]
+-0.039427    94 assists_per_minute==(0.22598-0.28484] xor time_played==(34.584-inf)
+-0.039427    69 assists_per_minute==(0.22598-0.28484] equ time_played==(34.584-inf)
+-0.040894   114 assists_per_minute==(0.16712-0.22598] impl time_played==(34.584-inf)
+-0.044836   113 assists_per_minute==(0.16712-0.22598] impl time_played==(28.458-34.584]
+-0.047028    39 assists_per_minute==(0.16712-0.22598] or time_played==(34.584-inf)
+-0.053056   112 assists_per_minute==(0.16712-0.22598] impl time_played==(22.332-28.458]
+-0.053457    89 assists_per_minute==(0.16712-0.22598] xor time_played==(34.584-inf)
+-0.053457    64 assists_per_minute==(0.16712-0.22598] equ time_played==(34.584-inf)
+-0.056425   111 assists_per_minute==(0.16712-0.22598] impl time_played==(16.206-22.332]
+
+
+ReliefF (param. search)
+The best parameter when using M5P: ReliefF@0.25
+ReliefF (param. search)
+The best parameter when using LinearRegression: ReliefF@0.25
+ReliefF (param. search)
+The best parameter when using M5Rules: ReliefF@0.5
+ReliefF (param. search)
+The best parameter when using RandomForest: ReliefF@0.25
+								--------------
+									Fold  9
+								--------------
+Feature evaluation: ReliefF (All features dataset) - After CI
+Ranked attributes:
+ 0.0364061    77 assists_per_minute==(-inf-0.10826] xor time_played==(22.332-28.458]
+ 0.0364061    52 assists_per_minute==(-inf-0.10826] equ time_played==(22.332-28.458]
+ 0.0359902    97 assists_per_minute==(0.28484-inf) xor time_played==(22.332-28.458]
+ 0.0359902    47 assists_per_minute==(0.28484-inf) or time_played==(22.332-28.458]
+ 0.0359902    72 assists_per_minute==(0.28484-inf) equ time_played==(22.332-28.458]
+ 0.0348313   102 assists_per_minute==(-inf-0.10826] impl time_played==(22.332-28.458]
+ 0.0287572    53 assists_per_minute==(-inf-0.10826] equ time_played==(28.458-34.584]
+ 0.0287572    78 assists_per_minute==(-inf-0.10826] xor time_played==(28.458-34.584]
+ 0.02861      32 assists_per_minute==(0.10826-0.16712] or time_played==(22.332-28.458]
+ 0.0251418    50 assists_per_minute==(-inf-0.10826] equ time_played==(-inf-16.206]
+ 0.0251418    75 assists_per_minute==(-inf-0.10826] xor time_played==(-inf-16.206]
+ 0.0233916     6 assists_per_minute==(-inf-0.10826] and time_played==(16.206-22.332]
+ 0.0232462    67 assists_per_minute==(0.22598-0.28484] equ time_played==(22.332-28.458]
+ 0.0232462    92 assists_per_minute==(0.22598-0.28484] xor time_played==(22.332-28.458]
+ 0.0219897   103 assists_per_minute==(-inf-0.10826] impl time_played==(28.458-34.584]
+ 0.0217562     8 assists_per_minute==(-inf-0.10826] and time_played==(28.458-34.584]
+ 0.0212696    45 assists_per_minute==(0.28484-inf) or time_played==(-inf-16.206]
+ 0.0212696    70 assists_per_minute==(0.28484-inf) equ time_played==(-inf-16.206]
+ 0.0212696    95 assists_per_minute==(0.28484-inf) xor time_played==(-inf-16.206]
+ 0.0205413   100 assists_per_minute==(-inf-0.10826] impl time_played==(-inf-16.206]
+ 0.0199749    96 assists_per_minute==(0.28484-inf) xor time_played==(16.206-22.332]
+ 0.0199749    71 assists_per_minute==(0.28484-inf) equ time_played==(16.206-22.332]
+ 0.0199749    46 assists_per_minute==(0.28484-inf) or time_played==(16.206-22.332]
+ 0.0194248   104 assists_per_minute==(-inf-0.10826] impl time_played==(34.584-inf)
+ 0.0182435    28 assists_per_minute==(-inf-0.10826] or time_played==(28.458-34.584]
+ 0.0177018     5 assists_per_minute==(-inf-0.10826] and time_played==(-inf-16.206]
+ 0.0163759    82 assists_per_minute==(0.10826-0.16712] xor time_played==(22.332-28.458]
+ 0.0163759    57 assists_per_minute==(0.10826-0.16712] equ time_played==(22.332-28.458]
+ 0.0159974     7 assists_per_minute==(-inf-0.10826] and time_played==(22.332-28.458]
+ 0.0159396    30 assists_per_minute==(0.10826-0.16712] or time_played==(-inf-16.206]
+ 0.0158429    21 assists_per_minute==(0.22598-0.28484] and time_played==(22.332-28.458]
+ 0.0152689    37 assists_per_minute==(0.16712-0.22598] or time_played==(22.332-28.458]
+ 0.0146494    25 assists_per_minute==(-inf-0.10826] or time_played==(-inf-16.206]
+ 0.0145236   108 assists_per_minute==(0.10826-0.16712] impl time_played==(28.458-34.584]
+ 0.0140642    42 assists_per_minute==(0.22598-0.28484] or time_played==(22.332-28.458]
+ 0.013079     83 assists_per_minute==(0.10826-0.16712] xor time_played==(28.458-34.584]
+ 0.013079     58 assists_per_minute==(0.10826-0.16712] equ time_played==(28.458-34.584]
+ 0.0127391   124 assists_per_minute ADD time_played
+ 0.0126338     3 time_played
+ 0.0125305   125 assists_per_minute SUBTRACT time_played
+ 0.0120017    27 assists_per_minute==(-inf-0.10826] or time_played==(22.332-28.458]
+ 0.0109053    12 assists_per_minute==(0.10826-0.16712] and time_played==(22.332-28.458]
+ 0.0107437    26 assists_per_minute==(-inf-0.10826] or time_played==(16.206-22.332]
+ 0.0083136   101 assists_per_minute==(-inf-0.10826] impl time_played==(16.206-22.332]
+ 0.0081425    76 assists_per_minute==(-inf-0.10826] xor time_played==(16.206-22.332]
+ 0.0081425    51 assists_per_minute==(-inf-0.10826] equ time_played==(16.206-22.332]
+ 0.0076362    62 assists_per_minute==(0.16712-0.22598] equ time_played==(22.332-28.458]
+ 0.0076362    87 assists_per_minute==(0.16712-0.22598] xor time_played==(22.332-28.458]
+ 0.0072174    33 assists_per_minute==(0.10826-0.16712] or time_played==(28.458-34.584]
+ 0.0059228    68 assists_per_minute==(0.22598-0.28484] equ time_played==(28.458-34.584]
+ 0.0059228    93 assists_per_minute==(0.22598-0.28484] xor time_played==(28.458-34.584]
+ 0.0058976    16 assists_per_minute==(0.16712-0.22598] and time_played==(16.206-22.332]
+ 0.0055992   127 time_played DIVIDE assists_per_minute
+ 0.0049497    40 assists_per_minute==(0.22598-0.28484] or time_played==(-inf-16.206]
+ 0.0045136    20 assists_per_minute==(0.22598-0.28484] and time_played==(-inf-16.206]
+ 0.0039501   129 assists_per_minute_x_time_played
+ 0.003809     10 assists_per_minute==(0.10826-0.16712] and time_played==(-inf-16.206]
+ 0.003616    126 assists_per_minute DIVIDE time_played
+ 0.0028213    98 assists_per_minute==(0.28484-inf) xor time_played==(28.458-34.584]
+ 0.0028213    73 assists_per_minute==(0.28484-inf) equ time_played==(28.458-34.584]
+ 0.0028213    48 assists_per_minute==(0.28484-inf) or time_played==(28.458-34.584]
+ 0.0027436    38 assists_per_minute==(0.16712-0.22598] or time_played==(28.458-34.584]
+ 0.0021684    80 assists_per_minute==(0.10826-0.16712] xor time_played==(-inf-16.206]
+ 0.0021684    55 assists_per_minute==(0.10826-0.16712] equ time_played==(-inf-16.206]
+ 0.00079     119 assists_per_minute==(0.22598-0.28484] impl time_played==(34.584-inf)
+ 0.0001268    22 assists_per_minute==(0.22598-0.28484] and time_played==(28.458-34.584]
+ 0.0000885    79 assists_per_minute==(-inf-0.10826] xor time_played==(34.584-inf)
+ 0.0000885    54 assists_per_minute==(-inf-0.10826] equ time_played==(34.584-inf)
+-0.0002894     2 height
+-0.0010702     4 age
+-0.001149    128 assists_per_minute MULTIPLY time_played
+-0.001189     65 assists_per_minute==(0.22598-0.28484] equ time_played==(-inf-16.206]
+-0.001189     90 assists_per_minute==(0.22598-0.28484] xor time_played==(-inf-16.206]
+-0.0019794    31 assists_per_minute==(0.10826-0.16712] or time_played==(16.206-22.332]
+-0.0034159    29 assists_per_minute==(-inf-0.10826] or time_played==(34.584-inf)
+-0.0034668   118 assists_per_minute==(0.22598-0.28484] impl time_played==(28.458-34.584]
+-0.0036828    14 assists_per_minute==(0.10826-0.16712] and time_played==(34.584-inf)
+-0.0037478    15 assists_per_minute==(0.16712-0.22598] and time_played==(-inf-16.206]
+-0.003751      1 assists_per_minute
+-0.0048629    43 assists_per_minute==(0.22598-0.28484] or time_played==(28.458-34.584]
+-0.005352     63 assists_per_minute==(0.16712-0.22598] equ time_played==(28.458-34.584]
+-0.005352     88 assists_per_minute==(0.16712-0.22598] xor time_played==(28.458-34.584]
+-0.0059923    34 assists_per_minute==(0.10826-0.16712] or time_played==(34.584-inf)
+-0.0064511   120 assists_per_minute==(0.28484-inf) impl time_played==(-inf-16.206]
+-0.0064511    24 assists_per_minute==(0.28484-inf) and time_played==(34.584-inf)
+-0.0064511   122 assists_per_minute==(0.28484-inf) impl time_played==(22.332-28.458]
+-0.0064511   123 assists_per_minute==(0.28484-inf) impl time_played==(28.458-34.584]
+-0.0064511   121 assists_per_minute==(0.28484-inf) impl time_played==(16.206-22.332]
+-0.0068216   117 assists_per_minute==(0.22598-0.28484] impl time_played==(22.332-28.458]
+-0.0079713   109 assists_per_minute==(0.10826-0.16712] impl time_played==(34.584-inf)
+-0.0081872    11 assists_per_minute==(0.10826-0.16712] and time_played==(16.206-22.332]
+-0.0085403    66 assists_per_minute==(0.22598-0.28484] equ time_played==(16.206-22.332]
+-0.0085403    41 assists_per_minute==(0.22598-0.28484] or time_played==(16.206-22.332]
+-0.0085403    91 assists_per_minute==(0.22598-0.28484] xor time_played==(16.206-22.332]
+-0.0088594    17 assists_per_minute==(0.16712-0.22598] and time_played==(22.332-28.458]
+-0.0093395   106 assists_per_minute==(0.10826-0.16712] impl time_played==(16.206-22.332]
+-0.0095715   105 assists_per_minute==(0.10826-0.16712] impl time_played==(-inf-16.206]
+-0.009699     59 assists_per_minute==(0.10826-0.16712] equ time_played==(34.584-inf)
+-0.009699     84 assists_per_minute==(0.10826-0.16712] xor time_played==(34.584-inf)
+-0.01023      36 assists_per_minute==(0.16712-0.22598] or time_played==(16.206-22.332]
+-0.0106916   107 assists_per_minute==(0.10826-0.16712] impl time_played==(22.332-28.458]
+-0.0110042     9 assists_per_minute==(-inf-0.10826] and time_played==(34.584-inf)
+-0.0122128    56 assists_per_minute==(0.10826-0.16712] equ time_played==(16.206-22.332]
+-0.0122128    81 assists_per_minute==(0.10826-0.16712] xor time_played==(16.206-22.332]
+-0.0128803    13 assists_per_minute==(0.10826-0.16712] and time_played==(28.458-34.584]
+-0.0155214    18 assists_per_minute==(0.16712-0.22598] and time_played==(28.458-34.584]
+-0.0180295    23 assists_per_minute==(0.22598-0.28484] and time_played==(34.584-inf)
+-0.0182574   116 assists_per_minute==(0.22598-0.28484] impl time_played==(16.206-22.332]
+-0.0198522    44 assists_per_minute==(0.22598-0.28484] or time_played==(34.584-inf)
+-0.0199452   114 assists_per_minute==(0.16712-0.22598] impl time_played==(34.584-inf)
+-0.0204008    60 assists_per_minute==(0.16712-0.22598] equ time_played==(-inf-16.206]
+-0.0204008    85 assists_per_minute==(0.16712-0.22598] xor time_played==(-inf-16.206]
+-0.0223973    35 assists_per_minute==(0.16712-0.22598] or time_played==(-inf-16.206]
+-0.0236785    19 assists_per_minute==(0.16712-0.22598] and time_played==(34.584-inf)
+-0.0245625   115 assists_per_minute==(0.22598-0.28484] impl time_played==(-inf-16.206]
+-0.025134     61 assists_per_minute==(0.16712-0.22598] equ time_played==(16.206-22.332]
+-0.025134     86 assists_per_minute==(0.16712-0.22598] xor time_played==(16.206-22.332]
+-0.026346     49 assists_per_minute==(0.28484-inf) or time_played==(34.584-inf)
+-0.0281996   113 assists_per_minute==(0.16712-0.22598] impl time_played==(28.458-34.584]
+-0.0287075   110 assists_per_minute==(0.16712-0.22598] impl time_played==(-inf-16.206]
+-0.0311333    39 assists_per_minute==(0.16712-0.22598] or time_played==(34.584-inf)
+-0.0312259    69 assists_per_minute==(0.22598-0.28484] equ time_played==(34.584-inf)
+-0.0312259    94 assists_per_minute==(0.22598-0.28484] xor time_played==(34.584-inf)
+-0.032256    112 assists_per_minute==(0.16712-0.22598] impl time_played==(22.332-28.458]
+-0.0327805    99 assists_per_minute==(0.28484-inf) xor time_played==(34.584-inf)
+-0.0327805    74 assists_per_minute==(0.28484-inf) equ time_played==(34.584-inf)
+-0.0416063    64 assists_per_minute==(0.16712-0.22598] equ time_played==(34.584-inf)
+-0.0416063    89 assists_per_minute==(0.16712-0.22598] xor time_played==(34.584-inf)
+-0.0435747   111 assists_per_minute==(0.16712-0.22598] impl time_played==(16.206-22.332]
+
+
+ReliefF (param. search)
+The best parameter when using M5P: ReliefF@0.25
+ReliefF (param. search)
+The best parameter when using LinearRegression: ReliefF@0.5
+ReliefF (param. search)
+The best parameter when using M5Rules: ReliefF@0.25
+ReliefF (param. search)
+The best parameter when using RandomForest: ReliefF@0.5
+								--------------
+									Fold 10
+								--------------
+Feature evaluation: ReliefF (All features dataset) - After CI
+Ranked attributes:
+ 0.041998    51 assists_per_minute==(-inf-0.10826] equ time_played==(23.556-29.274]
+ 0.041998    76 assists_per_minute==(-inf-0.10826] xor time_played==(23.556-29.274]
+ 0.034541     6 assists_per_minute==(-inf-0.10826] and time_played==(17.838-23.556]
+ 0.033547   103 assists_per_minute==(-inf-0.10826] impl time_played==(34.992-inf)
+ 0.031942    52 assists_per_minute==(-inf-0.10826] equ time_played==(29.274-34.992]
+ 0.031942    77 assists_per_minute==(-inf-0.10826] xor time_played==(29.274-34.992]
+ 0.031439    50 assists_per_minute==(-inf-0.10826] equ time_played==(17.838-23.556]
+ 0.031439    75 assists_per_minute==(-inf-0.10826] xor time_played==(17.838-23.556]
+ 0.031201   102 assists_per_minute==(-inf-0.10826] impl time_played==(29.274-34.992]
+ 0.030171   101 assists_per_minute==(-inf-0.10826] impl time_played==(23.556-29.274]
+ 0.030108    27 assists_per_minute==(-inf-0.10826] or time_played==(29.274-34.992]
+ 0.028536    49 assists_per_minute==(-inf-0.10826] equ time_played==(-inf-17.838]
+ 0.028536    74 assists_per_minute==(-inf-0.10826] xor time_played==(-inf-17.838]
+ 0.024974    25 assists_per_minute==(-inf-0.10826] or time_played==(17.838-23.556]
+ 0.02441     26 assists_per_minute==(-inf-0.10826] or time_played==(23.556-29.274]
+ 0.022187    96 assists_per_minute==(0.28484-inf) xor time_played==(23.556-29.274]
+ 0.022187    71 assists_per_minute==(0.28484-inf) equ time_played==(23.556-29.274]
+ 0.022187    46 assists_per_minute==(0.28484-inf) or time_played==(23.556-29.274]
+ 0.019731   107 assists_per_minute==(0.10826-0.16712] impl time_played==(29.274-34.992]
+ 0.017733     7 assists_per_minute==(-inf-0.10826] and time_played==(23.556-29.274]
+ 0.01702     99 assists_per_minute==(-inf-0.10826] impl time_played==(-inf-17.838]
+ 0.014416   100 assists_per_minute==(-inf-0.10826] impl time_played==(17.838-23.556]
+ 0.013882    10 assists_per_minute==(0.10826-0.16712] and time_played==(-inf-17.838]
+ 0.013793    12 assists_per_minute==(0.10826-0.16712] and time_played==(23.556-29.274]
+ 0.013423    29 assists_per_minute==(0.10826-0.16712] or time_played==(-inf-17.838]
+ 0.013111    55 assists_per_minute==(0.10826-0.16712] equ time_played==(17.838-23.556]
+ 0.013111    80 assists_per_minute==(0.10826-0.16712] xor time_played==(17.838-23.556]
+ 0.012191    24 assists_per_minute==(-inf-0.10826] or time_played==(-inf-17.838]
+ 0.012024    70 assists_per_minute==(0.28484-inf) equ time_played==(17.838-23.556]
+ 0.012024    45 assists_per_minute==(0.28484-inf) or time_played==(17.838-23.556]
+ 0.012024    95 assists_per_minute==(0.28484-inf) xor time_played==(17.838-23.556]
+ 0.011336    79 assists_per_minute==(0.10826-0.16712] xor time_played==(-inf-17.838]
+ 0.011336    54 assists_per_minute==(0.10826-0.16712] equ time_played==(-inf-17.838]
+ 0.011061    20 assists_per_minute==(0.22598-0.28484] and time_played==(23.556-29.274]
+ 0.010094    78 assists_per_minute==(-inf-0.10826] xor time_played==(34.992-inf)
+ 0.010094    53 assists_per_minute==(-inf-0.10826] equ time_played==(34.992-inf)
+ 0.009427    56 assists_per_minute==(0.10826-0.16712] equ time_played==(23.556-29.274]
+ 0.009427    81 assists_per_minute==(0.10826-0.16712] xor time_played==(23.556-29.274]
+ 0.00852     66 assists_per_minute==(0.22598-0.28484] equ time_played==(23.556-29.274]
+ 0.00852     91 assists_per_minute==(0.22598-0.28484] xor time_played==(23.556-29.274]
+ 0.007914   123 assists_per_minute ADD time_played
+ 0.007876     3 time_played
+ 0.00784    124 assists_per_minute SUBTRACT time_played
+ 0.006134    28 assists_per_minute==(-inf-0.10826] or time_played==(34.992-inf)
+ 0.006057     5 assists_per_minute==(-inf-0.10826] and time_played==(-inf-17.838]
+ 0.005876   126 time_played DIVIDE assists_per_minute
+ 0.00512     31 assists_per_minute==(0.10826-0.16712] or time_played==(23.556-29.274]
+ 0.004438    16 assists_per_minute==(0.16712-0.22598] and time_played==(17.838-23.556]
+ 0.002014    69 assists_per_minute==(0.28484-inf) equ time_played==(-inf-17.838]
+ 0.002014    44 assists_per_minute==(0.28484-inf) or time_played==(-inf-17.838]
+ 0.002014    94 assists_per_minute==(0.28484-inf) xor time_played==(-inf-17.838]
+ 0.001872   125 assists_per_minute DIVIDE time_played
+ 0.001778    30 assists_per_minute==(0.10826-0.16712] or time_played==(17.838-23.556]
+ 0.000949    82 assists_per_minute==(0.10826-0.16712] xor time_played==(29.274-34.992]
+ 0.000949    57 assists_per_minute==(0.10826-0.16712] equ time_played==(29.274-34.992]
+ 0.000613    14 assists_per_minute==(0.10826-0.16712] and time_played==(34.992-inf)
+ 0.000184    41 assists_per_minute==(0.22598-0.28484] or time_played==(23.556-29.274]
+ 0.000115     8 assists_per_minute==(-inf-0.10826] and time_played==(29.274-34.992]
+-0.000571    21 assists_per_minute==(0.22598-0.28484] and time_played==(29.274-34.992]
+-0.000583     2 height
+-0.000917     1 assists_per_minute
+-0.00094    105 assists_per_minute==(0.10826-0.16712] impl time_played==(17.838-23.556]
+-0.001055   127 assists_per_minute MULTIPLY time_played
+-0.001443   128 assists_per_minute_x_time_played
+-0.003277    15 assists_per_minute==(0.16712-0.22598] and time_played==(-inf-17.838]
+-0.003531    36 assists_per_minute==(0.16712-0.22598] or time_played==(23.556-29.274]
+-0.003941    32 assists_per_minute==(0.10826-0.16712] or time_played==(29.274-34.992]
+-0.004086   106 assists_per_minute==(0.10826-0.16712] impl time_played==(23.556-29.274]
+-0.004563   108 assists_per_minute==(0.10826-0.16712] impl time_played==(34.992-inf)
+-0.004982   118 assists_per_minute==(0.22598-0.28484] impl time_played==(34.992-inf)
+-0.005042    72 assists_per_minute==(0.28484-inf) equ time_played==(29.274-34.992]
+-0.005042    97 assists_per_minute==(0.28484-inf) xor time_played==(29.274-34.992]
+-0.005547     4 age
+-0.006249    23 assists_per_minute==(0.28484-inf) and time_played==(29.274-34.992]
+-0.006249   121 assists_per_minute==(0.28484-inf) impl time_played==(23.556-29.274]
+-0.006249   122 assists_per_minute==(0.28484-inf) impl time_played==(34.992-inf)
+-0.006249   119 assists_per_minute==(0.28484-inf) impl time_played==(-inf-17.838]
+-0.006249   120 assists_per_minute==(0.28484-inf) impl time_played==(17.838-23.556]
+-0.007417   104 assists_per_minute==(0.10826-0.16712] impl time_played==(-inf-17.838]
+-0.008933    17 assists_per_minute==(0.16712-0.22598] and time_played==(23.556-29.274]
+-0.009953    13 assists_per_minute==(0.10826-0.16712] and time_played==(29.274-34.992]
+-0.010043    33 assists_per_minute==(0.10826-0.16712] or time_played==(34.992-inf)
+-0.010167    11 assists_per_minute==(0.10826-0.16712] and time_played==(17.838-23.556]
+-0.010735    86 assists_per_minute==(0.16712-0.22598] xor time_played==(23.556-29.274]
+-0.010735    61 assists_per_minute==(0.16712-0.22598] equ time_played==(23.556-29.274]
+-0.010983     9 assists_per_minute==(-inf-0.10826] and time_played==(34.992-inf)
+-0.011429    40 assists_per_minute==(0.22598-0.28484] or time_played==(17.838-23.556]
+-0.011429    65 assists_per_minute==(0.22598-0.28484] equ time_played==(17.838-23.556]
+-0.011429    90 assists_per_minute==(0.22598-0.28484] xor time_played==(17.838-23.556]
+-0.011538    47 assists_per_minute==(0.28484-inf) or time_played==(29.274-34.992]
+-0.011781   117 assists_per_minute==(0.22598-0.28484] impl time_played==(29.274-34.992]
+-0.0118      83 assists_per_minute==(0.10826-0.16712] xor time_played==(34.992-inf)
+-0.0118      58 assists_per_minute==(0.10826-0.16712] equ time_played==(34.992-inf)
+-0.013536    92 assists_per_minute==(0.22598-0.28484] xor time_played==(29.274-34.992]
+-0.013536    67 assists_per_minute==(0.22598-0.28484] equ time_played==(29.274-34.992]
+-0.013568    18 assists_per_minute==(0.16712-0.22598] and time_played==(29.274-34.992]
+-0.01389     39 assists_per_minute==(0.22598-0.28484] or time_played==(-inf-17.838]
+-0.01389     89 assists_per_minute==(0.22598-0.28484] xor time_played==(-inf-17.838]
+-0.01389     64 assists_per_minute==(0.22598-0.28484] equ time_played==(-inf-17.838]
+-0.015467   116 assists_per_minute==(0.22598-0.28484] impl time_played==(23.556-29.274]
+-0.018637    22 assists_per_minute==(0.22598-0.28484] and time_played==(34.992-inf)
+-0.021879    48 assists_per_minute==(0.28484-inf) or time_played==(34.992-inf)
+-0.021879    98 assists_per_minute==(0.28484-inf) xor time_played==(34.992-inf)
+-0.021879    73 assists_per_minute==(0.28484-inf) equ time_played==(34.992-inf)
+-0.02278     19 assists_per_minute==(0.16712-0.22598] and time_played==(34.992-inf)
+-0.022785    42 assists_per_minute==(0.22598-0.28484] or time_played==(29.274-34.992]
+-0.024084   115 assists_per_minute==(0.22598-0.28484] impl time_played==(17.838-23.556]
+-0.024084   114 assists_per_minute==(0.22598-0.28484] impl time_played==(-inf-17.838]
+-0.025382    37 assists_per_minute==(0.16712-0.22598] or time_played==(29.274-34.992]
+-0.027527    43 assists_per_minute==(0.22598-0.28484] or time_played==(34.992-inf)
+-0.027883   109 assists_per_minute==(0.16712-0.22598] impl time_played==(-inf-17.838]
+-0.02822    113 assists_per_minute==(0.16712-0.22598] impl time_played==(34.992-inf)
+-0.029054    35 assists_per_minute==(0.16712-0.22598] or time_played==(17.838-23.556]
+-0.031492    68 assists_per_minute==(0.22598-0.28484] equ time_played==(34.992-inf)
+-0.031492    93 assists_per_minute==(0.22598-0.28484] xor time_played==(34.992-inf)
+-0.032774    60 assists_per_minute==(0.16712-0.22598] equ time_played==(17.838-23.556]
+-0.032774    85 assists_per_minute==(0.16712-0.22598] xor time_played==(17.838-23.556]
+-0.034107    84 assists_per_minute==(0.16712-0.22598] xor time_played==(-inf-17.838]
+-0.034107    59 assists_per_minute==(0.16712-0.22598] equ time_played==(-inf-17.838]
+-0.034623    87 assists_per_minute==(0.16712-0.22598] xor time_played==(29.274-34.992]
+-0.034623    62 assists_per_minute==(0.16712-0.22598] equ time_played==(29.274-34.992]
+-0.037561    34 assists_per_minute==(0.16712-0.22598] or time_played==(-inf-17.838]
+-0.038075   112 assists_per_minute==(0.16712-0.22598] impl time_played==(29.274-34.992]
+-0.03967    110 assists_per_minute==(0.16712-0.22598] impl time_played==(17.838-23.556]
+-0.041307   111 assists_per_minute==(0.16712-0.22598] impl time_played==(23.556-29.274]
+-0.042277    38 assists_per_minute==(0.16712-0.22598] or time_played==(34.992-inf)
+-0.048278    88 assists_per_minute==(0.16712-0.22598] xor time_played==(34.992-inf)
+-0.048278    63 assists_per_minute==(0.16712-0.22598] equ time_played==(34.992-inf)
+
+
+ReliefF (param. search)
+The best parameter when using M5P: ReliefF@0.5
+ReliefF (param. search)
+The best parameter when using LinearRegression: ReliefF@0.25
+ReliefF (param. search)
+The best parameter when using M5Rules: ReliefF@0.5
+ReliefF (param. search)
+The best parameter when using RandomForest: ReliefF@0.0
